@@ -1,26 +1,34 @@
 {
- "updated": "2026-07-25 14:24 UTC",
+ "updated": "2026-07-25 21:41 UTC",
  "items": [
   {
-   "time": "2026-07-25 14:21 UTC",
-   "title": "S&P 500 flashes sell signals — options traders are bracing for wild swings in Apple, Meta and Microsoft",
+   "time": "2026-07-25 20:00 UTC",
+   "title": "‘Time will tell whether that was a good bet’: My adviser got me a full SpaceX IPO allocation. Was I lucky?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-25 14:08 UTC",
-   "title": "Are 7% mortgage rates next? The Treasury market is flashing a warning sign for home buyers.",
+   "time": "2026-07-25 19:56 UTC",
+   "title": "Here are 4 forces that drove a tough week for stocks",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-25 18:59 UTC",
+   "title": "Yes, the AI stock selloff looks terrifying. But it might actually save the bull market.",
    "impact": "negative",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-25 13:36 UTC",
-   "title": "Pro stock pickers cannot beat simple math — war in the Middle East is proving it",
-   "impact": "positive",
+   "time": "2026-07-25 18:34 UTC",
+   "title": "Oil prices may fall, but gasoline prices won’t. Look at the trap we’re in.",
+   "impact": "negative",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-25 11:00 UTC",
-   "title": "Investors are in the dark about the Fed’s decision this week — and that’s just how Warsh wants it",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
