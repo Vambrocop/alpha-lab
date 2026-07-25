@@ -1,24 +1,8 @@
 {
- "updated": "2026-07-23 22:36 UTC",
+ "updated": "2026-07-25 14:24 UTC",
  "items": [
   {
-   "time": "2026-07-23 22:17 UTC",
-   "title": "Intel's stock jumps as chipmaker rides AI boom to fastest revenue growth in almost 15 years",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-23 22:12 UTC",
-   "title": "The August stock-market slump is a myth — so why does Wall Street keep repeating it?",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-23 22:03 UTC",
+   "time": "2026-07-25 14:21 UTC",
    "title": "S&P 500 flashes sell signals — options traders are bracing for wild swings in Apple, Meta and Microsoft",
    "impact": "neutral",
    "note": "",
@@ -26,16 +10,32 @@
    "kind": "auto"
   },
   {
-   "time": "2026-07-23 22:02 UTC",
-   "title": "Yes, the AI stock selloff looks terrifying. But it might actually save the bull market.",
+   "time": "2026-07-25 14:08 UTC",
+   "title": "Are 7% mortgage rates next? The Treasury market is flashing a warning sign for home buyers.",
    "impact": "negative",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-23 21:59 UTC",
-   "title": "AMD’s rivalry with Nvidia is increasingly moving into a new realm",
+   "time": "2026-07-25 13:36 UTC",
+   "title": "Pro stock pickers cannot beat simple math — war in the Middle East is proving it",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-25 13:30 UTC",
+   "title": "Does crypto make your portfolio less risky? Only if you do it right, experts say",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-25 11:00 UTC",
+   "title": "Investors are in the dark about the Fed’s decision this week — and that’s just how Warsh wants it",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
