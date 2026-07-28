@@ -1,44 +1,44 @@
 {
- "updated": "2026-07-28 17:18 UTC",
+ "updated": "2026-07-28 18:52 UTC",
  "items": [
   {
-   "time": "2026-07-28 17:12 UTC",
-   "title": "Shein says it's under investigation by the Federal Trade Commission as it prepares for Hong Kong IPO",
+   "time": "2026-07-28 18:39 UTC",
+   "title": "Investors are piling into bond funds at a rapid rate. That’s a problem.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 18:27 UTC",
+   "title": "44 states are aligned on one thing in their fight against prediction markets. It's about sports wagering",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-07-28 16:52 UTC",
+   "time": "2026-07-28 18:21 UTC",
+   "title": "Apple touches $5 trillion market cap for first time",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 17:40 UTC",
+   "title": "Meta likely to highlight smart glasses, avoid social media policy on upcoming earnings call, Kalshi traders say",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 17:30 UTC",
    "title": "Alphabet and Tesla took a hit from soaring AI spending. Will Microsoft, Meta and Amazon be next?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 16:41 UTC",
-   "title": "Forget oil. A surging El Niño could kill Fed rate cuts — and these stocks stand to win.",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 16:39 UTC",
-   "title": "The Fed isn’t your biggest worry. The central-bank decision that actually impacts your 401(k) lands in Tokyo.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 16:33 UTC",
-   "title": "Microsoft touts cost-saving AI model for cybersecurity",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
