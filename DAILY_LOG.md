@@ -7,6 +7,33 @@
 
 ---
 
+## 2026-07-28
+
+### ① 今天做了什么
+- **找回 llm_weekly W28/W29(1746b46)**：远端 append-only 周报账本被多 workflow 抢 main 挤掉两周真实
+  LLM 读数,只剩 W26。从 git 逐字节找回(95a0408=W28·dba2a81=W29,非伪造),--rebless 留痕重封,已推。
+- **⚠ 自酿事故:防缩水门(d69accc)搞挂主流水线**。我建的 append-only 防缩水门挂进 5 个 workflow,
+  上线后 refresh-data **每次 push 都被门拦(退1)**,07-24→07-27 连红,站上分析数据滞留 07-23(仅 intraday
+  quotes 在更新)。诊断:公开 check-run annotations API 拿到 `[ledger-guard]…会丢行` → 定位是门在拦。
+  **立即摘门(73deb44)** 恢复主流水线(合我自己 SPEC 的停机点:门致停摆就地放宽)。
+- **门暴露了真 bug 并修掉(9d007ea)**：refresh-data「Re-assert ledgers from git」步骤**只护 2/19**
+  账本 → actions/cache 命中陈旧缓存时其余 17 个保持缩水版 → `git add -A` 提交缩水版 → 丢行。步骤自己
+  06-30 的注释早点出这险却只护了俩。改为**覆盖全部 SPECS 账本 + manifest**(逐个 checkout·kb_ledger
+  未晋升时 || true 跳过),清单漂移由 `test_reassert_covers_ledgers.py` 守。失败模式安全(纯 checkout+||true,
+  不阻断 push)。
+
+### ② 对照计划 / 教训
+- **反复犯的错:部署本地测不了的 CI 改动就上线**——防缩水门与它要修的缓存 bug 都是 CI-cache 专属、
+  本地无法复现。已写进记忆 [[ci-gate-and-diagnosis]]:断言远端状态前先 fetch;CI 逻辑要可本地测。
+- W28/W29 恢复不受事故影响,始终在 origin。
+
+### ③ 待办 / 未决
+- **[gating] 验 refresh-data 变绿**：re-assert 全账本修已推(9d007ea)但**未经一次真跑验证**;下次 cron
+  13:00 UTC(或手动 Run workflow)后核对「Commit & push」步转绿。**在此之前不再改 CI**。
+- **优化 backlog(验证绿后再动·见 OPTIMIZATION_LOG)**：#1 别缓存 git 账本(根治)·#2 `git add -A`→显式
+  暂存·#3 publish 逻辑抽成可本地测的 `tools/ci_publish.py`·#4 防缩水门以 warn-only 试用期重挂做纵深防御。
+- 事件历史透镜(SPEC_EVENT_LENS)仍待用户放行 ②审→建。
+
 ## 2026-07-07
 
 ### ① 今天做了什么

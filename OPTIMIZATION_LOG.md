@@ -97,6 +97,12 @@
 
 ## §2 未做 / 待续(什么没做都记)
 
+**🗓️ 2026-07-28 CI 韧性 backlog(防缩水门事故根因·§4c;验证绿后按序做)：**
+- [ ] **#1 别把 git 跟踪的账本放进 actions/cache(根治)**：账本真相在 git;缓存它才有"陈旧回灌"风险。cache 路径只留可再生的 raw/派生缓存、排除 `data/*.csv` 账本 → 整个"re-assert from git"步骤连同这类 bug 消失。9d007ea(re-assert 全账本)是补丁,这才是根治。
+- [ ] **#2 `git add -A`→显式暂存**：refresh-data/weekly-review 的 `git add -A` 会把误入的陈旧回灌一起提交;只暂存该跑真正产出的文件(web/docs json + 本次 append 的账本)→ 陈旧文件永进不了提交。
+- [ ] **#3 publish 逻辑抽成可本地测的 `tools/ci_publish.py`**：本周两次搞挂 prod 的都是 inline-yaml 的 commit/push 逻辑、本地跑不了。抽出来 + 单测 = 防下次事故的元修复。
+- [ ] **#4 防缩水门 warn-only 重挂**：#1/#2 落地后,以警告(不阻断)试用期重挂做纵深防御,绝不再因门停摆。
+
 **🗓️ 2026-06-30 本会话落地(已 push,免得"先查后动"重做)：** 自生长门4 OOS 引擎 + 知识库晋升降级(P-A/P-C·Opus双审GO) · P-D 前端"自生长看得见" · P-B 防闪烁 · 预FOMC漂移研究 → **升进 candidate_space 命门**(双审GO·N_DECLARED 74→76·补2026会议日程) · **opex_week/季末两侧先验**(双审GO·N→80·均 dead) · FX→AUD 真实收益工具(子代理) · **LLM 全活**:日读激活+月报新建(节流)+ **AI 预测**(append-only 公开计分账本+prediction.html+按信心分桶·Opus审GO)·走 `GEMINI_API_KEY` · senate 定性完结历史研究(源停更·见 §4c)。
 
 **🎯 下一步(2026-06-30 排序)：**
@@ -192,6 +198,8 @@
 ## §4c 试过但否决 / 测量结论(用户 2026-06-16:否定决策也记,可追溯)
 
 > 记"试了/想了但决定不做"的事 + 怎么判的 + 结论。和"做了什么"同样重要——防以后重复踩。
+
+- **防缩水门 → 上线即摘(2026-07-28·自酿事故·测量结论)**：为防 append-only 账本被多 workflow 竞态挤掉行,建 `ci_ledger_guard.py`(push 前比工作树 vs origin 身份前缀)挂进 5 个 workflow。**结果:refresh-data 每次 push 被门拦、主流水线连红 07-24→07-27、站上分析数据滞留 07-23**(公开 check-run annotations API 定位是门在拦)→ **立即摘门(73deb44)**。教训:① **CI-cache 专属逻辑本地测不了就别直接上线**(门与它要修的缓存 bug 都无法本地复现);② 门失败模式太硬(阻断 push=停摆)远比它防的"稀有丢行"严重。**但门暴露并促成修掉真 bug**:re-assert 只护 2/19 账本→缓存陈旧回灌被 `git add -A` 提交成缩水版(9d007ea 修:护全部 SPECS 账本+manifest+漂移测试)。门本身待根治(§2 #1/#2)+改 warn-only 后再作纵深防御重挂。可逆。门脚本/测试/规格仍在仓库(未挂接)。
 
 - **per-perm 置换缓存 → 否决(测量驱动)**:实测 placebo 2.9s、stock_checkup 10s,1.2万次置换才 2.9s → **置换非瓶颈**,缓存徒增复杂度零收益。真瓶颈=KO 每次走 yfinance(未进缓存),已修(加进 fetch_data 清单)。**教训:先测量再优化**。
 - **cycles 分段(全样本 vs 近期)→ 否决(诚实异议)**:谱周期检测需长历史,近 5 年根本测不出周期,硬切=制造噪声。故 placebo 做了分段(日历效应近期可测)、cycles 不做。
