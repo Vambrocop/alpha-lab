@@ -1,44 +1,44 @@
 {
- "updated": "2026-07-28 18:52 UTC",
+ "updated": "2026-07-28 20:10 UTC",
  "items": [
   {
-   "time": "2026-07-28 18:39 UTC",
-   "title": "Investors are piling into bond funds at a rapid rate. That’s a problem.",
+   "time": "2026-07-28 20:07 UTC",
+   "title": "Ford raises guidance after Q2 earnings beat, says F-Series recovery is on track",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 19:46 UTC",
+   "title": "Why Palantir’s stock is missing out on a big software rally",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 19:45 UTC",
+   "title": "Amazon, Meta and Microsoft face skeptical investors this week after Google report sparked sell-off",
+   "impact": "negative",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 19:31 UTC",
+   "title": "‘Time will tell whether that was a good bet’: My adviser got me a full SpaceX IPO allocation. Was I lucky?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-28 18:27 UTC",
-   "title": "44 states are aligned on one thing in their fight against prediction markets. It's about sports wagering",
+   "time": "2026-07-28 19:25 UTC",
+   "title": "Analysis: Kevin Warsh has three reasons to hold off on a Fed rate hike this week",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 18:21 UTC",
-   "title": "Apple touches $5 trillion market cap for first time",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 17:40 UTC",
-   "title": "Meta likely to highlight smart glasses, avoid social media policy on upcoming earnings call, Kalshi traders say",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 17:30 UTC",
-   "title": "Alphabet and Tesla took a hit from soaring AI spending. Will Microsoft, Meta and Amazon be next?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]

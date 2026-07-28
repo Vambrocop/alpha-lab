@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-28T18:52:02.469390+00:00",
+  "generated": "2026-07-28T20:10:02.817149+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -21,7 +21,7 @@
       "ticker": "^NDX",
       "source": "live",
       "status": "ok",
-      "rows": 6681,
+      "rows": 6680,
       "last_date": "2026-07-28",
       "age_days": 0,
       "stale_after_days": 6,
