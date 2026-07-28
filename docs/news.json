@@ -1,44 +1,44 @@
 {
- "updated": "2026-07-28 20:10 UTC",
+ "updated": "2026-07-28 21:36 UTC",
  "items": [
   {
-   "time": "2026-07-28 20:07 UTC",
-   "title": "Ford raises guidance after Q2 earnings beat, says F-Series recovery is on track",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 19:46 UTC",
-   "title": "Why Palantir’s stock is missing out on a big software rally",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 19:45 UTC",
-   "title": "Amazon, Meta and Microsoft face skeptical investors this week after Google report sparked sell-off",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 19:31 UTC",
-   "title": "‘Time will tell whether that was a good bet’: My adviser got me a full SpaceX IPO allocation. Was I lucky?",
+   "time": "2026-07-28 21:08 UTC",
+   "title": "Leveraged ETFs tied to SK Hynix are getting hammered as chip wreck deepens",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-28 19:25 UTC",
-   "title": "Analysis: Kevin Warsh has three reasons to hold off on a Fed rate hike this week",
+   "time": "2026-07-28 20:54 UTC",
+   "title": "The Fed isn’t your biggest worry. The central-bank decision that actually impacts your 401(k) lands in Tokyo.",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 20:52 UTC",
+   "title": "Alphabet and Tesla took a hit from soaring AI spending. Will Microsoft, Meta and Amazon be next?",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 20:46 UTC",
+   "title": "Nasdaq-100 is on the edge of correction territory as semiconductor stocks take another beating",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 20:43 UTC",
+   "title": "Space stocks are falling hard — but SpaceX doesn’t deserve all of the blame",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
