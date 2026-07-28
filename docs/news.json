@@ -1,6 +1,30 @@
 {
- "updated": "2026-07-28 21:36 UTC",
+ "updated": "2026-07-28 22:38 UTC",
  "items": [
+  {
+   "time": "2026-07-28 22:17 UTC",
+   "title": "Seagate’s earnings are welcome news for the battered AI trade",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 21:56 UTC",
+   "title": "Micron’s stock sinks toward worst monthly drop in 11 years as China fears escalate",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-28 21:44 UTC",
+   "title": "Ford raises guidance after Q2 earnings beat, says F-Series recovery is on track",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-07-28 21:08 UTC",
    "title": "Leveraged ETFs tied to SK Hynix are getting hammered as chip wreck deepens",
@@ -12,30 +36,6 @@
   {
    "time": "2026-07-28 20:54 UTC",
    "title": "The Fed isn’t your biggest worry. The central-bank decision that actually impacts your 401(k) lands in Tokyo.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 20:52 UTC",
-   "title": "Alphabet and Tesla took a hit from soaring AI spending. Will Microsoft, Meta and Amazon be next?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 20:46 UTC",
-   "title": "Nasdaq-100 is on the edge of correction territory as semiconductor stocks take another beating",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-28 20:43 UTC",
-   "title": "Space stocks are falling hard — but SpaceX doesn’t deserve all of the blame",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",

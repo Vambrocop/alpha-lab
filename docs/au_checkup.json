@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-28T15:19:06Z",
+  "generated": "2026-07-28T22:39:00Z",
   "caveat": "这是澳股的**风险画像**，描述它历史上是什么样——**不预测涨跌、不荐股、不给买卖点**。β=对 ASX200(^AXJO) 的敏感度（风险特征非收益承诺）；流动性档位=60日中位日成交额的机械分档（低档票点差/滑点风险高）。**不含 franking（红利抵免）**——无可靠免费数据源，宁缺勿猜；税务影响请咨询专业人士。数据不足的票如实标注。ASX 本地日=交易日。",
   "benchmark": "ASX200 (^AXJO)",
   "min_days": 250,
@@ -55,7 +55,7 @@
         "r2_pct": 37.3,
         "idiosyncratic_pct": 62.7,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -149,8 +149,8 @@
         "vol_now_pct": 32.5,
         "vol_percentile": 83.5,
         "high_vol": false,
-        "corr_now": 0.71,
-        "corr_percentile": 65.6,
+        "corr_now": 0.72,
+        "corr_percentile": 66.1,
         "decoupled": false
       },
       "liquidity": {
@@ -193,7 +193,7 @@
         "r2_pct": 38.0,
         "idiosyncratic_pct": 62.0,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -287,8 +287,8 @@
         "vol_now_pct": 28.7,
         "vol_percentile": 91.5,
         "high_vol": false,
-        "corr_now": 0.49,
-        "corr_percentile": 26.9,
+        "corr_now": 0.48,
+        "corr_percentile": 26.2,
         "decoupled": false
       },
       "liquidity": {
@@ -327,11 +327,11 @@
         ]
       },
       "market_dep": {
-        "corr": 0.35,
+        "corr": 0.36,
         "r2_pct": 12.6,
         "idiosyncratic_pct": 87.4,
         "status": "ok",
-        "n_obs": 8127
+        "n_obs": 8128
       },
       "patterns": {
         "status": "ok",
@@ -414,7 +414,7 @@
             "p90_pct": 12.53,
             "worst_pct": -25.19,
             "best_pct": 54.09,
-            "pct_negative": 39.0
+            "pct_negative": 39.3
           }
         ]
       },
@@ -425,8 +425,8 @@
         "vol_now_pct": 47.3,
         "vol_percentile": 94.4,
         "high_vol": false,
-        "corr_now": 0.05,
-        "corr_percentile": 10.7,
+        "corr_now": 0.07,
+        "corr_percentile": 11.5,
         "decoupled": false
       },
       "liquidity": {
@@ -469,7 +469,7 @@
         "r2_pct": 39.8,
         "idiosyncratic_pct": 60.2,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -552,7 +552,7 @@
             "p90_pct": 9.84,
             "worst_pct": -39.82,
             "best_pct": 47.22,
-            "pct_negative": 38.7
+            "pct_negative": 38.9
           }
         ]
       },
@@ -563,8 +563,8 @@
         "vol_now_pct": 22.5,
         "vol_percentile": 72.6,
         "high_vol": false,
-        "corr_now": 0.6,
-        "corr_percentile": 38.3,
+        "corr_now": 0.58,
+        "corr_percentile": 35.4,
         "decoupled": false
       },
       "liquidity": {
@@ -598,16 +598,16 @@
           {
             "level": 0.999,
             "var_pct": 9.2,
-            "es_pct": 13.22
+            "es_pct": 13.21
           }
         ]
       },
       "market_dep": {
-        "corr": 0.62,
+        "corr": 0.61,
         "r2_pct": 37.8,
         "idiosyncratic_pct": 62.2,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -690,7 +690,7 @@
             "p90_pct": 9.73,
             "worst_pct": -37.01,
             "best_pct": 31.16,
-            "pct_negative": 34.8
+            "pct_negative": 34.6
           }
         ]
       },
@@ -701,8 +701,8 @@
         "vol_now_pct": 21.6,
         "vol_percentile": 60.5,
         "high_vol": false,
-        "corr_now": 0.64,
-        "corr_percentile": 45.9,
+        "corr_now": 0.62,
+        "corr_percentile": 42.1,
         "decoupled": false
       },
       "liquidity": {
@@ -745,7 +745,7 @@
         "r2_pct": 35.5,
         "idiosyncratic_pct": 64.5,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -839,8 +839,8 @@
         "vol_now_pct": 19.5,
         "vol_percentile": 48.4,
         "high_vol": false,
-        "corr_now": 0.53,
-        "corr_percentile": 31.7,
+        "corr_now": 0.57,
+        "corr_percentile": 34.7,
         "decoupled": false
       },
       "liquidity": {
@@ -883,7 +883,7 @@
         "r2_pct": 24.3,
         "idiosyncratic_pct": 75.7,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -956,7 +956,7 @@
             "p90_pct": 5.27,
             "worst_pct": -23.47,
             "best_pct": 24.32,
-            "pct_negative": 40.4
+            "pct_negative": 40.2
           },
           {
             "horizon": 20,
@@ -966,7 +966,7 @@
             "p90_pct": 10.9,
             "worst_pct": -30.34,
             "best_pct": 25.46,
-            "pct_negative": 34.8
+            "pct_negative": 34.6
           }
         ]
       },
@@ -978,7 +978,7 @@
         "vol_percentile": 60.0,
         "high_vol": false,
         "corr_now": 0.29,
-        "corr_percentile": 23.6,
+        "corr_percentile": 23.7,
         "decoupled": false
       },
       "liquidity": {
@@ -1021,7 +1021,7 @@
         "r2_pct": 38.0,
         "idiosyncratic_pct": 62.0,
         "status": "ok",
-        "n_obs": 7578
+        "n_obs": 7579
       },
       "patterns": {
         "status": "ok",
@@ -1104,7 +1104,7 @@
             "p90_pct": 17.03,
             "worst_pct": -50.57,
             "best_pct": 70.63,
-            "pct_negative": 41.3
+            "pct_negative": 41.0
           }
         ]
       },
@@ -1115,8 +1115,8 @@
         "vol_now_pct": 17.2,
         "vol_percentile": 16.1,
         "high_vol": false,
-        "corr_now": 0.63,
-        "corr_percentile": 49.2,
+        "corr_now": 0.62,
+        "corr_percentile": 45.8,
         "decoupled": false
       },
       "liquidity": {
@@ -1159,7 +1159,7 @@
         "r2_pct": 21.3,
         "idiosyncratic_pct": 78.7,
         "status": "ok",
-        "n_obs": 5422
+        "n_obs": 5423
       },
       "patterns": {
         "status": "ok",
@@ -1204,8 +1204,8 @@
         "horizon": 20,
         "level": 0.9,
         "lower_pct": -14.91,
-        "upper_pct": 14.05,
-        "width_pct": 28.96,
+        "upper_pct": 14.04,
+        "width_pct": 28.95,
         "empirical_coverage": 0.927,
         "n_test": 82,
         "n_windows": 271
@@ -1227,12 +1227,12 @@
           {
             "horizon": 5,
             "n": 272,
-            "median_pct": 0.0,
+            "median_pct": -0.0,
             "p10_pct": -18.39,
             "p90_pct": 11.21,
             "worst_pct": -54.63,
             "best_pct": 132.26,
-            "pct_negative": 49.6
+            "pct_negative": 50.0
           },
           {
             "horizon": 20,
@@ -1242,7 +1242,7 @@
             "p90_pct": 26.18,
             "worst_pct": -68.07,
             "best_pct": 141.94,
-            "pct_negative": 47.1
+            "pct_negative": 48.2
           }
         ]
       },
@@ -1253,8 +1253,8 @@
         "vol_now_pct": 26.2,
         "vol_percentile": 62.1,
         "high_vol": false,
-        "corr_now": 0.65,
-        "corr_percentile": 80.7,
+        "corr_now": 0.67,
+        "corr_percentile": 85.9,
         "decoupled": false
       },
       "liquidity": {
@@ -1297,7 +1297,7 @@
         "r2_pct": 16.3,
         "idiosyncratic_pct": 83.7,
         "status": "ok",
-        "n_obs": 8337
+        "n_obs": 8338
       },
       "patterns": {
         "status": "ok",
@@ -1370,7 +1370,7 @@
             "p90_pct": 4.63,
             "worst_pct": -12.31,
             "best_pct": 15.27,
-            "pct_negative": 40.5
+            "pct_negative": 40.8
           },
           {
             "horizon": 20,
@@ -1380,7 +1380,7 @@
             "p90_pct": 7.97,
             "worst_pct": -13.63,
             "best_pct": 18.06,
-            "pct_negative": 40.1
+            "pct_negative": 40.4
           }
         ]
       },
@@ -1391,13 +1391,13 @@
         "vol_now_pct": 18.0,
         "vol_percentile": 51.7,
         "high_vol": false,
-        "corr_now": 0.17,
-        "corr_percentile": 19.8,
+        "corr_now": 0.18,
+        "corr_percentile": 20.4,
         "decoupled": false
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 71.5,
+        "median_daily_aud_m": 71.7,
         "tier": "high",
         "window_days": 60
       }
@@ -1435,7 +1435,7 @@
         "r2_pct": 15.3,
         "idiosyncratic_pct": 84.7,
         "status": "ok",
-        "n_obs": 7239
+        "n_obs": 7240
       },
       "patterns": {
         "status": "ok",
@@ -1508,7 +1508,7 @@
             "p90_pct": 4.49,
             "worst_pct": -10.63,
             "best_pct": 16.66,
-            "pct_negative": 43.2
+            "pct_negative": 42.9
           },
           {
             "horizon": 20,
@@ -1518,7 +1518,7 @@
             "p90_pct": 8.42,
             "worst_pct": -13.24,
             "best_pct": 23.64,
-            "pct_negative": 43.4
+            "pct_negative": 42.9
           }
         ]
       },
@@ -1529,8 +1529,8 @@
         "vol_now_pct": 19.2,
         "vol_percentile": 59.1,
         "high_vol": false,
-        "corr_now": -0.02,
-        "corr_percentile": 2.8,
+        "corr_now": -0.01,
+        "corr_percentile": 3.2,
         "decoupled": true
       },
       "liquidity": {
@@ -1559,12 +1559,12 @@
           {
             "level": 0.99,
             "var_pct": 4.94,
-            "es_pct": 7.36
+            "es_pct": 7.35
           },
           {
             "level": 0.999,
             "var_pct": 10.58,
-            "es_pct": 14.95
+            "es_pct": 14.94
           }
         ]
       },
@@ -1573,7 +1573,7 @@
         "r2_pct": 29.7,
         "idiosyncratic_pct": 70.3,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -1656,7 +1656,7 @@
             "p90_pct": 13.5,
             "worst_pct": -58.88,
             "best_pct": 36.73,
-            "pct_negative": 36.9
+            "pct_negative": 36.7
           }
         ]
       },
@@ -1667,8 +1667,8 @@
         "vol_now_pct": 30.3,
         "vol_percentile": 72.2,
         "high_vol": false,
-        "corr_now": 0.64,
-        "corr_percentile": 65.5,
+        "corr_now": 0.65,
+        "corr_percentile": 66.7,
         "decoupled": false
       },
       "liquidity": {
@@ -1711,7 +1711,7 @@
         "r2_pct": 5.8,
         "idiosyncratic_pct": 94.2,
         "status": "ok",
-        "n_obs": 8369
+        "n_obs": 8370
       },
       "patterns": {
         "status": "ok",
@@ -1784,7 +1784,7 @@
             "p90_pct": 16.9,
             "worst_pct": -44.69,
             "best_pct": 130.79,
-            "pct_negative": 36.8
+            "pct_negative": 36.6
           },
           {
             "horizon": 20,
@@ -1794,7 +1794,7 @@
             "p90_pct": 34.28,
             "worst_pct": -59.13,
             "best_pct": 157.89,
-            "pct_negative": 39.6
+            "pct_negative": 39.4
           }
         ]
       },
@@ -1806,7 +1806,7 @@
         "vol_percentile": 8.2,
         "high_vol": false,
         "corr_now": 0.5,
-        "corr_percentile": 69.2,
+        "corr_percentile": 68.7,
         "decoupled": false
       },
       "liquidity": {
@@ -1853,7 +1853,7 @@
         "r2_pct": 14.4,
         "idiosyncratic_pct": 85.6,
         "status": "ok",
-        "n_obs": 7662
+        "n_obs": 7663
       },
       "patterns": {
         "status": "ok",
@@ -1936,7 +1936,7 @@
             "p90_pct": 10.43,
             "worst_pct": -25.05,
             "best_pct": 31.25,
-            "pct_negative": 41.3
+            "pct_negative": 41.6
           }
         ]
       },
@@ -1947,8 +1947,8 @@
         "vol_now_pct": 16.3,
         "vol_percentile": 34.6,
         "high_vol": false,
-        "corr_now": 0.21,
-        "corr_percentile": 21.5,
+        "corr_now": 0.22,
+        "corr_percentile": 22.5,
         "decoupled": false
       },
       "liquidity": {
@@ -1982,7 +1982,7 @@
           {
             "level": 0.999,
             "var_pct": 7.41,
-            "es_pct": 9.53
+            "es_pct": 9.54
           }
         ]
       },
@@ -1991,7 +1991,7 @@
         "r2_pct": 15.1,
         "idiosyncratic_pct": 84.9,
         "status": "ok",
-        "n_obs": 1939
+        "n_obs": 1940
       },
       "patterns": {
         "status": "ok",
@@ -2074,7 +2074,7 @@
             "p90_pct": 9.4,
             "worst_pct": -11.69,
             "best_pct": 16.21,
-            "pct_negative": 37.5
+            "pct_negative": 36.5
           }
         ]
       },
@@ -2085,9 +2085,9 @@
         "vol_now_pct": 21.7,
         "vol_percentile": 77.2,
         "high_vol": false,
-        "corr_now": 0.05,
-        "corr_percentile": 6.0,
-        "decoupled": false
+        "corr_now": 0.02,
+        "corr_percentile": 4.1,
+        "decoupled": true
       },
       "liquidity": {
         "status": "ok",
@@ -2133,7 +2133,7 @@
         "r2_pct": 23.0,
         "idiosyncratic_pct": 77.0,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -2206,7 +2206,7 @@
             "p90_pct": 6.24,
             "worst_pct": -25.61,
             "best_pct": 24.31,
-            "pct_negative": 40.8
+            "pct_negative": 41.0
           },
           {
             "horizon": 20,
@@ -2216,7 +2216,7 @@
             "p90_pct": 12.64,
             "worst_pct": -50.87,
             "best_pct": 30.8,
-            "pct_negative": 39.8
+            "pct_negative": 39.4
           }
         ]
       },
@@ -2227,8 +2227,8 @@
         "vol_now_pct": 30.0,
         "vol_percentile": 74.1,
         "high_vol": false,
-        "corr_now": -0.36,
-        "corr_percentile": 0.5,
+        "corr_now": -0.38,
+        "corr_percentile": 0.4,
         "decoupled": true
       },
       "liquidity": {
@@ -2262,16 +2262,16 @@
           {
             "level": 0.999,
             "var_pct": 11.67,
-            "es_pct": 19.53
+            "es_pct": 19.52
           }
         ]
       },
       "market_dep": {
         "corr": 0.41,
-        "r2_pct": 17.1,
-        "idiosyncratic_pct": 82.9,
+        "r2_pct": 17.0,
+        "idiosyncratic_pct": 83.0,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -2344,7 +2344,7 @@
             "p90_pct": 6.34,
             "worst_pct": -44.87,
             "best_pct": 60.0,
-            "pct_negative": 39.6
+            "pct_negative": 38.9
           },
           {
             "horizon": 20,
@@ -2366,7 +2366,7 @@
         "vol_percentile": 35.8,
         "high_vol": false,
         "corr_now": -0.02,
-        "corr_percentile": 5.9,
+        "corr_percentile": 5.8,
         "decoupled": false
       },
       "liquidity": {
@@ -2400,7 +2400,7 @@
           {
             "level": 0.999,
             "var_pct": 12.7,
-            "es_pct": 17.28
+            "es_pct": 17.29
           }
         ]
       },
@@ -2409,7 +2409,7 @@
         "r2_pct": 19.7,
         "idiosyncratic_pct": 80.3,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -2482,7 +2482,7 @@
             "p90_pct": 7.77,
             "worst_pct": -35.9,
             "best_pct": 37.82,
-            "pct_negative": 39.6
+            "pct_negative": 39.8
           },
           {
             "horizon": 20,
@@ -2492,7 +2492,7 @@
             "p90_pct": 17.02,
             "worst_pct": -61.5,
             "best_pct": 52.26,
-            "pct_negative": 37.5
+            "pct_negative": 37.7
           }
         ]
       },
@@ -2503,8 +2503,8 @@
         "vol_now_pct": 30.3,
         "vol_percentile": 63.1,
         "high_vol": false,
-        "corr_now": -0.22,
-        "corr_percentile": 0.6,
+        "corr_now": -0.27,
+        "corr_percentile": 0.5,
         "decoupled": true
       },
       "liquidity": {
@@ -2547,7 +2547,7 @@
         "r2_pct": 3.7,
         "idiosyncratic_pct": 96.3,
         "status": "ok",
-        "n_obs": 6731
+        "n_obs": 6732
       },
       "patterns": {
         "status": "ok",
@@ -2620,7 +2620,7 @@
             "p90_pct": 15.0,
             "worst_pct": -33.33,
             "best_pct": 70.0,
-            "pct_negative": 37.6
+            "pct_negative": 37.1
           },
           {
             "horizon": 20,
@@ -2630,7 +2630,7 @@
             "p90_pct": 23.08,
             "worst_pct": -60.0,
             "best_pct": 78.0,
-            "pct_negative": 44.7
+            "pct_negative": 46.2
           }
         ]
       },
@@ -2641,8 +2641,8 @@
         "vol_now_pct": 35.8,
         "vol_percentile": 62.2,
         "high_vol": false,
-        "corr_now": -0.03,
-        "corr_percentile": 11.1,
+        "corr_now": 0.02,
+        "corr_percentile": 15.6,
         "decoupled": false
       },
       "liquidity": {
@@ -2685,7 +2685,7 @@
         "r2_pct": 14.2,
         "idiosyncratic_pct": 85.8,
         "status": "ok",
-        "n_obs": 7578
+        "n_obs": 7579
       },
       "patterns": {
         "status": "ok",
@@ -2758,7 +2758,7 @@
             "p90_pct": 7.55,
             "worst_pct": -56.87,
             "best_pct": 39.83,
-            "pct_negative": 42.0
+            "pct_negative": 42.6
           },
           {
             "horizon": 20,
@@ -2768,7 +2768,7 @@
             "p90_pct": 17.26,
             "worst_pct": -57.55,
             "best_pct": 60.67,
-            "pct_negative": 44.1
+            "pct_negative": 44.4
           }
         ]
       },
@@ -2779,8 +2779,8 @@
         "vol_now_pct": 34.9,
         "vol_percentile": 69.0,
         "high_vol": false,
-        "corr_now": 0.04,
-        "corr_percentile": 8.0,
+        "corr_now": 0.06,
+        "corr_percentile": 9.0,
         "decoupled": false
       },
       "liquidity": {
@@ -2823,7 +2823,7 @@
         "r2_pct": 3.1,
         "idiosyncratic_pct": 96.9,
         "status": "ok",
-        "n_obs": 6517
+        "n_obs": 6518
       },
       "patterns": {
         "status": "ok",
@@ -2896,7 +2896,7 @@
             "p90_pct": 11.25,
             "worst_pct": -25.0,
             "best_pct": 42.86,
-            "pct_negative": 37.9
+            "pct_negative": 38.5
           },
           {
             "horizon": 20,
@@ -2906,7 +2906,7 @@
             "p90_pct": 21.24,
             "worst_pct": -33.59,
             "best_pct": 100.0,
-            "pct_negative": 39.6
+            "pct_negative": 38.7
           }
         ]
       },
@@ -2917,8 +2917,8 @@
         "vol_now_pct": 46.5,
         "vol_percentile": 58.3,
         "high_vol": false,
-        "corr_now": -0.02,
-        "corr_percentile": 11.5,
+        "corr_now": -0.01,
+        "corr_percentile": 13.3,
         "decoupled": false
       },
       "liquidity": {
@@ -2935,7 +2935,7 @@
       "end": "2026-07-28",
       "ann_vol_pct": 39.7,
       "max_drawdown_pct": -71.1,
-      "beta_axjo": 1.05,
+      "beta_axjo": 1.06,
       "name": "Xero(财务软件)",
       "evt": {
         "status": "ok",
@@ -2958,10 +2958,10 @@
       },
       "market_dep": {
         "corr": 0.39,
-        "r2_pct": 14.8,
-        "idiosyncratic_pct": 85.2,
+        "r2_pct": 14.9,
+        "idiosyncratic_pct": 85.1,
         "status": "ok",
-        "n_obs": 3464
+        "n_obs": 3465
       },
       "patterns": {
         "status": "ok",
@@ -3055,8 +3055,8 @@
         "vol_now_pct": 55.1,
         "vol_percentile": 90.7,
         "high_vol": false,
-        "corr_now": 0.13,
-        "corr_percentile": 13.6,
+        "corr_now": 0.18,
+        "corr_percentile": 18.2,
         "decoupled": false
       },
       "liquidity": {
@@ -3099,7 +3099,7 @@
         "r2_pct": 11.8,
         "idiosyncratic_pct": 88.2,
         "status": "ok",
-        "n_obs": 2602
+        "n_obs": 2603
       },
       "patterns": {
         "status": "ok",
@@ -3193,8 +3193,8 @@
         "vol_now_pct": 77.2,
         "vol_percentile": 91.2,
         "high_vol": false,
-        "corr_now": 0.2,
-        "corr_percentile": 16.6,
+        "corr_now": 0.23,
+        "corr_percentile": 22.1,
         "decoupled": false
       },
       "liquidity": {
@@ -3215,7 +3215,7 @@
       "name": "James Hardie(建材)",
       "evt": {
         "status": "ok",
-        "xi": 0.347,
+        "xi": 0.348,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.624,
         "n_exceed": 487,
@@ -3237,7 +3237,7 @@
         "r2_pct": 16.8,
         "idiosyncratic_pct": 83.2,
         "status": "ok",
-        "n_obs": 8369
+        "n_obs": 8370
       },
       "patterns": {
         "status": "ok",
@@ -3310,7 +3310,7 @@
             "p90_pct": 7.88,
             "worst_pct": -33.2,
             "best_pct": 18.14,
-            "pct_negative": 44.6
+            "pct_negative": 44.4
           },
           {
             "horizon": 20,
@@ -3320,7 +3320,7 @@
             "p90_pct": 13.75,
             "worst_pct": -31.34,
             "best_pct": 38.51,
-            "pct_negative": 40.1
+            "pct_negative": 40.3
           }
         ]
       },
@@ -3331,8 +3331,8 @@
         "vol_now_pct": 40.5,
         "vol_percentile": 85.5,
         "high_vol": false,
-        "corr_now": 0.56,
-        "corr_percentile": 75.4,
+        "corr_now": 0.57,
+        "corr_percentile": 77.7,
         "decoupled": false
       },
       "liquidity": {
@@ -3353,7 +3353,7 @@
       "name": "Sonic(医学检验)",
       "evt": {
         "status": "ok",
-        "xi": 0.623,
+        "xi": 0.622,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.656,
         "n_exceed": 494,
@@ -3366,7 +3366,7 @@
           {
             "level": 0.999,
             "var_pct": 15.45,
-            "es_pct": 39.66
+            "es_pct": 39.64
           }
         ]
       },
@@ -3375,7 +3375,7 @@
         "r2_pct": 4.9,
         "idiosyncratic_pct": 95.1,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -3448,7 +3448,7 @@
             "p90_pct": 4.71,
             "worst_pct": -16.03,
             "best_pct": 15.85,
-            "pct_negative": 37.0
+            "pct_negative": 36.8
           },
           {
             "horizon": 20,
@@ -3458,7 +3458,7 @@
             "p90_pct": 9.55,
             "worst_pct": -28.17,
             "best_pct": 37.5,
-            "pct_negative": 41.9
+            "pct_negative": 42.1
           }
         ]
       },
@@ -3469,8 +3469,8 @@
         "vol_now_pct": 24.6,
         "vol_percentile": 50.5,
         "high_vol": false,
-        "corr_now": 0.05,
-        "corr_percentile": 12.0,
+        "corr_now": 0.03,
+        "corr_percentile": 10.2,
         "decoupled": false
       },
       "liquidity": {
@@ -3513,7 +3513,7 @@
         "r2_pct": 11.9,
         "idiosyncratic_pct": 88.1,
         "status": "ok",
-        "n_obs": 7725
+        "n_obs": 7726
       },
       "patterns": {
         "status": "ok",
@@ -3524,7 +3524,7 @@
             "min_group_n_half": 748,
             "split_half_p": [
               0.1758,
-              0.5125
+              0.5135
             ],
             "split_half_stable": false,
             "recent_p": 0.6194,
@@ -3586,7 +3586,7 @@
             "p90_pct": 6.93,
             "worst_pct": -20.43,
             "best_pct": 24.26,
-            "pct_negative": 47.4
+            "pct_negative": 47.2
           },
           {
             "horizon": 20,
@@ -3596,7 +3596,7 @@
             "p90_pct": 12.18,
             "worst_pct": -37.4,
             "best_pct": 27.52,
-            "pct_negative": 35.8
+            "pct_negative": 35.6
           }
         ]
       },
@@ -3608,7 +3608,7 @@
         "vol_percentile": 83.1,
         "high_vol": false,
         "corr_now": 0.19,
-        "corr_percentile": 23.3,
+        "corr_percentile": 22.4,
         "decoupled": false
       },
       "liquidity": {
@@ -3642,7 +3642,7 @@
           {
             "level": 0.999,
             "var_pct": 9.13,
-            "es_pct": 13.43
+            "es_pct": 13.44
           }
         ]
       },
@@ -3651,7 +3651,7 @@
         "r2_pct": 13.1,
         "idiosyncratic_pct": 86.9,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -3734,7 +3734,7 @@
             "p90_pct": 9.98,
             "worst_pct": -24.13,
             "best_pct": 35.0,
-            "pct_negative": 32.5
+            "pct_negative": 32.7
           }
         ]
       },
@@ -3745,8 +3745,8 @@
         "vol_now_pct": 28.5,
         "vol_percentile": 82.7,
         "high_vol": false,
-        "corr_now": 0.54,
-        "corr_percentile": 80.1,
+        "corr_now": 0.56,
+        "corr_percentile": 84.2,
         "decoupled": false
       },
       "liquidity": {
@@ -3780,7 +3780,7 @@
           {
             "level": 0.999,
             "var_pct": 10.22,
-            "es_pct": 14.43
+            "es_pct": 14.42
           }
         ]
       },
@@ -3789,7 +3789,7 @@
         "r2_pct": 24.3,
         "idiosyncratic_pct": 75.7,
         "status": "ok",
-        "n_obs": 8510
+        "n_obs": 8511
       },
       "patterns": {
         "status": "ok",
@@ -3862,7 +3862,7 @@
             "p90_pct": 6.59,
             "worst_pct": -22.35,
             "best_pct": 25.27,
-            "pct_negative": 38.4
+            "pct_negative": 38.8
           },
           {
             "horizon": 20,
@@ -3883,8 +3883,8 @@
         "vol_now_pct": 19.2,
         "vol_percentile": 41.7,
         "high_vol": false,
-        "corr_now": 0.1,
-        "corr_percentile": 16.3,
+        "corr_now": 0.09,
+        "corr_percentile": 16.1,
         "decoupled": false
       },
       "liquidity": {
