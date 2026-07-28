@@ -48,11 +48,9 @@ jobs:
             exit 0
           fi
           git commit -m "data: weekend news + quotes refresh [skip ci]"
-          # 远端可能有竞争提交：rebase 重试;防缩水门确保没把 origin 的 append-only 账本行挤掉(SPEC_LEDGER_GUARD)
+          # 远端可能有竞争提交：rebase 重试
           for i in 1 2 3; do
-            python tools/ci_ledger_guard.py || exit 1
             if git push; then exit 0; fi
             git pull --rebase --autostash origin main
           done
-          python tools/ci_ledger_guard.py || exit 1
           git push

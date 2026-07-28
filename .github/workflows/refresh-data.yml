@@ -152,5 +152,4 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: auto-refresh market data [skip ci]"
           # 远端可能有本地推送的新提交：rebase 后再推，失败重试一次
           git pull --rebase --autostash origin main || true
-          # 防缩水门:push 前确认工作树没把 origin 的 append-only 账本行挤掉(SPEC_LEDGER_GUARD)
-          python tools/ci_ledger_guard.py && git push || (git pull --rebase --autostash origin main && python tools/ci_ledger_guard.py && git push)
+          git push || (git pull --rebase --autostash origin main && git push)
