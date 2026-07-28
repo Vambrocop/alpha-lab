@@ -1,71 +1,88 @@
-# SPEC_EBM — 玻璃箱可解释模型(Explainable Boosting Machine)作为前向胜率的第三竞争者
+# SPEC_EBM — 玻璃箱可解释模型(EBM)前向胜率对决(R2·过 ② 独立审)
 
-> Fable 主脑亲写(2026-07-28)。用户拍板"先做 EBM,再考虑其他"。定位:**不是又一个吹票黑箱**,
-> 而是把现有 `walk_forward` 的 20 日前向胜率对决**加一个玻璃箱竞争者**——诚实赢了简单基线才晋升,
-> 输了登负结果(Kronos 先例)。护城河是诚实计分,不是模型花哨。
-> 六步:①规格(本文) → ②全新 Opus 独立审规格 → ③建 → ④双审实现(公开统计结论=双审) → ⑤修 → ⑥亲验+提交。
-> **门:CI 修复(re-assert 全账本)验证变绿前不开工 ③。**
+> Fable 主脑写(2026-07-28)。**R2:全新 Opus 独立审(②)判 GO-WITH-CHANGES,挑出 6 BLOCKER+7 SHOULD;
+> B2 基线口径=判断点,用户 2026-07-28 拍板「同信息 LR 当门」。本版逐条落地。**
+> 定位:不是又一个吹票黑箱,是把 20 日前向胜率**加一个玻璃箱竞争者**,诚实赢**同信息基线**才晋升、
+> 输了登负结果(Kronos 先例)。护城河=诚实计分,不是模型花哨。
+> 六步:①规格 → ②独立审(done·R2)→ **②b 重审 R2(审 B2 基线设计+B3 验证机制)** → ③建 → ④双审 → ⑤修 → ⑥亲验。
+> **门:③ 不早于(a) CI(re-assert 全账本)验证变绿 且(b) R2 通过 ②b 重审。**
 
-## 0. 诚实红线(本功能的命门)
-- **对着基线比,不孤立报**:EBM 的 OOS 指标必须**同时**对 ① 基率(base rate)② 现有 Logistic 基线
-  (`walk_forward` 的 `fwd_up_20d` LR)报;"看着不错"不算数,**赢基线**才算数。
-- **DoF 控制**:特征集 + horizon **事前冻结**(用现成 `BINARY_FEATURES`/连续版,不新造、不事后挑);
-  EBM 交叉项**首版关**(`interactions=0`,纯可加)——先证纯可加形状够不够,别一上来放交叉项过拟合。
-- **多重灵活性要 deflate**:EBM 比 LR 灵活 → 天然更会过拟合。**CPCV + PBO**(复用 `cpcv.py`)评"这点
-  OOS 优势会不会是灵活性偷来的";优势不过 PBO 就当没有。
-- **无前瞻**:PIT 特征、walk-forward only、CPCV 的 purge+embargo 罩住 20 日前向窗(复用现成)。
-- **输了就认**:EBM 不过基线 → 明写"无 edge·不晋升",进 `OPTIMIZATION_LOG §4c` 负结果登记
-  (像 Kronos n=270 定论);**绝不**因为建了就硬塞上站。
-- 晋升后仍标:描述性、会错、过去≠未来;若进公开计分走 append-only 账本。
+## 0. 诚实红线(命门)
+- **对着同信息基线比**(B2·用户拍板):晋升门=EBM vs **喂完全相同连续特征矩阵的 Logistic 回归**——
+  只有模型形态不同,EBM 赢了才能归因于"玻璃箱形态值这个钱"。现有上线的二值+日历 LR **只作参照并列显示**
+  (答"整套新做法比现在线上强不强"),**不作晋升门**(它信息集不同,赢了归因不清)。
+- **赢的定义写死**(B6):主指标=**汇总 OOS 的 AUC**;门槛=**ΔAUC(EBM−同信息LR)的块自助置信区间不含 0**
+  且 **Brier 不更差**。准确率因基率≈57%(恒涨即57%)会误导 → 仅作次要 sanity,不作门。
+- **DoF 冻结**:特征集/horizon/变换/回看/分位窗**事前写死本 spec**(§1),③建时一个都不许加/调;
+  EBM 交叉项首版关(`interactions=0`·纯可加)。调参/加特征须新立项 + 充分横期。
+- **无前瞻/PIT**(S2):按各序列真实频率与发布滞后取值(§1.2);分位用**滚动**窗;样本限在全部特征都有的
+  公共区间(不让"缺值"编码成体制)。
+- **输了就认**:不过门 → 明写"无 edge·不晋升",进 `OPTIMIZATION_LOG §4c`;**绝不**硬塞上站。
+- 晋升后仍标描述性、会错、过去≠未来;进公开计分走 append-only 账本、**只记晋升日起真前向**(S6·不回填)。
 
-## 1. 目标与特征(复用 walk_forward,零新造)
-- **目标**:`fwd_up_20d`(NASDAQ_COMP 20 交易日前向涨跌·`walk_forward.py:150` 已算)。与现有对决同靶,可直接比。
-- **特征**:复用 `walk_forward.build_feature_df()`。**EBM 喂连续版因子**(动量%/63日实现波动/VIX 分位/
-  10Y-2Y 斜率/Baa-10Y 信用利差/共动-分散),因为 EBM 的价值=**连续输入的形状函数**;二值特征上 EBM 退化成
-  加权和(丢了形状优势)。**LR 基线用同样的信息集**(现成连续或其二值化),保证比得公平。
-- **小集先验**:5–8 个经济动机明确的因子,**不做 kitchen-sink**;特征清单写死进 spec,③建时不许加。
+## 1. 特征与目标(自建·不碰 build_feature_df)
+> **B1 修正**:`walk_forward.build_feature_df()` 只出**二值**特征,本 spec 要的连续因子它不产。原始序列
+> **确在 `data/raw/combined_prices.csv`**(`T10Y2Y`/`CREDIT_SPREAD`(Baa-10Y)/`VIX`/`YIELD_*`)+ `NASDAQ_COMP_long.csv`。
+> 故 **ebm_duel.py 自建连续特征矩阵**,不改 build_feature_df(顺带修 B5/S5:不污染 cpcv/factor_pruning 消费者)。
+- **目标**:`fwd_up_20d` = NASDAQ_COMP 未来 20 交易日涨跌(与现有对决同靶·同 HORIZON=20,可并列参照)。
+- **冻结特征集(5 个·经济动机明确·`interactions=0`)**——每个写死变换/回看/PIT:
+  1. **6-1 跳月动量**:`px[t-21]/px[t-147]-1`(NASDAQ·跳最近月·同 pick v2 口径)。连续 %。
+  2. **63日实现波动**:近 63 交易日日收益 std × √252(N1:选 63d≈季度中期波动·非现码 20d;此为**冻结选择**,不调)。
+  3. **VIX 滚动分位**:VIX 现值在**滚动 756 交易日(3年)**窗内的百分位 [0,1]。**滚动非全样本**(防前瞻)。
+  4. **收益率曲线 10Y-2Y**:`T10Y2Y`(FRED 日频),取 as-of **滞后 1 交易日**。连续(%)。
+  5. **信用利差 Baa-10Y**:`CREDIT_SPREAD`。**③建先验其真实频率**:日频→滞后1日;月频→滞后至该月值真发布日
+    (遇频率/发布日不明→**停下报告**,不硬取)。连续(%)。
+- **dispersion 明确剔除**(B1):定义最含糊、DoF 最高、PIT 面另在 market_structure.py → **不进冻结集**
+  (留 v2 需单独定义再议)。
+- **样本区间**:限在 5 特征 + 目标**全部可用**的公共窗(VIX 1990+ 约束起点);**不用 VIX3M**(2009+ 会切样本、
+  且缺值易编码成体制)。缺值行整行剔除,不喂 NaN-bin(S2)。
 
-## 2. 模型(interpret 的 EBM)
-- `interpret.glassbox.ExplainableBoostingClassifier`,首版:`interactions=0`(纯可加·GAM 形态)、
-  默认 outer/inner bags、随机种子固定(可复现)。**单调约束可选**(如动量对胜率设单调↑)——但**只有先验
-  强到敢锁方向才加**,否则留数据说话(诚实优先于好看)。
-- **依赖隔离**:`interpret` 偏重(numba/llvmlite 类) → **不进 `requirements-core.txt`**;单列
-  `requirements-ebm.txt` 或让脚本缺库时 `pip install` 兜底 + 静默跳过(不阻断主流水线)。**绝不进每日关键
-  CI 路径**(本周 CI 才出过事)——EBM 步骤门控同 `--full`/独立步,fail-soft。中国访客无碍(服务端算→出 JSON,
-  非前端 CDN)。
+## 2. 模型与依赖隔离
+- `interpret.glassbox.ExplainableBoostingClassifier(interactions=0, random_state=42, n_jobs=1)`(S1:
+  `n_jobs=1` 求可复现·bagging 并行历史上非位级确定);**钉住 `interpret` 版本**进 `requirements-ebm.txt`
+  (形状函数跨版本会变)。单调约束首版**不加**(先验不够强就让数据说话)。
+- **依赖隔离(B4·硬红线)**:**绝不运行时 `pip install`**(那正是本周搞挂 CI 的那类脆步)。`interpret` 只在
+  **显式 opt-in 环境**预装;脚本 `ImportError` → **fail-soft 跳过**(打印+不写产物+exit 0),绝不装、绝不阻断。
+- 中国访客无碍(服务端算→出 JSON,非前端 CDN)。
 
-## 3. 验证(复用 walk_forward + cpcv,加 EBM 为第三方)
-- **接进现有对决**:`walk_forward` 现在 duel「朴素贝叶斯 vs 逻辑回归」→ **加第三方 EBM**,同一 walk-forward
-  滚动、同 `fwd_up_20d`、同测试期切分,产出每期 OOS 指标。
-- **报的指标**:OOS 准确率、**AUC**、**Brier**(校准很关键·别只看准确率)、hit vs 基率、对 LR 的 Δ。
-- **CPCV/PBO**(`cpcv.py`):EBM vs LR 的组合净化交叉验证 + PBO(过拟合概率);EBM 的中位 OOS 优势须**正且
-  PBO 低**才算真。
-- 若做校准图:复用现成校准/可靠性机件,标"20 日窗自相关·块口径"。
+## 3. 验证:独立 ebm_duel.py(B5·不进关键路径)
+- **独立脚本 `ebm_duel.py`**,不编辑 `walk_forward.run()`(B5:walk_forward 是默认步、喂 signals.json 关键链;
+  EBM 的重算/`interpret` 依赖绝不坐上去)。自读特征矩阵,walk-forward 滚动(与现有同期切分口径),训练**两个模型**:
+  ① EBM ② **同信息 LR**(喂完全相同连续矩阵·标准化;唯一差异=模型形态)。
+- **无前瞻**(S4):walk-forward 训练期严格早于测试期;20 日重叠前向 → purge 掉边界 20 行 **+ embargo 缓冲
+  (≥5 交易日,防特征自相关)**;为模型 CSCV 重新推导 purge+embargo,不照搬 cpcv 的按因子 purge。
+- **门用块自助 ΔAUC/ΔBrier**(B3 修正):`cpcv.py` 只算单因子边际、从不训模型,且 2 候选 PBO 退化 → **不用它**。
+  改:汇总所有 OOS 折,`block_bootstrap_diff`(walk_forward.py 现成机件·block=horizon 防重叠)算
+  **ΔAUC(EBM−同信息LR)的置信区间**;不含 0 且 Brier 不更差 = 赢。(严格模型级 CSCV/PBO 留作后续单独工程,不首版。)
+- **并列参照**(非门):同表列出现有上线二值+日历 LR 的 OOS 数(答"新做法比线上强不强"),明标"信息集不同·仅参照"。
 
-## 4. 晋升门(赢才上,输就登)
-- **赢**(EBM OOS 稳超 LR + 基率、过 CPCV/PBO):→ 晋升,出**形状函数展示**(§5)+ 可选进公开预测计分账本。
-  同时**收编隔离的 XGBoost「下个月涨跌」**:EBM 是它的可验证玻璃箱替代,晋升即取代那块 6-09 死面板。
-- **输**(不超基线/不过 PBO):→ **不晋升**,`OPTIMIZATION_LOG §4c` 登"EBM 无 edge·测量结论",dashboard
-  的陈旧 SHAP/multivariate 面板一并退役(下架死数据),诚实收尾。**输是一种结果,照样登。**
+## 4. 晋升门(赢才上·输就登)
+- **赢**(§0 定义:ΔAUC CI 不含 0 + Brier 不更差,跨 OOS 稳):→ 晋升,出形状函数展示(§5)+ 可选进公开预测计分。
+  同时收编隔离的 XGBoost「下月涨跌」为其可验证玻璃箱替代(N2:此收编与 SHAP/multivariate 死面板退役是
+  **独立 housekeeping**,不进"效度关键"构建,免得给边界晋升施压)。
+- **险胜/边界**(ΔAUC CI 贴 0、跨折不稳)→ **停机点**:报"晋升与否=判断点",交用户拍板,**绝不自我说服上站**。
+- **输** → 不晋升,`OPTIMIZATION_LOG §4c` 登"EBM 无 edge·测量结论",陈旧 SHAP/multivariate 死面板一并退役。
+- **MODEL_VERSION**(N3):EBM 竞争者若晋升到会上站的产物,bump `MODEL_VERSION` 并在 commit 记新旧指标对比。
 
 ## 5. 输出与展示(晋升后)
-- `ebm_forward.json`(web+docs):`generated`、`target/horizon`、`oos`(EBM vs LR vs 基率:acc/auc/brier)、
-  `cpcv`(PBO/中位Δ)、`shapes`(每因子的 x→贡献 折线点·**看得见的因子形状**)、`latest`(当前各因子取值 +
-  当前预测概率)、`honesty`(§0 声明全文·机器守门防删)。
-- 新页 `ebm.html`(或并入现有体制/预测页):顶部诚实横幅 + "赢没赢基线"记分卡置顶(不藏丑)+ 每因子形状图
-  (muted·不红绿煽情)+ 当前读数。zh/en、vp.css、无 CDN、as-of 具体日期、活读 json。
-- **晋升进公开计分**才写 append-only 预测账本(新账本入 `ledger_sidecar.SPECS` + 漂移/护栏);未晋升不写账本。
+- `ebm_forward.json`(web+docs):`generated`、`target/horizon`、`oos`(EBM vs 同信息LR vs 基率:AUC/Brier/acc)、
+  `bootstrap`(ΔAUC CI)、`context`(现有上线 LR 的 OOS·标信息集不同)、`shapes`(每因子 x→贡献折线·**看得见的形状**)、
+  `latest`(当前各因子值+当前概率)、`honesty`(§0 全文·机器守门防删)。
+- 新页/并入体制页:诚实横幅 + "赢没赢同信息基线"记分卡置顶(不藏丑)+ 5 条形状图(muted·不红绿煽情)+ 当前读数;
+  zh/en·vp.css·无 CDN·as-of 具体日期·活读 json。
+- **append-only 预测账本仅晋升后写,且只记晋升日起真前向**(S6·2000-2024 回测绝不回填进计分);新账本入
+  `ledger_sidecar.SPECS` + 护栏。
 
-## 6. 测试(≥8)
-1. 特征/目标复用 walk_forward(同 `fwd_up_20d`·同 build_feature_df,非另造);
-2. 无前瞻:训练期不含测试期前向窗(purge/embargo 生效·合成序列验);
-3. EBM 接进 duel 后 LR/NB 旧结果**逐字节不变**(回归靶子:加竞争者不改既有);
-4. `interactions=0` 纯可加(spec 锁);5. CPCV/PBO 对 EBM 跑通、PBO∈[0,1];
-6. 缺 `interpret` 库 → 该步 fail-soft 跳过、主流水线不红(依赖隔离验);
-7. honesty 声明进 json(机器守门);8. 晋升门逻辑:合成"EBM 不过基线" → 判定 not-promote(不写账本)。
+## 6. 测试(≥10·脱网/合成)
+1. 特征自建正确:5 因子各按 §1 变换/回看手算对齐(合成序列);2. **无前瞻**:训练期不含测试期前向窗
+  (purge+embargo 生效);3. PIT:月频序列(若 Baa 月频)按滞后取值、不取未来发布值;4. `interactions=0` 纯可加;
+5. 门逻辑:合成"EBM 不过基线"→ 判 not-promote(不写账本);合成"稳赢"→ promote;6. **同信息公平性**:EBM 与 LR
+  喂的矩阵逐列相同(守 B2·防又喂偏);7. 块自助 ΔAUC CI 计算正确(合成两组已知差);8. 缺 `interpret`→fail-soft
+  跳过、exit 0、不写产物、主流水线不红(B4);9. `build_feature_df`/cpcv/factor_pruning 输出**逐字节不变**
+  (证 ebm_duel 未污染·S5);10. honesty 声明进 json(机器守门);11.(S1)固定种子/版本→两次拟合位级一致。
 
-## 停机点(遇到停下报告,不自行决定)
-- EBM OOS **险胜/边界**(Δ 小、PBO 中等)→ **停**,报"晋升与否是判断点",交用户拍板(别自我说服上站);
-- 想放开 `interactions`/加特征/调参提升 OOS → **停**(DoF 棘轮;首版冻结,调参须新立项 + 充分横期);
-- 想给未验证模型加 SHAP/形状当"发现" → 停(先验证模型本身,别给噪声描眉);
-- 想把 EBM 预测写进 append-only 计分账本 → 仅**晋升门通过后**,且新账本走 sidecar + 护栏,经用户确认。
+## 7. 停机点(遇到停下报告)
+- ΔAUC 险胜/边界 → 停,晋升与否交用户;- 想放开 interactions/加特征/调参提升 OOS → 停(DoF 棘轮·须新立项);
+- Baa/任一序列频率或发布滞后不明 → 停(不硬取,防 PIT 泄漏);- 想给未验证模型加形状当"发现" → 停;
+- 想把 EBM 预测写进 append-only 计分账本 → 仅晋升门过后 + 新账本走 sidecar/护栏 + 用户确认;
+- 想回填历史进计分账本 → 停(只记晋升日起真前向)。
