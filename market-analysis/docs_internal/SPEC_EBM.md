@@ -1,11 +1,12 @@
 # SPEC_EBM — 玻璃箱可解释模型(EBM)前向胜率对决(R2·过 ② 独立审)
 
-> Fable 主脑写(2026-07-28)。**R2:全新 Opus 独立审(②)判 GO-WITH-CHANGES,挑出 6 BLOCKER+7 SHOULD;
-> B2 基线口径=判断点,用户 2026-07-28 拍板「同信息 LR 当门」。本版逐条落地。**
+> Fable 主脑写(2026-07-28)。**R3:②独立审判 GO-WITH-CHANGES(6 BLOCKER+7 SHOULD);B2 基线口径用户拍板
+> 「同信息 LR 当门」;②b 重审 R2 → B1/B2/B4/B5/B6 PASS,余一处 B3 措辞 blocker(block_bootstrap_diff 算不出
+> ΔAUC→须新写成对块自助)+3 一行 SHOULD,本 R3 全落。**
 > 定位:不是又一个吹票黑箱,是把 20 日前向胜率**加一个玻璃箱竞争者**,诚实赢**同信息基线**才晋升、
 > 输了登负结果(Kronos 先例)。护城河=诚实计分,不是模型花哨。
-> 六步:①规格 → ②独立审(done·R2)→ **②b 重审 R2(审 B2 基线设计+B3 验证机制)** → ③建 → ④双审 → ⑤修 → ⑥亲验。
-> **门:③ 不早于(a) CI(re-assert 全账本)验证变绿 且(b) R2 通过 ②b 重审。**
+> 六步:①规格 → ②独立审(done)→ ②b 重审(done·GO)→ ⑤修规格→R3(done)→ ③建 → ④双审 → ⑥亲验。
+> **门:③ 不早于 CI(re-assert 全账本)验证变绿。规格侧已 GO。**
 
 ## 0. 诚实红线(命门)
 - **对着同信息基线比**(B2·用户拍板):晋升门=EBM vs **喂完全相同连续特征矩阵的 Logistic 回归**——
@@ -48,12 +49,17 @@
 ## 3. 验证:独立 ebm_duel.py(B5·不进关键路径)
 - **独立脚本 `ebm_duel.py`**,不编辑 `walk_forward.run()`(B5:walk_forward 是默认步、喂 signals.json 关键链;
   EBM 的重算/`interpret` 依赖绝不坐上去)。自读特征矩阵,walk-forward 滚动(与现有同期切分口径),训练**两个模型**:
-  ① EBM ② **同信息 LR**(喂完全相同连续矩阵·标准化;唯一差异=模型形态)。
+  ① EBM ② **同信息 LR**(`LogisticRegression(C=1.0, L2)`·喂完全相同连续矩阵;唯一差异=模型形态)。
+  **标准化器仅在训练折 fit、套用到测试折**(全样本 fit=前瞻·②b新增);EBM 对单调变换不变 → 标准化不给 LR 额外信息。
 - **无前瞻**(S4):walk-forward 训练期严格早于测试期;20 日重叠前向 → purge 掉边界 20 行 **+ embargo 缓冲
   (≥5 交易日,防特征自相关)**;为模型 CSCV 重新推导 purge+embargo,不照搬 cpcv 的按因子 purge。
-- **门用块自助 ΔAUC/ΔBrier**(B3 修正):`cpcv.py` 只算单因子边际、从不训模型,且 2 候选 PBO 退化 → **不用它**。
-  改:汇总所有 OOS 折,`block_bootstrap_diff`(walk_forward.py 现成机件·block=horizon 防重叠)算
-  **ΔAUC(EBM−同信息LR)的置信区间**;不含 0 且 Brier 不更差 = 赢。(严格模型级 CSCV/PBO 留作后续单独工程,不首版。)
+- **门用块自助 ΔAUC/ΔBrier**(B3 修正·②b 再修):`cpcv.py` 只算单因子边际、从不训模型,且 2 候选 PBO 退化 → **不用它**。
+  ⚠ **也不能用 `block_bootstrap_diff`**——②b 查实它只算"子集胜率差"(`ys[sel].mean()-ys.mean()`·收布尔掩码+结局),
+  **无法喂两条概率向量、算不出 ΔAUC/ΔBrier**(照抄=把晋升门实现成错统计,正是原 B3 那类"声称复用≠实际")。
+  改:③**新写一个成对块自助**——每次循环块(block=horizon=20)重采样上,对**两个模型**各算 `roc_auc_score` +
+  `brier_score_loss`,收集 Δ 分布(每次重采样守"两类都在"·仿现有 `n_dropped` 逻辑);**ΔAUC(EBM−同信息LR)CI 不含 0
+  且 Brier 不更差 = 赢**。稳健性:CI 在 **block∈{20,40}** 各报一次(动量126d/波动63d 记忆更长·防 CI 偏窄·②b新增)。
+  test #7 对这个**新函数**验,不对 block_bootstrap_diff。(严格模型级 CSCV/PBO 留后续单独工程,不首版。)
 - **并列参照**(非门):同表列出现有上线二值+日历 LR 的 OOS 数(答"新做法比线上强不强"),明标"信息集不同·仅参照"。
 
 ## 4. 晋升门(赢才上·输就登)
@@ -77,7 +83,9 @@
 1. 特征自建正确:5 因子各按 §1 变换/回看手算对齐(合成序列);2. **无前瞻**:训练期不含测试期前向窗
   (purge+embargo 生效);3. PIT:月频序列(若 Baa 月频)按滞后取值、不取未来发布值;4. `interactions=0` 纯可加;
 5. 门逻辑:合成"EBM 不过基线"→ 判 not-promote(不写账本);合成"稳赢"→ promote;6. **同信息公平性**:EBM 与 LR
-  喂的矩阵逐列相同(守 B2·防又喂偏);7. 块自助 ΔAUC CI 计算正确(合成两组已知差);8. 缺 `interpret`→fail-soft
+  的**源特征/行逐列相同**(标准化是唯一的每列单调变换·EBM 对其不变→不给 LR 额外信息;守 B2·②b 澄清:不是断言
+  标准化后数组逐字节相同);7. **新写的成对块自助** ΔAUC/ΔBrier CI 计算正确(合成两组已知差·非 block_bootstrap_diff);
+8. 缺 `interpret`→fail-soft
   跳过、exit 0、不写产物、主流水线不红(B4);9. `build_feature_df`/cpcv/factor_pruning 输出**逐字节不变**
   (证 ebm_duel 未污染·S5);10. honesty 声明进 json(机器守门);11.(S1)固定种子/版本→两次拟合位级一致。
 
