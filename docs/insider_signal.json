@@ -1,17 +1,17 @@
 {
-  "generated": "2026-07-23T22:37:00Z",
+  "generated": "2026-07-28T15:19:12Z",
   "source": "SEC EDGAR Form 4 (开市买入 P) → 前向公开计分",
   "hold_days": 30,
   "filing_lag_days": 3,
   "min_value": 50000.0,
   "benchmark": "SPY",
   "track_record": {
-    "n_settled": 2,
-    "n_hit": 0,
-    "beat_spy_pct": 0.0,
-    "mean_excess_pct": -45.734,
-    "median_excess_pct": -45.734,
-    "n_pending": 31,
+    "n_settled": 24,
+    "n_hit": 11,
+    "beat_spy_pct": 45.8,
+    "mean_excess_pct": -3.28,
+    "median_excess_pct": -1.255,
+    "n_pending": 5,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
@@ -77,10 +77,10 @@
       "title": "isTenPercentOwner",
       "txn_date": "2026-06-23",
       "value": 20000000.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 11.288,
+      "hit": true
     },
     {
       "ticker": "TAKAX",
@@ -88,9 +88,9 @@
       "title": "",
       "txn_date": "2026-06-23",
       "value": 5000000.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -1.613,
       "hit": false
     },
     {
@@ -99,10 +99,10 @@
       "title": "isTenPercentOwner",
       "txn_date": "2026-06-23",
       "value": 300293.28,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 9.036,
+      "hit": true
     },
     {
       "ticker": "FTH",
@@ -110,10 +110,10 @@
       "title": "Chief Financial Officer",
       "txn_date": "2026-06-23",
       "value": 164884.32,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 20.018,
+      "hit": true
     },
     {
       "ticker": "F",
@@ -121,10 +121,10 @@
       "title": "isDirector",
       "txn_date": "2026-06-23",
       "value": 148880.18,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 0.335,
+      "hit": true
     },
     {
       "ticker": "TOI",
@@ -132,9 +132,9 @@
       "title": "isTenPercentOwner",
       "txn_date": "2026-06-23",
       "value": 90360.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -8.97,
       "hit": false
     },
     {
@@ -143,9 +143,9 @@
       "title": "CHIEF EXECUTIVE OFFICER",
       "txn_date": "2026-06-23",
       "value": 2274500.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -9.589,
       "hit": false
     },
     {
@@ -154,9 +154,9 @@
       "title": "CHIEF EXECUTIVE OFFICER",
       "txn_date": "2026-06-23",
       "value": 153567.72,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -9.589,
       "hit": false
     },
     {
@@ -165,10 +165,10 @@
       "title": "isDirector",
       "txn_date": "2026-06-23",
       "value": 100450.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 3.195,
+      "hit": true
     },
     {
       "ticker": "NMM",
@@ -176,10 +176,10 @@
       "title": "See Remarks",
       "txn_date": "2026-06-23",
       "value": 84240.18,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 10.018,
+      "hit": true
     },
     {
       "ticker": "LNKS",
@@ -187,9 +187,9 @@
       "title": "isTenPercentOwner",
       "txn_date": "2026-06-23",
       "value": 76054.68,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -29.555,
       "hit": false
     },
     {
@@ -198,9 +198,9 @@
       "title": "isDirector/isTenPercentOwner",
       "txn_date": "2026-06-22",
       "value": 20000000.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -4.661,
       "hit": false
     },
     {
@@ -209,9 +209,9 @@
       "title": "isDirector/isTenPercentOwner",
       "txn_date": "2026-06-22",
       "value": 20000000.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -4.661,
       "hit": false
     },
     {
@@ -220,9 +220,9 @@
       "title": "CHIEF EXECUTIVE OFFICER",
       "txn_date": "2026-06-22",
       "value": 2246300.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -5.776,
       "hit": false
     },
     {
@@ -231,9 +231,9 @@
       "title": "Executive Chairman",
       "txn_date": "2026-06-22",
       "value": 1337147.04,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -10.693,
       "hit": false
     },
     {
@@ -242,10 +242,10 @@
       "title": "President and CEO",
       "txn_date": "2026-06-22",
       "value": 498247.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 9.748,
+      "hit": true
     },
     {
       "ticker": "CRT",
@@ -253,10 +253,10 @@
       "title": "isTenPercentOwner",
       "txn_date": "2026-06-22",
       "value": 181373.2,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 11.507,
+      "hit": true
     },
     {
       "ticker": "COR",
@@ -264,10 +264,10 @@
       "title": "isDirector",
       "txn_date": "2026-06-22",
       "value": 148626.5,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 5.681,
+      "hit": true
     },
     {
       "ticker": "KMX",
@@ -275,10 +275,10 @@
       "title": "isDirector",
       "txn_date": "2026-06-22",
       "value": 130500.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 9.748,
+      "hit": true
     },
     {
       "ticker": "BCIC",
@@ -286,9 +286,9 @@
       "title": "President, CEO",
       "txn_date": "2026-06-22",
       "value": 98364.08,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -2.214,
       "hit": false
     },
     {
@@ -297,9 +297,9 @@
       "title": "isDirector",
       "txn_date": "2026-06-22",
       "value": 93942.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -1.137,
       "hit": false
     },
     {
@@ -308,9 +308,9 @@
       "title": "isTenPercentOwner",
       "txn_date": "2026-06-22",
       "value": 78666.8,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -1.373,
       "hit": false
     },
     {
@@ -319,10 +319,10 @@
       "title": "Chief Financial Officer",
       "txn_date": "2026-06-22",
       "value": 77499.12,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 11.895,
+      "hit": true
     },
     {
       "ticker": "BCDA",
@@ -330,9 +330,9 @@
       "title": "isDirector",
       "txn_date": "2026-06-22",
       "value": 64584.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -17.144,
       "hit": false
     },
     {
@@ -341,10 +341,10 @@
       "title": "President and CEO",
       "txn_date": "2026-06-22",
       "value": 55446.56,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 11.895,
+      "hit": true
     },
     {
       "ticker": "EPSN",
@@ -352,10 +352,10 @@
       "title": "Chief Executive Officer",
       "txn_date": "2026-06-22",
       "value": 99324.0,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 12.754,
+      "hit": true
     },
     {
       "ticker": "ADTX",
@@ -380,6 +380,6 @@
       "hit": false
     }
   ],
-  "verdict": "已结算 2 笔：跟买后 ~1 月相对 SPY 平均 -45.73%、跑赢 0.0%（n=2 太小，纯描述、不是结论）。",
+  "verdict": "已结算 24 笔：跟买后 ~1 月相对 SPY 平均 -3.28%、跑赢 45.8%（n=24 太小，纯描述、不是结论）。",
   "caveat": "出格区·聪明钱前向计分。跟内部人开市买入(P·≥$50k)、披露后 +3 日可跟单、持有 30 日 vs SPY。**前向计分**：刚上线样本极小（约 1 月后才有首批结算），别当结论。幸存者偏差：0.0% 因退市/无价被丢→高估 edge；只扫近期 daily-index 前若干份=样本非全量；同一标的同一入场日多名内部人(集群买入)战绩只计一次,防单一事件主导；重叠窗口只看描述性均值/胜率不充显著性；相关≠因果；非荐股、非跟单、不可交易、会错、过去≠未来。每跑 append 公开计分。"
 }

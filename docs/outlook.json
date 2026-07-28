@@ -1,51 +1,51 @@
 {
-  "generated": "2026-07-23T22:36:14Z",
+  "generated": "2026-07-28T15:18:08Z",
   "index_call": {
     "target": "纳指",
     "horizon": "短期",
     "call": "看涨",
-    "prob": 0.605,
-    "tier": 4,
-    "basis": "贝叶斯信号 prob=0.605、tier=4（模型直读，非保证）"
+    "prob": 0.573,
+    "tier": 3,
+    "basis": "贝叶斯信号 prob=0.573、tier=3（模型直读，非保证）"
   },
   "bullish": [
     {
       "symbol": "SNDK",
       "view": "看好",
-      "mom_pct": 221.2,
-      "reason": "6 个月动量 +221.2%（观察池领先）"
+      "mom_pct": 132.4,
+      "reason": "6 个月动量 +132.4%（观察池领先）"
     },
     {
       "symbol": "MU",
       "view": "看好",
-      "mom_pct": 154.6,
-      "reason": "6 个月动量 +154.6%（观察池领先）"
+      "mom_pct": 109.5,
+      "reason": "6 个月动量 +109.5%（观察池领先）"
     },
     {
-      "symbol": "AMD",
+      "symbol": "INTC",
       "view": "看好",
-      "mom_pct": 116.0,
-      "reason": "6 个月动量 +116.0%（观察池领先）"
+      "mom_pct": 102.1,
+      "reason": "6 个月动量 +102.1%（观察池领先）"
     }
   ],
   "bearish": [
     {
       "symbol": "TSLA",
       "view": "看淡",
-      "mom_pct": -25.9,
-      "reason": "6 个月动量 -25.9%（观察池垫底）"
+      "mom_pct": -30.0,
+      "reason": "6 个月动量 -30.0%（观察池垫底）"
     },
     {
       "symbol": "NFLX",
       "view": "看淡",
-      "mom_pct": -19.3,
-      "reason": "6 个月动量 -19.3%（观察池垫底）"
+      "mom_pct": -15.1,
+      "reason": "6 个月动量 -15.1%（观察池垫底）"
     },
     {
       "symbol": "MSFT",
       "view": "看淡",
-      "mom_pct": -13.7,
-      "reason": "6 个月动量 -13.7%（观察池垫底）"
+      "mom_pct": -15.0,
+      "reason": "6 个月动量 -15.0%（观察池垫底）"
     }
   ],
   "disclaimer": "⚠️ 本区为【观点 / 预测】，仅供参考、非投资建议；市场有风险，据此操作盈亏自负。方向预测的历史准确率可在 🎲 试胆区查看（提示：≈ 掷硬币）。"
