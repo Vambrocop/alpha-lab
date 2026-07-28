@@ -56,9 +56,20 @@ jobs:
       - name: Re-assert append-only ledgers from git (cache can't override them)
         # 实证隐患(06-30)：restore-keys 命中旧缓存时，会把陈旧版账本整个灌回 market-analysis/data、
         # 盖掉之后才提交的行。git 已提交(HEAD)的版本才是真相——缓存回灌后立刻用它压一遍，
-        # 管道再往上 append 新行(sync/alert 幂等，不丢数据)。
-        # overreaction_signal_log 2026-07-03 起 git 跟踪(此前 .gitignore 负模式失效、只靠缓存假活)——同险同保。
-        run: git checkout -- market-analysis/data/candidate_registry.csv market-analysis/data/processed/overreaction_signal_log.csv
+        # 管道再往上 append 新行(sync/alert/pick 幂等去重，不丢数据)。
+        # 2026-07-28：此前只护 candidate_registry + overreaction 两个 → 其余 17 个 append-only 账本
+        # 在缓存陈旧时被 git add -A 提交成缩水版(真 bug，被防缩水门暴露)。改为覆盖全部 SPECS 账本 +
+        # manifest；清单漂移由 test_reassert_covers_ledgers.py 守。逐个 checkout(kb_ledger 未晋升时不存在→|| true)。
+        run: |
+          for led in \
+            autodiscovery_log.csv candidate_registry.csv kb_ledger.csv composite_log.csv \
+            regime_forward_log.csv senate_signal_log.csv btc_backtest_log.csv llm_read_log.csv \
+            llm_weekly_log.csv llm_monthly_log.csv ipo_alert_log.csv downturn_brief_log.csv \
+            ipo_aftermath_log.csv llm_prediction_log.csv pick_ledger.csv pick_ledger_v2.csv \
+            au_pick_ledger.csv insider_signal_log.csv processed/overreaction_signal_log.csv \
+            ledger_hashchain.csv; do
+            git checkout -- "market-analysis/data/$led" 2>/dev/null || true
+          done
 
       - name: Run pipeline (intraday 30-min = light, pre-open/post-close = full)
         env:
