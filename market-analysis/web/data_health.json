@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29T18:07:25.778729+00:00",
+  "generated": "2026-07-29T19:50:26.415184+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -73,7 +73,7 @@
       "ticker": "DX-Y.NYB",
       "source": "live",
       "status": "ok",
-      "rows": 6710,
+      "rows": 6711,
       "last_date": "2026-07-29",
       "age_days": 0,
       "stale_after_days": 6,
