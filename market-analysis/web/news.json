@@ -1,42 +1,42 @@
 {
- "updated": "2026-07-29 17:02 UTC",
+ "updated": "2026-07-29 18:08 UTC",
  "items": [
   {
-   "time": "2026-07-29 16:51 UTC",
-   "title": "Oil prices jump 7% after Trump says U.S. will hit Iran hard",
+   "time": "2026-07-29 18:07 UTC",
+   "title": "Divided Fed holds interest rates steady, but three members voted to hike",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-29 17:48 UTC",
+   "title": "Apple shares just hit a record. Here's how trader Mike Khouw is playing the move",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-29 17:40 UTC",
+   "title": "Individual investors are dumping stocks at the fastest pace since the COVID crash",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-29 17:18 UTC",
+   "title": "Why SoFi’s stock is dropping, even after its earnings beat expectations",
    "impact": "positive",
    "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-29 16:36 UTC",
-   "title": "Global oil prices top $88 a barrel after Trump vows retaliation for surprise Iranian attack on U.S. troops",
-   "impact": "neutral",
-   "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-29 16:30 UTC",
-   "title": "‘Time will tell whether that was a good bet’: My adviser got me a full SpaceX IPO allocation. Was I lucky?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-29 16:05 UTC",
-   "title": "Microsoft is set to report earnings after the bell, and all eyes are on its spending plans",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-29 16:03 UTC",
-   "title": "A key cryptocurrency bill could flop because of Trump’s crypto ventures and banks’ objections",
-   "impact": "neutral",
+   "time": "2026-07-29 17:12 UTC",
+   "title": "The dollar’s rally matters — but it still won’t help Fed’s Warsh win the inflation fight",
+   "impact": "positive",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
