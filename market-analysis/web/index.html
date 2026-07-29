@@ -43,6 +43,14 @@
   /* ── featured card: the scorecard / 战绩墙 (the moat) — highlighted ── */
   .tool-feat{border-color:var(--acc);background:linear-gradient(135deg,rgba(163,113,247,.14),rgba(88,166,255,.05))}
   .tool-feat .nm{color:var(--acc-strong,#b483ff)}
+  /* ── 🏆 荐股公开战绩 strip (命门:亏损也摆首屏) ── */
+  .pscore{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 16px;margin:14px 0 4px;padding:11px 15px;border:1px solid var(--acc);border-radius:14px;background:linear-gradient(135deg,rgba(163,113,247,.14),rgba(88,166,255,.05));text-decoration:none;color:inherit;transition:border-color .14s}
+  .pscore:hover{border-color:var(--acc-strong,#b483ff)}
+  .pscore:focus-visible{box-shadow:var(--ring,0 0 0 3px rgba(163,113,247,.40))}
+  .pscore .ps-t{font-size:.82rem;font-weight:700;color:var(--acc-strong,#b483ff);width:100%}
+  .pscore .ps-k{font-size:.72rem;color:var(--mut)}
+  .pscore .ps-v{font-size:1.12rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .pscore .ps-note{width:100%;font-size:.72rem;color:var(--mut);margin-top:1px;line-height:1.35}
   .mut{color:var(--mut)}.note{color:var(--amb);font-size:.8rem}
   footer{color:var(--mut);font-size:.78rem;margin-top:20px;border-top:1px solid var(--border);padding-top:10px}
   /* ── baseline: quiet strip, not competing with hero ── */
@@ -114,6 +122,9 @@
 <!-- quiet supporting info: freshness + baseline — de-emphasised, below hero -->
 <div id="freshness" style="font-size:.74rem;color:var(--mut);margin:4px 0 2px;opacity:.85"></div>
 <div class="baseline" data-i18n="baseline"></div>
+
+<!-- 🏆 荐股公开战绩 — 亏损也摆首屏,填充见 renderPscore();无结算则隐藏 -->
+<a class="pscore" id="pscore" href="picks.html" style="display:none"></a>
 
 <!-- 📊 At-a-glance cards: secondary content, grouped under a clear label -->
 <div class="section-hd" data-i18n="sec_glance"></div>
@@ -262,7 +273,7 @@ function renderTodayLine(){
     :`📅 ${vpTL_iso(vpTL_LOCAL_TZ,now)} ${wd} · 美东 ${vpTL_mdhm("America/New_York",now)} ET(${st}) · 阿德莱德 ${vpTL_dmhm("Australia/Adelaide",now)}`;
 }
 setInterval(renderTodayLine,60000);
-let SIG=null,REG=null,DIG=null,PAPER=null,V150=null,CR=null,OUT=null,LLM=null,OVR=null;
+let SIG=null,REG=null,DIG=null,PAPER=null,V150=null,CR=null,OUT=null,LLM=null,OVR=null,PICKS=null;
 const STANCE_EN={"强防御":"Strong defense","偏防御":"Lean defensive","中性":"Neutral","偏积极":"Lean bullish","强积极":"Strong bullish","数据不足":"Insufficient data"};
 const CALL_EN={"看涨":"Bullish","看跌":"Bearish","中性":"Neutral","偏多":"Lean long"};
 function drawGauge(score){
@@ -598,13 +609,39 @@ function renderMonthly(){
     ?"LLM plain-language monthly summary grounded in real computed data. Not a prediction. We can be wrong. Past ≠ future. Appended to public monthly log."
     :(MONTHLY.caveat||"LLM 据本月真实算出因子生成；非预测、非荐股、会错，过去≠未来。已追加到公开月报计分。");
 }
+function renderPscore(){
+  const el=$("pscore"); if(!el) return;
+  const tr=PICKS&&PICKS.track_record;
+  if(!tr||!tr.n_settled){el.style.display="none";return;}
+  const n=tr.n_settled, hit=tr.call_hit_pct;
+  const b=tr.bullish||{}, be=tr.bearish||{}, nb=b.n||0, nr=be.n||0;
+  const mce=(nb+nr)?((b.mean_call_excess_pct||0)*nb+(be.mean_call_excess_pct||0)*nr)/(nb+nr):null;
+  const en=LANG==="en";
+  const excCol=mce==null?"var(--mut)":(mce>=0?"var(--grn)":"var(--red)");
+  const excStr=mce==null?"—":(mce>=0?"+":"")+mce.toFixed(1)+"%";
+  const T=en?"Picks · public track record — losses shown too":"荐股公开战绩 · 亏损也摆出来";
+  const kS=en?"settled":"已结算",kH=en?"calls right":"判断对",kE=en?"avg vs QQQ":"平均 vs QQQ";
+  const arrow=en?"full ledger →":"完整账本 →";
+  const note=en
+    ?`n=${n} — too small to be a conclusion, purely descriptive. The first 06-26 batch (storage/semis) got crushed; later picks pulled it up. Still slightly behind QQQ. Not advice.`
+    :`n=${n} 太小·纯描述非结论。首批(06-26 存储/半导体)重挫、后续拉回;整体仍略跑输 QQQ。非投资建议、会错。`;
+  el.style.display="flex";
+  el.innerHTML=
+    `<span class="ps-t">🏆 ${esc(T)}</span>`
+    +`<span><span class="ps-k">${kS} </span><span class="ps-v">${esc(String(n))}</span></span>`
+    +`<span><span class="ps-k">${kH} </span><span class="ps-v">${esc(String(hit))}%</span></span>`
+    +`<span><span class="ps-k">${kE} </span><span class="ps-v" style="color:${excCol}">${esc(excStr)}</span></span>`
+    +`<span class="ps-k" style="margin-left:auto">${arrow}</span>`
+    +`<span class="ps-note">${esc(note)}</span>`;
+}
 (async()=>{
   paint();
-  [SIG,REG,DIG,PAPER,V150,CR,OUT,LLM,WEEKLY,OVR,MONTHLY]=await Promise.all([get("signals.json"),get("market_regime.json"),get("digest.json"),get("paper.json"),get("valpha150.json"),get("composite_read.json"),get("outlook.json"),get("llm_read.json"),get("llm_weekly.json"),get("overreaction_signal.json"),get("llm_monthly.json")]);
+  [SIG,REG,DIG,PAPER,V150,CR,OUT,LLM,WEEKLY,OVR,MONTHLY,PICKS]=await Promise.all([get("signals.json"),get("market_regime.json"),get("digest.json"),get("paper.json"),get("valpha150.json"),get("composite_read.json"),get("outlook.json"),get("llm_read.json"),get("llm_weekly.json"),get("overreaction_signal.json"),get("llm_monthly.json"),get("picks.json")]);
   paint();
   renderWeekly();
   renderMonthly();
   renderOVR();
+  renderPscore();
   // Error state: if all critical data sources failed, show a friendly inline notice
   if(!SIG&&!REG&&!DIG&&!CR&&!V150){
     const msg=LANG==="en"?"Failed to load — refresh later":"加载失败，请稍后刷新";
