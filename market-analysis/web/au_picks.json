@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-28T22:39:00Z",
+  "generated": "2026-07-29T15:11:18Z",
   "source": "澳股(ASX50精选池) 动量+低波动 选股 → 前向公开计分(独立账本)",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX50 精选池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
   "hold_td": 20,
@@ -18,11 +18,77 @@
       "hit_pct": null,
       "mean_call_excess_pct": null
     },
-    "n_pending": 36,
+    "n_pending": 42,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
   "recent": [
+    {
+      "symbol": "WOW.AX",
+      "view": "看好",
+      "pick_date": "2026-07-29",
+      "mom_pct": 34.2,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "MQG.AX",
+      "view": "看好",
+      "pick_date": "2026-07-29",
+      "mom_pct": 22.3,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "QBE.AX",
+      "view": "看好",
+      "pick_date": "2026-07-29",
+      "mom_pct": 35.4,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "WTC.AX",
+      "view": "看淡",
+      "pick_date": "2026-07-29",
+      "mom_pct": -40.1,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "XRO.AX",
+      "view": "看淡",
+      "pick_date": "2026-07-29",
+      "mom_pct": -25.7,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "CSL.AX",
+      "view": "看淡",
+      "pick_date": "2026-07-29",
+      "mom_pct": -27.7,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
     {
       "symbol": "MQG.AX",
       "view": "看好",
@@ -391,28 +457,6 @@
       "view": "看淡",
       "pick_date": "2026-07-19",
       "mom_pct": -54.9,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "WTC.AX",
-      "view": "看淡",
-      "pick_date": "2026-07-19",
-      "mom_pct": -47.7,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "XRO.AX",
-      "view": "看淡",
-      "pick_date": "2026-07-19",
-      "mom_pct": -32.7,
       "settled": false,
       "dropped": false,
       "excess_pct": null,

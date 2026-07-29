@@ -133,3 +133,9 @@ pick_date,symbol,view,mom_pct,entry_date,entry_px,exit_date,exit_px,ret_pct,benc
 2026-07-28,TSLA,看淡,-30.0,,,,,,,,,,False,False
 2026-07-28,HOOD,看淡,-14.6,,,,,,,,,,False,False
 2026-07-28,META,看淡,-11.9,,,,,,,,,,False,False
+2026-07-29,AAPL,看好,33.3,,,,,,,,,,False,False
+2026-07-29,KO,看好,26.0,,,,,,,,,,False,False
+2026-07-29,BRK-B,看好,5.3,,,,,,,,,,False,False
+2026-07-29,TSLA,看淡,-30.4,,,,,,,,,,False,False
+2026-07-29,HOOD,看淡,-15.7,,,,,,,,,,False,False
+2026-07-29,META,看淡,-12.2,,,,,,,,,,False,False
