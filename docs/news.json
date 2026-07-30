@@ -1,24 +1,24 @@
 {
- "updated": "2026-07-30 21:38 UTC",
+ "updated": "2026-07-30 22:40 UTC",
  "items": [
   {
-   "time": "2026-07-30 21:31 UTC",
-   "title": "Amazon hikes 2026 capex to $220 billion due to higher memory costs",
+   "time": "2026-07-30 22:28 UTC",
+   "title": "Meta sinks 8%, continuing record losing streak, while Microsoft jumps 15% as AI trade splits",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-07-30 21:29 UTC",
-   "title": "AI investor Leopold Aschenbrenner forced to unwind all public stock positions after steep losses, sources say",
-   "impact": "negative",
+   "time": "2026-07-30 22:09 UTC",
+   "title": "Implosion of Situational Awareness hedge fund has Wall Street betting the bottom is in for the AI trade",
+   "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-30 21:28 UTC",
+   "time": "2026-07-30 21:53 UTC",
    "title": "Coinbase shares fall after crypto exchange posts disappointing second-quarter results",
    "impact": "negative",
    "note": "",
@@ -26,19 +26,19 @@
    "kind": "auto"
   },
   {
-   "time": "2026-07-30 21:24 UTC",
-   "title": "Software stocks are fading — but these 4 could shine through the rest of the year",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-30 21:19 UTC",
-   "title": "Rivian reduces 2026 spending plans, narrows earnings guidance",
+   "time": "2026-07-30 21:50 UTC",
+   "title": "Nexus Data Centers in advanced talks to secure $15B for Google-backed Anthropic data center",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-30 21:45 UTC",
+   "title": "Get ready to buy the dip in tech stocks. Why the recent selling won’t break the bull market.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
