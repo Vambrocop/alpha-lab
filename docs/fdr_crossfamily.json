@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29T22:31:44Z",
+  "generated": "2026-07-30T15:05:28Z",
   "method": "跨检验族汇池多重比较：Benjamini-Yekutieli(任意相关稳健，头条) + Benjamini-Hochberg(PRDS，乐观对照) + Bonferroni(FWER)。",
   "caveat": "保守的**探索性**跨族 meta 校正，非统一模型。汇集各方法已发布的 p 值，回答'把试过的所有东西算进去后还剩几条'。部分主张是机械/同期关系(如恐慌↔标普同期负相关)，存活≠真发现，需看各自方法脚注；step-up 程序下，足够多的极小 p 会抬高同批其它主张的阈值，故个别中等 p 可能跨族存活而族内不存活，属正常。",
   "families_pooled": [
@@ -12,9 +12,9 @@
   "by_c_m": 3.927,
   "bonferroni_alpha": 0.00179,
   "n_survive_by_10": 5,
-  "n_survive_by_05": 3,
-  "n_survive_bh_10": 6,
-  "n_survive_bonferroni_05": 3,
+  "n_survive_by_05": 4,
+  "n_survive_bh_10": 7,
+  "n_survive_bonferroni_05": 4,
   "by_family": [
     {
       "family": "路径/Granger",
@@ -68,11 +68,11 @@
     {
       "family": "日历效应",
       "label": "圣诞行情",
-      "p": 0.002,
+      "p": 0.001,
       "survive_by_10": true,
-      "survive_by_05": false,
+      "survive_by_05": true,
       "survive_bh_10": true,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": true
     },
     {
       "family": "因子AUC",
@@ -95,7 +95,16 @@
     {
       "family": "日历效应",
       "label": "月份效应(月度胜率)",
-      "p": 0.026,
+      "p": 0.025,
+      "survive_by_10": false,
+      "survive_by_05": false,
+      "survive_bh_10": true,
+      "survive_bonferroni_05": false
+    },
+    {
+      "family": "因子AUC",
+      "label": "BTC近20日跌<-5%",
+      "p": 0.081,
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
@@ -104,16 +113,7 @@
     {
       "family": "日历效应",
       "label": "假日效应(节前)",
-      "p": 0.0799,
-      "survive_by_10": false,
-      "survive_by_05": false,
-      "survive_bh_10": false,
-      "survive_bonferroni_05": false
-    },
-    {
-      "family": "因子AUC",
-      "label": "BTC近20日跌<-5%",
-      "p": 0.081,
+      "p": 0.0889,
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
@@ -291,5 +291,5 @@
       "survive_bonferroni_05": false
     }
   ],
-  "verdict": "全站 28 项显著性主张，跨族 BY(任意相关稳健, q=0.10)仅 5 项经得起（BH 乐观留 6）。存活：恐慌→标普、SVB 倒闭 → 地区银行(KRE)、星期效应、圣诞行情、BTC近20日涨>5%。"
+  "verdict": "全站 28 项显著性主张，跨族 BY(任意相关稳健, q=0.10)仅 5 项经得起（BH 乐观留 7）。存活：恐慌→标普、SVB 倒闭 → 地区银行(KRE)、星期效应、圣诞行情、BTC近20日涨>5%。"
 }

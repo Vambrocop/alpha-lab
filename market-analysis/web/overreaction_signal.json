@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-29T22:31:22Z",
+  "generated": "2026-07-30T15:04:59Z",
   "index": "SP500",
   "q_pctile": 5.0,
   "threshold_pct": -1.838,
   "today": {
-    "date": "2026-07-29",
-    "ret_pct": -1.516,
+    "date": "2026-07-30",
+    "ret_pct": 0.998,
     "triggered": false
   },
   "modern_stat": {

@@ -1,22 +1,22 @@
 {
-  "generated": "2026-07-29T22:31:26Z",
+  "generated": "2026-07-30T15:05:03Z",
   "method": "split-conformal：非重叠 N 日收益(秩调整分位)，旧70%校准定区间、新30%测试。时间序切(非随机)，故不主张 exchangeable 下的有限样本覆盖保证；下列为出样本外【实测】覆盖。",
   "caveat": "这是**校准的不确定性区间，不是方向预测**——只说区间多宽、历史多少落在内，不预测涨跌。区间略偏正只反映历史无条件分布的位置，不构成方向判断；且这是历史**无条件**区间、非对【当前】市场状态的条件预测——不等于'未来 N 日一定落在此区间'。时间序切：经验覆盖<名义=较校准期更动荡(非平稳)，如实呈现。基于 S&P500。'按 VIX 体制'区间=体制-条件(复用 split-conformal 分组),展示不确定性宽度随体制放大，仍是区间非方向、非'未来必落在内'。",
   "source": "S&P 500 (^GSPC)",
   "cal_frac": 0.7,
   "data_start": "1927-12-30",
-  "data_end": "2026-07-29",
+  "data_end": "2026-07-30",
   "horizons": [
     {
       "horizon_days": 5,
-      "n_windows": 4951,
+      "n_windows": 4952,
       "bands": [
         {
           "level": 0.8,
           "lower_pct": -2.62,
           "upper_pct": 2.76,
           "empirical_coverage": 0.8,
-          "n_cal": 3465,
+          "n_cal": 3466,
           "n_test": 1486
         },
         {
@@ -24,21 +24,21 @@
           "lower_pct": -3.73,
           "upper_pct": 3.66,
           "empirical_coverage": 0.892,
-          "n_cal": 3465,
+          "n_cal": 3466,
           "n_test": 1486
         }
       ]
     },
     {
       "horizon_days": 20,
-      "n_windows": 1237,
+      "n_windows": 1238,
       "bands": [
         {
           "level": 0.8,
           "lower_pct": -5.09,
           "upper_pct": 5.89,
           "empirical_coverage": 0.812,
-          "n_cal": 865,
+          "n_cal": 866,
           "n_test": 372
         },
         {
@@ -46,7 +46,7 @@
           "lower_pct": -7.33,
           "upper_pct": 7.64,
           "empirical_coverage": 0.911,
-          "n_cal": 865,
+          "n_cal": 866,
           "n_test": 372
         }
       ]
@@ -103,5 +103,5 @@
       "empirical_coverage": 0.939
     }
   ],
-  "conditional_period": "2001-01-02–2026-07-29"
+  "conditional_period": "2001-01-02–2026-07-30"
 }
