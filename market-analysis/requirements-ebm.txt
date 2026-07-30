@@ -1,0 +1,6 @@
+# EBM 对决(SPEC_EBM.md·R3 §2 B4)专用隔离依赖——不进 requirements-core.txt。
+# 绝不运行时 pip install:interpret 只在显式 opt-in 环境预装;ebm_duel.py 对 import 失败
+# fail-soft 跳过(打印 + 不写产物 + exit 0),主流水线永不因它而红。
+# 钉版本:EBM 形状函数(shape functions)/内部分箱实现跨版本可能变,钉住防静默漂移(§2)。
+-r requirements-core.txt
+interpret==0.7.8
