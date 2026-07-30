@@ -1,8 +1,24 @@
 {
- "updated": "2026-07-30 15:45 UTC",
+ "updated": "2026-07-30 17:12 UTC",
  "items": [
   {
-   "time": "2026-07-30 15:43 UTC",
+   "time": "2026-07-30 16:58 UTC",
+   "title": "Retailer Reformation opens flat in market debut after pricing IPO at $15",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-30 16:45 UTC",
+   "title": "A break below this critical stock-market threshold used to signal panic for investors. Not anymore.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-30 16:36 UTC",
    "title": "AI investor Leopold Aschenbrenner forced to unwind all public stock positions after steep losses, sources say",
    "impact": "negative",
    "note": "",
@@ -10,32 +26,16 @@
    "kind": "auto"
   },
   {
-   "time": "2026-07-30 15:11 UTC",
-   "title": "Apple and Amazon report after the bell. Here's what the options market is saying",
-   "impact": "neutral",
+   "time": "2026-07-30 16:20 UTC",
+   "title": "Mortgage rates jump to their highest level in a year and show few signs of falling",
+   "impact": "positive",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-30 15:07 UTC",
-   "title": "Bank of England holds UK interest rate steady at 3.75% — but policymakers see upside inflation risk",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-30 15:04 UTC",
-   "title": "U.S. economy slowed to 1.5% growth rate in Q2; June core inflation at 3.3%",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-30 14:58 UTC",
-   "title": "The oil majors are about to report booming profits. These smaller stocks may be better buys",
+   "time": "2026-07-30 16:17 UTC",
+   "title": "Cramer sees a 'sure signal to buy' stocks. Plus what we want from Amazon's results",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
