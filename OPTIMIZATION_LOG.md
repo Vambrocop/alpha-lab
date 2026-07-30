@@ -199,6 +199,8 @@
 
 > 记"试了/想了但决定不做"的事 + 怎么判的 + 结论。和"做了什么"同样重要——防以后重复踩。
 
+- **EBM 玻璃箱模型预测 20 日方向 → not_promote·无 edge(2026-07-29·SPEC_EBM 六步走完·测量结论)**：用户拍板"先做 EBM"。走完 ①规格→②独立审(6 BLOCKER)→②b 重审→③Sonnet 建→④Opus 审(逐行+修 4 个**测试自身** bug·非代码 bug)→⑤→⑥。诚实对决=EBM vs **喂完全相同 5 连续特征的 Logistic**(同信息基线·B2 用户拍板·只模型形态不同),2003–2026 walk-forward 6 折·n_oos=3018·purge20+embargo5·标准化只训练折 fit。**结果:两模型都没 edge**——EBM AUC=**0.446**、同信息 LR AUC=**0.461**(**均 <0.5**·≈掷硬币还略反向);Acc EBM 52.9%/LR 64.7% **都低于基率 66.6%**("恒看涨"准确率就 66.6%·两模型还不如它);**ΔAUC(EBM−LR)=−0.015·成对块自助 CI block20[−0.09,+0.07]/block40[−0.11,+0.08] 均含 0** → 玻璃箱形态没比线性多挤出任何东西。**判 not_promote·不接站**(§0 输了就认)。5 因子(6-1动量/63d波动/VIX滚动分位/10Y-2Y/Baa-10Y)predict 20 日纳指方向=没用。`ebm_duel.py`(3e6754c)留作可重跑工具(独立·fail-soft·未接 run_all·interpret 走 requirements-ebm opt-in);全套 correctness 单测在(证方法本身对·负结果非 bug 所致)。**可逆**:换特征/横期是新立项,非调参(冻结集棘轮)。相关 [[fable5-reviews]]。
+
 - **防缩水门 → 上线即摘(2026-07-28·自酿事故·测量结论)**：为防 append-only 账本被多 workflow 竞态挤掉行,建 `ci_ledger_guard.py`(push 前比工作树 vs origin 身份前缀)挂进 5 个 workflow。**结果:refresh-data 每次 push 被门拦、主流水线连红 07-24→07-27、站上分析数据滞留 07-23**(公开 check-run annotations API 定位是门在拦)→ **立即摘门(73deb44)**。教训:① **CI-cache 专属逻辑本地测不了就别直接上线**(门与它要修的缓存 bug 都无法本地复现);② 门失败模式太硬(阻断 push=停摆)远比它防的"稀有丢行"严重。**但门暴露并促成修掉真 bug**:re-assert 只护 2/19 账本→缓存陈旧回灌被 `git add -A` 提交成缩水版(9d007ea 修:护全部 SPECS 账本+manifest+漂移测试)。门本身待根治(§2 #1/#2)+改 warn-only 后再作纵深防御重挂。可逆。门脚本/测试/规格仍在仓库(未挂接)。
 
 - **per-perm 置换缓存 → 否决(测量驱动)**:实测 placebo 2.9s、stock_checkup 10s,1.2万次置换才 2.9s → **置换非瓶颈**,缓存徒增复杂度零收益。真瓶颈=KO 每次走 yfinance(未进缓存),已修(加进 fetch_data 清单)。**教训:先测量再优化**。
