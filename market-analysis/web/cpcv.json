@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-30T22:40:07Z",
+  "generated": "2026-07-31T15:17:41Z",
   "method": "CSCV(Bailey-Borwein-LdP-Zhu 2017):时间轴切 S 段,遍历 C(S,S/2) 半训半测组合;训练选最佳因子,看其测试相对排名;PBO=IS-best 在 OOS 低于中位的占比。purge 切片边界防泄漏。",
   "caveat": "PBO 度量的是**因子选择的过拟合概率**(数据挖掘风险),不是方向预测。edge=片内胜率差(小样本噪声大);S=10/purge=20日为口径选择。高 PBO 是诚实信号:别相信'挑出来最好'的因子。",
   "source": "walk_forward 特征 df(15 个二值因子)",
