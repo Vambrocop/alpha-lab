@@ -1,6 +1,30 @@
 {
- "updated": "2026-07-31 20:14 UTC",
+ "updated": "2026-07-31 21:34 UTC",
  "items": [
+  {
+   "time": "2026-07-31 21:10 UTC",
+   "title": "S&P 500 ends with its first July decline since 2014. Here are the stocks that led the selloff.",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-31 20:23 UTC",
+   "title": "Did China build a top-tier AI model by itself? A new report suggests Nvidia chips played a role.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-31 20:17 UTC",
+   "title": "Alphabet, Amazon and Microsoft added nearly $1.5 trillion in combined value this week",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-07-31 19:43 UTC",
    "title": "Eaton shares jump as its earnings and outlook show resilience of the AI buildout",
@@ -12,30 +36,6 @@
   {
    "time": "2026-07-31 19:04 UTC",
    "title": "Supply-chain legend Tim Cook finally meets his match with Apple’s memory crunch",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 18:59 UTC",
-   "title": "Oil prices rise after Iran says it attacked two tankers transiting Strait of Hormuz",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 18:46 UTC",
-   "title": "Investors may want to focus on front end of yield curve — as Street anticipates next Fed meetings",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 18:29 UTC",
-   "title": "AI stocks may have bottomed out. What investors should watch for next.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
