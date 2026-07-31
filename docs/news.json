@@ -1,44 +1,44 @@
 {
- "updated": "2026-07-31 15:52 UTC",
+ "updated": "2026-07-31 17:18 UTC",
  "items": [
   {
-   "time": "2026-07-31 15:52 UTC",
-   "title": "Exxon and Chevron profits surge on rising oil prices due to Iran war",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 15:31 UTC",
-   "title": "New York sues Kalshi, says prediction market is running 'illegal gambling operation'",
+   "time": "2026-07-31 16:51 UTC",
+   "title": "As Warsh’s Fed faces pressure to act on inflation, these indicators show it’s at its lowest in years",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "CNBC Markets",
    "kind": "auto"
   },
   {
-   "time": "2026-07-31 15:26 UTC",
-   "title": "Microsoft shares are surging. Here’s how to still make money, says Mike Khouw",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 15:21 UTC",
-   "title": "Corporate insiders are sending warning signals about the stock market",
+   "time": "2026-07-31 16:38 UTC",
+   "title": "S&P 500 heads for the first July decline since 2014. Here are the stocks that led the selloff.",
    "impact": "negative",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-07-31 15:07 UTC",
-   "title": "Amazon says it got $600 million in Trump tariff refunds and will pass return along to some customers",
+   "time": "2026-07-31 16:23 UTC",
+   "title": "Oil prices rise after Iran says it attacked two tankers transiting Strait of Hormuz",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-31 16:21 UTC",
+   "title": "Jim Cramer: Buy this industrial stock on the dip if you don't own it already",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-31 15:59 UTC",
+   "title": "Micron’s stock falls after Apple’s Tim Cook expresses a desire for more memory suppliers",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
