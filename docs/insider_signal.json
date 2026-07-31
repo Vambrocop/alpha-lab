@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-30T22:41:27Z",
+  "generated": "2026-07-31T05:17:53Z",
   "source": "SEC EDGAR Form 4 (开市买入 P) → 前向公开计分",
   "hold_days": 30,
   "filing_lag_days": 3,
@@ -11,11 +11,132 @@
     "beat_spy_pct": 50.0,
     "mean_excess_pct": -2.554,
     "median_excess_pct": -0.401,
-    "n_pending": 0,
+    "n_pending": 11,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
   "recent": [
+    {
+      "ticker": "MLPT",
+      "insider": "Catalyst4, Inc.",
+      "title": "isTenPercentOwner",
+      "txn_date": "2026-07-30",
+      "value": 13000000.0,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "NMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "txn_date": "2026-07-30",
+      "value": 83699.69,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "COSM",
+      "insider": "Siokas Grigorios",
+      "title": "Chief Executive Officer",
+      "txn_date": "2026-07-29-05:00",
+      "value": 140000.09,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "NMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "txn_date": "2026-07-29",
+      "value": 82555.52,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "MLPT",
+      "insider": "Catalyst4, Inc.",
+      "title": "isTenPercentOwner",
+      "txn_date": "2026-07-28",
+      "value": 1515510.86,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "MLPT",
+      "insider": "Catalyst4, Inc.",
+      "title": "isTenPercentOwner",
+      "txn_date": "2026-07-28",
+      "value": 761392.91,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "ACI",
+      "insider": "MORRIS SUSAN",
+      "title": "Chief Executive Officer",
+      "txn_date": "2026-07-28",
+      "value": 232273.04,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "ACI",
+      "insider": "MORRIS SUSAN",
+      "title": "Chief Executive Officer",
+      "txn_date": "2026-07-28",
+      "value": 217664.76,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "NMM",
+      "insider": "Frangou Angeliki",
+      "title": "See Remarks",
+      "txn_date": "2026-07-28",
+      "value": 84245.8,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "COE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "txn_date": "2026-07-27",
+      "value": 7658900.4,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
+    {
+      "ticker": "COE",
+      "insider": "Huang Jack Jiajia",
+      "title": "Chief Executive Officer",
+      "txn_date": "2026-07-24",
+      "value": 3022408.8,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "hit": false
+    },
     {
       "ticker": "NMM",
       "insider": "Frangou Angeliki",
@@ -333,50 +454,6 @@
       "settled": true,
       "dropped": false,
       "excess_pct": -17.144,
-      "hit": false
-    },
-    {
-      "ticker": "FTH",
-      "insider": "Parikh Anand Kiran",
-      "title": "President and CEO",
-      "txn_date": "2026-06-22",
-      "value": 55446.56,
-      "settled": true,
-      "dropped": false,
-      "excess_pct": 11.895,
-      "hit": true
-    },
-    {
-      "ticker": "EPSN",
-      "insider": "Stabell Jason",
-      "title": "Chief Executive Officer",
-      "txn_date": "2026-06-22",
-      "value": 99324.0,
-      "settled": true,
-      "dropped": false,
-      "excess_pct": 12.754,
-      "hit": true
-    },
-    {
-      "ticker": "ADTX",
-      "insider": "HRT FINANCIAL LP",
-      "title": "isTenPercentOwner",
-      "txn_date": "2026-06-18",
-      "value": 95422.31,
-      "settled": true,
-      "dropped": false,
-      "excess_pct": -84.169,
-      "hit": false
-    },
-    {
-      "ticker": "SCM",
-      "insider": "Arnoult J Tim",
-      "title": "isDirector",
-      "txn_date": "2026-05-19",
-      "value": 81450.0,
-      "settled": true,
-      "dropped": false,
-      "excess_pct": -7.3,
       "hit": false
     }
   ],
