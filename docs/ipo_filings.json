@@ -907,7 +907,7 @@
    "amount_usd_m": null,
    "amount_status": "deferred",
    "home_ticker": "000660.KS",
-   "home_mktcap_usd_b": 848.66,
+   "home_mktcap_usd_b": 845.68,
    "curated_hit": false,
    "enrich": "deferred"
   },
@@ -1027,7 +1027,7 @@
    "amount_usd_m": null,
    "amount_status": "deferred",
    "home_ticker": "000660.KS",
-   "home_mktcap_usd_b": 848.66,
+   "home_mktcap_usd_b": 845.68,
    "curated_hit": false,
    "enrich": "deferred"
   },
@@ -1853,7 +1853,7 @@
    "amount_usd_m": null,
    "amount_status": "deferred",
    "home_ticker": "000660.KS",
-   "home_mktcap_usd_b": 848.66,
+   "home_mktcap_usd_b": 845.68,
    "curated_hit": false,
    "enrich": "deferred"
   },
@@ -2792,7 +2792,7 @@
    "amount_usd_m": null,
    "amount_status": "deferred",
    "home_ticker": "000660.KS",
-   "home_mktcap_usd_b": 848.66,
+   "home_mktcap_usd_b": 845.68,
    "curated_hit": false,
    "enrich": "deferred"
   },
@@ -2919,7 +2919,7 @@
   "home_mktcap_usd_b": 10
  },
  "curated_asof": "2026-07",
- "enrich_generated": "2026-07-31T15:19:13Z",
+ "enrich_generated": "2026-07-31T22:37:55Z",
  "n_major": 2,
  "n_notable": 0,
  "enrich_budget": {

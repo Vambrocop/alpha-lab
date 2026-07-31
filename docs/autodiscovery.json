@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-31T15:17:38Z",
+  "generated": "2026-07-31T22:36:44Z",
   "method": "自动发现 Phase 1b：预注册有限候选(日历/反弹/因子)各路由到真统计算 p，经 quality_gate 双栏 BY-FDR(族内+跨族)+三态裁决。全部候选进分母、禁预筛、固定种子。",
   "caveat": "存活≠未来重演≠可交易；现代已淡=全段过FDR但现代测不到(疑被套利)；检验力不足=样本太小不下结论。因子族 FDR 为**无向双侧**(只问'有无可测边际'、不含方向判断，与 factor_pruning 的方向门控透镜口径不同)。门4样本外待接入。探索性，非预测、非荐股。",
   "q": 0.1,
@@ -23,18 +23,18 @@
         "down_streak": 0,
         "trailing": {
           "63d": {
-            "ret": 0.0122,
-            "pctile": 39.2,
+            "ret": 0.0193,
+            "pctile": 42.2,
             "zone": "mid"
           },
           "126d": {
-            "ret": 0.0638,
-            "pctile": 47.6,
+            "ret": 0.0713,
+            "pctile": 50.5,
             "zone": "mid"
           },
           "252d": {
-            "ret": 0.1925,
-            "pctile": 59.6,
+            "ret": 0.2009,
+            "pctile": 61.6,
             "zone": "mid"
           }
         }
@@ -43,18 +43,18 @@
         "down_streak": 0,
         "trailing": {
           "63d": {
-            "ret": 0.0331,
-            "pctile": 54.4,
+            "ret": 0.0389,
+            "pctile": 57.8,
             "zone": "mid"
           },
           "126d": {
-            "ret": 0.0687,
-            "pctile": 58.5,
+            "ret": 0.0747,
+            "pctile": 60.9,
             "zone": "mid"
           },
           "252d": {
-            "ret": 0.1705,
-            "pctile": 69.0,
+            "ret": 0.1771,
+            "pctile": 70.3,
             "zone": "mid"
           }
         }
@@ -160,7 +160,7 @@
       "family": "regime",
       "key": "golden_cross_sp500",
       "p": 0.0,
-      "recent_p": 0.021,
+      "recent_p": 0.02,
       "recent_powered": true,
       "windows": [
         {
@@ -173,7 +173,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.021,
+          "p": 0.02,
           "up_pct": 66,
           "base_pct": 63,
           "diff_pp": 2.8,
@@ -181,7 +181,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.211,
+          "p": 0.21,
           "up_pct": 69,
           "base_pct": 66,
           "diff_pp": 2.8,
@@ -268,7 +268,7 @@
         {
           "decade": "2020s",
           "up_pct": 69,
-          "base_pct": 67,
+          "base_pct": 68,
           "diff_pp": 1.6,
           "n": 1286
         }
@@ -343,7 +343,7 @@
           "p": 0.0,
           "up_pct": 89,
           "base_pct": 71,
-          "diff_pp": 18.4,
+          "diff_pp": 18.5,
           "n": 552
         },
         {
@@ -351,15 +351,15 @@
           "p": 0.0,
           "up_pct": 89,
           "base_pct": 71,
-          "diff_pp": 18.4,
+          "diff_pp": 18.5,
           "n": 552
         },
         {
           "label": "2021后",
-          "p": 0.014,
-          "up_pct": 97,
+          "p": 0.0,
+          "up_pct": 100,
           "base_pct": 69,
-          "diff_pp": 28.6,
+          "diff_pp": 31.1,
           "n": 39
         },
         {
@@ -386,9 +386,9 @@
         },
         {
           "decade": "2020s",
-          "up_pct": 99,
+          "up_pct": 100,
           "base_pct": 71,
-          "diff_pp": 27.4,
+          "diff_pp": 28.6,
           "n": 83
         }
       ],
@@ -405,7 +405,7 @@
       "family": "calendar",
       "key": "dow_nasdaq",
       "p": 0.000999,
-      "recent_p": 0.616384,
+      "recent_p": 0.62038,
       "recent_powered": true,
       "windows": [
         {
@@ -415,17 +415,17 @@
         },
         {
           "label": "2000后",
-          "p": 0.644,
+          "p": 0.645,
           "n": 6684
         },
         {
           "label": "2021后",
-          "p": 0.688,
+          "p": 0.691,
           "n": 1400
         },
         {
           "label": "近1年",
-          "p": 0.032,
+          "p": 0.034,
           "n": 252
         }
       ],
@@ -443,7 +443,7 @@
       "family": "calendar",
       "key": "dow_sp500",
       "p": 0.000999,
-      "recent_p": 0.838162,
+      "recent_p": 0.842158,
       "recent_powered": true,
       "windows": [
         {
@@ -453,17 +453,17 @@
         },
         {
           "label": "2000后",
-          "p": 0.846,
+          "p": 0.848,
           "n": 6684
         },
         {
           "label": "2021后",
-          "p": 0.755,
+          "p": 0.751,
           "n": 1400
         },
         {
           "label": "近1年",
-          "p": 0.081,
+          "p": 0.085,
           "n": 252
         }
       ],
@@ -500,7 +500,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.778,
+          "p": 0.78,
           "n": 1400,
           "up_pct": 32,
           "base_pct": 54
@@ -629,7 +629,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.72,
+          "p": 0.716,
           "n": 252,
           "up_pct": 55,
           "base_pct": 62
@@ -727,7 +727,7 @@
       "family": "calendar",
       "key": "turn_of_month_nasdaq",
       "p": 0.000999,
-      "recent_p": 0.16983,
+      "recent_p": 0.167832,
       "recent_powered": true,
       "windows": [
         {
@@ -739,21 +739,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.166,
+          "p": 0.162,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 55
         },
         {
           "label": "2021后",
-          "p": 0.629,
+          "p": 0.62,
           "n": 1400,
           "up_pct": 53,
           "base_pct": 55
         },
         {
           "label": "近1年",
-          "p": 0.304,
+          "p": 0.282,
           "n": 252,
           "up_pct": 61,
           "base_pct": 54
@@ -816,7 +816,7 @@
       "family": "calendar",
       "key": "turn_of_month_sp500",
       "p": 0.000999,
-      "recent_p": 0.211788,
+      "recent_p": 0.20979,
       "recent_powered": true,
       "windows": [
         {
@@ -828,21 +828,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.223,
+          "p": 0.218,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.632,
+          "p": 0.623,
           "n": 1400,
           "up_pct": 54,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.272,
+          "p": 0.241,
           "n": 252,
           "up_pct": 67,
           "base_pct": 53
@@ -959,14 +959,14 @@
         },
         {
           "label": "2021后",
-          "p": 0.066,
+          "p": 0.065,
           "n": 1400,
           "up_pct": 49,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.532,
+          "p": 0.542,
           "n": 252,
           "up_pct": 62,
           "base_pct": 55
@@ -1346,7 +1346,7 @@
       "family": "calendar",
       "key": "world_cup_year_nasdaq",
       "p": 0.002997,
-      "recent_p": 0.067932,
+      "recent_p": 0.070929,
       "recent_powered": true,
       "windows": [
         {
@@ -1358,21 +1358,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.073,
+          "p": 0.075,
           "n": 1720,
           "up_pct": 57,
           "base_pct": 51
         },
         {
           "label": "2021后",
-          "p": 0.063,
+          "p": 0.07,
           "n": 362,
           "up_pct": 62,
           "base_pct": 45
         },
         {
           "label": "近1年",
-          "p": 0.256,
+          "p": 0.271,
           "n": 65,
           "up_pct": 50,
           "base_pct": 42
@@ -1639,7 +1639,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.803,
+          "p": 0.802,
           "n": 252,
           "up_pct": 55,
           "base_pct": 67
@@ -1865,10 +1865,10 @@
         },
         {
           "label": "2021后",
-          "p": 0.445,
+          "p": 0.452,
           "up_pct": 77,
           "base_pct": 69,
-          "diff_pp": 8.6,
+          "diff_pp": 8.5,
           "n": 146
         },
         {
@@ -1914,7 +1914,7 @@
       "family": "calendar",
       "key": "world_cup_year_sp500",
       "p": 0.013986,
-      "recent_p": 0.162837,
+      "recent_p": 0.164835,
       "recent_powered": true,
       "windows": [
         {
@@ -1926,21 +1926,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.159,
+          "p": 0.165,
           "n": 1720,
           "up_pct": 56,
           "base_pct": 51
         },
         {
           "label": "2021后",
-          "p": 0.053,
+          "p": 0.061,
           "n": 362,
           "up_pct": 59,
           "base_pct": 47
         },
         {
           "label": "近1年",
-          "p": 0.303,
+          "p": 0.329,
           "n": 65,
           "up_pct": 45,
           "base_pct": 51
@@ -2229,28 +2229,28 @@
       "windows": [
         {
           "label": "完整",
-          "p": 0.015,
+          "p": 0.014,
           "n": 13987,
           "up_pct": 53,
           "base_pct": 56
         },
         {
           "label": "2000后",
-          "p": 0.048,
+          "p": 0.047,
           "n": 6684,
           "up_pct": 51,
           "base_pct": 55
         },
         {
           "label": "2021后",
-          "p": 0.136,
+          "p": 0.135,
           "n": 1400,
           "up_pct": 51,
           "base_pct": 55
         },
         {
           "label": "近1年",
-          "p": 0.446,
+          "p": 0.45,
           "n": 252,
           "up_pct": 67,
           "base_pct": 55
@@ -2334,7 +2334,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.045,
+          "p": 0.044,
           "up_pct": 49,
           "base_pct": 66,
           "diff_pp": -17.3,
@@ -2342,10 +2342,10 @@
         },
         {
           "label": "近1年",
-          "p": 0.004,
+          "p": 0.003,
           "up_pct": 42,
           "base_pct": 71,
-          "diff_pp": -29.0,
+          "diff_pp": -29.4,
           "n": 72
         }
       ],
@@ -2360,7 +2360,7 @@
         {
           "decade": "2020s",
           "up_pct": 52,
-          "base_pct": 67,
+          "base_pct": 68,
           "diff_pp": -15.2,
           "n": 386
         }
@@ -2378,17 +2378,17 @@
       "family": "calendar",
       "key": "month_sp500",
       "p": 0.022977,
-      "recent_p": 0.143856,
+      "recent_p": 0.141858,
       "recent_powered": false,
       "windows": [
         {
           "label": "完整",
-          "p": 0.021,
+          "p": 0.02,
           "n": 1183
         },
         {
           "label": "2000后",
-          "p": 0.143,
+          "p": 0.137,
           "n": 319
         },
         {
@@ -2416,7 +2416,7 @@
       "family": "streak_break",
       "key": "break3_h20_sp500",
       "p": 0.023,
-      "recent_p": 0.333,
+      "recent_p": 0.331,
       "recent_powered": true,
       "windows": [
         {
@@ -2429,7 +2429,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.333,
+          "p": 0.331,
           "up_pct": 61,
           "base_pct": 63,
           "diff_pp": -2.2,
@@ -2437,18 +2437,18 @@
         },
         {
           "label": "2021后",
-          "p": 0.969,
+          "p": 0.957,
           "up_pct": 66,
           "base_pct": 66,
-          "diff_pp": -0.3,
+          "diff_pp": -0.4,
           "n": 76
         },
         {
           "label": "近1年",
-          "p": 0.902,
+          "p": 0.922,
           "up_pct": 71,
           "base_pct": 71,
-          "diff_pp": 0.8,
+          "diff_pp": 0.4,
           "n": 14
         }
       ],
@@ -2526,8 +2526,8 @@
         {
           "decade": "2020s",
           "up_pct": 67,
-          "base_pct": 67,
-          "diff_pp": -0.4,
+          "base_pct": 68,
+          "diff_pp": -0.5,
           "n": 85
         }
       ],
@@ -2544,7 +2544,7 @@
       "family": "calendar",
       "key": "sell_in_may_nasdaq",
       "p": 0.027972,
-      "recent_p": 0.485514,
+      "recent_p": 0.488511,
       "recent_powered": true,
       "windows": [
         {
@@ -2556,21 +2556,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.507,
+          "p": 0.508,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 55
         },
         {
           "label": "2021后",
-          "p": 0.747,
+          "p": 0.75,
           "n": 1400,
           "up_pct": 53,
           "base_pct": 56
         },
         {
           "label": "近1年",
-          "p": 0.669,
+          "p": 0.684,
           "n": 252,
           "up_pct": 56,
           "base_pct": 55
@@ -2645,21 +2645,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.478,
+          "p": 0.479,
           "n": 6684,
           "up_pct": 56,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.481,
+          "p": 0.482,
           "n": 1400,
           "up_pct": 56,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.548,
+          "p": 0.551,
           "n": 252,
           "up_pct": 60,
           "base_pct": 55
@@ -3226,21 +3226,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.914,
+          "p": 0.913,
           "n": 6684,
           "up_pct": 56,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.99,
+          "p": 0.988,
           "n": 1400,
           "up_pct": 56,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.927,
+          "p": 0.917,
           "n": 252,
           "up_pct": 60,
           "base_pct": 55
@@ -3302,13 +3302,13 @@
       "candidate_id": "str_8bc1b7d951",
       "family": "streak_down",
       "key": "down3_h20_sp500",
-      "p": 0.062,
-      "recent_p": 0.91,
+      "p": 0.061,
+      "recent_p": 0.915,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.062,
+          "p": 0.061,
           "up_pct": 58,
           "base_pct": 60,
           "diff_pp": -2.1,
@@ -3316,15 +3316,15 @@
         },
         {
           "label": "2000后",
-          "p": 0.91,
+          "p": 0.915,
           "up_pct": 63,
           "base_pct": 63,
-          "diff_pp": 0.2,
+          "diff_pp": 0.1,
           "n": 343
         },
         {
           "label": "2021后",
-          "p": 0.42,
+          "p": 0.429,
           "up_pct": 70,
           "base_pct": 66,
           "diff_pp": 3.6,
@@ -3332,10 +3332,10 @@
         },
         {
           "label": "近1年",
-          "p": 0.445,
+          "p": 0.46,
           "up_pct": 79,
           "base_pct": 71,
-          "diff_pp": 7.9,
+          "diff_pp": 7.5,
           "n": 14
         }
       ],
@@ -3413,8 +3413,8 @@
         {
           "decade": "2020s",
           "up_pct": 71,
-          "base_pct": 67,
-          "diff_pp": 3.1,
+          "base_pct": 68,
+          "diff_pp": 3.0,
           "n": 85
         }
       ],
@@ -3431,33 +3431,33 @@
       "family": "calendar",
       "key": "monthof_7_sp500",
       "p": 0.065934,
-      "recent_p": 0.430569,
+      "recent_p": 0.420579,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.073,
+          "p": 0.072,
           "n": 24761,
           "up_pct": 55,
           "base_pct": 52
         },
         {
           "label": "2000后",
-          "p": 0.438,
+          "p": 0.427,
           "n": 6684,
           "up_pct": 57,
           "base_pct": 53
         },
         {
           "label": "2021后",
-          "p": 0.382,
+          "p": 0.357,
           "n": 1400,
           "up_pct": 60,
           "base_pct": 53
         },
         {
           "label": "近1年",
-          "p": 0.492,
+          "p": 0.567,
           "n": 252,
           "up_pct": 52,
           "base_pct": 56
@@ -3672,7 +3672,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.428,
+          "p": 0.435,
           "n": 252,
           "up_pct": 70,
           "base_pct": 55
@@ -3848,8 +3848,8 @@
       "candidate_id": "cal_bc77212229",
       "family": "calendar",
       "key": "sell_in_may_sp500",
-      "p": 0.086913,
-      "recent_p": 0.240759,
+      "p": 0.08991,
+      "recent_p": 0.242757,
       "recent_powered": true,
       "windows": [
         {
@@ -3861,21 +3861,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.254,
+          "p": 0.256,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 53
         },
         {
           "label": "2021后",
-          "p": 0.611,
+          "p": 0.616,
           "n": 1400,
           "up_pct": 53,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.627,
+          "p": 0.645,
           "n": 252,
           "up_pct": 54,
           "base_pct": 57
@@ -4126,13 +4126,13 @@
       "candidate_id": "pos_ad633d4d56",
       "family": "positioning",
       "key": "tff_lev_net_pct_oi_hi_h60_nasdaq100",
-      "p": 0.108,
-      "recent_p": 0.108,
+      "p": 0.107,
+      "recent_p": 0.107,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.108,
+          "p": 0.107,
           "up_pct": 58,
           "base_pct": 74,
           "diff_pp": -16.1,
@@ -4140,7 +4140,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.108,
+          "p": 0.107,
           "up_pct": 58,
           "base_pct": 74,
           "diff_pp": -16.1,
@@ -4148,7 +4148,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.265,
+          "p": 0.262,
           "up_pct": 48,
           "base_pct": 69,
           "diff_pp": -21.3,
@@ -4156,10 +4156,10 @@
         },
         {
           "label": "近1年",
-          "p": 0.253,
+          "p": 0.252,
           "up_pct": 50,
           "base_pct": 80,
-          "diff_pp": -29.8,
+          "diff_pp": -30.2,
           "n": 54
         }
       ],
@@ -4344,14 +4344,14 @@
         },
         {
           "label": "2021后",
-          "p": 0.557,
+          "p": 0.56,
           "n": 1400,
           "up_pct": 53,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.483,
+          "p": 0.492,
           "n": 252,
           "up_pct": 60,
           "base_pct": 56
@@ -4475,7 +4475,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.569,
+          "p": 0.571,
           "n": 252,
           "up_pct": 50,
           "base_pct": 56
@@ -4615,7 +4615,7 @@
       "family": "calendar",
       "key": "monthof_2_sp500",
       "p": 0.155844,
-      "recent_p": 0.263736,
+      "recent_p": 0.262737,
       "recent_powered": true,
       "windows": [
         {
@@ -4627,21 +4627,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.262,
+          "p": 0.261,
           "n": 6684,
           "up_pct": 53,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.559,
+          "p": 0.558,
           "n": 1400,
           "up_pct": 51,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.543,
+          "p": 0.538,
           "n": 252,
           "up_pct": 47,
           "base_pct": 57
@@ -4944,8 +4944,8 @@
       "candidate_id": "cal_216be59585",
       "family": "calendar",
       "key": "monthof_11_nasdaq",
-      "p": 0.165834,
-      "recent_p": 0.35964,
+      "p": 0.166833,
+      "recent_p": 0.361638,
       "recent_powered": true,
       "windows": [
         {
@@ -4964,14 +4964,14 @@
         },
         {
           "label": "2021后",
-          "p": 0.297,
+          "p": 0.3,
           "n": 1400,
           "up_pct": 59,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.545,
+          "p": 0.54,
           "n": 252,
           "up_pct": 53,
           "base_pct": 56
@@ -5033,7 +5033,7 @@
       "candidate_id": "cal_ba8471031e",
       "family": "calendar",
       "key": "pre_fomc_sp500",
-      "p": 0.170829,
+      "p": 0.171828,
       "recent_p": 0.153846,
       "recent_powered": true,
       "windows": [
@@ -5060,7 +5060,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.607,
+          "p": 0.612,
           "n": 252,
           "up_pct": 50,
           "base_pct": 56
@@ -5257,8 +5257,8 @@
       "candidate_id": "cal_c3a33a6db5",
       "family": "calendar",
       "key": "monthof_4_sp500",
-      "p": 0.198801,
-      "recent_p": 0.204795,
+      "p": 0.197802,
+      "recent_p": 0.206793,
       "recent_powered": true,
       "windows": [
         {
@@ -5270,21 +5270,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.21,
+          "p": 0.209,
           "n": 6684,
           "up_pct": 56,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.791,
+          "p": 0.789,
           "n": 1400,
           "up_pct": 54,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.013,
+          "p": 0.016,
           "n": 252,
           "up_pct": 71,
           "base_pct": 55
@@ -5446,34 +5446,34 @@
       "candidate_id": "cal_456e8c2d5e",
       "family": "calendar",
       "key": "monthof_12_sp500",
-      "p": 0.208791,
+      "p": 0.20979,
       "recent_p": 0.991009,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.263,
+          "p": 0.262,
           "n": 24761,
           "up_pct": 53,
           "base_pct": 52
         },
         {
           "label": "2000后",
-          "p": 0.981,
+          "p": 0.98,
           "n": 6684,
           "up_pct": 53,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.594,
+          "p": 0.595,
           "n": 1400,
           "up_pct": 49,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.69,
+          "p": 0.681,
           "n": 252,
           "up_pct": 50,
           "base_pct": 57
@@ -5771,7 +5771,7 @@
       "family": "trailing_extreme",
       "key": "n63_h21_low_sp500",
       "p": 0.214,
-      "recent_p": 0.655,
+      "recent_p": 0.657,
       "recent_powered": true,
       "windows": [
         {
@@ -5784,7 +5784,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.655,
+          "p": 0.657,
           "up_pct": 66,
           "base_pct": 63,
           "diff_pp": 2.4,
@@ -5792,7 +5792,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.013,
+          "p": 0.014,
           "up_pct": 87,
           "base_pct": 66,
           "diff_pp": 20.6,
@@ -6173,6 +6173,127 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
+      "candidate_id": "tra_93edbbb9e4",
+      "family": "trailing_extreme",
+      "key": "n63_h21_high_sp500",
+      "p": 0.246,
+      "recent_p": 0.225,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.246,
+          "up_pct": 65,
+          "base_pct": 61,
+          "diff_pp": 3.6,
+          "n": 1314
+        },
+        {
+          "label": "2000后",
+          "p": 0.225,
+          "up_pct": 70,
+          "base_pct": 63,
+          "diff_pp": 6.5,
+          "n": 395
+        },
+        {
+          "label": "2021后",
+          "p": 0.008,
+          "up_pct": 85,
+          "base_pct": 66,
+          "diff_pp": 18.3,
+          "n": 110
+        },
+        {
+          "label": "近1年",
+          "p": 0.115,
+          "up_pct": 87,
+          "base_pct": 71,
+          "diff_pp": 16.1,
+          "n": 39
+        }
+      ],
+      "decades": [
+        {
+          "decade": "1930s",
+          "up_pct": 46,
+          "base_pct": 49,
+          "diff_pp": -3.0,
+          "n": 54
+        },
+        {
+          "decade": "1940s",
+          "up_pct": 70,
+          "base_pct": 57,
+          "diff_pp": 13.6,
+          "n": 61
+        },
+        {
+          "decade": "1950s",
+          "up_pct": 60,
+          "base_pct": 65,
+          "diff_pp": -4.9,
+          "n": 30
+        },
+        {
+          "decade": "1960s",
+          "up_pct": 64,
+          "base_pct": 61,
+          "diff_pp": 3.7,
+          "n": 73
+        },
+        {
+          "decade": "1970s",
+          "up_pct": 67,
+          "base_pct": 52,
+          "diff_pp": 14.8,
+          "n": 187
+        },
+        {
+          "decade": "1980s",
+          "up_pct": 61,
+          "base_pct": 62,
+          "diff_pp": -1.5,
+          "n": 307
+        },
+        {
+          "decade": "1990s",
+          "up_pct": 62,
+          "base_pct": 65,
+          "diff_pp": -3.1,
+          "n": 207
+        },
+        {
+          "decade": "2000s",
+          "up_pct": 62,
+          "base_pct": 57,
+          "diff_pp": 5.9,
+          "n": 136
+        },
+        {
+          "decade": "2010s",
+          "up_pct": 58,
+          "base_pct": 67,
+          "diff_pp": -8.8,
+          "n": 77
+        },
+        {
+          "decade": "2020s",
+          "up_pct": 80,
+          "base_pct": 68,
+          "diff_pp": 12.6,
+          "n": 182
+        }
+      ],
+      "effect": "涨了好久(trailing 高分位)后持有期上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
       "candidate_id": "reb_018df927fb",
       "family": "rebound",
       "key": "p1_h5_sp500",
@@ -6268,127 +6389,6 @@
         }
       ],
       "effect": "触发日后持有期上涨率 vs 基率",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
-      "candidate_id": "tra_93edbbb9e4",
-      "family": "trailing_extreme",
-      "key": "n63_h21_high_sp500",
-      "p": 0.261,
-      "recent_p": 0.256,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.261,
-          "up_pct": 65,
-          "base_pct": 61,
-          "diff_pp": 3.5,
-          "n": 1314
-        },
-        {
-          "label": "2000后",
-          "p": 0.256,
-          "up_pct": 70,
-          "base_pct": 63,
-          "diff_pp": 6.3,
-          "n": 395
-        },
-        {
-          "label": "2021后",
-          "p": 0.018,
-          "up_pct": 84,
-          "base_pct": 66,
-          "diff_pp": 17.5,
-          "n": 110
-        },
-        {
-          "label": "近1年",
-          "p": 0.167,
-          "up_pct": 85,
-          "base_pct": 71,
-          "diff_pp": 14.0,
-          "n": 39
-        }
-      ],
-      "decades": [
-        {
-          "decade": "1930s",
-          "up_pct": 46,
-          "base_pct": 49,
-          "diff_pp": -3.0,
-          "n": 54
-        },
-        {
-          "decade": "1940s",
-          "up_pct": 70,
-          "base_pct": 57,
-          "diff_pp": 13.6,
-          "n": 61
-        },
-        {
-          "decade": "1950s",
-          "up_pct": 60,
-          "base_pct": 65,
-          "diff_pp": -4.9,
-          "n": 30
-        },
-        {
-          "decade": "1960s",
-          "up_pct": 64,
-          "base_pct": 61,
-          "diff_pp": 3.7,
-          "n": 73
-        },
-        {
-          "decade": "1970s",
-          "up_pct": 67,
-          "base_pct": 52,
-          "diff_pp": 14.8,
-          "n": 187
-        },
-        {
-          "decade": "1980s",
-          "up_pct": 61,
-          "base_pct": 62,
-          "diff_pp": -1.5,
-          "n": 307
-        },
-        {
-          "decade": "1990s",
-          "up_pct": 62,
-          "base_pct": 65,
-          "diff_pp": -3.1,
-          "n": 207
-        },
-        {
-          "decade": "2000s",
-          "up_pct": 62,
-          "base_pct": 57,
-          "diff_pp": 5.9,
-          "n": 136
-        },
-        {
-          "decade": "2010s",
-          "up_pct": 58,
-          "base_pct": 67,
-          "diff_pp": -8.8,
-          "n": 77
-        },
-        {
-          "decade": "2020s",
-          "up_pct": 80,
-          "base_pct": 68,
-          "diff_pp": 12.1,
-          "n": 182
-        }
-      ],
-      "effect": "涨了好久(trailing 高分位)后持有期上涨率 vs 基率",
       "survive_cross": false,
       "survive_cross_bh": false,
       "survive_family": false,
@@ -6590,7 +6590,7 @@
       "family": "calendar",
       "key": "opex_week_sp500",
       "p": 0.274725,
-      "recent_p": 0.716284,
+      "recent_p": 0.713287,
       "recent_powered": true,
       "windows": [
         {
@@ -6600,17 +6600,17 @@
         },
         {
           "label": "2000后",
-          "p": 0.696,
+          "p": 0.692,
           "n": 6684
         },
         {
           "label": "2021后",
-          "p": 0.146,
+          "p": 0.143,
           "n": 1400
         },
         {
           "label": "近1年",
-          "p": 0.844,
+          "p": 0.862,
           "n": 252
         }
       ],
@@ -6627,8 +6627,8 @@
       "candidate_id": "cal_4aa242d26e",
       "family": "calendar",
       "key": "monthof_5_sp500",
-      "p": 0.27972,
-      "recent_p": 0.843157,
+      "p": 0.278721,
+      "recent_p": 0.845155,
       "recent_powered": true,
       "windows": [
         {
@@ -6640,21 +6640,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.834,
+          "p": 0.837,
           "n": 6684,
           "up_pct": 52,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.365,
+          "p": 0.368,
           "n": 1400,
           "up_pct": 57,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.289,
+          "p": 0.3,
           "n": 252,
           "up_pct": 70,
           "base_pct": 55
@@ -6941,33 +6941,33 @@
       "family": "calendar",
       "key": "monthof_1_sp500",
       "p": 0.298701,
-      "recent_p": 0.524476,
+      "recent_p": 0.523477,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.293,
+          "p": 0.294,
           "n": 24761,
           "up_pct": 54,
           "base_pct": 52
         },
         {
           "label": "2000后",
-          "p": 0.53,
+          "p": 0.529,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.933,
+          "p": 0.93,
           "n": 1400,
           "up_pct": 53,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.986,
+          "p": 0.991,
           "n": 252,
           "up_pct": 60,
           "base_pct": 56
@@ -7196,7 +7196,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.276,
+          "p": 0.277,
           "n": 6684,
           "up_pct": 55,
           "base_pct": 54
@@ -7210,7 +7210,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.56,
+          "p": 0.564,
           "n": 252,
           "up_pct": 50,
           "base_pct": 56
@@ -7417,13 +7417,13 @@
       "candidate_id": "pos_4503921189",
       "family": "positioning",
       "key": "legacy_noncomm_pct_oi_lo_h20_sp500",
-      "p": 0.311,
-      "recent_p": 0.311,
+      "p": 0.312,
+      "recent_p": 0.312,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.311,
+          "p": 0.312,
           "up_pct": 69,
           "base_pct": 64,
           "diff_pp": 5.1,
@@ -7431,7 +7431,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.311,
+          "p": 0.312,
           "up_pct": 69,
           "base_pct": 64,
           "diff_pp": 5.1,
@@ -7439,10 +7439,10 @@
         },
         {
           "label": "2021后",
-          "p": 0.548,
+          "p": 0.544,
           "up_pct": 59,
           "base_pct": 66,
-          "diff_pp": -7.0,
+          "diff_pp": -7.1,
           "n": 198
         },
         {
@@ -7470,8 +7470,8 @@
         {
           "decade": "2020s",
           "up_pct": 65,
-          "base_pct": 67,
-          "diff_pp": -2.2,
+          "base_pct": 68,
+          "diff_pp": -2.3,
           "n": 256
         }
       ],
@@ -7488,12 +7488,12 @@
       "family": "calendar",
       "key": "monthof_8_nasdaq",
       "p": 0.322677,
-      "recent_p": 0.804196,
+      "recent_p": 0.803197,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.314,
+          "p": 0.313,
           "n": 13987,
           "up_pct": 54,
           "base_pct": 56
@@ -7507,14 +7507,14 @@
         },
         {
           "label": "2021后",
-          "p": 0.651,
+          "p": 0.646,
           "n": 1400,
           "up_pct": 51,
           "base_pct": 55
         },
         {
           "label": "近1年",
-          "p": 0.99,
+          "p": 0.999,
           "n": 252,
           "up_pct": 52,
           "base_pct": 56
@@ -7674,18 +7674,18 @@
       "candidate_id": "cal_2e5f17d421",
       "family": "calendar",
       "key": "month_nasdaq",
-      "p": 0.336663,
-      "recent_p": 0.616384,
+      "p": 0.335664,
+      "recent_p": 0.614386,
       "recent_powered": false,
       "windows": [
         {
           "label": "完整",
-          "p": 0.333,
+          "p": 0.332,
           "n": 666
         },
         {
           "label": "2000后",
-          "p": 0.629,
+          "p": 0.627,
           "n": 319
         },
         {
@@ -8157,27 +8157,27 @@
       "candidate_id": "cal_e3052fad5c",
       "family": "calendar",
       "key": "monthof_4_nasdaq",
-      "p": 0.384615,
-      "recent_p": 0.496503,
+      "p": 0.385614,
+      "recent_p": 0.497502,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.417,
+          "p": 0.418,
           "n": 13987,
           "up_pct": 57,
           "base_pct": 56
         },
         {
           "label": "2000后",
-          "p": 0.507,
+          "p": 0.508,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 55
         },
         {
           "label": "2021后",
-          "p": 0.821,
+          "p": 0.816,
           "n": 1400,
           "up_pct": 52,
           "base_pct": 55
@@ -8365,13 +8365,13 @@
       "candidate_id": "str_9638e678bf",
       "family": "streak_down",
       "key": "down4_h20_sp500",
-      "p": 0.441,
-      "recent_p": 0.03,
+      "p": 0.443,
+      "recent_p": 0.031,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.441,
+          "p": 0.443,
           "up_pct": 62,
           "base_pct": 60,
           "diff_pp": 1.4,
@@ -8379,7 +8379,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.03,
+          "p": 0.031,
           "up_pct": 71,
           "base_pct": 63,
           "diff_pp": 7.5,
@@ -8387,7 +8387,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.093,
+          "p": 0.097,
           "up_pct": 76,
           "base_pct": 66,
           "diff_pp": 10.2,
@@ -8474,7 +8474,7 @@
         {
           "decade": "2020s",
           "up_pct": 76,
-          "base_pct": 67,
+          "base_pct": 68,
           "diff_pp": 8.1,
           "n": 41
         }
@@ -8491,20 +8491,20 @@
       "candidate_id": "cal_8669d8c09d",
       "family": "calendar",
       "key": "monthof_11_sp500",
-      "p": 0.447552,
+      "p": 0.446553,
       "recent_p": 0.143856,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.46,
+          "p": 0.461,
           "n": 24761,
           "up_pct": 55,
           "base_pct": 52
         },
         {
           "label": "2000后",
-          "p": 0.161,
+          "p": 0.16,
           "n": 6684,
           "up_pct": 57,
           "base_pct": 53
@@ -8518,7 +8518,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.792,
+          "p": 0.786,
           "n": 252,
           "up_pct": 63,
           "base_pct": 55
@@ -8692,34 +8692,34 @@
       "candidate_id": "cal_579e6e1355",
       "family": "calendar",
       "key": "monthof_2_nasdaq",
-      "p": 0.453546,
-      "recent_p": 0.298701,
+      "p": 0.456543,
+      "recent_p": 0.294705,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.446,
+          "p": 0.445,
           "n": 13987,
           "up_pct": 56,
           "base_pct": 56
         },
         {
           "label": "2000后",
-          "p": 0.357,
+          "p": 0.355,
           "n": 6684,
           "up_pct": 55,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.449,
+          "p": 0.448,
           "n": 1400,
           "up_pct": 51,
           "base_pct": 55
         },
         {
           "label": "近1年",
-          "p": 0.313,
+          "p": 0.308,
           "n": 252,
           "up_pct": 42,
           "base_pct": 57
@@ -8831,7 +8831,7 @@
       "family": "streak_break",
       "key": "break5_h20_sp500",
       "p": 0.481,
-      "recent_p": 0.921,
+      "recent_p": 0.923,
       "recent_powered": true,
       "windows": [
         {
@@ -8844,7 +8844,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.921,
+          "p": 0.923,
           "up_pct": 64,
           "base_pct": 63,
           "diff_pp": 0.7,
@@ -8852,7 +8852,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.825,
+          "p": 0.83,
           "up_pct": 69,
           "base_pct": 66,
           "diff_pp": 3.1,
@@ -8932,8 +8932,8 @@
         {
           "decade": "2020s",
           "up_pct": 64,
-          "base_pct": 67,
-          "diff_pp": -3.2,
+          "base_pct": 68,
+          "diff_pp": -3.3,
           "n": 14
         }
       ],
@@ -9104,33 +9104,33 @@
       "family": "calendar",
       "key": "monthof_12_nasdaq",
       "p": 0.494505,
-      "recent_p": 0.689311,
+      "recent_p": 0.688312,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.529,
+          "p": 0.528,
           "n": 13987,
           "up_pct": 56,
           "base_pct": 56
         },
         {
           "label": "2000后",
-          "p": 0.64,
+          "p": 0.638,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.51,
+          "p": 0.508,
           "n": 1400,
           "up_pct": 52,
           "base_pct": 55
         },
         {
           "label": "近1年",
-          "p": 0.668,
+          "p": 0.664,
           "n": 252,
           "up_pct": 55,
           "base_pct": 56
@@ -9582,27 +9582,27 @@
       "family": "calendar",
       "key": "opex_week_nasdaq",
       "p": 0.592408,
-      "recent_p": 0.7003,
+      "recent_p": 0.699301,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.613,
+          "p": 0.611,
           "n": 13987
         },
         {
           "label": "2000后",
-          "p": 0.693,
+          "p": 0.69,
           "n": 6684
         },
         {
           "label": "2021后",
-          "p": 0.276,
+          "p": 0.273,
           "n": 1400
         },
         {
           "label": "近1年",
-          "p": 0.654,
+          "p": 0.673,
           "n": 252
         }
       ],
@@ -9901,7 +9901,7 @@
       "candidate_id": "cal_e041ed5979",
       "family": "calendar",
       "key": "monthof_3_nasdaq",
-      "p": 0.62038,
+      "p": 0.619381,
       "recent_p": 0.8002,
       "recent_powered": true,
       "windows": [
@@ -9921,14 +9921,14 @@
         },
         {
           "label": "2021后",
-          "p": 0.656,
+          "p": 0.648,
           "n": 1400,
           "up_pct": 49,
           "base_pct": 55
         },
         {
           "label": "近1年",
-          "p": 0.205,
+          "p": 0.207,
           "n": 252,
           "up_pct": 45,
           "base_pct": 57
@@ -10077,7 +10077,7 @@
       "family": "calendar",
       "key": "monthof_5_nasdaq",
       "p": 0.648352,
-      "recent_p": 0.604396,
+      "recent_p": 0.607393,
       "recent_powered": true,
       "windows": [
         {
@@ -10089,7 +10089,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.601,
+          "p": 0.602,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 54
@@ -10103,7 +10103,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.171,
+          "p": 0.178,
           "n": 252,
           "up_pct": 70,
           "base_pct": 54
@@ -10236,7 +10236,7 @@
       "family": "calendar",
       "key": "monthof_3_sp500",
       "p": 0.662338,
-      "recent_p": 0.78022,
+      "recent_p": 0.779221,
       "recent_powered": true,
       "windows": [
         {
@@ -10248,21 +10248,21 @@
         },
         {
           "label": "2000后",
-          "p": 0.734,
+          "p": 0.735,
           "n": 6684,
           "up_pct": 51,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.764,
+          "p": 0.759,
           "n": 1400,
           "up_pct": 49,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.065,
+          "p": 0.059,
           "n": 252,
           "up_pct": 36,
           "base_pct": 58
@@ -10359,13 +10359,13 @@
       "candidate_id": "pos_4f52a87fc8",
       "family": "positioning",
       "key": "tff_lev_net_pct_oi_hi_h20_sp500",
-      "p": 0.667,
-      "recent_p": 0.667,
+      "p": 0.664,
+      "recent_p": 0.664,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.667,
+          "p": 0.664,
           "up_pct": 66,
           "base_pct": 68,
           "diff_pp": -2.0,
@@ -10373,7 +10373,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.667,
+          "p": 0.664,
           "up_pct": 66,
           "base_pct": 68,
           "diff_pp": -2.0,
@@ -10381,10 +10381,10 @@
         },
         {
           "label": "2021后",
-          "p": 0.022,
+          "p": 0.018,
           "up_pct": 43,
           "base_pct": 66,
-          "diff_pp": -23.1,
+          "diff_pp": -23.2,
           "n": 121
         },
         {
@@ -10405,8 +10405,8 @@
         {
           "decade": "2020s",
           "up_pct": 45,
-          "base_pct": 67,
-          "diff_pp": -22.2,
+          "base_pct": 68,
+          "diff_pp": -22.3,
           "n": 126
         }
       ],
@@ -10514,33 +10514,33 @@
       "family": "calendar",
       "key": "monthof_10_nasdaq",
       "p": 0.677323,
-      "recent_p": 0.361638,
+      "recent_p": 0.363636,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.65,
+          "p": 0.648,
           "n": 13987,
           "up_pct": 55,
           "base_pct": 56
         },
         {
           "label": "2000后",
-          "p": 0.368,
+          "p": 0.369,
           "n": 6684,
           "up_pct": 55,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.644,
+          "p": 0.648,
           "n": 1400,
           "up_pct": 59,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.603,
+          "p": 0.611,
           "n": 252,
           "up_pct": 61,
           "base_pct": 55
@@ -11058,17 +11058,17 @@
       "family": "calendar",
       "key": "quarter_end_sp500",
       "p": 0.791209,
-      "recent_p": 0.727273,
+      "recent_p": 0.725275,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.786,
+          "p": 0.784,
           "n": 24761
         },
         {
           "label": "2000后",
-          "p": 0.731,
+          "p": 0.73,
           "n": 6684
         },
         {
@@ -11078,7 +11078,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.475,
+          "p": 0.477,
           "n": 252
         }
       ],
@@ -11253,23 +11253,93 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
+      "candidate_id": "pos_0e8203cb20",
+      "family": "positioning",
+      "key": "legacy_noncomm_pct_oi_hi_h20_sp500",
+      "p": 0.817,
+      "recent_p": 0.817,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.817,
+          "up_pct": 62,
+          "base_pct": 64,
+          "diff_pp": -2.0,
+          "n": 692
+        },
+        {
+          "label": "2000后",
+          "p": 0.817,
+          "up_pct": 62,
+          "base_pct": 64,
+          "diff_pp": -2.0,
+          "n": 692
+        },
+        {
+          "label": "2021后",
+          "p": 0.017,
+          "up_pct": 37,
+          "base_pct": 66,
+          "diff_pp": -29.2,
+          "n": 127
+        },
+        {
+          "label": "近1年",
+          "p": null,
+          "up_pct": null,
+          "n": 0
+        }
+      ],
+      "decades": [
+        {
+          "decade": "2000s",
+          "up_pct": 61,
+          "base_pct": 57,
+          "diff_pp": 4.1,
+          "n": 168
+        },
+        {
+          "decade": "2010s",
+          "up_pct": 70,
+          "base_pct": 67,
+          "diff_pp": 2.6,
+          "n": 397
+        },
+        {
+          "decade": "2020s",
+          "up_pct": 37,
+          "base_pct": 68,
+          "diff_pp": -30.5,
+          "n": 127
+        }
+      ],
+      "effect": "仓位极端状态下未来持有期上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
       "candidate_id": "cal_19104677ae",
       "family": "calendar",
       "key": "monthof_6_sp500",
-      "p": 0.817183,
+      "p": 0.819181,
       "recent_p": 0.460539,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.793,
+          "p": 0.796,
           "n": 24761,
           "up_pct": 52,
           "base_pct": 52
         },
         {
           "label": "2000后",
-          "p": 0.475,
+          "p": 0.472,
           "n": 6684,
           "up_pct": 53,
           "base_pct": 54
@@ -11283,7 +11353,7 @@
         },
         {
           "label": "近1年",
-          "p": 0.494,
+          "p": 0.485,
           "n": 252,
           "up_pct": 48,
           "base_pct": 57
@@ -11377,76 +11447,6 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
-      "candidate_id": "pos_0e8203cb20",
-      "family": "positioning",
-      "key": "legacy_noncomm_pct_oi_hi_h20_sp500",
-      "p": 0.821,
-      "recent_p": 0.821,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.821,
-          "up_pct": 62,
-          "base_pct": 64,
-          "diff_pp": -2.0,
-          "n": 692
-        },
-        {
-          "label": "2000后",
-          "p": 0.821,
-          "up_pct": 62,
-          "base_pct": 64,
-          "diff_pp": -2.0,
-          "n": 692
-        },
-        {
-          "label": "2021后",
-          "p": 0.017,
-          "up_pct": 37,
-          "base_pct": 66,
-          "diff_pp": -29.1,
-          "n": 127
-        },
-        {
-          "label": "近1年",
-          "p": null,
-          "up_pct": null,
-          "n": 0
-        }
-      ],
-      "decades": [
-        {
-          "decade": "2000s",
-          "up_pct": 61,
-          "base_pct": 57,
-          "diff_pp": 4.1,
-          "n": 168
-        },
-        {
-          "decade": "2010s",
-          "up_pct": 70,
-          "base_pct": 67,
-          "diff_pp": 2.6,
-          "n": 397
-        },
-        {
-          "decade": "2020s",
-          "up_pct": 37,
-          "base_pct": 67,
-          "diff_pp": -30.5,
-          "n": 127
-        }
-      ],
-      "effect": "仓位极端状态下未来持有期上涨率 vs 基率",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
       "candidate_id": "opt_2bdac60949",
       "family": "options_sentiment",
       "key": "total_pc_hi_h10",
@@ -11517,95 +11517,6 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
-      "candidate_id": "cal_c8b0832b2e",
-      "family": "calendar",
-      "key": "monthof_7_nasdaq",
-      "p": 0.823177,
-      "recent_p": 0.566434,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.831,
-          "n": 13987,
-          "up_pct": 56,
-          "base_pct": 56
-        },
-        {
-          "label": "2000后",
-          "p": 0.607,
-          "n": 6684,
-          "up_pct": 57,
-          "base_pct": 54
-        },
-        {
-          "label": "2021后",
-          "p": 0.556,
-          "n": 1400,
-          "up_pct": 61,
-          "base_pct": 54
-        },
-        {
-          "label": "近1年",
-          "p": 0.295,
-          "n": 252,
-          "up_pct": 39,
-          "base_pct": 57
-        }
-      ],
-      "decades": [
-        {
-          "decade": "1970s",
-          "up_pct": 51,
-          "base_pct": 57,
-          "diff_pp": -5.6,
-          "n": 187
-        },
-        {
-          "decade": "1980s",
-          "up_pct": 55,
-          "base_pct": 57,
-          "diff_pp": -2.4,
-          "n": 212
-        },
-        {
-          "decade": "1990s",
-          "up_pct": 58,
-          "base_pct": 57,
-          "diff_pp": 1.5,
-          "n": 213
-        },
-        {
-          "decade": "2000s",
-          "up_pct": 54,
-          "base_pct": 52,
-          "diff_pp": 2.0,
-          "n": 211
-        },
-        {
-          "decade": "2010s",
-          "up_pct": 58,
-          "base_pct": 56,
-          "diff_pp": 1.9,
-          "n": 211
-        },
-        {
-          "decade": "2020s",
-          "up_pct": 62,
-          "base_pct": 56,
-          "diff_pp": 6.0,
-          "n": 149
-        }
-      ],
-      "effect": "该月上涨率 vs 基率(两侧·机器枚举)",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
       "candidate_id": "pos_46e606b679",
       "family": "positioning",
       "key": "tff_lev_net_pct_oi_hi_h60_sp500",
@@ -11661,6 +11572,95 @@
         }
       ],
       "effect": "仓位极端状态下未来持有期上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
+      "candidate_id": "cal_c8b0832b2e",
+      "family": "calendar",
+      "key": "monthof_7_nasdaq",
+      "p": 0.829171,
+      "recent_p": 0.554446,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.841,
+          "n": 13987,
+          "up_pct": 56,
+          "base_pct": 56
+        },
+        {
+          "label": "2000后",
+          "p": 0.598,
+          "n": 6684,
+          "up_pct": 57,
+          "base_pct": 54
+        },
+        {
+          "label": "2021后",
+          "p": 0.523,
+          "n": 1400,
+          "up_pct": 61,
+          "base_pct": 54
+        },
+        {
+          "label": "近1年",
+          "p": 0.356,
+          "n": 252,
+          "up_pct": 39,
+          "base_pct": 57
+        }
+      ],
+      "decades": [
+        {
+          "decade": "1970s",
+          "up_pct": 51,
+          "base_pct": 57,
+          "diff_pp": -5.6,
+          "n": 187
+        },
+        {
+          "decade": "1980s",
+          "up_pct": 55,
+          "base_pct": 57,
+          "diff_pp": -2.4,
+          "n": 212
+        },
+        {
+          "decade": "1990s",
+          "up_pct": 58,
+          "base_pct": 57,
+          "diff_pp": 1.5,
+          "n": 213
+        },
+        {
+          "decade": "2000s",
+          "up_pct": 54,
+          "base_pct": 52,
+          "diff_pp": 2.0,
+          "n": 211
+        },
+        {
+          "decade": "2010s",
+          "up_pct": 58,
+          "base_pct": 56,
+          "diff_pp": 1.9,
+          "n": 211
+        },
+        {
+          "decade": "2020s",
+          "up_pct": 62,
+          "base_pct": 56,
+          "diff_pp": 6.0,
+          "n": 149
+        }
+      ],
+      "effect": "该月上涨率 vs 基率(两侧·机器枚举)",
       "survive_cross": false,
       "survive_cross_bh": false,
       "survive_family": false,
@@ -11760,65 +11760,16 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
-      "candidate_id": "fac_7578b1d58f",
-      "family": "factor",
-      "key": "vix_backwardation",
-      "p": 0.837,
-      "recent_p": 0.631,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.547,
-          "up_pct": 65,
-          "base_pct": 62,
-          "diff_pp": 2.7,
-          "n": 555
-        },
-        {
-          "label": "2000后",
-          "p": 0.547,
-          "up_pct": 65,
-          "base_pct": 62,
-          "diff_pp": 2.7,
-          "n": 555
-        },
-        {
-          "label": "2021后",
-          "p": 0.344,
-          "up_pct": 73,
-          "base_pct": 62,
-          "diff_pp": 11.1,
-          "n": 66
-        },
-        {
-          "label": "近1年",
-          "p": 0.601,
-          "up_pct": 71,
-          "base_pct": 63,
-          "diff_pp": 8.7,
-          "n": 14
-        }
-      ],
-      "effect": "因子为真时20日上涨率 vs 基率",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
       "candidate_id": "str_7fd52c09bf",
       "family": "streak_down",
       "key": "down5_h20_sp500",
-      "p": 0.837,
+      "p": 0.836,
       "recent_p": 0.121,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.837,
+          "p": 0.836,
           "up_pct": 60,
           "base_pct": 60,
           "diff_pp": -0.6,
@@ -11834,7 +11785,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.361,
+          "p": 0.362,
           "up_pct": 77,
           "base_pct": 66,
           "diff_pp": 10.8,
@@ -11914,7 +11865,7 @@
         {
           "decade": "2020s",
           "up_pct": 71,
-          "base_pct": 67,
+          "base_pct": 68,
           "diff_pp": 3.9,
           "n": 14
         }
@@ -11928,10 +11879,59 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
+      "candidate_id": "fac_7578b1d58f",
+      "family": "factor",
+      "key": "vix_backwardation",
+      "p": 0.837,
+      "recent_p": 0.631,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.547,
+          "up_pct": 65,
+          "base_pct": 62,
+          "diff_pp": 2.7,
+          "n": 555
+        },
+        {
+          "label": "2000后",
+          "p": 0.547,
+          "up_pct": 65,
+          "base_pct": 62,
+          "diff_pp": 2.7,
+          "n": 555
+        },
+        {
+          "label": "2021后",
+          "p": 0.344,
+          "up_pct": 73,
+          "base_pct": 62,
+          "diff_pp": 11.1,
+          "n": 66
+        },
+        {
+          "label": "近1年",
+          "p": 0.601,
+          "up_pct": 71,
+          "base_pct": 63,
+          "diff_pp": 8.7,
+          "n": 14
+        }
+      ],
+      "effect": "因子为真时20日上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
       "candidate_id": "cal_116d0565a8",
       "family": "calendar",
       "key": "quarter_end_nasdaq",
-      "p": 0.888112,
+      "p": 0.889111,
       "recent_p": 0.428571,
       "recent_powered": true,
       "windows": [
@@ -11942,17 +11942,17 @@
         },
         {
           "label": "2000后",
-          "p": 0.441,
+          "p": 0.438,
           "n": 6684
         },
         {
           "label": "2021后",
-          "p": 0.575,
+          "p": 0.574,
           "n": 1400
         },
         {
           "label": "近1年",
-          "p": 0.442,
+          "p": 0.453,
           "n": 252
         }
       ],
@@ -12088,34 +12088,34 @@
       "candidate_id": "cal_021d07d02a",
       "family": "calendar",
       "key": "monthof_10_sp500",
-      "p": 0.92008,
-      "recent_p": 0.4995,
+      "p": 0.919081,
+      "recent_p": 0.503497,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.925,
+          "p": 0.924,
           "n": 24761,
           "up_pct": 51,
           "base_pct": 53
         },
         {
           "label": "2000后",
-          "p": 0.477,
+          "p": 0.476,
           "n": 6684,
           "up_pct": 54,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.424,
+          "p": 0.426,
           "n": 1400,
           "up_pct": 55,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.812,
+          "p": 0.825,
           "n": 252,
           "up_pct": 65,
           "base_pct": 55
@@ -12335,6 +12335,78 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
+      "candidate_id": "pos_fb69e287a1",
+      "family": "positioning",
+      "key": "legacy_noncomm_pct_oi_hi_h60_nasdaq100",
+      "p": 0.925,
+      "recent_p": 0.925,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.925,
+          "up_pct": 70,
+          "base_pct": 71,
+          "diff_pp": -0.6,
+          "n": 840
+        },
+        {
+          "label": "2000后",
+          "p": 0.925,
+          "up_pct": 70,
+          "base_pct": 71,
+          "diff_pp": -0.6,
+          "n": 840
+        },
+        {
+          "label": "2021后",
+          "p": 0.752,
+          "up_pct": 65,
+          "base_pct": 69,
+          "diff_pp": -3.6,
+          "n": 170
+        },
+        {
+          "label": "近1年",
+          "p": 0.288,
+          "up_pct": 69,
+          "base_pct": 80,
+          "diff_pp": -11.2,
+          "n": 103
+        }
+      ],
+      "decades": [
+        {
+          "decade": "2000s",
+          "up_pct": 79,
+          "base_pct": 64,
+          "diff_pp": 15.4,
+          "n": 193
+        },
+        {
+          "decade": "2010s",
+          "up_pct": 67,
+          "base_pct": 75,
+          "diff_pp": -8.6,
+          "n": 458
+        },
+        {
+          "decade": "2020s",
+          "up_pct": 69,
+          "base_pct": 71,
+          "diff_pp": -2.7,
+          "n": 189
+        }
+      ],
+      "effect": "仓位极端状态下未来持有期上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
       "candidate_id": "tra_22e8f33640",
       "family": "trailing_extreme",
       "key": "n126_h63_low_sp500",
@@ -12426,88 +12498,16 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
-      "candidate_id": "pos_fb69e287a1",
-      "family": "positioning",
-      "key": "legacy_noncomm_pct_oi_hi_h60_nasdaq100",
-      "p": 0.927,
-      "recent_p": 0.927,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.927,
-          "up_pct": 70,
-          "base_pct": 71,
-          "diff_pp": -0.6,
-          "n": 840
-        },
-        {
-          "label": "2000后",
-          "p": 0.927,
-          "up_pct": 70,
-          "base_pct": 71,
-          "diff_pp": -0.6,
-          "n": 840
-        },
-        {
-          "label": "2021后",
-          "p": 0.756,
-          "up_pct": 65,
-          "base_pct": 69,
-          "diff_pp": -3.5,
-          "n": 170
-        },
-        {
-          "label": "近1年",
-          "p": 0.303,
-          "up_pct": 69,
-          "base_pct": 80,
-          "diff_pp": -10.8,
-          "n": 103
-        }
-      ],
-      "decades": [
-        {
-          "decade": "2000s",
-          "up_pct": 79,
-          "base_pct": 64,
-          "diff_pp": 15.4,
-          "n": 193
-        },
-        {
-          "decade": "2010s",
-          "up_pct": 67,
-          "base_pct": 75,
-          "diff_pp": -8.6,
-          "n": 458
-        },
-        {
-          "decade": "2020s",
-          "up_pct": 69,
-          "base_pct": 71,
-          "diff_pp": -2.6,
-          "n": 189
-        }
-      ],
-      "effect": "仓位极端状态下未来持有期上涨率 vs 基率",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
       "candidate_id": "cal_02b889c7e0",
       "family": "calendar",
       "key": "monthof_8_sp500",
       "p": 0.93007,
-      "recent_p": 0.681319,
+      "recent_p": 0.679321,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.944,
+          "p": 0.943,
           "n": 24761,
           "up_pct": 52,
           "base_pct": 53
@@ -12521,14 +12521,14 @@
         },
         {
           "label": "2021后",
-          "p": 0.668,
+          "p": 0.666,
           "n": 1400,
           "up_pct": 50,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.866,
+          "p": 0.873,
           "n": 252,
           "up_pct": 48,
           "base_pct": 57
@@ -12900,34 +12900,34 @@
       "candidate_id": "cal_2de632e38b",
       "family": "calendar",
       "key": "monthof_6_nasdaq",
-      "p": 0.984016,
-      "recent_p": 0.852148,
+      "p": 0.985015,
+      "recent_p": 0.853147,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.987,
+          "p": 0.988,
           "n": 13987,
           "up_pct": 56,
           "base_pct": 56
         },
         {
           "label": "2000后",
-          "p": 0.879,
+          "p": 0.88,
           "n": 6684,
           "up_pct": 55,
           "base_pct": 54
         },
         {
           "label": "2021后",
-          "p": 0.708,
+          "p": 0.712,
           "n": 1400,
           "up_pct": 59,
           "base_pct": 54
         },
         {
           "label": "近1年",
-          "p": 0.416,
+          "p": 0.41,
           "n": 252,
           "up_pct": 43,
           "base_pct": 57

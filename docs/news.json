@@ -1,6 +1,30 @@
 {
- "updated": "2026-07-31 21:34 UTC",
+ "updated": "2026-07-31 22:37 UTC",
  "items": [
+  {
+   "time": "2026-07-31 22:21 UTC",
+   "title": "July ends on a hopeful note for stocks after momentum trade sees biggest wipeout since 2000",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-31 21:53 UTC",
+   "title": "The S&P 500 is making a change by adding this little-known industrial stock",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-07-31 21:49 UTC",
+   "title": "Fintech broker Clear Street offers investors pre-IPO access to $188 billion AI giant Databricks",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-07-31 21:10 UTC",
    "title": "S&P 500 ends with its first July decline since 2014. Here are the stocks that led the selloff.",
@@ -12,30 +36,6 @@
   {
    "time": "2026-07-31 20:23 UTC",
    "title": "Did China build a top-tier AI model by itself? A new report suggests Nvidia chips played a role.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 20:17 UTC",
-   "title": "Alphabet, Amazon and Microsoft added nearly $1.5 trillion in combined value this week",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 19:43 UTC",
-   "title": "Eaton shares jump as its earnings and outlook show resilience of the AI buildout",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 19:04 UTC",
-   "title": "Supply-chain legend Tim Cook finally meets his match with Apple’s memory crunch",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
