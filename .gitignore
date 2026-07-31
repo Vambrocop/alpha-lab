@@ -21,3 +21,6 @@ CLAUDE_HANDOFF.md
 
 # 个人持仓（持仓感知告警用）——隐私，绝不进公开仓库；CI 用 HOLDINGS Secret，本地用此文件测试
 market-analysis/data/holdings.txt
+
+# 本地每周刷新日志(不进仓库·供人工复核)
+tools/refresh_logs/
