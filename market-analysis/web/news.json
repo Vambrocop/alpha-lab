@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-01 14:19 UTC",
+ "updated": "2026-08-01 21:41 UTC",
  "items": [
   {
    "time": "2026-08-01 13:44 UTC",
@@ -18,14 +18,6 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-01 12:16 UTC",
-   "title": "From a Fed decision to Big Tech earnings: What drove last week's volatile market",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
    "time": "2026-08-01 12:00 UTC",
    "title": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
    "impact": "neutral",
@@ -34,11 +26,11 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-01 12:00 UTC",
-   "title": "Loyalists may miss the old Southwest. Wall Street loves the new one.",
+   "time": "2026-07-31 21:49 UTC",
+   "title": "Fintech broker Clear Street offers investors pre-IPO access to $188 billion AI giant Databricks",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
