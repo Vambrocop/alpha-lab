@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-02 14:21 UTC",
+ "updated": "2026-08-02 21:42 UTC",
  "items": [
+  {
+   "time": "2026-08-02 16:54 UTC",
+   "title": "Looking at just the odds isn’t enough. How traders gain an edge on prediction markets",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-02 15:36 UTC",
+   "title": "Here are the 2 big things we're watching in the stock market in the week ahead",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-02 14:30 UTC",
+   "title": "Why people are dropping out of the workforce and not looking for new jobs: 'The market wore me down'",
+   "impact": "negative",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-02 14:00 UTC",
    "title": "S&P 500 profit growth is getting even wilder as Amazon makes its mark",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-02 13:00 UTC",
-   "title": "How Apple’s cheap MacBook Neo sparked a war in budget laptops",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-02 12:01 UTC",
-   "title": "Top Wall Street analysts are bullish on these 3 dividend stocks for passive income",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-02 12:00 UTC",
-   "title": "Investors are rotating into financial stocks. The Fed’s next move could determine how far the rally runs.",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
