@@ -1,36 +1,44 @@
 {
- "updated": "2026-08-01 21:41 UTC",
+ "updated": "2026-08-02 14:21 UTC",
  "items": [
   {
-   "time": "2026-08-01 13:44 UTC",
-   "title": "Looking at just the odds isn’t enough. How traders gain an edge on prediction markets",
+   "time": "2026-08-02 14:00 UTC",
+   "title": "S&P 500 profit growth is getting even wilder as Amazon makes its mark",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-02 13:00 UTC",
+   "title": "Investors scored on Iran war's oil market boom. Staying long the trade will get trickier",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-02 13:00 UTC",
+   "title": "How Apple’s cheap MacBook Neo sparked a war in budget laptops",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-02 12:01 UTC",
+   "title": "Top Wall Street analysts are bullish on these 3 dividend stocks for passive income",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-02 12:00 UTC",
+   "title": "Investors are rotating into financial stocks. The Fed’s next move could determine how far the rally runs.",
    "impact": "positive",
    "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-01 12:30 UTC",
-   "title": "As Americans go direct with GLP-1 prescriptions, Walmart, Costco, Amazon will be big weight-loss winners",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-01 12:00 UTC",
-   "title": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-07-31 21:49 UTC",
-   "title": "Fintech broker Clear Street offers investors pre-IPO access to $188 billion AI giant Databricks",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
