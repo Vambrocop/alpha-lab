@@ -40,6 +40,19 @@ function RunPy([string]$script) {
   $out = & py $script 2>&1 | Out-String
   Add-Content -Path $log -Value $out -Encoding utf8
 }
+function Show-Toast([string]$title, [string]$msg) {
+  # best-effort Windows toast; if unavailable the Desktop flag file is the real signal
+  try {
+    $null = [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]
+    $tmpl = [Windows.UI.Notifications.ToastNotificationManager]::GetTemplateContent([Windows.UI.Notifications.ToastTemplateType]::ToastText02)
+    $tn = $tmpl.GetElementsByTagName("text")
+    $tn.Item(0).AppendChild($tmpl.CreateTextNode($title)) | Out-Null
+    $tn.Item(1).AppendChild($tmpl.CreateTextNode($msg))   | Out-Null
+    $toast = [Windows.UI.Notifications.ToastNotification]::new($tmpl)
+    $appId = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe'
+    [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($appId).Show($toast)
+  } catch { Log ("(toast unavailable: {0})" -f $_.Exception.Message) }
+}
 
 Log "=== Valpha local refresh START ($stamp) ==="
 Log ("repo: {0}" -f $repo)
@@ -102,5 +115,20 @@ Add-Content -Path $log -Value $ds -Encoding utf8
 # --- 6. plain-English summary (console + LATEST_SUMMARY.txt + appended to this log)
 Log "=== plain-English summary (also saved to tools\refresh_logs\LATEST_SUMMARY.txt) ==="
 & py tools\refresh_summary.py --insider-attempted $insiderAttempted --validate-exit $valExit --log "$log"
+$summaryExit = $LASTEXITCODE
+
+# --- 7. self-check notify: quiet confirm toast on success; on a real problem, a can't-miss Desktop
+#        file + an alert toast. If the "Valpha - ACTION NEEDED.txt" file is NOT on your Desktop, all is well.
+$desktop = [Environment]::GetFolderPath('Desktop')
+$flag    = Join-Path $desktop "Valpha - ACTION NEEDED.txt"
+if ($summaryExit -eq 2) {
+  try { Copy-Item -Path (Join-Path $logdir "LATEST_SUMMARY.txt") -Destination $flag -Force } catch {}
+  Show-Toast "Valpha refresh - ACTION NEEDED" "Something did not refresh. Open 'Valpha - ACTION NEEDED.txt' on your Desktop."
+  Log "NOTIFY: problem -> Desktop flag written + alert toast"
+} else {
+  if (Test-Path $flag) { Remove-Item $flag -Force -ErrorAction SilentlyContinue }
+  Show-Toast "Valpha refresh OK" "insider + ndx updated, validation passed. Nothing to do."
+  Log "NOTIFY: success -> confirm toast (nothing on your Desktop = all good)"
+}
 
 Log "=== DONE. Never committed / pushed. See LATEST_SUMMARY.txt, then commit manually if it looks right. ==="

@@ -13,6 +13,7 @@ import argparse
 import datetime
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -86,7 +87,7 @@ def main():
         W("  WHAT YOU NEED TO DO:  Nothing.")
         W("=" * 60)
         _emit(L, a.log)
-        return
+        return 0
 
     insider_attempted = a.insider_attempted.lower() == "true"
     ins_line, ins_ok = _src("Insider (SEC Form 4)", insider_attempted, _load("insider.json"), "n_buys", 8, "buys")
@@ -130,6 +131,7 @@ def main():
         W(f"  Full technical log: {a.log}")
     W("=" * 60)
     _emit(L, a.log)
+    return 0 if overall else 2   # 2 = 需要用户注意(供 .ps1 决定弹提醒/写桌面标记)
 
 
 def _emit(lines, logpath):
@@ -146,4 +148,4 @@ def _emit(lines, logpath):
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
