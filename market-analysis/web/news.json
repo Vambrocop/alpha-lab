@@ -1,10 +1,26 @@
 {
- "updated": "2026-08-03 15:42 UTC",
+ "updated": "2026-08-03 16:13 UTC",
  "items": [
   {
-   "time": "2026-08-03 15:35 UTC",
+   "time": "2026-08-03 15:59 UTC",
+   "title": "Kalshi traders think July jobs report will come in slightly cooler than economists’ predictions",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-03 15:50 UTC",
    "title": "Amazon tops $3 trillion market cap as stock continues post-earnings surge",
    "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-03 15:47 UTC",
+   "title": "Oil prices tumble after Trump calls off attack on Iran",
+   "impact": "negative",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
@@ -18,27 +34,11 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-03 15:16 UTC",
-   "title": "Oil prices tumble after Trump calls off attack on Iran",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
    "time": "2026-08-03 15:03 UTC",
    "title": "Why tech stocks are likely to take a back seat for the rest of 2026, according to JPMorgan strategists",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-03 13:45 UTC",
-   "title": "SpaceX's post-IPO plunge sets tense backdrop for first earnings report",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
