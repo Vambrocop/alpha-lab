@@ -1,10 +1,34 @@
 {
- "updated": "2026-08-03 21:36 UTC",
+ "updated": "2026-08-03 22:39 UTC",
  "items": [
   {
-   "time": "2026-08-03 21:34 UTC",
-   "title": "Snap's stock jumps 10% on earnings beat and strong sales forecast",
+   "time": "2026-08-03 22:20 UTC",
+   "title": "Jim Cramer says the market has warmed up to Big Tech's AI spending. Here's what flipped the switch",
    "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-03 22:03 UTC",
+   "title": "Snap's stock jumps 8% on earnings beat and strong sales forecast",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-03 21:59 UTC",
+   "title": "Palantir’s stock climbs after earnings, as AI drives turbocharged growth",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-03 21:57 UTC",
+   "title": "Big Tech's Anthropic and OpenAI stakes are distorting the corporate earnings picture",
+   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
@@ -12,30 +36,6 @@
   {
    "time": "2026-08-03 20:44 UTC",
    "title": "This indicator is giving the bull market another lease on life",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-03 20:32 UTC",
-   "title": "Traders in the world’s most important financial market are bracing for a wild stretch ahead",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-03 20:23 UTC",
-   "title": "'The Odyssey' fuels Imax stock to all-time high. CEO calls momentum a 'flywheel'",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-03 20:17 UTC",
-   "title": "Boeing clears key hurdle and stock rallies to lead the Dow",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",

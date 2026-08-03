@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T15:43:52Z",
+  "generated": "2026-08-03T22:39:52Z",
   "source": "动量+低波动 选股 → 前向公开计分",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，观察池取头/尾各3）",
   "hold_td": 20,
@@ -18,7 +18,7 @@
       "hit_pct": 66.7,
       "mean_call_excess_pct": 6.491
     },
-    "n_pending": 115,
+    "n_pending": 116,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
@@ -83,6 +83,17 @@
       "view": "看淡",
       "pick_date": "2026-08-03",
       "mom_pct": -17.0,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "BRK-B",
+      "view": "看好",
+      "pick_date": "2026-08-03",
+      "mom_pct": 6.8,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -446,17 +457,6 @@
       "view": "看好",
       "pick_date": "2026-07-22",
       "mom_pct": 0.9,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "HOOD",
-      "view": "看淡",
-      "pick_date": "2026-07-22",
-      "mom_pct": -0.9,
       "settled": false,
       "dropped": false,
       "excess_pct": null,

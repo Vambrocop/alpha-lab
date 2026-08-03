@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T15:43:46Z",
+  "generated": "2026-08-03T22:39:48Z",
   "caveat": "这是澳股的**风险画像**，描述它历史上是什么样——**不预测涨跌、不荐股、不给买卖点**。β=对 ASX200(^AXJO) 的敏感度（风险特征非收益承诺）；流动性档位=60日中位日成交额的机械分档（低档票点差/滑点风险高）。**不含 franking（红利抵免）**——无可靠免费数据源，宁缺勿猜；税务影响请咨询专业人士。数据不足的票如实标注。ASX 本地日=交易日。",
   "benchmark": "ASX200 (^AXJO)",
   "min_days": 250,
@@ -128,7 +128,7 @@
             "p90_pct": 6.31,
             "worst_pct": -18.21,
             "best_pct": 36.49,
-            "pct_negative": 38.1
+            "pct_negative": 37.9
           },
           {
             "horizon": 20,
@@ -138,7 +138,7 @@
             "p90_pct": 13.17,
             "worst_pct": -32.14,
             "best_pct": 46.92,
-            "pct_negative": 36.0
+            "pct_negative": 36.2
           }
         ]
       },
@@ -542,7 +542,7 @@
             "p90_pct": 5.57,
             "worst_pct": -19.96,
             "best_pct": 27.5,
-            "pct_negative": 41.1
+            "pct_negative": 40.9
           },
           {
             "horizon": 20,
@@ -552,7 +552,7 @@
             "p90_pct": 10.07,
             "worst_pct": -39.82,
             "best_pct": 47.22,
-            "pct_negative": 38.7
+            "pct_negative": 38.9
           }
         ]
       },
@@ -585,7 +585,7 @@
       "name": "西太平洋银行",
       "evt": {
         "status": "ok",
-        "xi": 0.263,
+        "xi": 0.262,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.581,
         "n_exceed": 494,
@@ -680,7 +680,7 @@
             "p90_pct": 5.53,
             "worst_pct": -19.43,
             "best_pct": 14.66,
-            "pct_negative": 40.3
+            "pct_negative": 40.1
           },
           {
             "horizon": 20,
@@ -736,7 +736,7 @@
           {
             "level": 0.999,
             "var_pct": 11.64,
-            "es_pct": 20.97
+            "es_pct": 20.96
           }
         ]
       },
@@ -999,7 +999,7 @@
       "name": "麦格理",
       "evt": {
         "status": "ok",
-        "xi": 0.193,
+        "xi": 0.194,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.509,
         "n_exceed": 383,
@@ -1094,7 +1094,7 @@
             "p90_pct": 7.75,
             "worst_pct": -37.99,
             "best_pct": 50.67,
-            "pct_negative": 42.8
+            "pct_negative": 43.1
           },
           {
             "horizon": 20,
@@ -1149,7 +1149,7 @@
           },
           {
             "level": 0.999,
-            "var_pct": 20.06,
+            "var_pct": 20.05,
             "es_pct": 34.51
           }
         ]
@@ -1232,7 +1232,7 @@
             "p90_pct": 11.21,
             "worst_pct": -54.63,
             "best_pct": 132.26,
-            "pct_negative": 50.4
+            "pct_negative": 50.0
           },
           {
             "horizon": 20,
@@ -1242,7 +1242,7 @@
             "p90_pct": 26.18,
             "worst_pct": -68.07,
             "best_pct": 141.94,
-            "pct_negative": 47.1
+            "pct_negative": 48.2
           }
         ]
       },
@@ -1275,7 +1275,7 @@
       "name": "Woolworths(超市)",
       "evt": {
         "status": "ok",
-        "xi": 0.329,
+        "xi": 0.328,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.607,
         "n_exceed": 422,
@@ -1288,7 +1288,7 @@
           {
             "level": 0.999,
             "var_pct": 7.56,
-            "es_pct": 11.49
+            "es_pct": 11.48
           }
         ]
       },
@@ -1303,7 +1303,7 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.85015,
+            "p_value": 0.851149,
             "min_group_n": 1642,
             "min_group_n_half": 808,
             "split_half_p": [
@@ -1445,7 +1445,7 @@
             "min_group_n": 1416,
             "min_group_n_half": 704,
             "split_half_p": [
-              0.4446,
+              0.4456,
               0.8511
             ],
             "split_half_stable": false,
@@ -1508,7 +1508,7 @@
             "p90_pct": 4.49,
             "worst_pct": -10.63,
             "best_pct": 16.66,
-            "pct_negative": 42.9
+            "pct_negative": 43.4
           },
           {
             "horizon": 20,
@@ -1656,7 +1656,7 @@
             "p90_pct": 13.5,
             "worst_pct": -58.88,
             "best_pct": 36.73,
-            "pct_negative": 36.9
+            "pct_negative": 36.3
           }
         ]
       },
@@ -1784,7 +1784,7 @@
             "p90_pct": 16.9,
             "worst_pct": -44.69,
             "best_pct": 130.79,
-            "pct_negative": 37.6
+            "pct_negative": 36.3
           },
           {
             "horizon": 20,
@@ -1794,7 +1794,7 @@
             "p90_pct": 34.28,
             "worst_pct": -59.13,
             "best_pct": 157.89,
-            "pct_negative": 39.6
+            "pct_negative": 39.4
           }
         ]
       },
@@ -1936,7 +1936,7 @@
             "p90_pct": 10.43,
             "worst_pct": -25.05,
             "best_pct": 31.25,
-            "pct_negative": 41.8
+            "pct_negative": 42.0
           }
         ]
       },
@@ -2206,7 +2206,7 @@
             "p90_pct": 6.23,
             "worst_pct": -25.61,
             "best_pct": 24.31,
-            "pct_negative": 40.7
+            "pct_negative": 40.9
           },
           {
             "horizon": 20,
@@ -2216,7 +2216,7 @@
             "p90_pct": 12.64,
             "worst_pct": -50.87,
             "best_pct": 30.8,
-            "pct_negative": 39.4
+            "pct_negative": 39.6
           }
         ]
       },
@@ -2344,7 +2344,7 @@
             "p90_pct": 6.31,
             "worst_pct": -44.87,
             "best_pct": 60.0,
-            "pct_negative": 39.1
+            "pct_negative": 38.9
           },
           {
             "horizon": 20,
@@ -2482,7 +2482,7 @@
             "p90_pct": 7.76,
             "worst_pct": -35.9,
             "best_pct": 37.82,
-            "pct_negative": 39.5
+            "pct_negative": 39.9
           },
           {
             "horizon": 20,
@@ -2620,7 +2620,7 @@
             "p90_pct": 15.0,
             "worst_pct": -33.33,
             "best_pct": 70.0,
-            "pct_negative": 38.2
+            "pct_negative": 37.4
           },
           {
             "horizon": 20,
@@ -2630,7 +2630,7 @@
             "p90_pct": 23.08,
             "worst_pct": -60.0,
             "best_pct": 78.0,
-            "pct_negative": 45.3
+            "pct_negative": 45.0
           }
         ]
       },
@@ -2758,7 +2758,7 @@
             "p90_pct": 7.55,
             "worst_pct": -56.87,
             "best_pct": 39.83,
-            "pct_negative": 42.8
+            "pct_negative": 42.3
           },
           {
             "horizon": 20,
@@ -2896,7 +2896,7 @@
             "p90_pct": 11.18,
             "worst_pct": -25.0,
             "best_pct": 42.86,
-            "pct_negative": 39.2
+            "pct_negative": 38.0
           },
           {
             "horizon": 20,
@@ -2906,7 +2906,7 @@
             "p90_pct": 21.24,
             "worst_pct": -33.59,
             "best_pct": 100.0,
-            "pct_negative": 38.8
+            "pct_negative": 38.5
           }
         ]
       },
@@ -3077,7 +3077,7 @@
       "name": "WiseTech(物流软件)",
       "evt": {
         "status": "ok",
-        "xi": 0.289,
+        "xi": 0.288,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.603,
         "n_exceed": 131,
@@ -3310,7 +3310,7 @@
             "p90_pct": 7.89,
             "worst_pct": -33.2,
             "best_pct": 18.14,
-            "pct_negative": 44.0
+            "pct_negative": 44.2
           },
           {
             "horizon": 20,
@@ -3366,7 +3366,7 @@
           {
             "level": 0.999,
             "var_pct": 15.38,
-            "es_pct": 39.05
+            "es_pct": 39.06
           }
         ]
       },
@@ -3448,7 +3448,7 @@
             "p90_pct": 4.72,
             "worst_pct": -16.04,
             "best_pct": 15.85,
-            "pct_negative": 36.5
+            "pct_negative": 36.9
           },
           {
             "horizon": 20,
@@ -3586,7 +3586,7 @@
             "p90_pct": 6.96,
             "worst_pct": -20.43,
             "best_pct": 24.26,
-            "pct_negative": 47.3
+            "pct_negative": 47.1
           },
           {
             "horizon": 20,
@@ -3596,7 +3596,7 @@
             "p90_pct": 12.17,
             "worst_pct": -37.4,
             "best_pct": 27.52,
-            "pct_negative": 35.5
+            "pct_negative": 35.7
           }
         ]
       },
@@ -3724,7 +3724,7 @@
             "p90_pct": 5.22,
             "worst_pct": -23.08,
             "best_pct": 16.62,
-            "pct_negative": 38.7
+            "pct_negative": 38.3
           },
           {
             "horizon": 20,
@@ -3734,7 +3734,7 @@
             "p90_pct": 9.98,
             "worst_pct": -24.13,
             "best_pct": 35.0,
-            "pct_negative": 32.5
+            "pct_negative": 32.3
           }
         ]
       },
@@ -3862,7 +3862,7 @@
             "p90_pct": 6.56,
             "worst_pct": -22.35,
             "best_pct": 25.27,
-            "pct_negative": 38.7
+            "pct_negative": 38.9
           },
           {
             "horizon": 20,
