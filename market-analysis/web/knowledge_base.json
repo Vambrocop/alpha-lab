@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-31T22:38:03Z",
+  "generated": "2026-08-03T15:43:56Z",
   "anchor_common": "2026-06-26",
-  "days_since_anchor": 35,
+  "days_since_anchor": 38,
   "min_oos_n": 30,
   "summary": {
     "in_kb": 0,
-    "queue": 7,
+    "queue": 6,
     "confirmed": 0,
     "overturned": 0,
     "neutral": 0,
@@ -14,8 +14,8 @@
   "members": [],
   "queue": [
     {
-      "key": "september_sp500",
-      "candidate_id": "cal_f923f81493",
+      "key": "world_cup_year_nasdaq",
+      "candidate_id": "cal_11bf800cae",
       "family": "calendar",
       "verdict": "survive",
       "oos_status": "pending",
@@ -26,15 +26,15 @@
       "oos_sign": null
     },
     {
-      "key": "monthof_9_sp500",
-      "candidate_id": "cal_2bf2b4d53f",
+      "key": "september_sp500",
+      "candidate_id": "cal_f923f81493",
       "family": "calendar",
       "verdict": "survive",
       "oos_status": "pending",
       "anchor_date": "2026-06-26",
       "oos_n": 0,
       "oos_p": null,
-      "full_sign": null,
+      "full_sign": 1,
       "oos_sign": null
     },
     {
@@ -56,7 +56,7 @@
       "verdict": "survive",
       "oos_status": "pending",
       "anchor_date": "2026-06-26",
-      "oos_n": 4,
+      "oos_n": 5,
       "oos_p": null,
       "full_sign": 1,
       "oos_sign": null
@@ -64,18 +64,6 @@
     {
       "key": "BTC_mom20_pos",
       "candidate_id": "fac_f834dcf2c0",
-      "family": "factor",
-      "verdict": "survive",
-      "oos_status": "pending",
-      "anchor_date": "2026-06-26",
-      "oos_n": 0,
-      "oos_p": null,
-      "full_sign": null,
-      "oos_sign": null
-    },
-    {
-      "key": "BTC_mom20_neg",
-      "candidate_id": "fac_4beec74249",
       "family": "factor",
       "verdict": "survive",
       "oos_status": "pending",
