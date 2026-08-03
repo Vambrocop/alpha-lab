@@ -46,6 +46,10 @@ CHECKS = [
     ("ndx",        WEB / "ndx.json",         "generated", 14, "纳指100成分 ndx.json", "live"),  # 解析器坏=可修bug,该催
 ]
 
+# 同一超期项最多每 SNOOZE_DAYS 天提醒一次(此前是每天;而且 watchdog_state.json 被 CI 缓存回灌反复
+# 冲回旧日期 → 去重记忆丢失 → 一天轰炸多条。加长窗口 + refresh-data 把它纳入 re-assert 防回灌,双管齐下)。
+SNOOZE_DAYS = 7
+
 
 def _age_days(ts, now):
     """时间戳(ISO datetime 'Z' 或纯日期 'YYYY-MM-DD')→ 距 now 的整天数;解析失败返回 None。"""
@@ -85,6 +89,17 @@ def _load_state():
         return {}
 
 
+def _over_snooze(last_alert, now):
+    """上次提醒日(YYYY-MM-DD)距今 >= SNOOZE_DAYS 才再提醒;没提醒过 / 解析失败 → 提醒。"""
+    if not last_alert:
+        return True
+    try:
+        last = datetime.datetime.fromisoformat(str(last_alert)[:10]).replace(tzinfo=datetime.timezone.utc)
+        return (now - last).days >= SNOOZE_DAYS
+    except Exception:
+        return True
+
+
 def run(now=None, state_path=STATE):
     now = now or datetime.datetime.now(datetime.timezone.utc)
     stale = find_stale(now)
@@ -95,9 +110,9 @@ def run(now=None, state_path=STATE):
     state = _load_state() if state_path == STATE else (
         json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {})
     today = now.strftime("%Y-%m-%d")
-    fresh_alerts = [s for s in stale if state.get(s[0]) != today]
+    fresh_alerts = [s for s in stale if _over_snooze(state.get(s[0]), now)]
     if not fresh_alerts:
-        print(f"[看门狗] {len(stale)} 项超期但今天已告警过,去重跳过")
+        print(f"[看门狗] {len(stale)} 项超期但近 {SNOOZE_DAYS} 天已提醒过,去重跳过")
         return []
 
     # 只有 known-limited 源超期 → 是"该本地补"的提醒而非事故;有 live 源超期 → 真卡住

@@ -68,6 +68,7 @@ def test_missing_or_bad_file_counts_as_stale(fake_web):
 
 
 def test_run_sends_and_dedups_same_day(fake_web, monkeypatch):
+    monkeypatch.setattr(wd, "CHECKS", [c for c in wd.CHECKS if c[0] == "llm_daily"])   # 隔离:只看 llm_daily,免得 +7 天时别的项也过期干扰 snooze 断言
     fake_web["write"]("llm_daily", "2026-07-01T00:00:00Z")   # 6 天 > 4 → 告
     calls = []
     import notify_telegram
@@ -78,9 +79,12 @@ def test_run_sends_and_dedups_same_day(fake_web, monkeypatch):
     # 同日第二班:去重,不再发
     second = wd.run(NOW, state_path=fake_web["state"])
     assert second == [] and len(calls) == 1
-    # 次日仍卡:再发一条
+    # 次日仍卡:7 天 snooze 窗内不再打扰(此前每天发→改成最多每 SNOOZE_DAYS 天一次·防轰炸)
     third = wd.run(NOW + datetime.timedelta(days=1), state_path=fake_web["state"])
-    assert len(third) == 1 and len(calls) == 2
+    assert third == [] and len(calls) == 1
+    # 满 SNOOZE_DAYS 天仍卡:才再发一条
+    fourth = wd.run(NOW + datetime.timedelta(days=wd.SNOOZE_DAYS), state_path=fake_web["state"])
+    assert len(fourth) == 1 and len(calls) == 2
 
 
 def test_send_failure_does_not_record_dedup(fake_web, monkeypatch):

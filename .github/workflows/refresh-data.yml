@@ -67,7 +67,7 @@ jobs:
             llm_weekly_log.csv llm_monthly_log.csv ipo_alert_log.csv downturn_brief_log.csv \
             ipo_aftermath_log.csv llm_prediction_log.csv pick_ledger.csv pick_ledger_v2.csv \
             au_pick_ledger.csv insider_signal_log.csv processed/overreaction_signal_log.csv \
-            ledger_hashchain.csv; do
+            ledger_hashchain.csv watchdog_state.json; do
             git checkout -- "market-analysis/data/$led" 2>/dev/null || true
           done
 
