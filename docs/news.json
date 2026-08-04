@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-04 21:44 UTC",
+ "updated": "2026-08-04 22:40 UTC",
  "items": [
+  {
+   "time": "2026-08-04 22:22 UTC",
+   "title": "Jim Cramer says one hedge fund's collapse cleared the way for tech's rally",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-04 22:22 UTC",
+   "title": "Upstart’s AI upgrades pay off, as a pickup in loan growth helps send the stock higher",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-04 22:09 UTC",
+   "title": "AMD's revenue climbs 50% and data center sales doubled, but the stock is down",
+   "impact": "negative",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-04 21:39 UTC",
    "title": "Michael Burry bets against rally: 'We are near a major top, and possible a 1987-type fall'",
@@ -12,30 +36,6 @@
   {
    "time": "2026-08-04 21:25 UTC",
    "title": "Stocks face their weakest seasonal stretch. Why extreme investor pessimism could limit any selling.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-04 21:18 UTC",
-   "title": "AMD's revenue climbs 50% and data center sales doubled, but the stock is down",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-04 21:11 UTC",
-   "title": "The stock market soars. 5 reasons behind the big surge Tuesday",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-04 21:00 UTC",
-   "title": "Traders are using options to chase a runaway rebound in stocks, pushing the market even higher",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
