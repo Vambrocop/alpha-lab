@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🌪️ 恐慌极值事件研究(纯描述)</title>
+<link rel="stylesheet" href="vp.css">
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:14px;max-width:1040px;margin:0 auto}
+  h1{font-size:1.25rem;margin:.2em 0;display:inline-block}
+  h2{font-size:1rem;margin:20px 0 4px}
+  .sub{color:var(--mut);font-size:.8rem;margin:0 0 8px}
+  .note{background:rgba(248,81,73,.08);border:1px solid var(--red);border-radius:8px;padding:10px 12px;font-size:.84rem;margin:10px 0;color:#e6b3ae;line-height:1.6}
+  .guard{background:rgba(163,113,247,.10);border:1px solid var(--acc-line);border-radius:8px;padding:8px 11px;font-size:.8rem;margin:8px 0;color:var(--acc-strong);line-height:1.6}
+  table{width:100%;border-collapse:collapse;font-size:.82rem}
+  th,td{padding:6px 7px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  th{color:var(--mut);font-weight:600;font-size:.74rem}
+  .num{font-variant-numeric:tabular-nums}
+  .mut{color:var(--mut)}
+  .few{color:var(--amb);font-size:.72rem}
+  .warn120{color:var(--amb);font-size:.68rem;display:block;font-weight:400}
+  .tier-badge{font-size:.68rem;margin-left:6px}
+  .eb{position:relative;display:inline-block;width:96px;height:13px;vertical-align:middle;background:var(--surface-2);border-radius:4px;overflow:hidden}
+  .eb i{position:absolute;display:block}
+  .eb .eb-range{top:4px;bottom:4px;background:var(--acc-weak);border:1px solid var(--acc-line);border-radius:2px}
+  .eb .eb-zero{top:0;bottom:0;width:1px;background:var(--mut)}
+  .eb .eb-mean{top:1px;bottom:1px;width:2px;background:var(--acc-strong)}
+  .cinum{color:var(--mut);font-size:.68rem;margin-top:2px}
+  .section{margin-top:8px}
+  .primary-card{margin:14px 0}
+  .primary-card .big{font-size:1.6rem;font-weight:700;font-variant-numeric:tabular-nums;color:var(--fg)}
+  .primary-card .lbl{color:var(--mut);font-size:.78rem}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+  .stat{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
+  .stat .v{font-size:1.05rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .stat .k{color:var(--mut);font-size:.72rem;margin-top:2px}
+  .honesty-list{font-size:.8rem;line-height:1.8;color:var(--mut);margin:6px 0 0;padding-left:1.1em}
+  .honesty-list li{margin-bottom:4px}
+  #src{color:var(--mut);font-size:.78rem;margin-top:10px}
+  .foot{color:var(--mut);font-size:.76rem;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;line-height:1.6}
+  details.evtbl summary{cursor:pointer;color:var(--mut);font-size:.82rem;padding:4px 0}
+  @media(max-width:640px){body{padding:11px}h1{font-size:1.1rem}table{font-size:.74rem}.eb{width:64px}}
+</style>
+</head>
+<body>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页">↩ 返回</a>
+<a href="index.html" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
+<button id="lang" aria-label="切换语言 / switch language"></button>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="intro"></p>
+
+<div class="note" id="topBanner"></div>
+
+<div id="primary" class="primary-card vp-card vp-card--hero"></div>
+<div class="guard" id="copyGuard"></div>
+
+<div id="sections"></div>
+
+<details class="vp-more" style="margin-top:16px">
+  <summary data-i18n="moreHonesty"></summary>
+  <ul class="honesty-list" id="honestyList"></ul>
+  <p class="sub" id="vxsmhNote" style="margin-top:8px"></p>
+</details>
+
+<div id="src"></div>
+<div class="foot" data-i18n="foot"></div>
+
+<script src="vp_i18n.js"></script>
+<script>
+const LIVE="fear_extremes.json";   // ④修:同源相对路径(此前硬编码 github.io 绝对 URL——本地/审计 404、且中国镜像会去拉被墙的 github.io,违同源自托管红线)
+
+const I18N={
+  title:{zh:"🌪️ 恐慌极值事件研究(纯描述)",en:"🌪️ Fear-extreme event study (description only)"},
+  intro:{zh:"VIX 冲上高/极端恐慌区间之后，历史上市场接下来怎么走——只描述，不预测、不给操作建议。样本极小(有效独立危机约十来次)，务必看下面的诚实说明。",
+         en:"What historically happened to the market after VIX spiked into high/extreme fear — description only, not a forecast or trade suggestion. The sample is tiny (roughly a dozen independent crisis episodes) — read the honesty notes below."},
+  bannerTitle:{zh:"⚠️ 顶部诚实横幅",en:"⚠️ Honesty banner"},
+  banner:{zh:"纯描述，不是信号；5/20/60/120 日 × T1/T2/T3 × 两指数共 24 组结果彼此高度相关，未做跨组统计校正；极端事件天生高不确定；数据仅覆盖 2000 年至今；过去 ≠ 未来，历史规律会错。",
+          en:"Description only — not a signal. 5/20/60/120-day × T1/T2/T3 × two indices = 24 highly-correlated results, with no cross-group statistical correction. Extreme events are inherently high-uncertainty. Data covers 2000-present only. The past ≠ the future, and historical patterns can be wrong."},
+  copyGuard:{zh:"📌 就算某一格显示「剔除影响最大的危机段后方向仍不变」，这也只是一句历史描述——<b>历史上如此，不是信号，可能出错，不构成任何投资建议</b>，不该被读成「现在可以抄底」。",
+             en:"📌 Even a cell reading 'direction holds after removing the most-influential crisis' is only a historical description — <b>this is how it happened before, not a signal, it can be wrong, and it is not investment advice</b>. It should not be read as 'buy the dip now.'"},
+  primaryTag:{zh:"事前钉死的头条口径(primary cell)",en:"Pre-registered headline cell (primary)"},
+  primaryLead:{zh:"高恐慌(VIX≥30) · 标普500 · 20 个交易日",en:"High fear (VIX≥30) · SP500 · 20 trading days"},
+  loadingErr:{zh:"拉不到 fear_extremes.json——确认已部署。",en:"Can't load fear_extremes.json — check deployment."},
+
+  tier_primary:{zh:"primary·头条口径",en:"primary · headline"},
+  tier_anecdotal:{zh:"轶事级·别当规律",en:"anecdotal — don't treat as a pattern"},
+  tier_secondary:{zh:"secondary·探索性",en:"secondary · exploratory"},
+  t2forced:{zh:"⚠️ 极端恐慌历史上基本只有 2008 与 2020 这两次量级，样本极稀，本组全程只做描述、不出置信区间。",
+            en:"⚠️ Extreme fear has historically only reached this magnitude in 2008 and 2020. The sample is too thin — this group is description-only throughout, with no confidence interval."},
+  warn120:{zh:"半年窗·重叠最重·最不可信",en:"~6-month window · heaviest overlap · least reliable"},
+
+  cH:{zh:"窗口",en:"Horizon"},cN:{zh:"N(独立事件)",en:"N (events)"},cMean:{zh:"事件均值",en:"Event mean"},
+  cUp:{zh:"上涨率",en:"Up-rate"},cBase:{zh:"全样本基率",en:"Base rate"},cDiff:{zh:"差值",en:"Diff"},
+  cCI:{zh:"95% CI(均值)",en:"95% CI (mean)"},cLoco:{zh:"LOCO 头条(剔最大危机后)",en:"LOCO headline (largest crisis removed)"},
+  cVerdict:{zh:"稳健性判定",en:"Robustness verdict"},
+
+  vDescribed:{zh:"仅描述·样本太小",en:"described only · N too small"},
+  vRobust:{zh:"跨危机方向未翻转",en:"direction held across crises"},
+  vFragile:{zh:"由单次危机驱动·脆",en:"driven by one crisis · fragile"},
+
+  eventsTab:{zh:"展开看逐次事件明细",en:"Expand: per-event detail"},
+  evDate:{zh:"触发日",en:"Trigger date"},evYear:{zh:"危机年",en:"Crisis yr"},
+
+  moreHonesty:{zh:"展开看完整诚实说明(§0/§5 全文)",en:"Expand: full honesty notes"},
+  asof:{zh:"数据",en:"data"},genAt:{zh:"生成于",en:"generated"},resetFloor:{zh:"危机重置地板",en:"crisis-reset floor"},
+  foot:{zh:"这不是抄底信号——是「历史上如此」的诚实描述。样本极小、多组高相关、只覆盖 2000 年至今；会错，过去不代表未来。",
+        en:"This is not a buy-the-dip signal — it's an honest description of 'this is what happened before.' The sample is tiny, results are highly correlated across groups, and data only covers 2000-present. It can be wrong; the past does not represent the future."}
+};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let LANG="zh";try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
+const t=k=>(I18N[k]&&I18N[k][LANG])||k;
+function applyStatic(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
+  $("lang").textContent=LANG==="zh"?"EN":"中";
+  document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
+}
+
+const TRIGGER_ORDER=["T1","T2","T3"];
+const IDX_ORDER=["SP500","NASDAQ"];
+const HORIZONS=[5,20,60,120];
+
+function fmtPct(v){ return v==null? `<span class="mut">—</span>` : `${v>=0?'+':''}${v}%`; }
+function ciText(ci){ return ci==null? "—" : `[${ci[0]>=0?'+':''}${ci[0]}%, ${ci[1]>=0?'+':''}${ci[1]}%]`; }
+
+function scaleForHorizon(j,h){
+  let mx=5;
+  TRIGGER_ORDER.forEach(tr=>{
+    IDX_ORDER.forEach(idx=>{
+      const blk=j.triggers[tr]; if(!blk) return;
+      const c=(blk.by_index[idx]||{})[String(h)]; if(!c) return;
+      [c.ci95_mean].forEach(ci=>{ if(ci){ mx=Math.max(mx,Math.abs(ci[0]),Math.abs(ci[1])); }});
+      if(c.mean_pct!=null) mx=Math.max(mx,Math.abs(c.mean_pct));
+      if(c.loco_headline_mean!=null) mx=Math.max(mx,Math.abs(c.loco_headline_mean));
+    });
+  });
+  return mx*1.15;
+}
+function errBar(ci,mean,scaleMax){
+  if(!ci) return `<span class="mut">—</span>`;
+  const pct=v=>Math.max(0,Math.min(100,((v+scaleMax)/(2*scaleMax))*100));
+  const lo=pct(ci[0]),hi=pct(ci[1]),zero=pct(0);
+  let inner=`<i class="eb-range" style="left:${lo}%;width:${Math.max(0.8,hi-lo)}%"></i><i class="eb-zero" style="left:${zero}%"></i>`;
+  if(mean!=null) inner+=`<i class="eb-mean" style="left:${pct(mean)}%"></i>`;
+  return `<span class="eb">${inner}</span>`;
+}
+function verdictBadge(v){
+  const label={"described-only":t("vDescribed"),"robust-across-crises":t("vRobust"),"crisis-driven-fragile":t("vFragile")}[v]||v;
+  return `<span class="vp-badge vp-badge--neu">${esc(label)}</span>`;
+}
+
+function cellRow(h,cell,scaleMax){
+  const nSmall=cell.too_small_no_ci? ` <span class="few">▲${LANG==='zh'?'样本少':'few'}</span>`:"";
+  const w120=(h===120)?`<span class="warn120">${t("warn120")}</span>`:"";
+  return `<tr>
+    <td class="num">${h}${LANG==='zh'?'日':'d'}${w120}</td>
+    <td class="num">${cell.n_events}${nSmall}</td>
+    <td class="num">${fmtPct(cell.mean_pct)}</td>
+    <td class="num">${cell.up_pct==null?'—':cell.up_pct+'%'}</td>
+    <td class="num">${fmtPct(cell.base_mean_pct)}</td>
+    <td class="num">${fmtPct(cell.diff_mean)}</td>
+    <td class="num">${errBar(cell.ci95_mean,cell.mean_pct,scaleMax)}<div class="cinum">${esc(ciText(cell.ci95_mean))}</div></td>
+    <td class="num">${fmtPct(cell.loco_headline_mean)}</td>
+    <td>${verdictBadge(cell.verdict)}</td>
+  </tr>`;
+}
+
+function indexTable(j,trigger,idx){
+  const blk=j.triggers[trigger];
+  const scaleByH={}; HORIZONS.forEach(h=>scaleByH[h]=scaleForHorizon(j,h));
+  let rows="";
+  HORIZONS.forEach(h=>{
+    const cell=(blk.by_index[idx]||{})[String(h)];
+    if(cell) rows+=cellRow(h,cell,scaleByH[h]);
+  });
+  return `<div class="sub" style="margin:8px 0 4px;font-weight:600;color:var(--fg)">${idx}</div>
+  <div style="overflow-x:auto"><table>
+    <thead><tr><th>${t("cH")}</th><th>${t("cN")}</th><th>${t("cMean")}</th><th>${t("cUp")}</th>
+    <th>${t("cBase")}</th><th>${t("cDiff")}</th><th>${t("cCI")}</th><th>${t("cLoco")}</th><th>${t("cVerdict")}</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table></div>`;
+}
+
+function eventsTable(blk){
+  const evs=blk.events||[];
+  if(!evs.length) return "";
+  let rows=evs.map(e=>{
+    const sp=e.SP500||{}, nq=e.NASDAQ||{};
+    const c=v=>v==null?'—':`${v>=0?'+':''}${v}%`;
+    return `<tr><td>${esc(e.date)}</td><td class="num">${e.crisis_year}</td>
+      <td class="num">${c(sp["5"])}</td><td class="num">${c(sp["20"])}</td><td class="num">${c(sp["60"])}</td><td class="num">${c(sp["120"])}</td>
+      <td class="num">${c(nq["5"])}</td><td class="num">${c(nq["20"])}</td><td class="num">${c(nq["60"])}</td><td class="num">${c(nq["120"])}</td></tr>`;
+  }).join("");
+  return `<details class="evtbl"><summary>${esc(t("eventsTab"))} (n=${evs.length})</summary>
+    <div style="overflow-x:auto"><table>
+      <thead><tr><th>${t("evDate")}</th><th>${t("evYear")}</th>
+      <th colspan="4">SP500 5/20/60/120d</th><th colspan="4">NASDAQ 5/20/60/120d</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+  </details>`;
+}
+
+function triggerSection(j,trigger){
+  const blk=j.triggers[trigger];
+  if(!blk) return "";
+  const tierKey="tier_"+blk.tier;
+  const forced=(trigger==="T2")?`<p class="sub" style="color:var(--amb)">${t("t2forced")}</p>`:"";
+  const def=LANG==="zh"?blk.definition_zh:blk.definition_en;
+  const label=LANG==="zh"?blk.label_zh:blk.label_en;
+  return `<div class="section vp-card" style="margin-top:14px">
+    <h2>${trigger} · ${esc(label)} <span class="vp-badge tier-badge">${t(tierKey)}</span></h2>
+    <p class="sub">${esc(def)} — N=${blk.n_events}${LANG==='zh'?'次独立事件，跨':' independent events across '}${blk.n_crisis_years}${LANG==='zh'?'个危机年':' crisis-years'}</p>
+    ${forced}
+    ${indexTable(j,trigger,"SP500")}
+    ${indexTable(j,trigger,"NASDAQ")}
+    ${eventsTable(blk)}
+  </div>`;
+}
+
+function renderPrimary(j){
+  const pc=j.primary_cell;
+  const cell=(((j.triggers[pc.trigger]||{}).by_index||{})[pc.index]||{})[String(pc.horizon)];
+  if(!cell){ $("primary").innerHTML="—"; return; }
+  const scale=scaleForHorizon(j,pc.horizon);
+  $("primary").innerHTML=`
+    <div class="lbl">${t("primaryTag")} · ${t("primaryLead")}</div>
+    <div class="grid2">
+      <div class="stat"><div class="v">${fmtPct(cell.mean_pct)}</div><div class="k">${t("cMean")} (N=${cell.n_events})</div></div>
+      <div class="stat"><div class="v">${cell.up_pct==null?'—':cell.up_pct+'%'}</div><div class="k">${t("cUp")}</div></div>
+      <div class="stat"><div class="v">${fmtPct(cell.loco_headline_mean)}</div><div class="k">${t("cLoco")}</div></div>
+      <div class="stat"><div class="v">${verdictBadge(cell.verdict)}</div><div class="k">${t("cVerdict")}</div></div>
+    </div>
+    <div style="margin-top:10px">${errBar(cell.ci95_mean,cell.mean_pct,scale)} <span class="cinum" style="display:inline">${esc(ciText(cell.ci95_mean))}</span></div>
+  `;
+}
+
+function render(j){
+  applyStatic();
+  $("topBanner").innerHTML=`<b>${esc(t("bannerTitle"))}</b><br>${t("banner")}`;
+  $("copyGuard").innerHTML=t("copyGuard");
+  renderPrimary(j);
+  $("sections").innerHTML=TRIGGER_ORDER.map(tr=>triggerSection(j,tr)).join("");
+  $("honestyList").innerHTML=(j.honesty||[]).map(h=>`<li>${esc(h)}</li>`).join("");
+  $("vxsmhNote").textContent=j.vxsmh_note||"";
+  $("src").textContent=`${t("asof")} ${esc(j.vix_start)} → ${esc(j.as_of)} · ${t("genAt")} ${esc(j.generated)} · `
+    +`${t("resetFloor")} VIX<${j.reset_floor}`;
+}
+
+$("lang").onclick=()=>{
+  LANG=LANG==="zh"?"en":"zh";
+  try{localStorage.setItem("valpha_lang",LANG);}catch(e){}
+  if(window._j) render(window._j);
+  else applyStatic();
+};
+
+(async()=>{
+  applyStatic();
+  try{
+    const r=await fetch(LIVE,{cache:"no-store"});
+    if(!r.ok) throw 0;
+    window._j=await r.json();
+    render(window._j);
+  }catch(e){
+    $("topBanner").textContent=t("loadingErr");
+  }
+})();
+</script>
+<script src="vp_gloss.js" data-autoscan></script>
+</body>
+</html>
