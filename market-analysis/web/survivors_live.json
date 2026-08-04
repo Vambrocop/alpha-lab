@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-03T22:39:07Z",
-  "as_of": "2026-08-03",
+  "generated": "2026-08-04T15:22:15Z",
+  "as_of": "2026-08-04",
   "n_survivors": 6,
   "n_active": 1,
   "survivors": [
@@ -15,7 +15,7 @@
       "window": "2000后",
       "dnote": "微弱偏正",
       "edge_plain": "标普金叉成立时 66% vs 全样本基率 63%（标普未来 20 日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.021,
+      "recent_p": 0.016,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""
@@ -41,7 +41,7 @@
       "key": "BTC_mom20_pos",
       "name": "BTC 20 日动量为正（风险偏好代理）",
       "active": false,
-      "state": "BTC 近 20 日动量 -2.3%（未高于 +5% 阈值）",
+      "state": "BTC 近 20 日动量 -1.1%（未高于 +5% 阈值）",
       "up_pct": 75,
       "base_pct": 62,
       "window": "2000后",
@@ -53,36 +53,20 @@
       "stability_note": ""
     },
     {
-      "family": "calendar",
-      "key": "world_cup_year_nasdaq",
-      "name": "纳指世界杯年夏季效应（分心先验）",
-      "active": false,
-      "state": "当前 8 月夏季，但 2026 是世界杯年 → 触发组「非杯年夏季」不成立·休眠",
-      "up_pct": 57,
-      "base_pct": 51,
-      "window": "2000后",
-      "dnote": "明显偏正",
-      "edge_plain": "非世界杯年的夏季 57% vs 世界杯年夏季 51%（当日上涨率·2000后·明显偏正）",
-      "recent_p": 0.08991,
-      "modern": "现代仍有效",
-      "unstable": true,
-      "stability_note": "⚠ 现代显著性临界（recent_p≈0.09·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
-    },
-    {
       "family": "rebound",
       "key": "p5_h1_nasdaq",
       "name": "纳指大跌后的次日走向",
       "active": false,
-      "state": "纳指最新日收益 +2.1%（未跌进历史最低 5% 档 -2.0%）",
+      "state": "纳指最新日收益 +1.8%（未跌进历史最低 5% 档 -2.0%）",
       "up_pct": 51,
       "base_pct": 54,
       "window": "2000后",
       "dnote": "微弱偏负",
       "edge_plain": "纳指跌进历史最低 5% 的大跌日 51% vs 全样本基率 54%（次日上涨率·2000后·微弱偏负）",
-      "recent_p": 0.083,
+      "recent_p": 0.079,
       "modern": "现代仍有效",
-      "unstable": true,
-      "stability_note": "⚠ 现代显著性临界（recent_p≈0.08·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
+      "unstable": false,
+      "stability_note": ""
     },
     {
       "family": "calendar",
@@ -95,7 +79,23 @@
       "window": "2000后",
       "dnote": "微弱偏正",
       "edge_plain": "非九月 54% vs 九月 51%（当日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.022977,
+      "recent_p": 0.034965,
+      "modern": "现代仍有效",
+      "unstable": false,
+      "stability_note": ""
+    },
+    {
+      "family": "calendar",
+      "key": "monthof_9_sp500",
+      "name": "标普 9 月（机器枚举·另一口径）",
+      "active": false,
+      "state": "当前 8 月（非 9 月）",
+      "up_pct": 51,
+      "base_pct": 54,
+      "window": "2000后",
+      "dnote": "微弱偏负",
+      "edge_plain": "九月 51% vs 其余月份 54%（当日上涨率·2000后·微弱偏负）",
+      "recent_p": 0.052947,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""

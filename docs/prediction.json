@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T22:39:10Z",
+  "generated": "2026-08-04T15:22:18Z",
   "source": "LLM 据真实算出的因子对 SPY 未来 5 交易日方向出判断 → 前向公开计分",
   "model": "gemini-2.5-flash-lite",
   "symbol": "SPY",
@@ -23,19 +23,30 @@
         "hit_pct": null
       }
     },
-    "n_pending": 5,
+    "n_pending": 6,
     "n_dropped": 0
   },
   "latest": {
-    "pred_date": "2026-08-03",
+    "pred_date": "2026-08-04",
     "direction": "中性",
     "confidence": "低",
-    "reason": "波动率中性，收益率曲线正斜率偏平，信用利差偏低，个股共动偏低，当月季节性弱倾斜，纳指方向信号权重低。",
+    "reason": "波动率中性，收益率曲线偏平，信用利差偏低，个股共动偏低，纳指方向信号无明显优势。",
     "settled": false,
     "hit": false,
     "ret_pct": null
   },
   "recent": [
+    {
+      "pred_date": "2026-08-04",
+      "direction": "中性",
+      "confidence": "低",
+      "reason": "波动率中性，收益率曲线偏平，信用利差偏低，个股共动偏低，纳指方向信号无明显优势。",
+      "settled": false,
+      "dropped": false,
+      "bucket": "",
+      "ret_pct": null,
+      "hit": false
+    },
     {
       "pred_date": "2026-08-03",
       "direction": "中性",
