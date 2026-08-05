@@ -26,6 +26,7 @@ verdict(§6):三态,均非 edge —— described-only / robust-across-crises / c
 VXSMH 不在本研究(§0/S4):历史仅约 10 个月、连一个极端事件都凑不出,已在 risk_dashboard.py 保留为纯描述读数。
 """
 import sys
+import zlib
 import datetime
 import numpy as np
 import pandas as pd
@@ -242,11 +243,13 @@ def verdict_for_cell(too_small_no_ci, loco_sign_stable):
 
 
 def _seed_for(*parts):
-    """确定性派生种子(不同 cell 用不同但可复现的种子)。"""
-    h = 0
-    for p in parts:
-        h = (h * 1000003 + hash(str(p))) & 0xFFFFFFFF
-    return SEED_BASE + h % 1_000_000
+    """确定性派生种子(不同 cell 用不同但可复现的种子)。
+
+    用 zlib.crc32(跨进程稳定),不用内置 hash()——后者按 PYTHONHASHSEED 每进程加盐,会让事件级自助 CI
+    每次跑都抖动、边界处甚至翻转公开 verdict、且已发布的 fear_extremes.json CI 每轮流水线都变(不可复现)。
+    """
+    s = "|".join(str(p) for p in parts)
+    return SEED_BASE + zlib.crc32(s.encode("utf-8")) % 1_000_000
 
 
 # ══════════════════════════════════════════════════════════════════
