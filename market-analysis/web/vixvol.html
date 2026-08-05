@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>📈 VIX 到底预测什么(波动,不是方向)</title>
+<link rel="stylesheet" href="vp.css">
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:14px;max-width:1040px;margin:0 auto}
+  h1{font-size:1.25rem;margin:.2em 0;display:inline-block}
+  h2{font-size:1rem;margin:20px 0 4px}
+  .sub{color:var(--mut);font-size:.8rem;margin:0 0 8px}
+  .note{background:rgba(248,81,73,.08);border:1px solid var(--red);border-radius:8px;padding:10px 12px;font-size:.84rem;margin:10px 0;color:#e6b3ae;line-height:1.6}
+  .rbox{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:10px 0}
+  .rcard{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+  .rcard .v{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .rcard .k{color:var(--mut);font-size:.76rem;margin-top:2px}
+  .chart{width:100%;height:360px;margin:6px 0}
+  .honesty-list{font-size:.8rem;line-height:1.8;color:var(--mut);margin:6px 0 0;padding-left:1.1em}
+  #src{color:var(--mut);font-size:.78rem;margin-top:10px}
+  .foot{color:var(--mut);font-size:.76rem;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;line-height:1.6}
+  @media(max-width:640px){body{padding:11px}h1{font-size:1.1rem}.chart{height:300px}}
+</style>
+</head>
+<body>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页">↩ 返回</a>
+<a href="index.html" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
+<button id="lang" aria-label="切换语言 / switch language"></button>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="intro"></p>
+
+<div class="note" id="topBanner"></div>
+
+<div class="rbox" id="rbox"></div>
+
+<h2 data-i18n="c1H"></h2>
+<div id="chart-vix" class="chart"></div>
+<h2 data-i18n="c2H"></h2>
+<div id="chart-past" class="chart"></div>
+
+<details class="vp-more" style="margin-top:16px">
+  <summary data-i18n="moreHonesty"></summary>
+  <ul class="honesty-list" id="honestyList"></ul>
+</details>
+
+<div id="src"></div>
+<div class="foot" data-i18n="foot"></div>
+
+<script src="plotly-cartesian-2.35.2.min.js"></script>
+<script src="vp_i18n.js"></script>
+<script>
+const LIVE="vix_vol.json";
+
+const I18N={
+  title:{zh:"📈 VIX 到底预测什么(波动,不是方向)",en:"📈 What VIX actually predicts (volatility, not direction)"},
+  intro:{zh:"你喜欢的那张维基图——用我们 2000+ 的数据复现。VIX 和「过去波动」谁更能预测下个月的真实波动率?结论:VIX 强一点点,但它测的是「会晃多厉害」,不是「涨还是跌」。",
+         en:"That Wikipedia chart you liked — reproduced on our 2000+ data. Does VIX or 'past volatility' better predict next month's realized volatility? VIX wins slightly — but it measures how much the market will swing, not whether it goes up or down."},
+  bannerTitle:{zh:"⚠️ 一句话",en:"⚠️ The one takeaway"},
+  banner:{zh:"VIX 预测的是<b>波动大小(会晃多厉害)</b>,<b>不是涨跌方向</b>。所以「VIX 低就会继续涨」从根上不成立——VIX 压根不预测方向。而且它干本职也只比「单看最近波动」强一些(不悬殊)。纯描述,非信号,会错。",
+          en:"VIX predicts <b>how big the swings will be</b>, <b>not the direction</b>. So 'low VIX means it'll keep rising' is baseless — VIX doesn't forecast direction at all. And even at its own job it only marginally beats 'just look at recent swings.' Description only, not a signal, can be wrong."},
+  rVix:{zh:"VIX → 下月实现波动",en:"VIX → next-month realized vol"},
+  rPast:{zh:"过去波动 → 下月实现波动",en:"Past vol → next-month realized vol"},
+  rWiki:{zh:"维基原图(1990-2009)",en:"Wikipedia (1990-2009)"},
+  c1H:{zh:"① VIX vs 下个月真实波动率",en:"① VIX vs next-month realized volatility"},
+  c2H:{zh:"② 过去一个月波动 vs 下个月真实波动率",en:"② Past-month volatility vs next-month realized volatility"},
+  axVix:{zh:"VIX(当日收盘)",en:"VIX (daily close)"},
+  axPast:{zh:"过去21日实现波动率(年化%)",en:"Trailing 21-day realized vol (annualized %)"},
+  axFwd:{zh:"下21日实现波动率(年化%)",en:"Next 21-day realized vol (annualized %)"},
+  moreHonesty:{zh:"展开看完整诚实说明",en:"Expand: full honesty notes"},
+  asof:{zh:"数据",en:"data"},genAt:{zh:"生成于",en:"generated"},
+  loadingErr:{zh:"拉不到 vix_vol.json——确认已部署。",en:"Can't load vix_vol.json — check deployment."},
+  foot:{zh:"恐慌指数是「波动预报」不是「涨跌预报」。样本高度自相关,r 只作描述;数据仅 2000 年至今;过去 ≠ 未来。",
+        en:"The fear index is a volatility forecast, not a direction forecast. Samples are highly autocorrelated (r is descriptive only); data 2000-present; the past ≠ the future."}
+};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let LANG="zh";try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
+const t=k=>(I18N[k]&&I18N[k][LANG])||k;
+function applyStatic(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>el.innerHTML=t(el.dataset.i18n));
+  $("lang").textContent=LANG==="zh"?"EN":"中";
+  document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
+}
+
+function darkLayout(){
+  return {paper_bgcolor:"transparent",plot_bgcolor:"transparent",font:{color:"#e6edf3",size:11},
+    margin:{t:10,b:44,l:52,r:16},showlegend:false,
+    xaxis:{gridcolor:"#30363d",zerolinecolor:"#30363d"},yaxis:{gridcolor:"#30363d",zerolinecolor:"#30363d"}};
+}
+
+function scatterPanel(divId, xvals, yvals, fit, xtitle, ytitle, rval){
+  const xmin=Math.min(...xvals), xmax=Math.max(...xvals);
+  const lineX=[xmin,xmax], lineY=lineX.map(x=>fit.slope*x+fit.intercept);
+  const L=darkLayout();
+  L.xaxis.title={text:xtitle}; L.yaxis.title={text:ytitle};
+  L.annotations=[{x:0.03,y:0.95,xref:"paper",yref:"paper",xanchor:"left",
+    text:`r = ${rval}`,showarrow:false,font:{color:"#a371f7",size:16,weight:700},
+    bgcolor:"rgba(22,27,34,.7)",bordercolor:"#30363d",borderpad:4}];
+  Plotly.newPlot(divId,[
+    {x:xvals,y:yvals,type:"scattergl",mode:"markers",
+     marker:{color:"#58a6ff",size:3,opacity:0.28},
+     hovertemplate:`${xtitle}: %{x:.1f}<br>${ytitle}: %{y:.1f}<extra></extra>`},
+    {x:lineX,y:lineY,type:"scatter",mode:"lines",line:{color:"#a371f7",width:2.5},hoverinfo:"skip"}
+  ],L,{responsive:true,displayModeBar:false});
+}
+
+function render(j){
+  applyStatic();
+  $("topBanner").innerHTML=`<b>${esc(t("bannerTitle"))}</b><br>${t("banner")}`;
+  $("rbox").innerHTML=`
+    <div class="rcard"><div class="v">${j.r_vix}</div><div class="k">${t("rVix")}</div></div>
+    <div class="rcard"><div class="v">${j.r_past}</div><div class="k">${t("rPast")}</div></div>
+    <div class="rcard"><div class="v" style="font-size:1.05rem">${j.wiki.r_vix} vs ${j.wiki.r_past}</div><div class="k">${t("rWiki")}</div></div>`;
+  scatterPanel("chart-vix", j.points.vix, j.points.fwd_rv, j.fit_vix, t("axVix"), t("axFwd"), j.r_vix);
+  scatterPanel("chart-past", j.points.past_rv, j.points.fwd_rv, j.fit_past, t("axPast"), t("axFwd"), j.r_past);
+  $("honestyList").innerHTML=(j.honesty||[]).map(h=>`<li>${esc(h)}</li>`).join("");
+  $("src").textContent=`${t("asof")} ${esc(j.start)} → ${esc(j.as_of)} · N=${j.n} · ${t("genAt")} ${esc(j.generated)}`;
+}
+
+$("lang").onclick=()=>{
+  LANG=LANG==="zh"?"en":"zh";
+  try{localStorage.setItem("valpha_lang",LANG);}catch(e){}
+  if(window._j) render(window._j); else applyStatic();
+};
+
+(async()=>{
+  applyStatic();
+  try{
+    const r=await fetch(LIVE,{cache:"no-store"});
+    if(!r.ok) throw 0;
+    window._j=await r.json();
+    render(window._j);
+  }catch(e){ $("topBanner").textContent=t("loadingErr"); }
+})();
+</script>
+<script src="vp_gloss.js" data-autoscan></script>
+</body>
+</html>
