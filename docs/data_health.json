@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T15:52:55.213961+00:00",
+  "generated": "2026-08-05T17:15:25.387289+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -307,9 +307,9 @@
       "ticker": "BAMLH0A0HYM2",
       "source": "live_api",
       "status": "ok",
-      "rows": 785,
-      "last_date": "2026-08-03",
-      "age_days": 2,
+      "rows": 786,
+      "last_date": "2026-08-04",
+      "age_days": 1,
       "stale_after_days": 10,
       "error": null
     },
