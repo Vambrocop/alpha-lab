@@ -1,41 +1,41 @@
 {
- "updated": "2026-08-04 22:40 UTC",
+ "updated": "2026-08-05 15:15 UTC",
  "items": [
   {
-   "time": "2026-08-04 22:22 UTC",
-   "title": "Jim Cramer says one hedge fund's collapse cleared the way for tech's rally",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-04 22:22 UTC",
-   "title": "Upstart’s AI upgrades pay off, as a pickup in loan growth helps send the stock higher",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-04 22:09 UTC",
-   "title": "AMD's revenue climbs 50% and data center sales doubled, but the stock is down",
+   "time": "2026-08-05 15:10 UTC",
+   "title": "Situational Awareness hedge fund meltdown was a warning shot for leveraged markets, BofA CEO says",
    "impact": "negative",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-04 21:39 UTC",
-   "title": "Michael Burry bets against rally: 'We are near a major top, and possible a 1987-type fall'",
+   "time": "2026-08-05 15:01 UTC",
+   "title": "U.S. economy keeps up the momentum, but rising costs put a lid on new hiring",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 15:00 UTC",
+   "title": "Amazon's Zoox to launch paid robotaxi service in Las Vegas on Aug. 10",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-04 21:25 UTC",
-   "title": "Stocks face their weakest seasonal stretch. Why extreme investor pessimism could limit any selling.",
+   "time": "2026-08-05 14:59 UTC",
+   "title": "Shopify’s stock heads for best day in a year after the company ‘left no doubt’ about its growth trajectory",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 14:44 UTC",
+   "title": "It’s the worst time in years to invest in AI credit markets: ‘Almost no upside and plenty of downside’",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",

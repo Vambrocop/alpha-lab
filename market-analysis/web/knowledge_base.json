@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-04T22:41:14Z",
+  "generated": "2026-08-05T15:16:02Z",
   "anchor_common": "2026-06-26",
-  "days_since_anchor": 39,
+  "days_since_anchor": 40,
   "min_oos_n": 30,
   "summary": {
     "in_kb": 0,
@@ -56,7 +56,7 @@
       "verdict": "survive",
       "oos_status": "pending",
       "anchor_date": "2026-06-26",
-      "oos_n": 6,
+      "oos_n": 7,
       "oos_p": null,
       "full_sign": 1,
       "oos_sign": null
