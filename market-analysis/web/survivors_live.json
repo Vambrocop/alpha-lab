@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T15:15:11Z",
+  "generated": "2026-08-05T22:39:45Z",
   "as_of": "2026-08-05",
   "n_survivors": 6,
   "n_active": 1,
@@ -57,13 +57,13 @@
       "key": "p5_h1_nasdaq",
       "name": "纳指大跌后的次日走向",
       "active": false,
-      "state": "纳指最新日收益 +0.2%（未跌进历史最低 5% 档 -2.0%）",
+      "state": "纳指最新日收益 -0.8%（未跌进历史最低 5% 档 -2.0%）",
       "up_pct": 51,
       "base_pct": 54,
       "window": "2000后",
       "dnote": "微弱偏负",
       "edge_plain": "纳指跌进历史最低 5% 的大跌日 51% vs 全样本基率 54%（次日上涨率·2000后·微弱偏负）",
-      "recent_p": 0.086,
+      "recent_p": 0.087,
       "modern": "现代仍有效",
       "unstable": true,
       "stability_note": "⚠ 现代显著性临界（recent_p≈0.09·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
@@ -79,7 +79,7 @@
       "window": "2000后",
       "dnote": "微弱偏正",
       "edge_plain": "非九月 54% vs 九月 51%（当日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.021978,
+      "recent_p": 0.022977,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""
@@ -95,7 +95,7 @@
       "window": "2000后",
       "dnote": "微弱偏负",
       "edge_plain": "九月 51% vs 其余月份 54%（当日上涨率·2000后·微弱偏负）",
-      "recent_p": 0.061938,
+      "recent_p": 0.062937,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""
