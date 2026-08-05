@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T20:22:26.078951+00:00",
+  "generated": "2026-08-05T21:39:24.997201+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -294,9 +294,9 @@
       "ticker": "T10Y2Y",
       "source": "live_api",
       "status": "ok",
-      "rows": 6650,
-      "last_date": "2026-08-04",
-      "age_days": 1,
+      "rows": 6651,
+      "last_date": "2026-08-05",
+      "age_days": 0,
       "stale_after_days": 10,
       "error": null
     },
@@ -320,9 +320,9 @@
       "ticker": "BAA10Y",
       "source": "live_api",
       "status": "ok",
-      "rows": 6643,
-      "last_date": "2026-08-03",
-      "age_days": 2,
+      "rows": 6644,
+      "last_date": "2026-08-04",
+      "age_days": 1,
       "stale_after_days": 10,
       "error": null
     },

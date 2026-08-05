@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-05 20:23 UTC",
+ "updated": "2026-08-05 21:39 UTC",
  "items": [
   {
-   "time": "2026-08-05 20:09 UTC",
-   "title": "Uber stock sinks 5% after weak guidance despite revenue growth",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 20:09 UTC",
-   "title": "Figma’s push into AI agents drives an earnings beat",
-   "impact": "positive",
+   "time": "2026-08-05 21:28 UTC",
+   "title": "Why AT&T, Verizon and T-Mobile shares are down after SpaceX’s earnings",
+   "impact": "negative",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-05 20:06 UTC",
-   "title": "E.l.f. Beauty sees $50 million windfall in tariff refunds as profits surge 100%",
-   "impact": "positive",
+   "time": "2026-08-05 21:26 UTC",
+   "title": "SpaceX’s stock falls as Wall Street gets spooked by the extent of AI spending",
+   "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-05 20:02 UTC",
-   "title": "Lisa Su brushes off Musk's Nvidia commitment as AMD stock sinks after earnings",
+   "time": "2026-08-05 21:22 UTC",
+   "title": "Flutter shares plummet on earnings miss and another key leadership change",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-05 20:02 UTC",
-   "title": "SpaceX stock falls 13% as AI spending surge rattles investors and massive share unlock looms",
-   "impact": "positive",
+   "time": "2026-08-05 21:22 UTC",
+   "title": "Nvidia’s stock is basking in the glow of a high-profile endorsement",
+   "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 21:20 UTC",
+   "title": "Alphabet’s stock drops as Google loses another key AI executive",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
