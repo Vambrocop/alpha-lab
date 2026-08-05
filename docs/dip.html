@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>📉 跌了买、持有一年:诚实账(纯描述)</title>
+<link rel="stylesheet" href="vp.css">
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:14px;max-width:1040px;margin:0 auto}
+  h1{font-size:1.25rem;margin:.2em 0;display:inline-block}
+  h2{font-size:1rem;margin:22px 0 4px}
+  .sub{color:var(--mut);font-size:.8rem;margin:0 0 8px}
+  .note{background:rgba(248,81,73,.08);border:1px solid var(--red);border-radius:8px;padding:10px 12px;font-size:.84rem;margin:10px 0;color:#e6b3ae;line-height:1.6}
+  .guard{background:rgba(163,113,247,.10);border:1px solid var(--acc-line);border-radius:8px;padding:8px 11px;font-size:.8rem;margin:8px 0;color:var(--acc-strong);line-height:1.6}
+  .surv{background:rgba(210,153,34,.10);border:1px solid var(--amb);border-radius:8px;padding:9px 12px;font-size:.8rem;margin:8px 0;color:#e0c07a;line-height:1.6}
+  table{width:100%;border-collapse:collapse;font-size:.82rem}
+  th,td{padding:6px 7px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  th{color:var(--mut);font-weight:600;font-size:.74rem}
+  .num{font-variant-numeric:tabular-nums}
+  .mut{color:var(--mut)}
+  .few{color:var(--amb);font-size:.72rem}
+  .primrow{background:rgba(163,113,247,.07)}
+  .eb{position:relative;display:inline-block;width:104px;height:13px;vertical-align:middle;background:var(--surface-2);border-radius:4px;overflow:hidden}
+  .eb i{position:absolute;display:block}
+  .eb .eb-range{top:4px;bottom:4px;background:var(--acc-weak);border:1px solid var(--acc-line);border-radius:2px}
+  .eb .eb-base{top:0;bottom:0;width:1px;background:var(--amb)}
+  .eb .eb-mean{top:1px;bottom:1px;width:2px;background:var(--acc-strong)}
+  .cinum{color:var(--mut);font-size:.68rem;margin-top:2px}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+  .stat{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
+  .stat .v{font-size:1.15rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .stat .k{color:var(--mut);font-size:.72rem;margin-top:2px}
+  .primary-card{margin:14px 0}
+  .honesty-list{font-size:.8rem;line-height:1.8;color:var(--mut);margin:6px 0 0;padding-left:1.1em}
+  .honesty-list li{margin-bottom:4px}
+  #src{color:var(--mut);font-size:.78rem;margin-top:10px}
+  .foot{color:var(--mut);font-size:.76rem;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;line-height:1.6}
+  details.evtbl summary{cursor:pointer;color:var(--mut);font-size:.82rem;padding:4px 0}
+  @media(max-width:640px){body{padding:11px}h1{font-size:1.1rem}table{font-size:.74rem}.eb{width:70px}}
+</style>
+</head>
+<body>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页">↩ 返回</a>
+<a href="index.html" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
+<button id="lang" aria-label="切换语言 / switch language"></button>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="intro"></p>
+
+<div class="note" id="topBanner"></div>
+
+<div id="baseAnchor" class="primary-card vp-card"></div>
+<div id="primary" class="primary-card vp-card vp-card--hero"></div>
+<div class="guard" id="copyGuard"></div>
+
+<h2 data-i18n="curveH"></h2>
+<p class="sub" data-i18n="curveSub"></p>
+<div id="curve252"></div>
+<details class="evtbl" style="margin-top:6px"><summary data-i18n="curve60Tab"></summary><div id="curve60"></div></details>
+
+<h2 data-i18n="lowH"></h2>
+<p class="sub" data-i18n="lowSub"></p>
+<div id="lowprox"></div>
+
+<h2 data-i18n="epH"></h2>
+<p class="sub" data-i18n="epSub"></p>
+<div id="episodes"></div>
+
+<h2 data-i18n="stkH"></h2>
+<div class="surv" id="survNote"></div>
+<div id="stocks"></div>
+
+<details class="vp-more" style="margin-top:16px">
+  <summary data-i18n="moreHonesty"></summary>
+  <ul class="honesty-list" id="honestyList"></ul>
+</details>
+
+<div id="src"></div>
+<div class="foot" data-i18n="foot"></div>
+
+<script src="vp_i18n.js"></script>
+<script>
+const LIVE="dip_hold.json";   // 同源相对路径(自托管·无 CDN·中国可达)
+
+const I18N={
+  title:{zh:"📉 跌了买、持有一年:诚实账(纯描述)",en:"📉 Buy the dip, hold a year: the honest tally (description only)"},
+  intro:{zh:"「等跌了再买、然后拿一年以上」到底值不值?——用历史数据如实打分:从 52 周高点回撤多深、持有多久,前向收益 vs「随便哪天买」的基率。只描述,不预测、不是买入信号。",
+         en:"Is 'wait for a dip, then hold 1+ year' actually worth it? Graded honestly against history: forward returns by how far the index fell from its 52-week high, vs the base rate of buying on any day. Description only — not a forecast, not a buy signal."},
+  bannerTitle:{zh:"⚠️ 顶部诚实横幅",en:"⚠️ Honesty banner"},
+  banner:{zh:"纯描述,不是买入信号。市场本来大概率就涨(持有 1 年历史约 75% 上涨),所以「跌了买」要算有料,必须<b>明显跑赢「随便哪天买」</b>——不是「涨了就叫赢」。深回撤看着好,但只有 ~3-6 次危机撑着(样本极小)。数据仅 2000 年至今;过去 ≠ 未来,会错。",
+          en:"Description only — not a buy signal. Markets usually rise anyway (~75% of 1-year windows), so a 'buy the dip' rule only counts if it <b>clearly beats buying on any day</b>. Deep-drawdown numbers look great but rest on just ~3-6 crises (tiny sample). Data 2000-present only; the past ≠ the future, and it can be wrong."},
+  copyGuard:{zh:"📌 就算某格显示深回撤后历史多涨,这也只是<b>历史描述,不是信号,可能出错,不构成任何投资建议</b>——不该读成「现在可以抄底」。真正稳健的口径要能跨多次危机、且可靠跑赢基率。",
+             en:"📌 Even a cell where deep drawdowns were followed by gains is only a <b>historical description — not a signal, it can be wrong, and it is not investment advice</b>. It should not be read as 'buy the dip now.' A robust rule must hold across many crises and reliably beat the base rate."},
+  guardNoRobust:{zh:"本页目前<b>没有</b>一格达到这个标准。",en:"<b>No</b> cell here currently meets that bar."},
+  guardHasRobust:{zh:"注意:目前有格被标为「跨危机可靠跑赢基率」——但那仍是<b>有限样本的历史描述、会错,不是买入信号</b>。",
+                  en:"Note: a cell is currently flagged 'robustly beats base across crises' — but that is still a <b>limited-sample historical description, can be wrong, and is not a buy signal</b>."},
+
+  baseTag:{zh:"先看诚实参照系:光是持有 1 年",en:"The honest yardstick first: just holding 1 year"},
+  baseHold252:{zh:"持有 1 年上涨率",en:"1-year up-rate"},
+  baseHold252m:{zh:"持有 1 年均值(中位)",en:"1-year mean (median)"},
+  baseHold60:{zh:"持有 60 日上涨率",en:"60-day up-rate"},
+  baseNote:{zh:"这就是「随便哪天买」的成绩。下面任何「跌了买」口径要算有用,必须明显超过它。",
+            en:"That's the score for buying on any random day. Any dip rule below must clearly beat it to matter."},
+
+  primaryTag:{zh:"事前钉死的头条口径(primary):深回撤 + 持有一年",en:"Pre-registered headline cell (primary): deep drawdown + 1-year hold"},
+  primaryLead:{zh:"标普500 · 从 52 周高点回撤 ≥ 20% · 持有 252 日(~1年)",en:"SP500 · ≥20% below 52-week high · hold 252 trading days (~1yr)"},
+
+  curveH:{zh:"回撤曲线:从高点跌得越深,持有一年怎么走",en:"Drawdown curve: the deeper the fall, the 1-year outcome"},
+  curveSub:{zh:"「跌了买」逐档 vs 基率。看点:浅到中回撤并不跑赢随便买;只有深回撤明显跑赢,但那是极少数危机撑起、样本太小(标 described-only)。",
+            en:"Each dip threshold vs the base rate. Shallow-to-moderate dips don't beat buying anytime; only deep dips clearly beat it — but on a tiny handful of crises (flagged described-only)."},
+  curve60Tab:{zh:"展开:同口径但只持有 60 日(短 vs 长对照)",en:"Expand: same thresholds but 60-day hold (short vs long)"},
+
+  lowH:{zh:"接飞刀对照:买在「52 周最低点」附近",en:"Falling-knife check: buying near the 52-week LOW"},
+  lowSub:{zh:"很多人以为「买在最低点」最好。数据相反:越贴近 52 周最低点买,持有一年反而<b>不如</b>随便买——因为在最低点=跌势还没停。有料的是「从高点崩得够深」,不是「在绝对最低」。",
+          en:"Many assume buying at the 52-week low is best. The data says the opposite: the closer to the 52-week low you buy, the 1-year outcome is <b>worse</b> than buying anytime — being at the low means the downtrend isn't done. What helps is 'fell deep from the high', not 'at the absolute bottom.'"},
+
+  epH:{zh:"深回撤其实就这么几次危机",en:"Deep drawdowns are really just a few crises"},
+  epSub:{zh:"回撤 ≥20% 的「独立危机段」(去聚集后)——重叠日看着几百个,独立危机就这么点。别把 ~4 次撞大运当规律。",
+         en:"The independent ≥20% drawdown episodes (after de-clustering). Overlapping days look like hundreds; independent crises are this few. Don't mistake ~4 events for a law."},
+  epStart:{zh:"起始日",en:"Start"},epDeep:{zh:"段内最深回撤",en:"Deepest"},epDays:{zh:"合格日数",en:"Days"},
+
+  stkH:{zh:"单股当前离自己 52 周高/低多远(纯描述快照)",en:"Where each stock sits vs its own 52-week high/low (snapshot only)"},
+
+  cThr:{zh:"从高点回撤",en:"Below 52wk high"},cUp:{zh:"上涨率",en:"Up-rate"},cMean:{zh:"均值",en:"Mean"},
+  cBase:{zh:"vs 基率",en:"vs base"},cEp:{zh:"独立危机",en:"Crises"},cCI:{zh:"95% CI(跨危机)",en:"95% CI (across crises)"},
+  cVerdict:{zh:"稳健性判定",en:"Robustness"},cDays:{zh:"重叠日",en:"Days"},
+  cWithin:{zh:"距 52 周低点",en:"Above 52wk low"},cTk:{zh:"股票",en:"Ticker"},cHi:{zh:"距 52 周高",en:"vs 52wk high"},cLo:{zh:"距 52 周低",en:"vs 52wk low"},
+
+  vDescribed:{zh:"仅描述·样本太小",en:"described only · too few crises"},
+  vRobust:{zh:"跨危机可靠跑赢基率",en:"robustly beats base across crises"},
+  vFragile:{zh:"跑赢但不可靠·脆",en:"beats base but not reliably · fragile"},
+
+  moreHonesty:{zh:"展开看完整诚实说明",en:"Expand: full honesty notes"},
+  asof:{zh:"价格",en:"prices"},genAt:{zh:"生成于",en:"generated"},
+  loadingErr:{zh:"拉不到 dip_hold.json——确认已部署。",en:"Can't load dip_hold.json — check deployment."},
+  foot:{zh:"这不是抄底信号——是「历史上如此」的诚实账。最强、最稳的一条其实是:别赌时机、拿得久(基率就站你这边)。样本小、只覆盖 2000 年至今;会错,过去不代表未来。",
+        en:"Not a buy-the-dip signal — an honest tally of 'what happened before.' The strongest, most robust finding is simply: don't gamble on timing, hold long (the base rate is on your side). Small sample, 2000-present only; it can be wrong, and the past does not represent the future."}
+};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let LANG="zh";try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
+const t=k=>(I18N[k]&&I18N[k][LANG])||k;
+function applyStatic(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>el.innerHTML=t(el.dataset.i18n));
+  $("lang").textContent=LANG==="zh"?"EN":"中";
+  document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
+}
+
+const DD_THRESHOLDS=[5,10,15,20,30];
+function fmtPct(v){ return v==null? `<span class="mut">—</span>` : `${v>=0?'+':''}${v}%`; }
+function pctPlain(v){ return v==null? `<span class="mut">—</span>` : `${v}%`; }
+function ciText(ci){ return ci==null? "—" : `[${ci[0]>=0?'+':''}${ci[0]}%, ${ci[1]>=0?'+':''}${ci[1]}%]`; }
+
+function verdictBadge(v){
+  const label={"described-only":t("vDescribed"),"robust-across-crises":t("vRobust"),"crisis-driven-fragile":t("vFragile")}[v]||v;
+  return `<span class="vp-badge vp-badge--neu">${esc(label)}</span>`;
+}
+
+// 误差棒:CI 区间 + 均值标 + 基率参考线(amb),同一横轴尺度
+function curveScale(cells){
+  let mx=6;
+  cells.forEach(c=>{
+    if(c.ci95_mean){ mx=Math.max(mx,Math.abs(c.ci95_mean[0]),Math.abs(c.ci95_mean[1])); }
+    if(c.mean_pct!=null) mx=Math.max(mx,Math.abs(c.mean_pct));
+    if(c.base_mean_pct!=null) mx=Math.max(mx,Math.abs(c.base_mean_pct));
+  });
+  return mx*1.15;
+}
+function errBar(ci,mean,base,scaleMax){
+  if(!ci) return `<span class="mut">—</span>`;
+  const pct=v=>Math.max(0,Math.min(100,((v+scaleMax)/(2*scaleMax))*100));
+  const lo=pct(ci[0]),hi=pct(ci[1]);
+  let inner=`<i class="eb-range" style="left:${lo}%;width:${Math.max(0.8,hi-lo)}%"></i>`;
+  if(base!=null) inner+=`<i class="eb-base" style="left:${pct(base)}%"></i>`;
+  if(mean!=null) inner+=`<i class="eb-mean" style="left:${pct(mean)}%"></i>`;
+  return `<span class="eb" title="灰=95%CI跨危机, 紫=均值, 黄=基率参考线">${inner}</span>`;
+}
+
+function curveRows(j,h){
+  const cells=j.drawdown_curve.filter(c=>c.horizon===h);
+  const scale=curveScale(cells);
+  const pc=j.primary_cell;
+  let rows="";
+  DD_THRESHOLDS.forEach(thr=>{
+    const c=cells.find(x=>x.dd_threshold_pct===thr); if(!c) return;
+    const isPrim=(h===pc.horizon && thr===pc.dd_threshold_pct);
+    const few=c.too_small_no_ci?` <span class="few">▲${LANG==='zh'?c.n_episodes_with_fwd+'次':c.n_episodes_with_fwd}</span>`:"";
+    rows+=`<tr class="${isPrim?'primrow':''}">
+      <td class="num">≥${thr}%${isPrim?` <span class="vp-badge vp-badge--neu">${LANG==='zh'?'头条':'primary'}</span>`:''}</td>
+      <td class="num">${c.up_pct==null?'—':c.up_pct+'%'}</td>
+      <td class="num">${fmtPct(c.mean_pct)}</td>
+      <td class="num">${fmtPct(c.diff_mean)}</td>
+      <td class="num">${c.n_episodes_with_fwd}${few}<div class="cinum">${c.n_days}${LANG==='zh'?' 重叠日':' days'}</div></td>
+      <td class="num">${errBar(c.ci95_mean,c.mean_pct,c.base_mean_pct,scale)}<div class="cinum">${esc(ciText(c.ci95_mean))}</div></td>
+      <td>${verdictBadge(c.verdict)}</td>
+    </tr>`;
+  });
+  return `<div style="overflow-x:auto"><table>
+    <thead><tr><th>${t("cThr")}</th><th>${t("cUp")}</th><th>${t("cMean")}</th><th>${t("cBase")}</th>
+    <th>${t("cEp")}</th><th>${t("cCI")}</th><th>${t("cVerdict")}</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+function lowProxTable(j){
+  let rows=(j.low_proximity||[]).map(c=>`<tr>
+    <td class="num">≤${c.within_pct}%</td>
+    <td class="num">${c.up_pct==null?'—':c.up_pct+'%'}</td>
+    <td class="num">${fmtPct(c.mean_pct)}</td>
+    <td class="num mut">${pctPlain(c.base_up_pct)}</td>
+    <td class="num mut">${fmtPct(c.base_mean_pct)}</td>
+  </tr>`).join("");
+  return `<div style="overflow-x:auto"><table>
+    <thead><tr><th>${t("cWithin")}</th><th>${t("cUp")}</th><th>${t("cMean")}</th>
+    <th>${LANG==='zh'?'基率上涨率':'base up'}</th><th>${LANG==='zh'?'基率均值':'base mean'}</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+function episodesTable(j){
+  const eps=(j.episodes&&j.episodes["20"])||[];
+  if(!eps.length) return `<p class="mut">—</p>`;
+  let rows=eps.map(e=>`<tr><td>${esc(e.start)}</td><td class="num">${e.deepest_dd_pct}%</td><td class="num mut">${e.n_days}</td></tr>`).join("");
+  return `<div style="overflow-x:auto"><table>
+    <thead><tr><th>${t("epStart")}</th><th>${t("epDeep")}</th><th>${t("epDays")}</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>
+    <p class="sub" style="margin-top:4px">${LANG==='zh'?'共 '+eps.length+' 段独立危机':eps.length+' independent crisis episodes'}</p>`;
+}
+
+function stocksTable(j){
+  const st=(j.single_stocks&&j.single_stocks.current)||[];
+  if(!st.length) return `<p class="mut">—</p>`;
+  // 不加「跌10%+」高亮:那会被读成「这些是买入候选」,恰恰违背描述性红线(审查建议)。纯列状态。
+  let rows=st.map(s=>`<tr><td>${esc(s.ticker)}</td>
+      <td class="num">${fmtPct(s.dd_from_52wk_high_pct)}</td>
+      <td class="num mut">${fmtPct(s.dist_from_52wk_low_pct)}</td></tr>`).join("");
+  return `<div style="overflow-x:auto"><table>
+    <thead><tr><th>${t("cTk")}</th><th>${t("cHi")}</th><th>${t("cLo")}</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+function renderBase(j){
+  const b252=j.base_rate.h252, b60=j.base_rate.h60;
+  $("baseAnchor").innerHTML=`
+    <div class="sub" style="color:var(--fg);font-weight:600">${t("baseTag")}</div>
+    <div class="grid2">
+      <div class="stat"><div class="v">${b252.up_pct}%</div><div class="k">${t("baseHold252")} (N=${b252.n})</div></div>
+      <div class="stat"><div class="v">+${b252.mean_pct}% <span class="mut" style="font-size:.8rem">(${b252.median_pct}%)</span></div><div class="k">${t("baseHold252m")}</div></div>
+      <div class="stat"><div class="v">${b60.up_pct}%</div><div class="k">${t("baseHold60")}</div></div>
+    </div>
+    <p class="sub" style="margin-top:8px">${t("baseNote")}</p>`;
+}
+
+function renderPrimary(j){
+  const pc=j.primary_cell;
+  const c=j.drawdown_curve.find(x=>x.dd_threshold_pct===pc.dd_threshold_pct && x.horizon===pc.horizon);
+  if(!c){ $("primary").innerHTML="—"; return; }
+  $("primary").innerHTML=`
+    <div class="sub" style="color:var(--acc-strong);font-weight:600">${t("primaryTag")}</div>
+    <div class="sub">${t("primaryLead")}</div>
+    <div class="grid2">
+      <div class="stat"><div class="v">${c.up_pct}%</div><div class="k">${t("cUp")}</div></div>
+      <div class="stat"><div class="v">${fmtPct(c.mean_pct)}</div><div class="k">${t("cMean")} · ${t("cBase")} ${fmtPct(c.diff_mean)}</div></div>
+      <div class="stat"><div class="v">${c.n_episodes_with_fwd}</div><div class="k">${t("cEp")}(${c.n_days} ${LANG==='zh'?'重叠日':'days'})</div></div>
+      <div class="stat"><div class="v">${verdictBadge(c.verdict)}</div><div class="k">${t("cVerdict")}</div></div>
+    </div>`;
+}
+
+function render(j){
+  applyStatic();
+  $("topBanner").innerHTML=`<b>${esc(t("bannerTitle"))}</b><br>${t("banner")}`;
+  $("copyGuard").innerHTML=t("copyGuard")+" "+(j.any_robust?t("guardHasRobust"):t("guardNoRobust"));
+  renderBase(j);
+  renderPrimary(j);
+  $("curve252").innerHTML=curveRows(j,252);
+  $("curve60").innerHTML=curveRows(j,60);
+  $("lowprox").innerHTML=lowProxTable(j);
+  $("episodes").innerHTML=episodesTable(j);
+  $("survNote").textContent=(j.single_stocks&&j.single_stocks.survivorship_note)||"";
+  $("stocks").innerHTML=stocksTable(j);
+  $("honestyList").innerHTML=(j.honesty||[]).map(h=>`<li>${esc(h)}</li>`).join("");
+  const stAsof=(j.single_stocks&&j.single_stocks.as_of)||j.as_of;
+  $("src").textContent=`${t("asof")} ${esc(j.price_start)} → ${esc(j.as_of)} · ${LANG==='zh'?'单股快照':'stocks as-of'} ${esc(stAsof)} · ${t("genAt")} ${esc(j.generated)}`;
+}
+
+$("lang").onclick=()=>{
+  LANG=LANG==="zh"?"en":"zh";
+  try{localStorage.setItem("valpha_lang",LANG);}catch(e){}
+  if(window._j) render(window._j); else applyStatic();
+};
+
+(async()=>{
+  applyStatic();
+  try{
+    const r=await fetch(LIVE,{cache:"no-store"});
+    if(!r.ok) throw 0;
+    window._j=await r.json();
+    render(window._j);
+  }catch(e){
+    $("topBanner").textContent=t("loadingErr");
+  }
+})();
+</script>
+<script src="vp_gloss.js" data-autoscan></script>
+</body>
+</html>

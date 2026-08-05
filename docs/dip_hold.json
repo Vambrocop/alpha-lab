@@ -1,0 +1,827 @@
+{
+  "generated": "2026-08-05T04:36:29Z",
+  "as_of": "2026-07-23",
+  "price_start": "2000-01-03",
+  "lookback": 252,
+  "recovery_floor": -0.03,
+  "min_episodes_ci": 8,
+  "primary_cell": {
+    "index": "SP500",
+    "dd_threshold_pct": 20,
+    "horizon": 252
+  },
+  "any_robust": false,
+  "base_rate": {
+    "h60": {
+      "up_pct": 67.42,
+      "mean_pct": 1.81,
+      "median_pct": 2.97,
+      "n": 6618
+    },
+    "h252": {
+      "up_pct": 75.21,
+      "mean_pct": 7.82,
+      "median_pct": 11.01,
+      "n": 6426
+    }
+  },
+  "drawdown_curve": [
+    {
+      "dd_threshold_pct": 5,
+      "horizon": 60,
+      "n_days": 2444,
+      "n_episodes": 54,
+      "n_episodes_with_fwd": 54,
+      "up_pct": 62.27,
+      "mean_pct": 1.73,
+      "median_pct": 3.6,
+      "base_up_pct": 67.42,
+      "base_mean_pct": 1.81,
+      "diff_mean": -0.08,
+      "ci95_mean": [
+        -0.43,
+        6.84
+      ],
+      "ci_beats_base": false,
+      "too_small_no_ci": false,
+      "era1_up_pct": 54.09,
+      "era1_mean_pct": -0.03,
+      "era2_up_pct": 78.51,
+      "era2_mean_pct": 5.24,
+      "era_same_sign": false,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 5,
+      "horizon": 252,
+      "n_days": 2429,
+      "n_episodes": 54,
+      "n_episodes_with_fwd": 52,
+      "up_pct": 66.08,
+      "mean_pct": 6.85,
+      "median_pct": 12.12,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82,
+      "diff_mean": -0.97,
+      "ci95_mean": [
+        1.12,
+        18.26
+      ],
+      "ci_beats_base": false,
+      "too_small_no_ci": false,
+      "era1_up_pct": 53.72,
+      "era1_mean_pct": 0.94,
+      "era2_up_pct": 91.04,
+      "era2_mean_pct": 18.8,
+      "era_same_sign": true,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 10,
+      "horizon": 60,
+      "n_days": 1575,
+      "n_episodes": 13,
+      "n_episodes_with_fwd": 13,
+      "up_pct": 55.3,
+      "mean_pct": 0.64,
+      "median_pct": 1.68,
+      "base_up_pct": 67.42,
+      "base_mean_pct": 1.81,
+      "diff_mean": -1.17,
+      "ci95_mean": [
+        -1.28,
+        9.31
+      ],
+      "ci_beats_base": false,
+      "too_small_no_ci": false,
+      "era1_up_pct": 48.65,
+      "era1_mean_pct": -1.08,
+      "era2_up_pct": 75.71,
+      "era2_mean_pct": 5.94,
+      "era_same_sign": false,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 10,
+      "horizon": 252,
+      "n_days": 1575,
+      "n_episodes": 13,
+      "n_episodes_with_fwd": 13,
+      "up_pct": 61.52,
+      "mean_pct": 6.01,
+      "median_pct": 12.49,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82,
+      "diff_mean": -1.81,
+      "ci95_mean": [
+        -0.17,
+        25.41
+      ],
+      "ci_beats_base": false,
+      "too_small_no_ci": false,
+      "era1_up_pct": 50.84,
+      "era1_mean_pct": 0.74,
+      "era2_up_pct": 94.32,
+      "era2_mean_pct": 22.21,
+      "era_same_sign": true,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 15,
+      "horizon": 60,
+      "n_days": 1081,
+      "n_episodes": 8,
+      "n_episodes_with_fwd": 8,
+      "up_pct": 55.32,
+      "mean_pct": 0.56,
+      "median_pct": 1.97,
+      "base_up_pct": 67.42,
+      "base_mean_pct": 1.81,
+      "diff_mean": -1.25,
+      "ci95_mean": [
+        -0.87,
+        10.46
+      ],
+      "ci_beats_base": false,
+      "too_small_no_ci": false,
+      "era1_up_pct": 49.49,
+      "era1_mean_pct": -0.91,
+      "era2_up_pct": 80.69,
+      "era2_mean_pct": 6.97,
+      "era_same_sign": false,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 15,
+      "horizon": 252,
+      "n_days": 1081,
+      "n_episodes": 8,
+      "n_episodes_with_fwd": 8,
+      "up_pct": 63.64,
+      "mean_pct": 8.26,
+      "median_pct": 13.13,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82,
+      "diff_mean": 0.44,
+      "ci95_mean": [
+        1.54,
+        29.26
+      ],
+      "ci_beats_base": false,
+      "too_small_no_ci": false,
+      "era1_up_pct": 55.29,
+      "era1_mean_pct": 4.55,
+      "era2_up_pct": 100.0,
+      "era2_mean_pct": 24.41,
+      "era_same_sign": true,
+      "verdict": "crisis-driven-fragile"
+    },
+    {
+      "dd_threshold_pct": 20,
+      "horizon": 60,
+      "n_days": 655,
+      "n_episodes": 4,
+      "n_episodes_with_fwd": 4,
+      "up_pct": 61.83,
+      "mean_pct": 2.72,
+      "median_pct": 4.24,
+      "base_up_pct": 67.42,
+      "base_mean_pct": 1.81,
+      "diff_mean": 0.91,
+      "ci95_mean": null,
+      "ci_beats_base": null,
+      "too_small_no_ci": true,
+      "era1_up_pct": 58.59,
+      "era1_mean_pct": 1.89,
+      "era2_up_pct": 87.67,
+      "era2_mean_pct": 9.35,
+      "era_same_sign": true,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 20,
+      "horizon": 252,
+      "n_days": 655,
+      "n_episodes": 4,
+      "n_episodes_with_fwd": 4,
+      "up_pct": 77.1,
+      "mean_pct": 15.0,
+      "median_pct": 17.41,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82,
+      "diff_mean": 7.18,
+      "ci95_mean": null,
+      "ci_beats_base": null,
+      "too_small_no_ci": true,
+      "era1_up_pct": 74.23,
+      "era1_mean_pct": 13.4,
+      "era2_up_pct": 100.0,
+      "era2_mean_pct": 27.75,
+      "era_same_sign": true,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 30,
+      "horizon": 60,
+      "n_days": 220,
+      "n_episodes": 3,
+      "n_episodes_with_fwd": 3,
+      "up_pct": 68.64,
+      "mean_pct": 5.62,
+      "median_pct": 8.47,
+      "base_up_pct": 67.42,
+      "base_mean_pct": 1.81,
+      "diff_mean": 3.81,
+      "ci95_mean": null,
+      "ci_beats_base": null,
+      "too_small_no_ci": true,
+      "era1_up_pct": 68.35,
+      "era1_mean_pct": 5.33,
+      "era2_up_pct": 100.0,
+      "era2_mean_pct": 37.36,
+      "era_same_sign": true,
+      "verdict": "described-only"
+    },
+    {
+      "dd_threshold_pct": 30,
+      "horizon": 252,
+      "n_days": 220,
+      "n_episodes": 3,
+      "n_episodes_with_fwd": 3,
+      "up_pct": 95.45,
+      "mean_pct": 27.94,
+      "median_pct": 27.04,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82,
+      "diff_mean": 20.12,
+      "ci95_mean": null,
+      "ci_beats_base": null,
+      "too_small_no_ci": true,
+      "era1_up_pct": 95.41,
+      "era1_mean_pct": 27.53,
+      "era2_up_pct": 100.0,
+      "era2_mean_pct": 72.87,
+      "era_same_sign": true,
+      "verdict": "described-only"
+    }
+  ],
+  "low_proximity": [
+    {
+      "within_pct": 2,
+      "n_days": 206,
+      "up_pct": 55.34,
+      "mean_pct": 4.35,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82
+    },
+    {
+      "within_pct": 5,
+      "n_days": 457,
+      "up_pct": 50.33,
+      "mean_pct": 0.45,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82
+    },
+    {
+      "within_pct": 10,
+      "n_days": 1138,
+      "up_pct": 59.93,
+      "mean_pct": 2.35,
+      "base_up_pct": 75.21,
+      "base_mean_pct": 7.82
+    }
+  ],
+  "episodes": {
+    "5": [
+      {
+        "start": "2000-01-28",
+        "deepest_dd_pct": -7.42,
+        "n_days": 2
+      },
+      {
+        "start": "2000-02-11",
+        "deepest_dd_pct": -9.25,
+        "n_days": 20
+      },
+      {
+        "start": "2000-04-13",
+        "deepest_dd_pct": -11.19,
+        "n_days": 28
+      },
+      {
+        "start": "2000-06-23",
+        "deepest_dd_pct": -5.63,
+        "n_days": 4
+      },
+      {
+        "start": "2000-07-27",
+        "deepest_dd_pct": -7.04,
+        "n_days": 5
+      },
+      {
+        "start": "2000-09-18",
+        "deepest_dd_pct": -34.65,
+        "n_days": 678
+      },
+      {
+        "start": "2004-03-22",
+        "deepest_dd_pct": -5.74,
+        "n_days": 3
+      },
+      {
+        "start": "2004-05-07",
+        "deepest_dd_pct": -6.36,
+        "n_days": 12
+      },
+      {
+        "start": "2004-07-21",
+        "deepest_dd_pct": -8.16,
+        "n_days": 23
+      },
+      {
+        "start": "2004-10-22",
+        "deepest_dd_pct": -5.44,
+        "n_days": 2
+      },
+      {
+        "start": "2005-04-14",
+        "deepest_dd_pct": -7.17,
+        "n_days": 16
+      },
+      {
+        "start": "2005-10-12",
+        "deepest_dd_pct": -5.48,
+        "n_days": 6
+      },
+      {
+        "start": "2006-05-23",
+        "deepest_dd_pct": -5.22,
+        "n_days": 2
+      },
+      {
+        "start": "2006-06-07",
+        "deepest_dd_pct": -7.7,
+        "n_days": 23
+      },
+      {
+        "start": "2007-03-05",
+        "deepest_dd_pct": -5.86,
+        "n_days": 2
+      },
+      {
+        "start": "2007-07-27",
+        "deepest_dd_pct": -9.43,
+        "n_days": 28
+      },
+      {
+        "start": "2007-11-07",
+        "deepest_dd_pct": -52.58,
+        "n_days": 474
+      },
+      {
+        "start": "2009-10-28",
+        "deepest_dd_pct": -5.04,
+        "n_days": 1
+      },
+      {
+        "start": "2009-10-30",
+        "deepest_dd_pct": -5.62,
+        "n_days": 2
+      },
+      {
+        "start": "2010-01-22",
+        "deepest_dd_pct": -8.13,
+        "n_days": 12
+      },
+      {
+        "start": "2010-05-06",
+        "deepest_dd_pct": -15.99,
+        "n_days": 102
+      },
+      {
+        "start": "2011-03-16",
+        "deepest_dd_pct": -6.41,
+        "n_days": 2
+      },
+      {
+        "start": "2011-06-06",
+        "deepest_dd_pct": -7.2,
+        "n_days": 15
+      },
+      {
+        "start": "2011-07-29",
+        "deepest_dd_pct": -19.39,
+        "n_days": 117
+      },
+      {
+        "start": "2012-05-14",
+        "deepest_dd_pct": -9.94,
+        "n_days": 34
+      },
+      {
+        "start": "2012-07-24",
+        "deepest_dd_pct": -5.72,
+        "n_days": 2
+      },
+      {
+        "start": "2012-11-08",
+        "deepest_dd_pct": -7.67,
+        "n_days": 10
+      },
+      {
+        "start": "2013-06-24",
+        "deepest_dd_pct": -5.76,
+        "n_days": 1
+      },
+      {
+        "start": "2014-02-03",
+        "deepest_dd_pct": -5.76,
+        "n_days": 3
+      },
+      {
+        "start": "2014-10-10",
+        "deepest_dd_pct": -7.4,
+        "n_days": 7
+      },
+      {
+        "start": "2015-08-21",
+        "deepest_dd_pct": -12.35,
+        "n_days": 40
+      },
+      {
+        "start": "2015-11-13",
+        "deepest_dd_pct": -5.06,
+        "n_days": 1
+      },
+      {
+        "start": "2015-12-11",
+        "deepest_dd_pct": -5.56,
+        "n_days": 2
+      },
+      {
+        "start": "2015-12-18",
+        "deepest_dd_pct": -5.88,
+        "n_days": 2
+      },
+      {
+        "start": "2016-01-04",
+        "deepest_dd_pct": -14.16,
+        "n_days": 50
+      },
+      {
+        "start": "2016-06-27",
+        "deepest_dd_pct": -6.0,
+        "n_days": 1
+      },
+      {
+        "start": "2018-02-05",
+        "deepest_dd_pct": -10.16,
+        "n_days": 66
+      },
+      {
+        "start": "2018-06-25",
+        "deepest_dd_pct": -6.03,
+        "n_days": 7
+      },
+      {
+        "start": "2018-10-11",
+        "deepest_dd_pct": -19.78,
+        "n_days": 88
+      },
+      {
+        "start": "2019-05-29",
+        "deepest_dd_pct": -6.84,
+        "n_days": 4
+      },
+      {
+        "start": "2019-08-05",
+        "deepest_dd_pct": -5.99,
+        "n_days": 1
+      },
+      {
+        "start": "2019-08-14",
+        "deepest_dd_pct": -6.12,
+        "n_days": 4
+      },
+      {
+        "start": "2020-02-25",
+        "deepest_dd_pct": -33.92,
+        "n_days": 99
+      },
+      {
+        "start": "2020-09-08",
+        "deepest_dd_pct": -9.6,
+        "n_days": 20
+      },
+      {
+        "start": "2020-10-26",
+        "deepest_dd_pct": -8.68,
+        "n_days": 7
+      },
+      {
+        "start": "2021-09-30",
+        "deepest_dd_pct": -5.21,
+        "n_days": 2
+      },
+      {
+        "start": "2022-01-19",
+        "deepest_dd_pct": -25.43,
+        "n_days": 313
+      },
+      {
+        "start": "2023-09-21",
+        "deepest_dd_pct": -10.28,
+        "n_days": 30
+      },
+      {
+        "start": "2024-04-19",
+        "deepest_dd_pct": -5.46,
+        "n_days": 1
+      },
+      {
+        "start": "2024-08-02",
+        "deepest_dd_pct": -8.49,
+        "n_days": 7
+      },
+      {
+        "start": "2025-03-04",
+        "deepest_dd_pct": -18.9,
+        "n_days": 47
+      },
+      {
+        "start": "2025-05-23",
+        "deepest_dd_pct": -5.56,
+        "n_days": 1
+      },
+      {
+        "start": "2025-11-20",
+        "deepest_dd_pct": -5.11,
+        "n_days": 1
+      },
+      {
+        "start": "2026-03-18",
+        "deepest_dd_pct": -9.1,
+        "n_days": 14
+      }
+    ],
+    "10": [
+      {
+        "start": "2000-04-14",
+        "deepest_dd_pct": -11.19,
+        "n_days": 2
+      },
+      {
+        "start": "2000-10-11",
+        "deepest_dd_pct": -34.65,
+        "n_days": 640
+      },
+      {
+        "start": "2007-11-26",
+        "deepest_dd_pct": -52.58,
+        "n_days": 424
+      },
+      {
+        "start": "2010-05-20",
+        "deepest_dd_pct": -15.99,
+        "n_days": 53
+      },
+      {
+        "start": "2011-08-04",
+        "deepest_dd_pct": -19.39,
+        "n_days": 69
+      },
+      {
+        "start": "2015-08-24",
+        "deepest_dd_pct": -12.35,
+        "n_days": 5
+      },
+      {
+        "start": "2016-01-13",
+        "deepest_dd_pct": -14.16,
+        "n_days": 20
+      },
+      {
+        "start": "2018-02-08",
+        "deepest_dd_pct": -10.16,
+        "n_days": 2
+      },
+      {
+        "start": "2018-11-23",
+        "deepest_dd_pct": -19.78,
+        "n_days": 27
+      },
+      {
+        "start": "2020-02-27",
+        "deepest_dd_pct": -33.92,
+        "n_days": 66
+      },
+      {
+        "start": "2022-02-22",
+        "deepest_dd_pct": -25.43,
+        "n_days": 248
+      },
+      {
+        "start": "2023-10-27",
+        "deepest_dd_pct": -10.28,
+        "n_days": 1
+      },
+      {
+        "start": "2025-03-13",
+        "deepest_dd_pct": -18.9,
+        "n_days": 18
+      }
+    ],
+    "15": [
+      {
+        "start": "2000-12-20",
+        "deepest_dd_pct": -34.65,
+        "n_days": 529
+      },
+      {
+        "start": "2008-01-18",
+        "deepest_dd_pct": -52.58,
+        "n_days": 331
+      },
+      {
+        "start": "2010-06-30",
+        "deepest_dd_pct": -15.99,
+        "n_days": 4
+      },
+      {
+        "start": "2011-08-08",
+        "deepest_dd_pct": -19.39,
+        "n_days": 15
+      },
+      {
+        "start": "2018-12-20",
+        "deepest_dd_pct": -19.78,
+        "n_days": 7
+      },
+      {
+        "start": "2020-03-09",
+        "deepest_dd_pct": -33.92,
+        "n_days": 42
+      },
+      {
+        "start": "2022-05-09",
+        "deepest_dd_pct": -25.43,
+        "n_days": 149
+      },
+      {
+        "start": "2025-04-04",
+        "deepest_dd_pct": -18.9,
+        "n_days": 4
+      }
+    ],
+    "20": [
+      {
+        "start": "2001-03-12",
+        "deepest_dd_pct": -34.65,
+        "n_days": 325
+      },
+      {
+        "start": "2008-07-09",
+        "deepest_dd_pct": -52.58,
+        "n_days": 257
+      },
+      {
+        "start": "2020-03-12",
+        "deepest_dd_pct": -33.92,
+        "n_days": 18
+      },
+      {
+        "start": "2022-06-13",
+        "deepest_dd_pct": -25.43,
+        "n_days": 55
+      }
+    ],
+    "30": [
+      {
+        "start": "2001-09-17",
+        "deepest_dd_pct": -34.65,
+        "n_days": 29
+      },
+      {
+        "start": "2008-10-06",
+        "deepest_dd_pct": -52.58,
+        "n_days": 189
+      },
+      {
+        "start": "2020-03-20",
+        "deepest_dd_pct": -33.92,
+        "n_days": 2
+      }
+    ]
+  },
+  "single_stocks": {
+    "as_of": "2026-07-23",
+    "survivorship_note": "单股数据仅 20 只活到今天的赢家(AAPL/NVDA/TSLA…):在它们身上回测「跌了买」会因幸存者偏差严重高估——跌 20% 后归零/退市的股(雷曼、Enron、SVB、一堆 SPAC)根本不在数据里。故本表只给「当前距自己 52 周高/低多远」的事实快照,绝不回测、绝不当买入信号。单个公司大跌常是「便宜有便宜的原因」(价值陷阱),指数跌了会随整个美国市场恢复,单股不会都恢复。",
+    "current": [
+      {
+        "ticker": "NFLX",
+        "dd_from_52wk_high_pct": -45.5,
+        "dist_from_52wk_low_pct": 1.9
+      },
+      {
+        "ticker": "TSLA",
+        "dd_from_52wk_high_pct": -34.7,
+        "dist_from_52wk_low_pct": 5.6
+      },
+      {
+        "ticker": "HOOD",
+        "dd_from_52wk_high_pct": -33.4,
+        "dist_from_52wk_low_pct": 55.9
+      },
+      {
+        "ticker": "SNDK",
+        "dd_from_52wk_high_pct": -31.0,
+        "dist_from_52wk_low_pct": 3857.6
+      },
+      {
+        "ticker": "MSFT",
+        "dd_from_52wk_high_pct": -29.2,
+        "dist_from_52wk_low_pct": 8.1
+      },
+      {
+        "ticker": "INTC",
+        "dd_from_52wk_high_pct": -28.9,
+        "dist_from_52wk_low_pct": 419.1
+      },
+      {
+        "ticker": "META",
+        "dd_from_52wk_high_pct": -23.0,
+        "dist_from_52wk_low_pct": 15.4
+      },
+      {
+        "ticker": "GOOGL",
+        "dd_from_52wk_high_pct": -21.0,
+        "dist_from_52wk_low_pct": 68.5
+      },
+      {
+        "ticker": "AVGO",
+        "dd_from_52wk_high_pct": -18.4,
+        "dist_from_52wk_low_pct": 39.4
+      },
+      {
+        "ticker": "MU",
+        "dd_from_52wk_high_pct": -18.4,
+        "dist_from_52wk_low_pct": 845.7
+      },
+      {
+        "ticker": "COST",
+        "dd_from_52wk_high_pct": -15.4,
+        "dist_from_52wk_low_pct": 9.3
+      },
+      {
+        "ticker": "AMZN",
+        "dd_from_52wk_high_pct": -15.0,
+        "dist_from_52wk_low_pct": 17.5
+      },
+      {
+        "ticker": "TSM",
+        "dd_from_52wk_high_pct": -13.0,
+        "dist_from_52wk_low_pct": 84.8
+      },
+      {
+        "ticker": "NVDA",
+        "dd_from_52wk_high_pct": -11.3,
+        "dist_from_52wk_low_pct": 26.5
+      },
+      {
+        "ticker": "AMD",
+        "dd_from_52wk_high_pct": -7.1,
+        "dist_from_52wk_low_pct": 257.1
+      },
+      {
+        "ticker": "BRK-B",
+        "dd_from_52wk_high_pct": -4.5,
+        "dist_from_52wk_low_pct": 6.9
+      },
+      {
+        "ticker": "KO",
+        "dd_from_52wk_high_pct": -4.4,
+        "dist_from_52wk_low_pct": 26.1
+      },
+      {
+        "ticker": "LLY",
+        "dd_from_52wk_high_pct": -4.0,
+        "dist_from_52wk_low_pct": 90.9
+      },
+      {
+        "ticker": "AAPL",
+        "dd_from_52wk_high_pct": -3.6,
+        "dist_from_52wk_low_pct": 59.6
+      }
+    ]
+  },
+  "honesty": [
+    "纯描述·无晋升:本研究不产出「买入信号/edge/抄底建议」,只描述历史上从 52 周高点回撤 X% 之后、持有 H 天市场的前向表现——明确非信号、非荐股、非投资建议。",
+    "基率是诚实参照系:大盘光是持有 1 年,历史上就约 75% 上涨、中位约 +11%。所以一个「跌了买」的口径要算「有料」,必须明显跑赢「随便哪天买」的基率——不是「涨了就叫赢」,市场本来大概率就涨。",
+    "重叠窗口让 N 虚高:一次深回撤会持续几十上百个交易日,逐日计数把同一场危机重复计成几百个「样本」。本研究同时报 n_days(重叠日)与 n_episodes(去聚集后的独立回撤段);置信区间用段级自助(每段一个数),独立段 < 8 一律 described-only、不出 CI。深回撤(≥20/30%)的独立段本就只有 ~3-6 次危机(2008/2020/2022 等),数字再好看也是轶事级,别当规律。",
+    "幸存者偏差(单股):单股数据仅 20 只活到今天的赢家(AAPL/NVDA/TSLA…):在它们身上回测「跌了买」会因幸存者偏差严重高估——跌 20% 后归零/退市的股(雷曼、Enron、SVB、一堆 SPAC)根本不在数据里。故本表只给「当前距自己 52 周高/低多远」的事实快照,绝不回测、绝不当买入信号。单个公司大跌常是「便宜有便宜的原因」(价值陷阱),指数跌了会随整个美国市场恢复,单股不会都恢复。",
+    "体制依赖:回撤买入是否「有料」高度依赖牛熊环境——2000-2012 熊市多的年代买浅跌几乎白买(跌了还继续跌),好看的数字多来自 2013 后的长牛。本研究报分时代结果并如实标「靠牛市撑着」的风险。",
+    "还有一笔账没算进表里:等跌的时候,那些「没等到跌、直接涨上去」的行情会被踏空——本表只统计「跌到了才买」的情形,不含「干等一个没来的回撤」的机会成本。",
+    "数据仅覆盖 2000 年至今(SP500_long)。历史规律 ≠ 未来保证,会出错,过去表现不代表未来结果。"
+  ],
+  "verdict_note": "描述性总结:持有 1 年本身基率就强(约 75% 涨);浅到中回撤(5-15%)历史上并不比随便买强、有时反而略差;只有深回撤(≥20%,尤其≥30% 崩盘级)才明显跑赢基率——但那是 ~3-6 次危机撑起、样本极小;在 52 周最低点附近买反而最差(接飞刀)。单股一律只出描述快照(幸存者偏差)。以上皆非买入信号。"
+}
