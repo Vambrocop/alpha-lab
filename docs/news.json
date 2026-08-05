@@ -1,8 +1,16 @@
 {
- "updated": "2026-08-05 17:16 UTC",
+ "updated": "2026-08-05 18:59 UTC",
  "items": [
   {
-   "time": "2026-08-05 16:58 UTC",
+   "time": "2026-08-05 18:57 UTC",
+   "title": "Why AT&T, Verizon and T-Mobile shares are down after SpaceX’s earnings",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 18:51 UTC",
    "title": "Google's AI reshuffle: Chief scientist Jeff Dean exits and Demis Hassabis steps down as DeepMind CEO",
    "impact": "negative",
    "note": "",
@@ -10,32 +18,24 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-05 16:56 UTC",
-   "title": "Manager of DRAM memory chip stock trade blockbuster ETF is back with new AI thematic bet",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 16:52 UTC",
-   "title": "How Ozempic maker Novo Nordisk blew its lead in GLP-1 weight-loss drugs. Can Europe compete in the high-stakes global economy?",
+   "time": "2026-08-05 18:51 UTC",
+   "title": "Retail investors are buying the dip on SpaceX’s stock before more shares flood the market",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-05 16:45 UTC",
-   "title": "Alphabet’s stock drops as Google loses another key AI executive",
+   "time": "2026-08-05 18:31 UTC",
+   "title": "SolarEdge’s stock is shedding a quarter of its value as sales woes trump AI progress",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-05 16:18 UTC",
-   "title": "Uber stock sinks 7% after weak guidance despite revenue growth",
+   "time": "2026-08-05 18:26 UTC",
+   "title": "Oil prices little changed on negotiations to manage ship traffic in Strait of Hormuz",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
