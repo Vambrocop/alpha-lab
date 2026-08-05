@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🌡️ 恐慌贪婪合成表(近似·纯描述)</title>
+<link rel="stylesheet" href="vp.css">
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:14px;max-width:1040px;margin:0 auto}
+  h1{font-size:1.25rem;margin:.2em 0;display:inline-block}
+  h2{font-size:1rem;margin:22px 0 4px}
+  .sub{color:var(--mut);font-size:.8rem;margin:0 0 8px}
+  .note{background:rgba(248,81,73,.08);border:1px solid var(--red);border-radius:8px;padding:10px 12px;font-size:.84rem;margin:10px 0;color:#e6b3ae;line-height:1.6}
+  .approx{background:rgba(210,153,34,.10);border:1px solid var(--amb);border-radius:8px;padding:8px 12px;font-size:.8rem;margin:8px 0;color:#e0c07a;line-height:1.6;font-weight:600}
+  .guard{background:rgba(163,113,247,.10);border:1px solid var(--acc-line);border-radius:8px;padding:8px 11px;font-size:.8rem;margin:8px 0;color:var(--acc-strong);line-height:1.6}
+  table{width:100%;border-collapse:collapse;font-size:.82rem}
+  th,td{padding:6px 7px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  th{color:var(--mut);font-weight:600;font-size:.74rem}
+  .num{font-variant-numeric:tabular-nums}
+  .mut{color:var(--mut)}
+  .few{color:var(--amb);font-size:.72rem}
+  .eb{position:relative;display:inline-block;width:104px;height:13px;vertical-align:middle;background:var(--surface-2);border-radius:4px;overflow:hidden}
+  .eb i{position:absolute;display:block}
+  .eb .eb-range{top:4px;bottom:4px;background:var(--acc-weak);border:1px solid var(--acc-line);border-radius:2px}
+  .eb .eb-base{top:0;bottom:0;width:1px;background:var(--amb)}
+  .eb .eb-mean{top:1px;bottom:1px;width:2px;background:var(--acc-strong)}
+  .cinum{color:var(--mut);font-size:.68rem;margin-top:2px}
+
+  /* ── 仪表(0-100 条,5 档 muted 分区)───────────────────────────── */
+  .gaugeWrap{margin:10px 0 4px}
+  .gaugeVal{font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .gaugeBand{font-size:.92rem;color:var(--acc-strong);font-weight:600;margin-left:8px}
+  .gaugeTrack{position:relative;height:22px;border-radius:7px;overflow:hidden;margin:10px 0 4px;
+    background:linear-gradient(to right,
+      #2a3038 0%, #2a3038 25%,
+      #3a4250 25%, #3a4250 45%,
+      #4a5566 45%, #4a5566 55%,
+      #55486f 55%, #55486f 75%,
+      #6d4fa8 75%, #6d4fa8 100%);
+    border:1px solid var(--border)}
+  .gaugeMarker{position:absolute;top:-4px;bottom:-4px;width:3px;background:var(--fg);box-shadow:0 0 0 1px rgba(0,0,0,.5)}
+  .gaugeTicks{position:relative;height:16px;font-size:.66rem;color:var(--mut)}
+  .gaugeTicks span{position:absolute;transform:translateX(-50%)}
+  .gaugeLabels{display:flex;justify-content:space-between;font-size:.68rem;color:var(--mut);margin-top:2px}
+
+  .compGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:12px}
+  .compCard{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:9px 11px}
+  .compCard.na{opacity:.55}
+  .compCard .nm{font-weight:600;font-size:.86rem}
+  .compCard .def{color:var(--mut);font-size:.7rem;margin:2px 0 6px;line-height:1.4}
+  .compCard .sv{font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .compCard .raw{color:var(--mut);font-size:.74rem;margin-top:2px}
+  .compbar{height:5px;border-radius:3px;background:var(--panel);margin-top:5px;overflow:hidden}
+  .compbar i{display:block;height:100%;background:var(--acc-line)}
+
+  .vp-card{margin:12px 0}
+  .honesty-list{font-size:.8rem;line-height:1.8;color:var(--mut);margin:6px 0 0;padding-left:1.1em}
+  .honesty-list li{margin-bottom:4px}
+  #src{color:var(--mut);font-size:.78rem;margin-top:10px}
+  .foot{color:var(--mut);font-size:.76rem;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;line-height:1.6}
+  details.evtbl summary{cursor:pointer;color:var(--mut);font-size:.82rem;padding:4px 0}
+  @media(max-width:640px){body{padding:11px}h1{font-size:1.1rem}table{font-size:.74rem}.eb{width:70px}.gaugeVal{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页">↩ 返回</a>
+<a href="index.html" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
+<button id="lang" aria-label="切换语言 / switch language"></button>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="intro"></p>
+
+<div class="note" id="topBanner"></div>
+<div class="approx" data-i18n="approxNote"></div>
+
+<div class="vp-card vp-card--hero">
+  <div class="sub" style="color:var(--fg);font-weight:600" data-i18n="gaugeTag"></div>
+  <div class="gaugeWrap">
+    <span class="gaugeVal" id="gaugeVal">—</span><span class="gaugeBand" id="gaugeBandTxt"></span>
+    <div class="gaugeTrack" id="gaugeTrack"><div class="gaugeMarker" id="gaugeMarker" style="left:50%"></div></div>
+    <div class="gaugeTicks" id="gaugeTicks"></div>
+    <div class="gaugeLabels">
+      <span data-i18n="bandExtremeFear"></span><span data-i18n="bandFear"></span>
+      <span data-i18n="bandNeutral"></span><span data-i18n="bandGreed"></span><span data-i18n="bandExtremeGreed"></span>
+    </div>
+  </div>
+  <div class="compGrid" id="compGrid"></div>
+</div>
+
+<div class="guard" id="copyGuard" data-i18n="copyGuard"></div>
+
+<h2 data-i18n="ctrH"></h2>
+<p class="sub" data-i18n="ctrSub"></p>
+<div id="ctr20"></div>
+<details class="evtbl" style="margin-top:6px"><summary data-i18n="ctr60Tab"></summary><div id="ctr60"></div></details>
+
+<h2 data-i18n="strH"></h2>
+<p class="sub" data-i18n="strSub"></p>
+<div id="stretches"></div>
+
+<details class="vp-more" style="margin-top:16px">
+  <summary data-i18n="moreHonesty"></summary>
+  <ul class="honesty-list" id="honestyList"></ul>
+</details>
+
+<div id="src"></div>
+<div class="foot" data-i18n="foot"></div>
+
+<script src="vp_i18n.js"></script>
+<script>
+const LIVE="fear_greed.json";   // 同源相对路径(自托管·无 CDN·中国可达)
+
+const BAND_EDGES=[25,45,55,75];
+const BANDS=["extreme_fear","fear","neutral","greed","extreme_greed"];
+const HORIZONS=[20,60];
+
+const BAND_LABELS={
+  extreme_fear:{zh:"极度恐慌",en:"Extreme fear"},
+  fear:{zh:"恐慌",en:"Fear"},
+  neutral:{zh:"中性",en:"Neutral"},
+  greed:{zh:"贪婪",en:"Greed"},
+  extreme_greed:{zh:"极度贪婪",en:"Extreme greed"},
+};
+
+const I18N={
+  title:{zh:"🌡️ 恐慌贪婪合成表(近似·纯描述)",en:"🌡️ Fear & Greed composite (approximation, description only)"},
+  intro:{zh:"用仓库能算的分量合成一个 0-100 的「恐慌贪婪」温度计,再老实检验一下民间「别人贪婪我恐惧」——极度贪婪之后市场真的更差吗?极度恐慌之后真的更好吗?只描述历史,不是买卖信号。",
+         en:"A 0-100 'fear & greed' thermometer built from what this repo can actually compute, plus an honest check on the folk wisdom 'be fearful when others are greedy' — does the market really do worse after extreme greed, better after extreme fear? Description only, not a signal."},
+  bannerTitle:{zh:"⚠️ 一句话",en:"⚠️ The one takeaway"},
+  banner:{zh:"这是情绪<b>温度计</b>,不是买卖信号。逆向情绪择时出了名地弱——独立的「极度贪婪/恐慌」段本就没几段,置信区间往往很宽。下表逐档 × 窗口如实给出验证结果,该表 verdict 列才是准的,别凭「贪婪/恐慌」两个字自己脑补。数据仅 2000 年至今;过去 ≠ 未来,会错。",
+          en:"This is a sentiment <b>thermometer</b>, not a buy/sell signal. Contrarian sentiment timing is notoriously weak — independent 'extreme greed/fear' stretches are few, and confidence intervals are often wide. The table below tests it honestly by band × horizon; trust the verdict column, not the words 'greed' or 'fear' by themselves. Data 2000-present only; the past ≠ the future, and it can be wrong."},
+  approxNote:{zh:"⚠️ 近似值,不是 CNN 官方值:CNN 恐慌贪婪指数用 7 个分量(动量/强度/广度/看跌看涨/波动/避险/垃圾债),本页数据只够算 ~3-4 个(动量/波动反向/期限结构/避险),数值仅供参考温度计,不可与 CNN 网站数字直接对比。",
+              en:"⚠️ This is an approximation, NOT CNN's official value: CNN's Fear & Greed Index uses 7 components (momentum/strength/breadth/put-call/volatility/safe-haven/junk bonds); this page can only compute ~3-4 of them (momentum/inverted volatility/term structure/risk appetite). Treat it as a rough thermometer only — do not compare it directly to CNN's website number."},
+
+  copyGuard:{zh:"📌 就算读数显示「极度贪婪」或「极度恐慌」,这也只是<b>情绪温度计,不是信号,可能出错,不构成任何投资建议</b>——不该读成「贪婪就该卖、恐慌就该买」。是否「有逆向料」以下表 verdict 列为准,不是靠这两个字自己脑补。",
+             en:"📌 Even a reading of 'extreme greed' or 'extreme fear' is only a <b>sentiment thermometer — not a signal, it can be wrong, and it is not investment advice</b>. It should never be read as 'greed means sell, fear means buy.' Whether it reliably deviates from the base rate is decided by the verdict column below, not by the words themselves."},
+
+  gaugeTag:{zh:"当前读数(gauge)",en:"Current reading (gauge)"},
+  bandExtremeFear:{zh:"极度恐慌",en:"Extreme fear"},bandFear:{zh:"恐慌",en:"Fear"},
+  bandNeutral:{zh:"中性",en:"Neutral"},bandGreed:{zh:"贪婪",en:"Greed"},bandExtremeGreed:{zh:"极度贪婪",en:"Extreme greed"},
+
+  ctrH:{zh:"逆向情绪检验:各档之后市场怎么走",en:"Contrarian check: what happens after each sentiment band"},
+  ctrSub:{zh:"「别人贪婪我恐惧」到底站不站得住?每档去聚集为独立段(同档连续日算一段),CI 用段级聚类自助;独立段 < 8 一律纯描述、不出 CI。",
+          en:"Does 'be fearful when others are greedy' actually hold? Each band is de-clustered into independent stretches (consecutive same-band days = one stretch); CI uses stretch-level cluster bootstrap; fewer than 8 independent stretches means description-only, no CI."},
+  ctr60Tab:{zh:"展开:60 日窗口",en:"Expand: 60-day horizon"},
+
+  cBand:{zh:"情绪档",en:"Band"},cUp:{zh:"上涨率",en:"Up-rate"},cMean:{zh:"均值",en:"Mean"},
+  cBase:{zh:"vs 基率",en:"vs base"},cStr:{zh:"独立聚类",en:"Indep. clusters"},cCI:{zh:"95% CI(跨聚类)",en:"95% CI (across clusters)"},
+  cVerdict:{zh:"判定",en:"Verdict"},cDays:{zh:"重叠日",en:"Days"},
+
+  vDescribed:{zh:"仅描述·段太少",en:"described only · too few stretches"},
+  vHolds:{zh:"可靠偏离基率(逆向料成立)",en:"reliably deviates from base (contrarian holds)"},
+  vNotContra:{zh:"段够但不可靠偏离",en:"enough stretches, not a reliable deviation"},
+
+  strH:{zh:"各档实际有几段独立情绪",en:"How many independent stretches each band actually has"},
+  strSub:{zh:"重叠日看着几百上千;真正的样本量是「独立聚类」——先按迟滞把同档边界抖动并段,再把前向窗口会重叠(相隔不足窗口天数)的段并起来——见上表「独立聚类」列。下面列每档原始迟滞段的前几段起始日期。",
+          en:"Overlapping days look like hundreds; the real sample size is 'independent clusters' — first hysteresis merges same-side boundary jitter, then stretches whose forward windows overlap (closer than the horizon) are merged too — see the 'Indep. clusters' column above. Below are the first few raw-stretch start dates per band."},
+
+  moreHonesty:{zh:"展开看完整诚实说明",en:"Expand: full honesty notes"},
+  asof:{zh:"数据",en:"data"},compStart:{zh:"复合读数起点",en:"composite starts"},genAt:{zh:"生成于",en:"generated"},
+  loadingErr:{zh:"拉不到 fear_greed.json——确认已部署。",en:"Can't load fear_greed.json — check deployment."},
+  foot:{zh:"恐慌贪婪合成表是情绪温度计,不是买卖信号——近似值,不是 CNN 官方读数。逆向情绪择时出了名地弱,独立段少、置信区间宽。数据仅 2000 年至今;会错,过去不代表未来。",
+        en:"The fear & greed composite is a sentiment thermometer, not a buy/sell signal — an approximation, not CNN's official reading. Contrarian sentiment timing is notoriously weak, with few independent stretches and wide confidence intervals. Data 2000-present only; it can be wrong, and the past does not represent the future."}
+};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let LANG="zh";try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
+const t=k=>(I18N[k]&&I18N[k][LANG])||k;
+function applyStatic(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>el.innerHTML=t(el.dataset.i18n));
+  $("lang").textContent=LANG==="zh"?"EN":"中";
+  document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
+}
+
+function fmtPct(v){ return v==null? `<span class="mut">—</span>` : `${v>=0?'+':''}${v}%`; }
+function ciText(ci){ return ci==null? "—" : `[${ci[0]>=0?'+':''}${ci[0]}%, ${ci[1]>=0?'+':''}${ci[1]}%]`; }
+
+function verdictBadge(v){
+  const label={"described-only":t("vDescribed"),"contrarian-holds":t("vHolds"),"not-contrarian":t("vNotContra")}[v]||v;
+  return `<span class="vp-badge vp-badge--neu">${esc(label)}</span>`;
+}
+
+// 误差棒:CI 区间 + 均值标 + 基率参考线(muted,同 dip.html 惯例)
+function curveScale(cells){
+  let mx=4;
+  cells.forEach(c=>{
+    if(c.ci95_mean){ mx=Math.max(mx,Math.abs(c.ci95_mean[0]),Math.abs(c.ci95_mean[1])); }
+    if(c.mean_pct!=null) mx=Math.max(mx,Math.abs(c.mean_pct));
+    if(c.base_mean_pct!=null) mx=Math.max(mx,Math.abs(c.base_mean_pct));
+  });
+  return mx*1.15;
+}
+function errBar(ci,mean,base,scaleMax){
+  if(!ci) return `<span class="mut">—</span>`;
+  const pct=v=>Math.max(0,Math.min(100,((v+scaleMax)/(2*scaleMax))*100));
+  const lo=pct(ci[0]),hi=pct(ci[1]);
+  let inner=`<i class="eb-range" style="left:${lo}%;width:${Math.max(0.8,hi-lo)}%"></i>`;
+  if(base!=null) inner+=`<i class="eb-base" style="left:${pct(base)}%"></i>`;
+  if(mean!=null) inner+=`<i class="eb-mean" style="left:${pct(mean)}%"></i>`;
+  return `<span class="eb" title="灰=95%CI跨独立段, 紫=均值, 黄=基率参考线">${inner}</span>`;
+}
+
+function ctrTable(j,h){
+  const cells=j.contrarian.bands.filter(c=>c.horizon===h);
+  const scale=curveScale(cells);
+  let rows="";
+  BANDS.forEach(b=>{
+    const c=cells.find(x=>x.band===b); if(!c) return;
+    const nind=c.n_independent!=null?c.n_independent:c.n_stretches;
+    const few=c.too_small_no_ci?` <span class="few">▲${nind}</span>`:"";
+    rows+=`<tr>
+      <td>${esc((BAND_LABELS[b]&&BAND_LABELS[b][LANG])||b)}</td>
+      <td class="num">${c.up_pct==null?'—':c.up_pct+'%'}</td>
+      <td class="num">${fmtPct(c.mean_pct)}</td>
+      <td class="num">${fmtPct(c.diff_mean)}</td>
+      <td class="num">${nind}${few}<div class="cinum">${c.n_stretches}${LANG==='zh'?'段/':'/'}${c.n_days}${LANG==='zh'?'日':'d'}</div></td>
+      <td class="num">${errBar(c.ci95_mean,c.mean_pct,c.base_mean_pct,scale)}<div class="cinum">${esc(ciText(c.ci95_mean))}</div></td>
+      <td>${verdictBadge(c.verdict)}</td>
+    </tr>`;
+  });
+  return `<div style="overflow-x:auto"><table>
+    <thead><tr><th>${t("cBand")}</th><th>${t("cUp")}</th><th>${t("cMean")}</th><th>${t("cBase")}</th>
+    <th>${t("cStr")}</th><th>${t("cCI")}</th><th>${t("cVerdict")}</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+function stretchesTable(j){
+  const sb=j.contrarian.stretches_by_band||{};
+  let out="";
+  BANDS.forEach(b=>{
+    const segs=(sb[b]||[]).slice(0,8);
+    const label=esc((BAND_LABELS[b]&&BAND_LABELS[b][LANG])||b);
+    const cell=(j.contrarian.bands.find(x=>x.band===b&&x.horizon===20)||{});
+    if(!segs.length){ return; }
+    out+=`<div style="margin:8px 0"><b>${label}</b> <span class="mut">(${LANG==='zh'?'共':''} ${cell.n_stretches!=null?cell.n_stretches:'—'} ${LANG==='zh'?'段,前 '+segs.length+' 段':'stretches, first '+segs.length}${LANG==='zh'?'':''})</span>
+      <div style="overflow-x:auto;margin-top:4px"><table><tbody>
+      ${segs.map(s=>`<tr><td>${esc(s.start)}</td><td class="num mut">${s.days}${LANG==='zh'?' 日':'d'}</td></tr>`).join("")}
+      </tbody></table></div></div>`;
+  });
+  return out || `<p class="mut">—</p>`;
+}
+
+function fmtRaw(c){
+  if(c.raw_value==null) return LANG==='zh'?"暂无(数据未覆盖此日)":"not available";
+  const v=c.raw_value;
+  if(c.name==="momentum") return `m = ${v>=0?'+':''}${(v*100).toFixed(2)}%`;
+  if(c.name==="volatility") return LANG==='zh'? `VIX 处于过去252日第 ${(v*100).toFixed(1)} 百分位` : `VIX at the ${(v*100).toFixed(1)}th pctile (252d)`;
+  if(c.name==="term_structure") return `VIX3M − VIX = ${v>=0?'+':''}${v.toFixed(2)}`;
+  if(c.name==="risk_appetite") return LANG==='zh'? `20日超额收益 ${v>=0?'+':''}${(v*100).toFixed(2)}%` : `20d excess return ${v>=0?'+':''}${(v*100).toFixed(2)}%`;
+  return String(v);
+}
+
+function renderGauge(j){
+  const cur=j.current;
+  $("gaugeVal").textContent=cur.composite;
+  $("gaugeBandTxt").textContent=(BAND_LABELS[cur.band]&&BAND_LABELS[cur.band][LANG])||cur.band||"—";
+  $("gaugeMarker").style.left=Math.max(0,Math.min(100,cur.composite))+"%";
+  $("gaugeTicks").innerHTML=BAND_EDGES.map(e=>`<span style="left:${e}%">${e}</span>`).join("");
+
+  $("compGrid").innerHTML=(cur.components||[]).map(c=>{
+    const label=LANG==='zh'?c.label_zh:c.label_en;
+    const def=LANG==='zh'?c.definition_zh:c.definition_en;
+    const sv=c.available? `${c.subscore}` : "—";
+    const barW=c.available? Math.max(0,Math.min(100,c.subscore)) : 0;
+    return `<div class="compCard${c.available?'':' na'}">
+      <div class="nm">${esc(label)}${c.available?'':` <span class="few">${LANG==='zh'?'今日不可得':'unavailable today'}</span>`}</div>
+      <div class="def">${esc(def)}</div>
+      <div class="sv">${sv}</div>
+      <div class="compbar"><i style="width:${barW}%"></i></div>
+      <div class="raw">${esc(fmtRaw(c))}</div>
+    </div>`;
+  }).join("");
+}
+
+function render(j){
+  applyStatic();
+  $("topBanner").innerHTML=`<b>${esc(t("bannerTitle"))}</b><br>${t("banner")}`;
+  $("copyGuard").innerHTML=t("copyGuard");
+  renderGauge(j);
+  $("ctr20").innerHTML=ctrTable(j,20);
+  $("ctr60").innerHTML=ctrTable(j,60);
+  $("stretches").innerHTML=stretchesTable(j);
+  $("honestyList").innerHTML=(j.honesty||[]).map(h=>`<li>${esc(h)}</li>`).join("");
+  $("src").textContent=`${t("asof")} ${esc(j.as_of)} · ${t("compStart")} ${esc(j.composite_start)} · ${t("genAt")} ${esc(j.generated)}`;
+}
+
+$("lang").onclick=()=>{
+  LANG=LANG==="zh"?"en":"zh";
+  try{localStorage.setItem("valpha_lang",LANG);}catch(e){}
+  if(window._j) render(window._j); else applyStatic();
+};
+
+(async()=>{
+  applyStatic();
+  try{
+    const r=await fetch(LIVE,{cache:"no-store"});
+    if(!r.ok) throw 0;
+    window._j=await r.json();
+    render(window._j);
+  }catch(e){
+    $("topBanner").textContent=t("loadingErr");
+  }
+})();
+</script>
+<script src="vp_gloss.js" data-autoscan></script>
+</body>
+</html>
