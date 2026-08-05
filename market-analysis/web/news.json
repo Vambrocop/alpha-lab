@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-05 15:15 UTC",
+ "updated": "2026-08-05 15:53 UTC",
  "items": [
   {
-   "time": "2026-08-05 15:10 UTC",
+   "time": "2026-08-05 15:52 UTC",
+   "title": "Lisa Su brushes off Musk's Nvidia commitment as AMD stock sinks after earnings",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 15:51 UTC",
+   "title": "Lucid stock plunges as EV maker begins 'operational reset,' delays midsize vehicle",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 15:51 UTC",
+   "title": "Nvidia’s stock is basking in the glow of a high-profile endorsement",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 15:49 UTC",
+   "title": "SpaceX stock falls 7% after AI spending surge rattles investors",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-05 15:39 UTC",
    "title": "Situational Awareness hedge fund meltdown was a warning shot for leveraged markets, BofA CEO says",
    "impact": "negative",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 15:01 UTC",
-   "title": "U.S. economy keeps up the momentum, but rising costs put a lid on new hiring",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 15:00 UTC",
-   "title": "Amazon's Zoox to launch paid robotaxi service in Las Vegas on Aug. 10",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 14:59 UTC",
-   "title": "Shopify’s stock heads for best day in a year after the company ‘left no doubt’ about its growth trajectory",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 14:44 UTC",
-   "title": "It’s the worst time in years to invest in AI credit markets: ‘Almost no upside and plenty of downside’",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
