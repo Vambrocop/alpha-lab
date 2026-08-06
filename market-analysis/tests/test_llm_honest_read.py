@@ -13,15 +13,25 @@ import llm_honest_read as H  # noqa: E402
 # ── 1. 后置守门:肯定式拦、否定式免责放行(命门·honesty-guard-test-disclaimers 教训)──
 def test_guard_blocks_affirmative():
     assert H.guard_ok("现在建议买入这只票")[0] is False
-    assert H.guard_ok("该买就赶紧买")[0] is False
+    assert H.guard_ok("该买就赶紧买")[0] is False           # 赶紧买
     assert H.guard_ok("到止损位了")[0] is False
+
+
+def test_guard_blocks_gap_directives():
+    # 审查 HIGH#2:抄底页最诱人的词都得拦
+    assert H.guard_ok("现在正是逢低抄底的好时机")[0] is False   # 逢低/抄底
+    assert H.guard_ok("可以考虑分批建仓")[0] is False          # 建仓
+    assert H.guard_ok("深跌后不妨买进一些")[0] is False        # 买进,且「不妨」不算否定
+    assert H.guard_ok("建 议 买 入")[0] is False              # 归一化去空白后仍拦
 
 
 def test_guard_allows_negation_disclaimers():
     assert H.guard_ok("这不是买入信号,过去不代表未来")[0] is True
-    assert H.guard_ok("不该读成贪婪就该卖")[0] is True     # 含「该卖」但前面是「不」
-    assert H.guard_ok("别赶紧买,这只是历史描述")[0] is True  # 含「赶紧买」但前面是「别」
-    assert H.guard_ok("VIX 测的是波动,不是涨跌;会错")[0] is True
+    assert H.guard_ok("这不是建议买入的信号")[0] is True       # 否定窗:不 离「建议买」2字(旧单字版会误拦)
+    assert H.guard_ok("这不是抄底信号")[0] is True             # 否定窗放行 bare 抄底 的免责句
+    assert H.guard_ok("不该读成贪婪就该卖")[0] is True         # 「该卖」不在守门(交 prompt)
+    assert H.guard_ok("别赶紧买,这只是历史描述")[0] is True
+    assert H.guard_ok("浅跌其实不如随便买,只有深跌才更高")[0] is True  # dip 正常读数不被误拦
 
 
 # ── 2. 事实包:缺字段 → None(该段跳过,不硬编);字段全 → 含真数字 ──
@@ -52,20 +62,34 @@ def test_facts_dip_carries_real_numbers_and_nuance():
 
 # ── 3. prompt 组装:含铁律 + 真事实(§6·1)──
 def test_prompt_has_rules_and_facts():
-    p = H.PROMPT_TMPL.format(name="测试研究", facts="- 真实数字 42%")
+    p = H.PROMPT_TMPL.format(name="测试研究", facts="- 真实数字 42%", emphasis="")
     assert "绝不给操作建议" in p and "只用给定数字" in p and "说人话" in p
     assert "42%" in p and "测试研究" in p
 
 
-# ── 4. _generate_one:干净输出→ok;连两次越界→blocked 且置空(§6·2)──
+# ── 4. _generate_one:干净输出→ok;越界/缺必点→blocked 且置空(§6·2)──
 def test_generate_ok_with_clean_output():
-    text, guard = H._generate_one("研究", "- 数字", lambda p: "这是历史描述,不是买卖信号,会错。")
-    assert guard == "ok" and text
+    text, guard, raw = H._generate_one("研究", "- 数字", lambda p: "这是历史描述,不是买卖信号,会错。")
+    assert guard == "ok" and text and raw == text
 
 
 def test_generate_blocked_after_retry():
-    text, guard = H._generate_one("研究", "- 数字", lambda p: "建议买入这只票")
+    text, guard, raw = H._generate_one("研究", "- 数字", lambda p: "现在建议买入这只票")
     assert guard == "blocked" and text is None
+    assert raw == "现在建议买入这只票"   # 审计:原始被拦文本仍留痕
+
+
+def test_generate_blocked_when_required_point_missing():
+    # HIGH#1:dip 必点「浅跌不跑赢基率」缺失 → 判 blocked、置空(宁可不显示也不上误导读数)
+    text, guard, raw = H._generate_one(
+        "dip", "- 数字", lambda p: "跌得越深越好,会错、过去不代表未来。",
+        require_fn=H.require_dip)
+    assert guard == "blocked" and text is None
+
+
+def test_require_dip_semantics():
+    assert H.require_dip("跌得越深越好") is False                       # 无浅跌caveat → 不合格
+    assert H.require_dip("浅跌其实不如随便买,只有深跌才明显更高") is True
 
 
 # ── 5. 无 key → run() 静默跳过、返回 None(§6·4)──

@@ -7,6 +7,7 @@
 复用 llm_core(与 llm_daily_read 同基建);无 GEMINI_API_KEY 静默跳过、不阻断流水线(fail-soft)。
 """
 import os
+import re
 import sys
 import csv
 import json
@@ -26,21 +27,36 @@ LOG = _SCRIPTS.parent / "data" / "honest_read_log.csv"
 # ══════════════════════════════════════════════════════════════════
 # 后置诚实守门(§3 命门):只拦【肯定式】操作词,不误伤"这不是买入信号"这类正当否定
 # ══════════════════════════════════════════════════════════════════
-NEG_PREFIX = ("不", "别", "非", "勿", "绝")   # 紧邻在前=否定语境,放行
-# 只列【明确的操作指令】短语。故意不含「该买/该卖」——它们太含糊(出现在 应该/不该/就该 里),
-# 且否定常远离禁词(如「不该读成贪婪就该卖」),裸词匹配必误伤免责句(见 [[honesty-guard-test-disclaimers]])。
-FORBIDDEN = ("建议买", "建议卖", "赶紧买", "赶紧卖", "可以买入", "可以卖出",
-             "现在买入", "现在卖出", "抄底吧", "加仓", "清仓", "满仓", "止损", "应买入", "应卖出")
+NEG_CHARS = set("不别非勿绝没")         # 否定字:命中词前一小窗内出现任一 → 判免责否定语境,放行
+CLAUSE_END = set("。，；！？\n")          # 往回只扫到句读边界(否定不跨句)
+NEG_WINDOW = 8
+# 【明确操作指令】短语——含对抄底页最诱人的 抄底/逢低/买进/建仓 类(审查 HIGH#2 补全)。
+# 含糊者(抄底/买入类)靠否定窗放行免责句(如「这不是抄底信号」);「该买/该卖」仍不进守门
+# (与 应该/不该 碰撞),交 prompt 铁律。见 [[honesty-guard-test-disclaimers]]。
+FORBIDDEN = ("建议买", "建议卖", "赶紧买", "赶紧卖", "可以买入", "可以卖出", "现在买入", "现在卖出",
+             "抄底", "逢低", "买进", "建仓", "加仓", "加码", "减仓", "清仓", "满仓",
+             "离场", "梭哈", "止损", "止盈", "应买入", "应卖出")
+
+
+def _neg_before(s, i):
+    """命中位置 i 往回 NEG_WINDOW 字(不跨句读)内是否有否定字 → 是则视为免责否定语境(审查 MEDIUM#3)。"""
+    j, steps = i - 1, 0
+    while j >= 0 and steps < NEG_WINDOW and s[j] not in CLAUSE_END:
+        if s[j] in NEG_CHARS and not (s[j] == "不" and s[j:j + 2] == "不妨"):
+            return True   # 「不妨」是"其实建议"的肯定语气,不算否定(审查 HIGH#2 的「不妨买进」滑过场景)
+        j -= 1
+        steps += 1
+    return False
 
 
 def guard_ok(text):
-    """返回 (ok, hit)。命中肯定式操作词 → (False, 词);否则 (True, None)。"""
-    s = text or ""
+    """返回 (ok, hit)。命中【肯定式】操作指令 → (False, 词);否定语境(免责句)放行。
+    先归一化去掉可能插进词中间的空白/分隔符(防「建 议 买」「赶紧、买」绕过·审查 HIGH#2)。"""
+    s = re.sub(r"[\s·、]", "", text or "")
     for ph in FORBIDDEN:
         i = s.find(ph)
         while i != -1:
-            prev = s[i - 1] if i > 0 else ""
-            if prev not in NEG_PREFIX:          # 前面不是否定字 → 肯定式,拦
+            if not _neg_before(s, i):
                 return False, ph
             i = s.find(ph, i + 1)
     return True, None
@@ -103,10 +119,24 @@ def facts_feargreed(j):
         return None
 
 
+def require_dip(text):
+    """HIGH#1:dip 读数【必须】点明「浅到中跌不比随便买强」,否则会被读成「越跌越好」——
+    缺这一点判不合格(重试;仍缺则置空、box 隐藏,宁可不显示也不上误导读数)。"""
+    t = text or ""
+    shallow = any(k in t for k in ("浅跌", "浅回撤", "小跌", "跌得少", "跌5%", "跌 5%",
+                                    "5~15", "5-15", "5%~15%", "5%到15%", "中跌", "浅"))
+    under = any(k in t for k in ("不如", "不比", "低于", "略差", "白等", "并不", "反而",
+                                  "没更", "不见得", "不一定更"))
+    return shallow and under
+
+
 STUDIES = [
-    ("dip", "dip_hold.json", "跌了买、持有一年的诚实账", facts_dip),
-    ("vixvol", "vix_vol.json", "VIX 到底预测什么", facts_vixvol),
-    ("feargreed", "fear_greed.json", "恐慌贪婪合成表 + 逆向检验", facts_feargreed),
+    # (key, json, 名字, 提炼器, 该研究特别强调(进 prompt), 必点要点后置检查(缺则重试/置空))
+    ("dip", "dip_hold.json", "跌了买、持有一年的诚实账", facts_dip,
+     "必须明说:浅跌到中跌(比如跌 5%~15%)持有一年【并不比】「随便哪天买」强、有时反而略差;"
+     "只有深跌(20/30%)才明显更高。绝不能只说「跌得越深越好」。", require_dip),
+    ("vixvol", "vix_vol.json", "VIX 到底预测什么", facts_vixvol, "", None),
+    ("feargreed", "fear_greed.json", "恐慌贪婪合成表 + 逆向检验", facts_feargreed, "", None),
 ]
 
 PROMPT_TMPL = """你是给股票新手讲人话的助手。下面是一个「诚实统计研究」真实算出的结论,请用 2-4 句大白话中文讲清它在说什么。
@@ -119,26 +149,34 @@ PROMPT_TMPL = """你是给股票新手讲人话的助手。下面是一个「诚
 1.【绝不给操作建议】不许出现「该买/该卖/建议买入/建议卖出/赶紧买/抄底吧/加仓/清仓/止损」这类话——这是历史描述,不是买卖信号。可以明说「这不是买入/卖出信号」。
 2.【只用给定数字】不许引入上面没给的任何数字或断言。
 3.【说人话】用到专业词(如 VIX、实现波动、回撤、基率、前向收益)必须紧跟一个小括号、用最朴素一句解释它是什么。
-4.【保留诚实结论】照上面结论的方向讲,不许改写成更"能操作"的口气;结尾带一句"会错、过去不代表未来"。
+4.【保留诚实结论】照上面结论的方向讲,不许改写成更"能操作"的口气;结尾带一句"会错、过去不代表未来"。{emphasis}
 只输出这 2-4 句本身,不要标题、不要列表、不要 markdown 符号。"""
 
 
-def _generate_one(name, facts, llm_fn):
-    """出一段大白话 + 后置守门(命中肯定式操作词 → 重试一次 → 仍命中则置空)。返回 (text_or_None, guard)。"""
-    prompt = PROMPT_TMPL.format(name=name, facts=facts)
+def _generate_one(name, facts, llm_fn, emphasis="", require_fn=None):
+    """出一段大白话 + 双向守门(负向:拦操作词;正向:require_fn 必点要点)。重试一次,仍不合格则置空。
+    返回 (text_or_None, guard, last_raw)。guard ∈ ok/blocked/error;last_raw 供审计日志(含被拦的原文)。"""
+    emph = ("\n特别要求(必须做到):" + emphasis) if emphasis else ""
+    prompt = PROMPT_TMPL.format(name=name, facts=facts, emphasis=emph)
+    last = None
     for _ in range(2):
         try:
             text = (llm_fn(prompt) or "").strip()
         except Exception as e:
             print(f"[诚实日读] LLM 调用失败(非致命): {e}")
-            return None, "error"
+            return None, "error", last
         if not text:
             continue
+        last = text
         ok, hit = guard_ok(text)
-        if ok:
-            return text, "ok"
-        print(f"[诚实日读] 守门拦下越界文案(命中「{hit}」),重试")
-    return None, "blocked"
+        if not ok:
+            print(f"[诚实日读] 守门拦下越界文案(命中「{hit}」),重试")
+            continue
+        if require_fn and not require_fn(text):
+            print("[诚实日读] 缺必点诚实要点(如'浅跌不跑赢基率'),重试")
+            continue
+        return text, "ok", text
+    return None, "blocked", last
 
 
 def _append_log(today, rows):
@@ -169,7 +207,7 @@ def run(write=True, _llm_fn=None):
     llm_fn = _llm_fn or _llm
     reads = {}
     log_rows = []
-    for key, fname, name, extractor in STUDIES:
+    for key, fname, name, extractor, emphasis, require_fn in STUDIES:
         try:
             j = json.loads((WEB / fname).read_text(encoding="utf-8"))
         except Exception as e:
@@ -179,9 +217,9 @@ def run(write=True, _llm_fn=None):
         if not facts:
             print(f"[诚实日读] {key} 事实包缺字段,跳过")
             continue
-        text, guard = _generate_one(name, facts, llm_fn)
+        text, guard, raw = _generate_one(name, facts, llm_fn, emphasis, require_fn)
         reads[key] = {"text": text if guard == "ok" else None, "guard": guard}
-        log_rows.append([key, key, guard, text])   # [placeholder, study, guard, text]
+        log_rows.append([key, key, guard, raw])   # 记原始文本(含被拦/缺要点的)供审计(审查 LOW)
         print(f"  {key}: guard={guard}" + (f"  {len(text)}字" if text else ""))
 
     today = datetime.date.today().isoformat()
@@ -194,10 +232,13 @@ def run(write=True, _llm_fn=None):
                   "但仍可能误读。纯描述、非买卖信号、会错,过去≠未来。",
     }
     if write:
-        for d in write_json("honest_reads.json", out):
-            print(f"  Written: {d}/honest_reads.json")
-        n = _append_log(today, log_rows)
-        print(f"[OK] honest_reads.json — {len(reads)} 段(新记 {n} 行日志)")
+        try:   # 写出/记账失败绝不阻断流水线(run_all 一步非零即终止·SPEC §5 fail-soft·审查 MEDIUM#4)
+            for d in write_json("honest_reads.json", out):
+                print(f"  Written: {d}/honest_reads.json")
+            n = _append_log(today, log_rows)
+            print(f"[OK] honest_reads.json — {len(reads)} 段(新记 {n} 行日志)")
+        except Exception as e:
+            print(f"[诚实日读] 写出/记账失败(非致命,不阻断流水线): {e}")
     return out
 
 
