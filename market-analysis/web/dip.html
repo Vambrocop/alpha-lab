@@ -137,15 +137,13 @@ const I18N={
         en:"Not a buy-the-dip signal — an honest tally of 'what happened before.' The strongest, most robust finding is simply: don't gamble on timing, hold long (the base rate is on your side). Small sample, 2000-present only; it can be wrong, and the past does not represent the future."}
 };
 
+// 壳逻辑(esc/lang/applyStatic/切换)单一实现在 vp_i18n.js,各页不再复制(③ 去 copy-paste 病根)。
+// 保留薄别名让下方调用点零改动、行为与原内联完全一致。
 const $=id=>document.getElementById(id);
-const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let LANG="zh";try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
-const t=k=>(I18N[k]&&I18N[k][LANG])||k;
-function applyStatic(){
-  document.querySelectorAll("[data-i18n]").forEach(el=>el.innerHTML=t(el.dataset.i18n));
-  $("lang").textContent=LANG==="zh"?"EN":"中";
-  document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
-}
+const esc=vpEsc;
+let LANG=vpLang();
+const t=k=>vpT(I18N,k,LANG);
+const applyStatic=()=>vpApplyStatic(I18N);
 
 const DD_THRESHOLDS=[5,10,15,20,30];
 function fmtPct(v){ return v==null? `<span class="mut">—</span>` : `${v>=0?'+':''}${v}%`; }
@@ -283,11 +281,7 @@ function render(j){
   $("src").textContent=`${t("asof")} ${esc(j.price_start)} → ${esc(j.as_of)} · ${LANG==='zh'?'单股快照':'stocks as-of'} ${esc(stAsof)} · ${t("genAt")} ${esc(j.generated)}`;
 }
 
-$("lang").onclick=()=>{
-  LANG=LANG==="zh"?"en":"zh";
-  try{localStorage.setItem("valpha_lang",LANG);}catch(e){}
-  if(window._j) render(window._j); else applyStatic();
-};
+vpBindLang(I18N,()=>{ LANG=vpLang(); if(window._j) render(window._j); else applyStatic(); });
 
 (async()=>{
   applyStatic();
