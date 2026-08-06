@@ -7,6 +7,30 @@
 
 ---
 
+## 2026-08-06
+
+### ① 今天做了什么
+- **三个「诚实统计」新研究上线**(全走六步·子代理建 + 全新 Opus 独立审)——回应用户"抄底/VIX/贪婪"三连问,**结论全是「没 edge」**(诚实结果本身就是结果,值得留档):
+  - 📉 **dip.html「跌了买·持有一年」**(`SPEC_DIP_HOLD`):52 周回撤深度 → 持有 1 年前向收益 vs 基率。持有 1 年基率就 75% 强;浅跌白等、深跌(20/30%)只 3-4 次危机撑着(described-only);52 周最低点最差(接飞刀);**无一格稳健**。单股仅当前快照 + 幸存者偏差警告,绝不回测。
+  - 📈 **vixvol.html「VIX 预测什么」**:复现维基 VIX vs 实现波动图,我们数据 r=0.72 vs 单看历史波动 0.65 → **VIX 测波动、不测方向**。
+  - 🌡️ **feargreed.html「恐慌贪婪合成表 + 逆向检验」**(`SPEC_FEAR_GREED`):~4 分量 0-100 温度计(近似·非 CNN)+ 逆向情绪事件研究。**全 10 格 not-contrarian**——极度贪婪之后收益不降反略升(动量),「贪婪就卖」无数据支持。
+- **fear_extremes 种子 bug 修**(已上线研究):`_seed_for` 用内置 `hash()` 按 PYTHONHASHSEED 每进程加盐 → 自助 CI 每轮流水线抖动、不可复现。改 `zlib.crc32` 确定性(dip/fear_greed 同修)。
+- **① 前向窗口去重叠一致性**:C 审 Finding-1(重叠窗口 → CI 虚窄)此前只修了 feargreed,补搬到 dip;DRY 把 `_merge_within_horizon` 收进 `dip_hold_study` 单一实现(fear_greed 改 import)。效果:dd≥15%/252d 只 7 个真独立聚类 <8 → 从 `crisis-driven-fragile` **改判 `described-only`**(更诚实:样本本就不够判稳健)。
+- **② 4 研究接进 `run_all`**:此前不在流水线、JSON 冻在 2026-07-23。接进 steps(不入 light),**全量端到端跑通 exit 0·verify_output 过**,as-of 推到 08-05。**feargreed composite 53.8→73.2(中性→贪婪)**——近期暴涨把情绪推到接近极度贪婪。
+- **过程**:C 由 Sonnet 子代理按冻结规格建,两轮全新 Opus 独立审(A/B 一轮·C 一轮,均 APPROVE/修完)。审出真问题:种子不可复现、copy-guard 硬编码结论、前向窗口重叠、edge 词根泄漏——**多数是从一个页面/脚本复制粘贴传播的**(病根,见 ③)。
+
+### ② 对照之前计划
+- 用户「先 1 加 2」→ ①② 都做完并推送(`48a6f1e`·`f63e88a`·`408d2bb`;三研究本体 `d51f0aa`/`78c6885`/`d2c7a5e`·种子修 `7bca92c`)。
+- 全量 `run_all` 本地实测**绿**(验证 ②),但**未提交流水线输出**(112 文件:append-only 账本 / 原始数据 / 其它 JSON 留给 CI 当单一写手,避免与 CI 当日行撞重复);只把 4 研究页 JSON 刷到 08-05。
+
+### ③ 待办 / 未决
+- [ ] **③ 抽 `vp_page.js` 公共壳(病根治理·建议下一步)**:4 方法页(fear/dip/vixvol/feargreed)各抄 ~60 行壳(i18n/applyStatic/esc/fetch/语言切换)——这批 bug(种子/同源/copy-guard)全是复制粘贴传播的。DRY 掉防复发。风险:动 4 个在跑的页,需交互审计兜底 → 先写小规格 + 逐页迁移 + 每页过审计。
+- [ ] **autodiscovery 预注册计数漂移**:NASDAQ 三连跌 758→759(数据变新多一次),本地红 / CI skip 不挡门。一行 bump。
+- [ ] 可选更深(C 审建议):逆向检验也可上 gap-enforced / moving-block;**LLM「大白话」读这些诚实数字**(死守 copy-guard 铁律,绝不译成买卖);4 相关页交叉链接成「情绪·择时·波动」一簇。
+- [ ] IPO 数据定期更新自动化(旧欠·缓)。
+
+---
+
 ## 2026-07-28
 
 ### ① 今天做了什么
