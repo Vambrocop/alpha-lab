@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-05T22:40:34Z",
+  "generated": "2026-08-06T15:16:04Z",
   "anchor_common": "2026-06-26",
-  "days_since_anchor": 40,
+  "days_since_anchor": 41,
   "min_oos_n": 30,
   "summary": {
     "in_kb": 0,
-    "queue": 6,
+    "queue": 5,
     "confirmed": 0,
     "overturned": 0,
     "neutral": 0,
@@ -23,18 +23,6 @@
       "oos_n": 0,
       "oos_p": null,
       "full_sign": 1,
-      "oos_sign": null
-    },
-    {
-      "key": "monthof_9_sp500",
-      "candidate_id": "cal_2bf2b4d53f",
-      "family": "calendar",
-      "verdict": "survive",
-      "oos_status": "pending",
-      "anchor_date": "2026-06-26",
-      "oos_n": 0,
-      "oos_p": null,
-      "full_sign": null,
       "oos_sign": null
     },
     {
@@ -56,7 +44,7 @@
       "verdict": "survive",
       "oos_status": "pending",
       "anchor_date": "2026-06-26",
-      "oos_n": 7,
+      "oos_n": 8,
       "oos_p": null,
       "full_sign": 1,
       "oos_sign": null

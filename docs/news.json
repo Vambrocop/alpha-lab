@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-05 22:39 UTC",
+ "updated": "2026-08-06 15:14 UTC",
  "items": [
   {
-   "time": "2026-08-05 22:35 UTC",
-   "title": "As Warsh and the Fed contemplate fewer meetings, markets brace for potential volatility ahead",
+   "time": "2026-08-06 14:55 UTC",
+   "title": "SpaceX insiders get their first chance to cash out — but the stock’s slide will limit their opportunity",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-06 14:48 UTC",
+   "title": "Traders on Kalshi now think it's likely that the S&P 500 will hit 8,000 in 2026",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-05 22:25 UTC",
-   "title": "Sandisk’s stock falls as the company’s forecast doesn’t live up to high expectations",
+   "time": "2026-08-06 14:03 UTC",
+   "title": "Layoffs fall to the lowest level since the U.S. put men on the moon. Here’s what that says about the economy.",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-06 14:00 UTC",
+   "title": "Restaurant Brands International earnings beat as Burger King's U.S. business soars",
    "impact": "positive",
    "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 22:19 UTC",
-   "title": "Block slashed 40% of its workforce for AI — and its earnings suggest that’s paying off",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 22:12 UTC",
-   "title": "Figma’s stock falls as the company’s AI push requires steep investments",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-05 21:55 UTC",
-   "title": "Hollywood is cranking out billion-dollar movies again. 'Spider-Man' just joined the ranks",
-   "impact": "neutral",
-   "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-06 13:56 UTC",
+   "title": "How to earn a 9% dividend yield while cutting your risk in the stock market",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]

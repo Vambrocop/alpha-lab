@@ -71,3 +71,9 @@ pick_date,symbol,view,mom_pct,entry_date,entry_px,exit_date,exit_px,ret_pct,benc
 2026-08-05,WTC.AX,看淡,-19.9,,,,,,,,,,False,False
 2026-08-05,CSL.AX,看淡,-27.0,,,,,,,,,,False,False
 2026-08-05,XRO.AX,看淡,-8.5,,,,,,,,,,False,False
+2026-08-06,WOW.AX,看好,29.4,,,,,,,,,,False,False
+2026-08-06,MQG.AX,看好,30.9,,,,,,,,,,False,False
+2026-08-06,SUN.AX,看好,17.5,,,,,,,,,,False,False
+2026-08-06,WTC.AX,看淡,-17.3,,,,,,,,,,False,False
+2026-08-06,CSL.AX,看淡,-25.7,,,,,,,,,,False,False
+2026-08-06,XRO.AX,看淡,-7.7,,,,,,,,,,False,False
