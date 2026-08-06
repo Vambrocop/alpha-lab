@@ -152,7 +152,14 @@
 .vp-more>summary:hover{color:var(--fg)}
 .vp-more>summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 
-/* ── 大白话 AI 读数盒(vp_honestread.js·三研究页)──────────────────── */
+/* ── 大白话 AI 读数盒(vp_honestread.js·研究页)──────────────────── */
 .airead{margin:10px 0;padding:9px 12px;border:1px solid var(--acc-line);border-radius:8px;background:var(--acc-weak)}
 .airead-label{font-size:.7rem;color:var(--acc-strong);font-weight:600;margin-bottom:3px}
 .airead-text{font-size:.86rem;line-height:1.6;color:var(--fg)}
+
+/* ── 「情绪·择时·波动」四研究互链(vp_related.js)────────────────── */
+.related{margin:16px 0 4px;padding-top:10px;border-top:1px solid var(--border)}
+.rel-label{font-size:.7rem;color:var(--mut);font-weight:600;margin-bottom:6px}
+.rel-links{display:flex;flex-wrap:wrap;gap:8px}
+.rel-links a{font-size:.8rem;color:var(--acc-strong);text-decoration:none;border:1px solid var(--acc-line);border-radius:16px;padding:3px 11px;background:var(--acc-weak)}
+.rel-links a:hover{border-color:var(--acc-strong)}
