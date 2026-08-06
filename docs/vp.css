@@ -151,3 +151,8 @@
 .vp-more[open]>summary::before{content:"▾ "}
 .vp-more>summary:hover{color:var(--fg)}
 .vp-more>summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+
+/* ── 大白话 AI 读数盒(vp_honestread.js·三研究页)──────────────────── */
+.airead{margin:10px 0;padding:9px 12px;border:1px solid var(--acc-line);border-radius:8px;background:var(--acc-weak)}
+.airead-label{font-size:.7rem;color:var(--acc-strong);font-weight:600;margin-bottom:3px}
+.airead-text{font-size:.86rem;line-height:1.6;color:var(--fg)}
