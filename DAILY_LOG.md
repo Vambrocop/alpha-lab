@@ -23,10 +23,18 @@
 - 用户「先 1 加 2」→ ①② 都做完并推送(`48a6f1e`·`f63e88a`·`408d2bb`;三研究本体 `d51f0aa`/`78c6885`/`d2c7a5e`·种子修 `7bca92c`)。
 - 全量 `run_all` 本地实测**绿**(验证 ②),但**未提交流水线输出**(112 文件:append-only 账本 / 原始数据 / 其它 JSON 留给 CI 当单一写手,避免与 CI 当日行撞重复);只把 4 研究页 JSON 刷到 08-05。
 
-### ③ 待办 / 未决
-- [ ] **③ 抽 `vp_page.js` 公共壳(病根治理·建议下一步)**:4 方法页(fear/dip/vixvol/feargreed)各抄 ~60 行壳(i18n/applyStatic/esc/fetch/语言切换)——这批 bug(种子/同源/copy-guard)全是复制粘贴传播的。DRY 掉防复发。风险:动 4 个在跑的页,需交互审计兜底 → 先写小规格 + 逐页迁移 + 每页过审计。
-- [ ] **autodiscovery 预注册计数漂移**:NASDAQ 三连跌 758→759(数据变新多一次),本地红 / CI skip 不挡门。一行 bump。
-- [ ] 可选更深(C 审建议):逆向检验也可上 gap-enforced / moving-block;**LLM「大白话」读这些诚实数字**(死守 copy-guard 铁律,绝不译成买卖);4 相关页交叉链接成「情绪·择时·波动」一簇。
+### ③ 同日追加(全做完·均已 push)
+- ✅ **③ 公共壳收口**:先查发现 `vp_i18n.js` 早已是公共壳(vpEsc/vpLang/vpT/vpApplyStatic/vpBindLang·注释明说可逐页替换),
+  4 方法页只是各抄 5 份内联副本。全迁到薄别名 + vpBindLang(调用点零改动·内联壳逻辑 5→0)。fear.html 冻结页也迁了
+  (核实 data-i18n 无 HTML·textContent→innerHTML no-op)。playwright 实测四页语言切换真生效 + interaction_audit 全✓。
+- ✅ **LLM「大白话」读四研究**(honesty-critical·SPEC_HONEST_READ 六步·全新 Opus 独立审):dip/vixvol/feargreed/fear
+  真数字喂 Gemini 翻 2-4 句人话放各页顶。三防线=只喂真数字 + 后置守门(拦操作词·整句否定扫描·不妨不算否定·
+  故意不含含糊该买该卖)+ prompt 铁律。审出 5 项(HIGH×2 含 dip 生成丢'浅跌白等'致'越跌越好'、守门漏抄底/逢低/买进)全修+复验。
+  DRY:共享 vp_honestread.js。接 run_all(无 key 静默跳·fail-soft)。
+- ✅ **autodiscovery 计数校验改 ≥floor**:不再随数据增长误红(声明值=append-only 下界·OOS 锚冻结不动)。**全套 782 测零红。**
+
+### ③ 待办 / 未决(剩)
+- [ ] 可选更深(C 审建议):逆向检验 gap-enforced / moving-block(边际·结论不变);4 相关页交叉链接成「情绪·择时·波动」一簇(UX)。
 - [ ] IPO 数据定期更新自动化(旧欠·缓)。
 
 ---
