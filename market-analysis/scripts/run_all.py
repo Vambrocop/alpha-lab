@@ -80,6 +80,10 @@ steps = [
     ("导出货币汇率",       "export_fx.py"),       # fx_rates.json：CGT 计算器"显示货币"切换用(仅显示,不改税务计算)
     ("导出个股数据",       "export_stocks.py"),
     ("个股诚实体检",       "stock_checkup.py"),   # 个股风险画像(块0起)：复用 stocks_prices/combined_prices,非荐股非预测
+    ("恐慌极值事件研究(描述)", "fear_extremes.py"),   # VIX高/极端恐慌尖峰后前向收益·纯描述非信号·事件级自助+LOCO;读combined_prices(VIX)+SP500_long/NASDAQ_COMP_long;须在long_history后;不入light
+    ("跌了买持有一年诚实账(描述)", "dip_hold_study.py"),  # 52周回撤深度→持有1年前向收益vs基率·纯描述非买入信号·段级聚类自助(前向窗口去重叠);读SP500_long+stocks_prices;须在export_stocks后;不入light
+    ("VIX波动预报力复现(描述)", "vix_vol_forecast.py"),  # 复现维基VIX vs实现波动散点·测波动不测方向;读combined_prices;纯描述;不入light
+    ("恐慌贪婪合成表+逆向检验(描述)", "fear_greed.py"),  # ~4分量0-100情绪温度计(近似非CNN)+逆向情绪事件研究·纯描述非买卖信号;读combined_prices;须在fetch_data后;不入light
     ("市场要闻RSS",        "fetch_news.py"),
     ("模拟盘执行",         "paper_trading.py"),
     ("每日盘后简报",       "daily_brief.py"),
