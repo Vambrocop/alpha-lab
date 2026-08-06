@@ -57,7 +57,7 @@ def test_daylevel_handcalc_and_small_sample():
     idx = _bidx(5)
     dd = pd.Series([-0.25, -0.05, -0.25, -0.25, -0.01], index=idx)   # 合格(≤-0.20): d0,d2,d3
     fwd = pd.Series([0.10, 0.0, -0.05, 0.20, 0.0], index=idx)
-    cell = D.build_dd_cell(dd, fwd, 20, base_up=0.5, base_mean=0.05, seed=1)
+    cell = D.build_dd_cell(dd, fwd, 20, base_up=0.5, base_mean=0.05, seed=1, horizon=20)
     assert cell["n_days"] == 3
     assert cell["mean_pct"] == round((0.10 - 0.05 + 0.20) / 3 * 100, 2)   # 8.33
     assert cell["up_pct"] == round(2 / 3 * 100, 2)                        # 66.67
@@ -68,6 +68,18 @@ def test_daylevel_handcalc_and_small_sample():
     assert cell["too_small_no_ci"] is True
     assert cell["ci95_mean"] is None
     assert cell["verdict"] == "described-only"
+
+
+# ── 4b. 前向窗口去重叠:相隔 < horizon 的危机段并为一个 CI 聚类 ────────
+def test_dd_cell_horizon_merges_overlapping_windows():
+    idx = _bidx(60)
+    # 段1 = d0,d1(≤-0.20);d2 回到 -0.01(≥-0.03 重置);段2 = d5,d6。相隔 4 交易日。
+    vals = [-0.25, -0.25, -0.01, -0.01, -0.01, -0.25, -0.25] + [-0.01] * 53
+    dd = pd.Series(vals, index=idx)
+    fwd = pd.Series([0.05] * 60, index=idx)
+    cell = D.build_dd_cell(dd, fwd, 20, base_up=0.5, base_mean=0.0, seed=1, horizon=10)
+    assert cell["n_episodes_with_fwd"] == 2   # 两个原始危机段
+    assert cell["n_independent"] == 1          # 相隔 4 < horizon 10 → 前向窗口重叠 → 并为 1 聚类
 
 
 # ── 5. 段级聚类自助 CI 覆盖已知均值 ─────────────────────────────────
@@ -85,7 +97,7 @@ def test_era_same_sign():
     idx = _bidx(4, start="2005-01-03")
     dd = pd.Series([-0.25, -0.25, -0.01, -0.25], index=idx)
     fwd = pd.Series([0.1, 0.2, 0.0, 0.1], index=idx)
-    cell = D.build_dd_cell(dd, fwd, 20, base_up=0.5, base_mean=0.02, seed=1)
+    cell = D.build_dd_cell(dd, fwd, 20, base_up=0.5, base_mean=0.02, seed=1, horizon=20)
     assert cell["era1_mean_pct"] is not None
     assert cell["era2_mean_pct"] is None
     assert cell["era_same_sign"] is None
@@ -131,7 +143,8 @@ def test_run_structure_and_guards():
     for c in out["drawdown_curve"]:
         assert c["verdict"] in D.ALLOWED_VERDICTS
         # 每格都带独立段数(重叠日不当真 N)
-        assert "n_episodes_with_fwd" in c and "n_days" in c
+        assert "n_episodes_with_fwd" in c and "n_days" in c and "n_independent" in c
+        assert c["n_independent"] <= c["n_episodes_with_fwd"]   # 去重叠后聚类数 ≤ 原始段数
     # verdict_note 必须带「非买入信号」免责,且不得出现肯定买入的措辞
     assert "非买入信号" in out["verdict_note"]
     assert "建议买入" not in out["verdict_note"] and "该买" not in out["verdict_note"]

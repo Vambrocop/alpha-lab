@@ -185,13 +185,14 @@ function curveRows(j,h){
   DD_THRESHOLDS.forEach(thr=>{
     const c=cells.find(x=>x.dd_threshold_pct===thr); if(!c) return;
     const isPrim=(h===pc.horizon && thr===pc.dd_threshold_pct);
-    const few=c.too_small_no_ci?` <span class="few">▲${LANG==='zh'?c.n_episodes_with_fwd+'次':c.n_episodes_with_fwd}</span>`:"";
+    const nind=c.n_independent!=null?c.n_independent:c.n_episodes_with_fwd;
+    const few=c.too_small_no_ci?` <span class="few">▲${LANG==='zh'?nind+'次':nind}</span>`:"";
     rows+=`<tr class="${isPrim?'primrow':''}">
       <td class="num">≥${thr}%${isPrim?` <span class="vp-badge vp-badge--neu">${LANG==='zh'?'头条':'primary'}</span>`:''}</td>
       <td class="num">${c.up_pct==null?'—':c.up_pct+'%'}</td>
       <td class="num">${fmtPct(c.mean_pct)}</td>
       <td class="num">${fmtPct(c.diff_mean)}</td>
-      <td class="num">${c.n_episodes_with_fwd}${few}<div class="cinum">${c.n_days}${LANG==='zh'?' 重叠日':' days'}</div></td>
+      <td class="num">${nind}${few}<div class="cinum">${c.n_episodes_with_fwd}${LANG==='zh'?'段/':'/'}${c.n_days}${LANG==='zh'?'日':'d'}</div></td>
       <td class="num">${errBar(c.ci95_mean,c.mean_pct,c.base_mean_pct,scale)}<div class="cinum">${esc(ciText(c.ci95_mean))}</div></td>
       <td>${verdictBadge(c.verdict)}</td>
     </tr>`;
@@ -260,7 +261,7 @@ function renderPrimary(j){
     <div class="grid2">
       <div class="stat"><div class="v">${c.up_pct}%</div><div class="k">${t("cUp")}</div></div>
       <div class="stat"><div class="v">${fmtPct(c.mean_pct)}</div><div class="k">${t("cMean")} · ${t("cBase")} ${fmtPct(c.diff_mean)}</div></div>
-      <div class="stat"><div class="v">${c.n_episodes_with_fwd}</div><div class="k">${t("cEp")}(${c.n_days} ${LANG==='zh'?'重叠日':'days'})</div></div>
+      <div class="stat"><div class="v">${c.n_independent!=null?c.n_independent:c.n_episodes_with_fwd}</div><div class="k">${t("cEp")}(${c.n_days} ${LANG==='zh'?'重叠日':'days'})</div></div>
       <div class="stat"><div class="v">${verdictBadge(c.verdict)}</div><div class="k">${t("cVerdict")}</div></div>
     </div>`;
 }

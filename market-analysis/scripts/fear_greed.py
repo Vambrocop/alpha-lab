@@ -26,7 +26,7 @@ if str(_SCRIPTS) not in sys.path:
 
 from stats_util import forward_returns
 from util_io import write_json
-from dip_hold_study import cluster_bootstrap  # 段级(整块)聚类自助 CI——单一实现,复用不重写
+from dip_hold_study import cluster_bootstrap, _merge_within_horizon  # 单一实现,复用不重写
 
 RAW_DIR = _SCRIPTS.parent / "data" / "raw"
 
@@ -266,33 +266,6 @@ def verdict_for(band, too_small, diff_mean, ci_below_base, ci_above_base):
     if band == "extreme_fear" and diff_mean > 0 and ci_above_base:
         return "contrarian-holds"
     return "not-contrarian"
-
-
-def _merge_within_horizon(stretches, pos_of, horizon):
-    """把「前向窗口会重叠」的相邻段并为一个 CI 聚类(审查 Finding-1·命门)。
-
-    迟滞去聚集只挡住了边界抖动,但两段就算真正分开(读数回过中性),若相隔 < horizon 个交易日,
-    它们的 [入场, 入场+horizon] 前向窗口仍然重叠、共享同一段行情——当独立段喂给聚类自助会让 CI 虚窄、
-    给未来留下「假 contrarian-holds」的口子。故按交易日位置:下一段首日与当前聚类末日间隔 < horizon → 并入同一聚类。
-    返回 list[list[pd.Timestamp]](每个=前向窗口互不重叠的独立聚类)。
-    """
-    clusters = []
-    cur = None
-    last_pos = None
-    for seg in stretches:
-        first_pos = pos_of.get(seg[0])
-        seg_last_pos = pos_of.get(seg[-1])
-        if cur is None:
-            cur, last_pos = list(seg), seg_last_pos
-        elif first_pos is not None and last_pos is not None and (first_pos - last_pos) < horizon:
-            cur.extend(seg)
-            last_pos = seg_last_pos if seg_last_pos is not None else last_pos
-        else:
-            clusters.append(cur)
-            cur, last_pos = list(seg), seg_last_pos
-    if cur is not None:
-        clusters.append(cur)
-    return clusters
 
 
 # ══════════════════════════════════════════════════════════════════

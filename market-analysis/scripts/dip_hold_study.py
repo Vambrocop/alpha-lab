@@ -56,9 +56,10 @@ HONESTY = [
     "基率是诚实参照系:大盘光是持有 1 年,历史上就约 75% 上涨、中位约 +11%。所以一个「跌了买」的口径要算「有料」,"
     "必须明显跑赢「随便哪天买」的基率——不是「涨了就叫赢」,市场本来大概率就涨。",
     "重叠窗口让 N 虚高:一次深回撤会持续几十上百个交易日,逐日计数把同一场危机重复计成几百个「样本」。"
-    "本研究同时报 n_days(重叠日)与 n_episodes(去聚集后的独立回撤段);置信区间用段级自助(每段一个数),"
-    "独立段 < 8 一律 described-only、不出 CI。深回撤(≥20/30%)的独立段本就只有 ~3-6 次危机(2008/2020/2022 等),"
-    "数字再好看也是轶事级,别当规律。",
+    "本研究报 n_days(重叠日)、原始独立回撤段,以及 n_independent——后者进一步把「前向窗口会重叠」(相隔不足"
+    "持有天数)的回撤段并起来,因为它们的未来收益共享同一段行情、不算真正独立(与 fear_greed 同一处理)。"
+    "置信区间用这些互不重叠的聚类做段级自助,独立聚类 < 8 一律 described-only、不出 CI。深回撤(≥20/30%)的"
+    "独立聚类本就只有 ~3-6 次危机(2008/2020/2022 等),数字再好看也是轶事级,别当规律。",
     "幸存者偏差(单股):" + SURVIVORSHIP_NOTE,
     "体制依赖:回撤买入是否「有料」高度依赖牛熊环境——2000-2012 熊市多的年代买浅跌几乎白买(跌了还继续跌),"
     "好看的数字多来自 2013 后的长牛。本研究报分时代结果并如实标「靠牛市撑着」的风险。",
@@ -131,6 +132,32 @@ def cluster_bootstrap(episode_day_returns, seed, B=B_BOOT):
     return [round(float(lo) * 100, 2), round(float(hi) * 100, 2)]
 
 
+def _merge_within_horizon(segments, pos_of, horizon):
+    """把「前向窗口会重叠」的相邻段并为一个 CI 聚类(单一实现·fear_greed 也 import 此函数)。
+
+    去聚集(危机重置)只挡住段内重复;但两段就算真正分开,若相隔 < horizon 个交易日,它们的
+    [入场, 入场+horizon] 前向窗口仍重叠、共享同一段行情——当独立段喂给聚类自助会让 CI 虚窄。故按交易日位置:
+    下一段首日与当前聚类末日间隔 < horizon → 并入同一聚类。返回 list[list[pd.Timestamp]](前向窗口互不重叠)。
+    """
+    clusters = []
+    cur = None
+    last_pos = None
+    for seg in segments:
+        first_pos = pos_of.get(seg[0])
+        seg_last_pos = pos_of.get(seg[-1])
+        if cur is None:
+            cur, last_pos = list(seg), seg_last_pos
+        elif first_pos is not None and last_pos is not None and (first_pos - last_pos) < horizon:
+            cur.extend(seg)
+            last_pos = seg_last_pos if seg_last_pos is not None else last_pos
+        else:
+            clusters.append(cur)
+            cur, last_pos = list(seg), seg_last_pos
+    if cur is not None:
+        clusters.append(cur)
+    return clusters
+
+
 def _seed_for(*parts):
     # 确定性种子:用 zlib.crc32(跨进程稳定),不用内置 hash()——后者按 PYTHONHASHSEED 每进程加盐,
     # 会让自助 CI 每次跑都抖动、边界处甚至翻转公开 verdict(审查 Important-1 修)。
@@ -156,8 +183,8 @@ def verdict_for(too_small, diff_mean, era_same_sign, ci_beats_base):
 # ══════════════════════════════════════════════════════════════════
 # 单个(回撤阈值 × 窗口)cell
 # ══════════════════════════════════════════════════════════════════
-def build_dd_cell(dd, fwd_h, threshold_pct, base_up, base_mean, seed):
-    """dd/fwd_h 已对齐同 index。threshold_pct 为正整数(%);内部转负 fraction。"""
+def build_dd_cell(dd, fwd_h, threshold_pct, base_up, base_mean, seed, horizon):
+    """dd/fwd_h 已对齐同 index。threshold_pct 为正整数(%);内部转负 fraction。horizon 用于合并前向窗口重叠段。"""
     thr = -threshold_pct / 100.0
     episodes = detect_dd_episodes(dd, thr)
     n_episodes = len(episodes)
@@ -172,14 +199,19 @@ def build_dd_cell(dd, fwd_h, threshold_pct, base_up, base_mean, seed):
     else:
         up_pct = mean_pct = median_pct = None
 
-    # 段级(整块危机)聚类:每段保留其全部合格日的前向收益(需 ≥1 有效日)
+    # 原始危机段数(透明用):有 ≥1 有效前向收益日的段
+    n_ep_fwd = sum(1 for ep in episodes if len(fwd_h.reindex(ep).dropna()))
+
+    # CI 聚类 = 前向窗口互不重叠的聚类(把相隔 < horizon 的危机段并起来·与 fear_greed 一致·审查 Finding-1)
+    pos_of = {d: i for i, d in enumerate(fwd_h.index)}
+    clusters = _merge_within_horizon(episodes, pos_of, horizon)
     ep_day_rets = []
-    for ep in episodes:
-        r = fwd_h.reindex(ep).dropna()
+    for cl in clusters:
+        r = fwd_h.reindex(cl).dropna()
         if len(r):
             ep_day_rets.append(r.values.astype(float))
-    n_ep_fwd = len(ep_day_rets)
-    too_small = n_ep_fwd < MIN_EPISODES_CI
+    n_independent = len(ep_day_rets)         # 前向窗口互不重叠的聚类数——CI 门槛/自助实际用
+    too_small = n_independent < MIN_EPISODES_CI
 
     base_up_pct = round(base_up * 100, 2)
     base_mean_pct = round(base_mean * 100, 2)
@@ -209,7 +241,8 @@ def build_dd_cell(dd, fwd_h, threshold_pct, base_up, base_mean, seed):
         "horizon": None,  # 由调用方补
         "n_days": n_days,
         "n_episodes": n_episodes,
-        "n_episodes_with_fwd": n_ep_fwd,
+        "n_episodes_with_fwd": n_ep_fwd,       # 原始危机段(有有效日)
+        "n_independent": n_independent,        # 前向窗口去重叠后的聚类数(CI 实际用)
         "up_pct": up_pct,
         "mean_pct": mean_pct,
         "median_pct": median_pct,
@@ -316,7 +349,7 @@ def run(write=True, _price=None, _stocks=None):
     for thr in DD_THRESHOLDS:
         for h in HORIZONS:
             cell = build_dd_cell(dd, fwd[h], thr, base[h]["up"], base[h]["mean"],
-                                 seed=_seed_for("dd", thr, h))
+                                 seed=_seed_for("dd", thr, h), horizon=h)
             cell["horizon"] = h
             curve.append(cell)
 
