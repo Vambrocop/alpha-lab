@@ -49,6 +49,7 @@
 <button id="lang" aria-label="切换语言 / switch language"></button>
 <h1 data-i18n="title"></h1>
 <p class="sub" data-i18n="intro"></p>
+<div class="airead" id="aiRead" style="display:none"></div>
 
 <div class="note" id="topBanner"></div>
 
@@ -108,15 +109,13 @@ const I18N={
         en:"This is not a buy-the-dip signal — it's an honest description of 'this is what happened before.' The sample is tiny, results are highly correlated across groups, and data only covers 2000-present. It can be wrong; the past does not represent the future."}
 };
 
+// 壳逻辑(esc/lang/applyStatic/切换)单一实现在 vp_i18n.js,各页不再复制(③ 去 copy-paste 病根)。
+// fear.html 原用 textContent;已核实其 data-i18n 串(title/intro/foot/moreHonesty)无 HTML,故 vpApplyStatic(innerHTML)为 no-op。
 const $=id=>document.getElementById(id);
-const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let LANG="zh";try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
-const t=k=>(I18N[k]&&I18N[k][LANG])||k;
-function applyStatic(){
-  document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
-  $("lang").textContent=LANG==="zh"?"EN":"中";
-  document.documentElement.lang=LANG==="zh"?"zh-CN":"en";
-}
+const esc=vpEsc;
+let LANG=vpLang();
+const t=k=>vpT(I18N,k,LANG);
+const applyStatic=()=>vpApplyStatic(I18N);
 
 const TRIGGER_ORDER=["T1","T2","T3"];
 const IDX_ORDER=["SP500","NASDAQ"];
@@ -248,12 +247,7 @@ function render(j){
     +`${t("resetFloor")} VIX<${j.reset_floor}`;
 }
 
-$("lang").onclick=()=>{
-  LANG=LANG==="zh"?"en":"zh";
-  try{localStorage.setItem("valpha_lang",LANG);}catch(e){}
-  if(window._j) render(window._j);
-  else applyStatic();
-};
+vpBindLang(I18N,()=>{ LANG=vpLang(); if(window._j) render(window._j); else applyStatic(); });
 
 (async()=>{
   applyStatic();
@@ -267,6 +261,8 @@ $("lang").onclick=()=>{
   }
 })();
 </script>
+<script src="vp_honestread.js"></script>
+<script>vpHonestRead("fear","aiRead");</script>
 <script src="vp_gloss.js" data-autoscan></script>
 </body>
 </html>

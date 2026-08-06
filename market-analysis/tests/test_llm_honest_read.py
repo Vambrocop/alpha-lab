@@ -32,6 +32,8 @@ def test_guard_allows_negation_disclaimers():
     assert H.guard_ok("不该读成贪婪就该卖")[0] is True         # 「该卖」不在守门(交 prompt)
     assert H.guard_ok("别赶紧买,这只是历史描述")[0] is True
     assert H.guard_ok("浅跌其实不如随便买,只有深跌才更高")[0] is True  # dip 正常读数不被误拦
+    # 整句扫描:否定远在句首也接得住(fear 真读数「绝不能理解成恐慌后就能抄底」·8字窗会误拦)
+    assert H.guard_ok("这只是历史描述,绝不能理解成恐慌后就能抄底")[0] is True
 
 
 # ── 2. 事实包:缺字段 → None(该段跳过,不硬编);字段全 → 含真数字 ──
@@ -90,6 +92,16 @@ def test_generate_blocked_when_required_point_missing():
 def test_require_dip_semantics():
     assert H.require_dip("跌得越深越好") is False                       # 无浅跌caveat → 不合格
     assert H.require_dip("浅跌其实不如随便买,只有深跌才明显更高") is True
+
+
+def test_require_fear_semantics():
+    assert H.require_fear("恐慌后市场就能反弹上涨") is False              # 无样本小/脆caveat → 不合格
+    assert H.require_fear("历史上只出现过几次,样本很少,剔掉危机就不稳") is True
+
+
+def test_facts_fear_missing_returns_none():
+    assert H.facts_fear({}) is None
+    assert H.facts_fear({"primary_cell": {"trigger": "T1", "index": "SP500", "horizon": 20}, "triggers": {}}) is None
 
 
 # ── 5. 无 key → run() 静默跳过、返回 None(§6·4)──

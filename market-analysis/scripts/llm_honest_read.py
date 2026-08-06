@@ -27,9 +27,9 @@ LOG = _SCRIPTS.parent / "data" / "honest_read_log.csv"
 # ══════════════════════════════════════════════════════════════════
 # 后置诚实守门(§3 命门):只拦【肯定式】操作词,不误伤"这不是买入信号"这类正当否定
 # ══════════════════════════════════════════════════════════════════
-NEG_CHARS = set("不别非勿绝没")         # 否定字:命中词前一小窗内出现任一 → 判免责否定语境,放行
-CLAUSE_END = set("。，；！？\n")          # 往回只扫到句读边界(否定不跨句)
-NEG_WINDOW = 8
+NEG_CHARS = set("不别非勿绝没")         # 否定字:命中词【所在整句】内出现任一 → 判免责否定语境,放行
+CLAUSE_END = set("。，；！？\n")          # 往回扫到句读边界为止(否定在同一句内即算,不跨句)
+MAX_SCAN = 40                           # 安全上限(防病态长句),正常靠句读边界先停
 # 【明确操作指令】短语——含对抄底页最诱人的 抄底/逢低/买进/建仓 类(审查 HIGH#2 补全)。
 # 含糊者(抄底/买入类)靠否定窗放行免责句(如「这不是抄底信号」);「该买/该卖」仍不进守门
 # (与 应该/不该 碰撞),交 prompt 铁律。见 [[honesty-guard-test-disclaimers]]。
@@ -39,11 +39,12 @@ FORBIDDEN = ("建议买", "建议卖", "赶紧买", "赶紧卖", "可以买入",
 
 
 def _neg_before(s, i):
-    """命中位置 i 往回 NEG_WINDOW 字(不跨句读)内是否有否定字 → 是则视为免责否定语境(审查 MEDIUM#3)。"""
+    """命中位置 i 往回扫到【句读边界】内是否有否定字 → 视为免责否定语境放行(审查 MEDIUM#3)。
+    扫整句(不是固定几字)才接得住「绝不能理解为恐慌后就能抄底」这种否定远在句首的免责句。「不妨」不算否定。"""
     j, steps = i - 1, 0
-    while j >= 0 and steps < NEG_WINDOW and s[j] not in CLAUSE_END:
+    while j >= 0 and steps < MAX_SCAN and s[j] not in CLAUSE_END:
         if s[j] in NEG_CHARS and not (s[j] == "不" and s[j:j + 2] == "不妨"):
-            return True   # 「不妨」是"其实建议"的肯定语气,不算否定(审查 HIGH#2 的「不妨买进」滑过场景)
+            return True
         j -= 1
         steps += 1
     return False
@@ -130,8 +131,36 @@ def require_dip(text):
     return shallow and under
 
 
+def facts_fear(j):
+    try:
+        pc = j["primary_cell"]
+        cell = j["triggers"][pc["trigger"]]["by_index"][pc["index"]][str(pc["horizon"])]
+        t1 = j["triggers"]["T1"]
+        return (
+            f"- 研究看「VIX(衡量市场恐慌程度的指标,越高越慌)冲到 30 以上(高恐慌)之后,标普500 未来"
+            f"20 个交易日怎么走」。\n"
+            f"- 头条口径(VIX≥30·标普·20日):历史上这类事件之后平均 {cell['mean_pct']}%、{cell['up_pct']}% 上涨;"
+            f"对比「随便哪天买」的基率 {cell['base_mean_pct']}%。\n"
+            f"- 但这类独立危机历史上只有约 {t1['n_crisis_years']} 段(样本极小);稳健性判定是「{cell['verdict']}」"
+            f"——剔掉影响最大的那一段危机后方向就不稳,是由单次危机撑起来的。\n"
+            f"- 这是纯描述、明确不是抄底信号、会错。"
+        )
+    except Exception:
+        return None
+
+
+def require_fear(text):
+    """fear_extremes 的 primary 判定是 crisis-driven-fragile:读数必须带「样本小/由单次危机驱动/脆」的caveat,
+    否则会被读成「恐慌后能抄底」——缺则重试/置空。"""
+    t = text or ""
+    return any(k in t for k in ("样本", "几段", "几次", "脆", "不稳", "一次危机", "单次危机", "2008", "2020", "少"))
+
+
 STUDIES = [
     # (key, json, 名字, 提炼器, 该研究特别强调(进 prompt), 必点要点后置检查(缺则重试/置空))
+    ("fear", "fear_extremes.json", "高/极端恐慌之后市场怎么走", facts_fear,
+     "必须明说:这是'高恐慌(VIX≥30)之后'的历史描述,独立危机样本只有几段、极小,而且剔掉影响最大的那次危机后"
+     "方向就不稳(由单次危机驱动);绝不能读成'恐慌后就能抄底'。", require_fear),
     ("dip", "dip_hold.json", "跌了买、持有一年的诚实账", facts_dip,
      "必须明说:浅跌到中跌(比如跌 5%~15%)持有一年【并不比】「随便哪天买」强、有时反而略差;"
      "只有深跌(20/30%)才明显更高。绝不能只说「跌得越深越好」。", require_dip),
