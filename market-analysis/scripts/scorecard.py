@@ -123,13 +123,27 @@ def run(write=True):
     except Exception:
         pass
 
+    # ⑤ LLM 前瞻预测（llm_prediction_log·仅方向档 偏多/偏空·出格·敢预测敢认账）
+    # 只计方向下注(偏多/偏空)——「中性」不是方向赌注,计进去会虚高;诚实只看方向命中。
+    try:
+        lp = pd.read_csv(BASE / "data" / "llm_prediction_log.csv")
+        dropped = lp["dropped"].astype(str).str.lower().isin(["true", "1"]) if "dropped" in lp else False
+        dirp = lp[lp["bucket"].isin(["偏多", "偏空"]) & ~dropped]
+        sett = dirp["settled"].astype(str).str.lower().isin(["true", "1"])
+        hit = dirp.loc[sett, "hit"].astype(str).str.lower().isin(["true", "1"])
+        n = int(sett.sum())
+        sources["LLM前瞻方向(出格·live)"] = {"n_scored": n, "n_pending": int((~sett).sum()),
+                                        "hit_pct": (round(float(hit.mean()) * 100, 1) if n else None)}
+    except Exception:
+        pass
+
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "horizon_days": H,
         "model_calibration": _model_calibration(),
         "sources": sources,
-        "honest_note": "把散落的预测追踪汇成公开战绩卡。模型 OOS 校准是 2012-2024 真历史；live 各源(综合读数/纳指信号)"
-                       "刚起步、样本少→随时间填充，不可验证的标 pending。校准=按置信分桶看实际命中——"
+        "honest_note": "把散落的预测追踪汇成公开战绩卡。模型 OOS 校准是 2012-2024 真历史；live 各源(综合读数/纳指信号/"
+                       "LLM 前瞻方向)刚起步、样本少→随时间填充，不可验证的标 pending。校准=按置信分桶看实际命中——"
                        "高置信≠更准就是诚实负结果(纳指方向 walk-forward 本就无 OOS edge)。非荐股·会错·过去≠未来。",
     }
     if write:
