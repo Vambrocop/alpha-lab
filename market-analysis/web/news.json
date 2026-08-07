@@ -1,8 +1,24 @@
 {
- "updated": "2026-08-07 18:35 UTC",
+ "updated": "2026-08-07 19:42 UTC",
  "items": [
   {
-   "time": "2026-08-07 18:21 UTC",
+   "time": "2026-08-07 19:36 UTC",
+   "title": "Some of the urgency is gone for a Fed rate hike in September after a soft jobs report",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 19:14 UTC",
+   "title": "U.S. economy unexpectedly lost 23,000 jobs in July",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Markets",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 18:38 UTC",
    "title": "Trump revives effort to fire Fed's Lisa Cook",
    "impact": "neutral",
    "note": "",
@@ -10,35 +26,19 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-07 18:09 UTC",
-   "title": "Here are three key takeaways from the disappointing July jobs report",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 17:50 UTC",
-   "title": "Trump teased an Iran deal that didn't come, but markets soared. Here’s why it keeps happening",
+   "time": "2026-08-07 18:30 UTC",
+   "title": "Prediction markets take center stage in latest round of quarterly earnings reports",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-07 17:48 UTC",
-   "title": "Falling long-term unemployment isn't good news, economists say — what it means for jobseekers",
+   "time": "2026-08-07 18:22 UTC",
+   "title": "Gold bugs spend $180 million betting all's clear for metal as bond yields stall",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 16:54 UTC",
-   "title": "SpaceX’s stock is having one of its best days ever — with the first lockup expiration now behind it",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
