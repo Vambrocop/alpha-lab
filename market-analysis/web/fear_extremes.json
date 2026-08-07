@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T15:14:47Z",
+  "generated": "2026-08-07T01:08:59Z",
   "as_of": "2026-08-06",
   "vix_start": "2000-01-03",
   "reset_floor": 20.0,
@@ -1388,7 +1388,7 @@
             ],
             "ci95_diff": [
               -3.45,
-              4.51
+              4.52
             ],
             "too_small_no_ci": false,
             "loco_headline_mean": 3.78,

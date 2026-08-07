@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T22:37:26.054533+00:00",
+  "generated": "2026-08-07T01:04:38.265539+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -10,7 +10,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -23,7 +23,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -36,7 +36,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -49,7 +49,7 @@
       "status": "ok",
       "rows": 6689,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -62,7 +62,7 @@
       "status": "ok",
       "rows": 5033,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -71,10 +71,10 @@
       "kind": "asset",
       "provider": "Yahoo Finance",
       "ticker": "DX-Y.NYB",
-      "source": "live",
+      "source": "live_intraday",
       "status": "ok",
-      "rows": 6717,
-      "last_date": "2026-08-06",
+      "rows": 6718,
+      "last_date": "2026-08-07",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -87,7 +87,7 @@
       "source": "live",
       "status": "ok",
       "rows": 4342,
-      "last_date": "2026-08-06",
+      "last_date": "2026-08-07",
       "age_days": 0,
       "stale_after_days": 2,
       "error": null
@@ -100,7 +100,7 @@
       "source": "live",
       "status": "ok",
       "rows": 3193,
-      "last_date": "2026-08-06",
+      "last_date": "2026-08-07",
       "age_days": 0,
       "stale_after_days": 2,
       "error": null
@@ -110,10 +110,10 @@
       "kind": "asset",
       "provider": "Yahoo Finance",
       "ticker": "CL=F",
-      "source": "live",
+      "source": "live_intraday",
       "status": "ok",
-      "rows": 6516,
-      "last_date": "2026-08-06",
+      "rows": 6517,
+      "last_date": "2026-08-07",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -123,10 +123,10 @@
       "kind": "asset",
       "provider": "Yahoo Finance",
       "ticker": "GC=F",
-      "source": "live",
+      "source": "live_intraday",
       "status": "ok",
-      "rows": 6507,
-      "last_date": "2026-08-06",
+      "rows": 6508,
+      "last_date": "2026-08-07",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -140,7 +140,7 @@
       "status": "ok",
       "rows": 6682,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -153,7 +153,7 @@
       "status": "ok",
       "rows": 5498,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -164,8 +164,8 @@
       "ticker": "AUDUSD=X",
       "source": "live",
       "status": "ok",
-      "rows": 5261,
-      "last_date": "2026-08-06",
+      "rows": 5262,
+      "last_date": "2026-08-07",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -179,7 +179,7 @@
       "status": "ok",
       "rows": 6287,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -192,7 +192,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -205,7 +205,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -218,7 +218,7 @@
       "status": "ok",
       "rows": 318,
       "last_date": "2026-06-01",
-      "age_days": 66,
+      "age_days": 67,
       "stale_after_days": 120,
       "error": null
     },
@@ -231,7 +231,7 @@
       "status": "ok",
       "rows": 319,
       "last_date": "2026-07-01",
-      "age_days": 36,
+      "age_days": 37,
       "stale_after_days": 120,
       "error": null
     },
@@ -244,7 +244,7 @@
       "status": "ok",
       "rows": 317,
       "last_date": "2026-06-01",
-      "age_days": 66,
+      "age_days": 67,
       "stale_after_days": 120,
       "error": null
     },
@@ -257,7 +257,7 @@
       "status": "ok",
       "rows": 317,
       "last_date": "2026-06-01",
-      "age_days": 66,
+      "age_days": 67,
       "stale_after_days": 120,
       "error": null
     },
@@ -270,7 +270,7 @@
       "status": "ok",
       "rows": 319,
       "last_date": "2026-07-01",
-      "age_days": 36,
+      "age_days": 37,
       "stale_after_days": 120,
       "error": null
     },
@@ -283,7 +283,7 @@
       "status": "ok",
       "rows": 319,
       "last_date": "2026-07-01",
-      "age_days": 36,
+      "age_days": 37,
       "stale_after_days": 120,
       "error": null
     },
@@ -296,7 +296,7 @@
       "status": "ok",
       "rows": 6652,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 10,
       "error": null
     },
@@ -309,7 +309,7 @@
       "status": "ok",
       "rows": 787,
       "last_date": "2026-08-05",
-      "age_days": 1,
+      "age_days": 2,
       "stale_after_days": 10,
       "error": null
     },
@@ -322,7 +322,7 @@
       "status": "ok",
       "rows": 6645,
       "last_date": "2026-08-05",
-      "age_days": 1,
+      "age_days": 2,
       "stale_after_days": 10,
       "error": null
     },
@@ -335,7 +335,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -348,7 +348,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -361,7 +361,7 @@
       "status": "ok",
       "rows": 5526,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -374,7 +374,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -387,7 +387,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -400,7 +400,7 @@
       "status": "ok",
       "rows": 3574,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -413,7 +413,7 @@
       "status": "ok",
       "rows": 4051,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -426,7 +426,7 @@
       "status": "ok",
       "rows": 4276,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -439,7 +439,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -452,7 +452,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -465,7 +465,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -478,7 +478,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -491,7 +491,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -504,7 +504,7 @@
       "status": "ok",
       "rows": 38,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -517,7 +517,7 @@
       "status": "ok",
       "rows": 371,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -530,7 +530,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -543,7 +543,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -556,7 +556,7 @@
       "status": "ok",
       "rows": 6688,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -569,7 +569,7 @@
       "status": "ok",
       "rows": 6090,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -582,7 +582,7 @@
       "status": "ok",
       "rows": 1261,
       "last_date": "2026-08-06",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     }

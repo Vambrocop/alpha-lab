@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T15:16:01Z",
+  "generated": "2026-08-07T01:10:07Z",
   "horizon_days": 20,
   "model_calibration": {
     "curve": [
@@ -45,13 +45,13 @@
   },
   "sources": {
     "纳指方向信号(live)": {
-      "n_scored": 21,
+      "n_scored": 22,
       "n_pending": 19,
-      "hit_pct": 28.6
+      "hit_pct": 31.8
     },
     "综合读数倾向(live)": {
       "n_scored": 13,
-      "n_pending": 18,
+      "n_pending": 19,
       "hit_pct": 30.8
     },
     "试胆玩具(≈掷硬币基准)": {
@@ -63,7 +63,12 @@
       "n_scored": 0,
       "n_pending": 0,
       "hit_pct": null
+    },
+    "LLM前瞻方向(出格·live)": {
+      "n_scored": 8,
+      "n_pending": 0,
+      "hit_pct": 0.0
     }
   },
-  "honest_note": "把散落的预测追踪汇成公开战绩卡。模型 OOS 校准是 2012-2024 真历史；live 各源(综合读数/纳指信号)刚起步、样本少→随时间填充，不可验证的标 pending。校准=按置信分桶看实际命中——高置信≠更准就是诚实负结果(纳指方向 walk-forward 本就无 OOS edge)。非荐股·会错·过去≠未来。"
+  "honest_note": "把散落的预测追踪汇成公开战绩卡。模型 OOS 校准是 2012-2024 真历史；live 各源(综合读数/纳指信号/LLM 前瞻方向)刚起步、样本少→随时间填充，不可验证的标 pending。校准=按置信分桶看实际命中——高置信≠更准就是诚实负结果(纳指方向 walk-forward 本就无 OOS edge)。非荐股·会错·过去≠未来。"
 }
