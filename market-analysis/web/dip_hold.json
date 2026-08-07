@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07T14:10:12Z",
+  "generated": "2026-08-07T22:11:25Z",
   "as_of": "2026-08-07",
   "price_start": "2000-01-03",
   "lookback": 252,
@@ -720,98 +720,98 @@
     "current": [
       {
         "ticker": "SNDK",
-        "dd_from_52wk_high_pct": -47.6,
-        "dist_from_52wk_low_pct": 2905.0
+        "dd_from_52wk_high_pct": -48.1,
+        "dist_from_52wk_low_pct": 2879.1
       },
       {
         "ticker": "NFLX",
-        "dd_from_52wk_high_pct": -41.6,
-        "dist_from_52wk_low_pct": 9.1
+        "dd_from_52wk_high_pct": -41.3,
+        "dist_from_52wk_low_pct": 9.7
       },
       {
         "ticker": "HOOD",
-        "dd_from_52wk_high_pct": -38.6,
-        "dist_from_52wk_low_pct": 43.8
+        "dd_from_52wk_high_pct": -38.8,
+        "dist_from_52wk_low_pct": 43.2
       },
       {
         "ticker": "TSLA",
-        "dd_from_52wk_high_pct": -33.7,
-        "dist_from_52wk_low_pct": 8.9
+        "dd_from_52wk_high_pct": -32.9,
+        "dist_from_52wk_low_pct": 10.1
       },
       {
         "ticker": "INTC",
-        "dd_from_52wk_high_pct": -29.0,
-        "dist_from_52wk_low_pct": 406.0
+        "dd_from_52wk_high_pct": -27.9,
+        "dist_from_52wk_low_pct": 414.2
       },
       {
         "ticker": "MU",
-        "dd_from_52wk_high_pct": -28.6,
-        "dist_from_52wk_low_pct": 675.3
+        "dd_from_52wk_high_pct": -27.7,
+        "dist_from_52wk_low_pct": 685.7
       },
       {
         "ticker": "META",
-        "dd_from_52wk_high_pct": -25.0,
-        "dist_from_52wk_low_pct": 12.5
+        "dd_from_52wk_high_pct": -24.8,
+        "dist_from_52wk_low_pct": 12.7
       },
       {
         "ticker": "AMD",
-        "dd_from_52wk_high_pct": -16.1,
-        "dist_from_52wk_low_pct": 222.5
+        "dd_from_52wk_high_pct": -16.8,
+        "dist_from_52wk_low_pct": 219.8
       },
       {
         "ticker": "COST",
-        "dd_from_52wk_high_pct": -13.6,
-        "dist_from_52wk_low_pct": 11.6
+        "dd_from_52wk_high_pct": -13.2,
+        "dist_from_52wk_low_pct": 12.0
       },
       {
         "ticker": "TSM",
-        "dd_from_52wk_high_pct": -12.8,
-        "dist_from_52wk_low_pct": 85.2
-      },
-      {
-        "ticker": "AVGO",
-        "dd_from_52wk_high_pct": -11.8,
-        "dist_from_52wk_low_pct": 47.6
+        "dd_from_52wk_high_pct": -12.0,
+        "dist_from_52wk_low_pct": 86.8
       },
       {
         "ticker": "GOOGL",
-        "dd_from_52wk_high_pct": -11.7,
-        "dist_from_52wk_low_pct": 81.4
+        "dd_from_52wk_high_pct": -11.9,
+        "dist_from_52wk_low_pct": 80.8
+      },
+      {
+        "ticker": "AVGO",
+        "dd_from_52wk_high_pct": -11.0,
+        "dist_from_52wk_low_pct": 48.8
       },
       {
         "ticker": "AAPL",
-        "dd_from_52wk_high_pct": -8.2,
-        "dist_from_52wk_low_pct": 42.4
+        "dd_from_52wk_high_pct": -7.9,
+        "dist_from_52wk_low_pct": 43.0
       },
       {
         "ticker": "MSFT",
-        "dd_from_52wk_high_pct": -6.8,
-        "dist_from_52wk_low_pct": 42.3
+        "dd_from_52wk_high_pct": -7.2,
+        "dist_from_52wk_low_pct": 41.7
       },
       {
         "ticker": "NVDA",
-        "dd_from_52wk_high_pct": -5.6,
-        "dist_from_52wk_low_pct": 34.7
+        "dd_from_52wk_high_pct": -4.9,
+        "dist_from_52wk_low_pct": 35.8
       },
       {
         "ticker": "LLY",
-        "dd_from_52wk_high_pct": -3.7,
-        "dist_from_52wk_low_pct": 91.5
+        "dd_from_52wk_high_pct": -4.0,
+        "dist_from_52wk_low_pct": 90.9
       },
       {
         "ticker": "AMZN",
-        "dd_from_52wk_high_pct": -2.9,
-        "dist_from_52wk_low_pct": 38.8
+        "dd_from_52wk_high_pct": -3.4,
+        "dist_from_52wk_low_pct": 38.1
       },
       {
         "ticker": "KO",
-        "dd_from_52wk_high_pct": -2.6,
-        "dist_from_52wk_low_pct": 34.9
+        "dd_from_52wk_high_pct": -2.3,
+        "dist_from_52wk_low_pct": 35.3
       },
       {
         "ticker": "BRK-B",
-        "dd_from_52wk_high_pct": -0.8,
-        "dist_from_52wk_low_pct": 12.8
+        "dd_from_52wk_high_pct": -0.5,
+        "dist_from_52wk_low_pct": 13.1
       }
     ]
   },

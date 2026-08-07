@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07T14:11:16Z",
+  "generated": "2026-08-07T22:12:21Z",
   "source": "动量+低波动 选股 → 前向公开计分",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，观察池取头/尾各3）",
   "hold_td": 20,
@@ -18,7 +18,7 @@
       "hit_pct": 76.7,
       "mean_call_excess_pct": 8.979
     },
-    "n_pending": 122,
+    "n_pending": 123,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
@@ -94,6 +94,17 @@
       "view": "看好",
       "pick_date": "2026-08-07",
       "mom_pct": 3.3,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "SNDK",
+      "view": "看淡",
+      "pick_date": "2026-08-07",
+      "mom_pct": 110.4,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -446,17 +457,6 @@
       "view": "看好",
       "pick_date": "2026-07-30",
       "mom_pct": 29.7,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "KO",
-      "view": "看好",
-      "pick_date": "2026-07-30",
-      "mom_pct": 21.7,
       "settled": false,
       "dropped": false,
       "excess_pct": null,

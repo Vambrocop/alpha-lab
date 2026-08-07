@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07T14:11:08Z",
+  "generated": "2026-08-07T22:12:15Z",
   "caveat": "这是澳股的**风险画像**，描述它历史上是什么样——**不预测涨跌、不荐股、不给买卖点**。β=对 ASX200(^AXJO) 的敏感度（风险特征非收益承诺）；流动性档位=60日中位日成交额的机械分档（低档票点差/滑点风险高）。**不含 franking（红利抵免）**——无可靠免费数据源，宁缺勿猜；税务影响请咨询专业人士。数据不足的票如实标注。ASX 本地日=交易日。",
   "benchmark": "ASX200 (^AXJO)",
   "min_days": 250,
@@ -24,9 +24,9 @@
   "tickers": {
     "BHP.AX": {
       "status": "ok",
-      "n_days": 9877,
+      "n_days": 9878,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 27.2,
       "max_drawdown_pct": -62.2,
       "beta_axjo": 1.14,
@@ -61,35 +61,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.155844,
+            "p_value": 0.168831,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.2298,
-              0.3037
+              0.2308,
+              0.3007
             ],
             "split_half_stable": false,
-            "recent_p": 0.5504,
+            "recent_p": 0.5564,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5909,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.306693,
+            "p_value": 0.305694,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.7612,
-              0.6424
+              0.6444
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5922,
+            "q_value": 0.627,
             "verdict": "rejected"
           }
         ],
@@ -128,7 +128,7 @@
             "p90_pct": 6.31,
             "worst_pct": -18.21,
             "best_pct": 36.49,
-            "pct_negative": 37.9
+            "pct_negative": 38.1
           },
           {
             "horizon": 20,
@@ -138,16 +138,16 @@
             "p90_pct": 13.17,
             "worst_pct": -32.14,
             "best_pct": 46.92,
-            "pct_negative": 36.2
+            "pct_negative": 36.0
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
+        "asof": "2026-08-07",
         "vol_now_pct": 31.3,
-        "vol_percentile": 81.5,
+        "vol_percentile": 81.4,
         "high_vol": false,
         "corr_now": 0.74,
         "corr_percentile": 70.6,
@@ -155,16 +155,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 451.1,
+        "median_daily_aud_m": 449.7,
         "tier": "high",
         "window_days": 60
       }
     },
     "CBA.AX": {
       "status": "ok",
-      "n_days": 8921,
+      "n_days": 8922,
       "start": "1991-09-30",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 21.4,
       "max_drawdown_pct": -58.5,
       "beta_axjo": 0.88,
@@ -183,7 +183,7 @@
           },
           {
             "level": 0.999,
-            "var_pct": 8.01,
+            "var_pct": 8.0,
             "es_pct": 11.38
           }
         ]
@@ -199,35 +199,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.274725,
+            "p_value": 0.253746,
             "min_group_n": 1737,
             "min_group_n_half": 854,
             "split_half_p": [
-              0.9261,
-              0.048
+              0.9171,
+              0.046
             ],
             "split_half_stable": false,
-            "recent_p": 0.1688,
+            "recent_p": 0.1538,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5922,
+            "q_value": 0.5921,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.096903,
+            "p_value": 0.095904,
             "min_group_n": 34,
             "min_group_n_half": 17,
             "split_half_p": [
               0.3806,
-              0.0659
+              0.0629
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5408,
+            "q_value": 0.5289,
             "verdict": "rejected"
           }
         ],
@@ -250,42 +250,42 @@
         "distribution": [
           {
             "horizon": 1,
-            "n": 446,
-            "median_pct": 0.07,
+            "n": 447,
+            "median_pct": 0.08,
             "p10_pct": -2.3,
             "p90_pct": 2.79,
             "worst_pct": -7.87,
             "best_pct": 13.26,
-            "pct_negative": 42.8
+            "pct_negative": 42.7
           },
           {
             "horizon": 5,
-            "n": 446,
-            "median_pct": 0.39,
+            "n": 447,
+            "median_pct": 0.38,
             "p10_pct": -4.29,
             "p90_pct": 5.4,
             "worst_pct": -17.55,
             "best_pct": 17.86,
-            "pct_negative": 40.4
+            "pct_negative": 40.7
           },
           {
             "horizon": 20,
-            "n": 446,
+            "n": 447,
             "median_pct": 1.08,
-            "p10_pct": -8.48,
-            "p90_pct": 9.1,
+            "p10_pct": -8.47,
+            "p90_pct": 9.08,
             "worst_pct": -29.49,
             "best_pct": 27.48,
-            "pct_negative": 39.9
+            "pct_negative": 39.8
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 17.3,
-        "vol_percentile": 48.1,
+        "asof": "2026-08-07",
+        "vol_now_pct": 17.2,
+        "vol_percentile": 47.7,
         "high_vol": false,
         "corr_now": 0.55,
         "corr_percentile": 32.1,
@@ -293,16 +293,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 322.2,
+        "median_daily_aud_m": 321.3,
         "tier": "high",
         "window_days": 60
       }
     },
     "CSL.AX": {
       "status": "ok",
-      "n_days": 8224,
+      "n_days": 8225,
       "start": "1994-05-31",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 28.2,
       "max_drawdown_pct": -77.2,
       "beta_axjo": 0.66,
@@ -337,35 +337,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.277722,
+            "p_value": 0.324675,
             "min_group_n": 1598,
             "min_group_n_half": 788,
             "split_half_p": [
-              0.011,
-              0.2168
+              0.02,
+              0.1958
             ],
             "split_half_stable": false,
-            "recent_p": 0.6284,
+            "recent_p": 0.6543,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5922,
+            "q_value": 0.627,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.676324,
+            "p_value": 0.677323,
             "min_group_n": 32,
             "min_group_n_half": 16,
             "split_half_p": [
               0.5115,
-              0.3956
+              0.3936
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.8234,
+            "q_value": 0.8404,
             "verdict": "rejected"
           }
         ],
@@ -398,13 +398,13 @@
           },
           {
             "horizon": 5,
-            "n": 411,
+            "n": 412,
             "median_pct": 0.32,
-            "p10_pct": -4.49,
-            "p90_pct": 5.92,
+            "p10_pct": -4.48,
+            "p90_pct": 6.03,
             "worst_pct": -16.55,
             "best_pct": 32.1,
-            "pct_negative": 43.3
+            "pct_negative": 43.2
           },
           {
             "horizon": 20,
@@ -414,15 +414,15 @@
             "p90_pct": 12.53,
             "worst_pct": -25.19,
             "best_pct": 54.09,
-            "pct_negative": 39.3
+            "pct_negative": 39.0
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 37.3,
+        "asof": "2026-08-07",
+        "vol_now_pct": 37.1,
         "vol_percentile": 86.5,
         "high_vol": false,
         "corr_now": 0.11,
@@ -431,16 +431,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 169.8,
+        "median_daily_aud_m": 167.7,
         "tier": "high",
         "window_days": 60
       }
     },
     "NAB.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 22.7,
       "max_drawdown_pct": -60.7,
       "beta_axjo": 0.96,
@@ -475,19 +475,19 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.071928,
+            "p_value": 0.062937,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.4545,
-              0.2278
+              0.4575,
+              0.2248
             ],
             "split_half_stable": false,
-            "recent_p": 0.3916,
+            "recent_p": 0.3756,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.4476,
+            "q_value": 0.4406,
             "verdict": "rejected"
           },
           {
@@ -496,7 +496,7 @@
             "min_group_n_half": 19,
             "split_half_p": [
               0.3087,
-              0.6274
+              0.6344
             ],
             "split_half_stable": false,
             "recent_p": null,
@@ -559,9 +559,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
+        "asof": "2026-08-07",
         "vol_now_pct": 20.9,
-        "vol_percentile": 65.5,
+        "vol_percentile": 65.4,
         "high_vol": false,
         "corr_now": 0.49,
         "corr_percentile": 26.6,
@@ -569,16 +569,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 205.7,
+        "median_daily_aud_m": 197.8,
         "tier": "high",
         "window_days": 60
       }
     },
     "WBC.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 23.6,
       "max_drawdown_pct": -51.7,
       "beta_axjo": 0.94,
@@ -613,35 +613,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.026973,
+            "p_value": 0.020979,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.0799,
-              0.3097
+              0.0759,
+              0.2717
             ],
             "split_half_stable": false,
-            "recent_p": 0.7043,
+            "recent_p": 0.7233,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.3756,
+            "q_value": 0.358,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.107892,
+            "p_value": 0.103896,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.0749,
-              0.025
+              0.024
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5408,
+            "q_value": 0.5289,
             "verdict": "rejected"
           }
         ],
@@ -680,7 +680,7 @@
             "p90_pct": 5.53,
             "worst_pct": -19.43,
             "best_pct": 14.66,
-            "pct_negative": 40.5
+            "pct_negative": 40.1
           },
           {
             "horizon": 20,
@@ -697,9 +697,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 18.0,
-        "vol_percentile": 44.9,
+        "asof": "2026-08-07",
+        "vol_now_pct": 18.3,
+        "vol_percentile": 46.6,
         "high_vol": false,
         "corr_now": 0.53,
         "corr_percentile": 29.6,
@@ -707,16 +707,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 164.3,
+        "median_daily_aud_m": 164.0,
         "tier": "high",
         "window_days": 60
       }
     },
     "ANZ.AX": {
       "status": "ok",
-      "n_days": 9877,
+      "n_days": 9878,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 25.6,
       "max_drawdown_pct": -58.6,
       "beta_axjo": 0.97,
@@ -751,35 +751,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.218781,
+            "p_value": 0.243756,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.4016,
-              0.0959
+              0.4026,
+              0.0899
             ],
             "split_half_stable": false,
-            "recent_p": 0.1858,
+            "recent_p": 0.2038,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5921,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.736264,
+            "p_value": 0.73027,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.6763,
-              0.6893
+              0.6963
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.846,
+            "q_value": 0.847,
             "verdict": "rejected"
           }
         ],
@@ -828,16 +828,16 @@
             "p90_pct": 10.37,
             "worst_pct": -37.7,
             "best_pct": 40.78,
-            "pct_negative": 36.4
+            "pct_negative": 36.2
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 18.0,
-        "vol_percentile": 41.2,
+        "asof": "2026-08-07",
+        "vol_now_pct": 18.1,
+        "vol_percentile": 41.8,
         "high_vol": false,
         "corr_now": 0.56,
         "corr_percentile": 34.3,
@@ -845,16 +845,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 146.3,
+        "median_daily_aud_m": 144.1,
         "tier": "high",
         "window_days": 60
       }
     },
     "WES.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 23.9,
       "max_drawdown_pct": -60.9,
       "beta_axjo": 0.76,
@@ -874,7 +874,7 @@
           {
             "level": 0.999,
             "var_pct": 9.01,
-            "es_pct": 13.03
+            "es_pct": 13.02
           }
         ]
       },
@@ -889,35 +889,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.201798,
+            "p_value": 0.218781,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.2298,
-              0.6184
+              0.2128,
+              0.5914
             ],
             "split_half_stable": false,
-            "recent_p": 0.5614,
+            "recent_p": 0.5664,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5921,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.02997,
+            "p_value": 0.030969,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.3686,
-              0.2098
+              0.2158
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.3756,
+            "q_value": 0.358,
             "verdict": "rejected"
           }
         ],
@@ -966,16 +966,16 @@
             "p90_pct": 10.87,
             "worst_pct": -30.34,
             "best_pct": 25.46,
-            "pct_negative": 34.6
+            "pct_negative": 34.8
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 20.6,
-        "vol_percentile": 56.2,
+        "asof": "2026-08-07",
+        "vol_now_pct": 20.8,
+        "vol_percentile": 57.4,
         "high_vol": false,
         "corr_now": 0.25,
         "corr_percentile": 22.3,
@@ -983,23 +983,23 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 134.8,
+        "median_daily_aud_m": 135.5,
         "tier": "high",
         "window_days": 60
       }
     },
     "MQG.AX": {
       "status": "ok",
-      "n_days": 7658,
+      "n_days": 7659,
       "start": "1996-07-31",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 31.6,
       "max_drawdown_pct": -81.7,
       "beta_axjo": 1.27,
       "name": "麦格理",
       "evt": {
         "status": "ok",
-        "xi": 0.193,
+        "xi": 0.192,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.509,
         "n_exceed": 383,
@@ -1012,7 +1012,7 @@
           {
             "level": 0.999,
             "var_pct": 11.64,
-            "es_pct": 15.71
+            "es_pct": 15.7
           }
         ]
       },
@@ -1027,35 +1027,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.493506,
+            "p_value": 0.4995,
             "min_group_n": 1485,
             "min_group_n_half": 735,
             "split_half_p": [
-              0.952,
-              0.0629
+              0.9371,
+              0.0609
             ],
             "split_half_stable": false,
-            "recent_p": 0.0789,
+            "recent_p": 0.0599,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.7469,
+            "q_value": 0.756,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.606394,
+            "p_value": 0.601399,
             "min_group_n": 30,
             "min_group_n_half": 15,
             "split_half_p": [
               0.1758,
-              0.6593
+              0.6613
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.7897,
+            "q_value": 0.7845,
             "verdict": "rejected"
           }
         ],
@@ -1104,16 +1104,16 @@
             "p90_pct": 17.03,
             "worst_pct": -50.57,
             "best_pct": 70.63,
-            "pct_negative": 41.0
+            "pct_negative": 41.3
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 18.0,
-        "vol_percentile": 20.2,
+        "asof": "2026-08-07",
+        "vol_now_pct": 17.1,
+        "vol_percentile": 15.2,
         "high_vol": false,
         "corr_now": 0.62,
         "corr_percentile": 45.8,
@@ -1121,23 +1121,23 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 165.8,
+        "median_daily_aud_m": 163.5,
         "tier": "high",
         "window_days": 60
       }
     },
     "GMG.AX": {
       "status": "ok",
-      "n_days": 5441,
+      "n_days": 5442,
       "start": "2005-02-02",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 40.0,
       "max_drawdown_pct": -97.3,
       "beta_axjo": 1.12,
       "name": "Goodman(工业地产)",
       "evt": {
         "status": "ok",
-        "xi": 0.4,
+        "xi": 0.399,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.426,
         "n_exceed": 272,
@@ -1145,12 +1145,12 @@
           {
             "level": 0.99,
             "var_pct": 7.09,
-            "es_pct": 12.79
+            "es_pct": 12.78
           },
           {
             "level": 0.999,
-            "var_pct": 20.02,
-            "es_pct": 34.34
+            "var_pct": 20.0,
+            "es_pct": 34.29
           }
         ]
       },
@@ -1165,35 +1165,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.74026,
+            "p_value": 0.744256,
             "min_group_n": 1042,
             "min_group_n_half": 520,
             "split_half_p": [
-              0.8981,
-              0.4585
+              0.8941,
+              0.4905
             ],
             "split_half_stable": false,
-            "recent_p": 0.1998,
+            "recent_p": 0.2048,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.846,
+            "q_value": 0.847,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.240759,
+            "p_value": 0.243756,
             "min_group_n": 21,
             "min_group_n_half": 10,
             "split_half_p": [
               0.5115,
-              0.3536
+              0.3576
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5862,
+            "q_value": 0.5921,
             "verdict": "inconclusive"
           }
         ],
@@ -1216,42 +1216,42 @@
         "distribution": [
           {
             "horizon": 1,
-            "n": 272,
-            "median_pct": -0.05,
-            "p10_pct": -6.96,
+            "n": 273,
+            "median_pct": -0.1,
+            "p10_pct": -6.93,
             "p90_pct": 4.63,
             "worst_pct": -25.72,
             "best_pct": 17.94,
-            "pct_negative": 50.0
+            "pct_negative": 50.2
           },
           {
             "horizon": 5,
-            "n": 272,
-            "median_pct": -0.0,
-            "p10_pct": -18.39,
+            "n": 273,
+            "median_pct": 0.0,
+            "p10_pct": -18.29,
             "p90_pct": 11.21,
             "worst_pct": -54.63,
             "best_pct": 132.26,
-            "pct_negative": 50.0
+            "pct_negative": 49.8
           },
           {
             "horizon": 20,
-            "n": 272,
-            "median_pct": 0.65,
-            "p10_pct": -30.43,
-            "p90_pct": 26.18,
+            "n": 273,
+            "median_pct": 0.66,
+            "p10_pct": -30.4,
+            "p90_pct": 25.69,
             "worst_pct": -68.07,
             "best_pct": 141.94,
-            "pct_negative": 47.4
+            "pct_negative": 47.6
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 25.6,
-        "vol_percentile": 59.7,
+        "asof": "2026-08-07",
+        "vol_now_pct": 25.7,
+        "vol_percentile": 59.9,
         "high_vol": false,
         "corr_now": 0.65,
         "corr_percentile": 79.7,
@@ -1259,36 +1259,36 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 106.8,
+        "median_daily_aud_m": 104.2,
         "tier": "high",
         "window_days": 60
       }
     },
     "WOW.AX": {
       "status": "ok",
-      "n_days": 8442,
+      "n_days": 8443,
       "start": "1993-07-30",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 20.2,
       "max_drawdown_pct": -40.6,
       "beta_axjo": 0.54,
       "name": "Woolworths(超市)",
       "evt": {
         "status": "ok",
-        "xi": 0.328,
+        "xi": 0.332,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
-        "extremal_index": 0.607,
-        "n_exceed": 422,
+        "extremal_index": 0.608,
+        "n_exceed": 423,
         "var_es": [
           {
             "level": 0.99,
-            "var_pct": 3.3,
-            "es_pct": 5.14
+            "var_pct": 3.29,
+            "es_pct": 5.15
           },
           {
             "level": 0.999,
-            "var_pct": 7.56,
-            "es_pct": 11.48
+            "var_pct": 7.57,
+            "es_pct": 11.54
           }
         ]
       },
@@ -1303,35 +1303,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.79021,
+            "p_value": 0.82018,
             "min_group_n": 1642,
             "min_group_n_half": 808,
             "split_half_p": [
-              0.7063,
-              0.9391
+              0.6573,
+              0.9471
             ],
             "split_half_stable": false,
-            "recent_p": 0.7822,
+            "recent_p": 0.7972,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.8677,
+            "q_value": 0.863,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.548452,
+            "p_value": 0.547453,
             "min_group_n": 33,
             "min_group_n_half": 16,
             "split_half_p": [
               0.0809,
-              0.2388
+              0.2408
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.7897,
+            "q_value": 0.7845,
             "verdict": "rejected"
           }
         ],
@@ -1370,7 +1370,7 @@
             "p90_pct": 4.62,
             "worst_pct": -12.31,
             "best_pct": 15.27,
-            "pct_negative": 40.7
+            "pct_negative": 40.0
           },
           {
             "horizon": 20,
@@ -1380,16 +1380,16 @@
             "p90_pct": 7.97,
             "worst_pct": -13.63,
             "best_pct": 18.06,
-            "pct_negative": 40.0
+            "pct_negative": 40.2
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 17.6,
-        "vol_percentile": 49.2,
+        "asof": "2026-08-07",
+        "vol_now_pct": 17.3,
+        "vol_percentile": 46.7,
         "high_vol": false,
         "corr_now": 0.15,
         "corr_percentile": 18.1,
@@ -1397,16 +1397,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 71.7,
+        "median_daily_aud_m": 73.5,
         "tier": "high",
         "window_days": 60
       }
     },
     "TLS.AX": {
       "status": "ok",
-      "n_days": 7312,
+      "n_days": 7313,
       "start": "1997-11-28",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 20.9,
       "max_drawdown_pct": -51.6,
       "beta_axjo": 0.53,
@@ -1441,19 +1441,19 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.579421,
+            "p_value": 0.595405,
             "min_group_n": 1416,
             "min_group_n_half": 703,
             "split_half_p": [
-              0.4635,
-              0.8122
+              0.4386,
+              0.8142
             ],
             "split_half_stable": false,
-            "recent_p": 0.8911,
+            "recent_p": 0.9021,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.7897,
+            "q_value": 0.7845,
             "verdict": "rejected"
           },
           {
@@ -1469,7 +1469,7 @@
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.3756,
+            "q_value": 0.358,
             "verdict": "inconclusive"
           }
         ],
@@ -1508,7 +1508,7 @@
             "p90_pct": 4.49,
             "worst_pct": -10.63,
             "best_pct": 16.66,
-            "pct_negative": 42.6
+            "pct_negative": 43.7
           },
           {
             "horizon": 20,
@@ -1525,9 +1525,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 19.4,
-        "vol_percentile": 60.0,
+        "asof": "2026-08-07",
+        "vol_now_pct": 19.3,
+        "vol_percentile": 59.9,
         "high_vol": false,
         "corr_now": 0.07,
         "corr_percentile": 6.9,
@@ -1542,9 +1542,9 @@
     },
     "RIO.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 29.7,
       "max_drawdown_pct": -79.4,
       "beta_axjo": 1.08,
@@ -1579,35 +1579,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.215784,
+            "p_value": 0.195804,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.028,
-              0.9451
+              0.017,
+              0.964
             ],
             "split_half_stable": false,
-            "recent_p": 0.6344,
+            "recent_p": 0.6503,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5921,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.348651,
+            "p_value": 0.353646,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.7373,
-              0.6733
+              0.6753
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.6469,
+            "q_value": 0.6388,
             "verdict": "rejected"
           }
         ],
@@ -1663,9 +1663,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 30.1,
-        "vol_percentile": 71.6,
+        "asof": "2026-08-07",
+        "vol_now_pct": 29.9,
+        "vol_percentile": 71.3,
         "high_vol": false,
         "corr_now": 0.66,
         "corr_percentile": 69.7,
@@ -1673,16 +1673,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 202.4,
+        "median_daily_aud_m": 200.9,
         "tier": "high",
         "window_days": 60
       }
     },
     "FMG.AX": {
       "status": "ok",
-      "n_days": 9731,
+      "n_days": 9732,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 104.4,
       "max_drawdown_pct": -98.8,
       "beta_axjo": 1.27,
@@ -1717,35 +1717,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.943057,
+            "p_value": 0.951049,
             "min_group_n": 1900,
             "min_group_n_half": 933,
             "split_half_p": [
               0.8701,
-              0.5385
+              0.5644
             ],
             "split_half_stable": false,
-            "recent_p": 0.6753,
+            "recent_p": 0.6803,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.9431,
+            "q_value": 0.951,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.758242,
+            "p_value": 0.756244,
             "min_group_n": 37,
             "min_group_n_half": 18,
             "split_half_p": [
               0.8392,
-              0.7762
+              0.7712
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.8492,
+            "q_value": 0.847,
             "verdict": "rejected"
           }
         ],
@@ -1784,7 +1784,7 @@
             "p90_pct": 16.9,
             "worst_pct": -44.69,
             "best_pct": 130.79,
-            "pct_negative": 36.8
+            "pct_negative": 36.1
           },
           {
             "horizon": 20,
@@ -1794,16 +1794,16 @@
             "p90_pct": 34.28,
             "worst_pct": -59.13,
             "best_pct": 157.89,
-            "pct_negative": 39.8
+            "pct_negative": 39.6
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 26.7,
-        "vol_percentile": 6.8,
+        "asof": "2026-08-07",
+        "vol_now_pct": 26.5,
+        "vol_percentile": 6.6,
         "high_vol": false,
         "corr_now": 0.53,
         "corr_percentile": 74.0,
@@ -1822,16 +1822,16 @@
     },
     "TCL.AX": {
       "status": "ok",
-      "n_days": 7746,
+      "n_days": 7747,
       "start": "1996-03-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 24.0,
       "max_drawdown_pct": -49.1,
       "beta_axjo": 0.59,
       "name": "Transurban(收费公路)",
       "evt": {
         "status": "ok",
-        "xi": 0.197,
+        "xi": 0.196,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.601,
         "n_exceed": 388,
@@ -1859,23 +1859,23 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.20979,
+            "p_value": 0.23976,
             "min_group_n": 1503,
             "min_group_n_half": 743,
             "split_half_p": [
-              0.1379,
-              0.2577
+              0.1299,
+              0.2468
             ],
             "split_half_stable": false,
-            "recent_p": 0.2128,
+            "recent_p": 0.2078,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5921,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.300699,
+            "p_value": 0.301698,
             "min_group_n": 30,
             "min_group_n_half": 15,
             "split_half_p": [
@@ -1887,7 +1887,7 @@
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5922,
+            "q_value": 0.627,
             "verdict": "rejected"
           }
         ],
@@ -1936,16 +1936,16 @@
             "p90_pct": 10.43,
             "worst_pct": -25.05,
             "best_pct": 31.25,
-            "pct_negative": 41.8
+            "pct_negative": 42.0
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 16.6,
-        "vol_percentile": 37.5,
+        "asof": "2026-08-07",
+        "vol_now_pct": 16.5,
+        "vol_percentile": 36.9,
         "high_vol": false,
         "corr_now": 0.19,
         "corr_percentile": 19.7,
@@ -1960,16 +1960,16 @@
     },
     "COL.AX": {
       "status": "ok",
-      "n_days": 1950,
+      "n_days": 1951,
       "start": "2018-11-21",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 20.3,
       "max_drawdown_pct": -18.4,
       "beta_axjo": 0.5,
       "name": "Coles(超市)",
       "evt": {
         "status": "ok",
-        "xi": 0.128,
+        "xi": 0.127,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.643,
         "n_exceed": 98,
@@ -1982,7 +1982,7 @@
           {
             "level": 0.999,
             "var_pct": 7.38,
-            "es_pct": 9.46
+            "es_pct": 9.45
           }
         ]
       },
@@ -1997,35 +1997,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.67033,
+            "p_value": 0.66034,
             "min_group_n": 374,
             "min_group_n_half": 187,
             "split_half_p": [
-              0.3736,
-              0.6713
+              0.3556,
+              0.6783
             ],
             "split_half_stable": false,
-            "recent_p": 0.7572,
+            "recent_p": 0.7672,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.8234,
+            "q_value": 0.8404,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.115884,
+            "p_value": 0.116883,
             "min_group_n": 7,
             "min_group_n_half": 3,
             "split_half_p": [
               0.1159,
-              0.8222
+              0.8252
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5408,
+            "q_value": 0.5455,
             "verdict": "inconclusive"
           }
         ],
@@ -2074,16 +2074,16 @@
             "p90_pct": 9.31,
             "worst_pct": -11.69,
             "best_pct": 16.21,
-            "pct_negative": 36.1
+            "pct_negative": 37.1
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 21.3,
-        "vol_percentile": 73.5,
+        "asof": "2026-08-07",
+        "vol_now_pct": 20.8,
+        "vol_percentile": 68.3,
         "high_vol": false,
         "corr_now": 0.02,
         "corr_percentile": 4.1,
@@ -2091,7 +2091,7 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 58.9,
+        "median_daily_aud_m": 58.5,
         "tier": "high",
         "window_days": 60
       },
@@ -2102,9 +2102,9 @@
     },
     "WDS.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 27.4,
       "max_drawdown_pct": -62.5,
       "beta_axjo": 0.89,
@@ -2124,7 +2124,7 @@
           {
             "level": 0.999,
             "var_pct": 9.76,
-            "es_pct": 13.93
+            "es_pct": 13.92
           }
         ]
       },
@@ -2139,35 +2139,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.143856,
+            "p_value": 0.133866,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.1718,
-              0.4975
+              0.1658,
+              0.5175
             ],
             "split_half_stable": false,
-            "recent_p": 0.6064,
+            "recent_p": 0.5944,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5754,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.605395,
+            "p_value": 0.602398,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.3057,
-              0.8521
+              0.8511
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.7897,
+            "q_value": 0.7845,
             "verdict": "rejected"
           }
         ],
@@ -2206,7 +2206,7 @@
             "p90_pct": 6.24,
             "worst_pct": -25.61,
             "best_pct": 24.31,
-            "pct_negative": 41.0
+            "pct_negative": 40.8
           },
           {
             "horizon": 20,
@@ -2216,16 +2216,16 @@
             "p90_pct": 12.65,
             "worst_pct": -50.87,
             "best_pct": 30.8,
-            "pct_negative": 39.8
+            "pct_negative": 39.6
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 28.9,
-        "vol_percentile": 70.3,
+        "asof": "2026-08-07",
+        "vol_now_pct": 28.8,
+        "vol_percentile": 70.2,
         "high_vol": false,
         "corr_now": -0.33,
         "corr_percentile": 0.7,
@@ -2240,9 +2240,9 @@
     },
     "QBE.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 29.7,
       "max_drawdown_pct": -71.2,
       "beta_axjo": 0.84,
@@ -2277,19 +2277,19 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.167832,
+            "p_value": 0.143856,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.1718,
-              0.018
+              0.1928,
+              0.007
             ],
             "split_half_stable": false,
             "recent_p": 0.019,
             "recent_testable": true,
             "recent_significant": true,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5754,
             "verdict": "rejected"
           },
           {
@@ -2338,13 +2338,13 @@
           },
           {
             "horizon": 5,
-            "n": 493,
-            "median_pct": 0.42,
-            "p10_pct": -5.73,
+            "n": 494,
+            "median_pct": 0.41,
+            "p10_pct": -5.72,
             "p90_pct": 6.31,
             "worst_pct": -44.87,
             "best_pct": 60.0,
-            "pct_negative": 39.6
+            "pct_negative": 39.5
           },
           {
             "horizon": 20,
@@ -2354,16 +2354,16 @@
             "p90_pct": 13.03,
             "worst_pct": -43.9,
             "best_pct": 95.99,
-            "pct_negative": 37.6
+            "pct_negative": 37.4
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
+        "asof": "2026-08-07",
         "vol_now_pct": 21.9,
-        "vol_percentile": 38.9,
+        "vol_percentile": 38.6,
         "high_vol": false,
         "corr_now": -0.06,
         "corr_percentile": 4.3,
@@ -2371,16 +2371,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 77.8,
+        "median_daily_aud_m": 78.5,
         "tier": "high",
         "window_days": 60
       }
     },
     "STO.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 32.3,
       "max_drawdown_pct": -81.2,
       "beta_axjo": 0.97,
@@ -2395,7 +2395,7 @@
           {
             "level": 0.99,
             "var_pct": 5.97,
-            "es_pct": 8.85
+            "es_pct": 8.84
           },
           {
             "level": 0.999,
@@ -2415,35 +2415,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.183816,
+            "p_value": 0.182817,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.0929,
-              0.7293
+              0.0839,
+              0.7692
             ],
             "split_half_stable": false,
-            "recent_p": 0.8052,
+            "recent_p": 0.7982,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5747,
+            "q_value": 0.5921,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.433566,
+            "p_value": 0.434565,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.1898,
-              0.7493
+              0.7483
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.6937,
+            "q_value": 0.6953,
             "verdict": "rejected"
           }
         ],
@@ -2482,7 +2482,7 @@
             "p90_pct": 7.76,
             "worst_pct": -35.9,
             "best_pct": 37.82,
-            "pct_negative": 39.5
+            "pct_negative": 39.7
           },
           {
             "horizon": 20,
@@ -2492,16 +2492,16 @@
             "p90_pct": 17.02,
             "worst_pct": -61.5,
             "best_pct": 52.26,
-            "pct_negative": 37.7
+            "pct_negative": 37.5
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
+        "asof": "2026-08-07",
         "vol_now_pct": 29.9,
-        "vol_percentile": 61.4,
+        "vol_percentile": 61.6,
         "high_vol": false,
         "corr_now": -0.27,
         "corr_percentile": 0.5,
@@ -2516,9 +2516,9 @@
     },
     "REA.AX": {
       "status": "ok",
-      "n_days": 6790,
+      "n_days": 6791,
       "start": "1999-11-30",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 62.1,
       "max_drawdown_pct": -96.2,
       "beta_axjo": 0.77,
@@ -2553,23 +2553,23 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.305694,
+            "p_value": 0.322677,
             "min_group_n": 1311,
-            "min_group_n_half": 653,
+            "min_group_n_half": 652,
             "split_half_p": [
-              0.3287,
-              0.0909
+              0.3227,
+              0.0959
             ],
             "split_half_stable": false,
-            "recent_p": 0.1578,
+            "recent_p": 0.1728,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.5922,
+            "q_value": 0.627,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.160839,
+            "p_value": 0.157842,
             "min_group_n": 26,
             "min_group_n_half": 13,
             "split_half_p": [
@@ -2581,7 +2581,7 @@
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5747,
+            "q_value": 0.5893,
             "verdict": "inconclusive"
           }
         ],
@@ -2620,7 +2620,7 @@
             "p90_pct": 15.0,
             "worst_pct": -33.33,
             "best_pct": 70.0,
-            "pct_negative": 39.1
+            "pct_negative": 37.1
           },
           {
             "horizon": 20,
@@ -2630,16 +2630,16 @@
             "p90_pct": 23.08,
             "worst_pct": -60.0,
             "best_pct": 78.0,
-            "pct_negative": 45.3
+            "pct_negative": 44.4
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 37.2,
-        "vol_percentile": 65.4,
+        "asof": "2026-08-07",
+        "vol_now_pct": 35.2,
+        "vol_percentile": 60.2,
         "high_vol": false,
         "corr_now": 0.15,
         "corr_percentile": 28.5,
@@ -2654,16 +2654,16 @@
     },
     "ALL.AX": {
       "status": "ok",
-      "n_days": 7658,
+      "n_days": 7659,
       "start": "1996-07-31",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 37.3,
       "max_drawdown_pct": -87.2,
       "beta_axjo": 0.91,
       "name": "Aristocrat(游戏机)",
       "evt": {
         "status": "ok",
-        "xi": 0.406,
+        "xi": 0.405,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.658,
         "n_exceed": 383,
@@ -2675,8 +2675,8 @@
           },
           {
             "level": 0.999,
-            "var_pct": 13.5,
-            "es_pct": 22.48
+            "var_pct": 13.49,
+            "es_pct": 22.45
           }
         ]
       },
@@ -2691,35 +2691,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.368631,
+            "p_value": 0.353646,
             "min_group_n": 1485,
             "min_group_n_half": 735,
             "split_half_p": [
-              0.3586,
-              0.002
+              0.3576,
+              0.001
             ],
             "split_half_stable": false,
-            "recent_p": 0.1269,
+            "recent_p": 0.1169,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.6469,
+            "q_value": 0.6388,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.582418,
+            "p_value": 0.588412,
             "min_group_n": 30,
             "min_group_n_half": 15,
             "split_half_p": [
               0.3656,
-              0.3407
+              0.3457
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.7897,
+            "q_value": 0.7845,
             "verdict": "rejected"
           }
         ],
@@ -2758,7 +2758,7 @@
             "p90_pct": 7.55,
             "worst_pct": -56.87,
             "best_pct": 39.83,
-            "pct_negative": 42.3
+            "pct_negative": 42.6
           },
           {
             "horizon": 20,
@@ -2768,14 +2768,14 @@
             "p90_pct": 17.26,
             "worst_pct": -57.55,
             "best_pct": 60.67,
-            "pct_negative": 44.6
+            "pct_negative": 44.4
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
+        "asof": "2026-08-07",
         "vol_now_pct": 23.4,
         "vol_percentile": 22.6,
         "high_vol": false,
@@ -2785,16 +2785,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 85.2,
+        "median_daily_aud_m": 84.7,
         "tier": "high",
         "window_days": 60
       }
     },
     "PME.AX": {
       "status": "ok",
-      "n_days": 6566,
+      "n_days": 6567,
       "start": "2000-10-09",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 49.8,
       "max_drawdown_pct": -88.1,
       "beta_axjo": 0.57,
@@ -2809,7 +2809,7 @@
           {
             "level": 0.99,
             "var_pct": 8.14,
-            "es_pct": 11.13
+            "es_pct": 11.12
           },
           {
             "level": 0.999,
@@ -2829,19 +2829,19 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.842158,
+            "p_value": 0.826174,
             "min_group_n": 1266,
             "min_group_n_half": 631,
             "split_half_p": [
-              0.6224,
-              0.1239
+              0.6284,
+              0.1179
             ],
             "split_half_stable": false,
-            "recent_p": 0.4995,
+            "recent_p": 0.5005,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.8717,
+            "q_value": 0.863,
             "verdict": "rejected"
           },
           {
@@ -2857,7 +2857,7 @@
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.3756,
+            "q_value": 0.3823,
             "verdict": "inconclusive"
           }
         ],
@@ -2896,26 +2896,26 @@
             "p90_pct": 11.18,
             "worst_pct": -25.0,
             "best_pct": 42.86,
-            "pct_negative": 37.7
+            "pct_negative": 38.6
           },
           {
             "horizon": 20,
-            "n": 327,
-            "median_pct": 2.94,
+            "n": 328,
+            "median_pct": 2.88,
             "p10_pct": -11.57,
-            "p90_pct": 21.24,
+            "p90_pct": 21.23,
             "worst_pct": -33.59,
             "best_pct": 100.0,
-            "pct_negative": 39.1
+            "pct_negative": 38.7
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 47.0,
-        "vol_percentile": 60.1,
+        "asof": "2026-08-07",
+        "vol_now_pct": 46.5,
+        "vol_percentile": 58.2,
         "high_vol": false,
         "corr_now": 0.09,
         "corr_percentile": 34.9,
@@ -2923,16 +2923,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 48.7,
+        "median_daily_aud_m": 47.8,
         "tier": "high",
         "window_days": 60
       }
     },
     "XRO.AX": {
       "status": "ok",
-      "n_days": 3478,
+      "n_days": 3479,
       "start": "2012-11-08",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 39.7,
       "max_drawdown_pct": -71.1,
       "beta_axjo": 1.06,
@@ -2947,12 +2947,12 @@
           {
             "level": 0.99,
             "var_pct": 6.6,
-            "es_pct": 9.08
+            "es_pct": 9.07
           },
           {
             "level": 0.999,
             "var_pct": 12.39,
-            "es_pct": 16.1
+            "es_pct": 16.09
           }
         ]
       },
@@ -2967,35 +2967,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.408591,
+            "p_value": 0.397602,
             "min_group_n": 669,
             "min_group_n_half": 333,
             "split_half_p": [
-              0.0969,
-              0.1429
+              0.0809,
+              0.1788
             ],
             "split_half_stable": false,
-            "recent_p": 0.3986,
+            "recent_p": 0.4266,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.6812,
+            "q_value": 0.6549,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.829171,
+            "p_value": 0.832168,
             "min_group_n": 13,
             "min_group_n_half": 6,
             "split_half_p": [
               0.95,
-              0.4306
+              0.4316
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.8717,
+            "q_value": 0.863,
             "verdict": "inconclusive"
           }
         ],
@@ -3051,9 +3051,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 55.6,
-        "vol_percentile": 91.0,
+        "asof": "2026-08-07",
+        "vol_now_pct": 52.4,
+        "vol_percentile": 89.1,
         "high_vol": false,
         "corr_now": 0.27,
         "corr_percentile": 30.9,
@@ -3061,23 +3061,23 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 60.8,
+        "median_daily_aud_m": 59.8,
         "tier": "high",
         "window_days": 60
       }
     },
     "WTC.AX": {
       "status": "ok",
-      "n_days": 2614,
+      "n_days": 2615,
       "start": "2016-04-11",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 51.5,
       "max_drawdown_pct": -79.2,
       "beta_axjo": 1.2,
       "name": "WiseTech(物流软件)",
       "evt": {
         "status": "ok",
-        "xi": 0.285,
+        "xi": 0.284,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.603,
         "n_exceed": 131,
@@ -3089,8 +3089,8 @@
           },
           {
             "level": 0.999,
-            "var_pct": 19.77,
-            "es_pct": 28.93
+            "var_pct": 19.76,
+            "es_pct": 28.88
           }
         ]
       },
@@ -3105,35 +3105,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.067932,
+            "p_value": 0.072927,
             "min_group_n": 500,
             "min_group_n_half": 249,
             "split_half_p": [
-              0.3177,
-              0.3127
+              0.3477,
+              0.3437
             ],
             "split_half_stable": false,
-            "recent_p": 0.3357,
+            "recent_p": 0.3477,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.4476,
+            "q_value": 0.4538,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.035964,
+            "p_value": 0.031968,
             "min_group_n": 10,
             "min_group_n_half": 5,
             "split_half_p": [
               0.0589,
-              0.7273
+              0.6873
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.3756,
+            "q_value": 0.358,
             "verdict": "inconclusive"
           }
         ],
@@ -3189,9 +3189,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 77.6,
-        "vol_percentile": 91.1,
+        "asof": "2026-08-07",
+        "vol_now_pct": 77.3,
+        "vol_percentile": 91.0,
         "high_vol": false,
         "corr_now": 0.24,
         "corr_percentile": 24.0,
@@ -3206,10 +3206,10 @@
     },
     "JHX.AX": {
       "status": "ok",
-      "n_days": 9731,
+      "n_days": 9732,
       "start": "1988-01-29",
-      "end": "2026-08-06",
-      "ann_vol_pct": 33.1,
+      "end": "2026-08-07",
+      "ann_vol_pct": 33.2,
       "max_drawdown_pct": -69.2,
       "beta_axjo": 0.93,
       "name": "James Hardie(建材)",
@@ -3228,7 +3228,7 @@
           {
             "level": 0.999,
             "var_pct": 13.08,
-            "es_pct": 20.45
+            "es_pct": 20.44
           }
         ]
       },
@@ -3243,35 +3243,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.413586,
+            "p_value": 0.395604,
             "min_group_n": 1900,
             "min_group_n_half": 933,
             "split_half_p": [
-              0.5445,
-              0.7542
+              0.5145,
+              0.7692
             ],
             "split_half_stable": false,
-            "recent_p": 0.6404,
+            "recent_p": 0.6464,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.6812,
+            "q_value": 0.6549,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.015984,
+            "p_value": 0.017982,
             "min_group_n": 37,
             "min_group_n_half": 18,
             "split_half_p": [
               0.009,
-              0.6234
+              0.6244
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.3756,
+            "q_value": 0.358,
             "verdict": "rejected"
           }
         ],
@@ -3310,7 +3310,7 @@
             "p90_pct": 7.91,
             "worst_pct": -33.2,
             "best_pct": 18.14,
-            "pct_negative": 43.9
+            "pct_negative": 44.1
           },
           {
             "horizon": 20,
@@ -3320,16 +3320,16 @@
             "p90_pct": 13.88,
             "worst_pct": -31.34,
             "best_pct": 38.51,
-            "pct_negative": 39.9
+            "pct_negative": 39.7
           }
         ]
       },
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 40.5,
-        "vol_percentile": 85.5,
+        "asof": "2026-08-07",
+        "vol_now_pct": 41.1,
+        "vol_percentile": 86.3,
         "high_vol": false,
         "corr_now": 0.58,
         "corr_percentile": 79.4,
@@ -3344,9 +3344,9 @@
     },
     "SHL.AX": {
       "status": "ok",
-      "n_days": 9876,
+      "n_days": 9877,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 43.0,
       "max_drawdown_pct": -90.0,
       "beta_axjo": 0.54,
@@ -3365,8 +3365,8 @@
           },
           {
             "level": 0.999,
-            "var_pct": 15.38,
-            "es_pct": 39.06
+            "var_pct": 15.37,
+            "es_pct": 39.04
           }
         ]
       },
@@ -3381,23 +3381,23 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.046953,
+            "p_value": 0.054945,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
-              0.1978,
-              0.2228
+              0.1818,
+              0.2138
             ],
             "split_half_stable": false,
-            "recent_p": 0.4296,
+            "recent_p": 0.4106,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.3756,
+            "q_value": 0.4396,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.707293,
+            "p_value": 0.705295,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
@@ -3409,7 +3409,7 @@
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.8427,
+            "q_value": 0.8404,
             "verdict": "rejected"
           }
         ],
@@ -3442,13 +3442,13 @@
           },
           {
             "horizon": 5,
-            "n": 493,
+            "n": 494,
             "median_pct": 0.36,
-            "p10_pct": -4.19,
-            "p90_pct": 4.72,
+            "p10_pct": -4.18,
+            "p90_pct": 4.71,
             "worst_pct": -16.03,
             "best_pct": 15.85,
-            "pct_negative": 36.5
+            "pct_negative": 36.6
           },
           {
             "horizon": 20,
@@ -3465,9 +3465,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 24.7,
-        "vol_percentile": 50.7,
+        "asof": "2026-08-07",
+        "vol_now_pct": 24.2,
+        "vol_percentile": 48.6,
         "high_vol": false,
         "corr_now": 0.17,
         "corr_percentile": 24.4,
@@ -3475,16 +3475,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 32.1,
+        "median_daily_aud_m": 32.0,
         "tier": "high",
         "window_days": 60
       }
     },
     "COH.AX": {
       "status": "ok",
-      "n_days": 7811,
+      "n_days": 7812,
       "start": "1995-12-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 30.4,
       "max_drawdown_pct": -73.2,
       "beta_axjo": 0.68,
@@ -3519,35 +3519,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.665335,
+            "p_value": 0.704296,
             "min_group_n": 1516,
             "min_group_n_half": 749,
             "split_half_p": [
               0.1558,
-              0.4715
+              0.4915
             ],
             "split_half_stable": false,
-            "recent_p": 0.6394,
+            "recent_p": 0.5924,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.8234,
+            "q_value": 0.8404,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.819181,
+            "p_value": 0.825175,
             "min_group_n": 30,
             "min_group_n_half": 15,
             "split_half_p": [
               0.4086,
-              0.4196
+              0.4236
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.8717,
+            "q_value": 0.863,
             "verdict": "rejected"
           }
         ],
@@ -3603,9 +3603,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 36.5,
-        "vol_percentile": 83.6,
+        "asof": "2026-08-07",
+        "vol_now_pct": 35.1,
+        "vol_percentile": 81.3,
         "high_vol": false,
         "corr_now": 0.29,
         "corr_percentile": 37.8,
@@ -3613,16 +3613,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 47.5,
+        "median_daily_aud_m": 46.7,
         "tier": "high",
         "window_days": 60
       }
     },
     "AMC.AX": {
       "status": "ok",
-      "n_days": 9877,
+      "n_days": 9878,
       "start": "1988-01-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 23.1,
       "max_drawdown_pct": -43.6,
       "beta_axjo": 0.55,
@@ -3657,35 +3657,35 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.59041,
+            "p_value": 0.588412,
             "min_group_n": 1929,
             "min_group_n_half": 947,
             "split_half_p": [
               0.3556,
-              0.3716
+              0.3606
             ],
             "split_half_stable": false,
-            "recent_p": 0.8821,
+            "recent_p": 0.8881,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.7897,
+            "q_value": 0.7845,
             "verdict": "rejected"
           },
           {
-            "p_value": 0.225774,
+            "p_value": 0.227772,
             "min_group_n": 38,
             "min_group_n_half": 19,
             "split_half_p": [
               0.5704,
-              0.2727
+              0.2867
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5747,
+            "q_value": 0.5921,
             "verdict": "rejected"
           }
         ],
@@ -3724,7 +3724,7 @@
             "p90_pct": 5.22,
             "worst_pct": -23.08,
             "best_pct": 16.62,
-            "pct_negative": 38.3
+            "pct_negative": 38.1
           },
           {
             "horizon": 20,
@@ -3741,9 +3741,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 28.2,
-        "vol_percentile": 82.1,
+        "asof": "2026-08-07",
+        "vol_now_pct": 28.4,
+        "vol_percentile": 82.5,
         "high_vol": false,
         "corr_now": 0.59,
         "corr_percentile": 88.7,
@@ -3751,16 +3751,16 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 30.2,
+        "median_daily_aud_m": 30.7,
         "tier": "high",
         "window_days": 60
       }
     },
     "SUN.AX": {
       "status": "ok",
-      "n_days": 9747,
+      "n_days": 9748,
       "start": "1988-07-29",
-      "end": "2026-08-06",
+      "end": "2026-08-07",
       "ann_vol_pct": 25.8,
       "max_drawdown_pct": -73.6,
       "beta_axjo": 0.84,
@@ -3795,19 +3795,19 @@
         "status": "ok",
         "tests": [
           {
-            "p_value": 0.36963,
+            "p_value": 0.382617,
             "min_group_n": 1903,
             "min_group_n_half": 935,
             "split_half_p": [
-              0.5305,
-              0.044
+              0.5295,
+              0.039
             ],
             "split_half_stable": false,
-            "recent_p": 0.4565,
+            "recent_p": 0.4705,
             "recent_testable": true,
             "recent_significant": false,
             "effect": "星期几",
-            "q_value": 0.6469,
+            "q_value": 0.6549,
             "verdict": "rejected"
           },
           {
@@ -3816,14 +3816,14 @@
             "min_group_n_half": 19,
             "split_half_p": [
               0.1259,
-              0.2078
+              0.2088
             ],
             "split_half_stable": false,
             "recent_p": null,
             "recent_testable": false,
             "recent_significant": false,
             "effect": "月份",
-            "q_value": 0.5922,
+            "q_value": 0.627,
             "verdict": "rejected"
           }
         ],
@@ -3879,9 +3879,9 @@
       "anomaly": {
         "status": "ok",
         "win": 60,
-        "asof": "2026-08-06",
-        "vol_now_pct": 18.7,
-        "vol_percentile": 39.2,
+        "asof": "2026-08-07",
+        "vol_now_pct": 18.3,
+        "vol_percentile": 36.7,
         "high_vol": false,
         "corr_now": 0.07,
         "corr_percentile": 14.4,
@@ -3889,7 +3889,7 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 47.4,
+        "median_daily_aud_m": 47.3,
         "tier": "high",
         "window_days": 60
       }
