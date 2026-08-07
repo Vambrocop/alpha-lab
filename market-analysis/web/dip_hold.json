@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-07T01:09:00Z",
-  "as_of": "2026-08-06",
+  "generated": "2026-08-07T14:10:12Z",
+  "as_of": "2026-08-07",
   "price_start": "2000-01-03",
   "lookback": 252,
   "recovery_floor": -0.03,
@@ -13,16 +13,16 @@
   "any_robust": false,
   "base_rate": {
     "h60": {
-      "up_pct": 67.47,
+      "up_pct": 67.48,
       "mean_pct": 1.81,
       "median_pct": 2.98,
-      "n": 6628
+      "n": 6629
     },
     "h252": {
       "up_pct": 75.25,
       "mean_pct": 7.84,
       "median_pct": 11.03,
-      "n": 6436
+      "n": 6437
     }
   },
   "drawdown_curve": [
@@ -36,7 +36,7 @@
       "up_pct": 62.27,
       "mean_pct": 1.73,
       "median_pct": 3.6,
-      "base_up_pct": 67.47,
+      "base_up_pct": 67.48,
       "base_mean_pct": 1.81,
       "diff_mean": -0.08,
       "ci95_mean": [
@@ -85,7 +85,7 @@
       "up_pct": 55.3,
       "mean_pct": 0.64,
       "median_pct": 1.68,
-      "base_up_pct": 67.47,
+      "base_up_pct": 67.48,
       "base_mean_pct": 1.81,
       "diff_mean": -1.17,
       "ci95_mean": [
@@ -134,7 +134,7 @@
       "up_pct": 55.32,
       "mean_pct": 0.56,
       "median_pct": 1.97,
-      "base_up_pct": 67.47,
+      "base_up_pct": 67.48,
       "base_mean_pct": 1.81,
       "diff_mean": -1.25,
       "ci95_mean": [
@@ -183,7 +183,7 @@
       "up_pct": 61.83,
       "mean_pct": 2.72,
       "median_pct": 4.24,
-      "base_up_pct": 67.47,
+      "base_up_pct": 67.48,
       "base_mean_pct": 1.81,
       "diff_mean": 0.91,
       "ci95_mean": null,
@@ -229,7 +229,7 @@
       "up_pct": 68.64,
       "mean_pct": 5.62,
       "median_pct": 8.47,
-      "base_up_pct": 67.47,
+      "base_up_pct": 67.48,
       "base_mean_pct": 1.81,
       "diff_mean": 3.81,
       "ci95_mean": null,
@@ -715,103 +715,103 @@
     ]
   },
   "single_stocks": {
-    "as_of": "2026-08-06",
+    "as_of": "2026-08-07",
     "survivorship_note": "单股数据仅 20 只活到今天的赢家(AAPL/NVDA/TSLA…):在它们身上回测「跌了买」会因幸存者偏差严重高估——跌 20% 后归零/退市的股(雷曼、Enron、SVB、一堆 SPAC)根本不在数据里。故本表只给「当前距自己 52 周高/低多远」的事实快照,绝不回测、绝不当买入信号。单个公司大跌常是「便宜有便宜的原因」(价值陷阱),指数跌了会随整个美国市场恢复,单股不会都恢复。",
     "current": [
       {
         "ticker": "SNDK",
-        "dd_from_52wk_high_pct": -46.1,
-        "dist_from_52wk_low_pct": 2993.1
+        "dd_from_52wk_high_pct": -47.6,
+        "dist_from_52wk_low_pct": 2905.0
       },
       {
         "ticker": "NFLX",
-        "dd_from_52wk_high_pct": -41.7,
-        "dist_from_52wk_low_pct": 9.0
+        "dd_from_52wk_high_pct": -41.6,
+        "dist_from_52wk_low_pct": 9.1
       },
       {
         "ticker": "HOOD",
-        "dd_from_52wk_high_pct": -40.5,
-        "dist_from_52wk_low_pct": 39.2
+        "dd_from_52wk_high_pct": -38.6,
+        "dist_from_52wk_low_pct": 43.8
       },
       {
         "ticker": "TSLA",
-        "dd_from_52wk_high_pct": -34.8,
-        "dist_from_52wk_low_pct": 7.1
+        "dd_from_52wk_high_pct": -33.7,
+        "dist_from_52wk_low_pct": 8.9
       },
       {
         "ticker": "INTC",
-        "dd_from_52wk_high_pct": -29.2,
-        "dist_from_52wk_low_pct": 404.9
+        "dd_from_52wk_high_pct": -29.0,
+        "dist_from_52wk_low_pct": 406.0
       },
       {
         "ticker": "MU",
-        "dd_from_52wk_high_pct": -27.4,
-        "dist_from_52wk_low_pct": 711.6
+        "dd_from_52wk_high_pct": -28.6,
+        "dist_from_52wk_low_pct": 675.3
       },
       {
         "ticker": "META",
-        "dd_from_52wk_high_pct": -25.1,
-        "dist_from_52wk_low_pct": 12.3
+        "dd_from_52wk_high_pct": -25.0,
+        "dist_from_52wk_low_pct": 12.5
       },
       {
         "ticker": "AMD",
-        "dd_from_52wk_high_pct": -15.8,
-        "dist_from_52wk_low_pct": 223.7
+        "dd_from_52wk_high_pct": -16.1,
+        "dist_from_52wk_low_pct": 222.5
       },
       {
         "ticker": "COST",
-        "dd_from_52wk_high_pct": -13.1,
-        "dist_from_52wk_low_pct": 12.2
-      },
-      {
-        "ticker": "AVGO",
-        "dd_from_52wk_high_pct": -12.5,
-        "dist_from_52wk_low_pct": 46.3
+        "dd_from_52wk_high_pct": -13.6,
+        "dist_from_52wk_low_pct": 11.6
       },
       {
         "ticker": "TSM",
-        "dd_from_52wk_high_pct": -12.4,
-        "dist_from_52wk_low_pct": 86.0
+        "dd_from_52wk_high_pct": -12.8,
+        "dist_from_52wk_low_pct": 85.2
+      },
+      {
+        "ticker": "AVGO",
+        "dd_from_52wk_high_pct": -11.8,
+        "dist_from_52wk_low_pct": 47.6
       },
       {
         "ticker": "GOOGL",
-        "dd_from_52wk_high_pct": -11.1,
-        "dist_from_52wk_low_pct": 83.0
+        "dd_from_52wk_high_pct": -11.7,
+        "dist_from_52wk_low_pct": 81.4
       },
       {
         "ticker": "AAPL",
-        "dd_from_52wk_high_pct": -8.1,
-        "dist_from_52wk_low_pct": 47.1
+        "dd_from_52wk_high_pct": -8.2,
+        "dist_from_52wk_low_pct": 42.4
       },
       {
         "ticker": "MSFT",
-        "dd_from_52wk_high_pct": -7.2,
-        "dist_from_52wk_low_pct": 41.7
+        "dd_from_52wk_high_pct": -6.8,
+        "dist_from_52wk_low_pct": 42.3
       },
       {
         "ticker": "NVDA",
-        "dd_from_52wk_high_pct": -7.0,
-        "dist_from_52wk_low_pct": 32.7
-      },
-      {
-        "ticker": "AMZN",
-        "dd_from_52wk_high_pct": -4.1,
-        "dist_from_52wk_low_pct": 37.0
+        "dd_from_52wk_high_pct": -5.6,
+        "dist_from_52wk_low_pct": 34.7
       },
       {
         "ticker": "LLY",
-        "dd_from_52wk_high_pct": -3.5,
-        "dist_from_52wk_low_pct": 91.9
+        "dd_from_52wk_high_pct": -3.7,
+        "dist_from_52wk_low_pct": 91.5
+      },
+      {
+        "ticker": "AMZN",
+        "dd_from_52wk_high_pct": -2.9,
+        "dist_from_52wk_low_pct": 38.8
       },
       {
         "ticker": "KO",
-        "dd_from_52wk_high_pct": -2.5,
-        "dist_from_52wk_low_pct": 35.0
+        "dd_from_52wk_high_pct": -2.6,
+        "dist_from_52wk_low_pct": 34.9
       },
       {
         "ticker": "BRK-B",
-        "dd_from_52wk_high_pct": 0.0,
-        "dist_from_52wk_low_pct": 13.7
+        "dd_from_52wk_high_pct": -0.8,
+        "dist_from_52wk_low_pct": 12.8
       }
     ]
   },

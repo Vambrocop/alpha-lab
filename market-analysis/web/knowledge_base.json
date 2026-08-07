@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07T01:10:10Z",
+  "generated": "2026-08-07T14:11:19Z",
   "anchor_common": "2026-06-26",
   "days_since_anchor": 42,
   "min_oos_n": 30,
@@ -14,8 +14,8 @@
   "members": [],
   "queue": [
     {
-      "key": "september_sp500",
-      "candidate_id": "cal_f923f81493",
+      "key": "world_cup_year_nasdaq",
+      "candidate_id": "cal_11bf800cae",
       "family": "calendar",
       "verdict": "survive",
       "oos_status": "pending",
@@ -44,7 +44,7 @@
       "verdict": "survive",
       "oos_status": "pending",
       "anchor_date": "2026-06-26",
-      "oos_n": 8,
+      "oos_n": 9,
       "oos_p": null,
       "full_sign": 1,
       "oos_sign": null

@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-07 01:09 UTC",
+ "updated": "2026-08-07 14:10 UTC",
  "items": [
   {
-   "time": "2026-08-07 01:00 UTC",
-   "title": "Meta ordered to pay $567 million into abatement fund as remedy to child harms case in New Mexico",
+   "time": "2026-08-07 13:40 UTC",
+   "title": "U.S. economy unexpectedly lost 23,000 jobs in July",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "CNBC Markets",
    "kind": "auto"
   },
   {
-   "time": "2026-08-07 00:05 UTC",
-   "title": "A 'weaponized' yen: How the U.S.-Japan intervention may reshape global currency markets",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-06 23:14 UTC",
-   "title": "As Alphabet burns through cash on AI, it’s turning back to the bond market",
+   "time": "2026-08-07 13:30 UTC",
+   "title": "How S&P 500 options action may help explain the rising volatility in memory stocks",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-06 22:59 UTC",
-   "title": "Trade Desk shares tumble on earnings miss and weak outlook",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-06 22:23 UTC",
-   "title": "Jim Cramer highlights 5 investing themes — and the stocks to buy for each",
+   "time": "2026-08-07 13:09 UTC",
+   "title": "Jim Cramer's top 10 things to watch in the stock market Friday",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 12:15 UTC",
+   "title": "K-shaped economy shows up in housing: Luxury sales rise as starter-home buyers struggle",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 11:00 UTC",
+   "title": "Kevin O’Leary, aka ‘Mr. Wonderful,’ on crypto, winning in AI and 3 things all business owners must know",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
