@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-07 14:43 UTC",
+ "updated": "2026-08-07 15:41 UTC",
  "items": [
+  {
+   "time": "2026-08-07 15:36 UTC",
+   "title": "Doximity’s stock skyrockets 50% on medical AI excitement. Can the rally last?",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 14:57 UTC",
+   "title": "Crypto’s infrastructure era arrives, with AI agents poised to reshape demand",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-07 13:40 UTC",
    "title": "U.S. economy unexpectedly lost 23,000 jobs in July",
@@ -23,22 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 12:15 UTC",
-   "title": "K-shaped economy shows up in housing: Luxury sales rise as starter-home buyers struggle",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 11:00 UTC",
-   "title": "Kevin O’Leary, aka ‘Mr. Wonderful,’ on crypto, winning in AI and 3 things all business owners must know",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
