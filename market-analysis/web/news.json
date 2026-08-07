@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-07 20:26 UTC",
+ "updated": "2026-08-07 21:06 UTC",
  "items": [
+  {
+   "time": "2026-08-07 20:54 UTC",
+   "title": "Palantir’s stock stages best week since 2024 — showing it’s no longer an AI loser",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 20:41 UTC",
+   "title": "Two reasons why Nvidia’s stock saw its biggest weekly surge in more than a year",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 20:38 UTC",
+   "title": "SpaceX’s stock just had one of its best days ever — with the first lockup expiration now behind it",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 20:22 UTC",
+   "title": "‘SaaSpocalypse’ debate intensifies as software stocks swing wildly",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-07 19:47 UTC",
    "title": "Trump is trying to fire Lisa Cook again. He still wants to stack the Fed with allies.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 19:41 UTC",
-   "title": "Palantir’s stock stages best week since 2024, showing it’s no longer an AI loser",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 19:36 UTC",
-   "title": "Some of the urgency is gone for a Fed rate hike in September after a soft jobs report",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 19:14 UTC",
-   "title": "U.S. economy unexpectedly lost 23,000 jobs in July",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 18:38 UTC",
-   "title": "Trump revives effort to fire Fed's Lisa Cook",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
