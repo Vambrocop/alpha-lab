@@ -1,8 +1,32 @@
 {
- "updated": "2026-08-07 16:38 UTC",
+ "updated": "2026-08-07 17:38 UTC",
  "items": [
   {
-   "time": "2026-08-07 16:34 UTC",
+   "time": "2026-08-07 16:59 UTC",
+   "title": "A huge day and week for Corning as the S&P 500 approaches another record high",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 16:54 UTC",
+   "title": "SpaceX’s stock is having one of its best days ever — with the first lockup expiration now behind it",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 16:47 UTC",
+   "title": "Crypto’s infrastructure era arrives, with AI agents poised to reshape demand",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-07 16:40 UTC",
    "title": "Trump teased an Iran deal that didn't come, but markets soared. Here’s why it keeps happening",
    "impact": "neutral",
    "note": "",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 16:28 UTC",
-   "title": "Chesky says Airbnb will spend ‘a lot more’ on AI as earnings beat and stock surges 15%",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 16:21 UTC",
-   "title": "Meta ordered to pay $567 million into abatement fund as remedy to child harms case in New Mexico",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-07 16:08 UTC",
-   "title": "Crypto’s infrastructure era arrives, with AI agents poised to reshape demand",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
