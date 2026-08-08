@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-08 13:36 UTC",
+ "updated": "2026-08-08 21:17 UTC",
  "items": [
+  {
+   "time": "2026-08-08 15:43 UTC",
+   "title": "Elevator giant Otis wants to be a defensive play in a volatile market. It has to prove itself first",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-08 15:00 UTC",
+   "title": "Next big push in ETF industry? Why these risk assets are gaining traction as interest rate uncertainty persists",
+   "impact": "negative",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-08 14:07 UTC",
+   "title": "Here’s how we played the massive rebound in AI stocks this week",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-08 13:28 UTC",
    "title": "Berkshire earnings rose last quarter and CEO Greg Abel is starting to deploy Buffett's massive cash hoard",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-08 12:00 UTC",
-   "title": "Elevator giant Otis wants to be a defensive play in an volatile market. It has to prove itself first",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-08 11:49 UTC",
-   "title": "A record-breaking week for options powers S&P 500 surge; volatility gauge is near 2026 low",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-08 11:00 UTC",
-   "title": "SpaceX’s Nvidia deal could be bad news for neoclouds like CoreWeave and Nebius, analysts say",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
