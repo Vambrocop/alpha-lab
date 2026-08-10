@@ -1,8 +1,8 @@
 {
- "updated": "2026-08-10 21:11 UTC",
+ "updated": "2026-08-10 22:12 UTC",
  "items": [
   {
-   "time": "2026-08-10 21:09 UTC",
+   "time": "2026-08-10 22:09 UTC",
    "title": "Nvidia lines up $500 billion in financing as CEO Jensen Huang tells CNBC his chips are ‘investable asset’",
    "impact": "positive",
    "note": "",
@@ -10,35 +10,35 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-10 20:46 UTC",
+   "time": "2026-08-10 21:48 UTC",
+   "title": "Trump Media posts $238 million second-quarter loss as crypto declines",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 21:37 UTC",
+   "title": "Rocket Lab reveals some big plans, but its stock is dropping on mixed earnings",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 21:32 UTC",
+   "title": "Wall Street thinks inflation is under control. Here’s why investors shouldn’t buy it.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 21:23 UTC",
    "title": "Trump says he spoke recently to Fed Chairman Warsh, denies regular calls",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 20:08 UTC",
-   "title": "SpaceX stock rebounds, closing above $135 IPO price for first time in weeks",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 20:00 UTC",
-   "title": "Good news for stock-market bulls: Corporate earnings growth is no longer being driven just by tech",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 19:42 UTC",
-   "title": "This Nvidia change could spell good news for Micron",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-10T14:18:56Z",
+  "generated": "2026-08-10T22:13:02Z",
   "source": "Lucca & Moench 2015 (JF) prior; Federal Reserve FOMC scheduled dates",
   "n_fomc_dates_in_list": 216,
   "n_fomc_days": 213,
@@ -11,7 +11,7 @@
     "diff_pp": 2.0,
     "ci95": [
       -4.69,
-      8.6
+      8.61
     ],
     "p": 0.544,
     "n": 213
@@ -34,8 +34,8 @@
     {
       "decade": "2020s",
       "pre_fomc_up_pct": 45.3,
-      "base_up_pct": 54.5,
-      "diff_pp": -9.2,
+      "base_up_pct": 54.4,
+      "diff_pp": -9.1,
       "n": 53
     }
   ],
