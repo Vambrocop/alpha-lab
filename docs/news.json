@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-10 19:46 UTC",
+ "updated": "2026-08-10 20:28 UTC",
  "items": [
+  {
+   "time": "2026-08-10 20:28 UTC",
+   "title": "Nvidia teams up with Wall Street asset managers on $500 billion AI infrastructure push",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 20:08 UTC",
+   "title": "SpaceX stock rebounds, closing above $135 IPO price for first time in weeks",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 20:00 UTC",
+   "title": "Good news for stock-market bulls: Corporate earnings growth is no longer being driven just by tech",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-10 19:42 UTC",
    "title": "This Nvidia change could spell good news for Micron",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 19:18 UTC",
-   "title": "Microsoft’s stock is charging back. Here’s the case for it to rally another 30%.",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 19:09 UTC",
-   "title": "Meta's latest model advances Zuckerberg's vision for personal AI assistants",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 18:58 UTC",
-   "title": "Nvidia teams up with Wall Street asset managers on $500 billion AI infrastructure push",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
