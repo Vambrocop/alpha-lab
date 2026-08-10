@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-10 14:18 UTC",
+ "updated": "2026-08-10 14:48 UTC",
  "items": [
+  {
+   "time": "2026-08-10 14:31 UTC",
+   "title": "Intel plans $15 billion stock offering as AI demand accelerates",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 14:28 UTC",
+   "title": "The stocks of these ‘toll takers’ could be the AI boom’s next big winners",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 14:23 UTC",
+   "title": "Berkshire Hathaway is digging into its nearly $400 billion in cash — and buying a stock it knows very well",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-10 14:14 UTC",
    "title": "Barrick’s stock slides after dispute settlement sets the scene for IPO of mining company’s gold assets",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 14:00 UTC",
-   "title": "This is the ZIP Code with the hottest housing market in the country right now",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 13:39 UTC",
-   "title": "World's biggest chipmaker TSMC's sales surge 45% amid buoyant AI demand",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 13:30 UTC",
-   "title": "The U.S. economy is shedding jobs. Here’s why that’s good news for stocks.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
