@@ -1,10 +1,18 @@
 {
- "updated": "2026-08-10 20:28 UTC",
+ "updated": "2026-08-10 21:11 UTC",
  "items": [
   {
-   "time": "2026-08-10 20:28 UTC",
-   "title": "Nvidia teams up with Wall Street asset managers on $500 billion AI infrastructure push",
+   "time": "2026-08-10 21:09 UTC",
+   "title": "Nvidia lines up $500 billion in financing as CEO Jensen Huang tells CNBC his chips are ‘investable asset’",
    "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-10 20:46 UTC",
+   "title": "Trump says he spoke recently to Fed Chairman Warsh, denies regular calls",
+   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
@@ -28,14 +36,6 @@
   {
    "time": "2026-08-10 19:42 UTC",
    "title": "This Nvidia change could spell good news for Micron",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-10 19:31 UTC",
-   "title": "Fed Chair Kevin Warsh promises 2% inflation, but skyrocketing U.S. debt makes that a pipe dream",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
