@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07T22:12:22Z",
+  "generated": "2026-08-10T14:19:37Z",
   "horizon_days": 20,
   "model_calibration": {
     "curve": [
@@ -50,12 +50,12 @@
       "hit_pct": 34.8
     },
     "综合读数倾向(live)": {
-      "n_scored": 14,
+      "n_scored": 15,
       "n_pending": 18,
-      "hit_pct": 35.7
+      "hit_pct": 40.0
     },
     "试胆玩具(≈掷硬币基准)": {
-      "n_scored": 6687,
+      "n_scored": 6688,
       "n_pending": 0,
       "hit_pct": 49.9
     },
@@ -65,7 +65,7 @@
       "hit_pct": null
     },
     "LLM前瞻方向(出格·live)": {
-      "n_scored": 9,
+      "n_scored": 10,
       "n_pending": 0,
       "hit_pct": 0.0
     }
