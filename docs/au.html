@@ -83,6 +83,8 @@
 
 <div id="backtest-disclosure" style="margin-top:16px"></div>
 
+<div id="dip-study" style="margin-top:16px"></div>
+
 <div class="mut" data-i18n="foot"></div>
 
 <div id="modal" role="dialog" aria-modal="true" aria-label="体检 / checkup" onclick="if(event.target===this)closeChk()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:50;align-items:center;justify-content:center;padding:16px"><div id="mbody" style="background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px;max-width:480px;width:100%;max-height:88vh;overflow:auto"></div></div>
@@ -151,7 +153,26 @@ const I18N={
   btFmg:{zh:"FMG 实证截断日",en:"FMG empirical cutoff"},btGen:{zh:"生成于",en:"generated"},
   btSurv:{zh:"幸存者偏差",en:"Survivorship bias"},btDiv:{zh:"股息口径顺风",en:"Dividend-convention tailwind"},
   btIndep:{zh:"非独立性",en:"Non-independence"},btPhase:{zh:"相位锁定",en:"Phase-lock"},btDesc:{zh:"描述性",en:"Descriptive only"},
-  btErr:{zh:"拉不到 au_backtest.json。",en:"Can't load au_backtest.json."}
+  btErr:{zh:"拉不到 au_backtest.json。",en:"Can't load au_backtest.json."},
+  // ── 📉 跌了买·持有一年(诚实账·噪音识别·au_dip_hold.json) ──────────────
+  dpH:{zh:"📉 跌了买·持有一年(诚实账 · 怎么识别「噪音」)",en:"📉 Buy-the-dip, hold one year (honest ledger · how to spot 'noise')"},
+  dpIntro:{zh:"「浅跌≈噪音」到底怎么识别?一个回撤档是<b>噪音</b>=买在它之后、持有 1 年的收益,和「随便哪天买」的基率<b>分不开</b>——这个跌没带来信息。识别的尺子就是下表每格的<b>裁决</b>:CI(收益均值的 95% 区间)能不能可靠地和基率分开。纯描述、非买入信号、会错。ASX200 · 全历史 · 澳洲税务居民持有 >12 个月享 CGT 折扣,故用「持有 1 年」口径。",
+           en:"How do you tell if a shallow dip is just <b>noise</b>? A drawdown bucket is noise when the 1-year forward return after it is <b>indistinguishable</b> from the base rate of buying on any random day — the dip carried no information. The ruler is the <b>verdict</b> in each row: can the CI (95% band on the mean return) reliably separate from the base rate? Descriptive only, not a buy signal, can be wrong. ASX200 · full history · '1-year hold' framing (AU tax residents get the CGT discount past 12 months)."},
+  dpBaseUp:{zh:"基率·随便哪天买·持1年上涨",en:"Base · any day · 1yr up"},
+  dpBaseMean:{zh:"基率·平均收益",en:"Base · mean return"},
+  dpCThr:{zh:"回撤档",en:"Drawdown"},dpCInd:{zh:"独立聚类",en:"indep. clusters"},dpCUp:{zh:"持1年上涨%",en:"1yr up%"},dpCMean:{zh:"平均%",en:"mean%"},dpCDiff:{zh:"vs基率",en:"vs base"},dpCCI:{zh:"95%区间(均值)",en:"95% CI (mean)"},dpCVer:{zh:"裁决",en:"Verdict"},
+  dpVSig:{zh:"信号",en:"signal"},dpVNoise:{zh:"噪音",en:"noise"},dpVSmall:{zh:"样本太少·测不了",en:"too few · can't tell"},
+  dpVSigTip:{zh:"CI 下界高于基率——跌完的收益能可靠地和「随便买」分开=真信号(两个市场里少见)",en:"CI lower bound above base — forward returns reliably separate from random entry = a real signal (rare across both markets)"},
+  dpVNoiseTip:{zh:"CI 跨过基率——点估计看着高,但几次危机的样本量下那点「高」在运气范围内=分不开=噪音",en:"CI straddles base — point estimate looks higher but is within luck's range given so few crises = indistinguishable = noise"},
+  dpVSmallTip:{zh:"独立聚类 < 8,样本太少,连测都测不了(不知是噪音还是信号)",en:"Fewer than 8 independent clusters — too few to test (can't tell noise from signal)"},
+  dpCIsmall:{zh:"样本不足",en:"n too small"},
+  dpLegend:{zh:"↑「裁决」就是噪音识别器:<b style='color:var(--grn)'>信号</b>=CI 整段在基率上方,分得开;<b style='color:var(--amb)'>噪音</b>=CI 跨过基率,分不开;<b style='color:var(--mut)'>测不了</b>=独立危机太少。所以识别噪音<b>不是看「跌了多少%」,是看「跌完的收益能不能可靠地和随便买分开」</b>。",
+            en:"↑ The verdict IS the noise detector: <b style='color:var(--grn)'>signal</b> = CI entirely above base (separable); <b style='color:var(--amb)'>noise</b> = CI straddles base (inseparable); <b style='color:var(--mut)'>can't tell</b> = too few independent crises. Spotting noise <b>isn't about how many % it fell — it's whether the forward return reliably separates from buying at random.</b>"},
+  dpLow:{zh:"买在 52 周最低点附近",en:"Buying near the 52-week low"},
+  dpLowNote:{zh:"澳股买在最低点附近历史上反而是好入场(距低点 ≤2% 时持 1 年上涨 %UP%,基率 %BASE%)——与美股相反(美股接飞刀最差)。ASX 更均值回归(银行/矿业/高股息),这是市场结构差异,不是普适规律。",
+             en:"On the ASX, buying near the low was historically a decent entry (within 2% of the low → 1yr up %UP% vs base %BASE%) — opposite of the US 'falling knife'. The ASX mean-reverts more (banks/miners/high-yield); a structural difference, not a universal law."},
+  dpMoreExp:{zh:"展开:完整诚实说明(去聚集/前向窗去重叠/幸存者/体制依赖)",en:"Expand: full honesty notes (de-clustering / window de-overlap / survivorship / regime)"},
+  dpErr:{zh:"跌了买研究生成中——尚未拉到 au_dip_hold.json。",en:"Dip study is being generated — au_dip_hold.json not available yet."}
 };
 const $=id=>document.getElementById(id);
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));  // 含单引号:🩺按钮把ticker放进单引号JS串(审计防御纵深)
@@ -160,7 +181,7 @@ const sgn=v=>num(v)?((v>=0?"+":"")+v+"%"):"—";
 const stripMd=s=>String(s==null?"":s).replace(/\*\*/g,"");
 let LANG="zh"; try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
 const t=k=>(I18N[k]&&I18N[k][LANG])||k;
-let DATA=null,CHK=null,PICKS=null,BT=null,sortCol="d1",dir=-1;   // CHK=au_checkup.json;PICKS=au_picks.json;BT=au_backtest.json(拉不到则显示"生成中")
+let DATA=null,CHK=null,PICKS=null,BT=null,DIP=null,sortCol="d1",dir=-1;   // CHK=au_checkup.json;PICKS=au_picks.json;BT=au_backtest.json(拉不到则显示"生成中");DIP=au_dip_hold.json(跌了买/噪音)
 
 function pn(v){if(v==null)return '<span class="mut">—</span>';return `<span class="${v>=0?'pos':'neg'}">${v>=0?'+':''}${v}</span>`;}
 
@@ -229,7 +250,7 @@ function renderExcl(){
   $("excl").textContent=`${t("excl")}: ${items}`;
 }
 
-function redraw(){applyStatic();renderOverview();renderTable();renderExcl();renderPicks();renderBacktest();
+function redraw(){applyStatic();renderOverview();renderTable();renderExcl();renderPicks();renderBacktest();renderDip();
   $("src").textContent=(DATA?`${t("live")} ${(DATA.stocks||[]).length} · ${t("asof")} ${DATA.as_of||""}`:"");}
 
 // ── 🎯 荐股(独立计分·B3) —— 数据=au_picks.json(拉不到则整段留空,不报错刷屏) ──────
@@ -332,6 +353,56 @@ function renderBacktest(){
     el.innerHTML=h;
   }catch(e){el.innerHTML=`<div class="bt-card">⏳ ${t("btGenerating")}</div>`;}
 }
+
+// ── 📉 跌了买·持有一年(数据=au_dip_hold.json;裁决=噪音识别器·纯描述非买入信号) ──
+function _verdictBadge(v){
+  if(v==="robust-across-crises") return {txt:t("dpVSig"),   color:"var(--grn)", tip:t("dpVSigTip")};
+  if(v==="crisis-driven-fragile")return {txt:t("dpVNoise"), color:"var(--amb)", tip:t("dpVNoiseTip")};
+  return {txt:t("dpVSmall"), color:"var(--mut)", tip:t("dpVSmallTip")};   // described-only
+}
+function renderDip(){
+  const el=$("dip-study");
+  if(!DIP){el.innerHTML=`<div class="bt-card">⏳ ${t("dpErr")}</div>`;return;}
+  try{
+    const b=(DIP.base_rate&&DIP.base_rate.h252)||{};
+    let h=`<h2 style="border-top:1px solid var(--border);padding-top:16px">${t("dpH")}</h2>`
+      +`<p class="sub" style="color:var(--mut);font-size:.82rem;margin:0 0 8px;line-height:1.55">${t("dpIntro")}</p>`;
+    // 基率两张卡(诚实参照系)
+    h+=`<div class="pk-stats">`
+      +`<div class="pk-stat"><div class="v">${num(b.up_pct)?b.up_pct+"%":"—"}</div><div class="l">${t("dpBaseUp")}</div></div>`
+      +`<div class="pk-stat"><div class="v ${num(b.mean_pct)&&b.mean_pct>=0?'pos':'neg'}">${sgn(b.mean_pct)}</div><div class="l">${t("dpBaseMean")}</div></div>`
+      +`</div>`;
+    // 主表:只列持有1年(252d·CGT口径)那档
+    const rows=(DIP.drawdown_curve||[]).filter(c=>c.horizon===252);
+    h+=`<div style="overflow-x:auto"><table style="margin-top:6px"><thead><tr>`
+      +`<th style="text-align:left">${t("dpCThr")}</th><th>${t("dpCInd")}</th><th>${t("dpCUp")}</th>`
+      +`<th>${t("dpCMean")}</th><th>${t("dpCDiff")}</th><th>${t("dpCCI")}</th><th style="text-align:left">${t("dpCVer")}</th></tr></thead><tbody>`;
+    rows.forEach(c=>{
+      const vb=_verdictBadge(c.verdict);
+      const ci=Array.isArray(c.ci95_mean)?`[${c.ci95_mean[0]}, ${c.ci95_mean[1]}]`:`<span style="color:var(--mut)">${t("dpCIsmall")}</span>`;
+      const diff=num(c.diff_mean)?`<span class="${c.diff_mean>=0?'pos':'neg'}">${(c.diff_mean>=0?"+":"")+c.diff_mean}</span>`:"—";
+      h+=`<tr><td style="text-align:left">≥${esc(c.dd_threshold_pct)}%</td><td>${esc(c.n_independent)}</td>`
+        +`<td>${num(c.up_pct)?c.up_pct+"%":"—"}</td><td>${sgn(c.mean_pct)}</td><td>${diff}</td><td>${ci}</td>`
+        +`<td style="text-align:left"><b style="color:${vb.color}" title="${esc(vb.tip)}">${vb.txt}</b></td></tr>`;
+    });
+    h+=`</tbody></table></div>`;
+    // 图例=噪音识别器(蓝框,复用 pk-launch 骨架改色)
+    h+=`<div class="pk-launch" style="background:rgba(88,166,255,.08);border-color:var(--blu);color:#b7d4ff">${t("dpLegend")}</div>`;
+    // 距52周低点(澳股好入场·与美股接飞刀相反)
+    const lp=(DIP.low_proximity||[]).find(x=>x.within_pct===2);
+    if(lp){
+      const note=t("dpLowNote").replace("%UP%",num(lp.up_pct)?lp.up_pct+"%":"—").replace("%BASE%",num(b.up_pct)?b.up_pct+"%":"—");
+      h+=`<h3>${t("dpLow")}</h3><p class="bt-meta">${note}</p>`;
+    }
+    // 完整诚实说明
+    h+=`<details class="vp-more"><summary>${t("dpMoreExp")}</summary><ul class="bt-decl bt-meta" style="margin-top:8px">`
+      +(DIP.honesty||[]).map(x=>`<li>${esc(x)}</li>`).join("")+`</ul></details>`;
+    const gen=esc((DIP.generated||"").slice(0,10));
+    h+=`<div class="bt-meta">${esc(DIP.index_label||"ASX200")} · ${esc(DIP.price_start||"")} → ${esc(DIP.as_of||"")}`
+      +(gen?` · ${LANG==="en"?"generated":"生成"} ${gen}`:"")+`</div>`;
+    el.innerHTML=h;
+  }catch(e){el.innerHTML=`<div class="bt-card">⏳ ${t("dpErr")}</div>`;}
+}
 // ── 🩺 体检模态(数据=au_checkup.json;风险画像·非荐股非预测) ──────────────
 function _kv(label,val){return `<div style="display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px dashed var(--border)"><span class="mut" style="margin:0;border:0;padding:0">${label}</span><b style="font-variant-numeric:tabular-nums">${val}</b></div>`;}
 function showChk(tk){
@@ -374,7 +445,8 @@ async function load(){
   CHK=await g("au_checkup.json")||await g("https://vambrocop.github.io/valpha-lab/au_checkup.json");  // fail-soft:拉不到则无体检列
   PICKS=await g("au_picks.json")||await g("https://vambrocop.github.io/valpha-lab/au_picks.json");    // fail-soft:拉不到则该区显错误提示
   BT=await g("au_backtest.json")||await g("https://vambrocop.github.io/valpha-lab/au_backtest.json"); // fail-soft:拉不到则显"生成中"(回测由另一条建造线产出,暂缺是预期状态)
-  renderPicks();renderBacktest();
+  DIP=await g("au_dip_hold.json")||await g("https://vambrocop.github.io/valpha-lab/au_dip_hold.json"); // fail-soft:拉不到则显"生成中"(跌了买/噪音研究)
+  renderPicks();renderBacktest();renderDip();
   if(!DATA){
     $("src").textContent=t("err");
     const msg=LANG==="en"?"Failed to load — refresh later":"加载失败，请稍后刷新";
