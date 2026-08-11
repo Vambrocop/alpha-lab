@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-11 21:22 UTC",
+ "updated": "2026-08-11 22:17 UTC",
  "items": [
+  {
+   "time": "2026-08-11 22:09 UTC",
+   "title": "CoreWeave stock pops 12% as revenue doubles on accelerating AI infrastructure demand",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-11 21:49 UTC",
+   "title": "Super Micro’s earnings report brings more good news, and the stock is climbing",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-11 21:36 UTC",
+   "title": "Trump administration ends Medicaid, CHIP funding for gender-affirming care for children",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-11 21:17 UTC",
    "title": "CoreWeave’s stock soars as earnings show major AI momentum",
@@ -10,35 +34,11 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-11 21:10 UTC",
-   "title": "CoreWeave stock pops 15% as revenue doubles on accelerating AI infrastructure demand",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
    "time": "2026-08-11 21:00 UTC",
    "title": "‘The market is obviously on fire’: Should I take $1,000 from my brokerage account to pay off my car loan?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-11 20:32 UTC",
-   "title": "Oracle’s stock has taken a hit as AI spending concerns resurface",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-11 20:26 UTC",
-   "title": "Polymarket makes moves to get house in order before expected boom times for prediction markets this fall",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]

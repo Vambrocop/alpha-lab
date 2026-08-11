@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-11T14:18:46Z",
+  "generated": "2026-08-11T22:18:01Z",
   "caveat": "这是澳股的**风险画像**，描述它历史上是什么样——**不预测涨跌、不荐股、不给买卖点**。β=对 ASX200(^AXJO) 的敏感度（风险特征非收益承诺）；流动性档位=60日中位日成交额的机械分档（低档票点差/滑点风险高）。**不含 franking（红利抵免）**——无可靠免费数据源，宁缺勿猜；税务影响请咨询专业人士。数据不足的票如实标注。ASX 本地日=交易日。",
   "benchmark": "ASX200 (^AXJO)",
   "min_days": 250,
@@ -128,7 +128,7 @@
             "p90_pct": 6.31,
             "worst_pct": -18.21,
             "best_pct": 36.49,
-            "pct_negative": 37.7
+            "pct_negative": 37.9
           },
           {
             "horizon": 20,
@@ -252,7 +252,7 @@
             "horizon": 1,
             "n": 447,
             "median_pct": 0.07,
-            "p10_pct": -2.29,
+            "p10_pct": -2.3,
             "p90_pct": 2.79,
             "worst_pct": -7.87,
             "best_pct": 13.26,
@@ -266,7 +266,7 @@
             "p90_pct": 5.4,
             "worst_pct": -17.55,
             "best_pct": 17.86,
-            "pct_negative": 40.8
+            "pct_negative": 40.4
           },
           {
             "horizon": 20,
@@ -414,7 +414,7 @@
             "p90_pct": 12.53,
             "worst_pct": -25.19,
             "best_pct": 54.09,
-            "pct_negative": 39.0
+            "pct_negative": 39.3
           }
         ]
       },
@@ -532,17 +532,17 @@
             "p90_pct": 2.63,
             "worst_pct": -12.95,
             "best_pct": 17.35,
-            "pct_negative": 44.3
+            "pct_negative": 44.5
           },
           {
             "horizon": 5,
             "n": 493,
             "median_pct": 0.17,
             "p10_pct": -5.65,
-            "p90_pct": 5.52,
+            "p90_pct": 5.57,
             "worst_pct": -19.96,
             "best_pct": 27.5,
-            "pct_negative": 41.2
+            "pct_negative": 41.0
           },
           {
             "horizon": 20,
@@ -552,7 +552,7 @@
             "p90_pct": 9.84,
             "worst_pct": -39.82,
             "best_pct": 47.22,
-            "pct_negative": 38.9
+            "pct_negative": 38.7
           }
         ]
       },
@@ -680,7 +680,7 @@
             "p90_pct": 5.54,
             "worst_pct": -19.43,
             "best_pct": 14.66,
-            "pct_negative": 40.0
+            "pct_negative": 40.2
           },
           {
             "horizon": 20,
@@ -828,7 +828,7 @@
             "p90_pct": 10.37,
             "worst_pct": -37.7,
             "best_pct": 40.78,
-            "pct_negative": 36.2
+            "pct_negative": 36.0
           }
         ]
       },
@@ -966,7 +966,7 @@
             "p90_pct": 10.87,
             "worst_pct": -30.34,
             "best_pct": 25.46,
-            "pct_negative": 34.6
+            "pct_negative": 34.8
           }
         ]
       },
@@ -1139,7 +1139,7 @@
         "status": "ok",
         "xi": 0.405,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
-        "extremal_index": 0.429,
+        "extremal_index": 0.425,
         "n_exceed": 273,
         "var_es": [
           {
@@ -1204,8 +1204,8 @@
         "horizon": 20,
         "level": 0.9,
         "lower_pct": -14.91,
-        "upper_pct": 14.07,
-        "width_pct": 28.98,
+        "upper_pct": 14.08,
+        "width_pct": 28.99,
         "empirical_coverage": 0.939,
         "n_test": 82,
         "n_windows": 272
@@ -1217,18 +1217,18 @@
           {
             "horizon": 1,
             "n": 273,
-            "median_pct": -0.1,
+            "median_pct": 0.0,
             "p10_pct": -6.93,
-            "p90_pct": 4.63,
+            "p90_pct": 4.74,
             "worst_pct": -25.72,
             "best_pct": 17.94,
-            "pct_negative": 50.2
+            "pct_negative": 49.8
           },
           {
             "horizon": 5,
             "n": 273,
             "median_pct": 0.0,
-            "p10_pct": -18.29,
+            "p10_pct": -18.8,
             "p90_pct": 11.21,
             "worst_pct": -54.63,
             "best_pct": 132.26,
@@ -1237,12 +1237,12 @@
           {
             "horizon": 20,
             "n": 273,
-            "median_pct": 0.66,
+            "median_pct": 0.64,
             "p10_pct": -30.4,
             "p90_pct": 25.69,
             "worst_pct": -68.07,
             "best_pct": 141.94,
-            "pct_negative": 47.6
+            "pct_negative": 48.0
           }
         ]
       },
@@ -1380,7 +1380,7 @@
             "p90_pct": 7.97,
             "worst_pct": -13.63,
             "best_pct": 18.06,
-            "pct_negative": 40.3
+            "pct_negative": 40.0
           }
         ]
       },
@@ -1518,7 +1518,7 @@
             "p90_pct": 8.41,
             "worst_pct": -13.24,
             "best_pct": 23.64,
-            "pct_negative": 43.0
+            "pct_negative": 42.7
           }
         ]
       },
@@ -1656,7 +1656,7 @@
             "p90_pct": 13.49,
             "worst_pct": -58.88,
             "best_pct": 36.73,
-            "pct_negative": 36.4
+            "pct_negative": 36.6
           }
         ]
       },
@@ -1926,7 +1926,7 @@
             "p90_pct": 5.26,
             "worst_pct": -26.54,
             "best_pct": 27.09,
-            "pct_negative": 42.8
+            "pct_negative": 43.0
           },
           {
             "horizon": 20,
@@ -2124,7 +2124,7 @@
           {
             "level": 0.999,
             "var_pct": 9.75,
-            "es_pct": 13.91
+            "es_pct": 13.92
           }
         ]
       },
@@ -2216,7 +2216,7 @@
             "p90_pct": 12.65,
             "worst_pct": -50.87,
             "best_pct": 30.8,
-            "pct_negative": 39.4
+            "pct_negative": 39.8
           }
         ]
       },
@@ -2344,7 +2344,7 @@
             "p90_pct": 6.31,
             "worst_pct": -44.87,
             "best_pct": 60.0,
-            "pct_negative": 39.5
+            "pct_negative": 39.3
           },
           {
             "horizon": 20,
@@ -2482,7 +2482,7 @@
             "p90_pct": 7.76,
             "worst_pct": -35.9,
             "best_pct": 37.82,
-            "pct_negative": 39.7
+            "pct_negative": 39.5
           },
           {
             "horizon": 20,
@@ -2492,7 +2492,7 @@
             "p90_pct": 17.02,
             "worst_pct": -61.5,
             "best_pct": 52.26,
-            "pct_negative": 37.3
+            "pct_negative": 37.7
           }
         ]
       },
@@ -2537,7 +2537,7 @@
           },
           {
             "level": 0.999,
-            "var_pct": 21.82,
+            "var_pct": 21.81,
             "es_pct": 29.96
           }
         ]
@@ -2620,7 +2620,7 @@
             "p90_pct": 15.0,
             "worst_pct": -33.33,
             "best_pct": 70.0,
-            "pct_negative": 38.5
+            "pct_negative": 38.8
           },
           {
             "horizon": 20,
@@ -2630,7 +2630,7 @@
             "p90_pct": 23.08,
             "worst_pct": -60.0,
             "best_pct": 78.0,
-            "pct_negative": 45.6
+            "pct_negative": 45.3
           }
         ]
       },
@@ -2758,7 +2758,7 @@
             "p90_pct": 7.55,
             "worst_pct": -56.87,
             "best_pct": 39.83,
-            "pct_negative": 42.3
+            "pct_negative": 42.0
           },
           {
             "horizon": 20,
@@ -2896,7 +2896,7 @@
             "p90_pct": 11.18,
             "worst_pct": -25.0,
             "best_pct": 42.86,
-            "pct_negative": 38.3
+            "pct_negative": 37.7
           },
           {
             "horizon": 20,
@@ -2906,7 +2906,7 @@
             "p90_pct": 21.23,
             "worst_pct": -33.59,
             "best_pct": 100.0,
-            "pct_negative": 39.3
+            "pct_negative": 39.6
           }
         ]
       },
@@ -3090,7 +3090,7 @@
           {
             "level": 0.999,
             "var_pct": 19.73,
-            "es_pct": 28.78
+            "es_pct": 28.77
           }
         ]
       },
@@ -3310,7 +3310,7 @@
             "p90_pct": 7.91,
             "worst_pct": -33.2,
             "best_pct": 18.14,
-            "pct_negative": 44.1
+            "pct_negative": 44.4
           },
           {
             "horizon": 20,
@@ -3320,7 +3320,7 @@
             "p90_pct": 13.88,
             "worst_pct": -31.34,
             "best_pct": 38.51,
-            "pct_negative": 39.7
+            "pct_negative": 39.9
           }
         ]
       },
@@ -3458,7 +3458,7 @@
             "p90_pct": 9.44,
             "worst_pct": -28.17,
             "best_pct": 37.5,
-            "pct_negative": 41.9
+            "pct_negative": 42.1
           }
         ]
       },
@@ -3596,7 +3596,7 @@
             "p90_pct": 12.17,
             "worst_pct": -37.4,
             "best_pct": 27.52,
-            "pct_negative": 35.5
+            "pct_negative": 35.7
           }
         ]
       },
@@ -3724,7 +3724,7 @@
             "p90_pct": 5.22,
             "worst_pct": -23.08,
             "best_pct": 16.62,
-            "pct_negative": 38.3
+            "pct_negative": 37.9
           },
           {
             "horizon": 20,
@@ -3862,7 +3862,7 @@
             "p90_pct": 6.59,
             "worst_pct": -22.35,
             "best_pct": 25.27,
-            "pct_negative": 38.8
+            "pct_negative": 38.6
           },
           {
             "horizon": 20,
@@ -3872,7 +3872,7 @@
             "p90_pct": 11.7,
             "worst_pct": -27.34,
             "best_pct": 38.59,
-            "pct_negative": 35.9
+            "pct_negative": 36.1
           }
         ]
       },
