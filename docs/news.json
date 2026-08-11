@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-11 14:18 UTC",
+ "updated": "2026-08-11 14:48 UTC",
  "items": [
+  {
+   "time": "2026-08-11 14:45 UTC",
+   "title": "Intel upsizes stock offering to $20 billion at $95 per share as AI demand accelerates",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-11 14:21 UTC",
+   "title": "Wall Street thinks inflation is under control. Here’s why investors shouldn’t buy it.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-11 14:15 UTC",
    "title": "Polymarket makes moves to get house in order before expected boom times for prediction markets this fall",
@@ -23,22 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-11 13:39 UTC",
-   "title": "This fund manager tunes out AI hype to flag the infrastructure stocks to buy now. Think roads, water and telecom towers.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-11 12:15 UTC",
-   "title": "‘The market is obviously on fire’: Should I take $1,000 from my brokerage account to pay off my car loan?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
