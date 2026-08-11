@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-11T19:51:36.668066+00:00",
+  "generated": "2026-08-11T20:30:09.264135+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -253,13 +253,13 @@
       "kind": "fred",
       "provider": "FRED",
       "ticker": "UNRATE",
-      "source": "live_api",
-      "status": "ok",
+      "source": "cache_after_error",
+      "status": "cache",
       "rows": 318,
       "last_date": "2026-07-01",
       "age_days": 41,
       "stale_after_days": 120,
-      "error": null
+      "error": "502 Server Error: Bad Gateway for url: https://api.stlouisfed.org/fred/series/observations?series_id=UNRATE&api_key=fa035833bf14face9096716ccffb032d&file_type=json&observation_start=2000-01-01"
     },
     "fred:YIELD_10Y": {
       "name": "YIELD_10Y",
@@ -589,8 +589,8 @@
   },
   "summary": {
     "total": 45,
-    "ok": 45,
-    "cache": 0,
+    "ok": 44,
+    "cache": 1,
     "stale": 0,
     "missing": 0,
     "freshness": "ok"
