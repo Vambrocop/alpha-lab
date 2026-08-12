@@ -1,6 +1,6 @@
 """au_pick_backtest.py — 澳股荐股「同一规则·零调参」历史轨迹披露（B3·SPEC_AU_PICKS §2）。
 
-**这不是策略验证,是同一规则的历史轨迹披露**（§2.1 页面大字）：回测池 = 今天的 ASX50 成分回望,
+**这不是策略验证,是同一规则的历史轨迹披露**（§2.1 页面大字）：回测池 = 今天的 ~ASX100 成分回望(③扩池),
 含严重幸存者偏差 → 结果系统性偏乐观;前向公开计分账本(au_pick_ledger)才是真裁决。结果好坏照登,
 披露门与荐股区同一 commit 上线(§0)。
 
@@ -27,7 +27,7 @@ if str(SCRIPTS) not in sys.path:
 import forward_ledger as fl
 # 规则/命中口径/可跟单日/窗口常量：**同一对象,零克隆**（S-1·防漂移命门）——绝不复制函数体。
 from pick_ledger import _select_picks, _outcome, _followable, MOM_WIN, VOL_WIN, N_PICKS, HOLD_TD
-from au_pick_ledger import PICK_RULE   # NIT-1(双审):公开文案用 AU 版(ASX50 精选池),不用美股'观察池'措辞
+from au_pick_ledger import PICK_RULE   # NIT-1(双审):公开文案用 AU 版(ASX100 大中盘池),不用美股'观察池'措辞
 from fetch_data_au import FMG_TRUE_START, STOCK_TICKERS
 
 BASE = SCRIPTS.parent
@@ -35,15 +35,15 @@ RAW_AU = BASE / "data" / "raw" / "au"
 UNIVERSE = RAW_AU / "au_stocks_prices.csv"     # 宽表面板（date×.AX ticker,单一真相源,FMG 已截断）
 BENCH = "^AXJO"                                 # 基准:ASX200 除息价格指数（B-2 股息口径不对称·必披露）
 BENCH_CSV = RAW_AU / "AXJO.csv"
-EXPECTED = set(STOCK_TICKERS.values())          # 期望的 28 只 .AX ticker（fail-soft 缺席计数基准）
+EXPECTED = set(STOCK_TICKERS.values())          # 期望的 ~108 只 .AX ticker（③ 扩池·fail-soft 缺席计数基准）
 
 # ── §2.1 五条诚实声明（页面大字 + 全进 meta 供 S-6 机器守门·test #9）──────────────────
 DECLARATIONS = {
     "survivorship": {
         "key": "幸存者偏差",
-        "zh": "⚠ 回测池 = 今天的 ASX50 成分回望（1993 年的你不可能知道今天谁在池里）——含严重幸存者偏差,"
+        "zh": "⚠ 回测池 = 今天的 ~ASX100 成分回望（1993 年的你不可能知道今天谁在池里）——含严重幸存者偏差,"
               "结果系统性偏乐观。前向公开计分（账本）才是真裁决。",
-        "en": "WARNING: the backtest universe = today's ASX50 constituents looking backward (in 1993 you could "
+        "en": "WARNING: the backtest universe = today's ~ASX100 constituents looking backward (in 1993 you could "
               "not have known who is in the pool today) — heavy survivorship bias, results are systematically "
               "optimistic. Forward public scoring (the ledger) is the real verdict.",
     },

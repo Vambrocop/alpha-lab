@@ -3,7 +3,7 @@ fetch_data_au.py — 澳洲市场数据抓取（B1 产品化，2026-07-12，HAND
 
 沿用 B0 探针（fetch_data_au.py 原版）验证过的抓取管线，产品化为**一次运行、两份输出**：
   1. `au_probe.json`  — 数据体检（史深/近期缺口/可回测性），供人工/B2·B3 判断门槛用，不接前端。
-  2. `au_market.json` — 展示数据（^AXJO/^AORD 概览 + AUDUSD + ASX50 涨跌榜近期动量），供 `au.html` 读取。
+  2. `au_market.json` — 展示数据（^AXJO/^AORD 概览 + AUDUSD + ASX100 涨跌榜近期动量），供 `au.html` 读取。
 
 独立平行区：不碰美股任何脚本/数据/账本/基准；只读写 raw/au/ 与本文件两个 web/ JSON。
 
@@ -55,15 +55,46 @@ ETF_TICKERS = {
     "STW_AX": ("STW.AX", "SPDR ASX200 ETF"),
 }
 
-# ASX 大盘票（ASX50 常识挑选，NCM 已剔除——见 EXCLUDED）
+# ASX 大盘/中盘票（③ 2026-08 从 ASX50 28 只扩到 ~ASX100·108 只；NCM 已剔除见 EXCLUDED）。
+# 名单经抛后即弃探针实测「近月有数据 + 近60日中位日成交额」筛过（探针 2026-08：78/80 新增有数据、
+# 全 ≥A$3M/日；SVW/IFL 探针 Yahoo 无数据但保留——逐票 period=max+重试再给一次机会，真失败则 fail-soft
+# 记入 au_probe.fetch_failed、不上榜、不阻断）。扩池后 au_checkup/au_pick_ledger/backtest/dip 自动覆盖
+# 更多票（复用同一套机器：流动性档位自动标低流动性、years_history 自动标短史、FMG 身份截断仍单点特判）。
+# 键 = ASX 代码 = 选股 symbol = 宽表列名（N-1 键一致性）。
 STOCK_TICKERS = {
-    "BHP": "BHP.AX", "CBA": "CBA.AX", "CSL": "CSL.AX", "NAB": "NAB.AX",
-    "WBC": "WBC.AX", "ANZ": "ANZ.AX", "WES": "WES.AX", "MQG": "MQG.AX",
-    "GMG": "GMG.AX", "WOW": "WOW.AX", "TLS": "TLS.AX", "RIO": "RIO.AX",
-    "FMG": "FMG.AX", "TCL": "TCL.AX", "COL": "COL.AX", "WDS": "WDS.AX",
-    "QBE": "QBE.AX", "STO": "STO.AX", "REA": "REA.AX", "ALL": "ALL.AX",
-    "PME": "PME.AX", "XRO": "XRO.AX", "WTC": "WTC.AX", "JHX": "JHX.AX",
-    "SHL": "SHL.AX", "COH": "COH.AX", "AMC": "AMC.AX", "SUN": "SUN.AX",
+    # 银行/金融
+    "CBA": "CBA.AX", "NAB": "NAB.AX", "WBC": "WBC.AX", "ANZ": "ANZ.AX", "MQG": "MQG.AX",
+    "QBE": "QBE.AX", "SUN": "SUN.AX", "ASX": "ASX.AX", "IAG": "IAG.AX", "MPL": "MPL.AX",
+    "NHF": "NHF.AX", "CGF": "CGF.AX", "PPT": "PPT.AX", "MFG": "MFG.AX", "GQG": "GQG.AX",
+    "PNI": "PNI.AX", "NWL": "NWL.AX", "HUB": "HUB.AX", "BEN": "BEN.AX", "BOQ": "BOQ.AX",
+    "AMP": "AMP.AX", "IFL": "IFL.AX",
+    # 材料/矿业
+    "BHP": "BHP.AX", "RIO": "RIO.AX", "FMG": "FMG.AX", "AMC": "AMC.AX", "JHX": "JHX.AX",
+    "NST": "NST.AX", "S32": "S32.AX", "MIN": "MIN.AX", "PLS": "PLS.AX", "IGO": "IGO.AX",
+    "LYC": "LYC.AX", "WHC": "WHC.AX", "YAL": "YAL.AX", "ILU": "ILU.AX", "EVN": "EVN.AX",
+    "SFR": "SFR.AX", "BSL": "BSL.AX", "ORI": "ORI.AX", "NEM": "NEM.AX", "CIA": "CIA.AX",
+    "MND": "MND.AX", "ORA": "ORA.AX",
+    # 医疗
+    "CSL": "CSL.AX", "COH": "COH.AX", "SHL": "SHL.AX", "PME": "PME.AX", "RMD": "RMD.AX",
+    "FPH": "FPH.AX", "RHC": "RHC.AX", "TLX": "TLX.AX", "SIG": "SIG.AX", "ANN": "ANN.AX",
+    # 消费
+    "WES": "WES.AX", "WOW": "WOW.AX", "COL": "COL.AX", "ALL": "ALL.AX", "EDV": "EDV.AX",
+    "JBH": "JBH.AX", "HVN": "HVN.AX", "TWE": "TWE.AX", "A2M": "A2M.AX", "DMP": "DMP.AX",
+    "MTS": "MTS.AX", "LOV": "LOV.AX", "PMV": "PMV.AX", "SUL": "SUL.AX", "BRG": "BRG.AX",
+    "FLT": "FLT.AX", "TPW": "TPW.AX", "ARB": "ARB.AX", "CKF": "CKF.AX",
+    # 工业/物流
+    "TCL": "TCL.AX", "BXB": "BXB.AX", "APA": "APA.AX", "QAN": "QAN.AX", "ALX": "ALX.AX",
+    "REH": "REH.AX", "CPU": "CPU.AX", "DOW": "DOW.AX", "CWY": "CWY.AX", "QUB": "QUB.AX",
+    "SVW": "SVW.AX",
+    # 能源/公用
+    "WDS": "WDS.AX", "STO": "STO.AX", "ORG": "ORG.AX", "AGL": "AGL.AX", "BPT": "BPT.AX",
+    # 地产 REIT
+    "GMG": "GMG.AX", "SGP": "SGP.AX", "GPT": "GPT.AX", "MGR": "MGR.AX", "DXS": "DXS.AX",
+    "SCG": "SCG.AX", "VCX": "VCX.AX", "CHC": "CHC.AX",
+    # 科技/传媒/电信
+    "TLS": "TLS.AX", "REA": "REA.AX", "XRO": "XRO.AX", "WTC": "WTC.AX", "NXT": "NXT.AX",
+    "CAR": "CAR.AX", "SEK": "SEK.AX", "TNE": "TNE.AX", "NEC": "NEC.AX", "NWS": "NWS.AX",
+    "TPG": "TPG.AX",
 }
 
 # 显式剔除（不抓，只留痕说明原因——诚实标注"为什么这票不在榜上"，不是默默漏掉）
@@ -274,7 +305,7 @@ def run():
         series, diag, m = _fetch_one(name, ticker, price_round=2)
         probe_results.append({"group": "etf", "name": name, "ticker": ticker, **diag})
 
-    print("\n=== ASX50 大盘票 ===")
+    print(f"\n=== ASX100 大盘/中盘票（{len(STOCK_TICKERS)} 只）===")
     dollar_vol = {}                       # W2:近400日 日成交额AUD(Close×Volume)→dollar_volume.csv 喂 B2 流动性档位
     stock_wide = {}                       # B3:各票全史收盘拼宽表 → au_stocks_prices.csv（列=.AX ticker）
     for name, ticker in STOCK_TICKERS.items():

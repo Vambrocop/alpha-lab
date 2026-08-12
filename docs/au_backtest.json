@@ -1,9 +1,9 @@
 {
-  "generated": "2026-08-20T22:00:19Z",
+  "generated": "2026-08-12T00:05:35Z",
   "as_of": "2026-08-07",
   "title_zh": "澳股荐股·同一规则零调参历史轨迹披露（非策略验证·含幸存者偏差·系统性偏乐观）",
   "title_en": "AU picks — same-rule zero-tuning historical trace disclosure (NOT strategy validation; survivorship-biased, systematically optimistic)",
-  "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX50 精选池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
+  "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
   "hold_td": 20,
   "benchmark": "^AXJO",
   "period": {
@@ -18,279 +18,282 @@
     "n_settled": 2586,
     "n_dropped": 0,
     "dropped_pct": 0.0,
-    "hit_pct_total": 50.9,
-    "mean_call_excess_pct": -0.261,
-    "median_call_excess_pct": 0.113,
+    "hit_pct_total": 51.8,
+    "mean_call_excess_pct": -0.351,
+    "median_call_excess_pct": 0.368,
     "bullish": {
       "n": 1293,
-      "hit_pct": 53.2,
-      "mean_call_excess_pct": 0.647
+      "hit_pct": 51.8,
+      "mean_call_excess_pct": 0.714
     },
     "bearish": {
       "n": 1293,
-      "hit_pct": 48.5,
-      "mean_call_excess_pct": -1.17
+      "hit_pct": 51.8,
+      "mean_call_excess_pct": -1.415
     }
   },
   "by_year": [
     {
       "year": 1992,
       "n": 12,
-      "hit_pct": 50.0,
-      "mean_call_excess_pct": -2.229,
-      "n_selectable": 14
+      "hit_pct": 41.7,
+      "mean_call_excess_pct": -7.521,
+      "n_selectable": 29
     },
     {
       "year": 1993,
       "n": 78,
-      "hit_pct": 50.0,
-      "mean_call_excess_pct": 0.725,
-      "n_selectable": 14
+      "hit_pct": 47.4,
+      "mean_call_excess_pct": 0.948,
+      "n_selectable": 30
     },
     {
       "year": 1994,
       "n": 78,
-      "hit_pct": 52.6,
-      "mean_call_excess_pct": 0.607,
-      "n_selectable": 15
+      "hit_pct": 47.4,
+      "mean_call_excess_pct": -0.171,
+      "n_selectable": 32
     },
     {
       "year": 1995,
       "n": 78,
-      "hit_pct": 57.7,
-      "mean_call_excess_pct": 0.055,
-      "n_selectable": 16
+      "hit_pct": 55.1,
+      "mean_call_excess_pct": 0.925,
+      "n_selectable": 35
     },
     {
       "year": 1996,
       "n": 78,
-      "hit_pct": 53.8,
-      "mean_call_excess_pct": 0.81,
-      "n_selectable": 17
+      "hit_pct": 60.3,
+      "mean_call_excess_pct": 0.236,
+      "n_selectable": 37
     },
     {
       "year": 1997,
       "n": 78,
-      "hit_pct": 56.4,
-      "mean_call_excess_pct": 0.079,
-      "n_selectable": 20
+      "hit_pct": 52.6,
+      "mean_call_excess_pct": 0.3,
+      "n_selectable": 41
     },
     {
       "year": 1998,
       "n": 78,
-      "hit_pct": 64.1,
-      "mean_call_excess_pct": 1.787,
-      "n_selectable": 21
+      "hit_pct": 61.5,
+      "mean_call_excess_pct": 1.871,
+      "n_selectable": 42
     },
     {
       "year": 1999,
       "n": 78,
-      "hit_pct": 46.2,
-      "mean_call_excess_pct": -1.285,
-      "n_selectable": 19
+      "hit_pct": 57.7,
+      "mean_call_excess_pct": 1.539,
+      "n_selectable": 37
     },
     {
       "year": 2000,
       "n": 78,
-      "hit_pct": 52.6,
-      "mean_call_excess_pct": 0.394,
-      "n_selectable": 22
+      "hit_pct": 56.4,
+      "mean_call_excess_pct": 0.304,
+      "n_selectable": 51
     },
     {
       "year": 2001,
       "n": 78,
-      "hit_pct": 47.4,
-      "mean_call_excess_pct": -0.375,
-      "n_selectable": 23
+      "hit_pct": 41.0,
+      "mean_call_excess_pct": -1.088,
+      "n_selectable": 57
     },
     {
       "year": 2002,
       "n": 78,
-      "hit_pct": 47.4,
-      "mean_call_excess_pct": -0.756,
-      "n_selectable": 23
+      "hit_pct": 57.7,
+      "mean_call_excess_pct": 0.783,
+      "n_selectable": 60
     },
     {
       "year": 2003,
       "n": 78,
-      "hit_pct": 59.0,
-      "mean_call_excess_pct": 0.995,
-      "n_selectable": 23
+      "hit_pct": 50.0,
+      "mean_call_excess_pct": -0.675,
+      "n_selectable": 63
     },
     {
       "year": 2004,
       "n": 78,
-      "hit_pct": 48.7,
-      "mean_call_excess_pct": -0.426,
-      "n_selectable": 23
+      "hit_pct": 53.8,
+      "mean_call_excess_pct": 1.026,
+      "n_selectable": 65
     },
     {
       "year": 2005,
       "n": 78,
-      "hit_pct": 44.9,
-      "mean_call_excess_pct": -1.873,
-      "n_selectable": 24
+      "hit_pct": 53.8,
+      "mean_call_excess_pct": 1.461,
+      "n_selectable": 70
     },
     {
       "year": 2006,
       "n": 78,
-      "hit_pct": 53.8,
-      "mean_call_excess_pct": 0.477,
-      "n_selectable": 25
+      "hit_pct": 44.9,
+      "mean_call_excess_pct": -3.666,
+      "n_selectable": 75
     },
     {
       "year": 2007,
       "n": 72,
-      "hit_pct": 56.9,
-      "mean_call_excess_pct": 0.8,
-      "n_selectable": 25
+      "hit_pct": 52.8,
+      "mean_call_excess_pct": 0.82,
+      "n_selectable": 77
     },
     {
       "year": 2008,
       "n": 78,
-      "hit_pct": 50.0,
-      "mean_call_excess_pct": -0.155,
-      "n_selectable": 25
+      "hit_pct": 51.3,
+      "mean_call_excess_pct": -0.995,
+      "n_selectable": 82
     },
     {
       "year": 2009,
       "n": 78,
-      "hit_pct": 48.7,
-      "mean_call_excess_pct": -1.271,
-      "n_selectable": 25
+      "hit_pct": 53.8,
+      "mean_call_excess_pct": -1.923,
+      "n_selectable": 83
     },
     {
       "year": 2010,
       "n": 72,
-      "hit_pct": 41.7,
-      "mean_call_excess_pct": -0.574,
-      "n_selectable": 25
+      "hit_pct": 47.2,
+      "mean_call_excess_pct": -3.566,
+      "n_selectable": 84
     },
     {
       "year": 2011,
       "n": 78,
-      "hit_pct": 56.4,
-      "mean_call_excess_pct": 0.096,
-      "n_selectable": 25
+      "hit_pct": 64.1,
+      "mean_call_excess_pct": 1.077,
+      "n_selectable": 86
     },
     {
       "year": 2012,
       "n": 72,
-      "hit_pct": 51.4,
-      "mean_call_excess_pct": -1.213,
-      "n_selectable": 25
+      "hit_pct": 59.7,
+      "mean_call_excess_pct": 1.279,
+      "n_selectable": 88
     },
     {
       "year": 2013,
       "n": 78,
-      "hit_pct": 42.3,
-      "mean_call_excess_pct": -1.317,
-      "n_selectable": 26
+      "hit_pct": 51.3,
+      "mean_call_excess_pct": -1.215,
+      "n_selectable": 91
     },
     {
       "year": 2014,
       "n": 78,
-      "hit_pct": 64.1,
-      "mean_call_excess_pct": 2.558,
-      "n_selectable": 26
+      "hit_pct": 59.0,
+      "mean_call_excess_pct": 3.01,
+      "n_selectable": 93
     },
     {
       "year": 2015,
       "n": 72,
-      "hit_pct": 44.4,
-      "mean_call_excess_pct": -0.22,
-      "n_selectable": 26
+      "hit_pct": 54.2,
+      "mean_call_excess_pct": -2.847,
+      "n_selectable": 95
     },
     {
       "year": 2016,
       "n": 78,
-      "hit_pct": 43.6,
-      "mean_call_excess_pct": -1.691,
-      "n_selectable": 26
+      "hit_pct": 44.9,
+      "mean_call_excess_pct": -3.133,
+      "n_selectable": 99
     },
     {
       "year": 2017,
       "n": 78,
-      "hit_pct": 42.3,
-      "mean_call_excess_pct": -0.898,
-      "n_selectable": 27
+      "hit_pct": 41.0,
+      "mean_call_excess_pct": -1.529,
+      "n_selectable": 100
     },
     {
       "year": 2018,
       "n": 72,
-      "hit_pct": 55.6,
-      "mean_call_excess_pct": -0.526,
-      "n_selectable": 27
+      "hit_pct": 45.8,
+      "mean_call_excess_pct": -0.212,
+      "n_selectable": 101
     },
     {
       "year": 2019,
       "n": 78,
-      "hit_pct": 44.9,
-      "mean_call_excess_pct": -1.012,
-      "n_selectable": 28
+      "hit_pct": 52.6,
+      "mean_call_excess_pct": -1.1,
+      "n_selectable": 103
     },
     {
       "year": 2020,
       "n": 78,
-      "hit_pct": 48.7,
-      "mean_call_excess_pct": -2.306,
-      "n_selectable": 28
+      "hit_pct": 52.6,
+      "mean_call_excess_pct": -3.042,
+      "n_selectable": 103
     },
     {
       "year": 2021,
       "n": 72,
-      "hit_pct": 51.4,
-      "mean_call_excess_pct": -0.698,
-      "n_selectable": 28
+      "hit_pct": 52.8,
+      "mean_call_excess_pct": 0.326,
+      "n_selectable": 103
     },
     {
       "year": 2022,
       "n": 78,
-      "hit_pct": 52.6,
-      "mean_call_excess_pct": -0.498,
-      "n_selectable": 28
+      "hit_pct": 43.6,
+      "mean_call_excess_pct": -2.056,
+      "n_selectable": 105
     },
     {
       "year": 2023,
       "n": 78,
-      "hit_pct": 43.6,
-      "mean_call_excess_pct": -1.246,
-      "n_selectable": 28
+      "hit_pct": 38.5,
+      "mean_call_excess_pct": -1.766,
+      "n_selectable": 105
     },
     {
       "year": 2024,
       "n": 72,
-      "hit_pct": 58.3,
-      "mean_call_excess_pct": 0.067,
-      "n_selectable": 28
+      "hit_pct": 50.0,
+      "mean_call_excess_pct": 1.455,
+      "n_selectable": 106
     },
     {
       "year": 2025,
       "n": 78,
-      "hit_pct": 44.9,
-      "mean_call_excess_pct": 0.158,
-      "n_selectable": 28
+      "hit_pct": 56.4,
+      "mean_call_excess_pct": 0.551,
+      "n_selectable": 106
     },
     {
       "year": 2026,
       "n": 42,
-      "hit_pct": 54.8,
-      "mean_call_excess_pct": 0.422,
-      "n_selectable": 28
+      "hit_pct": 52.4,
+      "mean_call_excess_pct": 0.731,
+      "n_selectable": 106
     }
   ],
   "meta": {
-    "generated": "2026-08-20T22:00:19Z",
-    "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX50 精选池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
+    "generated": "2026-08-12T00:05:35Z",
+    "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
     "hold_td": 20,
     "benchmark": "^AXJO",
-    "n_stocks_absent": 0,
-    "stocks_absent": [],
+    "n_stocks_absent": 2,
+    "stocks_absent": [
+      "IFL.AX",
+      "SVW.AX"
+    ],
     "declarations": {
       "survivorship": {
         "key": "幸存者偏差",
-        "zh": "⚠ 回测池 = 今天的 ASX50 成分回望（1993 年的你不可能知道今天谁在池里）——含严重幸存者偏差,结果系统性偏乐观。前向公开计分（账本）才是真裁决。",
-        "en": "WARNING: the backtest universe = today's ASX50 constituents looking backward (in 1993 you could not have known who is in the pool today) — heavy survivorship bias, results are systematically optimistic. Forward public scoring (the ledger) is the real verdict."
+        "zh": "⚠ 回测池 = 今天的 ~ASX100 成分回望（1993 年的你不可能知道今天谁在池里）——含严重幸存者偏差,结果系统性偏乐观。前向公开计分（账本）才是真裁决。",
+        "en": "WARNING: the backtest universe = today's ~ASX100 constituents looking backward (in 1993 you could not have known who is in the pool today) — heavy survivorship bias, results are systematically optimistic. Forward public scoring (the ledger) is the real verdict."
       },
       "dividend_basis": {
         "key": "股息口径",

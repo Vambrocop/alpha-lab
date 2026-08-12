@@ -49,7 +49,7 @@ def test_data_hygiene_notes_present():
     assert "FMG" in fau.IDENTITY_NOTES, "FMG 身份连续性标记被删——B3 回测门依赖它"
     assert "COL" in fau.SHORT_HISTORY_NOTES, "COL 短史标记被删"
     assert "NCM" not in fau.STOCK_TICKERS, "NCM 已退市,不该回到池子"
-    assert len(fau.STOCK_TICKERS) == 28
+    assert len(fau.STOCK_TICKERS) >= 100, "③ 已扩到 ~ASX100(100+ 只);少于此说明池被误缩"
 
 
 def test_au_names_cover_pool():

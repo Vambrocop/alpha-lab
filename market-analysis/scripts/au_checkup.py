@@ -48,6 +48,41 @@ AU_NAMES = {
     "XRO": "Xero(财务软件)", "WTC": "WiseTech(物流软件)", "JHX": "James Hardie(建材)",
     "SHL": "Sonic(医学检验)", "COH": "Cochlear(人工耳蜗)", "AMC": "Amcor(包装)",
     "SUN": "Suncorp(保险)",
+    # ── ③ ASX100 扩池新增(2026-08) ──
+    # 银行/金融
+    "ASX": "ASX交易所", "IAG": "IAG保险", "MPL": "Medibank(医保)", "NHF": "nib(健康险)",
+    "CGF": "Challenger(年金)", "PPT": "Perpetual(资管)", "MFG": "Magellan(资管)",
+    "GQG": "GQG Partners(资管)", "PNI": "Pinnacle(资管)", "NWL": "Netwealth(理财平台)",
+    "HUB": "Hub24(理财平台)", "BEN": "本迪戈银行", "BOQ": "昆士兰银行", "AMP": "AMP(金融)",
+    "IFL": "Insignia(资管/退休金)",
+    # 材料/矿业
+    "NST": "Northern Star(金矿)", "S32": "South32(矿业)", "MIN": "Mineral Resources(矿业)",
+    "PLS": "Pilbara(锂矿)", "IGO": "IGO(锂/镍)", "LYC": "Lynas(稀土)", "WHC": "Whitehaven(煤炭)",
+    "YAL": "兖煤澳洲(煤炭)", "ILU": "Iluka(矿砂)", "EVN": "Evolution(金矿)", "SFR": "Sandfire(铜矿)",
+    "BSL": "BlueScope(钢铁)", "ORI": "Orica(炸药)", "NEM": "Newmont(金矿)", "CIA": "Champion Iron(铁矿)",
+    "MND": "Monadelphous(矿业工程)", "ORA": "Orora(包装)",
+    # 医疗
+    "RMD": "ResMed(呼吸机)", "FPH": "Fisher&Paykel(医械)", "RHC": "Ramsay(私立医院)",
+    "TLX": "Telix(放射药)", "SIG": "Sigma(医药分销)", "ANN": "Ansell(手套/防护)",
+    # 消费
+    "EDV": "Endeavour(酒类零售)", "JBH": "JB Hi-Fi(电器)", "HVN": "Harvey Norman(家居)",
+    "TWE": "Treasury Wine(葡萄酒)", "A2M": "a2牛奶", "DMP": "Domino's(披萨)", "MTS": "Metcash(批发)",
+    "LOV": "Lovisa(饰品)", "PMV": "Premier(服装零售)", "SUL": "Super Retail(运动/汽配)",
+    "BRG": "Breville(小家电)", "FLT": "Flight Centre(旅行社)", "TPW": "Temple&Webster(家居电商)",
+    "ARB": "ARB(越野配件)", "CKF": "Collins Foods(快餐KFC)",
+    # 工业/物流
+    "BXB": "Brambles(托盘物流)", "APA": "APA(天然气管道)", "QAN": "澳航", "ALX": "Atlas Arteria(收费公路)",
+    "REH": "Reece(水暖分销)", "CPU": "Computershare(股权登记)", "DOW": "Downer(工程服务)",
+    "CWY": "Cleanaway(废物处理)", "QUB": "Qube(物流)", "SVW": "Seven Group(工业/传媒控股)",
+    # 能源/公用
+    "ORG": "Origin(能源)", "AGL": "AGL(电力)", "BPT": "Beach Energy(油气)",
+    # 地产 REIT
+    "SGP": "Stockland(地产)", "GPT": "GPT(地产)", "MGR": "Mirvac(地产)", "DXS": "Dexus(写字楼)",
+    "SCG": "Scentre(Westfield商场)", "VCX": "Vicinity(商场)", "CHC": "Charter Hall(地产资管)",
+    # 科技/传媒/电信
+    "NXT": "NextDC(数据中心)", "CAR": "CAR Group(汽车网)", "SEK": "Seek(招聘网)",
+    "TNE": "Technology One(企业软件)", "NEC": "Nine(传媒)", "NWS": "News Corp(新闻集团)",
+    "TPG": "TPG Telecom(电信)",
 }
 
 # 流动性档位阈值（60 日中位日成交额 AUD;机械规则,页面公示口径）

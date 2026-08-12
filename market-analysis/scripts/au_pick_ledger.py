@@ -28,7 +28,7 @@ AU 专属 caveat 全套（§1.5，美股全套之上追加）：
     ^AXJO = 除息价格指数 → 存在 ≈ 股息率（AU ~4%/年 ≈ 0.3%/20个交易日）的**持续性口径顺风**，
     对「看好」系统性有利——这不是我们的 edge，是两条腿口径不对称的产物。
   - franking（红利抵免）不含：无可靠免费源，宁缺勿猜。
-  - 池 = ASX50 精选 28 只（现全高流动性档）；ASX 本地日 = 交易日。
+  - 池 = ASX100 大中盘（③ 扩池 ~108 只；流动性档位见体检，不再全高档）；ASX 本地日 = 交易日。
   - FMG 在池，但 1988–2002 为壳公司稀疏数据（真正 Fortescue 连续交易史 2003 起）——本账本
     126 日动量/63 日低波动窗口只回看近期数据，不会跨越那段历史；au_pick_backtest.py（长窗口
     回测）另有独立截断逻辑处理，live 与回测各自处理但同一份"截断日前 NaN"单一真相源。
@@ -54,9 +54,9 @@ LOG = BASE / "data" / "au_pick_ledger.csv"
 
 HOLD_TD = 20              # 持有交易日数——与美股 pick_ledger 同（§1.2 表：唯二"同"项）
 BENCH = "^AXJO"           # 基准：ASX200（33.6 年史，覆盖完整周期；本地取价，从不调 yfinance）
-UNIVERSE = RAW_AU / "au_stocks_prices.csv"   # ASX50 精选 28 票宽表（date×ticker，fetch_data_au 顺手拼）
-# 与美股同一规则、同一代码（_select_picks 零克隆 import）——AU 池 = ASX50 精选 28 只
-PICK_RULE = ("动量+低波动 等权排名（126日动量 + 63日低波动，ASX50 精选池取头/尾各3）"
+UNIVERSE = RAW_AU / "au_stocks_prices.csv"   # ASX100 大中盘宽表（date×ticker，fetch_data_au 顺手拼，③ ~108 票）
+# 与美股同一规则、同一代码（_select_picks 零克隆 import）——AU 池 = ASX100 大中盘（③ 扩池 ~108 只）
+PICK_RULE = ("动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）"
              "——与美股 pick_ledger 同一规则、同一代码（零克隆）")
 
 HEADER = ["pick_date", "symbol", "view", "mom_pct", "entry_date", "entry_px",
@@ -173,7 +173,7 @@ def run(write=True, prices=None):
     sc = _scorecard(rows)
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "source": "澳股(ASX50精选池) 动量+低波动 选股 → 前向公开计分(独立账本)",
+        "source": "澳股(ASX100大中盘池) 动量+低波动 选股 → 前向公开计分(独立账本)",
         "pick_rule": PICK_RULE,
         "hold_td": HOLD_TD, "benchmark": BENCH,
         "track_record": sc,
@@ -190,7 +190,7 @@ def run(write=True, prices=None):
                    "看好命中=跑赢%s、看淡命中=跑输%s。**前向计分**:刚上线样本极小(约1月后首批),别当结论。"
                    "**股息口径不对称**:个股=含息复权总回报,%s=除息价格指数,存在≈股息率(AU~4%%/年"
                    "≈0.3%%/20交易日)的持续性口径顺风,对「看好」系统性有利——这不是edge。"
-                   "franking(红利抵免)不含(无可靠免费源,宁缺勿猜)。池=ASX50精选28只(现全高流动性档),"
+                   "franking(红利抵免)不含(无可靠免费源,宁缺勿猜)。池=ASX100大中盘(③扩池~108只·流动性档位见体检,不再全高档),"
                    "ASX本地日=交易日。FMG在池,1988-2002壳公司数据(2003起才是真Fortescue连续史),"
                    "本账本窗口只回看近期不跨越该段;长窗口回测(au_pick_backtest.py)另有截断逻辑。"
                    "池(28巨头)≈%s主导权重,超额天然被压(「打赢你自己」),AU集中度比美股更极端。"
