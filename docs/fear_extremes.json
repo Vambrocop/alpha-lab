@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12T14:19:50Z",
+  "generated": "2026-08-12T22:15:18Z",
   "as_of": "2026-08-12",
   "vix_start": "2000-01-03",
   "reset_floor": 20.0,
@@ -379,7 +379,7 @@
             "up_pct": 72.73,
             "mean_pct": 1.49,
             "median_pct": 2.1,
-            "base_up_pct": 57.32,
+            "base_up_pct": 57.33,
             "base_mean_pct": 0.16,
             "diff_mean": 1.33,
             "ci95_mean": [
@@ -408,7 +408,7 @@
             "up_pct": 59.09,
             "mean_pct": 0.97,
             "median_pct": 0.77,
-            "base_up_pct": 63.17,
+            "base_up_pct": 63.16,
             "base_mean_pct": 0.61,
             "diff_mean": 0.36,
             "ci95_mean": [
@@ -437,7 +437,7 @@
             "up_pct": 59.09,
             "mean_pct": 1.63,
             "median_pct": 2.14,
-            "base_up_pct": 67.49,
+            "base_up_pct": 67.48,
             "base_mean_pct": 1.81,
             "diff_mean": -0.18,
             "ci95_mean": [
@@ -466,7 +466,7 @@
             "up_pct": 52.38,
             "mean_pct": 0.37,
             "median_pct": 0.54,
-            "base_up_pct": 69.54,
+            "base_up_pct": 69.52,
             "base_mean_pct": 3.6,
             "diff_mean": -3.23,
             "ci95_mean": [
@@ -478,7 +478,7 @@
               71.43
             ],
             "ci95_diff": [
-              -9.78,
+              -9.77,
               2.79
             ],
             "too_small_no_ci": false,
@@ -497,7 +497,7 @@
             "up_pct": 77.27,
             "mean_pct": 1.92,
             "median_pct": 3.39,
-            "base_up_pct": 56.98,
+            "base_up_pct": 56.99,
             "base_mean_pct": 0.2,
             "diff_mean": 1.72,
             "ci95_mean": [
@@ -526,7 +526,7 @@
             "up_pct": 54.55,
             "mean_pct": 1.0,
             "median_pct": 1.09,
-            "base_up_pct": 62.35,
+            "base_up_pct": 62.36,
             "base_mean_pct": 0.76,
             "diff_mean": 0.24,
             "ci95_mean": [
@@ -555,7 +555,7 @@
             "up_pct": 54.55,
             "mean_pct": 2.05,
             "median_pct": 2.26,
-            "base_up_pct": 66.22,
+            "base_up_pct": 66.24,
             "base_mean_pct": 2.2,
             "diff_mean": -0.15,
             "ci95_mean": [
@@ -584,7 +584,7 @@
             "up_pct": 47.62,
             "mean_pct": 0.4,
             "median_pct": -0.48,
-            "base_up_pct": 69.19,
+            "base_up_pct": 69.17,
             "base_mean_pct": 4.52,
             "diff_mean": -4.12,
             "ci95_mean": [
@@ -597,7 +597,7 @@
             ],
             "ci95_diff": [
               -13.25,
-              4.63
+              4.64
             ],
             "too_small_no_ci": false,
             "loco_headline_mean": 3.24,
@@ -756,7 +756,7 @@
             "up_pct": 50.0,
             "mean_pct": -0.69,
             "median_pct": -0.12,
-            "base_up_pct": 57.32,
+            "base_up_pct": 57.33,
             "base_mean_pct": 0.16,
             "diff_mean": -0.85,
             "ci95_mean": null,
@@ -776,7 +776,7 @@
             "up_pct": 62.5,
             "mean_pct": -0.28,
             "median_pct": 3.02,
-            "base_up_pct": 63.17,
+            "base_up_pct": 63.16,
             "base_mean_pct": 0.61,
             "diff_mean": -0.89,
             "ci95_mean": null,
@@ -796,7 +796,7 @@
             "up_pct": 62.5,
             "mean_pct": 3.62,
             "median_pct": 6.69,
-            "base_up_pct": 67.49,
+            "base_up_pct": 67.48,
             "base_mean_pct": 1.81,
             "diff_mean": 1.81,
             "ci95_mean": null,
@@ -816,7 +816,7 @@
             "up_pct": 87.5,
             "mean_pct": 7.05,
             "median_pct": 10.74,
-            "base_up_pct": 69.54,
+            "base_up_pct": 69.52,
             "base_mean_pct": 3.6,
             "diff_mean": 3.45,
             "ci95_mean": null,
@@ -838,7 +838,7 @@
             "up_pct": 50.0,
             "mean_pct": -1.23,
             "median_pct": 0.39,
-            "base_up_pct": 56.98,
+            "base_up_pct": 56.99,
             "base_mean_pct": 0.2,
             "diff_mean": -1.43,
             "ci95_mean": null,
@@ -858,7 +858,7 @@
             "up_pct": 62.5,
             "mean_pct": 0.17,
             "median_pct": 4.07,
-            "base_up_pct": 62.35,
+            "base_up_pct": 62.36,
             "base_mean_pct": 0.76,
             "diff_mean": -0.59,
             "ci95_mean": null,
@@ -878,7 +878,7 @@
             "up_pct": 75.0,
             "mean_pct": 6.96,
             "median_pct": 5.74,
-            "base_up_pct": 66.22,
+            "base_up_pct": 66.24,
             "base_mean_pct": 2.2,
             "diff_mean": 4.76,
             "ci95_mean": null,
@@ -898,7 +898,7 @@
             "up_pct": 87.5,
             "mean_pct": 12.79,
             "median_pct": 15.5,
-            "base_up_pct": 69.19,
+            "base_up_pct": 69.17,
             "base_mean_pct": 4.52,
             "diff_mean": 8.27,
             "ci95_mean": null,
@@ -1317,7 +1317,7 @@
             "up_pct": 50.0,
             "mean_pct": 0.49,
             "median_pct": 0.39,
-            "base_up_pct": 57.32,
+            "base_up_pct": 57.33,
             "base_mean_pct": 0.16,
             "diff_mean": 0.33,
             "ci95_mean": [
@@ -1346,7 +1346,7 @@
             "up_pct": 58.33,
             "mean_pct": -0.34,
             "median_pct": 1.6,
-            "base_up_pct": 63.17,
+            "base_up_pct": 63.16,
             "base_mean_pct": 0.61,
             "diff_mean": -0.95,
             "ci95_mean": [
@@ -1375,7 +1375,7 @@
             "up_pct": 62.5,
             "mean_pct": 2.54,
             "median_pct": 4.22,
-            "base_up_pct": 67.49,
+            "base_up_pct": 67.48,
             "base_mean_pct": 1.81,
             "diff_mean": 0.73,
             "ci95_mean": [
@@ -1404,7 +1404,7 @@
             "up_pct": 60.87,
             "mean_pct": 1.74,
             "median_pct": 3.33,
-            "base_up_pct": 69.54,
+            "base_up_pct": 69.52,
             "base_mean_pct": 3.6,
             "diff_mean": -1.86,
             "ci95_mean": [
@@ -1435,7 +1435,7 @@
             "up_pct": 45.83,
             "mean_pct": 0.47,
             "median_pct": -1.16,
-            "base_up_pct": 56.98,
+            "base_up_pct": 56.99,
             "base_mean_pct": 0.2,
             "diff_mean": 0.27,
             "ci95_mean": [
@@ -1464,7 +1464,7 @@
             "up_pct": 58.33,
             "mean_pct": -0.05,
             "median_pct": 0.47,
-            "base_up_pct": 62.35,
+            "base_up_pct": 62.36,
             "base_mean_pct": 0.76,
             "diff_mean": -0.81,
             "ci95_mean": [
@@ -1493,7 +1493,7 @@
             "up_pct": 70.83,
             "mean_pct": 4.76,
             "median_pct": 5.07,
-            "base_up_pct": 66.22,
+            "base_up_pct": 66.24,
             "base_mean_pct": 2.2,
             "diff_mean": 2.56,
             "ci95_mean": [
@@ -1522,7 +1522,7 @@
             "up_pct": 60.87,
             "mean_pct": 3.42,
             "median_pct": 2.22,
-            "base_up_pct": 69.19,
+            "base_up_pct": 69.17,
             "base_mean_pct": 4.52,
             "diff_mean": -1.1,
             "ci95_mean": [
@@ -1535,7 +1535,7 @@
             ],
             "ci95_diff": [
               -8.55,
-              5.95
+              5.96
             ],
             "too_small_no_ci": false,
             "loco_headline_mean": 5.32,

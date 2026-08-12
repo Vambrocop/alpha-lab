@@ -1,41 +1,41 @@
 {
- "updated": "2026-08-12 21:14 UTC",
+ "updated": "2026-08-12 22:15 UTC",
  "items": [
   {
-   "time": "2026-08-12 21:13 UTC",
-   "title": "Wendy's stock jumps on report of potential takeover bid from Nelson Peltz's Trian Fund Management",
+   "time": "2026-08-12 22:11 UTC",
+   "title": "Cerebras stock plunges 14% after second earnings report following IPO",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-12 21:12 UTC",
-   "title": "Goldman’s latest deal underscores how ‘boomer candy’ ETFs are now big business on Wall Street",
+   "time": "2026-08-12 21:59 UTC",
+   "title": "SpaceX’s stock is getting a Grok-fueled boost",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-12 21:55 UTC",
+   "title": "Alphabet’s stock slips as Nvidia’s $500 billion financing deal threatens custom chips",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-12 21:08 UTC",
-   "title": "Chip stocks are closing in on a bull market. Here’s why some analysts are nervous.",
-   "impact": "neutral",
+   "time": "2026-08-12 21:37 UTC",
+   "title": "Small investors became a major stock market force. Now, they risk getting pushed back into the dark",
+   "impact": "negative",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-12 21:08 UTC",
-   "title": "The 10 housing markets where the most sellers have listed their homes for less than what they paid",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-12 21:03 UTC",
-   "title": "Nvidia, Intel, Google: Wall Street is partying like it’s 1999",
+   "time": "2026-08-12 21:19 UTC",
+   "title": "Cisco sees record results from an AI ‘supercycle,’ but its stock pulls back",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
