@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12T15:45:56.319544+00:00",
+  "generated": "2026-08-12T16:42:36.914971+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -398,7 +398,7 @@
       "ticker": "META",
       "source": "live",
       "status": "ok",
-      "rows": 3578,
+      "rows": 3577,
       "last_date": "2026-08-12",
       "age_days": 0,
       "stale_after_days": 6,
@@ -502,7 +502,7 @@
       "ticker": "SPCX",
       "source": "live",
       "status": "ok",
-      "rows": 42,
+      "rows": 41,
       "last_date": "2026-08-12",
       "age_days": 0,
       "stale_after_days": 6,
@@ -515,7 +515,7 @@
       "ticker": "SNDK",
       "source": "live",
       "status": "ok",
-      "rows": 375,
+      "rows": 374,
       "last_date": "2026-08-12",
       "age_days": 0,
       "stale_after_days": 6,
@@ -580,7 +580,7 @@
       "ticker": "HOOD",
       "source": "live",
       "status": "ok",
-      "rows": 1265,
+      "rows": 1264,
       "last_date": "2026-08-12",
       "age_days": 0,
       "stale_after_days": 6,
