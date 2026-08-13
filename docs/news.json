@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-13 19:49 UTC",
+ "updated": "2026-08-13 20:27 UTC",
  "items": [
   {
-   "time": "2026-08-13 19:37 UTC",
-   "title": "Oil prices fall after U.S. says crude exports through Hormuz near 9 million barrels per day",
+   "time": "2026-08-13 20:21 UTC",
+   "title": "These charts show why stocks keep rallying. Profit margins are the highest on record",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 20:20 UTC",
+   "title": "SpaceX set an IPO record. Now there’s hope that Anthropic could shatter it.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 20:05 UTC",
+   "title": "Oil prices fall after U.S. says crude exports through Strait of Hormuz near 9 million barrels per day",
    "impact": "negative",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-13 19:36 UTC",
-   "title": "‘My husband and I are at odds’: Should we tap our home equity or sell stocks to build a $100,000 emergency fund?",
+   "time": "2026-08-13 19:52 UTC",
+   "title": "Sandisk’s stock is flying higher. Here are the new targets that are exciting Wall Street.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-13 19:23 UTC",
-   "title": "The 10 housing markets where the most sellers have listed their homes for less than what they paid",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 18:44 UTC",
-   "title": "Anthropic CFO Krishna Rao is leading early IPO meetings with investors and has not discussed valuation, sources say",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 18:17 UTC",
-   "title": "Cisco shares slide 9% despite earnings beat and stronger-than-expected guidance",
+   "time": "2026-08-13 19:51 UTC",
+   "title": "Rich Americans are propping up the travel economy as airfares soar 25% from a year ago",
    "impact": "positive",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
