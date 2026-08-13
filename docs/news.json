@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-13 17:47 UTC",
+ "updated": "2026-08-13 18:43 UTC",
  "items": [
+  {
+   "time": "2026-08-13 18:41 UTC",
+   "title": "Anthropic CFO Krishna Rao is leading early IPO meetings with investors and has not discussed valuation, sources say",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 18:17 UTC",
+   "title": "Cisco shares slide 9% despite earnings beat and stronger-than-expected guidance",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 17:53 UTC",
+   "title": "Here's a rapid-fire update on our 32-stock portfolio, including Cramer's 5 favorites to buy",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-13 17:46 UTC",
    "title": "Oil prices fall as investors weigh falling demand against Middle East tensions",
@@ -10,32 +34,8 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-13 17:19 UTC",
-   "title": "OpenAI revenue chief Denise Dresser leaving, second major executive departure in days",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
    "time": "2026-08-13 17:18 UTC",
    "title": "Cerebras stock plunges 14% after second earnings report following IPO",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 17:06 UTC",
-   "title": "Why September is the worst month of the year for the stock market",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 17:04 UTC",
-   "title": "Democrats demand Trump reveal stock managers, explain suspicious trades",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
