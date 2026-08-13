@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-13T16:43:16.406338+00:00",
+  "generated": "2026-08-13T17:46:49.562649+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -151,7 +151,7 @@
       "ticker": "VNQ",
       "source": "live",
       "status": "ok",
-      "rows": 5502,
+      "rows": 5503,
       "last_date": "2026-08-13",
       "age_days": 0,
       "stale_after_days": 6,
@@ -203,7 +203,7 @@
       "ticker": "^SOX",
       "source": "live",
       "status": "ok",
-      "rows": 6693,
+      "rows": 6690,
       "last_date": "2026-08-13",
       "age_days": 0,
       "stale_after_days": 6,

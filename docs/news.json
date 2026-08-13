@@ -1,32 +1,8 @@
 {
- "updated": "2026-08-13 16:43 UTC",
+ "updated": "2026-08-13 17:47 UTC",
  "items": [
   {
-   "time": "2026-08-13 16:26 UTC",
-   "title": "OpenAI revenue chief Denise Dresser leaving, second major executive departure in days",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 15:59 UTC",
-   "title": "AI’s costly build-out complicates the Fed’s inflation fight",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 15:48 UTC",
-   "title": "These nontech stocks can ride the AI build-out for years",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 15:31 UTC",
+   "time": "2026-08-13 17:46 UTC",
    "title": "Oil prices fall as investors weigh falling demand against Middle East tensions",
    "impact": "negative",
    "note": "",
@@ -34,11 +10,35 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-13 15:08 UTC",
-   "title": "Rich Americans are propping up the travel economy as airfares soar 25% higher than last year",
-   "impact": "positive",
+   "time": "2026-08-13 17:19 UTC",
+   "title": "OpenAI revenue chief Denise Dresser leaving, second major executive departure in days",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 17:18 UTC",
+   "title": "Cerebras stock plunges 14% after second earnings report following IPO",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 17:06 UTC",
+   "title": "Why September is the worst month of the year for the stock market",
+   "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 17:04 UTC",
+   "title": "Democrats demand Trump reveal stock managers, explain suspicious trades",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
