@@ -1,32 +1,24 @@
 {
- "updated": "2026-08-13 20:27 UTC",
+ "updated": "2026-08-13 22:16 UTC",
  "items": [
   {
-   "time": "2026-08-13 20:21 UTC",
-   "title": "These charts show why stocks keep rallying. Profit margins are the highest on record",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-13 20:20 UTC",
-   "title": "SpaceX set an IPO record. Now there’s hope that Anthropic could shatter it.",
+   "time": "2026-08-13 22:09 UTC",
+   "title": "Dell’s stock has beaten Micron and AMD this year — and now it’s adding to its gains",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-13 20:05 UTC",
-   "title": "Oil prices fall after U.S. says crude exports through Strait of Hormuz near 9 million barrels per day",
-   "impact": "negative",
+   "time": "2026-08-13 22:07 UTC",
+   "title": "Salesforce’s stock gets a boost as J.P. Morgan says AI fears are overblown",
+   "impact": "positive",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-13 19:52 UTC",
+   "time": "2026-08-13 22:05 UTC",
    "title": "Sandisk’s stock is flying higher. Here are the new targets that are exciting Wall Street.",
    "impact": "neutral",
    "note": "",
@@ -34,11 +26,19 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-13 19:51 UTC",
-   "title": "Rich Americans are propping up the travel economy as airfares soar 25% from a year ago",
+   "time": "2026-08-13 22:05 UTC",
+   "title": "Markets are looking eerily calm as investors chase FOMO rally",
    "impact": "positive",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-13 21:56 UTC",
+   "title": "Reddit stock jumps on inclusion in S&P 500",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
