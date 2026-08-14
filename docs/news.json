@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-14 14:14 UTC",
+ "updated": "2026-08-14 14:44 UTC",
  "items": [
+  {
+   "time": "2026-08-14 14:43 UTC",
+   "title": "Drone stocks rally after Trump orders tariffs on foreign-made components",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 14:37 UTC",
+   "title": "Property Play: Housing investors say this is their worst market in at least 3 years",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 14:30 UTC",
+   "title": "Should I tap my home equity or sell stocks to build a $100,000 emergency fund?",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-14 13:31 UTC",
    "title": "Bond yields are at multiyear highs, yet stocks have hit fresh records. Here’s how long the defiance can last.",
@@ -13,30 +37,6 @@
    "time": "2026-08-14 13:27 UTC",
    "title": "Retail sales slump. Cheaper gas and an Amazon Prime hangover are the chief culprits.",
    "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 13:24 UTC",
-   "title": "How a niche copper trade became a real-time gauge of Trump’s next tariff move",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 13:17 UTC",
-   "title": "The Club's top 10 things to watch in the stock market Friday",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 13:00 UTC",
-   "title": "‘The market is obviously on fire’: Should I take $1,000 from my brokerage account to pay off my car loan?",
-   "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
