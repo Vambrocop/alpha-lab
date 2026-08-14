@@ -1,32 +1,8 @@
 {
- "updated": "2026-08-14 15:39 UTC",
+ "updated": "2026-08-14 16:38 UTC",
  "items": [
   {
-   "time": "2026-08-14 15:02 UTC",
-   "title": "Housing investors say this is their worst market in at least 3 years",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 14:53 UTC",
-   "title": "Consumer prices rose 0.1% in July, as expected, putting the annual rate at 3.4%",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 14:50 UTC",
-   "title": "Wisconsin, Michigan primaries expose limits of polls and prediction markets",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 14:43 UTC",
+   "time": "2026-08-14 16:37 UTC",
    "title": "Drone stocks rally after Trump orders tariffs on foreign-made components",
    "impact": "positive",
    "note": "",
@@ -34,11 +10,35 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-14 14:30 UTC",
-   "title": "Should I tap my home equity or sell stocks to build a $100,000 emergency fund?",
+   "time": "2026-08-14 16:21 UTC",
+   "title": "Still trying to time the stock market? This chart shows why it’s tougher than you think.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 16:14 UTC",
+   "title": "OpenAI talent exodus raises 'huge red flag' ahead of IPO",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 15:36 UTC",
+   "title": "10-year Treasury yield inches higher as traders digest soft retail sales, monitor the Middle East",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 15:02 UTC",
+   "title": "Housing investors say this is their worst market in at least 3 years",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
