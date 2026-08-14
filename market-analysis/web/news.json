@@ -1,6 +1,14 @@
 {
- "updated": "2026-08-14 19:40 UTC",
+ "updated": "2026-08-14 20:19 UTC",
  "items": [
+  {
+   "time": "2026-08-14 20:04 UTC",
+   "title": "Drone stocks rally after Trump orders tariffs on foreign-made components",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-14 19:21 UTC",
    "title": "Regulators and banks step up scrutiny of prediction markets",
@@ -26,19 +34,11 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-14 18:43 UTC",
-   "title": "Drone stocks rally after Trump orders tariffs on foreign-made components",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 18:33 UTC",
-   "title": "What flash memory maker SanDisk told investors this week is a boon for our newest stock",
+   "time": "2026-08-14 18:30 UTC",
+   "title": "‘The market is obviously on fire’: Should I take $1,000 from my brokerage account to pay off my car loan?",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
