@@ -1,32 +1,16 @@
 {
- "updated": "2026-08-14 16:38 UTC",
+ "updated": "2026-08-14 18:37 UTC",
  "items": [
   {
-   "time": "2026-08-14 16:37 UTC",
-   "title": "Drone stocks rally after Trump orders tariffs on foreign-made components",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 16:21 UTC",
-   "title": "Still trying to time the stock market? This chart shows why it’s tougher than you think.",
+   "time": "2026-08-14 18:30 UTC",
+   "title": "‘The market is obviously on fire’: Should I take $1,000 from my brokerage account to pay off my car loan?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-14 16:14 UTC",
-   "title": "OpenAI talent exodus raises 'huge red flag' ahead of IPO",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 15:36 UTC",
+   "time": "2026-08-14 18:24 UTC",
    "title": "10-year Treasury yield inches higher as traders digest soft retail sales, monitor the Middle East",
    "impact": "neutral",
    "note": "",
@@ -34,11 +18,27 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-14 15:02 UTC",
-   "title": "Housing investors say this is their worst market in at least 3 years",
+   "time": "2026-08-14 18:24 UTC",
+   "title": "Sandisk’s stock is extending its major rebound. This is the latest spark.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 18:11 UTC",
+   "title": "OpenAI talent exodus raises 'huge red flag' ahead of IPO",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 17:51 UTC",
+   "title": "Think interest rates are high now? These charts offers a different perspective.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
