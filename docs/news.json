@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-14 20:52 UTC",
+ "updated": "2026-08-14 21:54 UTC",
  "items": [
+  {
+   "time": "2026-08-14 21:34 UTC",
+   "title": "Berkshire Hathaway doubles down on the U.S. housing market with a fresh bet on this stock",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 21:10 UTC",
+   "title": "Trump family-backed crypto firm World Liberty gets conditional bank charter approval",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-14 21:06 UTC",
+   "title": "Berkshire Hathaway boosts Alphabet to a top three holding, ups Delta and housing bets",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-14 20:04 UTC",
    "title": "Drone stocks rally after Trump orders tariffs on foreign-made components",
@@ -15,30 +39,6 @@
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 19:09 UTC",
-   "title": "16 beaten-down AI stocks that are beloved by BofA analysts",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 19:07 UTC",
-   "title": "OpenAI talent exodus raises 'huge red flag' ahead of IPO",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-14 18:30 UTC",
-   "title": "‘The market is obviously on fire’: Should I take $1,000 from my brokerage account to pay off my car loan?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]

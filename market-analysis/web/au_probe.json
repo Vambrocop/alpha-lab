@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated": "2026-08-14T14:15:02.586463+00:00",
+    "generated": "2026-08-14T21:54:42.297088+00:00",
     "n_total": 33,
     "n_fetch_failed": 0,
     "n_ok_10y": 32,
@@ -29,7 +29,7 @@
       "ticker": "^AXJO",
       "start_date": "1992-11-23",
       "last_date": "2026-08-13",
-      "n_rows": 8525,
+      "n_rows": 8522,
       "years": 33.7,
       "age_days": 1,
       "recent_gap": false,
@@ -43,7 +43,7 @@
       "ticker": "^AORD",
       "start_date": "1984-08-03",
       "last_date": "2026-08-13",
-      "n_rows": 10624,
+      "n_rows": 10621,
       "years": 42.0,
       "age_days": 1,
       "recent_gap": false,

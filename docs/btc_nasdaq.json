@@ -1,14 +1,14 @@
 {
-  "generated": "2026-08-14T14:14:59Z",
+  "generated": "2026-08-14T21:54:39Z",
   "date_range": [
     "2014-10-15",
     "2026-08-14"
   ],
-  "n_days": 2975,
+  "n_days": 2972,
   "signal": "BTC 20日动量，阈值 ±5%；前向 20 日",
   "conditional": {
     "base": {
-      "n": 2955,
+      "n": 2952,
       "mean_pct": 1.34,
       "up_rate": 66.3,
       "p10": -5.31,
@@ -26,17 +26,17 @@
       "pct_neg": 27.3
     },
     "neutral": {
-      "n": 736,
-      "mean_pct": 1.33,
-      "up_rate": 64.4,
-      "p10": -5.16,
-      "p90": 7.03,
+      "n": 733,
+      "mean_pct": 1.34,
+      "up_rate": 64.5,
+      "p10": -5.17,
+      "p90": 7.06,
       "worst": -18.38,
-      "pct_neg": 35.6
+      "pct_neg": 35.5
     },
     "neg": {
       "n": 917,
-      "mean_pct": 0.71,
+      "mean_pct": 0.72,
       "up_rate": 58.8,
       "p10": -6.8,
       "p90": 6.78,
@@ -53,20 +53,20 @@
     "rule": "BTC动量<-5%→空仓，否则满仓纳指；次日生效；单边成本 5bps",
     "cost_bps": 5.0,
     "n_switches": 214,
-    "time_in_market_pct": 69.2,
+    "time_in_market_pct": 69.1,
     "strategy": {
-      "total_return_pct": 371.9,
-      "cagr_pct": 14.02,
+      "total_return_pct": 370.3,
+      "cagr_pct": 13.98,
       "sharpe": 0.94,
       "max_dd_pct": -29.5
     },
     "buyhold": {
-      "total_return_pct": 534.5,
-      "cagr_pct": 16.9,
+      "total_return_pct": 532.3,
+      "cagr_pct": 16.87,
       "sharpe": 0.84,
       "max_dd_pct": -36.4
     },
-    "excess_cagr_pp": -2.88,
+    "excess_cagr_pp": -2.89,
     "dd_shallower_pp": 6.9,
     "sharpe_diff": 0.1
   },
@@ -97,13 +97,13 @@
     },
     {
       "period": "2024-2026",
-      "n": 657,
+      "n": 654,
       "cond_pos_minus_neg_uprate_pp": 28.4,
-      "strat_cagr_pct": 21.14,
-      "buyhold_cagr_pct": 24.85,
+      "strat_cagr_pct": 20.98,
+      "buyhold_cagr_pct": 24.69,
       "edge_holds": true
     }
   ],
-  "verdict": "信号真·风险取舍：方向同号 4/4 段(其中 3 段优势≥5pp；早段约3pp接近噪声、强度随期递增)；裸 overlay 让出 2.88pp 年化，换 Sharpe 0.94 vs 0.84、回撤 -29.5% vs -36.4%(浅 6.9pp)——但属单一历史路径、无置信区间，可能不重复。要风险调整收益的可参考，要最大绝对收益的死拿更好。已对照纳指自身20日动量(同口径差 9.6pp)：BTC 多给约 4.3pp 增量、不只是大盘动量代理",
+  "verdict": "信号真·风险取舍：方向同号 4/4 段(其中 3 段优势≥5pp；早段约3pp接近噪声、强度随期递增)；裸 overlay 让出 2.89pp 年化，换 Sharpe 0.94 vs 0.84、回撤 -29.5% vs -36.4%(浅 6.9pp)——但属单一历史路径、无置信区间，可能不重复。要风险调整收益的可参考，要最大绝对收益的死拿更好。已对照纳指自身20日动量(同口径差 9.6pp)：BTC 多给约 4.3pp 增量、不只是大盘动量代理",
   "caveat": "出格区·把红线此前剥掉的方向亮出来诚实检验。非荐股、非保证、会错、过去≠未来；BTC 与纳指同属高风险资产，相关≠因果；已对照纳指自身20日动量(同口径差 9.6pp)：BTC 多给约 4.3pp 增量、不只是大盘动量代理；Sharpe/回撤改善属单一历史路径、无置信区间；FRAGILE(符号一致性0.8)→ 看体制段。每跑 append 计分。"
 }

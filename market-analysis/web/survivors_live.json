@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-14T14:14:56Z",
+  "generated": "2026-08-14T21:54:35Z",
   "as_of": "2026-08-14",
   "n_survivors": 5,
   "n_active": 2,
@@ -41,7 +41,7 @@
       "key": "BTC_mom20_pos",
       "name": "BTC 20 日动量为正（风险偏好代理）",
       "active": false,
-      "state": "BTC 近 20 日动量 -2.8%（未高于 +5% 阈值）",
+      "state": "BTC 近 20 日动量 -2.3%（未高于 +5% 阈值）",
       "up_pct": 75,
       "base_pct": 62,
       "window": "2000后",
@@ -57,16 +57,16 @@
       "key": "p5_h1_nasdaq",
       "name": "纳指大跌后的次日走向",
       "active": false,
-      "state": "纳指最新日收益 +0.1%（未跌进历史最低 5% 档 -2.0%）",
+      "state": "纳指最新日收益 -0.3%（未跌进历史最低 5% 档 -2.0%）",
       "up_pct": 51,
       "base_pct": 54,
       "window": "2000后",
       "dnote": "微弱偏负",
       "edge_plain": "纳指跌进历史最低 5% 的大跌日 51% vs 全样本基率 54%（次日上涨率·2000后·微弱偏负）",
-      "recent_p": 0.084,
+      "recent_p": 0.086,
       "modern": "现代仍有效",
       "unstable": true,
-      "stability_note": "⚠ 现代显著性临界（recent_p≈0.08·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
+      "stability_note": "⚠ 现代显著性临界（recent_p≈0.09·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
     },
     {
       "family": "calendar",

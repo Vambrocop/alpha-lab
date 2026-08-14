@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-14T14:15:51Z",
+  "generated": "2026-08-14T21:55:31Z",
   "source": "动量+低波动 选股 → 前向公开计分",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，观察池取头/尾各3）",
   "hold_td": 20,
@@ -18,7 +18,7 @@
       "hit_pct": 72.9,
       "mean_call_excess_pct": 6.949
     },
-    "n_pending": 118,
+    "n_pending": 119,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
@@ -83,6 +83,17 @@
       "view": "看淡",
       "pick_date": "2026-08-14",
       "mom_pct": 16.8,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "NVDA",
+      "view": "看好",
+      "pick_date": "2026-08-14",
+      "mom_pct": 20.6,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -446,17 +457,6 @@
       "view": "看淡",
       "pick_date": "2026-08-07",
       "mom_pct": 110.4,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "KO",
-      "view": "看好",
-      "pick_date": "2026-08-06",
-      "mom_pct": 13.9,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
