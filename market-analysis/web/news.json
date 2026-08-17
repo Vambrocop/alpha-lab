@@ -1,17 +1,25 @@
 {
- "updated": "2026-08-17 19:48 UTC",
+ "updated": "2026-08-17 20:12 UTC",
  "items": [
   {
-   "time": "2026-08-17 19:14 UTC",
-   "title": "I drove Tesla FSD, Rivian Autonomy+ ‘hands-free’ driving systems. Here’s how they compare",
+   "time": "2026-08-17 20:04 UTC",
+   "title": "30-year Treasury yield tops 5.31%, the highest in 19 years",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 19:01 UTC",
-   "title": "30-year Treasury yield tops 5.31%, the highest in 19 years",
+   "time": "2026-08-17 19:48 UTC",
+   "title": "Why it pays to stay invested: No amount of bad news could stop the stock market’s strongest run in more than 25 years",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 19:14 UTC",
+   "title": "I drove Tesla FSD, Rivian Autonomy+ ‘hands-free’ driving systems. Here’s how they compare",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 18:42 UTC",
-   "title": "Eli Lilly and J&J bounce on new data, as software stocks give up last week's gains",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
