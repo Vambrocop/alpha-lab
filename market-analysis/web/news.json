@@ -1,18 +1,26 @@
 {
- "updated": "2026-08-17 17:51 UTC",
+ "updated": "2026-08-17 18:19 UTC",
  "items": [
   {
-   "time": "2026-08-17 17:43 UTC",
-   "title": "Prediction market traders see roughly 1-in-4 odds Paramount’s bid to buy Warner Bros. Discovery fails",
+   "time": "2026-08-17 18:11 UTC",
+   "title": "30-year Treasury yield tops 5.31%, the highest in 19 years",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 17:42 UTC",
-   "title": "Oil prices rise as Iran rules out interim deal extension, threatens to escalate conflict",
-   "impact": "positive",
+   "time": "2026-08-17 17:57 UTC",
+   "title": "Here’s how Amazon’s stock could nearly double by the end of next year, according to Morgan Stanley",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 17:43 UTC",
+   "title": "Prediction market traders see roughly 1-in-4 odds Paramount’s bid to buy Warner Bros. Discovery fails",
+   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
@@ -28,14 +36,6 @@
   {
    "time": "2026-08-17 17:10 UTC",
    "title": "Synchrony, credit card issuer to Amazon and Walmart, partners with OpenAI for ChatGPT shopping",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 16:36 UTC",
-   "title": "OpenAI's Brockman brushes off concerns about leadership changes in CNBC exclusive",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
