@@ -1,8 +1,24 @@
 {
- "updated": "2026-08-17 15:13 UTC",
+ "updated": "2026-08-17 15:47 UTC",
  "items": [
   {
-   "time": "2026-08-17 15:12 UTC",
+   "time": "2026-08-17 15:34 UTC",
+   "title": "Nvidia financing initiative follows SEC guidance that takes sponsors off the hook for data center investments",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 15:28 UTC",
+   "title": "Synchrony, credit card issuer to Amazon and Walmart, partners with OpenAI for ChatGPT shopping",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 15:26 UTC",
    "title": "Nvidia backing $105 billion in financing for OpenAI data center in Ohio",
    "impact": "neutral",
    "note": "",
@@ -10,35 +26,19 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 15:11 UTC",
-   "title": "Credit card issuer Synchrony partners with OpenAI for ChatGPT shopping",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 15:04 UTC",
-   "title": "OpenAI's Brockman brushes off concerns about leadership changes in CNBC exclusive",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 14:57 UTC",
-   "title": "Most investors are making the same costly mistake — and it has nothing to do with picking the wrong stocks",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 14:56 UTC",
+   "time": "2026-08-17 15:25 UTC",
    "title": "Oil prices rise as Iran rules out interim deal extension, threatens to escalate conflict",
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 15:22 UTC",
+   "title": "Micron, Sandisk and other chip stocks climb as investors get more confident about AI spending",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
