@@ -1,6 +1,14 @@
 {
- "updated": "2026-08-17 19:05 UTC",
+ "updated": "2026-08-17 19:48 UTC",
  "items": [
+  {
+   "time": "2026-08-17 19:14 UTC",
+   "title": "I drove Tesla FSD, Rivian Autonomy+ ‘hands-free’ driving systems. Here’s how they compare",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-17 19:01 UTC",
    "title": "30-year Treasury yield tops 5.31%, the highest in 19 years",
@@ -29,14 +37,6 @@
    "time": "2026-08-17 18:42 UTC",
    "title": "Eli Lilly and J&J bounce on new data, as software stocks give up last week's gains",
    "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 18:32 UTC",
-   "title": "Synchrony, credit card issuer to Amazon and Walmart, partners with OpenAI for ChatGPT shopping",
-   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
