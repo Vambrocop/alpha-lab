@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-17 16:51 UTC",
+ "updated": "2026-08-17 17:15 UTC",
  "items": [
+  {
+   "time": "2026-08-17 17:12 UTC",
+   "title": "Refiner stocks are on a nearly unprecedented run. History says it could end soon",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 17:10 UTC",
+   "title": "Synchrony, credit card issuer to Amazon and Walmart, partners with OpenAI for ChatGPT shopping",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-17 16:36 UTC",
    "title": "OpenAI's Brockman brushes off concerns about leadership changes in CNBC exclusive",
@@ -21,22 +37,6 @@
    "time": "2026-08-17 16:29 UTC",
    "title": "Oil prices little changed as Iran rules out interim deal extension, threatens to escalate conflict",
    "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 16:19 UTC",
-   "title": "Prediction market traders see roughly 1-in-4 odds Paramount’s bid to buy Warner Bros. Discovery fails",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 16:12 UTC",
-   "title": "Cramer's advice on Apple after analyst upgrade. Plus, why 2 chipmakers are up big",
-   "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
