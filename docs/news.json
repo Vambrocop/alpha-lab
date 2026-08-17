@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-17 14:51 UTC",
+ "updated": "2026-08-17 15:13 UTC",
  "items": [
   {
-   "time": "2026-08-17 14:46 UTC",
+   "time": "2026-08-17 15:12 UTC",
+   "title": "Nvidia backing $105 billion in financing for OpenAI data center in Ohio",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 15:11 UTC",
+   "title": "Credit card issuer Synchrony partners with OpenAI for ChatGPT shopping",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 15:04 UTC",
+   "title": "OpenAI's Brockman brushes off concerns about leadership changes in CNBC exclusive",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 14:57 UTC",
+   "title": "Most investors are making the same costly mistake — and it has nothing to do with picking the wrong stocks",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 14:56 UTC",
    "title": "Oil prices rise as Iran rules out interim deal extension, threatens to escalate conflict",
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 14:30 UTC",
-   "title": "Nvidia backs financing for OpenAI data center in Ohio",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 14:29 UTC",
-   "title": "Stanley Druckenmiller ditched these chip plays before the selloff. Here’s how he’s playing the tech sector now.",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 14:09 UTC",
-   "title": "Meta faces ‘astronomical’ consequences as legal fight reaches critical moment in California",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 13:35 UTC",
-   "title": "The stock market is driving the economy in one major way",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
