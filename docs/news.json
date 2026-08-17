@@ -1,24 +1,16 @@
 {
- "updated": "2026-08-17 20:49 UTC",
+ "updated": "2026-08-17 21:56 UTC",
  "items": [
   {
-   "time": "2026-08-17 20:48 UTC",
-   "title": "Paramount seeks $1.88 billion bond from state AGs to cover costs of WBD merger delay",
+   "time": "2026-08-17 21:29 UTC",
+   "title": "L3Harris ousts CEO Chris Kubasik over unspecified 'conduct,' stock drops 4%",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 20:43 UTC",
-   "title": "Micron, Sandisk and other chip stocks climb as investors get more confident about AI spending",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 20:33 UTC",
+   "time": "2026-08-17 21:26 UTC",
    "title": "Anthropic tells investors annualized revenue run rate climbed to $65 billion in July",
    "impact": "neutral",
    "note": "",
@@ -26,17 +18,25 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 20:32 UTC",
-   "title": "Defense contractor L3Harris ousts CEO Chris Kubasik over unspecified 'conduct,' stock drops 4%",
+   "time": "2026-08-17 21:22 UTC",
+   "title": "Nvidia backing $105 billion in financing for OpenAI data center in Ohio",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 20:18 UTC",
-   "title": "SpaceX’s stock is rising, and that’s a good sign for Nvidia and Google",
-   "impact": "neutral",
+   "time": "2026-08-17 21:22 UTC",
+   "title": "There’s a 49% chance the Dow will finish this year up double digits. Here’s why.",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 21:15 UTC",
+   "title": "The number of ‘negative-beta’ stocks in the S&P 500 just hit a new record high. What that means for investors.",
+   "impact": "positive",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"

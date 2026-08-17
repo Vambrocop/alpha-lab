@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-14T21:54:35Z",
-  "as_of": "2026-08-14",
+  "generated": "2026-08-17T21:56:14Z",
+  "as_of": "2026-08-17",
   "n_survivors": 5,
   "n_active": 2,
   "survivors": [
@@ -9,7 +9,7 @@
       "key": "legacy_noncomm_pct_oi_lo_h60_nasdaq100",
       "name": "COT 纳指投机仓位极空（逆向拥挤指标）",
       "active": true,
-      "state": "最新可用 COT 报告(报告日 2026-08-04·2026-08-10 起可用)：纳指投机净仓位处 3 年第 1 分位（≤10 极空档·应期）",
+      "state": "最新可用 COT 报告(报告日 2026-08-11·2026-08-17 起可用)：纳指投机净仓位处 3 年第 1 分位（≤10 极空档·应期）",
       "up_pct": 89,
       "base_pct": 71,
       "window": "2000后",
@@ -31,7 +31,7 @@
       "window": "2000后",
       "dnote": "微弱偏正",
       "edge_plain": "标普金叉成立时 66% vs 全样本基率 63%（标普未来 20 日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.013,
+      "recent_p": 0.014,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""
@@ -41,7 +41,7 @@
       "key": "BTC_mom20_pos",
       "name": "BTC 20 日动量为正（风险偏好代理）",
       "active": false,
-      "state": "BTC 近 20 日动量 -2.3%（未高于 +5% 阈值）",
+      "state": "BTC 近 20 日动量 +0.7%（未高于 +5% 阈值）",
       "up_pct": 75,
       "base_pct": 62,
       "window": "2000后",
@@ -63,7 +63,7 @@
       "window": "2000后",
       "dnote": "微弱偏负",
       "edge_plain": "纳指跌进历史最低 5% 的大跌日 51% vs 全样本基率 54%（次日上涨率·2000后·微弱偏负）",
-      "recent_p": 0.086,
+      "recent_p": 0.092,
       "modern": "现代仍有效",
       "unstable": true,
       "stability_note": "⚠ 现代显著性临界（recent_p≈0.09·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
@@ -79,7 +79,7 @@
       "window": "2000后",
       "dnote": "微弱偏正",
       "edge_plain": "非九月 54% vs 九月 51%（当日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.030969,
+      "recent_p": 0.032967,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""
