@@ -1,8 +1,8 @@
 {
- "updated": "2026-08-17 18:19 UTC",
+ "updated": "2026-08-17 19:05 UTC",
  "items": [
   {
-   "time": "2026-08-17 18:11 UTC",
+   "time": "2026-08-17 19:01 UTC",
    "title": "30-year Treasury yield tops 5.31%, the highest in 19 years",
    "impact": "neutral",
    "note": "",
@@ -10,31 +10,31 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 17:57 UTC",
-   "title": "Here’s how Amazon’s stock could nearly double by the end of next year, according to Morgan Stanley",
+   "time": "2026-08-17 18:58 UTC",
+   "title": "Paramount seeks $1.88 billion bond from state AGs to cover costs of WBD merger delay",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 18:58 UTC",
+   "title": "SpaceX’s stock is rising, and that’s a good sign for Nvidia and Google",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 17:43 UTC",
-   "title": "Prediction market traders see roughly 1-in-4 odds Paramount’s bid to buy Warner Bros. Discovery fails",
-   "impact": "neutral",
+   "time": "2026-08-17 18:42 UTC",
+   "title": "Eli Lilly and J&J bounce on new data, as software stocks give up last week's gains",
+   "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 17:12 UTC",
-   "title": "Refiner stocks are on a nearly unprecedented run. History says it could end soon",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 17:10 UTC",
+   "time": "2026-08-17 18:32 UTC",
    "title": "Synchrony, credit card issuer to Amazon and Walmart, partners with OpenAI for ChatGPT shopping",
    "impact": "neutral",
    "note": "",
