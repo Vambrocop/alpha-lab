@@ -1,8 +1,8 @@
 {
- "updated": "2026-08-17 15:47 UTC",
+ "updated": "2026-08-17 16:12 UTC",
  "items": [
   {
-   "time": "2026-08-17 15:34 UTC",
+   "time": "2026-08-17 16:08 UTC",
    "title": "Nvidia financing initiative follows SEC guidance that takes sponsors off the hook for data center investments",
    "impact": "neutral",
    "note": "",
@@ -10,7 +10,23 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-17 15:28 UTC",
+   "time": "2026-08-17 16:06 UTC",
+   "title": "Meta faces ‘astronomical’ consequences as legal fight reaches critical moment in California",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 16:00 UTC",
+   "title": "Apple’s stock could rise 30% if it strikes an Nvidia deal for AI, this analyst says",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 15:52 UTC",
    "title": "Synchrony, credit card issuer to Amazon and Walmart, partners with OpenAI for ChatGPT shopping",
    "impact": "neutral",
    "note": "",
@@ -23,22 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 15:25 UTC",
-   "title": "Oil prices rise as Iran rules out interim deal extension, threatens to escalate conflict",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 15:22 UTC",
-   "title": "Micron, Sandisk and other chip stocks climb as investors get more confident about AI spending",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
