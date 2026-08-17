@@ -1,12 +1,28 @@
 {
- "updated": "2026-08-17 14:16 UTC",
+ "updated": "2026-08-17 14:51 UTC",
  "items": [
   {
-   "time": "2026-08-17 14:10 UTC",
+   "time": "2026-08-17 14:46 UTC",
+   "title": "Oil prices rise as Iran rules out interim deal extension, threatens to escalate conflict",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 14:30 UTC",
    "title": "Nvidia backs financing for OpenAI data center in Ohio",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-17 14:29 UTC",
+   "title": "Stanley Druckenmiller ditched these chip plays before the selloff. Here’s how he’s playing the tech sector now.",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
@@ -20,22 +36,6 @@
   {
    "time": "2026-08-17 13:35 UTC",
    "title": "The stock market is driving the economy in one major way",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 13:33 UTC",
-   "title": "OpenAI's Brockman brushes off concerns about leadership changes in CNBC exclusive",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-17 13:30 UTC",
-   "title": "The AI productivity payoff is coming. Here are 20 stocks primed to capture the gains as adoption spreads.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
