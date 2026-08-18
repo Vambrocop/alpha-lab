@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-17T21:51:34.057647+00:00",
+  "generated": "2026-08-18T14:20:03.527807+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -9,7 +9,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -22,7 +22,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -35,7 +35,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -48,7 +48,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6696,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -61,7 +61,7 @@
       "source": "live",
       "status": "ok",
       "rows": 5033,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -74,7 +74,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6724,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -86,8 +86,8 @@
       "ticker": "BTC-USD",
       "source": "live",
       "status": "ok",
-      "rows": 4353,
-      "last_date": "2026-08-17",
+      "rows": 4354,
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 2,
       "error": null
@@ -99,8 +99,8 @@
       "ticker": "ETH-USD",
       "source": "live",
       "status": "ok",
-      "rows": 3204,
-      "last_date": "2026-08-17",
+      "rows": 3205,
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 2,
       "error": null
@@ -112,8 +112,8 @@
       "ticker": "CL=F",
       "source": "live",
       "status": "ok",
-      "rows": 6523,
-      "last_date": "2026-08-17",
+      "rows": 6524,
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -125,8 +125,8 @@
       "ticker": "GC=F",
       "source": "live",
       "status": "ok",
-      "rows": 6514,
-      "last_date": "2026-08-17",
+      "rows": 6515,
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -139,7 +139,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6689,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -152,7 +152,7 @@
       "source": "live",
       "status": "ok",
       "rows": 5505,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -164,8 +164,8 @@
       "ticker": "AUDUSD=X",
       "source": "live",
       "status": "ok",
-      "rows": 5268,
-      "last_date": "2026-08-17",
+      "rows": 5269,
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -177,8 +177,8 @@
       "ticker": "CNY=X",
       "source": "live",
       "status": "ok",
-      "rows": 6294,
-      "last_date": "2026-08-17",
+      "rows": 6295,
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -191,7 +191,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -204,7 +204,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -218,7 +218,7 @@
       "status": "ok",
       "rows": 318,
       "last_date": "2026-06-01",
-      "age_days": 77,
+      "age_days": 78,
       "stale_after_days": 120,
       "error": null
     },
@@ -231,7 +231,7 @@
       "status": "ok",
       "rows": 319,
       "last_date": "2026-07-01",
-      "age_days": 47,
+      "age_days": 48,
       "stale_after_days": 120,
       "error": null
     },
@@ -244,7 +244,7 @@
       "status": "ok",
       "rows": 318,
       "last_date": "2026-07-01",
-      "age_days": 47,
+      "age_days": 48,
       "stale_after_days": 120,
       "error": null
     },
@@ -257,7 +257,7 @@
       "status": "ok",
       "rows": 318,
       "last_date": "2026-07-01",
-      "age_days": 47,
+      "age_days": 48,
       "stale_after_days": 120,
       "error": null
     },
@@ -270,7 +270,7 @@
       "status": "ok",
       "rows": 319,
       "last_date": "2026-07-01",
-      "age_days": 47,
+      "age_days": 48,
       "stale_after_days": 120,
       "error": null
     },
@@ -283,7 +283,7 @@
       "status": "ok",
       "rows": 319,
       "last_date": "2026-07-01",
-      "age_days": 47,
+      "age_days": 48,
       "stale_after_days": 120,
       "error": null
     },
@@ -296,7 +296,7 @@
       "status": "ok",
       "rows": 6659,
       "last_date": "2026-08-17",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 10,
       "error": null
     },
@@ -309,7 +309,7 @@
       "status": "ok",
       "rows": 785,
       "last_date": "2026-08-14",
-      "age_days": 3,
+      "age_days": 4,
       "stale_after_days": 10,
       "error": null
     },
@@ -322,7 +322,7 @@
       "status": "ok",
       "rows": 6652,
       "last_date": "2026-08-14",
-      "age_days": 3,
+      "age_days": 4,
       "stale_after_days": 10,
       "error": null
     },
@@ -334,7 +334,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -347,7 +347,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -360,7 +360,7 @@
       "source": "live",
       "status": "ok",
       "rows": 5533,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -373,7 +373,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -386,7 +386,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -399,7 +399,7 @@
       "source": "live",
       "status": "ok",
       "rows": 3581,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -412,7 +412,7 @@
       "source": "live",
       "status": "ok",
       "rows": 4058,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -425,7 +425,7 @@
       "source": "live",
       "status": "ok",
       "rows": 4283,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -438,7 +438,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -451,7 +451,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -464,7 +464,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -477,7 +477,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -490,7 +490,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -503,7 +503,7 @@
       "source": "live",
       "status": "ok",
       "rows": 45,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -516,7 +516,7 @@
       "source": "live",
       "status": "ok",
       "rows": 378,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -529,7 +529,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -542,7 +542,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -555,7 +555,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6695,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -568,7 +568,7 @@
       "source": "live",
       "status": "ok",
       "rows": 6097,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -581,7 +581,7 @@
       "source": "live",
       "status": "ok",
       "rows": 1268,
-      "last_date": "2026-08-17",
+      "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
