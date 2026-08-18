@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18T14:20:03.527807+00:00",
+  "generated": "2026-08-18T14:59:39.833235+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -34,7 +34,7 @@
       "ticker": "^GSPC",
       "source": "live",
       "status": "ok",
-      "rows": 6695,
+      "rows": 6692,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -47,7 +47,7 @@
       "ticker": "^VIX",
       "source": "live",
       "status": "ok",
-      "rows": 6696,
+      "rows": 6693,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -73,7 +73,7 @@
       "ticker": "DX-Y.NYB",
       "source": "live",
       "status": "ok",
-      "rows": 6724,
+      "rows": 6721,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -151,7 +151,7 @@
       "ticker": "VNQ",
       "source": "live",
       "status": "ok",
-      "rows": 5505,
+      "rows": 5504,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -308,8 +308,8 @@
       "source": "live_api",
       "status": "ok",
       "rows": 785,
-      "last_date": "2026-08-14",
-      "age_days": 4,
+      "last_date": "2026-08-17",
+      "age_days": 1,
       "stale_after_days": 10,
       "error": null
     },

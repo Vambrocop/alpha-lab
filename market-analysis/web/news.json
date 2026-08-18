@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-18 14:20 UTC",
+ "updated": "2026-08-18 15:00 UTC",
  "items": [
+  {
+   "time": "2026-08-18 14:53 UTC",
+   "title": "Anthropic tells investors annualized revenue run rate climbed to $65 billion in July",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 14:42 UTC",
+   "title": "30-year Treasury yield tops 5.33%, new 19-year high on inflation, spending concerns",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 14:18 UTC",
+   "title": "U.S. investors have been buying stocks all month and are now sitting on profits. Here’s what might make them sell.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-18 14:17 UTC",
    "title": "A payments app built by crypto exchange Kraken just launched a cash back debit card in bid for consumer wallets",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 14:16 UTC",
-   "title": "Nvidia's AI moat is shifting from chips to capital",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 14:11 UTC",
-   "title": "30-year Treasury yield tops 5.33%, new 19-year high on inflation, spending concerns",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 13:54 UTC",
-   "title": "Why it’s better to buy stocks at record highs than wait for the next crash",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
