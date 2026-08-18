@@ -1,20 +1,20 @@
 {
- "updated": "2026-08-18 20:10 UTC",
+ "updated": "2026-08-18 20:45 UTC",
  "items": [
+  {
+   "time": "2026-08-18 20:33 UTC",
+   "title": "30-year Treasury yield tops 5.33%, new 19-year high, on inflation and spending concerns",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-18 20:07 UTC",
    "title": "Here’s a ‘ridiculously cheap’ way to protect yourself against a stock-market selloff",
    "impact": "negative",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 20:06 UTC",
-   "title": "30-year Treasury yield tops 5.33%, new 19-year high on inflation, spending concerns",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   },
   {
