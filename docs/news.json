@@ -1,16 +1,8 @@
 {
- "updated": "2026-08-18 15:00 UTC",
+ "updated": "2026-08-18 15:24 UTC",
  "items": [
   {
-   "time": "2026-08-18 14:53 UTC",
-   "title": "Anthropic tells investors annualized revenue run rate climbed to $65 billion in July",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 14:42 UTC",
+   "time": "2026-08-18 15:23 UTC",
    "title": "30-year Treasury yield tops 5.33%, new 19-year high on inflation, spending concerns",
    "impact": "neutral",
    "note": "",
@@ -18,24 +10,32 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-18 14:18 UTC",
-   "title": "U.S. investors have been buying stocks all month and are now sitting on profits. Here’s what might make them sell.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 14:17 UTC",
-   "title": "A payments app built by crypto exchange Kraken just launched a cash back debit card in bid for consumer wallets",
+   "time": "2026-08-18 15:19 UTC",
+   "title": "Data centers, crypto, and tax revisions take center stage in Tuesday primaries",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-18 14:17 UTC",
-   "title": "My fiance discovered a secret childhood stock account—what I learned about investing for your kids",
+   "time": "2026-08-18 15:19 UTC",
+   "title": "A fintech app built by crypto exchange Kraken just launched a cash back debit card in bid for consumer wallets",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 15:16 UTC",
+   "title": "6% Treasury yields are the biggest risk facing stocks right now. Here’s why.",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 15:02 UTC",
+   "title": "Anthropic tells investors annualized revenue run rate climbed to $65 billion in July",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
