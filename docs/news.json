@@ -1,12 +1,36 @@
 {
- "updated": "2026-08-18 19:04 UTC",
+ "updated": "2026-08-18 20:10 UTC",
  "items": [
   {
-   "time": "2026-08-18 18:22 UTC",
+   "time": "2026-08-18 20:07 UTC",
+   "title": "Here’s a ‘ridiculously cheap’ way to protect yourself against a stock-market selloff",
+   "impact": "negative",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 20:06 UTC",
    "title": "30-year Treasury yield tops 5.33%, new 19-year high on inflation, spending concerns",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 19:52 UTC",
+   "title": "America’s growing debt pile will be the big focus Wednesday as global bond rout deepens",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 19:17 UTC",
+   "title": "Mortgage rates could move even higher — dealing a fresh blow to home buyers",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 18:14 UTC",
-   "title": "We're buying more of this AI infrastructure stock well below its recent high",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 17:26 UTC",
-   "title": "Here’s the case for Nvidia’s stock to climb 55%, according to BofA",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 17:16 UTC",
-   "title": "Apple overhauls Europe app store fees to resolve payments clash",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]

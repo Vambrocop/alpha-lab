@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18T19:03:57.614337+00:00",
+  "generated": "2026-08-18T20:09:15.388511+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -21,7 +21,7 @@
       "ticker": "^NDX",
       "source": "live",
       "status": "ok",
-      "rows": 6693,
+      "rows": 6696,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -73,7 +73,7 @@
       "ticker": "DX-Y.NYB",
       "source": "live",
       "status": "ok",
-      "rows": 6722,
+      "rows": 6725,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -138,7 +138,7 @@
       "ticker": "^TNX",
       "source": "live",
       "status": "ok",
-      "rows": 18,
+      "rows": 6690,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -203,7 +203,7 @@
       "ticker": "^SOX",
       "source": "live",
       "status": "ok",
-      "rows": 6693,
+      "rows": 6696,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
