@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18T18:17:23.186894+00:00",
+  "generated": "2026-08-18T19:03:57.614337+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -34,7 +34,7 @@
       "ticker": "^GSPC",
       "source": "live",
       "status": "ok",
-      "rows": 6693,
+      "rows": 6696,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,
@@ -47,7 +47,7 @@
       "ticker": "^VIX",
       "source": "live",
       "status": "ok",
-      "rows": 6694,
+      "rows": 6697,
       "last_date": "2026-08-18",
       "age_days": 0,
       "stale_after_days": 6,

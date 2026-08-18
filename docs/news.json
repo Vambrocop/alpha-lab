@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-18 18:18 UTC",
+ "updated": "2026-08-18 19:04 UTC",
  "items": [
+  {
+   "time": "2026-08-18 18:22 UTC",
+   "title": "30-year Treasury yield tops 5.33%, new 19-year high on inflation, spending concerns",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 18:19 UTC",
+   "title": "The Fed minutes are coming —and they’re more crucial now as Warsh limits his communication",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-18 18:14 UTC",
+   "title": "We're buying more of this AI infrastructure stock well below its recent high",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-18 17:26 UTC",
    "title": "Here’s the case for Nvidia’s stock to climb 55%, according to BofA",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 16:58 UTC",
-   "title": "Bond yields are climbing. Here’s what that means for mortgages and other consumer borrowing",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 16:48 UTC",
-   "title": "Analysis: Bond market pressure is squeezing Main Street as Wall Street waits on Warsh",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 16:48 UTC",
-   "title": "Wall Street wants to turn sports betting into ETFs. Critics call it dangerous ‘nonsense.’",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
