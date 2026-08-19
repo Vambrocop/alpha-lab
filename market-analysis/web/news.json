@@ -1,32 +1,16 @@
 {
- "updated": "2026-08-19 13:42 UTC",
+ "updated": "2026-08-19 15:26 UTC",
  "items": [
   {
-   "time": "2026-08-19 13:39 UTC",
-   "title": "Pressure on bonds abates as Treasury announces buybacks. What may come next.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-19 13:38 UTC",
-   "title": "Hedge funds are about to jump into prediction markets in a big way",
+   "time": "2026-08-19 15:14 UTC",
+   "title": "We're booking a five-fold profit on one of drug stock's rally to record highs",
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-19 13:35 UTC",
-   "title": "The bond selloff is rattling investors, but here’s why they shouldn’t expect a deeper stock downturn",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-19 13:30 UTC",
+   "time": "2026-08-19 15:12 UTC",
    "title": "Treasury doubles debt buybacks as Bessent moves to steady bond market",
    "impact": "neutral",
    "note": "",
@@ -34,11 +18,27 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-19 13:08 UTC",
-   "title": "Jim Cramer's top 10 things to watch in the stock market Wednesday",
-   "impact": "neutral",
+   "time": "2026-08-19 15:09 UTC",
+   "title": "Marvell pops 6% on AI chip deal that lets Google buy up to $12.2 billion in shares",
+   "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-19 15:05 UTC",
+   "title": "Marvell’s stock pops on news of Google chip deal — and Broadcom’s falls",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-19 15:00 UTC",
+   "title": "Stocks, bonds and gold rally after Treasury indicates it will buy more government bonds to stop yields from surging",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
