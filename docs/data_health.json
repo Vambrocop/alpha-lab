@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T19:20:30.229042+00:00",
+  "generated": "2026-08-19T19:47:58.785938+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -34,7 +34,7 @@
       "ticker": "^GSPC",
       "source": "live",
       "status": "ok",
-      "rows": 6694,
+      "rows": 6697,
       "last_date": "2026-08-19",
       "age_days": 0,
       "stale_after_days": 6,
@@ -138,7 +138,7 @@
       "ticker": "^TNX",
       "source": "live",
       "status": "ok",
-      "rows": 6691,
+      "rows": 19,
       "last_date": "2026-08-19",
       "age_days": 0,
       "stale_after_days": 6,
@@ -151,7 +151,7 @@
       "ticker": "VNQ",
       "source": "live",
       "status": "ok",
-      "rows": 5507,
+      "rows": 5506,
       "last_date": "2026-08-19",
       "age_days": 0,
       "stale_after_days": 6,
