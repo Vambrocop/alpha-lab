@@ -1,8 +1,16 @@
 {
- "updated": "2026-08-19 19:48 UTC",
+ "updated": "2026-08-19 20:12 UTC",
  "items": [
   {
-   "time": "2026-08-19 19:44 UTC",
+   "time": "2026-08-19 20:07 UTC",
+   "title": "Moderna, Merck cancer vaccine shows promise in late-stage trial; Moderna stock soars 177%",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-19 20:07 UTC",
    "title": "OpenAI 'will be a public company in 2027' or sooner, CFO Friar tells employees",
    "impact": "neutral",
    "note": "",
@@ -10,23 +18,7 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-19 19:44 UTC",
-   "title": "Marvell's stock pops 8% on AI chip deal that lets Google buy up to $12.2 billion in shares",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-19 19:38 UTC",
-   "title": "Moderna’s cancer-vaccine breakthrough drives broad biopharma stock rally",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-19 19:02 UTC",
+   "time": "2026-08-19 20:03 UTC",
    "title": "Yields pull back from multi-year highs after Treasury Department says it will double government debt repurchase size",
    "impact": "neutral",
    "note": "",
@@ -34,9 +26,17 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-19 18:58 UTC",
-   "title": "Where we stand on Broadcom after Marvell muscles in on its key customer Google",
-   "impact": "neutral",
+   "time": "2026-08-19 20:01 UTC",
+   "title": "Marvell's stock pops 10% on AI chip deal that lets Google buy up to $12.2 billion in shares",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-19 20:00 UTC",
+   "title": "Target says its turnaround is picking up steam, with help from a big tariff refund",
+   "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
