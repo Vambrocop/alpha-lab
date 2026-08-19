@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18T21:54:03Z",
+  "generated": "2026-08-19T13:43:04Z",
   "source": "Lucca & Moench 2015 (JF) prior; Federal Reserve FOMC scheduled dates",
   "n_fomc_dates_in_list": 216,
   "n_fomc_days": 213,
@@ -7,13 +7,13 @@
   "pre_window": 1,
   "overall": {
     "up_pct": 54.46,
-    "base_pct": 52.45,
-    "diff_pp": 2.01,
+    "base_pct": 52.46,
+    "diff_pp": 2.0,
     "ci95": [
-      -4.47,
-      9.09
+      -4.74,
+      9.17
     ],
-    "p": 0.551,
+    "p": 0.555,
     "n": 213
   },
   "decades": [
@@ -34,11 +34,11 @@
     {
       "decade": "2020s",
       "pre_fomc_up_pct": 45.3,
-      "base_up_pct": 54.3,
-      "diff_pp": -9.0,
+      "base_up_pct": 54.4,
+      "diff_pp": -9.1,
       "n": 53
     }
   ],
-  "verdict": "效应未显现: 前FOMC日上涨率 54.5% vs 基率 52.5% (+2.0pp, p=0.551, n=213) — 样本充足但 p≥0.05，暂列无定论/inconclusive。",
+  "verdict": "效应未显现: 前FOMC日上涨率 54.5% vs 基率 52.5% (+2.0pp, p=0.555, n=213) — 样本充足但 p≥0.05，暂列无定论/inconclusive。",
   "caveat": "探索性研究·非荐股·非投资建议。样本 n=213 个预FOMC交易日，仅含计划会议（排除紧急会议）。过去规律≠未来表现。未经FDR多重比较校正：若此为多候选检验之一，需纳入FDR池再下结论。如样本较少先保留结论，待主脑决定是否纳入 candidate_space。"
 }

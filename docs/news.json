@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-18 21:53 UTC",
+ "updated": "2026-08-19 13:42 UTC",
  "items": [
   {
-   "time": "2026-08-18 21:12 UTC",
-   "title": "OpenAI rolls out ChatGPT for Teens experience with 'stronger built-in safety protections'",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-18 21:08 UTC",
-   "title": "AI chip stocks were riding high. Here’s why Micron and others are now pulling back.",
+   "time": "2026-08-19 13:39 UTC",
+   "title": "Pressure on bonds abates as Treasury announces buybacks. What may come next.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-18 20:33 UTC",
-   "title": "30-year Treasury yield tops 5.33%, new 19-year high, on inflation and spending concerns",
-   "impact": "neutral",
+   "time": "2026-08-19 13:38 UTC",
+   "title": "Hedge funds are about to jump into prediction markets in a big way",
+   "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-18 20:07 UTC",
-   "title": "Here’s a ‘ridiculously cheap’ way to protect yourself against a stock-market selloff",
+   "time": "2026-08-19 13:35 UTC",
+   "title": "The bond selloff is rattling investors, but here’s why they shouldn’t expect a deeper stock downturn",
    "impact": "negative",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-18 19:52 UTC",
-   "title": "America’s growing debt pile will be the big focus Wednesday as global bond rout deepens",
+   "time": "2026-08-19 13:30 UTC",
+   "title": "Treasury doubles debt buybacks as Bessent moves to steady bond market",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-19 13:08 UTC",
+   "title": "Jim Cramer's top 10 things to watch in the stock market Wednesday",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
