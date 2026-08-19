@@ -1,12 +1,28 @@
 {
- "updated": "2026-08-19 15:26 UTC",
+ "updated": "2026-08-19 16:53 UTC",
  "items": [
   {
-   "time": "2026-08-19 15:14 UTC",
-   "title": "We're booking a five-fold profit on one of drug stock's rally to record highs",
+   "time": "2026-08-19 16:40 UTC",
+   "title": "9 stocks to ride the industrial sector’s blazing rally",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-19 16:04 UTC",
+   "title": "Hedge funds are about to jump into prediction markets in a big way",
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-19 15:55 UTC",
+   "title": "Stocks, bonds and gold rally after Treasury indicates it will buy more government bonds to stop yields from surging",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
@@ -23,22 +39,6 @@
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-19 15:05 UTC",
-   "title": "Marvell’s stock pops on news of Google chip deal — and Broadcom’s falls",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-19 15:00 UTC",
-   "title": "Stocks, bonds and gold rally after Treasury indicates it will buy more government bonds to stop yields from surging",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
