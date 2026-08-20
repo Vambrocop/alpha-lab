@@ -1,14 +1,14 @@
 {
-  "generated": "2026-08-19T13:43:02Z",
+  "generated": "2026-08-20T13:43:52Z",
   "date_range": [
     "2014-10-15",
-    "2026-08-19"
+    "2026-08-20"
   ],
-  "n_days": 2978,
+  "n_days": 2979,
   "signal": "BTC 20日动量，阈值 ±5%；前向 20 日",
   "conditional": {
     "base": {
-      "n": 2958,
+      "n": 2959,
       "mean_pct": 1.34,
       "up_rate": 66.3,
       "p10": -5.31,
@@ -17,7 +17,7 @@
       "pct_neg": 33.7
     },
     "pos": {
-      "n": 1303,
+      "n": 1304,
       "mean_pct": 1.78,
       "up_rate": 72.7,
       "p10": -4.42,
@@ -55,14 +55,14 @@
     "n_switches": 214,
     "time_in_market_pct": 69.2,
     "strategy": {
-      "total_return_pct": 363.8,
-      "cagr_pct": 13.83,
+      "total_return_pct": 361.9,
+      "cagr_pct": 13.79,
       "sharpe": 0.93,
       "max_dd_pct": -29.5
     },
     "buyhold": {
-      "total_return_pct": 523.5,
-      "cagr_pct": 16.71,
+      "total_return_pct": 521.1,
+      "cagr_pct": 16.67,
       "sharpe": 0.83,
       "max_dd_pct": -36.4
     },
@@ -97,10 +97,10 @@
     },
     {
       "period": "2024-2026",
-      "n": 660,
-      "cond_pos_minus_neg_uprate_pp": 28.4,
-      "strat_cagr_pct": 20.22,
-      "buyhold_cagr_pct": 23.89,
+      "n": 661,
+      "cond_pos_minus_neg_uprate_pp": 28.5,
+      "strat_cagr_pct": 20.02,
+      "buyhold_cagr_pct": 23.67,
       "edge_holds": true
     }
   ],

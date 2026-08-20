@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-19T13:42:59Z",
-  "as_of": "2026-08-19",
+  "generated": "2026-08-20T13:43:49Z",
+  "as_of": "2026-08-20",
   "n_survivors": 5,
-  "n_active": 2,
+  "n_active": 3,
   "survivors": [
     {
       "family": "positioning",
@@ -21,27 +21,11 @@
       "stability_note": ""
     },
     {
-      "family": "regime",
-      "key": "golden_cross_sp500",
-      "name": "标普金叉（50 日线上穿 200 日线）",
-      "active": true,
-      "state": "标普 50 日均线高于 200 日均线（金叉成立·趋势向上）",
-      "up_pct": 66,
-      "base_pct": 63,
-      "window": "2000后",
-      "dnote": "微弱偏正",
-      "edge_plain": "标普金叉成立时 66% vs 全样本基率 63%（标普未来 20 日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.01,
-      "modern": "现代仍有效",
-      "unstable": false,
-      "stability_note": ""
-    },
-    {
       "family": "factor",
       "key": "BTC_mom20_pos",
       "name": "BTC 20 日动量为正（风险偏好代理）",
-      "active": false,
-      "state": "BTC 近 20 日动量 +0.2%（未高于 +5% 阈值）",
+      "active": true,
+      "state": "BTC 近 20 日动量 +13.5%（高于 +5% 阈值）",
       "up_pct": 75,
       "base_pct": 62,
       "window": "2000后",
@@ -53,20 +37,36 @@
       "stability_note": ""
     },
     {
+      "family": "regime",
+      "key": "golden_cross_sp500",
+      "name": "标普金叉（50 日线上穿 200 日线）",
+      "active": true,
+      "state": "标普 50 日均线高于 200 日均线（金叉成立·趋势向上）",
+      "up_pct": 66,
+      "base_pct": 63,
+      "window": "2000后",
+      "dnote": "微弱偏正",
+      "edge_plain": "标普金叉成立时 66% vs 全样本基率 63%（标普未来 20 日上涨率·2000后·微弱偏正）",
+      "recent_p": 0.012,
+      "modern": "现代仍有效",
+      "unstable": false,
+      "stability_note": ""
+    },
+    {
       "family": "rebound",
       "key": "p5_h1_nasdaq",
       "name": "纳指大跌后的次日走向",
       "active": false,
-      "state": "纳指最新日收益 +0.2%（未跌进历史最低 5% 档 -2.0%）",
+      "state": "纳指最新日收益 -0.3%（未跌进历史最低 5% 档 -2.0%）",
       "up_pct": 51,
       "base_pct": 54,
       "window": "2000后",
       "dnote": "微弱偏负",
       "edge_plain": "纳指跌进历史最低 5% 的大跌日 51% vs 全样本基率 54%（次日上涨率·2000后·微弱偏负）",
-      "recent_p": 0.075,
+      "recent_p": 0.081,
       "modern": "现代仍有效",
-      "unstable": false,
-      "stability_note": ""
+      "unstable": true,
+      "stability_note": "⚠ 现代显著性临界（recent_p≈0.08·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
     },
     {
       "family": "calendar",
@@ -79,7 +79,7 @@
       "window": "2000后",
       "dnote": "微弱偏正",
       "edge_plain": "非九月 54% vs 九月 51%（当日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.025974,
+      "recent_p": 0.034965,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""

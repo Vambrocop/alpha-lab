@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T13:39:18Z",
+  "generated": "2026-08-20T13:40:12Z",
   "method": "S&P 月度收益周期图 vs AR(1) 红噪声 surrogate；最强谱峰 vs surrogate 最强峰的全局检验(max-statistic，控多重比较)。",
   "caveat": "检验'过去是否真有超红噪声的周期成分'，**不预测周期会延续**。逐频率'超95%线'仅描述性(未控多重比较)；结论以全局 max-statistic 为准。基于 S&P500 月度收益。",
   "source": "S&P 500 (^GSPC) 月度收益",
@@ -13,7 +13,7 @@
     "years": 98.7,
     "ar1_rho": 0.078,
     "top_period_years": 3.52,
-    "p_global": 0.7502,
+    "p_global": 0.7473,
     "significant": false,
     "exceed_pointwise_periods_years": [
       3.52,
@@ -64,6 +64,6 @@
         "note": "超出可检验范围（数据约98年，谱分辨率不足以分辨该尺度）"
       }
     ],
-    "verdict": "✗ 无显著周期：最强峰(≈3.5年)未超红噪声 (全局 p=0.750)"
+    "verdict": "✗ 无显著周期：最强峰(≈3.5年)未超红噪声 (全局 p=0.747)"
   }
 }
