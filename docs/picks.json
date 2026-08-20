@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-20T13:44:44Z",
+  "generated": "2026-08-20T22:00:26Z",
   "source": "动量+低波动 选股 → 前向公开计分",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，观察池取头/尾各3）",
   "hold_td": 20,
@@ -18,7 +18,7 @@
       "hit_pct": 70.0,
       "mean_call_excess_pct": 6.028
     },
-    "n_pending": 119,
+    "n_pending": 120,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
@@ -83,6 +83,17 @@
       "view": "看淡",
       "pick_date": "2026-08-20",
       "mom_pct": 10.2,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "KO",
+      "view": "看好",
+      "pick_date": "2026-08-20",
+      "mom_pct": 16.2,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -446,17 +457,6 @@
       "view": "看好",
       "pick_date": "2026-08-12",
       "mom_pct": 13.9,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "AAPL",
-      "view": "看好",
-      "pick_date": "2026-08-12",
-      "mom_pct": 10.8,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
