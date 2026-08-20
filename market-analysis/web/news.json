@@ -1,20 +1,28 @@
 {
- "updated": "2026-08-20 19:08 UTC",
+ "updated": "2026-08-20 19:52 UTC",
  "items": [
   {
-   "time": "2026-08-20 19:06 UTC",
-   "title": "The bond market is going to burst the stock-market bubble",
+   "time": "2026-08-20 19:43 UTC",
+   "title": "Oil prices rise after Treasury Secretary says U.S. will collapse Iran with economic pressure",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-20 19:40 UTC",
+   "title": "Anxious bond market sends troubling message to investors: There’s no easy fix for U.S. debt",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-20 18:49 UTC",
-   "title": "We're adding two new stocks to our Bullpen watchlist",
+   "time": "2026-08-20 19:06 UTC",
+   "title": "The bond market is going to burst the stock-market bubble",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-20 18:19 UTC",
-   "title": "Oil prices rise 2% after Treasury Secretary says U.S. will collapse Iran with economic pressure",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
