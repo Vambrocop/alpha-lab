@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-21 18:18 UTC",
+ "updated": "2026-08-21 19:04 UTC",
  "items": [
+  {
+   "time": "2026-08-21 18:55 UTC",
+   "title": "An overlooked AI winner names a new CFO — plus, Nvidia's key earnings loom",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 18:29 UTC",
+   "title": "Trump, Vance and Bessent try to calm the bond market with ‘alternative facts’",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 18:23 UTC",
+   "title": "Trump tariff deadline looms as Canada says it's working to resolve 'trade issues' with U.S.",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-21 18:15 UTC",
    "title": "The Treasury, the Fed and the threat to your money",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 17:45 UTC",
-   "title": "Trump tariff deadline looms as Canada says it's working to resolve 'trade issues' with U.S.",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 17:43 UTC",
-   "title": "Kalshi traders think the bitcoin rally could end the year near current levels",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 17:38 UTC",
-   "title": "Jim Cramer looks at why our AI data center stocks are among the worst of the week",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
