@@ -47,6 +47,47 @@ def test_scorecard_run_returns_dict_with_sources(scorecard_result):
     assert isinstance(result["sources"], dict), "'sources' 须是 dict"
 
 
+def test_scorecard_llm_row_filters_by_direction_not_bucket(tmp_path, monkeypatch):
+    """防复发(2026-08 真 bug):⑤ LLM 行曾误用 `bucket`(=实际结果桶)筛"方向下注",
+    等于挑"市场真动了的日子"再看一个几乎只说中性的 LLM 中没中 → 假 0%(误导公开战绩)。
+    必须按 `direction`(LLM 的预测)筛。合成账本:29 条中性预测(其中 13 条实际结果落在
+    偏多/偏空桶) + 1 条真·方向预测 → n_scored 必须是 1(按预测),不是 13(按实际结果)。
+    hermetic:合成 CSV + monkeypatch BASE/RAW/PROC(RAW/PROC 是模块级常量,patch BASE 够不着;
+    CI 干净检出无 data/raw/,若漏 patch RAW,_nasdaq() 会 FileNotFoundError → 门禁红,06-25 同坑)。"""
+    import pandas as pd
+    import scorecard
+
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    # 合成纳指价格(RAW):_nasdaq() 开场就读它,必须 hermetic 提供
+    raw_dir = data_dir / "raw"
+    raw_dir.mkdir()
+    dates = pd.bdate_range("2026-06-01", periods=60)
+    pd.DataFrame({"Date": dates, "NASDAQ": 100.0 + pd.RangeIndex(len(dates))}).to_csv(
+        raw_dir / "combined_prices.csv", index=False)
+    rows = ["pred_date,symbol,direction,confidence,horizon_td,ret_pct,bucket,hit,settled,dropped"]
+    # 29 条中性预测:前 13 条市场实际大动(bucket=偏多/偏空)——旧 bug 会把这 13 条错当"方向下注"
+    for i in range(29):
+        bucket = ("偏多" if i % 2 == 0 else "偏空") if i < 13 else "中性"
+        hit = "False" if i < 13 else "True"
+        rows.append(f"2026-07-{i % 28 + 1:02d},SPY,中性,低,5,0.5,{bucket},{hit},True,False")
+    # 1 条真·方向预测(偏多,实际中性→没中)
+    rows.append("2026-07-30,SPY,偏多,中,5,0.2,中性,False,True,False")
+    (data_dir / "llm_prediction_log.csv").write_text("\n".join(rows) + "\n", encoding="utf-8")
+
+    monkeypatch.setattr(scorecard, "BASE", data_dir.parent)   # 其它源找不到文件→各自 except 跳过,只剩 ⑤ 可算
+    monkeypatch.setattr(scorecard, "RAW", raw_dir / "combined_prices.csv")
+    monkeypatch.setattr(scorecard, "PROC", data_dir / "processed")
+    try:
+        result = scorecard.run(write=False)
+    except FileNotFoundError:
+        pytest.fail("scorecard.run 不该因其它数据缺失而抛 FileNotFoundError(各源应独立 fail-soft)")
+    llm = result["sources"].get("LLM前瞻方向(出格·live)")
+    assert llm is not None, "合成账本存在时 ⑤ LLM 行必须出现"
+    assert llm["n_scored"] == 1, (
+        f"n_scored 应=1(按 direction 筛真·方向预测);若=13 说明退回了按 bucket(实际结果)筛的旧 bug: {llm}")
+
+
 def test_scorecard_model_calibration_shape(scorecard_result):
     """若 model_calibration 存在且非 None，须含数值型 base_rate_pct。
 
