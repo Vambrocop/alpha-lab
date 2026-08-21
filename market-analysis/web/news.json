@@ -1,6 +1,14 @@
 {
- "updated": "2026-08-21 19:44 UTC",
+ "updated": "2026-08-21 20:11 UTC",
  "items": [
+  {
+   "time": "2026-08-21 20:04 UTC",
+   "title": "Bitcoin surges 22% for the week as investor optimism floods back",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-21 19:29 UTC",
    "title": "Tesla recalls 3 million vehicles in China over doorhandle safety, driver monitoring",
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 18:23 UTC",
-   "title": "Trump tariff deadline looms as Canada says it's working to resolve 'trade issues' with U.S.",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
