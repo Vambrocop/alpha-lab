@@ -125,10 +125,12 @@ def run(write=True):
 
     # ⑤ LLM 前瞻预测（llm_prediction_log·仅方向档 偏多/偏空·出格·敢预测敢认账）
     # 只计方向下注(偏多/偏空)——「中性」不是方向赌注,计进去会虚高;诚实只看方向命中。
+    # BUG 修复(2026-08):此前误用 `bucket`(=实际结果桶)筛选,等于挑"市场真动了的日子"再看
+    # 一个几乎只说中性的 LLM 中没中→必然0%(误导)。应按 `direction`(LLM 的预测)筛真·方向下注。
     try:
         lp = pd.read_csv(BASE / "data" / "llm_prediction_log.csv")
         dropped = lp["dropped"].astype(str).str.lower().isin(["true", "1"]) if "dropped" in lp else False
-        dirp = lp[lp["bucket"].isin(["偏多", "偏空"]) & ~dropped]
+        dirp = lp[lp["direction"].isin(["偏多", "偏空"]) & ~dropped]
         sett = dirp["settled"].astype(str).str.lower().isin(["true", "1"])
         hit = dirp.loc[sett, "hit"].astype(str).str.lower().isin(["true", "1"])
         n = int(sett.sum())
