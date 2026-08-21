@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21T16:44:22Z",
+  "generated": "2026-08-21T21:58:23Z",
   "horizon_days": 20,
   "model_calibration": {
     "curve": [
@@ -46,7 +46,7 @@
   "sources": {
     "纳指方向信号(live)": {
       "n_scored": 32,
-      "n_pending": 19,
+      "n_pending": 20,
       "hit_pct": 53.1
     },
     "综合读数倾向(live)": {
@@ -65,7 +65,7 @@
       "hit_pct": null
     },
     "LLM前瞻方向(出格·live)": {
-      "n_scored": 13,
+      "n_scored": 1,
       "n_pending": 0,
       "hit_pct": 0.0
     }

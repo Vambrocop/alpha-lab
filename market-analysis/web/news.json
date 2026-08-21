@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-21 20:46 UTC",
+ "updated": "2026-08-21 21:55 UTC",
  "items": [
+  {
+   "time": "2026-08-21 21:50 UTC",
+   "title": "Anthropic IPO filing will show AI backlash as a risk factor, sources say",
+   "impact": "negative",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 21:31 UTC",
+   "title": "Trump says U.S., Canada 'should be able' to reach trade deal as tariff deadline looms",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 20:56 UTC",
+   "title": "Trump to allow import of 300,000 metric tons of ground beef without tariff",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-21 20:34 UTC",
    "title": "Tesla’s stock jumps as the company gets cleared for a Las Vegas robotaxi launch",
@@ -12,30 +36,6 @@
   {
    "time": "2026-08-21 20:19 UTC",
    "title": "Ray Dalio says Bessent move is sign that a debt crisis is getting closer; recommends gold and bitcoin",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 20:11 UTC",
-   "title": "Retirees: This investment gives you a guaranteed 5% safe withdrawal rate",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 20:11 UTC",
-   "title": "Here’s how Bessent’s newly activist Treasury Department is undercutting the Fed’s Warsh",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 20:04 UTC",
-   "title": "Bitcoin surges 22% for the week as investor optimism floods back",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21T20:45:28.143466+00:00",
+  "generated": "2026-08-21T21:50:55.375947+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -60,7 +60,7 @@
       "ticker": "^VIX3M",
       "source": "live",
       "status": "ok",
-      "rows": 1,
+      "rows": 5033,
       "last_date": "2026-08-21",
       "age_days": 0,
       "stale_after_days": 6,
@@ -294,9 +294,9 @@
       "ticker": "T10Y2Y",
       "source": "live_api",
       "status": "ok",
-      "rows": 6662,
-      "last_date": "2026-08-20",
-      "age_days": 1,
+      "rows": 6663,
+      "last_date": "2026-08-21",
+      "age_days": 0,
       "stale_after_days": 10,
       "error": null
     },
@@ -320,9 +320,9 @@
       "ticker": "BAA10Y",
       "source": "live_api",
       "status": "ok",
-      "rows": 6655,
-      "last_date": "2026-08-19",
-      "age_days": 2,
+      "rows": 6656,
+      "last_date": "2026-08-20",
+      "age_days": 1,
       "stale_after_days": 10,
       "error": null
     },
