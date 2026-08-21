@@ -105,6 +105,11 @@ const I18N={
   fxsub:{zh:"1 AUD 兑 USD",en:"1 AUD in USD"},
   d1:{zh:"昨日",en:"1D"},w1:{zh:"近一周",en:"1W"},m1:{zh:"近一月",en:"1M"},
   cn:{zh:"代码",en:"Ticker"},cp:{zh:"股价A$",en:"Price A$"},cd1:{zh:"昨日%",en:"1D%"},cw1:{zh:"近一周%",en:"1W%"},cm1:{zh:"近一月%",en:"1M%"},c6:{zh:"6月%",en:"6M%"},c1:{zh:"1年%",en:"1Y%"},cv:{zh:"波动%",en:"Vol%"},ctag:{zh:"标签",en:"Tags"},
+  csec:{zh:"行业",en:"Sector"},
+  secFin:{zh:"金融",en:"Financials"},secMat:{zh:"材料矿业",en:"Materials"},secHlth:{zh:"医疗",en:"Health"},
+  secCons:{zh:"消费",en:"Consumer"},secInd:{zh:"工业",en:"Industrials"},secEnrg:{zh:"能源公用",en:"Energy/Util"},
+  secReit:{zh:"地产",en:"REITs"},secTech:{zh:"科技电信",en:"Tech/Comm"},secNa:{zh:"—",en:"—"},
+  liqTagMid:{zh:"中量",en:"mid-liq"},liqTagLow:{zh:"低量·滑点",en:"low-liq"},
   live:{zh:"实时 ✓",en:"Live ✓"},err:{zh:"拉不到 au_market.json——确认已部署。",en:"Can't load au_market.json — check deployment."},asof:{zh:"数据日",en:"as of"},
   excl:{zh:"已剔除",en:"Excluded"},
   short_tag:{zh:"短史",en:"Short hist."},id_tag:{zh:"身份留痕",en:"Identity note"},
@@ -183,6 +188,21 @@ let LANG="zh"; try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
 const t=k=>(I18N[k]&&I18N[k][LANG])||k;
 let DATA=null,CHK=null,PICKS=null,BT=null,DIP=null,sortCol="d1",dir=-1;   // CHK=au_checkup.json;PICKS=au_picks.json;BT=au_backtest.json(拉不到则显示"生成中");DIP=au_dip_hold.json(跌了买/噪音)
 
+// ── ② 行业归属(前端展示元数据·与 fetch_data_au 的分组同源;键=.AX ticker) ──
+const _SECT_GROUPS={
+  fin:["CBA","NAB","WBC","ANZ","MQG","QBE","SUN","ASX","IAG","MPL","NHF","CGF","PPT","MFG","GQG","PNI","NWL","HUB","BEN","BOQ","AMP","IFL"],
+  mat:["BHP","RIO","FMG","AMC","JHX","NST","S32","MIN","PLS","IGO","LYC","WHC","YAL","ILU","EVN","SFR","BSL","ORI","NEM","CIA","MND","ORA"],
+  hlth:["CSL","COH","SHL","PME","RMD","FPH","RHC","TLX","SIG","ANN"],
+  cons:["WES","WOW","COL","ALL","EDV","JBH","HVN","TWE","A2M","DMP","MTS","LOV","PMV","SUL","BRG","FLT","TPW","ARB","CKF"],
+  ind:["TCL","BXB","APA","QAN","ALX","REH","CPU","DOW","CWY","QUB","SVW"],
+  enrg:["WDS","STO","ORG","AGL","BPT"],
+  reit:["GMG","SGP","GPT","MGR","DXS","SCG","VCX","CHC"],
+  tech:["TLS","REA","XRO","WTC","NXT","CAR","SEK","TNE","NEC","NWS","TPG"],
+};
+const SECT={}; for(const k in _SECT_GROUPS) _SECT_GROUPS[k].forEach(c=>SECT[c+".AX"]=k);
+const _SECI18N={fin:"secFin",mat:"secMat",hlth:"secHlth",cons:"secCons",ind:"secInd",enrg:"secEnrg",reit:"secReit",tech:"secTech"};
+const secLabel=k=>t(_SECI18N[k]||"secNa");
+
 function pn(v){if(v==null)return '<span class="mut">—</span>';return `<span class="${v>=0?'pos':'neg'}">${v>=0?'+':''}${v}</span>`;}
 
 function applyStatic(){
@@ -217,14 +237,21 @@ function tagOf(d){
   let x="";
   if(d.short_history){const nt=d.short_history_note&&d.short_history_note[LANG]?d.short_history_note[LANG]:(d.short_history_note?d.short_history_note.zh:"");x+=`<span class="tag shorth" title="${esc(nt)}">${t("short_tag")}</span>`;}
   if(d.identity_note){const nt=d.identity_note[LANG]||d.identity_note.zh;x+=`<span class="tag idn" title="${esc(nt)}">${t("id_tag")}</span>`;}
+  // ② 流动性档标签(源=au_checkup.json;高档不标·中/低才标——106 只后一眼看出哪只薄)
+  const liq=CHK&&CHK.tickers&&CHK.tickers[d.t]&&CHK.tickers[d.t].liquidity;
+  if(liq&&liq.status==="ok"){
+    const md=liq.median_daily_aud_m;
+    if(liq.tier==="mid") x+=`<span class="tag" style="background:rgba(210,153,34,.15);color:#e3b341" title="${t('liq_mid')} · A$${md}M/日">${t("liqTagMid")}</span>`;
+    else if(liq.tier==="low") x+=`<span class="tag" style="background:rgba(248,81,73,.18);color:#ff9b94" title="${t('liq_low')} · A$${md}M/日">${t("liqTagLow")}</span>`;
+  }
   return x;
 }
 
 function renderTable(){
   if(!DATA){return;}
-  const stocks=DATA.stocks||[];
+  const stocks=(DATA.stocks||[]).map(d=>({...d,sect:SECT[d.t]||""}));   // ② 注入行业键(供排序/展示)
   const hasChk=!!(CHK&&CHK.tickers);
-  const COLS=[["n","cn"],["p","cp"],["d1","cd1"],["w1","cw1"],["m1","cm1"],["c6","c6"],["c1","c1"],["v","cv"],["tag","ctag"]];
+  const COLS=[["n","cn"],["sect","csec"],["p","cp"],["d1","cd1"],["w1","cw1"],["m1","cm1"],["c6","c6"],["c1","c1"],["v","cv"],["tag","ctag"]];
   if(hasChk)COLS.push(["chk","cchk"]);
   let rows=stocks.slice();
   rows.sort((a,b)=>{const x=a[sortCol],y=b[sortCol];if(x==null)return 1;if(y==null)return -1;
@@ -237,6 +264,7 @@ function renderTable(){
       ?`<td><span class="chkbtn" role="button" tabindex="0" onclick="showChk('${esc(d.t)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showChk('${esc(d.t)}')}" title="${t('chkTitle')}">🩺</span></td>`
       :(hasChk?'<td><span class="mut">—</span></td>':'');
     h+=`<tr><td>${esc(d.n)}</td>
+    <td style="text-align:left;color:var(--mut);font-size:.82rem">${esc(secLabel(d.sect))}</td>
     <td>${d.p==null?'<span class="mut">—</span>':d.p}</td><td>${pn(d.d1)}</td><td>${pn(d.w1)}</td><td>${pn(d.m1)}</td>
     <td>${pn(d.c6)}</td><td>${pn(d.c1)}</td><td>${d.v==null?'<span class="mut">—</span>':d.v}</td>
     <td style="text-align:left">${tagOf(d)}</td>${chkBtn}</tr>`;});
@@ -450,12 +478,12 @@ async function load(){
   if(!DATA){
     $("src").textContent=t("err");
     const msg=LANG==="en"?"Failed to load — refresh later":"加载失败，请稍后刷新";
-    $("tbl").innerHTML=`<tr><td colspan="9" style="text-align:center;padding:18px;color:var(--mut)">${msg}</td></tr>`;
+    $("tbl").innerHTML=`<tr><td colspan="11" style="text-align:center;padding:18px;color:var(--mut)">${msg}</td></tr>`;
     return;
   }
   if(!DATA.stocks||!DATA.stocks.length){
     const msg=LANG==="en"?"No data yet — check back soon":"暂无数据，稍后再试";
-    $("tbl").innerHTML=`<tr><td colspan="9" style="text-align:center;padding:18px;color:var(--mut)">${msg}</td></tr>`;
+    $("tbl").innerHTML=`<tr><td colspan="11" style="text-align:center;padding:18px;color:var(--mut)">${msg}</td></tr>`;
     $("src").textContent="";
   }else{redraw();}
 }
