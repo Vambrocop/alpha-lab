@@ -1,24 +1,16 @@
 {
- "updated": "2026-08-21 20:11 UTC",
+ "updated": "2026-08-21 20:46 UTC",
  "items": [
   {
-   "time": "2026-08-21 20:04 UTC",
-   "title": "Bitcoin surges 22% for the week as investor optimism floods back",
+   "time": "2026-08-21 20:34 UTC",
+   "title": "Tesla’s stock jumps as the company gets cleared for a Las Vegas robotaxi launch",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-21 19:29 UTC",
-   "title": "Tesla recalls 3 million vehicles in China over doorhandle safety, driver monitoring",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 19:21 UTC",
+   "time": "2026-08-21 20:19 UTC",
    "title": "Ray Dalio says Bessent move is sign that a debt crisis is getting closer; recommends gold and bitcoin",
    "impact": "neutral",
    "note": "",
@@ -26,19 +18,27 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-21 18:55 UTC",
-   "title": "An overlooked AI winner names a new CFO — plus, Nvidia's key earnings loom",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 18:29 UTC",
-   "title": "Trump, Vance and Bessent try to calm the bond market with ‘alternative facts’",
+   "time": "2026-08-21 20:11 UTC",
+   "title": "Retirees: This investment gives you a guaranteed 5% safe withdrawal rate",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 20:11 UTC",
+   "title": "Here’s how Bessent’s newly activist Treasury Department is undercutting the Fed’s Warsh",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 20:04 UTC",
+   "title": "Bitcoin surges 22% for the week as investor optimism floods back",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
