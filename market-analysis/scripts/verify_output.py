@@ -6,6 +6,7 @@ verify_output.py — 发布前自检（CI 质量门）
 import json
 import sys
 import datetime
+import math
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from ledger_hash import verify_hash_chain
@@ -107,7 +108,9 @@ try:
     check(len(sig.get("macro_calendar", [])) > 0,
           "宏观日历非空（空了说明 MACRO_EVENTS 需要补来年日程）")
     vol = list(sig["daily_signals"].values())[-1].get("nasdaq_vol", 0)
-    check(0 <= vol < 1.5, f"波动率量纲正常（{vol}，应为年化小数）")
+    vol_ok = (isinstance(vol, (int, float)) and not isinstance(vol, bool)
+              and math.isfinite(vol) and 0 <= vol < 1.5)
+    check(vol_ok, f"波动率量纲正常（{vol}，应为有限年化小数）")
 except Exception as e:
     errors.append(f"signals.json 解析失败: {e}")
     print(f"  ✗ signals.json 解析失败: {e}")

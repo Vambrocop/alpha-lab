@@ -244,6 +244,25 @@ def compute_technical_signals(prices, ret):
 
     return df
 
+
+def compute_log_returns(prices):
+    """按资产独立计算对数收益，保留各列自己的缺失值。
+
+    不能在这里对整个 DataFrame ``dropna()``：任一旁路资产（例如 VIX3M）
+    整列抓取失败时，全行删除会连带抹掉 NASDAQ/SP500 的有效收益，最终把最新
+    波动率写成 null。滚动指标本身会按列处理 NaN。
+    """
+    return np.log(prices / prices.shift(1))
+
+
+def _finite_float(value, default=0.0):
+    """把标量转为有限 float；NaN/Inf/None 使用既有的中性回退值。"""
+    try:
+        value = float(value)
+    except (TypeError, ValueError):
+        return float(default)
+    return value if np.isfinite(value) else float(default)
+
 # ── 计算每日信号 ──────────────────────────────────────────────────
 def compute_daily_signals(prices, ret, tech, trading_days, index="NASDAQ", priors=None):
     """生成某个指数的每日信号流，只在该指数真实交易日上计算。
@@ -353,10 +372,10 @@ def compute_daily_signals(prices, ret, tech, trading_days, index="NASDAQ", prior
             "holiday_lr":   round(_holiday_lr(ts), 4),
             "cal_lr":       round(_calendar_anomaly_lr(ts), 4),
             "nasdaq_ma200": int(row.get(f"{index}_above_ma200", 0)),
-            "btc_mom20":    round(float(row.get("BTC_mom20", 0) or 0), 4),
-            "dxy_trend":    round(float(row.get("dxy_trend", 0) or 0), 4),
-            "nasdaq_vol":   round(float(row.get(f"{index}_vol20", 0) or 0), 4),
-            "nasdaq_rsi":   round(float(row.get(f"{index}_rsi", 0) or 0), 1),
+            "btc_mom20":    round(_finite_float(row.get("BTC_mom20")), 4),
+            "dxy_trend":    round(_finite_float(row.get("dxy_trend")), 4),
+            "nasdaq_vol":   round(_finite_float(row.get(f"{index}_vol20")), 4),
+            "nasdaq_rsi":   round(_finite_float(row.get(f"{index}_rsi")), 1),
             "ret":          actual_ret,
         }
 
@@ -368,7 +387,7 @@ def build():
     raw = pd.read_csv(RAW_DIR / "combined_prices.csv",
                       index_col="Date", parse_dates=True)
     prices = raw.ffill()
-    ret = np.log(prices / prices.shift(1)).dropna()
+    ret = compute_log_returns(prices)
     # 技术因子整体后移1天：当天的信号只能用前一天收盘算出的指标，
     # 否则「信号 vs 当日收益」的对比存在同日前视偏差
     tech = compute_technical_signals(prices, ret).shift(1)

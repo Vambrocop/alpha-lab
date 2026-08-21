@@ -105,7 +105,7 @@ steps = [
     ("内部人买入取数(SEC Form4)", "fetch_insider.py"),  # 抓近期开市买入P写insider.json;SEC daily-index,需 SEC_UA_CONTACT(secret);SEC失败静默退0不阻断;不入light(日更一次即可)
     ("IPO近期申报取数(SEC EDGAR)", "fetch_ipo.py"),  # 抓近30天S-1/424B申报写ipo_filings.json(IPO雷达页事实层);SEC全文搜索,复用SEC_UA_CONTACT;含大量小盘/空壳非策展;失败静默退0不阻断;不入light(日更一次即可)
     ("澳洲市场取数(独立区)", "fetch_data_au.py"),
-    ("澳股诚实体检(独立区)", "au_checkup.py"),   # B2:stock_checkup 纯函数复用到 ASX50(β=^AXJO+流动性档位+FMG/COL标记透传)→au_checkup.json(au.html 🩺模态读);美股路径零触碰(回归门已验逐字节);FDR AU独立池;须在 fetch_data_au 后;不入 light  # B1:^AXJO/AUDUSD/ASX50→au_market.json+au_probe.json(au.html 独立市场概览页读);独立平行区,不碰美股任何脚本/数据/账本;fail-soft 不阻断;不入light(日更一次即可)
+    ("澳股诚实体检(独立区)", "au_checkup.py"),   # B2:stock_checkup 纯函数复用到 ASX100(β=^AXJO+流动性档位+FMG/COL标记透传)→au_checkup.json(au.html 🩺模态读);美股路径零触碰(回归门已验逐字节);FDR AU独立池;须在 fetch_data_au 后;不入 light  # B1:^AXJO/AUDUSD/ASX100→au_market.json+au_probe.json(au.html 独立市场概览页读);独立平行区,不碰美股任何脚本/数据/账本;fail-soft 不阻断;不入light(日更一次即可)
     ("澳股荐股→前向计分(出格·独立账本)", "au_pick_ledger.py"),  # B3:pick_ledger配置级克隆(_select_picks/_outcome/_followable零克隆import)+^AXJO本地取价结算(forward_ledger零改,从不联网);独立账本data/au_pick_ledger.csv(与美股不混);须在fetch_data_au后;宽表(raw/au/au_stocks_prices.csv)暂缺时fail-soft空跑;不入light
     ("澳股荐股回测轨迹披露(出格)", "au_pick_backtest.py"),  # B3附:同一规则(_select_picks零克隆)历史轨迹披露→au_backtest.json(au.html 📜模态读);含幸存者偏差·系统性偏乐观(页面大字);须在fetch_data_au后;顶层fail-soft(sys.exit0)不阻断;不入light
     ("澳股跌了买持有一年诚实账(描述)", "au_dip_hold_study.py"),  # 澳股版dip_hold:复用US已审统计核(去聚集/聚类自助/前向窗去重叠)换^AXJO全历史+CGT持1年口径→au_dip_hold.json(au.html 📉板块·噪音识别);读raw/au/{AXJO,au_stocks_prices}.csv;须在fetch_data_au后;顶层fail-soft不阻断;不入light
