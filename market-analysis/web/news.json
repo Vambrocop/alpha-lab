@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-21 17:52 UTC",
+ "updated": "2026-08-21 18:18 UTC",
  "items": [
+  {
+   "time": "2026-08-21 18:15 UTC",
+   "title": "The Treasury, the Fed and the threat to your money",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 17:51 UTC",
+   "title": "Bessent's bond gambit aimed at calming markets is instead stirring inflation worries",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Markets",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-21 17:45 UTC",
    "title": "Trump tariff deadline looms as Canada says it's working to resolve 'trade issues' with U.S.",
@@ -23,22 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 17:25 UTC",
-   "title": "Longer-dated Treasury yields rise as Bessent's bond buyback rally fizzles out",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 17:09 UTC",
-   "title": "5 things to know about the Chinese e-commerce juggernaut Shein ahead of its IPO",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
