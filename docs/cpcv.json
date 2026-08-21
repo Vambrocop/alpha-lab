@@ -1,15 +1,15 @@
 {
-  "generated": "2026-08-20T21:58:41Z",
+  "generated": "2026-08-21T16:40:37Z",
   "method": "CSCV(Bailey-Borwein-LdP-Zhu 2017):时间轴切 S 段,遍历 C(S,S/2) 半训半测组合;训练选最佳因子,看其测试相对排名;PBO=IS-best 在 OOS 低于中位的占比。purge 切片边界防泄漏。",
   "caveat": "PBO 度量的是**因子选择的过拟合概率**(数据挖掘风险),不是方向预测。edge=片内胜率差(小样本噪声大);S=10/purge=20日为口径选择。高 PBO 是诚实信号:别相信'挑出来最好'的因子。",
   "source": "walk_forward 特征 df(15 个二值因子)",
   "s_slices": 10,
   "horizon": 20,
   "result": {
-    "pbo": 0.4008,
+    "pbo": 0.4365,
     "n_combos": 252,
-    "median_logit": 0.788,
+    "median_logit": 0.511,
     "n_factors": 15,
-    "verdict": "PBO=40% —— 中等:样本外泛化只略好于抛硬币、远非稳健。中位 logit=0.788(中位 logit>0:典型最佳因子 OOS 仍在中位之上,故非严重过拟合)。结合 BY/DSR:仍无稳健可外推的因子 alpha。"
+    "verdict": "PBO=44% —— 中等:样本外泛化只略好于抛硬币、远非稳健。中位 logit=0.511(中位 logit>0:典型最佳因子 OOS 仍在中位之上,故非严重过拟合)。结合 BY/DSR:仍无稳健可外推的因子 alpha。"
   }
 }
