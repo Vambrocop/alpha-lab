@@ -1,10 +1,18 @@
 {
- "updated": "2026-08-21 16:41 UTC",
+ "updated": "2026-08-21 16:58 UTC",
  "items": [
   {
-   "time": "2026-08-21 16:34 UTC",
+   "time": "2026-08-21 16:44 UTC",
    "title": "Bitcoin on track for 23% weekly gain as investor optimism floods back",
    "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-21 16:42 UTC",
+   "title": "Trump to allow import of 300,000 metric tons of ground beef without tariff",
+   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
@@ -31,14 +39,6 @@
    "impact": "positive",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-21 15:59 UTC",
-   "title": "Broadcom debt deal expected to reach upwards of $70 billion, sources say",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
