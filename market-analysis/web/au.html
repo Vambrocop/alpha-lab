@@ -64,6 +64,11 @@
 
 <div class="ov-grid" id="ov"></div>
 
+<div style="font-size:1.02rem;font-weight:700;margin:16px 0 2px" data-i18n="secH"></div>
+<p class="sub" style="color:var(--mut);font-size:.8rem;margin:0 0 6px" data-i18n="secIntro"></p>
+<div style="overflow-x:auto"><table id="sectbl"></table></div>
+
+<div style="font-size:1.02rem;font-weight:700;margin:18px 0 2px" data-i18n="boardH"></div>
 <div style="overflow-x:auto"><table id="tbl"></table></div>
 <div id="excl"></div>
 <div id="src"></div>
@@ -110,6 +115,11 @@ const I18N={
   secCons:{zh:"消费",en:"Consumer"},secInd:{zh:"工业",en:"Industrials"},secEnrg:{zh:"能源公用",en:"Energy/Util"},
   secReit:{zh:"地产",en:"REITs"},secTech:{zh:"科技电信",en:"Tech/Comm"},secNa:{zh:"—",en:"—"},
   liqTagMid:{zh:"中量",en:"mid-liq"},liqTagLow:{zh:"低量·滑点",en:"low-liq"},
+  secH:{zh:"📊 板块速览(按行业聚合)",en:"📊 Sector overview (by sector)"},
+  secIntro:{zh:"每个行业的平均动量与广度——看澳洲哪些板块整体强/弱、轮到谁。纯描述聚合,非荐股;点列头排序。",
+            en:"Average momentum and breadth per sector — which AU sectors are broadly strong/weak. Descriptive aggregate, not advice; click a header to sort."},
+  boardH:{zh:"个股涨跌榜",en:"Stock board"},
+  scN:{zh:"只数",en:"#"},scBreadth:{zh:"广度·1年涨占比",en:"Breadth·1yr up%"},
   live:{zh:"实时 ✓",en:"Live ✓"},err:{zh:"拉不到 au_market.json——确认已部署。",en:"Can't load au_market.json — check deployment."},asof:{zh:"数据日",en:"as of"},
   excl:{zh:"已剔除",en:"Excluded"},
   short_tag:{zh:"短史",en:"Short hist."},id_tag:{zh:"身份留痕",en:"Identity note"},
@@ -202,6 +212,8 @@ const _SECT_GROUPS={
 const SECT={}; for(const k in _SECT_GROUPS) _SECT_GROUPS[k].forEach(c=>SECT[c+".AX"]=k);
 const _SECI18N={fin:"secFin",mat:"secMat",hlth:"secHlth",cons:"secCons",ind:"secInd",enrg:"secEnrg",reit:"secReit",tech:"secTech"};
 const secLabel=k=>t(_SECI18N[k]||"secNa");
+const SECT_COLOR={fin:"#58a6ff",mat:"#d29922",hlth:"#3fb950",cons:"#a371f7",ind:"#8b949e",enrg:"#f85149",reit:"#db61a2",tech:"#39c5cf"};
+let secSortCol="c1",secDir=-1;
 
 function pn(v){if(v==null)return '<span class="mut">—</span>';return `<span class="${v>=0?'pos':'neg'}">${v>=0?'+':''}${v}</span>`;}
 
@@ -247,6 +259,32 @@ function tagOf(d){
   return x;
 }
 
+// ── ③ 板块速览:把 106 只按行业聚合(只数/广度/平均动量) ──────────────
+function renderSectors(){
+  if(!DATA||!DATA.stocks){$("sectbl").innerHTML="";return;}
+  const groups={};
+  DATA.stocks.forEach(d=>{const k=SECT[d.t]; if(!k)return; (groups[k]||(groups[k]=[])).push(d);});
+  const avg=(arr,key)=>{let s=0,n=0;arr.forEach(d=>{const v=d[key];if(v!=null){s+=v;n++;}});return n?Math.round(s/n*10)/10:null;};
+  let rows=Object.keys(groups).map(k=>{
+    const g=groups[k];
+    const nc1=g.filter(d=>d.c1!=null).length;
+    const up=g.filter(d=>d.c1!=null&&d.c1>0).length;
+    return {sec:k,n:g.length,breadth:nc1?Math.round(up/nc1*100):null,c6:avg(g,"c6"),c1:avg(g,"c1"),v:avg(g,"v")};
+  });
+  const COLS=[["sec","csec"],["n","scN"],["breadth","scBreadth"],["c6","c6"],["c1","c1"],["v","cv"]];
+  rows.sort((a,b)=>{const x=a[secSortCol],y=b[secSortCol];if(x==null)return 1;if(y==null)return -1;
+    return (typeof x==="number")?(y-x)*secDir*-1:String(x).localeCompare(String(y),'zh')*secDir*-1;});
+  let h="<thead><tr>";
+  COLS.forEach(([k,lk])=>{const on=k===secSortCol;h+=`<th data-k="${k}" scope="col" tabindex="0" role="button" aria-sort="${on?(secDir<0?'descending':'ascending'):'none'}" class="${on?'s':''}">${t(lk)}</th>`;});
+  h+="</tr></thead><tbody>";
+  rows.forEach(d=>{
+    const br=d.breadth==null?'<span class="mut">—</span>':`<span class="${d.breadth>=50?'pos':'neg'}">${d.breadth}%</span>`;
+    h+=`<tr><td style="text-align:left"><span class="dot" style="background:${SECT_COLOR[d.sec]||'#888'}"></span>${esc(secLabel(d.sec))}</td>`
+      +`<td>${d.n}</td><td>${br}</td><td>${pn(d.c6)}</td><td>${pn(d.c1)}</td><td>${d.v==null?'<span class="mut">—</span>':d.v}</td></tr>`;});
+  h+="</tbody>";$("sectbl").innerHTML=h;
+  $("sectbl").querySelectorAll("th").forEach(th=>{const sort=()=>{const k=th.dataset.k;if(k===secSortCol)secDir*=-1;else{secSortCol=k;secDir=-1;}renderSectors();};th.onclick=sort;th.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();sort();}};});
+}
+
 function renderTable(){
   if(!DATA){return;}
   const stocks=(DATA.stocks||[]).map(d=>({...d,sect:SECT[d.t]||""}));   // ② 注入行业键(供排序/展示)
@@ -278,7 +316,7 @@ function renderExcl(){
   $("excl").textContent=`${t("excl")}: ${items}`;
 }
 
-function redraw(){applyStatic();renderOverview();renderTable();renderExcl();renderPicks();renderBacktest();renderDip();
+function redraw(){applyStatic();renderOverview();renderSectors();renderTable();renderExcl();renderPicks();renderBacktest();renderDip();
   $("src").textContent=(DATA?`${t("live")} ${(DATA.stocks||[]).length} · ${t("asof")} ${DATA.as_of||""}`:"");}
 
 // ── 🎯 荐股(独立计分·B3) —— 数据=au_picks.json(拉不到则整段留空,不报错刷屏) ──────
