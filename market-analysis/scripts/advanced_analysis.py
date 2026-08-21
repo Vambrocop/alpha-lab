@@ -362,4 +362,10 @@ def run_all():
     print(f"{'='*50}")
 
 if __name__ == "__main__":
-    run_all()
+    # 顶层 fail-soft:--full 研究面板,任一资产整列缺失(ret.dropna 连坐)或 ML 边缘不阻断流水线。
+    # 与 build_signals 同类隐患(多资产整表 dropna),此处非 CI 关键(仅 --full),故兜底跳过即可。
+    try:
+        run_all()
+    except Exception as e:
+        print(f"[高级ML分析] 顶层异常,fail-soft 不阻断: {type(e).__name__}: {e}")
+        raise SystemExit(0)

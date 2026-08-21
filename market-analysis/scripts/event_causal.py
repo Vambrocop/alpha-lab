@@ -165,4 +165,11 @@ def run_all():
 
 
 if __name__ == "__main__":
-    run_all()
+    # 顶层 fail-soft:在常规 CI 流水线里 + 联网抓控制资产(yfinance 会 flake)+ 反事实统计
+    # (OLS/block-bootstrap 有奇异矩阵等边缘) → 任一意外异常都不该杀掉整条 refresh。
+    # 内部已有 px is None/缺列的守卫,这里再兜一层顶层未预期异常(独立事件研究·非质量门)。
+    try:
+        run_all()
+    except Exception as e:
+        print(f"[反事实事件影响] 顶层异常,fail-soft 不阻断: {type(e).__name__}: {e}")
+        raise SystemExit(0)
