@@ -1,41 +1,41 @@
 {
- "updated": "2026-08-22 13:22 UTC",
+ "updated": "2026-08-22 21:09 UTC",
  "items": [
+  {
+   "time": "2026-08-22 20:26 UTC",
+   "title": "Nvidia customers reportedly warned about AI-related price hikes",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-22 18:57 UTC",
+   "title": "Trump reshuffled his portfolio in June, selling names like Meta and buying Berkshire Hathaway",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-22 15:08 UTC",
+   "title": "Rising yields rattled the market, but we’re sticking with our favorite AI and retail stocks",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-22 13:26 UTC",
+   "title": "The biggest U.S. stocks have done great for you. Experts say not to get greedy",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-22 13:01 UTC",
    "title": "Our 4-year-old son has $100,000 in his 529 account. Is a bull market a bad time to buy him stocks instead?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 13:00 UTC",
-   "title": "Why an announcement from the Treasury sparked a rally in gold and bitcoin this week",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 12:12 UTC",
-   "title": "Meta is the latest tech giant to land in her courtroom. Meet Judge Yvonne Gonzalez Rogers",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 12:06 UTC",
-   "title": "Warren Buffett Watch: It's Buffett, not Abel, who appears to be calling the shots on stocks",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 12:00 UTC",
-   "title": "Here’s some surprisingly good news for the stock market this midterm election year",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
