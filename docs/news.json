@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-23 13:23 UTC",
+ "updated": "2026-08-23 21:09 UTC",
  "items": [
+  {
+   "time": "2026-08-23 19:00 UTC",
+   "title": "‘The market is obviously on fire’: Should I take $1,000 from my brokerage account to pay off my car loan?",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-23 16:56 UTC",
+   "title": "Here are the 2 big things we're watching in the stock market this week",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-23 13:00 UTC",
+   "title": "Equal-weight S&P 500 is leading the 2026 market and its flagship trade just hit $100 billion",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-23 13:00 UTC",
    "title": "Nvidia is the beating heart of the AI boom and the stock market — which sets up a big test",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-23 11:29 UTC",
-   "title": "Top Wall Street analysts believe in the growth potential of these 3 stocks",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 20:26 UTC",
-   "title": "Nvidia customers reportedly warned about AI-related price hikes",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 18:57 UTC",
-   "title": "Trump reshuffled his portfolio in June, selling names like Meta and buying Berkshire Hathaway",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
