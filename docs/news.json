@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-22 21:09 UTC",
+ "updated": "2026-08-23 13:23 UTC",
  "items": [
+  {
+   "time": "2026-08-23 13:00 UTC",
+   "title": "Nvidia is the beating heart of the AI boom and the stock market — which sets up a big test",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-23 12:00 UTC",
+   "title": "The Treasury’s bond-market intervention isn’t working. So what comes next?",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-23 11:29 UTC",
+   "title": "Top Wall Street analysts believe in the growth potential of these 3 stocks",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-22 20:26 UTC",
    "title": "Nvidia customers reportedly warned about AI-related price hikes",
@@ -15,30 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 15:08 UTC",
-   "title": "Rising yields rattled the market, but we’re sticking with our favorite AI and retail stocks",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 13:26 UTC",
-   "title": "The biggest U.S. stocks have done great for you. Experts say not to get greedy",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-22 13:01 UTC",
-   "title": "Our 4-year-old son has $100,000 in his 529 account. Is a bull market a bad time to buy him stocks instead?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
