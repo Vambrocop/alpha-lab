@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-24 17:54 UTC",
+ "updated": "2026-08-24 18:20 UTC",
  "items": [
+  {
+   "time": "2026-08-24 18:09 UTC",
+   "title": "Oil prices pull back as Bessent launches ‘Operation Economic Outcast’ against Iran but holds off on new secondary sanctions",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-24 18:05 UTC",
+   "title": "Here’s how overvalued the stock market really is",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-24 17:19 UTC",
    "title": "Yields decline on CNBC report Treasury could use General Account to fund buybacks",
@@ -23,22 +39,6 @@
    "impact": "positive",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 16:52 UTC",
-   "title": "Bessent tapping Treasury’s rainy-day fund for buybacks isn’t a ‘bazooka’ to get markets to move his way",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 16:38 UTC",
-   "title": "A massive trade just happened in gold. The options market is buzzing",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
