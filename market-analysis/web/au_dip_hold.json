@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-24T13:50:00Z",
-  "as_of": "2026-08-24",
+  "generated": "2026-08-24T22:02:25Z",
+  "as_of": "2026-08-21",
   "price_start": "1992-11-23",
   "index_label": "ASX200 (^AXJO)",
   "lookback": 252,
@@ -16,24 +16,24 @@
       "up_pct": 63.29,
       "mean_pct": 1.47,
       "median_pct": 1.98,
-      "n": 8472
+      "n": 8471
     },
     "h252": {
       "up_pct": 72.92,
       "mean_pct": 5.97,
       "median_pct": 6.83,
-      "n": 8280
+      "n": 8279
     }
   },
   "drawdown_curve": [
     {
       "dd_threshold_pct": 5,
       "horizon": 60,
-      "n_days": 3245,
+      "n_days": 3244,
       "n_episodes": 69,
       "n_episodes_with_fwd": 68,
       "n_independent": 31,
-      "up_pct": 67.15,
+      "up_pct": 67.14,
       "mean_pct": 2.27,
       "median_pct": 3.09,
       "base_up_pct": 63.29,
@@ -47,7 +47,7 @@
       "too_small_no_ci": false,
       "era1_up_pct": 62.25,
       "era1_mean_pct": 1.38,
-      "era2_up_pct": 76.11,
+      "era2_up_pct": 76.09,
       "era2_mean_pct": 3.89,
       "era_same_sign": true,
       "verdict": "crisis-driven-fragile"

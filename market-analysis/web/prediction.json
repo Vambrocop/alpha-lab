@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T13:47:31Z",
+  "generated": "2026-08-24T21:59:47Z",
   "source": "LLM 据真实算出的因子对 SPY 未来 5 交易日方向出判断 → 前向公开计分",
   "model": "gemini-2.5-flash-lite",
   "symbol": "SPY",

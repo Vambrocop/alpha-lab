@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T13:47:31Z",
+  "generated": "2026-08-24T21:59:47Z",
   "date_range": [
     "2014-10-15",
     "2026-08-24"
@@ -55,13 +55,13 @@
     "n_switches": 214,
     "time_in_market_pct": 69.2,
     "strategy": {
-      "total_return_pct": 357.0,
+      "total_return_pct": 357.1,
       "cagr_pct": 13.67,
       "sharpe": 0.93,
       "max_dd_pct": -29.5
     },
     "buyhold": {
-      "total_return_pct": 514.4,
+      "total_return_pct": 514.6,
       "cagr_pct": 16.55,
       "sharpe": 0.82,
       "max_dd_pct": -36.4
@@ -99,8 +99,8 @@
       "period": "2024-2026",
       "n": 663,
       "cond_pos_minus_neg_uprate_pp": 28.7,
-      "strat_cagr_pct": 19.44,
-      "buyhold_cagr_pct": 23.06,
+      "strat_cagr_pct": 19.45,
+      "buyhold_cagr_pct": 23.07,
       "edge_holds": true
     }
   ],
