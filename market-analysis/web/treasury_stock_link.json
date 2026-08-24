@@ -1,0 +1,4767 @@
+{
+  "generated": "2026-08-24T07:06:39Z",
+  "date_range": [
+    "2000-01-03",
+    "2026-08-05"
+  ],
+  "yield_proxy": "TNX",
+  "yield_proxy_note": "combined_prices.csv 里 YIELD_10Y(FRED GS10)是月频序列(全样本仅341点,最大缺口151天≈100交易日)——拿它算「20交易日变化」会被巨大的月度阶梯 ffill 假象污染(21个交易日的窗口里可能0次真实更新或1次跳变)。TNX(CBOE 10年期收益率指数)是日频(全样本6681点,2000-01-03起),与 YIELD_10Y 在两者共有的对齐点上相关系数0.993(几乎同一量,同为百分比单位),故本研究用 TNX 作连续日频10Y收益率代理,YIELD_10Y 仅供交叉核对。这是工程口径选择,不是统计判断——如果换回 YIELD_10Y,「20日变化」的含义会退化成「距上次月度更新以来变化」。",
+  "horizons_td": [
+    20,
+    60,
+    252
+  ],
+  "horizon_labels": {
+    "20": "1月",
+    "60": "3月",
+    "252": "12月"
+  },
+  "change_window_td": 20,
+  "level_cutoffs_pct": [
+    2.59,
+    4.13
+  ],
+  "change_cutoffs_bp": [
+    -10.8,
+    8.5
+  ],
+  "min_independent": 8,
+  "era_split_year": 2013,
+  "assets": {
+    "NASDAQ": {
+      "date_range": [
+        "2000-01-03",
+        "2026-08-05"
+      ],
+      "base": {
+        "20": {
+          "n_days": 6667,
+          "up_pct": 62.32,
+          "mean_pct": 0.76,
+          "median_pct": 1.52,
+          "p10_pct": -6.88
+        },
+        "60": {
+          "n_days": 6627,
+          "up_pct": 66.21,
+          "mean_pct": 2.2,
+          "median_pct": 3.64,
+          "p10_pct": -11.61
+        },
+        "252": {
+          "n_days": 6435,
+          "up_pct": 74.58,
+          "mean_pct": 10.45,
+          "median_pct": 13.24,
+          "p10_pct": -26.48
+        }
+      },
+      "level": [
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "low",
+          "label": "低档(TNX≤2.59%)",
+          "horizon": 20,
+          "n_days": 2230,
+          "n_episodes_raw": 32,
+          "n_independent": 9,
+          "too_small_no_ci": false,
+          "up_pct": 68.57,
+          "mean_pct": 1.5,
+          "median_pct": 1.93,
+          "p10_pct": -4.38,
+          "base_up_pct": 62.32,
+          "base_mean_pct": 0.76,
+          "base_median_pct": 1.52,
+          "base_p10_pct": -6.88,
+          "diff_mean": 0.74,
+          "ci95_mean": [
+            1.24,
+            1.98
+          ],
+          "ci_vs_base": "above_base",
+          "era1_up_pct": 64.42,
+          "era1_mean_pct": 1.54,
+          "era2_up_pct": 69.51,
+          "era2_mean_pct": 1.49,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "mid",
+          "label": "中档(2.59%<TNX≤4.13%)",
+          "horizon": 20,
+          "n_days": 2227,
+          "n_episodes_raw": 85,
+          "n_independent": 22,
+          "too_small_no_ci": false,
+          "up_pct": 62.86,
+          "mean_pct": 0.89,
+          "median_pct": 1.68,
+          "p10_pct": -6.97,
+          "base_up_pct": 62.32,
+          "base_mean_pct": 0.76,
+          "base_median_pct": 1.52,
+          "base_p10_pct": -6.88,
+          "diff_mean": 0.13,
+          "ci95_mean": [
+            -0.52,
+            1.95
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 62.07,
+          "era1_mean_pct": 0.87,
+          "era2_up_pct": 63.82,
+          "era2_mean_pct": 0.9,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "high",
+          "label": "高档(TNX>4.13%)",
+          "horizon": 20,
+          "n_days": 2210,
+          "n_episodes_raw": 54,
+          "n_independent": 13,
+          "too_small_no_ci": false,
+          "up_pct": 55.48,
+          "mean_pct": -0.11,
+          "median_pct": 0.63,
+          "p10_pct": -9.59,
+          "base_up_pct": 62.32,
+          "base_mean_pct": 0.76,
+          "base_median_pct": 1.52,
+          "base_p10_pct": -6.88,
+          "diff_mean": -0.87,
+          "ci95_mean": [
+            -1.74,
+            1.82
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 51.98,
+          "era1_mean_pct": -0.8,
+          "era2_up_pct": 65.61,
+          "era2_mean_pct": 1.88,
+          "era_same_sign": false
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "low",
+          "label": "低档(TNX≤2.59%)",
+          "horizon": 60,
+          "n_days": 2230,
+          "n_episodes_raw": 32,
+          "n_independent": 6,
+          "too_small_no_ci": true,
+          "up_pct": 77.26,
+          "mean_pct": 4.1,
+          "median_pct": 4.9,
+          "p10_pct": -6.37,
+          "base_up_pct": 66.21,
+          "base_mean_pct": 2.2,
+          "base_median_pct": 3.64,
+          "base_p10_pct": -11.61,
+          "diff_mean": 1.9,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 70.43,
+          "era1_mean_pct": 4.7,
+          "era2_up_pct": 78.83,
+          "era2_mean_pct": 3.96,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "mid",
+          "label": "中档(2.59%<TNX≤4.13%)",
+          "horizon": 60,
+          "n_days": 2227,
+          "n_episodes_raw": 85,
+          "n_independent": 13,
+          "too_small_no_ci": false,
+          "up_pct": 66.37,
+          "mean_pct": 3.05,
+          "median_pct": 4.04,
+          "p10_pct": -9.21,
+          "base_up_pct": 66.21,
+          "base_mean_pct": 2.2,
+          "base_median_pct": 3.64,
+          "base_p10_pct": -11.61,
+          "diff_mean": 0.85,
+          "ci95_mean": [
+            1.44,
+            6.46
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 62.81,
+          "era1_mean_pct": 2.61,
+          "era2_up_pct": 70.6,
+          "era2_mean_pct": 3.57,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "high",
+          "label": "高档(TNX>4.13%)",
+          "horizon": 60,
+          "n_days": 2170,
+          "n_episodes_raw": 54,
+          "n_independent": 5,
+          "too_small_no_ci": true,
+          "up_pct": 54.7,
+          "mean_pct": -0.62,
+          "median_pct": 1.23,
+          "p10_pct": -18.3,
+          "base_up_pct": 66.21,
+          "base_mean_pct": 2.2,
+          "base_median_pct": 3.64,
+          "base_p10_pct": -11.61,
+          "diff_mean": -2.82,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 47.35,
+          "era1_mean_pct": -2.76,
+          "era2_up_pct": 77.61,
+          "era2_mean_pct": 6.04,
+          "era_same_sign": false
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "low",
+          "label": "低档(TNX≤2.59%)",
+          "horizon": 252,
+          "n_days": 2230,
+          "n_episodes_raw": 32,
+          "n_independent": 2,
+          "too_small_no_ci": true,
+          "up_pct": 80.58,
+          "mean_pct": 16.68,
+          "median_pct": 20.2,
+          "p10_pct": -11.46,
+          "base_up_pct": 74.58,
+          "base_mean_pct": 10.45,
+          "base_median_pct": 13.24,
+          "base_p10_pct": -26.48,
+          "diff_mean": 6.23,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 99.76,
+          "era1_mean_pct": 20.3,
+          "era2_up_pct": 76.19,
+          "era2_mean_pct": 15.85,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "mid",
+          "label": "中档(2.59%<TNX≤4.13%)",
+          "horizon": 252,
+          "n_days": 2159,
+          "n_episodes_raw": 74,
+          "n_independent": 5,
+          "too_small_no_ci": true,
+          "up_pct": 85.83,
+          "mean_pct": 15.79,
+          "median_pct": 16.25,
+          "p10_pct": -4.41,
+          "base_up_pct": 74.58,
+          "base_mean_pct": 10.45,
+          "base_median_pct": 13.24,
+          "base_p10_pct": -26.48,
+          "diff_mean": 5.34,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 79.59,
+          "era1_mean_pct": 13.44,
+          "era2_up_pct": 93.78,
+          "era2_mean_pct": 18.79,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "level",
+          "bucket": "high",
+          "label": "高档(TNX>4.13%)",
+          "horizon": 252,
+          "n_days": 2046,
+          "n_episodes_raw": 43,
+          "n_independent": 2,
+          "too_small_no_ci": true,
+          "up_pct": 56.16,
+          "mean_pct": -1.98,
+          "median_pct": 4.37,
+          "p10_pct": -40.08,
+          "base_up_pct": 74.58,
+          "base_mean_pct": 10.45,
+          "base_median_pct": 13.24,
+          "base_p10_pct": -26.48,
+          "diff_mean": -12.43,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 45.59,
+          "era1_mean_pct": -8.44,
+          "era2_up_pct": 99.26,
+          "era2_mean_pct": 24.37,
+          "era_same_sign": false
+        }
+      ],
+      "direction": [
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "falling",
+          "label": "降档(20日变化≤-10.8bp)",
+          "horizon": 20,
+          "n_days": 2223,
+          "n_episodes_raw": 322,
+          "n_independent": 88,
+          "too_small_no_ci": false,
+          "up_pct": 63.11,
+          "mean_pct": 0.77,
+          "median_pct": 1.97,
+          "p10_pct": -8.24,
+          "base_up_pct": 62.32,
+          "base_mean_pct": 0.76,
+          "base_median_pct": 1.52,
+          "base_p10_pct": -6.88,
+          "diff_mean": 0.01,
+          "ci95_mean": [
+            -0.11,
+            1.59
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 57.68,
+          "era1_mean_pct": 0.12,
+          "era2_up_pct": 70.9,
+          "era2_mean_pct": 1.7,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "flat",
+          "label": "平档(-10.8~8.5bp)",
+          "horizon": 20,
+          "n_days": 2215,
+          "n_episodes_raw": 588,
+          "n_independent": 74,
+          "too_small_no_ci": false,
+          "up_pct": 61.35,
+          "mean_pct": 0.68,
+          "median_pct": 1.24,
+          "p10_pct": -6.22,
+          "base_up_pct": 62.32,
+          "base_mean_pct": 0.76,
+          "base_median_pct": 1.52,
+          "base_p10_pct": -6.88,
+          "diff_mean": -0.08,
+          "ci95_mean": [
+            -0.32,
+            1.46
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 55.69,
+          "era1_mean_pct": -0.18,
+          "era2_up_pct": 65.33,
+          "era2_mean_pct": 1.28,
+          "era_same_sign": false
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "rising",
+          "label": "升档(20日变化>8.5bp)",
+          "horizon": 20,
+          "n_days": 2209,
+          "n_episodes_raw": 279,
+          "n_independent": 93,
+          "too_small_no_ci": false,
+          "up_pct": 62.2,
+          "mean_pct": 0.75,
+          "median_pct": 1.43,
+          "p10_pct": -6.28,
+          "base_up_pct": 62.32,
+          "base_mean_pct": 0.76,
+          "base_median_pct": 1.52,
+          "base_p10_pct": -6.88,
+          "diff_mean": -0.01,
+          "ci95_mean": [
+            -0.11,
+            1.5
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 57.5,
+          "era1_mean_pct": 0.18,
+          "era2_up_pct": 66.27,
+          "era2_mean_pct": 1.24,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "falling",
+          "label": "降档(20日变化≤-10.8bp)",
+          "horizon": 60,
+          "n_days": 2219,
+          "n_episodes_raw": 321,
+          "n_independent": 12,
+          "too_small_no_ci": false,
+          "up_pct": 68.95,
+          "mean_pct": 2.58,
+          "median_pct": 4.46,
+          "p10_pct": -13.8,
+          "base_up_pct": 66.21,
+          "base_mean_pct": 2.2,
+          "base_median_pct": 3.64,
+          "base_p10_pct": -11.61,
+          "diff_mean": 0.38,
+          "ci95_mean": [
+            -0.07,
+            5.62
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 59.66,
+          "era1_mean_pct": 0.48,
+          "era2_up_pct": 82.31,
+          "era2_mean_pct": 5.58,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "flat",
+          "label": "平档(-10.8~8.5bp)",
+          "horizon": 60,
+          "n_days": 2196,
+          "n_episodes_raw": 584,
+          "n_independent": 2,
+          "too_small_no_ci": true,
+          "up_pct": 66.3,
+          "mean_pct": 2.2,
+          "median_pct": 3.42,
+          "p10_pct": -10.38,
+          "base_up_pct": 66.21,
+          "base_mean_pct": 2.2,
+          "base_median_pct": 3.64,
+          "base_p10_pct": -11.61,
+          "diff_mean": 0.0,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 53.5,
+          "era1_mean_pct": -0.58,
+          "era2_up_pct": 75.43,
+          "era2_mean_pct": 4.18,
+          "era_same_sign": false
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "rising",
+          "label": "升档(20日变化>8.5bp)",
+          "horizon": 60,
+          "n_days": 2192,
+          "n_episodes_raw": 276,
+          "n_independent": 12,
+          "too_small_no_ci": false,
+          "up_pct": 63.55,
+          "mean_pct": 1.84,
+          "median_pct": 3.27,
+          "p10_pct": -10.47,
+          "base_up_pct": 66.21,
+          "base_mean_pct": 2.2,
+          "base_median_pct": 3.64,
+          "base_p10_pct": -11.61,
+          "diff_mean": -0.36,
+          "ci95_mean": [
+            -0.5,
+            3.68
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 53.8,
+          "era1_mean_pct": 0.47,
+          "era2_up_pct": 72.13,
+          "era2_mean_pct": 3.05,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "falling",
+          "label": "降档(20日变化≤-10.8bp)",
+          "horizon": 252,
+          "n_days": 2170,
+          "n_episodes_raw": 313,
+          "n_independent": 1,
+          "too_small_no_ci": true,
+          "up_pct": 72.81,
+          "mean_pct": 10.33,
+          "median_pct": 15.36,
+          "p10_pct": -30.44,
+          "base_up_pct": 74.58,
+          "base_mean_pct": 10.45,
+          "base_median_pct": 13.24,
+          "base_p10_pct": -26.48,
+          "diff_mean": -0.12,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 63.41,
+          "era1_mean_pct": 3.08,
+          "era2_up_pct": 87.11,
+          "era2_mean_pct": 21.34,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "flat",
+          "label": "平档(-10.8~8.5bp)",
+          "horizon": 252,
+          "n_days": 2100,
+          "n_episodes_raw": 562,
+          "n_independent": 1,
+          "too_small_no_ci": true,
+          "up_pct": 79.0,
+          "mean_pct": 11.3,
+          "median_pct": 13.09,
+          "p10_pct": -20.59,
+          "base_up_pct": 74.58,
+          "base_mean_pct": 10.45,
+          "base_median_pct": 13.24,
+          "base_p10_pct": -26.48,
+          "diff_mean": 0.85,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 69.47,
+          "era1_mean_pct": 3.55,
+          "era2_up_pct": 86.34,
+          "era2_mean_pct": 17.27,
+          "era_same_sign": true
+        },
+        {
+          "asset": "NASDAQ",
+          "variable": "direction",
+          "bucket": "rising",
+          "label": "升档(20日变化>8.5bp)",
+          "horizon": 252,
+          "n_days": 2145,
+          "n_episodes_raw": 263,
+          "n_independent": 1,
+          "too_small_no_ci": true,
+          "up_pct": 72.73,
+          "mean_pct": 10.16,
+          "median_pct": 11.19,
+          "p10_pct": -23.94,
+          "base_up_pct": 74.58,
+          "base_mean_pct": 10.45,
+          "base_median_pct": 13.24,
+          "base_p10_pct": -26.48,
+          "diff_mean": -0.29,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 64.52,
+          "era1_mean_pct": 4.14,
+          "era2_up_pct": 80.25,
+          "era2_mean_pct": 15.68,
+          "era_same_sign": true
+        }
+      ],
+      "level_episodes": {
+        "low": [
+          {
+            "start": "2008-12-04",
+            "end": "2008-12-04",
+            "days": 1
+          },
+          {
+            "start": "2008-12-15",
+            "end": "2009-01-21",
+            "days": 25
+          },
+          {
+            "start": "2009-01-27",
+            "end": "2009-01-27",
+            "days": 1
+          },
+          {
+            "start": "2009-03-18",
+            "end": "2009-03-18",
+            "days": 1
+          },
+          {
+            "start": "2010-08-16",
+            "end": "2010-08-16",
+            "days": 1
+          },
+          {
+            "start": "2010-08-19",
+            "end": "2010-08-19",
+            "days": 1
+          },
+          {
+            "start": "2010-08-24",
+            "end": "2010-08-26",
+            "days": 3
+          },
+          {
+            "start": "2010-08-30",
+            "end": "2010-09-01",
+            "days": 3
+          },
+          {
+            "start": "2010-09-22",
+            "end": "2010-09-23",
+            "days": 2
+          },
+          {
+            "start": "2010-09-27",
+            "end": "2010-10-25",
+            "days": 21
+          },
+          {
+            "start": "2010-11-04",
+            "end": "2010-11-08",
+            "days": 3
+          },
+          {
+            "start": "2011-08-04",
+            "end": "2013-06-24",
+            "days": 474
+          },
+          {
+            "start": "2013-06-26",
+            "end": "2013-07-03",
+            "days": 6
+          },
+          {
+            "start": "2013-07-11",
+            "end": "2013-07-11",
+            "days": 1
+          },
+          {
+            "start": "2013-07-15",
+            "end": "2013-07-23",
+            "days": 7
+          },
+          {
+            "start": "2013-07-26",
+            "end": "2013-07-29",
+            "days": 2
+          },
+          {
+            "start": "2013-08-09",
+            "end": "2013-08-09",
+            "days": 1
+          },
+          {
+            "start": "2013-10-22",
+            "end": "2013-10-31",
+            "days": 8
+          },
+          {
+            "start": "2014-02-03",
+            "end": "2014-02-03",
+            "days": 1
+          },
+          {
+            "start": "2014-05-14",
+            "end": "2014-06-02",
+            "days": 13
+          },
+          {
+            "start": "2014-06-05",
+            "end": "2014-06-05",
+            "days": 1
+          },
+          {
+            "start": "2014-06-12",
+            "end": "2014-06-12",
+            "days": 1
+          },
+          {
+            "start": "2014-06-24",
+            "end": "2014-07-01",
+            "days": 6
+          },
+          {
+            "start": "2014-07-08",
+            "end": "2014-09-11",
+            "days": 47
+          },
+          {
+            "start": "2014-09-22",
+            "end": "2016-12-15",
+            "days": 565
+          },
+          {
+            "start": "2016-12-19",
+            "end": "2017-03-08",
+            "days": 54
+          },
+          {
+            "start": "2017-03-10",
+            "end": "2017-03-10",
+            "days": 1
+          },
+          {
+            "start": "2017-03-15",
+            "end": "2018-01-17",
+            "days": 213
+          },
+          {
+            "start": "2019-01-03",
+            "end": "2019-01-03",
+            "days": 1
+          },
+          {
+            "start": "2019-03-20",
+            "end": "2019-04-15",
+            "days": 19
+          },
+          {
+            "start": "2019-04-18",
+            "end": "2019-04-18",
+            "days": 1
+          },
+          {
+            "start": "2019-04-23",
+            "end": "2022-04-05",
+            "days": 746
+          }
+        ],
+        "mid": [
+          {
+            "start": "2002-08-13",
+            "end": "2002-08-14",
+            "days": 2
+          },
+          {
+            "start": "2002-09-03",
+            "end": "2002-10-16",
+            "days": 32
+          },
+          {
+            "start": "2002-10-25",
+            "end": "2002-11-20",
+            "days": 19
+          },
+          {
+            "start": "2002-11-26",
+            "end": "2002-11-26",
+            "days": 1
+          },
+          {
+            "start": "2002-12-05",
+            "end": "2003-01-08",
+            "days": 23
+          },
+          {
+            "start": "2003-01-13",
+            "end": "2003-07-18",
+            "days": 130
+          },
+          {
+            "start": "2003-07-23",
+            "end": "2003-07-23",
+            "days": 1
+          },
+          {
+            "start": "2003-09-25",
+            "end": "2003-10-02",
+            "days": 6
+          },
+          {
+            "start": "2004-01-09",
+            "end": "2004-01-23",
+            "days": 10
+          },
+          {
+            "start": "2004-01-27",
+            "end": "2004-01-27",
+            "days": 1
+          },
+          {
+            "start": "2004-02-03",
+            "end": "2004-02-04",
+            "days": 2
+          },
+          {
+            "start": "2004-02-06",
+            "end": "2004-04-01",
+            "days": 39
+          },
+          {
+            "start": "2004-08-31",
+            "end": "2004-09-01",
+            "days": 2
+          },
+          {
+            "start": "2004-09-16",
+            "end": "2004-09-30",
+            "days": 11
+          },
+          {
+            "start": "2004-10-12",
+            "end": "2004-11-04",
+            "days": 18
+          },
+          {
+            "start": "2004-11-18",
+            "end": "2004-11-18",
+            "days": 1
+          },
+          {
+            "start": "2004-12-14",
+            "end": "2004-12-15",
+            "days": 2
+          },
+          {
+            "start": "2005-01-24",
+            "end": "2005-01-24",
+            "days": 1
+          },
+          {
+            "start": "2005-02-04",
+            "end": "2005-02-15",
+            "days": 8
+          },
+          {
+            "start": "2005-05-13",
+            "end": "2005-07-11",
+            "days": 40
+          },
+          {
+            "start": "2005-08-30",
+            "end": "2005-09-06",
+            "days": 5
+          },
+          {
+            "start": "2005-09-09",
+            "end": "2005-09-09",
+            "days": 1
+          },
+          {
+            "start": "2007-11-19",
+            "end": "2007-12-07",
+            "days": 14
+          },
+          {
+            "start": "2007-12-11",
+            "end": "2007-12-12",
+            "days": 2
+          },
+          {
+            "start": "2007-12-18",
+            "end": "2007-12-20",
+            "days": 3
+          },
+          {
+            "start": "2007-12-28",
+            "end": "2008-06-11",
+            "days": 114
+          },
+          {
+            "start": "2008-06-24",
+            "end": "2008-07-22",
+            "days": 20
+          },
+          {
+            "start": "2008-07-24",
+            "end": "2008-12-03",
+            "days": 93
+          },
+          {
+            "start": "2008-12-05",
+            "end": "2008-12-12",
+            "days": 6
+          },
+          {
+            "start": "2009-01-22",
+            "end": "2009-01-26",
+            "days": 3
+          },
+          {
+            "start": "2009-01-28",
+            "end": "2009-03-17",
+            "days": 34
+          },
+          {
+            "start": "2009-03-19",
+            "end": "2010-08-13",
+            "days": 355
+          },
+          {
+            "start": "2010-08-17",
+            "end": "2010-08-18",
+            "days": 2
+          },
+          {
+            "start": "2010-08-20",
+            "end": "2010-08-23",
+            "days": 2
+          },
+          {
+            "start": "2010-08-27",
+            "end": "2010-08-27",
+            "days": 1
+          },
+          {
+            "start": "2010-09-02",
+            "end": "2010-09-21",
+            "days": 13
+          },
+          {
+            "start": "2010-09-24",
+            "end": "2010-09-24",
+            "days": 1
+          },
+          {
+            "start": "2010-10-26",
+            "end": "2010-11-03",
+            "days": 7
+          },
+          {
+            "start": "2010-11-09",
+            "end": "2011-08-03",
+            "days": 185
+          },
+          {
+            "start": "2013-06-25",
+            "end": "2013-06-25",
+            "days": 1
+          },
+          {
+            "start": "2013-07-05",
+            "end": "2013-07-10",
+            "days": 4
+          },
+          {
+            "start": "2013-07-12",
+            "end": "2013-07-12",
+            "days": 1
+          },
+          {
+            "start": "2013-07-24",
+            "end": "2013-07-25",
+            "days": 2
+          },
+          {
+            "start": "2013-07-30",
+            "end": "2013-08-08",
+            "days": 8
+          },
+          {
+            "start": "2013-08-12",
+            "end": "2013-10-21",
+            "days": 50
+          },
+          {
+            "start": "2013-11-01",
+            "end": "2014-01-31",
+            "days": 62
+          },
+          {
+            "start": "2014-02-04",
+            "end": "2014-05-13",
+            "days": 69
+          },
+          {
+            "start": "2014-06-03",
+            "end": "2014-06-04",
+            "days": 2
+          },
+          {
+            "start": "2014-06-06",
+            "end": "2014-06-11",
+            "days": 4
+          },
+          {
+            "start": "2014-06-13",
+            "end": "2014-06-23",
+            "days": 7
+          },
+          {
+            "start": "2014-07-02",
+            "end": "2014-07-07",
+            "days": 3
+          },
+          {
+            "start": "2014-09-12",
+            "end": "2014-09-19",
+            "days": 6
+          },
+          {
+            "start": "2016-12-16",
+            "end": "2016-12-16",
+            "days": 1
+          },
+          {
+            "start": "2017-03-09",
+            "end": "2017-03-09",
+            "days": 1
+          },
+          {
+            "start": "2017-03-13",
+            "end": "2017-03-14",
+            "days": 2
+          },
+          {
+            "start": "2018-01-18",
+            "end": "2019-01-02",
+            "days": 241
+          },
+          {
+            "start": "2019-01-04",
+            "end": "2019-03-19",
+            "days": 51
+          },
+          {
+            "start": "2019-04-16",
+            "end": "2019-04-17",
+            "days": 2
+          },
+          {
+            "start": "2019-04-22",
+            "end": "2019-04-22",
+            "days": 1
+          },
+          {
+            "start": "2022-04-06",
+            "end": "2022-10-19",
+            "days": 136
+          }
+        ],
+        "high": [
+          {
+            "start": "2000-01-03",
+            "end": "2002-08-12",
+            "days": 654
+          },
+          {
+            "start": "2002-08-15",
+            "end": "2002-08-30",
+            "days": 12
+          },
+          {
+            "start": "2002-10-17",
+            "end": "2002-10-24",
+            "days": 6
+          },
+          {
+            "start": "2002-11-21",
+            "end": "2002-11-25",
+            "days": 3
+          },
+          {
+            "start": "2002-11-27",
+            "end": "2002-12-04",
+            "days": 5
+          },
+          {
+            "start": "2003-01-09",
+            "end": "2003-01-10",
+            "days": 2
+          },
+          {
+            "start": "2003-07-21",
+            "end": "2003-07-22",
+            "days": 2
+          },
+          {
+            "start": "2003-07-24",
+            "end": "2003-09-24",
+            "days": 44
+          },
+          {
+            "start": "2003-10-03",
+            "end": "2004-01-08",
+            "days": 67
+          },
+          {
+            "start": "2004-01-26",
+            "end": "2004-01-26",
+            "days": 1
+          },
+          {
+            "start": "2004-01-28",
+            "end": "2004-02-02",
+            "days": 4
+          },
+          {
+            "start": "2004-02-05",
+            "end": "2004-02-05",
+            "days": 1
+          },
+          {
+            "start": "2004-04-02",
+            "end": "2004-08-30",
+            "days": 103
+          },
+          {
+            "start": "2004-09-02",
+            "end": "2004-09-15",
+            "days": 9
+          },
+          {
+            "start": "2004-10-01",
+            "end": "2004-10-11",
+            "days": 7
+          },
+          {
+            "start": "2004-11-05",
+            "end": "2004-11-17",
+            "days": 9
+          },
+          {
+            "start": "2004-11-19",
+            "end": "2004-12-13",
+            "days": 16
+          },
+          {
+            "start": "2004-12-16",
+            "end": "2005-01-21",
+            "days": 25
+          },
+          {
+            "start": "2005-01-25",
+            "end": "2005-02-03",
+            "days": 8
+          },
+          {
+            "start": "2005-02-16",
+            "end": "2005-05-12",
+            "days": 60
+          },
+          {
+            "start": "2005-07-12",
+            "end": "2005-08-29",
+            "days": 35
+          },
+          {
+            "start": "2005-09-07",
+            "end": "2005-09-08",
+            "days": 2
+          },
+          {
+            "start": "2005-09-12",
+            "end": "2007-11-16",
+            "days": 551
+          },
+          {
+            "start": "2007-12-10",
+            "end": "2007-12-10",
+            "days": 1
+          },
+          {
+            "start": "2007-12-13",
+            "end": "2007-12-17",
+            "days": 3
+          },
+          {
+            "start": "2007-12-21",
+            "end": "2007-12-27",
+            "days": 4
+          },
+          {
+            "start": "2008-06-12",
+            "end": "2008-06-23",
+            "days": 8
+          },
+          {
+            "start": "2008-07-23",
+            "end": "2008-07-23",
+            "days": 1
+          },
+          {
+            "start": "2022-10-20",
+            "end": "2022-10-24",
+            "days": 3
+          },
+          {
+            "start": "2022-11-04",
+            "end": "2022-11-07",
+            "days": 2
+          },
+          {
+            "start": "2022-11-09",
+            "end": "2022-11-09",
+            "days": 1
+          },
+          {
+            "start": "2023-08-03",
+            "end": "2023-08-03",
+            "days": 1
+          },
+          {
+            "start": "2023-08-11",
+            "end": "2023-08-28",
+            "days": 12
+          },
+          {
+            "start": "2023-09-01",
+            "end": "2023-12-05",
+            "days": 66
+          },
+          {
+            "start": "2023-12-08",
+            "end": "2023-12-12",
+            "days": 3
+          },
+          {
+            "start": "2024-01-18",
+            "end": "2024-01-19",
+            "days": 2
+          },
+          {
+            "start": "2024-01-23",
+            "end": "2024-01-24",
+            "days": 2
+          },
+          {
+            "start": "2024-01-26",
+            "end": "2024-01-26",
+            "days": 1
+          },
+          {
+            "start": "2024-02-05",
+            "end": "2024-02-05",
+            "days": 1
+          },
+          {
+            "start": "2024-02-08",
+            "end": "2024-03-05",
+            "days": 18
+          },
+          {
+            "start": "2024-03-12",
+            "end": "2024-07-30",
+            "days": 97
+          },
+          {
+            "start": "2024-10-21",
+            "end": "2025-04-02",
+            "days": 112
+          },
+          {
+            "start": "2025-04-07",
+            "end": "2025-09-04",
+            "days": 104
+          },
+          {
+            "start": "2025-09-19",
+            "end": "2025-09-22",
+            "days": 2
+          },
+          {
+            "start": "2025-09-24",
+            "end": "2025-09-30",
+            "days": 5
+          },
+          {
+            "start": "2025-10-06",
+            "end": "2025-10-06",
+            "days": 1
+          },
+          {
+            "start": "2025-10-09",
+            "end": "2025-10-09",
+            "days": 1
+          },
+          {
+            "start": "2025-11-05",
+            "end": "2025-11-05",
+            "days": 1
+          },
+          {
+            "start": "2025-11-14",
+            "end": "2025-11-17",
+            "days": 2
+          },
+          {
+            "start": "2025-11-19",
+            "end": "2025-11-19",
+            "days": 1
+          },
+          {
+            "start": "2025-12-05",
+            "end": "2025-12-17",
+            "days": 9
+          },
+          {
+            "start": "2025-12-19",
+            "end": "2025-12-26",
+            "days": 5
+          },
+          {
+            "start": "2025-12-31",
+            "end": "2026-02-11",
+            "days": 29
+          },
+          {
+            "start": "2026-03-05",
+            "end": "2026-08-05",
+            "days": 106
+          }
+        ]
+      },
+      "direction_episodes": {
+        "falling": [
+          {
+            "start": "2000-02-03",
+            "end": "2000-02-03",
+            "days": 1
+          },
+          {
+            "start": "2000-02-14",
+            "end": "2000-03-02",
+            "days": 13
+          },
+          {
+            "start": "2000-03-06",
+            "end": "2000-04-17",
+            "days": 31
+          },
+          {
+            "start": "2000-04-19",
+            "end": "2000-04-19",
+            "days": 1
+          },
+          {
+            "start": "2000-04-24",
+            "end": "2000-04-24",
+            "days": 1
+          },
+          {
+            "start": "2000-06-01",
+            "end": "2000-07-05",
+            "days": 24
+          },
+          {
+            "start": "2000-07-21",
+            "end": "2000-07-24",
+            "days": 2
+          },
+          {
+            "start": "2000-08-08",
+            "end": "2000-09-07",
+            "days": 22
+          },
+          {
+            "start": "2000-10-13",
+            "end": "2000-10-26",
+            "days": 10
+          },
+          {
+            "start": "2000-10-31",
+            "end": "2000-11-02",
+            "days": 3
+          },
+          {
+            "start": "2000-11-28",
+            "end": "2001-01-11",
+            "days": 31
+          },
+          {
+            "start": "2001-02-12",
+            "end": "2001-02-13",
+            "days": 2
+          },
+          {
+            "start": "2001-02-20",
+            "end": "2001-03-09",
+            "days": 14
+          },
+          {
+            "start": "2001-03-13",
+            "end": "2001-03-26",
+            "days": 10
+          },
+          {
+            "start": "2001-06-11",
+            "end": "2001-06-27",
+            "days": 13
+          },
+          {
+            "start": "2001-07-18",
+            "end": "2001-07-18",
+            "days": 1
+          },
+          {
+            "start": "2001-07-25",
+            "end": "2001-07-25",
+            "days": 1
+          },
+          {
+            "start": "2001-07-27",
+            "end": "2001-08-06",
+            "days": 7
+          },
+          {
+            "start": "2001-08-08",
+            "end": "2001-08-14",
+            "days": 5
+          },
+          {
+            "start": "2001-08-16",
+            "end": "2001-10-12",
+            "days": 37
+          },
+          {
+            "start": "2001-10-16",
+            "end": "2001-10-18",
+            "days": 3
+          },
+          {
+            "start": "2001-10-31",
+            "end": "2001-11-13",
+            "days": 10
+          },
+          {
+            "start": "2002-01-10",
+            "end": "2002-01-22",
+            "days": 8
+          },
+          {
+            "start": "2002-01-29",
+            "end": "2002-01-29",
+            "days": 1
+          },
+          {
+            "start": "2002-01-31",
+            "end": "2002-02-07",
+            "days": 6
+          },
+          {
+            "start": "2002-02-21",
+            "end": "2002-02-28",
+            "days": 6
+          },
+          {
+            "start": "2002-04-09",
+            "end": "2002-04-09",
+            "days": 1
+          },
+          {
+            "start": "2002-04-12",
+            "end": "2002-04-16",
+            "days": 3
+          },
+          {
+            "start": "2002-04-18",
+            "end": "2002-05-07",
+            "days": 14
+          },
+          {
+            "start": "2002-06-06",
+            "end": "2002-06-07",
+            "days": 2
+          },
+          {
+            "start": "2002-06-11",
+            "end": "2002-08-21",
+            "days": 51
+          },
+          {
+            "start": "2002-08-23",
+            "end": "2002-09-10",
+            "days": 12
+          },
+          {
+            "start": "2002-09-13",
+            "end": "2002-10-10",
+            "days": 20
+          },
+          {
+            "start": "2002-11-12",
+            "end": "2002-11-14",
+            "days": 3
+          },
+          {
+            "start": "2002-11-18",
+            "end": "2002-11-20",
+            "days": 3
+          },
+          {
+            "start": "2002-12-19",
+            "end": "2003-01-03",
+            "days": 10
+          },
+          {
+            "start": "2003-02-04",
+            "end": "2003-02-04",
+            "days": 1
+          },
+          {
+            "start": "2003-02-07",
+            "end": "2003-02-14",
+            "days": 6
+          },
+          {
+            "start": "2003-02-19",
+            "end": "2003-02-19",
+            "days": 1
+          },
+          {
+            "start": "2003-02-25",
+            "end": "2003-03-17",
+            "days": 15
+          },
+          {
+            "start": "2003-04-21",
+            "end": "2003-04-21",
+            "days": 1
+          },
+          {
+            "start": "2003-05-06",
+            "end": "2003-06-17",
+            "days": 30
+          },
+          {
+            "start": "2003-06-24",
+            "end": "2003-06-24",
+            "days": 1
+          },
+          {
+            "start": "2003-09-11",
+            "end": "2003-10-07",
+            "days": 19
+          },
+          {
+            "start": "2003-11-13",
+            "end": "2003-11-21",
+            "days": 7
+          },
+          {
+            "start": "2003-12-05",
+            "end": "2003-12-08",
+            "days": 2
+          },
+          {
+            "start": "2003-12-10",
+            "end": "2003-12-11",
+            "days": 2
+          },
+          {
+            "start": "2003-12-30",
+            "end": "2003-12-31",
+            "days": 2
+          },
+          {
+            "start": "2004-01-09",
+            "end": "2004-01-16",
+            "days": 6
+          },
+          {
+            "start": "2004-01-22",
+            "end": "2004-01-23",
+            "days": 2
+          },
+          {
+            "start": "2004-01-30",
+            "end": "2004-02-04",
+            "days": 4
+          },
+          {
+            "start": "2004-02-06",
+            "end": "2004-02-06",
+            "days": 1
+          },
+          {
+            "start": "2004-02-24",
+            "end": "2004-02-24",
+            "days": 1
+          },
+          {
+            "start": "2004-02-26",
+            "end": "2004-03-01",
+            "days": 3
+          },
+          {
+            "start": "2004-03-05",
+            "end": "2004-03-26",
+            "days": 16
+          },
+          {
+            "start": "2004-03-30",
+            "end": "2004-04-01",
+            "days": 3
+          },
+          {
+            "start": "2004-07-01",
+            "end": "2004-07-28",
+            "days": 19
+          },
+          {
+            "start": "2004-08-06",
+            "end": "2004-08-13",
+            "days": 6
+          },
+          {
+            "start": "2004-08-17",
+            "end": "2004-09-02",
+            "days": 13
+          },
+          {
+            "start": "2004-09-08",
+            "end": "2004-09-08",
+            "days": 1
+          }
+        ],
+        "flat": [
+          {
+            "start": "2000-02-01",
+            "end": "2000-02-01",
+            "days": 1
+          },
+          {
+            "start": "2000-02-04",
+            "end": "2000-02-04",
+            "days": 1
+          },
+          {
+            "start": "2000-02-08",
+            "end": "2000-02-11",
+            "days": 4
+          },
+          {
+            "start": "2000-03-03",
+            "end": "2000-03-03",
+            "days": 1
+          },
+          {
+            "start": "2000-04-18",
+            "end": "2000-04-18",
+            "days": 1
+          },
+          {
+            "start": "2000-04-20",
+            "end": "2000-04-20",
+            "days": 1
+          },
+          {
+            "start": "2000-04-25",
+            "end": "2000-04-26",
+            "days": 2
+          },
+          {
+            "start": "2000-05-31",
+            "end": "2000-05-31",
+            "days": 1
+          },
+          {
+            "start": "2000-07-06",
+            "end": "2000-07-14",
+            "days": 7
+          },
+          {
+            "start": "2000-07-20",
+            "end": "2000-07-20",
+            "days": 1
+          },
+          {
+            "start": "2000-07-25",
+            "end": "2000-08-07",
+            "days": 10
+          },
+          {
+            "start": "2000-09-08",
+            "end": "2000-09-15",
+            "days": 6
+          },
+          {
+            "start": "2000-09-19",
+            "end": "2000-09-19",
+            "days": 1
+          },
+          {
+            "start": "2000-09-26",
+            "end": "2000-09-29",
+            "days": 4
+          },
+          {
+            "start": "2000-10-09",
+            "end": "2000-10-12",
+            "days": 4
+          },
+          {
+            "start": "2000-10-27",
+            "end": "2000-10-30",
+            "days": 2
+          },
+          {
+            "start": "2000-11-03",
+            "end": "2000-11-08",
+            "days": 4
+          },
+          {
+            "start": "2000-11-10",
+            "end": "2000-11-27",
+            "days": 11
+          },
+          {
+            "start": "2001-01-12",
+            "end": "2001-01-19",
+            "days": 5
+          },
+          {
+            "start": "2001-02-01",
+            "end": "2001-02-01",
+            "days": 1
+          },
+          {
+            "start": "2001-02-08",
+            "end": "2001-02-09",
+            "days": 2
+          },
+          {
+            "start": "2001-02-14",
+            "end": "2001-02-16",
+            "days": 3
+          },
+          {
+            "start": "2001-03-12",
+            "end": "2001-03-12",
+            "days": 1
+          },
+          {
+            "start": "2001-03-27",
+            "end": "2001-03-28",
+            "days": 2
+          },
+          {
+            "start": "2001-03-30",
+            "end": "2001-04-09",
+            "days": 7
+          },
+          {
+            "start": "2001-06-05",
+            "end": "2001-06-06",
+            "days": 2
+          },
+          {
+            "start": "2001-06-08",
+            "end": "2001-06-08",
+            "days": 1
+          },
+          {
+            "start": "2001-06-28",
+            "end": "2001-07-02",
+            "days": 3
+          },
+          {
+            "start": "2001-07-06",
+            "end": "2001-07-17",
+            "days": 8
+          },
+          {
+            "start": "2001-07-19",
+            "end": "2001-07-24",
+            "days": 4
+          },
+          {
+            "start": "2001-07-26",
+            "end": "2001-07-26",
+            "days": 1
+          },
+          {
+            "start": "2001-08-07",
+            "end": "2001-08-07",
+            "days": 1
+          },
+          {
+            "start": "2001-08-15",
+            "end": "2001-08-15",
+            "days": 1
+          },
+          {
+            "start": "2001-10-15",
+            "end": "2001-10-15",
+            "days": 1
+          },
+          {
+            "start": "2001-10-19",
+            "end": "2001-10-30",
+            "days": 8
+          },
+          {
+            "start": "2001-11-14",
+            "end": "2001-11-14",
+            "days": 1
+          },
+          {
+            "start": "2001-12-20",
+            "end": "2001-12-20",
+            "days": 1
+          },
+          {
+            "start": "2002-01-07",
+            "end": "2002-01-09",
+            "days": 3
+          },
+          {
+            "start": "2002-01-23",
+            "end": "2002-01-28",
+            "days": 4
+          },
+          {
+            "start": "2002-01-30",
+            "end": "2002-01-30",
+            "days": 1
+          },
+          {
+            "start": "2002-02-08",
+            "end": "2002-02-11",
+            "days": 2
+          },
+          {
+            "start": "2002-02-15",
+            "end": "2002-02-20",
+            "days": 3
+          },
+          {
+            "start": "2002-03-01",
+            "end": "2002-03-04",
+            "days": 2
+          },
+          {
+            "start": "2002-04-05",
+            "end": "2002-04-08",
+            "days": 2
+          },
+          {
+            "start": "2002-04-10",
+            "end": "2002-04-11",
+            "days": 2
+          },
+          {
+            "start": "2002-04-17",
+            "end": "2002-04-17",
+            "days": 1
+          },
+          {
+            "start": "2002-05-08",
+            "end": "2002-05-10",
+            "days": 3
+          },
+          {
+            "start": "2002-05-15",
+            "end": "2002-06-05",
+            "days": 15
+          },
+          {
+            "start": "2002-06-10",
+            "end": "2002-06-10",
+            "days": 1
+          },
+          {
+            "start": "2002-08-22",
+            "end": "2002-08-22",
+            "days": 1
+          },
+          {
+            "start": "2002-09-11",
+            "end": "2002-09-12",
+            "days": 2
+          },
+          {
+            "start": "2002-10-11",
+            "end": "2002-10-14",
+            "days": 2
+          },
+          {
+            "start": "2002-11-08",
+            "end": "2002-11-11",
+            "days": 2
+          },
+          {
+            "start": "2002-11-15",
+            "end": "2002-11-15",
+            "days": 1
+          },
+          {
+            "start": "2002-11-21",
+            "end": "2002-11-22",
+            "days": 2
+          },
+          {
+            "start": "2002-12-05",
+            "end": "2002-12-05",
+            "days": 1
+          },
+          {
+            "start": "2002-12-13",
+            "end": "2002-12-16",
+            "days": 2
+          },
+          {
+            "start": "2002-12-18",
+            "end": "2002-12-18",
+            "days": 1
+          },
+          {
+            "start": "2003-01-06",
+            "end": "2003-01-08",
+            "days": 3
+          },
+          {
+            "start": "2003-01-14",
+            "end": "2003-01-27",
+            "days": 9
+          }
+        ],
+        "rising": [
+          {
+            "start": "2000-02-02",
+            "end": "2000-02-02",
+            "days": 1
+          },
+          {
+            "start": "2000-02-07",
+            "end": "2000-02-07",
+            "days": 1
+          },
+          {
+            "start": "2000-04-27",
+            "end": "2000-05-30",
+            "days": 23
+          },
+          {
+            "start": "2000-07-17",
+            "end": "2000-07-19",
+            "days": 3
+          },
+          {
+            "start": "2000-09-18",
+            "end": "2000-09-18",
+            "days": 1
+          },
+          {
+            "start": "2000-09-20",
+            "end": "2000-09-25",
+            "days": 4
+          },
+          {
+            "start": "2000-10-02",
+            "end": "2000-10-06",
+            "days": 5
+          },
+          {
+            "start": "2000-11-09",
+            "end": "2000-11-09",
+            "days": 1
+          },
+          {
+            "start": "2001-01-22",
+            "end": "2001-01-31",
+            "days": 8
+          },
+          {
+            "start": "2001-02-02",
+            "end": "2001-02-07",
+            "days": 4
+          },
+          {
+            "start": "2001-03-29",
+            "end": "2001-03-29",
+            "days": 1
+          },
+          {
+            "start": "2001-04-10",
+            "end": "2001-06-04",
+            "days": 38
+          },
+          {
+            "start": "2001-06-07",
+            "end": "2001-06-07",
+            "days": 1
+          },
+          {
+            "start": "2001-07-03",
+            "end": "2001-07-05",
+            "days": 2
+          },
+          {
+            "start": "2001-11-15",
+            "end": "2001-12-19",
+            "days": 24
+          },
+          {
+            "start": "2001-12-21",
+            "end": "2002-01-04",
+            "days": 9
+          },
+          {
+            "start": "2002-02-12",
+            "end": "2002-02-14",
+            "days": 3
+          },
+          {
+            "start": "2002-03-05",
+            "end": "2002-04-04",
+            "days": 22
+          },
+          {
+            "start": "2002-05-13",
+            "end": "2002-05-14",
+            "days": 2
+          },
+          {
+            "start": "2002-10-15",
+            "end": "2002-11-07",
+            "days": 18
+          },
+          {
+            "start": "2002-11-25",
+            "end": "2002-12-04",
+            "days": 7
+          },
+          {
+            "start": "2002-12-06",
+            "end": "2002-12-12",
+            "days": 5
+          },
+          {
+            "start": "2002-12-17",
+            "end": "2002-12-17",
+            "days": 1
+          },
+          {
+            "start": "2003-01-09",
+            "end": "2003-01-13",
+            "days": 3
+          },
+          {
+            "start": "2003-01-28",
+            "end": "2003-01-30",
+            "days": 3
+          },
+          {
+            "start": "2003-03-20",
+            "end": "2003-04-14",
+            "days": 18
+          },
+          {
+            "start": "2003-04-29",
+            "end": "2003-04-29",
+            "days": 1
+          },
+          {
+            "start": "2003-06-26",
+            "end": "2003-08-27",
+            "days": 44
+          },
+          {
+            "start": "2003-09-02",
+            "end": "2003-09-08",
+            "days": 5
+          },
+          {
+            "start": "2003-10-15",
+            "end": "2003-11-03",
+            "days": 14
+          },
+          {
+            "start": "2003-11-05",
+            "end": "2003-11-11",
+            "days": 5
+          },
+          {
+            "start": "2004-02-20",
+            "end": "2004-02-20",
+            "days": 1
+          },
+          {
+            "start": "2004-04-02",
+            "end": "2004-05-26",
+            "days": 38
+          },
+          {
+            "start": "2004-05-28",
+            "end": "2004-06-04",
+            "days": 5
+          },
+          {
+            "start": "2004-06-28",
+            "end": "2004-06-28",
+            "days": 1
+          },
+          {
+            "start": "2004-11-09",
+            "end": "2004-12-03",
+            "days": 18
+          },
+          {
+            "start": "2004-12-17",
+            "end": "2004-12-17",
+            "days": 1
+          },
+          {
+            "start": "2005-01-06",
+            "end": "2005-01-13",
+            "days": 6
+          },
+          {
+            "start": "2005-02-18",
+            "end": "2005-02-22",
+            "days": 2
+          },
+          {
+            "start": "2005-02-24",
+            "end": "2005-02-24",
+            "days": 1
+          },
+          {
+            "start": "2005-02-28",
+            "end": "2005-03-31",
+            "days": 23
+          },
+          {
+            "start": "2005-04-04",
+            "end": "2005-04-05",
+            "days": 2
+          },
+          {
+            "start": "2005-07-05",
+            "end": "2005-07-08",
+            "days": 4
+          },
+          {
+            "start": "2005-07-15",
+            "end": "2005-08-11",
+            "days": 20
+          },
+          {
+            "start": "2005-08-17",
+            "end": "2005-08-17",
+            "days": 1
+          },
+          {
+            "start": "2005-09-23",
+            "end": "2005-11-14",
+            "days": 37
+          },
+          {
+            "start": "2006-01-25",
+            "end": "2006-02-08",
+            "days": 11
+          },
+          {
+            "start": "2006-02-10",
+            "end": "2006-02-23",
+            "days": 9
+          },
+          {
+            "start": "2006-02-27",
+            "end": "2006-02-27",
+            "days": 1
+          },
+          {
+            "start": "2006-03-03",
+            "end": "2006-03-15",
+            "days": 9
+          },
+          {
+            "start": "2006-03-20",
+            "end": "2006-05-17",
+            "days": 42
+          },
+          {
+            "start": "2006-06-19",
+            "end": "2006-07-12",
+            "days": 17
+          },
+          {
+            "start": "2006-10-20",
+            "end": "2006-10-26",
+            "days": 5
+          },
+          {
+            "start": "2006-11-03",
+            "end": "2006-11-03",
+            "days": 1
+          },
+          {
+            "start": "2006-12-27",
+            "end": "2007-02-07",
+            "days": 28
+          },
+          {
+            "start": "2007-03-27",
+            "end": "2007-03-27",
+            "days": 1
+          },
+          {
+            "start": "2007-03-30",
+            "end": "2007-04-19",
+            "days": 14
+          },
+          {
+            "start": "2007-05-17",
+            "end": "2007-06-28",
+            "days": 30
+          },
+          {
+            "start": "2007-07-05",
+            "end": "2007-07-06",
+            "days": 2
+          },
+          {
+            "start": "2007-09-26",
+            "end": "2007-09-26",
+            "days": 1
+          }
+        ]
+      }
+    },
+    "SP500": {
+      "date_range": [
+        "2000-01-03",
+        "2026-08-05"
+      ],
+      "base": {
+        "20": {
+          "n_days": 6667,
+          "up_pct": 63.15,
+          "mean_pct": 0.61,
+          "median_pct": 1.18,
+          "p10_pct": -4.87
+        },
+        "60": {
+          "n_days": 6627,
+          "up_pct": 67.47,
+          "mean_pct": 1.81,
+          "median_pct": 2.98,
+          "p10_pct": -7.97
+        },
+        "252": {
+          "n_days": 6435,
+          "up_pct": 75.24,
+          "mean_pct": 7.84,
+          "median_pct": 11.03,
+          "p10_pct": -16.88
+        }
+      },
+      "level": [
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "low",
+          "label": "低档(TNX≤2.59%)",
+          "horizon": 20,
+          "n_days": 2230,
+          "n_episodes_raw": 32,
+          "n_independent": 9,
+          "too_small_no_ci": false,
+          "up_pct": 68.43,
+          "mean_pct": 1.14,
+          "median_pct": 1.53,
+          "p10_pct": -3.29,
+          "base_up_pct": 63.15,
+          "base_mean_pct": 0.61,
+          "base_median_pct": 1.18,
+          "base_p10_pct": -4.87,
+          "diff_mean": 0.53,
+          "ci95_mean": [
+            0.67,
+            1.6
+          ],
+          "ci_vs_base": "above_base",
+          "era1_up_pct": 65.14,
+          "era1_mean_pct": 1.19,
+          "era2_up_pct": 69.18,
+          "era2_mean_pct": 1.13,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "mid",
+          "label": "中档(2.59%<TNX≤4.13%)",
+          "horizon": 20,
+          "n_days": 2227,
+          "n_episodes_raw": 85,
+          "n_independent": 22,
+          "too_small_no_ci": false,
+          "up_pct": 63.0,
+          "mean_pct": 0.45,
+          "median_pct": 1.31,
+          "p10_pct": -5.92,
+          "base_up_pct": 63.15,
+          "base_mean_pct": 0.61,
+          "base_median_pct": 1.18,
+          "base_p10_pct": -4.87,
+          "diff_mean": -0.16,
+          "ci95_mean": [
+            -0.63,
+            1.32
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 60.99,
+          "era1_mean_pct": 0.31,
+          "era2_up_pct": 65.39,
+          "era2_mean_pct": 0.62,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "high",
+          "label": "高档(TNX>4.13%)",
+          "horizon": 20,
+          "n_days": 2210,
+          "n_episodes_raw": 54,
+          "n_independent": 13,
+          "too_small_no_ci": false,
+          "up_pct": 57.96,
+          "mean_pct": 0.23,
+          "median_pct": 0.74,
+          "p10_pct": -5.14,
+          "base_up_pct": 63.15,
+          "base_mean_pct": 0.61,
+          "base_median_pct": 1.18,
+          "base_p10_pct": -4.87,
+          "diff_mean": -0.38,
+          "ci95_mean": [
+            -0.7,
+            1.48
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 54.23,
+          "era1_mean_pct": -0.22,
+          "era2_up_pct": 68.78,
+          "era2_mean_pct": 1.55,
+          "era_same_sign": false
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "low",
+          "label": "低档(TNX≤2.59%)",
+          "horizon": 60,
+          "n_days": 2230,
+          "n_episodes_raw": 32,
+          "n_independent": 6,
+          "too_small_no_ci": true,
+          "up_pct": 76.1,
+          "mean_pct": 3.1,
+          "median_pct": 3.86,
+          "p10_pct": -5.09,
+          "base_up_pct": 67.47,
+          "base_mean_pct": 1.81,
+          "base_median_pct": 2.98,
+          "base_p10_pct": -7.97,
+          "diff_mean": 1.29,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 73.32,
+          "era1_mean_pct": 4.16,
+          "era2_up_pct": 76.74,
+          "era2_mean_pct": 2.85,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "mid",
+          "label": "中档(2.59%<TNX≤4.13%)",
+          "horizon": 60,
+          "n_days": 2227,
+          "n_episodes_raw": 85,
+          "n_independent": 13,
+          "too_small_no_ci": false,
+          "up_pct": 67.44,
+          "mean_pct": 1.6,
+          "median_pct": 2.95,
+          "p10_pct": -8.61,
+          "base_up_pct": 67.47,
+          "base_mean_pct": 1.81,
+          "base_median_pct": 2.98,
+          "base_p10_pct": -7.97,
+          "diff_mean": -0.21,
+          "ci95_mean": [
+            0.32,
+            4.05
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 60.83,
+          "era1_mean_pct": 0.74,
+          "era2_up_pct": 75.32,
+          "era2_mean_pct": 2.62,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "high",
+          "label": "高档(TNX>4.13%)",
+          "horizon": 60,
+          "n_days": 2170,
+          "n_episodes_raw": 54,
+          "n_independent": 5,
+          "too_small_no_ci": true,
+          "up_pct": 58.62,
+          "mean_pct": 0.7,
+          "median_pct": 1.63,
+          "p10_pct": -9.66,
+          "base_up_pct": 67.47,
+          "base_mean_pct": 1.81,
+          "base_median_pct": 2.98,
+          "base_p10_pct": -7.97,
+          "diff_mean": -1.11,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 51.13,
+          "era1_mean_pct": -0.62,
+          "era2_up_pct": 81.97,
+          "era2_mean_pct": 4.85,
+          "era_same_sign": false
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "low",
+          "label": "低档(TNX≤2.59%)",
+          "horizon": 252,
+          "n_days": 2230,
+          "n_episodes_raw": 32,
+          "n_independent": 2,
+          "too_small_no_ci": true,
+          "up_pct": 79.78,
+          "mean_pct": 12.29,
+          "median_pct": 14.11,
+          "p10_pct": -6.84,
+          "base_up_pct": 75.24,
+          "base_mean_pct": 7.84,
+          "base_median_pct": 11.03,
+          "base_p10_pct": -16.88,
+          "diff_mean": 4.45,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 98.8,
+          "era1_mean_pct": 18.4,
+          "era2_up_pct": 75.41,
+          "era2_mean_pct": 10.89,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "mid",
+          "label": "中档(2.59%<TNX≤4.13%)",
+          "horizon": 252,
+          "n_days": 2159,
+          "n_episodes_raw": 74,
+          "n_independent": 5,
+          "too_small_no_ci": true,
+          "up_pct": 86.71,
+          "mean_pct": 9.9,
+          "median_pct": 12.01,
+          "p10_pct": -6.38,
+          "base_up_pct": 75.24,
+          "base_mean_pct": 7.84,
+          "base_median_pct": 11.03,
+          "base_p10_pct": -16.88,
+          "diff_mean": 2.06,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 80.74,
+          "era1_mean_pct": 6.82,
+          "era2_up_pct": 94.31,
+          "era2_mean_pct": 13.83,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "level",
+          "bucket": "high",
+          "label": "高档(TNX>4.13%)",
+          "horizon": 252,
+          "n_days": 2046,
+          "n_episodes_raw": 43,
+          "n_independent": 2,
+          "too_small_no_ci": true,
+          "up_pct": 58.21,
+          "mean_pct": 0.8,
+          "median_pct": 5.98,
+          "p10_pct": -22.0,
+          "base_up_pct": 75.24,
+          "base_mean_pct": 7.84,
+          "base_median_pct": 11.03,
+          "base_p10_pct": -16.88,
+          "diff_mean": -7.04,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 48.14,
+          "era1_mean_pct": -3.81,
+          "era2_up_pct": 99.26,
+          "era2_mean_pct": 19.6,
+          "era_same_sign": false
+        }
+      ],
+      "direction": [
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "falling",
+          "label": "降档(20日变化≤-10.8bp)",
+          "horizon": 20,
+          "n_days": 2223,
+          "n_episodes_raw": 322,
+          "n_independent": 88,
+          "too_small_no_ci": false,
+          "up_pct": 65.36,
+          "mean_pct": 0.8,
+          "median_pct": 1.65,
+          "p10_pct": -5.75,
+          "base_up_pct": 63.15,
+          "base_mean_pct": 0.61,
+          "base_median_pct": 1.18,
+          "base_p10_pct": -4.87,
+          "diff_mean": 0.19,
+          "ci95_mean": [
+            0.09,
+            1.46
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 60.2,
+          "era1_mean_pct": 0.42,
+          "era2_up_pct": 72.76,
+          "era2_mean_pct": 1.34,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "flat",
+          "label": "平档(-10.8~8.5bp)",
+          "horizon": 20,
+          "n_days": 2215,
+          "n_episodes_raw": 588,
+          "n_independent": 74,
+          "too_small_no_ci": false,
+          "up_pct": 63.48,
+          "mean_pct": 0.6,
+          "median_pct": 1.01,
+          "p10_pct": -4.1,
+          "base_up_pct": 63.15,
+          "base_mean_pct": 0.61,
+          "base_median_pct": 1.18,
+          "base_p10_pct": -4.87,
+          "diff_mean": -0.01,
+          "ci95_mean": [
+            -0.08,
+            1.15
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 57.77,
+          "era1_mean_pct": 0.06,
+          "era2_up_pct": 67.49,
+          "era2_mean_pct": 0.97,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "rising",
+          "label": "升档(20日变化>8.5bp)",
+          "horizon": 20,
+          "n_days": 2209,
+          "n_episodes_raw": 279,
+          "n_independent": 93,
+          "too_small_no_ci": false,
+          "up_pct": 61.02,
+          "mean_pct": 0.46,
+          "median_pct": 1.0,
+          "p10_pct": -4.82,
+          "base_up_pct": 63.15,
+          "base_mean_pct": 0.61,
+          "base_median_pct": 1.18,
+          "base_p10_pct": -4.87,
+          "diff_mean": -0.15,
+          "ci95_mean": [
+            -0.16,
+            1.05
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 56.63,
+          "era1_mean_pct": -0.05,
+          "era2_up_pct": 64.84,
+          "era2_mean_pct": 0.91,
+          "era_same_sign": false
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "falling",
+          "label": "降档(20日变化≤-10.8bp)",
+          "horizon": 60,
+          "n_days": 2219,
+          "n_episodes_raw": 321,
+          "n_independent": 12,
+          "too_small_no_ci": false,
+          "up_pct": 68.86,
+          "mean_pct": 1.91,
+          "median_pct": 3.18,
+          "p10_pct": -9.43,
+          "base_up_pct": 67.47,
+          "base_mean_pct": 1.81,
+          "base_median_pct": 2.98,
+          "base_p10_pct": -7.97,
+          "diff_mean": 0.1,
+          "ci95_mean": [
+            0.54,
+            3.99
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 59.89,
+          "era1_mean_pct": 0.48,
+          "era2_up_pct": 81.76,
+          "era2_mean_pct": 3.98,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "flat",
+          "label": "平档(-10.8~8.5bp)",
+          "horizon": 60,
+          "n_days": 2196,
+          "n_episodes_raw": 584,
+          "n_independent": 2,
+          "too_small_no_ci": true,
+          "up_pct": 68.4,
+          "mean_pct": 1.9,
+          "median_pct": 2.92,
+          "p10_pct": -6.35,
+          "base_up_pct": 67.47,
+          "base_mean_pct": 1.81,
+          "base_median_pct": 2.98,
+          "base_p10_pct": -7.97,
+          "diff_mean": 0.09,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 55.91,
+          "era1_mean_pct": 0.18,
+          "era2_up_pct": 77.3,
+          "era2_mean_pct": 3.13,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "rising",
+          "label": "升档(20日变化>8.5bp)",
+          "horizon": 60,
+          "n_days": 2192,
+          "n_episodes_raw": 276,
+          "n_independent": 12,
+          "too_small_no_ci": false,
+          "up_pct": 64.96,
+          "mean_pct": 1.6,
+          "median_pct": 2.71,
+          "p10_pct": -8.22,
+          "base_up_pct": 67.47,
+          "base_mean_pct": 1.81,
+          "base_median_pct": 2.98,
+          "base_p10_pct": -7.97,
+          "diff_mean": -0.21,
+          "ci95_mean": [
+            0.18,
+            2.73
+          ],
+          "ci_vs_base": "overlaps_base",
+          "era1_up_pct": 55.46,
+          "era1_mean_pct": 0.73,
+          "era2_up_pct": 73.33,
+          "era2_mean_pct": 2.37,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "falling",
+          "label": "降档(20日变化≤-10.8bp)",
+          "horizon": 252,
+          "n_days": 2170,
+          "n_episodes_raw": 313,
+          "n_independent": 1,
+          "too_small_no_ci": true,
+          "up_pct": 71.89,
+          "mean_pct": 7.09,
+          "median_pct": 11.07,
+          "p10_pct": -19.72,
+          "base_up_pct": 75.24,
+          "base_mean_pct": 7.84,
+          "base_median_pct": 11.03,
+          "base_p10_pct": -16.88,
+          "diff_mean": -0.75,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 62.64,
+          "era1_mean_pct": 2.42,
+          "era2_up_pct": 85.95,
+          "era2_mean_pct": 14.18,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "flat",
+          "label": "平档(-10.8~8.5bp)",
+          "horizon": 252,
+          "n_days": 2100,
+          "n_episodes_raw": 562,
+          "n_independent": 1,
+          "too_small_no_ci": true,
+          "up_pct": 79.62,
+          "mean_pct": 8.6,
+          "median_pct": 10.73,
+          "p10_pct": -14.94,
+          "base_up_pct": 75.24,
+          "base_mean_pct": 7.84,
+          "base_median_pct": 11.03,
+          "base_p10_pct": -16.88,
+          "diff_mean": 0.76,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 70.79,
+          "era1_mean_pct": 3.3,
+          "era2_up_pct": 86.42,
+          "era2_mean_pct": 12.69,
+          "era_same_sign": true
+        },
+        {
+          "asset": "SP500",
+          "variable": "direction",
+          "bucket": "rising",
+          "label": "升档(20日变化>8.5bp)",
+          "horizon": 252,
+          "n_days": 2145,
+          "n_episodes_raw": 263,
+          "n_independent": 1,
+          "too_small_no_ci": true,
+          "up_pct": 75.01,
+          "mean_pct": 7.98,
+          "median_pct": 11.34,
+          "p10_pct": -14.71,
+          "base_up_pct": 75.24,
+          "base_mean_pct": 7.84,
+          "base_median_pct": 11.03,
+          "base_p10_pct": -16.88,
+          "diff_mean": 0.14,
+          "ci95_mean": null,
+          "ci_vs_base": null,
+          "era1_up_pct": 69.3,
+          "era1_mean_pct": 3.5,
+          "era2_up_pct": 80.25,
+          "era2_mean_pct": 12.08,
+          "era_same_sign": true
+        }
+      ],
+      "level_episodes": {
+        "low": [
+          {
+            "start": "2008-12-04",
+            "end": "2008-12-04",
+            "days": 1
+          },
+          {
+            "start": "2008-12-15",
+            "end": "2009-01-21",
+            "days": 25
+          },
+          {
+            "start": "2009-01-27",
+            "end": "2009-01-27",
+            "days": 1
+          },
+          {
+            "start": "2009-03-18",
+            "end": "2009-03-18",
+            "days": 1
+          },
+          {
+            "start": "2010-08-16",
+            "end": "2010-08-16",
+            "days": 1
+          },
+          {
+            "start": "2010-08-19",
+            "end": "2010-08-19",
+            "days": 1
+          },
+          {
+            "start": "2010-08-24",
+            "end": "2010-08-26",
+            "days": 3
+          },
+          {
+            "start": "2010-08-30",
+            "end": "2010-09-01",
+            "days": 3
+          },
+          {
+            "start": "2010-09-22",
+            "end": "2010-09-23",
+            "days": 2
+          },
+          {
+            "start": "2010-09-27",
+            "end": "2010-10-25",
+            "days": 21
+          },
+          {
+            "start": "2010-11-04",
+            "end": "2010-11-08",
+            "days": 3
+          },
+          {
+            "start": "2011-08-04",
+            "end": "2013-06-24",
+            "days": 474
+          },
+          {
+            "start": "2013-06-26",
+            "end": "2013-07-03",
+            "days": 6
+          },
+          {
+            "start": "2013-07-11",
+            "end": "2013-07-11",
+            "days": 1
+          },
+          {
+            "start": "2013-07-15",
+            "end": "2013-07-23",
+            "days": 7
+          },
+          {
+            "start": "2013-07-26",
+            "end": "2013-07-29",
+            "days": 2
+          },
+          {
+            "start": "2013-08-09",
+            "end": "2013-08-09",
+            "days": 1
+          },
+          {
+            "start": "2013-10-22",
+            "end": "2013-10-31",
+            "days": 8
+          },
+          {
+            "start": "2014-02-03",
+            "end": "2014-02-03",
+            "days": 1
+          },
+          {
+            "start": "2014-05-14",
+            "end": "2014-06-02",
+            "days": 13
+          },
+          {
+            "start": "2014-06-05",
+            "end": "2014-06-05",
+            "days": 1
+          },
+          {
+            "start": "2014-06-12",
+            "end": "2014-06-12",
+            "days": 1
+          },
+          {
+            "start": "2014-06-24",
+            "end": "2014-07-01",
+            "days": 6
+          },
+          {
+            "start": "2014-07-08",
+            "end": "2014-09-11",
+            "days": 47
+          },
+          {
+            "start": "2014-09-22",
+            "end": "2016-12-15",
+            "days": 565
+          },
+          {
+            "start": "2016-12-19",
+            "end": "2017-03-08",
+            "days": 54
+          },
+          {
+            "start": "2017-03-10",
+            "end": "2017-03-10",
+            "days": 1
+          },
+          {
+            "start": "2017-03-15",
+            "end": "2018-01-17",
+            "days": 213
+          },
+          {
+            "start": "2019-01-03",
+            "end": "2019-01-03",
+            "days": 1
+          },
+          {
+            "start": "2019-03-20",
+            "end": "2019-04-15",
+            "days": 19
+          },
+          {
+            "start": "2019-04-18",
+            "end": "2019-04-18",
+            "days": 1
+          },
+          {
+            "start": "2019-04-23",
+            "end": "2022-04-05",
+            "days": 746
+          }
+        ],
+        "mid": [
+          {
+            "start": "2002-08-13",
+            "end": "2002-08-14",
+            "days": 2
+          },
+          {
+            "start": "2002-09-03",
+            "end": "2002-10-16",
+            "days": 32
+          },
+          {
+            "start": "2002-10-25",
+            "end": "2002-11-20",
+            "days": 19
+          },
+          {
+            "start": "2002-11-26",
+            "end": "2002-11-26",
+            "days": 1
+          },
+          {
+            "start": "2002-12-05",
+            "end": "2003-01-08",
+            "days": 23
+          },
+          {
+            "start": "2003-01-13",
+            "end": "2003-07-18",
+            "days": 130
+          },
+          {
+            "start": "2003-07-23",
+            "end": "2003-07-23",
+            "days": 1
+          },
+          {
+            "start": "2003-09-25",
+            "end": "2003-10-02",
+            "days": 6
+          },
+          {
+            "start": "2004-01-09",
+            "end": "2004-01-23",
+            "days": 10
+          },
+          {
+            "start": "2004-01-27",
+            "end": "2004-01-27",
+            "days": 1
+          },
+          {
+            "start": "2004-02-03",
+            "end": "2004-02-04",
+            "days": 2
+          },
+          {
+            "start": "2004-02-06",
+            "end": "2004-04-01",
+            "days": 39
+          },
+          {
+            "start": "2004-08-31",
+            "end": "2004-09-01",
+            "days": 2
+          },
+          {
+            "start": "2004-09-16",
+            "end": "2004-09-30",
+            "days": 11
+          },
+          {
+            "start": "2004-10-12",
+            "end": "2004-11-04",
+            "days": 18
+          },
+          {
+            "start": "2004-11-18",
+            "end": "2004-11-18",
+            "days": 1
+          },
+          {
+            "start": "2004-12-14",
+            "end": "2004-12-15",
+            "days": 2
+          },
+          {
+            "start": "2005-01-24",
+            "end": "2005-01-24",
+            "days": 1
+          },
+          {
+            "start": "2005-02-04",
+            "end": "2005-02-15",
+            "days": 8
+          },
+          {
+            "start": "2005-05-13",
+            "end": "2005-07-11",
+            "days": 40
+          },
+          {
+            "start": "2005-08-30",
+            "end": "2005-09-06",
+            "days": 5
+          },
+          {
+            "start": "2005-09-09",
+            "end": "2005-09-09",
+            "days": 1
+          },
+          {
+            "start": "2007-11-19",
+            "end": "2007-12-07",
+            "days": 14
+          },
+          {
+            "start": "2007-12-11",
+            "end": "2007-12-12",
+            "days": 2
+          },
+          {
+            "start": "2007-12-18",
+            "end": "2007-12-20",
+            "days": 3
+          },
+          {
+            "start": "2007-12-28",
+            "end": "2008-06-11",
+            "days": 114
+          },
+          {
+            "start": "2008-06-24",
+            "end": "2008-07-22",
+            "days": 20
+          },
+          {
+            "start": "2008-07-24",
+            "end": "2008-12-03",
+            "days": 93
+          },
+          {
+            "start": "2008-12-05",
+            "end": "2008-12-12",
+            "days": 6
+          },
+          {
+            "start": "2009-01-22",
+            "end": "2009-01-26",
+            "days": 3
+          },
+          {
+            "start": "2009-01-28",
+            "end": "2009-03-17",
+            "days": 34
+          },
+          {
+            "start": "2009-03-19",
+            "end": "2010-08-13",
+            "days": 355
+          },
+          {
+            "start": "2010-08-17",
+            "end": "2010-08-18",
+            "days": 2
+          },
+          {
+            "start": "2010-08-20",
+            "end": "2010-08-23",
+            "days": 2
+          },
+          {
+            "start": "2010-08-27",
+            "end": "2010-08-27",
+            "days": 1
+          },
+          {
+            "start": "2010-09-02",
+            "end": "2010-09-21",
+            "days": 13
+          },
+          {
+            "start": "2010-09-24",
+            "end": "2010-09-24",
+            "days": 1
+          },
+          {
+            "start": "2010-10-26",
+            "end": "2010-11-03",
+            "days": 7
+          },
+          {
+            "start": "2010-11-09",
+            "end": "2011-08-03",
+            "days": 185
+          },
+          {
+            "start": "2013-06-25",
+            "end": "2013-06-25",
+            "days": 1
+          },
+          {
+            "start": "2013-07-05",
+            "end": "2013-07-10",
+            "days": 4
+          },
+          {
+            "start": "2013-07-12",
+            "end": "2013-07-12",
+            "days": 1
+          },
+          {
+            "start": "2013-07-24",
+            "end": "2013-07-25",
+            "days": 2
+          },
+          {
+            "start": "2013-07-30",
+            "end": "2013-08-08",
+            "days": 8
+          },
+          {
+            "start": "2013-08-12",
+            "end": "2013-10-21",
+            "days": 50
+          },
+          {
+            "start": "2013-11-01",
+            "end": "2014-01-31",
+            "days": 62
+          },
+          {
+            "start": "2014-02-04",
+            "end": "2014-05-13",
+            "days": 69
+          },
+          {
+            "start": "2014-06-03",
+            "end": "2014-06-04",
+            "days": 2
+          },
+          {
+            "start": "2014-06-06",
+            "end": "2014-06-11",
+            "days": 4
+          },
+          {
+            "start": "2014-06-13",
+            "end": "2014-06-23",
+            "days": 7
+          },
+          {
+            "start": "2014-07-02",
+            "end": "2014-07-07",
+            "days": 3
+          },
+          {
+            "start": "2014-09-12",
+            "end": "2014-09-19",
+            "days": 6
+          },
+          {
+            "start": "2016-12-16",
+            "end": "2016-12-16",
+            "days": 1
+          },
+          {
+            "start": "2017-03-09",
+            "end": "2017-03-09",
+            "days": 1
+          },
+          {
+            "start": "2017-03-13",
+            "end": "2017-03-14",
+            "days": 2
+          },
+          {
+            "start": "2018-01-18",
+            "end": "2019-01-02",
+            "days": 241
+          },
+          {
+            "start": "2019-01-04",
+            "end": "2019-03-19",
+            "days": 51
+          },
+          {
+            "start": "2019-04-16",
+            "end": "2019-04-17",
+            "days": 2
+          },
+          {
+            "start": "2019-04-22",
+            "end": "2019-04-22",
+            "days": 1
+          },
+          {
+            "start": "2022-04-06",
+            "end": "2022-10-19",
+            "days": 136
+          }
+        ],
+        "high": [
+          {
+            "start": "2000-01-03",
+            "end": "2002-08-12",
+            "days": 654
+          },
+          {
+            "start": "2002-08-15",
+            "end": "2002-08-30",
+            "days": 12
+          },
+          {
+            "start": "2002-10-17",
+            "end": "2002-10-24",
+            "days": 6
+          },
+          {
+            "start": "2002-11-21",
+            "end": "2002-11-25",
+            "days": 3
+          },
+          {
+            "start": "2002-11-27",
+            "end": "2002-12-04",
+            "days": 5
+          },
+          {
+            "start": "2003-01-09",
+            "end": "2003-01-10",
+            "days": 2
+          },
+          {
+            "start": "2003-07-21",
+            "end": "2003-07-22",
+            "days": 2
+          },
+          {
+            "start": "2003-07-24",
+            "end": "2003-09-24",
+            "days": 44
+          },
+          {
+            "start": "2003-10-03",
+            "end": "2004-01-08",
+            "days": 67
+          },
+          {
+            "start": "2004-01-26",
+            "end": "2004-01-26",
+            "days": 1
+          },
+          {
+            "start": "2004-01-28",
+            "end": "2004-02-02",
+            "days": 4
+          },
+          {
+            "start": "2004-02-05",
+            "end": "2004-02-05",
+            "days": 1
+          },
+          {
+            "start": "2004-04-02",
+            "end": "2004-08-30",
+            "days": 103
+          },
+          {
+            "start": "2004-09-02",
+            "end": "2004-09-15",
+            "days": 9
+          },
+          {
+            "start": "2004-10-01",
+            "end": "2004-10-11",
+            "days": 7
+          },
+          {
+            "start": "2004-11-05",
+            "end": "2004-11-17",
+            "days": 9
+          },
+          {
+            "start": "2004-11-19",
+            "end": "2004-12-13",
+            "days": 16
+          },
+          {
+            "start": "2004-12-16",
+            "end": "2005-01-21",
+            "days": 25
+          },
+          {
+            "start": "2005-01-25",
+            "end": "2005-02-03",
+            "days": 8
+          },
+          {
+            "start": "2005-02-16",
+            "end": "2005-05-12",
+            "days": 60
+          },
+          {
+            "start": "2005-07-12",
+            "end": "2005-08-29",
+            "days": 35
+          },
+          {
+            "start": "2005-09-07",
+            "end": "2005-09-08",
+            "days": 2
+          },
+          {
+            "start": "2005-09-12",
+            "end": "2007-11-16",
+            "days": 551
+          },
+          {
+            "start": "2007-12-10",
+            "end": "2007-12-10",
+            "days": 1
+          },
+          {
+            "start": "2007-12-13",
+            "end": "2007-12-17",
+            "days": 3
+          },
+          {
+            "start": "2007-12-21",
+            "end": "2007-12-27",
+            "days": 4
+          },
+          {
+            "start": "2008-06-12",
+            "end": "2008-06-23",
+            "days": 8
+          },
+          {
+            "start": "2008-07-23",
+            "end": "2008-07-23",
+            "days": 1
+          },
+          {
+            "start": "2022-10-20",
+            "end": "2022-10-24",
+            "days": 3
+          },
+          {
+            "start": "2022-11-04",
+            "end": "2022-11-07",
+            "days": 2
+          },
+          {
+            "start": "2022-11-09",
+            "end": "2022-11-09",
+            "days": 1
+          },
+          {
+            "start": "2023-08-03",
+            "end": "2023-08-03",
+            "days": 1
+          },
+          {
+            "start": "2023-08-11",
+            "end": "2023-08-28",
+            "days": 12
+          },
+          {
+            "start": "2023-09-01",
+            "end": "2023-12-05",
+            "days": 66
+          },
+          {
+            "start": "2023-12-08",
+            "end": "2023-12-12",
+            "days": 3
+          },
+          {
+            "start": "2024-01-18",
+            "end": "2024-01-19",
+            "days": 2
+          },
+          {
+            "start": "2024-01-23",
+            "end": "2024-01-24",
+            "days": 2
+          },
+          {
+            "start": "2024-01-26",
+            "end": "2024-01-26",
+            "days": 1
+          },
+          {
+            "start": "2024-02-05",
+            "end": "2024-02-05",
+            "days": 1
+          },
+          {
+            "start": "2024-02-08",
+            "end": "2024-03-05",
+            "days": 18
+          },
+          {
+            "start": "2024-03-12",
+            "end": "2024-07-30",
+            "days": 97
+          },
+          {
+            "start": "2024-10-21",
+            "end": "2025-04-02",
+            "days": 112
+          },
+          {
+            "start": "2025-04-07",
+            "end": "2025-09-04",
+            "days": 104
+          },
+          {
+            "start": "2025-09-19",
+            "end": "2025-09-22",
+            "days": 2
+          },
+          {
+            "start": "2025-09-24",
+            "end": "2025-09-30",
+            "days": 5
+          },
+          {
+            "start": "2025-10-06",
+            "end": "2025-10-06",
+            "days": 1
+          },
+          {
+            "start": "2025-10-09",
+            "end": "2025-10-09",
+            "days": 1
+          },
+          {
+            "start": "2025-11-05",
+            "end": "2025-11-05",
+            "days": 1
+          },
+          {
+            "start": "2025-11-14",
+            "end": "2025-11-17",
+            "days": 2
+          },
+          {
+            "start": "2025-11-19",
+            "end": "2025-11-19",
+            "days": 1
+          },
+          {
+            "start": "2025-12-05",
+            "end": "2025-12-17",
+            "days": 9
+          },
+          {
+            "start": "2025-12-19",
+            "end": "2025-12-26",
+            "days": 5
+          },
+          {
+            "start": "2025-12-31",
+            "end": "2026-02-11",
+            "days": 29
+          },
+          {
+            "start": "2026-03-05",
+            "end": "2026-08-05",
+            "days": 106
+          }
+        ]
+      },
+      "direction_episodes": {
+        "falling": [
+          {
+            "start": "2000-02-03",
+            "end": "2000-02-03",
+            "days": 1
+          },
+          {
+            "start": "2000-02-14",
+            "end": "2000-03-02",
+            "days": 13
+          },
+          {
+            "start": "2000-03-06",
+            "end": "2000-04-17",
+            "days": 31
+          },
+          {
+            "start": "2000-04-19",
+            "end": "2000-04-19",
+            "days": 1
+          },
+          {
+            "start": "2000-04-24",
+            "end": "2000-04-24",
+            "days": 1
+          },
+          {
+            "start": "2000-06-01",
+            "end": "2000-07-05",
+            "days": 24
+          },
+          {
+            "start": "2000-07-21",
+            "end": "2000-07-24",
+            "days": 2
+          },
+          {
+            "start": "2000-08-08",
+            "end": "2000-09-07",
+            "days": 22
+          },
+          {
+            "start": "2000-10-13",
+            "end": "2000-10-26",
+            "days": 10
+          },
+          {
+            "start": "2000-10-31",
+            "end": "2000-11-02",
+            "days": 3
+          },
+          {
+            "start": "2000-11-28",
+            "end": "2001-01-11",
+            "days": 31
+          },
+          {
+            "start": "2001-02-12",
+            "end": "2001-02-13",
+            "days": 2
+          },
+          {
+            "start": "2001-02-20",
+            "end": "2001-03-09",
+            "days": 14
+          },
+          {
+            "start": "2001-03-13",
+            "end": "2001-03-26",
+            "days": 10
+          },
+          {
+            "start": "2001-06-11",
+            "end": "2001-06-27",
+            "days": 13
+          },
+          {
+            "start": "2001-07-18",
+            "end": "2001-07-18",
+            "days": 1
+          },
+          {
+            "start": "2001-07-25",
+            "end": "2001-07-25",
+            "days": 1
+          },
+          {
+            "start": "2001-07-27",
+            "end": "2001-08-06",
+            "days": 7
+          },
+          {
+            "start": "2001-08-08",
+            "end": "2001-08-14",
+            "days": 5
+          },
+          {
+            "start": "2001-08-16",
+            "end": "2001-10-12",
+            "days": 37
+          },
+          {
+            "start": "2001-10-16",
+            "end": "2001-10-18",
+            "days": 3
+          },
+          {
+            "start": "2001-10-31",
+            "end": "2001-11-13",
+            "days": 10
+          },
+          {
+            "start": "2002-01-10",
+            "end": "2002-01-22",
+            "days": 8
+          },
+          {
+            "start": "2002-01-29",
+            "end": "2002-01-29",
+            "days": 1
+          },
+          {
+            "start": "2002-01-31",
+            "end": "2002-02-07",
+            "days": 6
+          },
+          {
+            "start": "2002-02-21",
+            "end": "2002-02-28",
+            "days": 6
+          },
+          {
+            "start": "2002-04-09",
+            "end": "2002-04-09",
+            "days": 1
+          },
+          {
+            "start": "2002-04-12",
+            "end": "2002-04-16",
+            "days": 3
+          },
+          {
+            "start": "2002-04-18",
+            "end": "2002-05-07",
+            "days": 14
+          },
+          {
+            "start": "2002-06-06",
+            "end": "2002-06-07",
+            "days": 2
+          },
+          {
+            "start": "2002-06-11",
+            "end": "2002-08-21",
+            "days": 51
+          },
+          {
+            "start": "2002-08-23",
+            "end": "2002-09-10",
+            "days": 12
+          },
+          {
+            "start": "2002-09-13",
+            "end": "2002-10-10",
+            "days": 20
+          },
+          {
+            "start": "2002-11-12",
+            "end": "2002-11-14",
+            "days": 3
+          },
+          {
+            "start": "2002-11-18",
+            "end": "2002-11-20",
+            "days": 3
+          },
+          {
+            "start": "2002-12-19",
+            "end": "2003-01-03",
+            "days": 10
+          },
+          {
+            "start": "2003-02-04",
+            "end": "2003-02-04",
+            "days": 1
+          },
+          {
+            "start": "2003-02-07",
+            "end": "2003-02-14",
+            "days": 6
+          },
+          {
+            "start": "2003-02-19",
+            "end": "2003-02-19",
+            "days": 1
+          },
+          {
+            "start": "2003-02-25",
+            "end": "2003-03-17",
+            "days": 15
+          },
+          {
+            "start": "2003-04-21",
+            "end": "2003-04-21",
+            "days": 1
+          },
+          {
+            "start": "2003-05-06",
+            "end": "2003-06-17",
+            "days": 30
+          },
+          {
+            "start": "2003-06-24",
+            "end": "2003-06-24",
+            "days": 1
+          },
+          {
+            "start": "2003-09-11",
+            "end": "2003-10-07",
+            "days": 19
+          },
+          {
+            "start": "2003-11-13",
+            "end": "2003-11-21",
+            "days": 7
+          },
+          {
+            "start": "2003-12-05",
+            "end": "2003-12-08",
+            "days": 2
+          },
+          {
+            "start": "2003-12-10",
+            "end": "2003-12-11",
+            "days": 2
+          },
+          {
+            "start": "2003-12-30",
+            "end": "2003-12-31",
+            "days": 2
+          },
+          {
+            "start": "2004-01-09",
+            "end": "2004-01-16",
+            "days": 6
+          },
+          {
+            "start": "2004-01-22",
+            "end": "2004-01-23",
+            "days": 2
+          },
+          {
+            "start": "2004-01-30",
+            "end": "2004-02-04",
+            "days": 4
+          },
+          {
+            "start": "2004-02-06",
+            "end": "2004-02-06",
+            "days": 1
+          },
+          {
+            "start": "2004-02-24",
+            "end": "2004-02-24",
+            "days": 1
+          },
+          {
+            "start": "2004-02-26",
+            "end": "2004-03-01",
+            "days": 3
+          },
+          {
+            "start": "2004-03-05",
+            "end": "2004-03-26",
+            "days": 16
+          },
+          {
+            "start": "2004-03-30",
+            "end": "2004-04-01",
+            "days": 3
+          },
+          {
+            "start": "2004-07-01",
+            "end": "2004-07-28",
+            "days": 19
+          },
+          {
+            "start": "2004-08-06",
+            "end": "2004-08-13",
+            "days": 6
+          },
+          {
+            "start": "2004-08-17",
+            "end": "2004-09-02",
+            "days": 13
+          },
+          {
+            "start": "2004-09-08",
+            "end": "2004-09-08",
+            "days": 1
+          }
+        ],
+        "flat": [
+          {
+            "start": "2000-02-01",
+            "end": "2000-02-01",
+            "days": 1
+          },
+          {
+            "start": "2000-02-04",
+            "end": "2000-02-04",
+            "days": 1
+          },
+          {
+            "start": "2000-02-08",
+            "end": "2000-02-11",
+            "days": 4
+          },
+          {
+            "start": "2000-03-03",
+            "end": "2000-03-03",
+            "days": 1
+          },
+          {
+            "start": "2000-04-18",
+            "end": "2000-04-18",
+            "days": 1
+          },
+          {
+            "start": "2000-04-20",
+            "end": "2000-04-20",
+            "days": 1
+          },
+          {
+            "start": "2000-04-25",
+            "end": "2000-04-26",
+            "days": 2
+          },
+          {
+            "start": "2000-05-31",
+            "end": "2000-05-31",
+            "days": 1
+          },
+          {
+            "start": "2000-07-06",
+            "end": "2000-07-14",
+            "days": 7
+          },
+          {
+            "start": "2000-07-20",
+            "end": "2000-07-20",
+            "days": 1
+          },
+          {
+            "start": "2000-07-25",
+            "end": "2000-08-07",
+            "days": 10
+          },
+          {
+            "start": "2000-09-08",
+            "end": "2000-09-15",
+            "days": 6
+          },
+          {
+            "start": "2000-09-19",
+            "end": "2000-09-19",
+            "days": 1
+          },
+          {
+            "start": "2000-09-26",
+            "end": "2000-09-29",
+            "days": 4
+          },
+          {
+            "start": "2000-10-09",
+            "end": "2000-10-12",
+            "days": 4
+          },
+          {
+            "start": "2000-10-27",
+            "end": "2000-10-30",
+            "days": 2
+          },
+          {
+            "start": "2000-11-03",
+            "end": "2000-11-08",
+            "days": 4
+          },
+          {
+            "start": "2000-11-10",
+            "end": "2000-11-27",
+            "days": 11
+          },
+          {
+            "start": "2001-01-12",
+            "end": "2001-01-19",
+            "days": 5
+          },
+          {
+            "start": "2001-02-01",
+            "end": "2001-02-01",
+            "days": 1
+          },
+          {
+            "start": "2001-02-08",
+            "end": "2001-02-09",
+            "days": 2
+          },
+          {
+            "start": "2001-02-14",
+            "end": "2001-02-16",
+            "days": 3
+          },
+          {
+            "start": "2001-03-12",
+            "end": "2001-03-12",
+            "days": 1
+          },
+          {
+            "start": "2001-03-27",
+            "end": "2001-03-28",
+            "days": 2
+          },
+          {
+            "start": "2001-03-30",
+            "end": "2001-04-09",
+            "days": 7
+          },
+          {
+            "start": "2001-06-05",
+            "end": "2001-06-06",
+            "days": 2
+          },
+          {
+            "start": "2001-06-08",
+            "end": "2001-06-08",
+            "days": 1
+          },
+          {
+            "start": "2001-06-28",
+            "end": "2001-07-02",
+            "days": 3
+          },
+          {
+            "start": "2001-07-06",
+            "end": "2001-07-17",
+            "days": 8
+          },
+          {
+            "start": "2001-07-19",
+            "end": "2001-07-24",
+            "days": 4
+          },
+          {
+            "start": "2001-07-26",
+            "end": "2001-07-26",
+            "days": 1
+          },
+          {
+            "start": "2001-08-07",
+            "end": "2001-08-07",
+            "days": 1
+          },
+          {
+            "start": "2001-08-15",
+            "end": "2001-08-15",
+            "days": 1
+          },
+          {
+            "start": "2001-10-15",
+            "end": "2001-10-15",
+            "days": 1
+          },
+          {
+            "start": "2001-10-19",
+            "end": "2001-10-30",
+            "days": 8
+          },
+          {
+            "start": "2001-11-14",
+            "end": "2001-11-14",
+            "days": 1
+          },
+          {
+            "start": "2001-12-20",
+            "end": "2001-12-20",
+            "days": 1
+          },
+          {
+            "start": "2002-01-07",
+            "end": "2002-01-09",
+            "days": 3
+          },
+          {
+            "start": "2002-01-23",
+            "end": "2002-01-28",
+            "days": 4
+          },
+          {
+            "start": "2002-01-30",
+            "end": "2002-01-30",
+            "days": 1
+          },
+          {
+            "start": "2002-02-08",
+            "end": "2002-02-11",
+            "days": 2
+          },
+          {
+            "start": "2002-02-15",
+            "end": "2002-02-20",
+            "days": 3
+          },
+          {
+            "start": "2002-03-01",
+            "end": "2002-03-04",
+            "days": 2
+          },
+          {
+            "start": "2002-04-05",
+            "end": "2002-04-08",
+            "days": 2
+          },
+          {
+            "start": "2002-04-10",
+            "end": "2002-04-11",
+            "days": 2
+          },
+          {
+            "start": "2002-04-17",
+            "end": "2002-04-17",
+            "days": 1
+          },
+          {
+            "start": "2002-05-08",
+            "end": "2002-05-10",
+            "days": 3
+          },
+          {
+            "start": "2002-05-15",
+            "end": "2002-06-05",
+            "days": 15
+          },
+          {
+            "start": "2002-06-10",
+            "end": "2002-06-10",
+            "days": 1
+          },
+          {
+            "start": "2002-08-22",
+            "end": "2002-08-22",
+            "days": 1
+          },
+          {
+            "start": "2002-09-11",
+            "end": "2002-09-12",
+            "days": 2
+          },
+          {
+            "start": "2002-10-11",
+            "end": "2002-10-14",
+            "days": 2
+          },
+          {
+            "start": "2002-11-08",
+            "end": "2002-11-11",
+            "days": 2
+          },
+          {
+            "start": "2002-11-15",
+            "end": "2002-11-15",
+            "days": 1
+          },
+          {
+            "start": "2002-11-21",
+            "end": "2002-11-22",
+            "days": 2
+          },
+          {
+            "start": "2002-12-05",
+            "end": "2002-12-05",
+            "days": 1
+          },
+          {
+            "start": "2002-12-13",
+            "end": "2002-12-16",
+            "days": 2
+          },
+          {
+            "start": "2002-12-18",
+            "end": "2002-12-18",
+            "days": 1
+          },
+          {
+            "start": "2003-01-06",
+            "end": "2003-01-08",
+            "days": 3
+          },
+          {
+            "start": "2003-01-14",
+            "end": "2003-01-27",
+            "days": 9
+          }
+        ],
+        "rising": [
+          {
+            "start": "2000-02-02",
+            "end": "2000-02-02",
+            "days": 1
+          },
+          {
+            "start": "2000-02-07",
+            "end": "2000-02-07",
+            "days": 1
+          },
+          {
+            "start": "2000-04-27",
+            "end": "2000-05-30",
+            "days": 23
+          },
+          {
+            "start": "2000-07-17",
+            "end": "2000-07-19",
+            "days": 3
+          },
+          {
+            "start": "2000-09-18",
+            "end": "2000-09-18",
+            "days": 1
+          },
+          {
+            "start": "2000-09-20",
+            "end": "2000-09-25",
+            "days": 4
+          },
+          {
+            "start": "2000-10-02",
+            "end": "2000-10-06",
+            "days": 5
+          },
+          {
+            "start": "2000-11-09",
+            "end": "2000-11-09",
+            "days": 1
+          },
+          {
+            "start": "2001-01-22",
+            "end": "2001-01-31",
+            "days": 8
+          },
+          {
+            "start": "2001-02-02",
+            "end": "2001-02-07",
+            "days": 4
+          },
+          {
+            "start": "2001-03-29",
+            "end": "2001-03-29",
+            "days": 1
+          },
+          {
+            "start": "2001-04-10",
+            "end": "2001-06-04",
+            "days": 38
+          },
+          {
+            "start": "2001-06-07",
+            "end": "2001-06-07",
+            "days": 1
+          },
+          {
+            "start": "2001-07-03",
+            "end": "2001-07-05",
+            "days": 2
+          },
+          {
+            "start": "2001-11-15",
+            "end": "2001-12-19",
+            "days": 24
+          },
+          {
+            "start": "2001-12-21",
+            "end": "2002-01-04",
+            "days": 9
+          },
+          {
+            "start": "2002-02-12",
+            "end": "2002-02-14",
+            "days": 3
+          },
+          {
+            "start": "2002-03-05",
+            "end": "2002-04-04",
+            "days": 22
+          },
+          {
+            "start": "2002-05-13",
+            "end": "2002-05-14",
+            "days": 2
+          },
+          {
+            "start": "2002-10-15",
+            "end": "2002-11-07",
+            "days": 18
+          },
+          {
+            "start": "2002-11-25",
+            "end": "2002-12-04",
+            "days": 7
+          },
+          {
+            "start": "2002-12-06",
+            "end": "2002-12-12",
+            "days": 5
+          },
+          {
+            "start": "2002-12-17",
+            "end": "2002-12-17",
+            "days": 1
+          },
+          {
+            "start": "2003-01-09",
+            "end": "2003-01-13",
+            "days": 3
+          },
+          {
+            "start": "2003-01-28",
+            "end": "2003-01-30",
+            "days": 3
+          },
+          {
+            "start": "2003-03-20",
+            "end": "2003-04-14",
+            "days": 18
+          },
+          {
+            "start": "2003-04-29",
+            "end": "2003-04-29",
+            "days": 1
+          },
+          {
+            "start": "2003-06-26",
+            "end": "2003-08-27",
+            "days": 44
+          },
+          {
+            "start": "2003-09-02",
+            "end": "2003-09-08",
+            "days": 5
+          },
+          {
+            "start": "2003-10-15",
+            "end": "2003-11-03",
+            "days": 14
+          },
+          {
+            "start": "2003-11-05",
+            "end": "2003-11-11",
+            "days": 5
+          },
+          {
+            "start": "2004-02-20",
+            "end": "2004-02-20",
+            "days": 1
+          },
+          {
+            "start": "2004-04-02",
+            "end": "2004-05-26",
+            "days": 38
+          },
+          {
+            "start": "2004-05-28",
+            "end": "2004-06-04",
+            "days": 5
+          },
+          {
+            "start": "2004-06-28",
+            "end": "2004-06-28",
+            "days": 1
+          },
+          {
+            "start": "2004-11-09",
+            "end": "2004-12-03",
+            "days": 18
+          },
+          {
+            "start": "2004-12-17",
+            "end": "2004-12-17",
+            "days": 1
+          },
+          {
+            "start": "2005-01-06",
+            "end": "2005-01-13",
+            "days": 6
+          },
+          {
+            "start": "2005-02-18",
+            "end": "2005-02-22",
+            "days": 2
+          },
+          {
+            "start": "2005-02-24",
+            "end": "2005-02-24",
+            "days": 1
+          },
+          {
+            "start": "2005-02-28",
+            "end": "2005-03-31",
+            "days": 23
+          },
+          {
+            "start": "2005-04-04",
+            "end": "2005-04-05",
+            "days": 2
+          },
+          {
+            "start": "2005-07-05",
+            "end": "2005-07-08",
+            "days": 4
+          },
+          {
+            "start": "2005-07-15",
+            "end": "2005-08-11",
+            "days": 20
+          },
+          {
+            "start": "2005-08-17",
+            "end": "2005-08-17",
+            "days": 1
+          },
+          {
+            "start": "2005-09-23",
+            "end": "2005-11-14",
+            "days": 37
+          },
+          {
+            "start": "2006-01-25",
+            "end": "2006-02-08",
+            "days": 11
+          },
+          {
+            "start": "2006-02-10",
+            "end": "2006-02-23",
+            "days": 9
+          },
+          {
+            "start": "2006-02-27",
+            "end": "2006-02-27",
+            "days": 1
+          },
+          {
+            "start": "2006-03-03",
+            "end": "2006-03-15",
+            "days": 9
+          },
+          {
+            "start": "2006-03-20",
+            "end": "2006-05-17",
+            "days": 42
+          },
+          {
+            "start": "2006-06-19",
+            "end": "2006-07-12",
+            "days": 17
+          },
+          {
+            "start": "2006-10-20",
+            "end": "2006-10-26",
+            "days": 5
+          },
+          {
+            "start": "2006-11-03",
+            "end": "2006-11-03",
+            "days": 1
+          },
+          {
+            "start": "2006-12-27",
+            "end": "2007-02-07",
+            "days": 28
+          },
+          {
+            "start": "2007-03-27",
+            "end": "2007-03-27",
+            "days": 1
+          },
+          {
+            "start": "2007-03-30",
+            "end": "2007-04-19",
+            "days": 14
+          },
+          {
+            "start": "2007-05-17",
+            "end": "2007-06-28",
+            "days": 30
+          },
+          {
+            "start": "2007-07-05",
+            "end": "2007-07-06",
+            "days": 2
+          },
+          {
+            "start": "2007-09-26",
+            "end": "2007-09-26",
+            "days": 1
+          }
+        ]
+      }
+    }
+  },
+  "diagnostics": {
+    "monotonic": [
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "horizon": 20,
+        "monotonic": true,
+        "means_pct": [
+          1.5,
+          0.89,
+          -0.11
+        ]
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "horizon": 20,
+        "monotonic": false,
+        "means_pct": [
+          0.77,
+          0.68,
+          0.75
+        ]
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "horizon": 60,
+        "monotonic": true,
+        "means_pct": [
+          4.1,
+          3.05,
+          -0.62
+        ]
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "horizon": 60,
+        "monotonic": true,
+        "means_pct": [
+          2.58,
+          2.2,
+          1.84
+        ]
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "horizon": 252,
+        "monotonic": true,
+        "means_pct": [
+          16.68,
+          15.79,
+          -1.98
+        ]
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "horizon": 252,
+        "monotonic": false,
+        "means_pct": [
+          10.33,
+          11.3,
+          10.16
+        ]
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "horizon": 20,
+        "monotonic": true,
+        "means_pct": [
+          1.14,
+          0.45,
+          0.23
+        ]
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "horizon": 20,
+        "monotonic": true,
+        "means_pct": [
+          0.8,
+          0.6,
+          0.46
+        ]
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "horizon": 60,
+        "monotonic": true,
+        "means_pct": [
+          3.1,
+          1.6,
+          0.7
+        ]
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "horizon": 60,
+        "monotonic": true,
+        "means_pct": [
+          1.91,
+          1.9,
+          1.6
+        ]
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "horizon": 252,
+        "monotonic": true,
+        "means_pct": [
+          12.29,
+          9.9,
+          0.8
+        ]
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "horizon": 252,
+        "monotonic": false,
+        "means_pct": [
+          7.09,
+          8.6,
+          7.98
+        ]
+      }
+    ],
+    "era_flips": [
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 20,
+        "era1_mean_pct": -0.8,
+        "era2_mean_pct": 1.88
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "bucket": "flat",
+        "horizon": 20,
+        "era1_mean_pct": -0.18,
+        "era2_mean_pct": 1.28
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 60,
+        "era1_mean_pct": -2.76,
+        "era2_mean_pct": 6.04
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "bucket": "flat",
+        "horizon": 60,
+        "era1_mean_pct": -0.58,
+        "era2_mean_pct": 4.18
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 252,
+        "era1_mean_pct": -8.44,
+        "era2_mean_pct": 24.37
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 20,
+        "era1_mean_pct": -0.22,
+        "era2_mean_pct": 1.55
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "bucket": "rising",
+        "horizon": 20,
+        "era1_mean_pct": -0.05,
+        "era2_mean_pct": 0.91
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 60,
+        "era1_mean_pct": -0.62,
+        "era2_mean_pct": 4.85
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 252,
+        "era1_mean_pct": -3.81,
+        "era2_mean_pct": 19.6
+      }
+    ],
+    "low_independent": [
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "low",
+        "horizon": 60,
+        "n_independent": 6
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 60,
+        "n_independent": 5
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "bucket": "flat",
+        "horizon": 60,
+        "n_independent": 2
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "low",
+        "horizon": 252,
+        "n_independent": 2
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "mid",
+        "horizon": 252,
+        "n_independent": 5
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 252,
+        "n_independent": 2
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "bucket": "falling",
+        "horizon": 252,
+        "n_independent": 1
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "bucket": "flat",
+        "horizon": 252,
+        "n_independent": 1
+      },
+      {
+        "asset": "NASDAQ",
+        "variable": "direction",
+        "bucket": "rising",
+        "horizon": 252,
+        "n_independent": 1
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "low",
+        "horizon": 60,
+        "n_independent": 6
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 60,
+        "n_independent": 5
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "bucket": "flat",
+        "horizon": 60,
+        "n_independent": 2
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "low",
+        "horizon": 252,
+        "n_independent": 2
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "mid",
+        "horizon": 252,
+        "n_independent": 5
+      },
+      {
+        "asset": "SP500",
+        "variable": "level",
+        "bucket": "high",
+        "horizon": 252,
+        "n_independent": 2
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "bucket": "falling",
+        "horizon": 252,
+        "n_independent": 1
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "bucket": "flat",
+        "horizon": 252,
+        "n_independent": 1
+      },
+      {
+        "asset": "SP500",
+        "variable": "direction",
+        "bucket": "rising",
+        "horizon": 252,
+        "n_independent": 1
+      }
+    ]
+  },
+  "diagnostics_summary": "3/12 组(资产×变量×窗口)桶间关系非单调;9 个桶分时代符号翻转;18 个桶独立段 < 8(只描述、不出CI)。",
+  "honesty": [
+    "纯描述·非预测非荐股:本表只描述历史上 10Y 收益率(TNX 代理)所处「水平档位」和「20日涨跌方向档位」之后,NASDAQ/SP500 前向收益的分布——不产出买卖信号、不给操作建议、不预测方向。",
+    "口径:combined_prices.csv 里 YIELD_10Y(FRED GS10)是月频序列(全样本仅341点,最大缺口151天≈100交易日)——拿它算「20交易日变化」会被巨大的月度阶梯 ffill 假象污染(21个交易日的窗口里可能0次真实更新或1次跳变)。TNX(CBOE 10年期收益率指数)是日频(全样本6681点,2000-01-03起),与 YIELD_10Y 在两者共有的对齐点上相关系数0.993(几乎同一量,同为百分比单位),故本研究用 TNX 作连续日频10Y收益率代理,YIELD_10Y 仅供交叉核对。这是工程口径选择,不是统计判断——如果换回 YIELD_10Y,「20日变化」的含义会退化成「距上次月度更新以来变化」。",
+    "分档切点用全样本(见 date_range)三分位算出——是回顾性描述切割,不是当时【已知】的实时信号,不能拿来当「历史上某一天就知道自己在哪个三分位」的可交易规则。",
+    "基率是诚实参照系:市场本身大概率随时间上涨,某档要「有料」必须可靠偏离「随便哪天买」的基率,不是绝对涨跌。",
+    "重叠窗口让 N 虚高:同一档常连续持续数月,逐日计数会把同一段行情重复计成几十上百个「样本」。本表报 n_independent(前向窗口互不重叠的独立聚类数,复用 dip_hold_study._merge_within_horizon),独立聚类 < 8 一律 described-only、不出置信区间;CI 用段级自助(dip_hold_study.cluster_bootstrap)。",
+    "相关≠因果:利率与股票同被增长/通胀/联储政策等第三因素驱动,不代表利率变化「导致」股票涨跌。",
+    "样本可能被一两次事件主导(如2022年联储激进加息周期):附带各档独立段列表(episodes,含起止日/天数),供人工核对某档是否只是同一场加息周期反复计数,而非多次独立发生的规律。",
+    "分时代(2000-2012 / 2013-今)若符号翻转,说明结论体制依赖、不稳健——已如实标 era_same_sign,翻转的桶汇总进 diagnostics.era_flips。",
+    "桶间关系若非单调(如中档比高低档都好/差),不代表「水平越高影响越强」这类单调直觉成立——已如实标 diagnostics.monotonic。",
+    "数据覆盖 2000 年至今;过去 ≠ 未来,会出错,过去表现不代表未来结果。"
+  ]
+}

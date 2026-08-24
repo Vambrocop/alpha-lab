@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🏦 美债利率跟美股有关系吗(诚实体检)</title>
+<link rel="stylesheet" href="vp.css">
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:14px;max-width:1040px;margin:0 auto}
+  h1{font-size:1.25rem;margin:.2em 0;display:inline-block}
+  h2{font-size:1rem;margin:20px 0 4px}
+  .sub{color:var(--mut);font-size:.8rem;margin:0 0 8px}
+  .note{background:rgba(248,81,73,.08);border:1px solid var(--red);border-radius:8px;padding:10px 12px;font-size:.84rem;margin:10px 0;color:#e6b3ae;line-height:1.6}
+  .hbtns{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 4px}
+  .hbtn{background:var(--surface-2);border:1px solid var(--border);color:var(--mut);border-radius:20px;padding:4px 13px;font-size:.8rem;cursor:pointer}
+  .hbtn[aria-pressed="true"]{background:rgba(163,113,247,.16);border-color:var(--acc);color:var(--fg);font-weight:600}
+  table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:6px}
+  th,td{padding:5px 7px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+  th:nth-child(1),td:nth-child(1),th:last-child,td:last-child{text-align:left}
+  th{color:var(--mut);font-weight:600;font-size:.8rem}
+  .pos{color:var(--grn)}.neg{color:var(--red)}
+  .baserow td{color:var(--mut);border-bottom:1px dashed var(--border)}
+  .bcard{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px 13px;margin:10px 0;font-size:.82rem;color:var(--mut);line-height:1.65}
+  .honesty-list{font-size:.8rem;line-height:1.8;color:var(--mut);margin:6px 0 0;padding-left:1.1em}
+  #src{color:var(--mut);font-size:.78rem;margin-top:10px}
+  .foot{color:var(--mut);font-size:.76rem;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;line-height:1.6}
+  @media(max-width:640px){body{padding:11px}h1{font-size:1.1rem}table{font-size:.78rem}}
+</style>
+</head>
+<body>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页">↩ 返回</a>
+<a href="index.html" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
+<button id="lang" aria-label="切换语言 / switch language"></button>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="intro"></p>
+
+<div class="note" id="topBanner"></div>
+
+<div class="hbtns" id="hbtns" role="group" aria-label="持有窗口 / horizon"></div>
+<div id="tables"></div>
+
+<div class="bcard" id="diag"></div>
+
+<details class="vp-more" style="margin-top:14px">
+  <summary data-i18n="moreHonesty"></summary>
+  <ul class="honesty-list" id="honestyList"></ul>
+</details>
+
+<div id="src"></div>
+<div class="foot" data-i18n="foot"></div>
+
+<script src="vp_i18n.js"></script>
+<script>
+const LIVE="treasury_stock_link.json";
+const I18N={
+  title:{zh:"🏦 美债利率跟美股有关系吗(诚实体检)",en:"🏦 Do Treasury yields move US stocks? (honest check)"},
+  intro:{zh:"把 10 年期美债收益率的<b>水平高低</b>(低/中/高档)和<b>20 日涨跌方向</b>(降/平/升档),分别对上纳指与标普未来 1/3/12 个月的收益。纯描述、非预测非荐股——看的是「历史上处在这个利率状态之后,市场怎么走」,不是「利率能预测股市」。",
+        en:"Bucketing the 10-year Treasury yield by <b>level</b> (low/mid/high tercile) and by <b>20-day change</b> (falling/flat/rising), then looking at NASDAQ and S&P 500 forward returns over 1/3/12 months. Descriptive only — not a forecast, not advice."},
+  bannerTitle:{zh:"⚠️ 一句话结论",en:"⚠️ The one takeaway"},
+  banner:{zh:"<b>有一点关系,但不是能拿来交易的本事。</b>低利率档之后的下个月,股票历史上确实略好于高利率档;但<b>只有「低档·1月」这一格</b>真正跟「随便哪天买」分得开。拉长到 3/12 个月,独立样本塌到个位数——那时看到的「利率很重要」其实是<b>「你处在哪个宏观年代」</b>(高利率档几乎全是 2000-08 与 2022-26 两段完全不同的历史硬拼在一起)。而<b>「利率在升还是在降」几乎没有可靠信号</b>。描述性,会错。",
+          en:"<b>A little — but not a tradeable edge.</b> Low-yield periods were historically followed by slightly better next-month stock returns than high-yield ones; but <b>only the \"low bucket, 1-month\" cell</b> actually separates from buying on a random day. At 3/12 months the independent-sample count collapses to single digits — what looks like \"yields matter\" is really <b>which macro epoch you are in</b> (the high bucket is essentially 2000-08 and 2022-26 glued together). And <b>the direction of yield moves shows no reliable signal at all.</b> Descriptive, can be wrong."},
+  hLevel:{zh:"① 利率<b>水平</b>档 → 之后的股票收益",en:"① Yield <b>level</b> → forward stock returns"},
+  hDir:{zh:"② 利率<b>20日涨跌方向</b>档 → 之后的股票收益",en:"② Yield <b>20-day change</b> → forward stock returns"},
+  cBucket:{zh:"档位",en:"Bucket"},cUp:{zh:"上涨%",en:"Up%"},cMean:{zh:"平均%",en:"Mean%"},
+  cDiff:{zh:"vs 基率",en:"vs base"},cInd:{zh:"独立段",en:"indep."},cCI:{zh:"95%区间(均值)",en:"95% CI"},cVer:{zh:"裁决",en:"Verdict"},
+  vAbove:{zh:"高于基率",en:"above base"},vBelow:{zh:"低于基率",en:"below base"},
+  vOverlap:{zh:"分不开(噪音)",en:"indistinguishable"},vSmall:{zh:"样本太少·测不了",en:"too few · can't tell"},
+  vAboveTip:{zh:"CI 下界高于基率——这一格的前向收益能可靠地和「随便哪天买」分开",en:"CI lower bound above the base rate — separates from random entry"},
+  vBelowTip:{zh:"CI 上界低于基率——可靠地差于「随便哪天买」",en:"CI upper bound below the base rate"},
+  vOverlapTip:{zh:"CI 跨过基率——点估计的差异在运气范围内,分不开=噪音",en:"CI straddles the base rate — within luck's range"},
+  vSmallTip:{zh:"前向窗口互不重叠的独立段 < 8,样本太少,不出区间",en:"Fewer than 8 non-overlapping independent segments — no CI"},
+  eraFlip:{zh:"⚠ 分时代符号翻转(体制依赖,不稳健)",en:"Era sign flip (regime-dependent)"},
+  baseLabel:{zh:"基率:随便哪天买",en:"Base rate: buy on any random day"},
+  hz:{zh:"持有窗口",en:"Horizon"},
+  diagT:{zh:"🔎 稳健性自检",en:"🔎 Robustness diagnostics"},
+  moreHonesty:{zh:"展开看完整诚实说明(口径/去重叠/相关≠因果)",en:"Expand: full honesty notes"},
+  proxy:{zh:"收益率代理",en:"yield proxy"},asof:{zh:"数据",en:"data"},genAt:{zh:"生成于",en:"generated"},
+  loadingErr:{zh:"拉不到 treasury_stock_link.json——确认已部署。",en:"Can't load treasury_stock_link.json — check deployment."},
+  foot:{zh:"分档切点用全样本三分位算出,是回顾性描述切割、不是当时就知道的实时信号。相关≠因果:利率与股票同被增长/通胀/联储政策驱动。数据 2000 年至今;过去 ≠ 未来,会出错。非投资建议。",
+        en:"Tercile cutoffs use the full sample — a retrospective descriptive split, not a signal known at the time. Correlation is not causation. Data 2000-present; the past != the future. Not investment advice."}
+};
+const $=id=>document.getElementById(id);
+const esc=vpEsc;
+let LANG=vpLang();
+const t=k=>vpT(I18N,k,LANG);
+const applyStatic=()=>vpApplyStatic(I18N);
+let H=20;
+
+const num=v=>(typeof v==="number"&&isFinite(v));
+const pn=v=>num(v)?`<span class="${v>=0?'pos':'neg'}">${(v>=0?'+':'')+v}</span>`:'<span style="color:var(--mut)">—</span>';
+
+function verdictOf(c){
+  if(c.too_small_no_ci) return {txt:t("vSmall"),color:"var(--mut)",tip:t("vSmallTip")};
+  if(c.ci_vs_base==="above_base") return {txt:t("vAbove"),color:"var(--grn)",tip:t("vAboveTip")};
+  if(c.ci_vs_base==="below_base") return {txt:t("vBelow"),color:"var(--red)",tip:t("vBelowTip")};
+  return {txt:t("vOverlap"),color:"var(--amb)",tip:t("vOverlapTip")};
+}
+
+function tableFor(cells,base){
+  let h=`<table><thead><tr><th>${t("cBucket")}</th><th>${t("cUp")}</th><th>${t("cMean")}</th>`
+    +`<th>${t("cDiff")}</th><th>${t("cInd")}</th><th>${t("cCI")}</th><th>${t("cVer")}</th></tr></thead><tbody>`;
+  h+=`<tr class="baserow"><td>${t("baseLabel")}</td><td>${base?base.up_pct:"—"}%</td><td>${base?base.mean_pct:"—"}%</td>`
+    +`<td>—</td><td>—</td><td>—</td><td>—</td></tr>`;
+  cells.forEach(c=>{
+    const v=verdictOf(c);
+    const ci=Array.isArray(c.ci95_mean)?`[${c.ci95_mean[0]}, ${c.ci95_mean[1]}]`:'<span style="color:var(--mut)">—</span>';
+    const flip=(c.era_same_sign===false)?` <span title="${esc(t("eraFlip"))}" style="color:var(--amb)">⚠</span>`:"";
+    h+=`<tr><td>${esc(c.label)}${flip}</td><td>${num(c.up_pct)?c.up_pct+"%":"—"}</td><td>${pn(c.mean_pct)}</td>`
+      +`<td>${pn(c.diff_mean)}</td><td>${c.n_independent}</td><td>${ci}</td>`
+      +`<td><b style="color:${v.color}" title="${esc(v.tip)}">${esc(v.txt)}</b></td></tr>`;
+  });
+  return h+"</tbody></table>";
+}
+
+function render(j){
+  applyStatic();
+  $("topBanner").innerHTML=`<b>${esc(t("bannerTitle"))}</b><br>${t("banner")}`;
+  const labels=j.horizon_labels||{};
+  $("hbtns").innerHTML=`<span style="color:var(--mut);font-size:.8rem;align-self:center;margin-right:4px">${esc(t("hz"))}:</span>`
+    +(j.horizons_td||[]).map(h=>`<button class="hbtn" data-h="${h}" aria-pressed="${h===H}">${esc(labels[String(h)]||h+"d")}</button>`).join("");
+  $("hbtns").querySelectorAll(".hbtn").forEach(b=>b.onclick=()=>{H=Number(b.dataset.h);render(j);});
+
+  let html="";
+  Object.keys(j.assets||{}).forEach(asset=>{
+    const a=j.assets[asset];
+    const base=(a.base||{})[String(H)];
+    const lv=(a.level||[]).filter(c=>c.horizon===H);
+    const dr=(a.direction||[]).filter(c=>c.horizon===H);
+    html+=`<h2>${esc(asset)} · ${esc((labels[String(H)]||H+"d"))}</h2>`;
+    html+=`<div class="sub">${t("hLevel")}</div>`+tableFor(lv,base);
+    html+=`<div class="sub" style="margin-top:12px">${t("hDir")}</div>`+tableFor(dr,base);
+  });
+  $("tables").innerHTML=html;
+
+  $("diag").innerHTML=`<b>${esc(t("diagT"))}</b><br>${esc(j.diagnostics_summary||"")}`;
+  $("honestyList").innerHTML=(j.honesty||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+  const dr0=j.date_range||[];
+  $("src").textContent=`${t("proxy")} ${esc(j.yield_proxy||"")} · ${t("asof")} ${esc(dr0[0]||"")} → ${esc(dr0[1]||"")} · ${t("genAt")} ${esc((j.generated||"").slice(0,10))}`;
+}
+
+vpBindLang(I18N,()=>{ LANG=vpLang(); if(window._j) render(window._j); else applyStatic(); });
+
+(async()=>{
+  applyStatic();
+  try{
+    const r=await fetch(LIVE,{cache:"no-store"});
+    if(!r.ok) throw 0;
+    window._j=await r.json();
+    render(window._j);
+  }catch(e){ $("topBanner").textContent=t("loadingErr"); }
+})();
+</script>
+<script src="vp_gloss.js" data-autoscan></script>
+</body>
+</html>
