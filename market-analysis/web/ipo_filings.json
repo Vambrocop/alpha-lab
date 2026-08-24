@@ -36,14 +36,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001649739-26-000083",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 14.38,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "TRINITY BIOTECH PLC",
@@ -53,16 +53,14 @@
    "filed": "2026-08-21",
    "foreign": true,
    "adsh": "0001554855-26-001911",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Alzamend Neuro, Inc.",
@@ -72,14 +70,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001214659-26-010726",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 147.34,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Dune Acquisition Corp III",
@@ -109,16 +107,14 @@
    "filed": "2026-08-21",
    "foreign": true,
    "adsh": "0001213900-26-092716",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Game Your Game Inc.",
@@ -128,14 +124,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001213900-26-092695",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Little West Holdings Inc.",
@@ -145,14 +141,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001213900-26-092565",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "UDynamics Ltd",
@@ -162,16 +158,14 @@
    "filed": "2026-08-21",
    "foreign": true,
    "adsh": "0001213900-26-092454",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ROZE AI INC.",
@@ -181,16 +175,14 @@
    "filed": "2026-08-21",
    "foreign": true,
    "adsh": "0001213900-26-092289",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Tempest Therapeutics, Inc.",
@@ -200,14 +192,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001193125-26-361240",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 9.27,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "CoVolt Power, Inc.",
@@ -217,14 +209,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001193125-26-361190",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 100.0,
-   "amount_status": "placeholder_suspect",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Three Lions Acquisition Corp.",
@@ -254,14 +246,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001193125-26-361103",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 17.98,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Bitari Inc",
@@ -271,14 +263,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001185185-26-003678",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "SPLASH BEVERAGE GROUP, INC.",
@@ -288,14 +280,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001731122-26-001117",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Orion180 Insurance Group Inc.",
@@ -305,14 +297,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001628280-26-058231",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ARC Group Acquisition II Corp.",
@@ -322,17 +314,15 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001493152-26-039519",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "SharonAI Holdings Inc.",
@@ -342,16 +332,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001493152-26-039475",
-   "tier": "notable",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 413.7,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "HCW Biologics Inc.",
@@ -361,14 +349,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001493152-26-039452",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 3.18,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NEXGEL, INC.",
@@ -429,16 +417,14 @@
    "filed": "2026-08-20",
    "foreign": true,
    "adsh": "0001213900-26-091992",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NewGenIvf Group Ltd",
@@ -465,16 +451,14 @@
    "filed": "2026-08-20",
    "foreign": true,
    "adsh": "0001213900-26-091921",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Timwood Holdings Ltd",
@@ -518,17 +502,15 @@
    "filed": "2026-08-19",
    "foreign": false,
    "adsh": "0001929980-26-000479",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "XCF Global, Inc.",
@@ -674,14 +656,14 @@
    "filed": "2026-08-18",
    "foreign": false,
    "adsh": "0001493152-26-038839",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NFT Ltd",
@@ -895,16 +877,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001193125-26-354017",
-   "tier": "notable",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 242.56,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Gravity Acquisition Corp.",
@@ -934,16 +914,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001104659-26-097534",
-   "tier": "major",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 638.18,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "BIOVIE INC.",
@@ -970,14 +948,14 @@
    "filed": "2026-08-14",
    "foreign": true,
    "adsh": "0001493152-26-038495",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 80.88,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Fitness Fanatics Ltd",
@@ -1074,14 +1052,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001493152-26-039508",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "First Breach, Inc.",
@@ -1091,14 +1069,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001493152-26-039415",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Aveanna Healthcare Holdings, Inc.",
@@ -1108,14 +1086,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001193125-26-359187",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Andersen Group Inc.",
@@ -1125,16 +1103,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001193125-26-359181",
-   "tier": "notable",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 242.56,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NorthStrive Acquisition Corp I.",
@@ -1164,14 +1140,14 @@
    "filed": "2026-08-19",
    "foreign": false,
    "adsh": "0001193125-26-356916",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Alliance Laundry Holdings Inc.",
@@ -1181,16 +1157,14 @@
    "filed": "2026-08-19",
    "foreign": false,
    "adsh": "0001104659-26-098828",
-   "tier": "major",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 638.18,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Karman Line Acquisition Corp.",
@@ -1220,14 +1194,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001213900-26-090779",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Londian Wason New Energy Tech Inc.",
@@ -1237,14 +1211,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001193125-26-351136",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Robinhood Ventures Fund II",
@@ -1254,14 +1228,14 @@
    "filed": "2026-08-13",
    "foreign": false,
    "adsh": "0001628280-26-056830",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Professional Diversity Network, Inc.",
@@ -1271,14 +1245,14 @@
    "filed": "2026-08-13",
    "foreign": false,
    "adsh": "0001437749-26-027508",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Thunder Bridge Capital Partners V, Ltd.",
@@ -1288,17 +1262,15 @@
    "filed": "2026-08-13",
    "foreign": false,
    "adsh": "0001213900-26-089123",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "SunScout Holding Ltd",
@@ -1308,14 +1280,14 @@
    "filed": "2026-08-13",
    "foreign": false,
    "adsh": "0001213900-26-088617",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Silexion Therapeutics Corp",
@@ -1325,14 +1297,14 @@
    "filed": "2026-08-13",
    "foreign": false,
    "adsh": "0001178913-26-004116",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "CURIS INC",
@@ -1342,14 +1314,14 @@
    "filed": "2026-08-13",
    "foreign": false,
    "adsh": "0001108205-26-000116",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 30.0,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Advasa Holdings, Inc.",
@@ -1359,14 +1331,14 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001493152-26-037407",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Vogenx, Inc.",
@@ -1376,14 +1348,14 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001185185-26-003448",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Janus Living, Inc.",
@@ -1393,14 +1365,14 @@
    "filed": "2026-08-11",
    "foreign": false,
    "adsh": "0001104659-26-094083",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "OceanLight Acquisition Corp",
@@ -1450,14 +1422,14 @@
    "filed": "2026-08-07",
    "foreign": false,
    "adsh": "0001213900-26-086641",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "iSpecimen Inc.",
@@ -1467,14 +1439,14 @@
    "filed": "2026-08-07",
    "foreign": false,
    "adsh": "0001213900-26-086434",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Latigo Biotherapeutics, Inc.",
@@ -1484,14 +1456,14 @@
    "filed": "2026-08-07",
    "foreign": false,
    "adsh": "0001193125-26-340329",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "BlossomHill Therapeutics, Inc.",
@@ -1501,16 +1473,14 @@
    "filed": "2026-08-07",
    "foreign": false,
    "adsh": "0001193125-26-340215",
-   "tier": "notable",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 152.73,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Braveheart Bio, Inc.",
@@ -1520,16 +1490,14 @@
    "filed": "2026-08-06",
    "foreign": false,
    "adsh": "0001628280-26-054354",
-   "tier": "notable",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 366.56,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "TCGX Acquisition Corp.",
@@ -1559,17 +1527,15 @@
    "filed": "2026-08-05",
    "foreign": false,
    "adsh": "0001493152-26-036100",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Attovia Therapeutics, Inc.",
@@ -1579,16 +1545,14 @@
    "filed": "2026-08-05",
    "foreign": false,
    "adsh": "0001193125-26-334997",
-   "tier": "notable",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 332.35,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Elong Power Holding Ltd.",
@@ -1598,14 +1562,14 @@
    "filed": "2026-08-04",
    "foreign": false,
    "adsh": "0001493152-26-035945",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 20.0,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Republic Power Group Ltd",
@@ -1615,16 +1579,14 @@
    "filed": "2026-08-04",
    "foreign": false,
    "adsh": "0001213900-26-085063",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "BOA Acquisition Corp. II",
@@ -1674,17 +1636,15 @@
    "filed": "2026-07-31",
    "foreign": false,
    "adsh": "0001213900-26-083832",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Apnimed, Inc.",
@@ -1694,16 +1654,14 @@
    "filed": "2026-07-31",
    "foreign": false,
    "adsh": "0001193125-26-328422",
-   "tier": "notable",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 184.0,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Jersey Mike's Subs Inc.",
@@ -1713,16 +1671,14 @@
    "filed": "2026-07-31",
    "foreign": false,
    "adsh": "0001193125-26-326453",
-   "tier": "major",
-   "tier_reasons": [
-    "amount"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 1350.0,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Reformation Inc.",
@@ -1732,14 +1688,14 @@
    "filed": "2026-07-30",
    "foreign": false,
    "adsh": "0001104659-26-088733",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "IMC Rare Earths Ltd",
@@ -1749,14 +1705,14 @@
    "filed": "2026-07-29",
    "foreign": false,
    "adsh": "0001493152-26-035207",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 80.88,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Game Your Game Inc.",
@@ -1766,14 +1722,14 @@
    "filed": "2026-07-29",
    "foreign": false,
    "adsh": "0001213900-26-082494",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ALPHA MODUS HOLDINGS, INC.",
@@ -1783,14 +1739,14 @@
    "filed": "2026-07-28",
    "foreign": false,
    "adsh": "0001493152-26-035003",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 16.64,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Catalyst Acquisition Corp.",
@@ -1820,14 +1776,14 @@
    "filed": "2026-07-28",
    "foreign": false,
    "adsh": "0001213900-26-081939",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "C3is Inc.",
@@ -1837,14 +1793,14 @@
    "filed": "2026-07-28",
    "foreign": false,
    "adsh": "0001193125-26-318972",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 13.8,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Ionic Digital Inc.",
@@ -1854,14 +1810,14 @@
    "filed": "2026-07-28",
    "foreign": false,
    "adsh": "0001185185-26-003152",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Market Technology Acquisition Corp",
@@ -1891,14 +1847,14 @@
    "filed": "2026-07-27",
    "foreign": false,
    "adsh": "0001193125-26-316503",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
-   "amount_usd_m": 123.34,
-   "amount_status": "parsed",
+   "amount_usd_m": null,
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   }
  ],
  "listing": [
@@ -1910,14 +1866,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001999371-26-018392",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "WESTLAKE CORP",
@@ -1927,14 +1883,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001262823-26-000060",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NORTHERN FUNDS",
@@ -1944,14 +1900,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001193125-26-360600",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Haleon plc",
@@ -1961,14 +1917,14 @@
    "filed": "2026-08-21",
    "foreign": false,
    "adsh": "0001104659-26-099647",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Tidal Trust II",
@@ -1978,14 +1934,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001999371-26-018291",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ProPetro Holding Corp.",
@@ -1995,14 +1951,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001680247-26-000108",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NORTHERN LIGHTS FUND TRUST II",
@@ -2012,14 +1968,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001580642-26-005481",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Global X Funds",
@@ -2029,14 +1985,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001432353-26-000666",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "QNB CORP.",
@@ -2046,14 +2002,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001193125-26-357269",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Better Home & Finance Holding Co",
@@ -2063,14 +2019,14 @@
    "filed": "2026-08-20",
    "foreign": false,
    "adsh": "0001140361-26-033901",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "AfterNext Acquisition I Corp.",
@@ -2080,17 +2036,15 @@
    "filed": "2026-08-19",
    "foreign": false,
    "adsh": "0001493152-26-039093",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "BANK OF MONTREAL /CAN/",
@@ -2100,14 +2054,14 @@
    "filed": "2026-08-19",
    "foreign": false,
    "adsh": "0001214659-26-010573",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "CHARTER COMMUNICATIONS, INC. /MO/",
@@ -2117,14 +2071,14 @@
    "filed": "2026-08-19",
    "foreign": false,
    "adsh": "0001140361-26-033679",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Santander Holdings USA, Inc.",
@@ -2134,14 +2088,14 @@
    "filed": "2026-08-19",
    "foreign": false,
    "adsh": "0000950103-26-012625",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "FIRST TRUST EXCHANGE-TRADED FUND VIII",
@@ -2151,14 +2105,14 @@
    "filed": "2026-08-18",
    "foreign": false,
    "adsh": "0001445546-26-006103",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Chilwa Minerals Ltd",
@@ -2168,16 +2122,14 @@
    "filed": "2026-08-18",
    "foreign": false,
    "adsh": "0001213900-26-090978",
-   "tier": "notable",
-   "tier_reasons": [
-    "foreign_unknown"
-   ],
+   "tier": null,
+   "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "VanEck ETF Trust",
@@ -2187,14 +2139,14 @@
    "filed": "2026-08-18",
    "foreign": false,
    "adsh": "0001137360-26-000762",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "CoinShares ETF Trust",
@@ -2204,14 +2156,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001999371-26-018071",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Hall Chadwick Acquisition Corp II",
@@ -2261,14 +2213,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001592900-26-003917",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "GraniteShares ETF Trust",
@@ -2278,14 +2230,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001493152-26-038643",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Amplify ETF Trust",
@@ -2295,14 +2247,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001213900-26-090834",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Plum III Merger Corp.",
@@ -2312,14 +2264,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001213900-26-090680",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NorthStrive Acquisition Corp I.",
@@ -2349,14 +2301,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001193125-26-354179",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Harbor ETF Trust",
@@ -2366,14 +2318,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001193125-26-353829",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Lyntris Inc.",
@@ -2383,14 +2335,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001193125-26-353318",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Yorkville America Investment Trust",
@@ -2400,14 +2352,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0001040674-26-000056",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Lloyds Banking Group plc",
@@ -2417,14 +2369,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0000950103-26-012461",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ETF Series Solutions",
@@ -2434,14 +2386,14 @@
    "filed": "2026-08-17",
    "foreign": false,
    "adsh": "0000894189-26-022379",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Virtus ETF Trust II",
@@ -2451,14 +2403,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001999371-26-017945",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Themes ETF Trust",
@@ -2468,14 +2420,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001829126-26-008879",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Green Circle Decarbonize Technology Ltd",
@@ -2485,14 +2437,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001753926-26-001500",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Nuran Wireless Inc.",
@@ -2502,14 +2454,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001753926-26-001494",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "CASTLE BIOSCIENCES INC",
@@ -2519,14 +2471,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001628280-26-056924",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "FIRST TRUST EXCHANGE-TRADED FUND IV",
@@ -2536,14 +2488,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001445546-26-006073",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Air Water Ventures Ltd",
@@ -2553,14 +2505,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001213900-26-089501",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "HSBC HOLDINGS PLC",
@@ -2570,14 +2522,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001193125-26-351476",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "NEIGHBORHOOD INTELLIGENCE, INC.  (BBBY, BBBY-WT)",
@@ -2587,14 +2539,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001140361-26-033179",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ADAMAS TRUST, INC.",
@@ -2604,14 +2556,14 @@
    "filed": "2026-08-14",
    "foreign": false,
    "adsh": "0001104659-26-096769",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Duke Energy CORP  (DUK, DUKB, DUK-PA)",
@@ -2621,14 +2573,14 @@
    "filed": "2026-08-13",
    "foreign": false,
    "adsh": "0001104659-26-095984",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Tidal Trust IV",
@@ -2638,14 +2590,14 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001999371-26-017644",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "VALUED ADVISERS TRUST",
@@ -2655,14 +2607,14 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001580642-26-005148",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "First Breach, Inc.",
@@ -2672,14 +2624,14 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001493152-26-037275",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ARK ETF Trust",
@@ -2689,14 +2641,14 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001213900-26-088420",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Thunder Bridge Capital Partners V, Ltd.",
@@ -2706,17 +2658,15 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001213900-26-088103",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "AMCON DISTRIBUTING CO",
@@ -2726,14 +2676,14 @@
    "filed": "2026-08-12",
    "foreign": false,
    "adsh": "0001104659-26-094454",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Southern Cross Acquisition II Corp.",
@@ -2743,17 +2693,15 @@
    "filed": "2026-08-11",
    "foreign": false,
    "adsh": "0001929980-26-000442",
-   "tier": "rest",
-   "tier_reasons": [
-    "spac"
-   ],
-   "spac": true,
+   "tier": null,
+   "tier_reasons": [],
+   "spac": false,
    "spac_source": "sic",
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Advasa Holdings, Inc.",
@@ -2763,14 +2711,14 @@
    "filed": "2026-08-11",
    "foreign": false,
    "adsh": "0001493152-26-037091",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "SunScout Holding Ltd",
@@ -2780,14 +2728,14 @@
    "filed": "2026-08-11",
    "foreign": false,
    "adsh": "0001213900-26-087626",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Ultimus Managers Trust",
@@ -2797,14 +2745,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001580642-26-005055",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Investment Managers Series Trust III",
@@ -2814,14 +2762,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001213900-26-087301",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Collective Mining Ltd.",
@@ -2831,14 +2779,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001213900-26-087222",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Leader's Advantage Acquisition Corp.",
@@ -2868,14 +2816,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001193125-26-342515",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Damora Therapeutics, Inc.",
@@ -2885,14 +2833,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001193125-26-342406",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Vogenx, Inc.",
@@ -2902,14 +2850,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001185185-26-003355",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "ACCENDRA HEALTH INC/VA/",
@@ -2919,14 +2867,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001104659-26-093401",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   },
   {
    "company": "Sphere 3D Corp.",
@@ -2936,14 +2884,14 @@
    "filed": "2026-08-10",
    "foreign": false,
    "adsh": "0001062993-26-004119",
-   "tier": "rest",
+   "tier": null,
    "tier_reasons": [],
    "spac": false,
    "amount_usd_m": null,
-   "amount_status": "unknown",
+   "amount_status": "deferred",
    "home_mktcap_usd_b": null,
    "curated_hit": false,
-   "enrich": "done"
+   "enrich": "deferred"
   }
  ],
  "adr": [
@@ -3026,12 +2974,12 @@
   "home_mktcap_usd_b": 10
  },
  "curated_asof": "2026-07",
- "enrich_generated": "2026-08-24T07:40:42Z",
- "n_major": 2,
- "n_notable": 12,
+ "enrich_generated": "2026-08-24T13:50:00Z",
+ "n_major": 0,
+ "n_notable": 0,
  "enrich_budget": {
   "max_req": 150,
-  "used": 150,
-  "sec_blocked": false
+  "used": 1,
+  "sec_blocked": true
  }
 }

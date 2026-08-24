@@ -1,21 +1,15 @@
 {
   "rule": "naive_momentum（今天涨→赌明天涨，朴素玩具）",
-  "n_scored": 6697,
+  "n_scored": 6698,
   "hits": 3342,
   "hit_rate": 49.9,
-  "hit_rate_last20": 60.0,
+  "hit_rate_last20": 55.0,
   "latest": {
-    "as_of": "2026-08-21",
+    "as_of": "2026-08-24",
     "target_date": null,
-    "call": "UP"
+    "call": "DOWN"
   },
   "recent": [
-    {
-      "as_of": "2026-08-05",
-      "call": "DOWN",
-      "actual": "UP",
-      "hit": 0
-    },
     {
       "as_of": "2026-08-06",
       "call": "DOWN",
@@ -81,8 +75,14 @@
       "call": "DOWN",
       "actual": "UP",
       "hit": 0
+    },
+    {
+      "as_of": "2026-08-21",
+      "call": "UP",
+      "actual": "DOWN",
+      "hit": 0
     }
   ],
   "caveat": "🎲 试胆区：一个【朴素玩具】预测器，公开记分给你看准不准。这是娱乐/试胆，**不是任何买卖建议**；按本站自己的研究，日方向预测 ≈ 掷硬币（命中率贴着 50% 才是常态）。**看战绩别看单条**——这页的意义就是让你亲眼看预测有多不靠谱。",
-  "generated": "2026-08-21T21:55:32Z"
+  "generated": "2026-08-24T13:47:27Z"
 }

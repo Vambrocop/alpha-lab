@@ -1,31 +1,31 @@
 {
-  "generated": "2026-08-21T21:58:23Z",
+  "generated": "2026-08-24T13:50:09Z",
   "horizon_days": 20,
   "model_calibration": {
     "curve": [
       {
-        "prob_mean_pct": 54.2,
-        "real_wr_pct": 72.9,
+        "prob_mean_pct": 54.4,
+        "real_wr_pct": 71.9,
         "n": 431
       },
       {
         "prob_mean_pct": 58.4,
-        "real_wr_pct": 72.4,
+        "real_wr_pct": 73.8,
         "n": 431
       },
       {
         "prob_mean_pct": 60.1,
-        "real_wr_pct": 74.0,
+        "real_wr_pct": 73.6,
         "n": 431
       },
       {
         "prob_mean_pct": 61.7,
-        "real_wr_pct": 69.8,
+        "real_wr_pct": 69.4,
         "n": 431
       },
       {
         "prob_mean_pct": 63.2,
-        "real_wr_pct": 56.1,
+        "real_wr_pct": 56.4,
         "n": 431
       },
       {
@@ -34,8 +34,8 @@
         "n": 431
       },
       {
-        "prob_mean_pct": 67.3,
-        "real_wr_pct": 66.9,
+        "prob_mean_pct": 67.2,
+        "real_wr_pct": 67.1,
         "n": 432
       }
     ],
@@ -51,11 +51,11 @@
     },
     "综合读数倾向(live)": {
       "n_scored": 23,
-      "n_pending": 19,
+      "n_pending": 20,
       "hit_pct": 60.9
     },
     "试胆玩具(≈掷硬币基准)": {
-      "n_scored": 6697,
+      "n_scored": 6698,
       "n_pending": 0,
       "hit_pct": 49.9
     },

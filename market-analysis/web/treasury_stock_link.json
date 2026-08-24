@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-24T07:06:39Z",
+  "generated": "2026-08-24T13:46:58Z",
   "date_range": [
     "2000-01-03",
-    "2026-08-05"
+    "2026-08-24"
   ],
   "yield_proxy": "TNX",
   "yield_proxy_note": "combined_prices.csv 里 YIELD_10Y(FRED GS10)是月频序列(全样本仅341点,最大缺口151天≈100交易日)——拿它算「20交易日变化」会被巨大的月度阶梯 ffill 假象污染(21个交易日的窗口里可能0次真实更新或1次跳变)。TNX(CBOE 10年期收益率指数)是日频(全样本6681点,2000-01-03起),与 YIELD_10Y 在两者共有的对齐点上相关系数0.993(几乎同一量,同为百分比单位),故本研究用 TNX 作连续日频10Y收益率代理,YIELD_10Y 仅供交叉核对。这是工程口径选择,不是统计判断——如果换回 YIELD_10Y,「20日变化」的含义会退化成「距上次月度更新以来变化」。",
@@ -31,29 +31,29 @@
     "NASDAQ": {
       "date_range": [
         "2000-01-03",
-        "2026-08-05"
+        "2026-08-24"
       ],
       "base": {
         "20": {
-          "n_days": 6667,
-          "up_pct": 62.32,
+          "n_days": 6680,
+          "up_pct": 62.4,
           "mean_pct": 0.76,
           "median_pct": 1.52,
-          "p10_pct": -6.88
+          "p10_pct": -6.87
         },
         "60": {
-          "n_days": 6627,
-          "up_pct": 66.21,
+          "n_days": 6640,
+          "up_pct": 66.19,
           "mean_pct": 2.2,
-          "median_pct": 3.64,
-          "p10_pct": -11.61
+          "median_pct": 3.62,
+          "p10_pct": -11.59
         },
         "252": {
-          "n_days": 6435,
-          "up_pct": 74.58,
-          "mean_pct": 10.45,
-          "median_pct": 13.24,
-          "p10_pct": -26.48
+          "n_days": 6448,
+          "up_pct": 74.63,
+          "mean_pct": 10.48,
+          "median_pct": 13.3,
+          "p10_pct": -26.44
         }
       },
       "level": [
@@ -63,28 +63,28 @@
           "bucket": "low",
           "label": "低档(TNX≤2.59%)",
           "horizon": 20,
-          "n_days": 2230,
-          "n_episodes_raw": 32,
+          "n_days": 2234,
+          "n_episodes_raw": 33,
           "n_independent": 9,
           "too_small_no_ci": false,
-          "up_pct": 68.57,
-          "mean_pct": 1.5,
+          "up_pct": 68.53,
+          "mean_pct": 1.49,
           "median_pct": 1.93,
           "p10_pct": -4.38,
-          "base_up_pct": 62.32,
+          "base_up_pct": 62.4,
           "base_mean_pct": 0.76,
           "base_median_pct": 1.52,
-          "base_p10_pct": -6.88,
-          "diff_mean": 0.74,
+          "base_p10_pct": -6.87,
+          "diff_mean": 0.73,
           "ci95_mean": [
             1.24,
-            1.98
+            1.97
           ],
           "ci_vs_base": "above_base",
           "era1_up_pct": 64.42,
           "era1_mean_pct": 1.54,
-          "era2_up_pct": 69.51,
-          "era2_mean_pct": 1.49,
+          "era2_up_pct": 69.47,
+          "era2_mean_pct": 1.48,
           "era_same_sign": true
         },
         {
@@ -93,28 +93,28 @@
           "bucket": "mid",
           "label": "中档(2.59%<TNX≤4.13%)",
           "horizon": 20,
-          "n_days": 2227,
-          "n_episodes_raw": 85,
+          "n_days": 2231,
+          "n_episodes_raw": 89,
           "n_independent": 22,
           "too_small_no_ci": false,
-          "up_pct": 62.86,
-          "mean_pct": 0.89,
-          "median_pct": 1.68,
-          "p10_pct": -6.97,
-          "base_up_pct": 62.32,
+          "up_pct": 62.98,
+          "mean_pct": 0.9,
+          "median_pct": 1.69,
+          "p10_pct": -6.95,
+          "base_up_pct": 62.4,
           "base_mean_pct": 0.76,
           "base_median_pct": 1.52,
-          "base_p10_pct": -6.88,
-          "diff_mean": 0.13,
+          "base_p10_pct": -6.87,
+          "diff_mean": 0.14,
           "ci95_mean": [
-            -0.52,
+            -0.5,
             1.95
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 62.07,
-          "era1_mean_pct": 0.87,
-          "era2_up_pct": 63.82,
-          "era2_mean_pct": 0.9,
+          "era1_up_pct": 62.22,
+          "era1_mean_pct": 0.89,
+          "era2_up_pct": 63.88,
+          "era2_mean_pct": 0.91,
           "era_same_sign": true
         },
         {
@@ -123,28 +123,28 @@
           "bucket": "high",
           "label": "高档(TNX>4.13%)",
           "horizon": 20,
-          "n_days": 2210,
-          "n_episodes_raw": 54,
-          "n_independent": 13,
+          "n_days": 2215,
+          "n_episodes_raw": 57,
+          "n_independent": 14,
           "too_small_no_ci": false,
-          "up_pct": 55.48,
+          "up_pct": 55.62,
           "mean_pct": -0.11,
-          "median_pct": 0.63,
-          "p10_pct": -9.59,
-          "base_up_pct": 62.32,
+          "median_pct": 0.66,
+          "p10_pct": -9.57,
+          "base_up_pct": 62.4,
           "base_mean_pct": 0.76,
           "base_median_pct": 1.52,
-          "base_p10_pct": -6.88,
+          "base_p10_pct": -6.87,
           "diff_mean": -0.87,
           "ci95_mean": [
-            -1.74,
-            1.82
+            -1.73,
+            1.7
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 51.98,
-          "era1_mean_pct": -0.8,
-          "era2_up_pct": 65.61,
-          "era2_mean_pct": 1.88,
+          "era1_up_pct": 51.83,
+          "era1_mean_pct": -0.82,
+          "era2_up_pct": 66.38,
+          "era2_mean_pct": 1.91,
           "era_same_sign": false
         },
         {
@@ -153,25 +153,25 @@
           "bucket": "low",
           "label": "低档(TNX≤2.59%)",
           "horizon": 60,
-          "n_days": 2230,
-          "n_episodes_raw": 32,
+          "n_days": 2234,
+          "n_episodes_raw": 33,
           "n_independent": 6,
           "too_small_no_ci": true,
-          "up_pct": 77.26,
-          "mean_pct": 4.1,
-          "median_pct": 4.9,
+          "up_pct": 77.31,
+          "mean_pct": 4.11,
+          "median_pct": 4.91,
           "p10_pct": -6.37,
-          "base_up_pct": 66.21,
+          "base_up_pct": 66.19,
           "base_mean_pct": 2.2,
-          "base_median_pct": 3.64,
-          "base_p10_pct": -11.61,
-          "diff_mean": 1.9,
+          "base_median_pct": 3.62,
+          "base_p10_pct": -11.59,
+          "diff_mean": 1.91,
           "ci95_mean": null,
           "ci_vs_base": null,
           "era1_up_pct": 70.43,
           "era1_mean_pct": 4.7,
-          "era2_up_pct": 78.83,
-          "era2_mean_pct": 3.96,
+          "era2_up_pct": 78.88,
+          "era2_mean_pct": 3.97,
           "era_same_sign": true
         },
         {
@@ -180,27 +180,27 @@
           "bucket": "mid",
           "label": "中档(2.59%<TNX≤4.13%)",
           "horizon": 60,
-          "n_days": 2227,
-          "n_episodes_raw": 85,
-          "n_independent": 13,
+          "n_days": 2231,
+          "n_episodes_raw": 89,
+          "n_independent": 12,
           "too_small_no_ci": false,
-          "up_pct": 66.37,
+          "up_pct": 66.34,
           "mean_pct": 3.05,
-          "median_pct": 4.04,
-          "p10_pct": -9.21,
-          "base_up_pct": 66.21,
+          "median_pct": 4.02,
+          "p10_pct": -9.2,
+          "base_up_pct": 66.19,
           "base_mean_pct": 2.2,
-          "base_median_pct": 3.64,
-          "base_p10_pct": -11.61,
+          "base_median_pct": 3.62,
+          "base_p10_pct": -11.59,
           "diff_mean": 0.85,
           "ci95_mean": [
-            1.44,
-            6.46
+            1.56,
+            6.21
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 62.81,
-          "era1_mean_pct": 2.61,
-          "era2_up_pct": 70.6,
+          "era1_up_pct": 62.88,
+          "era1_mean_pct": 2.62,
+          "era2_up_pct": 70.47,
           "era2_mean_pct": 3.57,
           "era_same_sign": true
         },
@@ -210,25 +210,25 @@
           "bucket": "high",
           "label": "高档(TNX>4.13%)",
           "horizon": 60,
-          "n_days": 2170,
-          "n_episodes_raw": 54,
+          "n_days": 2175,
+          "n_episodes_raw": 57,
           "n_independent": 5,
           "too_small_no_ci": true,
-          "up_pct": 54.7,
-          "mean_pct": -0.62,
-          "median_pct": 1.23,
-          "p10_pct": -18.3,
-          "base_up_pct": 66.21,
+          "up_pct": 54.62,
+          "mean_pct": -0.64,
+          "median_pct": 1.2,
+          "p10_pct": -18.29,
+          "base_up_pct": 66.19,
           "base_mean_pct": 2.2,
-          "base_median_pct": 3.64,
-          "base_p10_pct": -11.61,
-          "diff_mean": -2.82,
+          "base_median_pct": 3.62,
+          "base_p10_pct": -11.59,
+          "diff_mean": -2.84,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 47.35,
-          "era1_mean_pct": -2.76,
-          "era2_up_pct": 77.61,
-          "era2_mean_pct": 6.04,
+          "era1_up_pct": 47.25,
+          "era1_mean_pct": -2.79,
+          "era2_up_pct": 77.09,
+          "era2_mean_pct": 5.9,
           "era_same_sign": false
         },
         {
@@ -237,24 +237,24 @@
           "bucket": "low",
           "label": "低档(TNX≤2.59%)",
           "horizon": 252,
-          "n_days": 2230,
-          "n_episodes_raw": 32,
+          "n_days": 2234,
+          "n_episodes_raw": 33,
           "n_independent": 2,
           "too_small_no_ci": true,
-          "up_pct": 80.58,
+          "up_pct": 80.62,
           "mean_pct": 16.68,
           "median_pct": 20.2,
-          "p10_pct": -11.46,
-          "base_up_pct": 74.58,
-          "base_mean_pct": 10.45,
-          "base_median_pct": 13.24,
-          "base_p10_pct": -26.48,
-          "diff_mean": 6.23,
+          "p10_pct": -11.43,
+          "base_up_pct": 74.63,
+          "base_mean_pct": 10.48,
+          "base_median_pct": 13.3,
+          "base_p10_pct": -26.44,
+          "diff_mean": 6.2,
           "ci95_mean": null,
           "ci_vs_base": null,
           "era1_up_pct": 99.76,
           "era1_mean_pct": 20.3,
-          "era2_up_pct": 76.19,
+          "era2_up_pct": 76.24,
           "era2_mean_pct": 15.85,
           "era_same_sign": true
         },
@@ -264,25 +264,25 @@
           "bucket": "mid",
           "label": "中档(2.59%<TNX≤4.13%)",
           "horizon": 252,
-          "n_days": 2159,
-          "n_episodes_raw": 74,
+          "n_days": 2160,
+          "n_episodes_raw": 78,
           "n_independent": 5,
           "too_small_no_ci": true,
           "up_pct": 85.83,
-          "mean_pct": 15.79,
-          "median_pct": 16.25,
-          "p10_pct": -4.41,
-          "base_up_pct": 74.58,
-          "base_mean_pct": 10.45,
-          "base_median_pct": 13.24,
-          "base_p10_pct": -26.48,
-          "diff_mean": 5.34,
+          "mean_pct": 15.78,
+          "median_pct": 16.23,
+          "p10_pct": -4.4,
+          "base_up_pct": 74.63,
+          "base_mean_pct": 10.48,
+          "base_median_pct": 13.3,
+          "base_p10_pct": -26.44,
+          "diff_mean": 5.3,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 79.59,
-          "era1_mean_pct": 13.44,
-          "era2_up_pct": 93.78,
-          "era2_mean_pct": 18.79,
+          "era1_up_pct": 79.67,
+          "era1_mean_pct": 13.43,
+          "era2_up_pct": 93.76,
+          "era2_mean_pct": 18.81,
           "era_same_sign": true
         },
         {
@@ -291,25 +291,25 @@
           "bucket": "high",
           "label": "高档(TNX>4.13%)",
           "horizon": 252,
-          "n_days": 2046,
-          "n_episodes_raw": 43,
+          "n_days": 2054,
+          "n_episodes_raw": 46,
           "n_independent": 2,
           "too_small_no_ci": true,
-          "up_pct": 56.16,
-          "mean_pct": -1.98,
-          "median_pct": 4.37,
-          "p10_pct": -40.08,
-          "base_up_pct": 74.58,
-          "base_mean_pct": 10.45,
-          "base_median_pct": 13.24,
-          "base_p10_pct": -26.48,
-          "diff_mean": -12.43,
+          "up_pct": 56.33,
+          "mean_pct": -1.84,
+          "median_pct": 4.42,
+          "p10_pct": -40.06,
+          "base_up_pct": 74.63,
+          "base_mean_pct": 10.48,
+          "base_median_pct": 13.3,
+          "base_p10_pct": -26.44,
+          "diff_mean": -12.32,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 45.59,
-          "era1_mean_pct": -8.44,
-          "era2_up_pct": 99.26,
-          "era2_mean_pct": 24.37,
+          "era1_up_pct": 45.42,
+          "era1_mean_pct": -8.5,
+          "era2_up_pct": 99.28,
+          "era2_mean_pct": 24.35,
           "era_same_sign": false
         }
       ],
@@ -320,28 +320,28 @@
           "bucket": "falling",
           "label": "降档(20日变化≤-10.8bp)",
           "horizon": 20,
-          "n_days": 2223,
-          "n_episodes_raw": 322,
+          "n_days": 2228,
+          "n_episodes_raw": 323,
           "n_independent": 88,
           "too_small_no_ci": false,
           "up_pct": 63.11,
           "mean_pct": 0.77,
           "median_pct": 1.97,
           "p10_pct": -8.24,
-          "base_up_pct": 62.32,
+          "base_up_pct": 62.4,
           "base_mean_pct": 0.76,
           "base_median_pct": 1.52,
-          "base_p10_pct": -6.88,
+          "base_p10_pct": -6.87,
           "diff_mean": 0.01,
           "ci95_mean": [
             -0.11,
             1.59
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 57.68,
+          "era1_up_pct": 57.62,
           "era1_mean_pct": 0.12,
-          "era2_up_pct": 70.9,
-          "era2_mean_pct": 1.7,
+          "era2_up_pct": 70.96,
+          "era2_mean_pct": 1.71,
           "era_same_sign": true
         },
         {
@@ -350,28 +350,28 @@
           "bucket": "flat",
           "label": "平档(-10.8~8.5bp)",
           "horizon": 20,
-          "n_days": 2215,
-          "n_episodes_raw": 588,
+          "n_days": 2219,
+          "n_episodes_raw": 589,
           "n_independent": 74,
           "too_small_no_ci": false,
-          "up_pct": 61.35,
-          "mean_pct": 0.68,
+          "up_pct": 61.47,
+          "mean_pct": 0.69,
           "median_pct": 1.24,
-          "p10_pct": -6.22,
-          "base_up_pct": 62.32,
+          "p10_pct": -6.21,
+          "base_up_pct": 62.4,
           "base_mean_pct": 0.76,
           "base_median_pct": 1.52,
-          "base_p10_pct": -6.88,
-          "diff_mean": -0.08,
+          "base_p10_pct": -6.87,
+          "diff_mean": -0.07,
           "ci95_mean": [
-            -0.32,
-            1.46
+            -0.31,
+            1.47
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 55.69,
-          "era1_mean_pct": -0.18,
-          "era2_up_pct": 65.33,
-          "era2_mean_pct": 1.28,
+          "era1_up_pct": 55.7,
+          "era1_mean_pct": -0.19,
+          "era2_up_pct": 65.49,
+          "era2_mean_pct": 1.3,
           "era_same_sign": false
         },
         {
@@ -380,27 +380,27 @@
           "bucket": "rising",
           "label": "升档(20日变化>8.5bp)",
           "horizon": 20,
-          "n_days": 2209,
-          "n_episodes_raw": 279,
-          "n_independent": 93,
+          "n_days": 2213,
+          "n_episodes_raw": 280,
+          "n_independent": 95,
           "too_small_no_ci": false,
-          "up_pct": 62.2,
+          "up_pct": 62.31,
           "mean_pct": 0.75,
-          "median_pct": 1.43,
+          "median_pct": 1.45,
           "p10_pct": -6.28,
-          "base_up_pct": 62.32,
+          "base_up_pct": 62.4,
           "base_mean_pct": 0.76,
           "base_median_pct": 1.52,
-          "base_p10_pct": -6.88,
+          "base_p10_pct": -6.87,
           "diff_mean": -0.01,
           "ci95_mean": [
-            -0.11,
-            1.5
+            -0.12,
+            1.52
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 57.5,
+          "era1_up_pct": 57.56,
           "era1_mean_pct": 0.18,
-          "era2_up_pct": 66.27,
+          "era2_up_pct": 66.41,
           "era2_mean_pct": 1.24,
           "era_same_sign": true
         },
@@ -410,27 +410,27 @@
           "bucket": "falling",
           "label": "降档(20日变化≤-10.8bp)",
           "horizon": 60,
-          "n_days": 2219,
-          "n_episodes_raw": 321,
+          "n_days": 2224,
+          "n_episodes_raw": 322,
           "n_independent": 12,
           "too_small_no_ci": false,
-          "up_pct": 68.95,
-          "mean_pct": 2.58,
+          "up_pct": 68.93,
+          "mean_pct": 2.57,
           "median_pct": 4.46,
-          "p10_pct": -13.8,
-          "base_up_pct": 66.21,
+          "p10_pct": -13.78,
+          "base_up_pct": 66.19,
           "base_mean_pct": 2.2,
-          "base_median_pct": 3.64,
-          "base_p10_pct": -11.61,
-          "diff_mean": 0.38,
+          "base_median_pct": 3.62,
+          "base_p10_pct": -11.59,
+          "diff_mean": 0.37,
           "ci95_mean": [
-            -0.07,
+            -0.08,
             5.62
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 59.66,
+          "era1_up_pct": 59.68,
           "era1_mean_pct": 0.48,
-          "era2_up_pct": 82.31,
+          "era2_up_pct": 82.24,
           "era2_mean_pct": 5.58,
           "era_same_sign": true
         },
@@ -440,24 +440,24 @@
           "bucket": "flat",
           "label": "平档(-10.8~8.5bp)",
           "horizon": 60,
-          "n_days": 2196,
+          "n_days": 2197,
           "n_episodes_raw": 584,
           "n_independent": 2,
           "too_small_no_ci": true,
-          "up_pct": 66.3,
+          "up_pct": 66.27,
           "mean_pct": 2.2,
           "median_pct": 3.42,
-          "p10_pct": -10.38,
-          "base_up_pct": 66.21,
+          "p10_pct": -10.32,
+          "base_up_pct": 66.19,
           "base_mean_pct": 2.2,
-          "base_median_pct": 3.64,
-          "base_p10_pct": -11.61,
+          "base_median_pct": 3.62,
+          "base_p10_pct": -11.59,
           "diff_mean": 0.0,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 53.5,
+          "era1_up_pct": 53.4,
           "era1_mean_pct": -0.58,
-          "era2_up_pct": 75.43,
+          "era2_up_pct": 75.41,
           "era2_mean_pct": 4.18,
           "era_same_sign": false
         },
@@ -467,28 +467,28 @@
           "bucket": "rising",
           "label": "升档(20日变化>8.5bp)",
           "horizon": 60,
-          "n_days": 2192,
-          "n_episodes_raw": 276,
+          "n_days": 2199,
+          "n_episodes_raw": 275,
           "n_independent": 12,
           "too_small_no_ci": false,
-          "up_pct": 63.55,
-          "mean_pct": 1.84,
-          "median_pct": 3.27,
-          "p10_pct": -10.47,
-          "base_up_pct": 66.21,
+          "up_pct": 63.53,
+          "mean_pct": 1.83,
+          "median_pct": 3.23,
+          "p10_pct": -10.43,
+          "base_up_pct": 66.19,
           "base_mean_pct": 2.2,
-          "base_median_pct": 3.64,
-          "base_p10_pct": -11.61,
-          "diff_mean": -0.36,
+          "base_median_pct": 3.62,
+          "base_p10_pct": -11.59,
+          "diff_mean": -0.37,
           "ci95_mean": [
             -0.5,
-            3.68
+            3.64
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 53.8,
+          "era1_up_pct": 53.85,
           "era1_mean_pct": 0.47,
-          "era2_up_pct": 72.13,
-          "era2_mean_pct": 3.05,
+          "era2_up_pct": 71.98,
+          "era2_mean_pct": 3.02,
           "era_same_sign": true
         },
         {
@@ -497,25 +497,25 @@
           "bucket": "falling",
           "label": "降档(20日变化≤-10.8bp)",
           "horizon": 252,
-          "n_days": 2170,
-          "n_episodes_raw": 313,
+          "n_days": 2182,
+          "n_episodes_raw": 315,
           "n_independent": 1,
           "too_small_no_ci": true,
-          "up_pct": 72.81,
-          "mean_pct": 10.33,
-          "median_pct": 15.36,
-          "p10_pct": -30.44,
-          "base_up_pct": 74.58,
-          "base_mean_pct": 10.45,
-          "base_median_pct": 13.24,
-          "base_p10_pct": -26.48,
-          "diff_mean": -0.12,
+          "up_pct": 72.91,
+          "mean_pct": 10.37,
+          "median_pct": 15.44,
+          "p10_pct": -30.43,
+          "base_up_pct": 74.63,
+          "base_mean_pct": 10.48,
+          "base_median_pct": 13.3,
+          "base_p10_pct": -26.44,
+          "diff_mean": -0.11,
           "ci95_mean": null,
           "ci_vs_base": null,
           "era1_up_pct": 63.41,
-          "era1_mean_pct": 3.08,
-          "era2_up_pct": 87.11,
-          "era2_mean_pct": 21.34,
+          "era1_mean_pct": 3.06,
+          "era2_up_pct": 87.24,
+          "era2_mean_pct": 21.39,
           "era_same_sign": true
         },
         {
@@ -524,25 +524,25 @@
           "bucket": "flat",
           "label": "平档(-10.8~8.5bp)",
           "horizon": 252,
-          "n_days": 2100,
-          "n_episodes_raw": 562,
+          "n_days": 2105,
+          "n_episodes_raw": 563,
           "n_independent": 1,
           "too_small_no_ci": true,
-          "up_pct": 79.0,
-          "mean_pct": 11.3,
-          "median_pct": 13.09,
-          "p10_pct": -20.59,
-          "base_up_pct": 74.58,
-          "base_mean_pct": 10.45,
-          "base_median_pct": 13.24,
-          "base_p10_pct": -26.48,
-          "diff_mean": 0.85,
+          "up_pct": 79.1,
+          "mean_pct": 11.36,
+          "median_pct": 13.18,
+          "p10_pct": -20.51,
+          "base_up_pct": 74.63,
+          "base_mean_pct": 10.48,
+          "base_median_pct": 13.3,
+          "base_p10_pct": -26.44,
+          "diff_mean": 0.88,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 69.47,
-          "era1_mean_pct": 3.55,
-          "era2_up_pct": 86.34,
-          "era2_mean_pct": 17.27,
+          "era1_up_pct": 69.52,
+          "era1_mean_pct": 3.59,
+          "era2_up_pct": 86.42,
+          "era2_mean_pct": 17.31,
           "era_same_sign": true
         },
         {
@@ -551,25 +551,25 @@
           "bucket": "rising",
           "label": "升档(20日变化>8.5bp)",
           "horizon": 252,
-          "n_days": 2145,
-          "n_episodes_raw": 263,
+          "n_days": 2141,
+          "n_episodes_raw": 261,
           "n_independent": 1,
           "too_small_no_ci": true,
-          "up_pct": 72.73,
-          "mean_pct": 10.16,
-          "median_pct": 11.19,
+          "up_pct": 72.68,
+          "mean_pct": 10.13,
+          "median_pct": 11.1,
           "p10_pct": -23.94,
-          "base_up_pct": 74.58,
-          "base_mean_pct": 10.45,
-          "base_median_pct": 13.24,
-          "base_p10_pct": -26.48,
-          "diff_mean": -0.29,
+          "base_up_pct": 74.63,
+          "base_mean_pct": 10.48,
+          "base_median_pct": 13.3,
+          "base_p10_pct": -26.44,
+          "diff_mean": -0.35,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 64.52,
-          "era1_mean_pct": 4.14,
-          "era2_up_pct": 80.25,
-          "era2_mean_pct": 15.68,
+          "era1_up_pct": 64.49,
+          "era1_mean_pct": 4.13,
+          "era2_up_pct": 80.2,
+          "era2_mean_pct": 15.64,
           "era_same_sign": true
         }
       ],
@@ -647,8 +647,8 @@
           },
           {
             "start": "2013-07-15",
-            "end": "2013-07-23",
-            "days": 7
+            "end": "2013-07-24",
+            "days": 8
           },
           {
             "start": "2013-07-26",
@@ -656,8 +656,13 @@
             "days": 2
           },
           {
-            "start": "2013-08-09",
+            "start": "2013-08-08",
             "end": "2013-08-09",
+            "days": 2
+          },
+          {
+            "start": "2013-10-17",
+            "end": "2013-10-17",
             "days": 1
           },
           {
@@ -696,9 +701,9 @@
             "days": 47
           },
           {
-            "start": "2014-09-22",
+            "start": "2014-09-19",
             "end": "2016-12-15",
-            "days": 565
+            "days": 566
           },
           {
             "start": "2016-12-19",
@@ -778,6 +783,11 @@
             "days": 6
           },
           {
+            "start": "2003-12-19",
+            "end": "2003-12-19",
+            "days": 1
+          },
+          {
             "start": "2004-01-09",
             "end": "2004-01-23",
             "days": 10
@@ -803,14 +813,19 @@
             "days": 2
           },
           {
+            "start": "2004-09-14",
+            "end": "2004-09-14",
+            "days": 1
+          },
+          {
             "start": "2004-09-16",
             "end": "2004-09-30",
             "days": 11
           },
           {
-            "start": "2004-10-12",
+            "start": "2004-10-08",
             "end": "2004-11-04",
-            "days": 18
+            "days": 20
           },
           {
             "start": "2004-11-18",
@@ -825,6 +840,11 @@
           {
             "start": "2005-01-24",
             "end": "2005-01-24",
+            "days": 1
+          },
+          {
+            "start": "2005-01-31",
+            "end": "2005-01-31",
             "days": 1
           },
           {
@@ -948,19 +968,24 @@
             "days": 1
           },
           {
-            "start": "2013-07-24",
+            "start": "2013-07-25",
             "end": "2013-07-25",
-            "days": 2
+            "days": 1
           },
           {
             "start": "2013-07-30",
-            "end": "2013-08-08",
-            "days": 8
+            "end": "2013-08-07",
+            "days": 7
           },
           {
             "start": "2013-08-12",
+            "end": "2013-10-16",
+            "days": 47
+          },
+          {
+            "start": "2013-10-18",
             "end": "2013-10-21",
-            "days": 50
+            "days": 2
           },
           {
             "start": "2013-11-01",
@@ -994,8 +1019,8 @@
           },
           {
             "start": "2014-09-12",
-            "end": "2014-09-19",
-            "days": 6
+            "end": "2014-09-18",
+            "days": 5
           },
           {
             "start": "2016-12-16",
@@ -1016,26 +1041,6 @@
             "start": "2018-01-18",
             "end": "2019-01-02",
             "days": 241
-          },
-          {
-            "start": "2019-01-04",
-            "end": "2019-03-19",
-            "days": 51
-          },
-          {
-            "start": "2019-04-16",
-            "end": "2019-04-17",
-            "days": 2
-          },
-          {
-            "start": "2019-04-22",
-            "end": "2019-04-22",
-            "days": 1
-          },
-          {
-            "start": "2022-04-06",
-            "end": "2022-10-19",
-            "days": 136
           }
         ],
         "high": [
@@ -1081,8 +1086,13 @@
           },
           {
             "start": "2003-10-03",
+            "end": "2003-12-18",
+            "days": 54
+          },
+          {
+            "start": "2003-12-22",
             "end": "2004-01-08",
-            "days": 67
+            "days": 12
           },
           {
             "start": "2004-01-26",
@@ -1106,13 +1116,18 @@
           },
           {
             "start": "2004-09-02",
+            "end": "2004-09-13",
+            "days": 7
+          },
+          {
+            "start": "2004-09-15",
             "end": "2004-09-15",
-            "days": 9
+            "days": 1
           },
           {
             "start": "2004-10-01",
-            "end": "2004-10-11",
-            "days": 7
+            "end": "2004-10-07",
+            "days": 5
           },
           {
             "start": "2004-11-05",
@@ -1131,8 +1146,13 @@
           },
           {
             "start": "2005-01-25",
+            "end": "2005-01-28",
+            "days": 4
+          },
+          {
+            "start": "2005-02-01",
             "end": "2005-02-03",
-            "days": 8
+            "days": 3
           },
           {
             "start": "2005-02-16",
@@ -1281,12 +1301,7 @@
           },
           {
             "start": "2025-11-14",
-            "end": "2025-11-17",
-            "days": 2
-          },
-          {
-            "start": "2025-11-19",
-            "end": "2025-11-19",
+            "end": "2025-11-14",
             "days": 1
           },
           {
@@ -1306,8 +1321,13 @@
           },
           {
             "start": "2026-03-05",
-            "end": "2026-08-05",
-            "days": 106
+            "end": "2026-03-05",
+            "days": 1
+          },
+          {
+            "start": "2026-03-09",
+            "end": "2026-08-24",
+            "days": 117
           }
         ]
       },
@@ -1342,6 +1362,11 @@
             "start": "2000-06-01",
             "end": "2000-07-05",
             "days": 24
+          },
+          {
+            "start": "2000-07-07",
+            "end": "2000-07-07",
+            "days": 1
           },
           {
             "start": "2000-07-21",
@@ -1607,11 +1632,6 @@
             "start": "2004-08-17",
             "end": "2004-09-02",
             "days": 13
-          },
-          {
-            "start": "2004-09-08",
-            "end": "2004-09-08",
-            "days": 1
           }
         ],
         "flat": [
@@ -1657,8 +1677,13 @@
           },
           {
             "start": "2000-07-06",
+            "end": "2000-07-06",
+            "days": 1
+          },
+          {
+            "start": "2000-07-10",
             "end": "2000-07-14",
-            "days": 7
+            "days": 5
           },
           {
             "start": "2000-07-20",
@@ -1909,11 +1934,6 @@
             "start": "2003-01-06",
             "end": "2003-01-08",
             "days": 3
-          },
-          {
-            "start": "2003-01-14",
-            "end": "2003-01-27",
-            "days": 9
           }
         ],
         "rising": [
@@ -2223,29 +2243,29 @@
     "SP500": {
       "date_range": [
         "2000-01-03",
-        "2026-08-05"
+        "2026-08-24"
       ],
       "base": {
         "20": {
-          "n_days": 6667,
-          "up_pct": 63.15,
+          "n_days": 6680,
+          "up_pct": 63.22,
           "mean_pct": 0.61,
-          "median_pct": 1.18,
+          "median_pct": 1.2,
           "p10_pct": -4.87
         },
         "60": {
-          "n_days": 6627,
-          "up_pct": 67.47,
+          "n_days": 6640,
+          "up_pct": 67.53,
           "mean_pct": 1.81,
           "median_pct": 2.98,
-          "p10_pct": -7.97
+          "p10_pct": -7.96
         },
         "252": {
-          "n_days": 6435,
-          "up_pct": 75.24,
-          "mean_pct": 7.84,
-          "median_pct": 11.03,
-          "p10_pct": -16.88
+          "n_days": 6448,
+          "up_pct": 75.29,
+          "mean_pct": 7.86,
+          "median_pct": 11.05,
+          "p10_pct": -16.84
         }
       },
       "level": [
@@ -2255,28 +2275,28 @@
           "bucket": "low",
           "label": "低档(TNX≤2.59%)",
           "horizon": 20,
-          "n_days": 2230,
-          "n_episodes_raw": 32,
+          "n_days": 2234,
+          "n_episodes_raw": 33,
           "n_independent": 9,
           "too_small_no_ci": false,
-          "up_pct": 68.43,
+          "up_pct": 68.35,
           "mean_pct": 1.14,
           "median_pct": 1.53,
           "p10_pct": -3.29,
-          "base_up_pct": 63.15,
+          "base_up_pct": 63.22,
           "base_mean_pct": 0.61,
-          "base_median_pct": 1.18,
+          "base_median_pct": 1.2,
           "base_p10_pct": -4.87,
           "diff_mean": 0.53,
           "ci95_mean": [
-            0.67,
-            1.6
+            0.66,
+            1.59
           ],
           "ci_vs_base": "above_base",
           "era1_up_pct": 65.14,
           "era1_mean_pct": 1.19,
-          "era2_up_pct": 69.18,
-          "era2_mean_pct": 1.13,
+          "era2_up_pct": 69.09,
+          "era2_mean_pct": 1.12,
           "era_same_sign": true
         },
         {
@@ -2285,28 +2305,28 @@
           "bucket": "mid",
           "label": "中档(2.59%<TNX≤4.13%)",
           "horizon": 20,
-          "n_days": 2227,
-          "n_episodes_raw": 85,
+          "n_days": 2231,
+          "n_episodes_raw": 89,
           "n_independent": 22,
           "too_small_no_ci": false,
-          "up_pct": 63.0,
-          "mean_pct": 0.45,
-          "median_pct": 1.31,
-          "p10_pct": -5.92,
-          "base_up_pct": 63.15,
+          "up_pct": 63.11,
+          "mean_pct": 0.46,
+          "median_pct": 1.32,
+          "p10_pct": -5.89,
+          "base_up_pct": 63.22,
           "base_mean_pct": 0.61,
-          "base_median_pct": 1.18,
+          "base_median_pct": 1.2,
           "base_p10_pct": -4.87,
-          "diff_mean": -0.16,
+          "diff_mean": -0.15,
           "ci95_mean": [
-            -0.63,
-            1.32
+            -0.61,
+            1.34
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 60.99,
-          "era1_mean_pct": 0.31,
-          "era2_up_pct": 65.39,
-          "era2_mean_pct": 0.62,
+          "era1_up_pct": 61.07,
+          "era1_mean_pct": 0.32,
+          "era2_up_pct": 65.55,
+          "era2_mean_pct": 0.63,
           "era_same_sign": true
         },
         {
@@ -2315,28 +2335,28 @@
           "bucket": "high",
           "label": "高档(TNX>4.13%)",
           "horizon": 20,
-          "n_days": 2210,
-          "n_episodes_raw": 54,
-          "n_independent": 13,
+          "n_days": 2215,
+          "n_episodes_raw": 57,
+          "n_independent": 14,
           "too_small_no_ci": false,
-          "up_pct": 57.96,
-          "mean_pct": 0.23,
-          "median_pct": 0.74,
+          "up_pct": 58.15,
+          "mean_pct": 0.24,
+          "median_pct": 0.75,
           "p10_pct": -5.14,
-          "base_up_pct": 63.15,
+          "base_up_pct": 63.22,
           "base_mean_pct": 0.61,
-          "base_median_pct": 1.18,
+          "base_median_pct": 1.2,
           "base_p10_pct": -4.87,
-          "diff_mean": -0.38,
+          "diff_mean": -0.37,
           "ci95_mean": [
-            -0.7,
-            1.48
+            -0.76,
+            1.43
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 54.23,
-          "era1_mean_pct": -0.22,
-          "era2_up_pct": 68.78,
-          "era2_mean_pct": 1.55,
+          "era1_up_pct": 54.15,
+          "era1_mean_pct": -0.23,
+          "era2_up_pct": 69.5,
+          "era2_mean_pct": 1.59,
           "era_same_sign": false
         },
         {
@@ -2345,24 +2365,24 @@
           "bucket": "low",
           "label": "低档(TNX≤2.59%)",
           "horizon": 60,
-          "n_days": 2230,
-          "n_episodes_raw": 32,
+          "n_days": 2234,
+          "n_episodes_raw": 33,
           "n_independent": 6,
           "too_small_no_ci": true,
           "up_pct": 76.1,
           "mean_pct": 3.1,
-          "median_pct": 3.86,
-          "p10_pct": -5.09,
-          "base_up_pct": 67.47,
+          "median_pct": 3.85,
+          "p10_pct": -5.08,
+          "base_up_pct": 67.53,
           "base_mean_pct": 1.81,
           "base_median_pct": 2.98,
-          "base_p10_pct": -7.97,
+          "base_p10_pct": -7.96,
           "diff_mean": 1.29,
           "ci95_mean": null,
           "ci_vs_base": null,
           "era1_up_pct": 73.32,
           "era1_mean_pct": 4.16,
-          "era2_up_pct": 76.74,
+          "era2_up_pct": 76.73,
           "era2_mean_pct": 2.85,
           "era_same_sign": true
         },
@@ -2372,28 +2392,28 @@
           "bucket": "mid",
           "label": "中档(2.59%<TNX≤4.13%)",
           "horizon": 60,
-          "n_days": 2227,
-          "n_episodes_raw": 85,
-          "n_independent": 13,
+          "n_days": 2231,
+          "n_episodes_raw": 89,
+          "n_independent": 12,
           "too_small_no_ci": false,
-          "up_pct": 67.44,
-          "mean_pct": 1.6,
-          "median_pct": 2.95,
-          "p10_pct": -8.61,
-          "base_up_pct": 67.47,
+          "up_pct": 67.5,
+          "mean_pct": 1.61,
+          "median_pct": 2.96,
+          "p10_pct": -8.6,
+          "base_up_pct": 67.53,
           "base_mean_pct": 1.81,
           "base_median_pct": 2.98,
-          "base_p10_pct": -7.97,
-          "diff_mean": -0.21,
+          "base_p10_pct": -7.96,
+          "diff_mean": -0.2,
           "ci95_mean": [
-            0.32,
-            4.05
+            0.39,
+            4.0
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 60.83,
-          "era1_mean_pct": 0.74,
-          "era2_up_pct": 75.32,
-          "era2_mean_pct": 2.62,
+          "era1_up_pct": 60.91,
+          "era1_mean_pct": 0.75,
+          "era2_up_pct": 75.39,
+          "era2_mean_pct": 2.63,
           "era_same_sign": true
         },
         {
@@ -2402,25 +2422,25 @@
           "bucket": "high",
           "label": "高档(TNX>4.13%)",
           "horizon": 60,
-          "n_days": 2170,
-          "n_episodes_raw": 54,
+          "n_days": 2175,
+          "n_episodes_raw": 57,
           "n_independent": 5,
           "too_small_no_ci": true,
-          "up_pct": 58.62,
-          "mean_pct": 0.7,
-          "median_pct": 1.63,
+          "up_pct": 58.76,
+          "mean_pct": 0.71,
+          "median_pct": 1.64,
           "p10_pct": -9.66,
-          "base_up_pct": 67.47,
+          "base_up_pct": 67.53,
           "base_mean_pct": 1.81,
           "base_median_pct": 2.98,
-          "base_p10_pct": -7.97,
-          "diff_mean": -1.11,
+          "base_p10_pct": -7.96,
+          "diff_mean": -1.1,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 51.13,
-          "era1_mean_pct": -0.62,
-          "era2_up_pct": 81.97,
-          "era2_mean_pct": 4.85,
+          "era1_up_pct": 51.04,
+          "era1_mean_pct": -0.64,
+          "era2_up_pct": 82.31,
+          "era2_mean_pct": 4.81,
           "era_same_sign": false
         },
         {
@@ -2429,25 +2449,25 @@
           "bucket": "low",
           "label": "低档(TNX≤2.59%)",
           "horizon": 252,
-          "n_days": 2230,
-          "n_episodes_raw": 32,
+          "n_days": 2234,
+          "n_episodes_raw": 33,
           "n_independent": 2,
           "too_small_no_ci": true,
-          "up_pct": 79.78,
-          "mean_pct": 12.29,
+          "up_pct": 79.77,
+          "mean_pct": 12.28,
           "median_pct": 14.11,
-          "p10_pct": -6.84,
-          "base_up_pct": 75.24,
-          "base_mean_pct": 7.84,
-          "base_median_pct": 11.03,
-          "base_p10_pct": -16.88,
-          "diff_mean": 4.45,
+          "p10_pct": -6.83,
+          "base_up_pct": 75.29,
+          "base_mean_pct": 7.86,
+          "base_median_pct": 11.05,
+          "base_p10_pct": -16.84,
+          "diff_mean": 4.42,
           "ci95_mean": null,
           "ci_vs_base": null,
           "era1_up_pct": 98.8,
           "era1_mean_pct": 18.4,
           "era2_up_pct": 75.41,
-          "era2_mean_pct": 10.89,
+          "era2_mean_pct": 10.88,
           "era_same_sign": true
         },
         {
@@ -2456,25 +2476,25 @@
           "bucket": "mid",
           "label": "中档(2.59%<TNX≤4.13%)",
           "horizon": 252,
-          "n_days": 2159,
-          "n_episodes_raw": 74,
+          "n_days": 2160,
+          "n_episodes_raw": 78,
           "n_independent": 5,
           "too_small_no_ci": true,
-          "up_pct": 86.71,
+          "up_pct": 86.76,
           "mean_pct": 9.9,
-          "median_pct": 12.01,
-          "p10_pct": -6.38,
-          "base_up_pct": 75.24,
-          "base_mean_pct": 7.84,
-          "base_median_pct": 11.03,
-          "base_p10_pct": -16.88,
-          "diff_mean": 2.06,
+          "median_pct": 12.0,
+          "p10_pct": -6.35,
+          "base_up_pct": 75.29,
+          "base_mean_pct": 7.86,
+          "base_median_pct": 11.05,
+          "base_p10_pct": -16.84,
+          "diff_mean": 2.04,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 80.74,
-          "era1_mean_pct": 6.82,
-          "era2_up_pct": 94.31,
-          "era2_mean_pct": 13.83,
+          "era1_up_pct": 80.82,
+          "era1_mean_pct": 6.83,
+          "era2_up_pct": 94.39,
+          "era2_mean_pct": 13.85,
           "era_same_sign": true
         },
         {
@@ -2483,25 +2503,25 @@
           "bucket": "high",
           "label": "高档(TNX>4.13%)",
           "horizon": 252,
-          "n_days": 2046,
-          "n_episodes_raw": 43,
+          "n_days": 2054,
+          "n_episodes_raw": 46,
           "n_independent": 2,
           "too_small_no_ci": true,
-          "up_pct": 58.21,
-          "mean_pct": 0.8,
-          "median_pct": 5.98,
-          "p10_pct": -22.0,
-          "base_up_pct": 75.24,
-          "base_mean_pct": 7.84,
-          "base_median_pct": 11.03,
-          "base_p10_pct": -16.88,
-          "diff_mean": -7.04,
+          "up_pct": 58.37,
+          "mean_pct": 0.91,
+          "median_pct": 6.11,
+          "p10_pct": -21.98,
+          "base_up_pct": 75.29,
+          "base_mean_pct": 7.86,
+          "base_median_pct": 11.05,
+          "base_p10_pct": -16.84,
+          "diff_mean": -6.95,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 48.14,
-          "era1_mean_pct": -3.81,
-          "era2_up_pct": 99.26,
-          "era2_mean_pct": 19.6,
+          "era1_up_pct": 47.99,
+          "era1_mean_pct": -3.84,
+          "era2_up_pct": 99.28,
+          "era2_mean_pct": 19.63,
           "era_same_sign": false
         }
       ],
@@ -2512,17 +2532,17 @@
           "bucket": "falling",
           "label": "降档(20日变化≤-10.8bp)",
           "horizon": 20,
-          "n_days": 2223,
-          "n_episodes_raw": 322,
+          "n_days": 2228,
+          "n_episodes_raw": 323,
           "n_independent": 88,
           "too_small_no_ci": false,
-          "up_pct": 65.36,
+          "up_pct": 65.39,
           "mean_pct": 0.8,
           "median_pct": 1.65,
           "p10_pct": -5.75,
-          "base_up_pct": 63.15,
+          "base_up_pct": 63.22,
           "base_mean_pct": 0.61,
-          "base_median_pct": 1.18,
+          "base_median_pct": 1.2,
           "base_p10_pct": -4.87,
           "diff_mean": 0.19,
           "ci95_mean": [
@@ -2530,10 +2550,10 @@
             1.46
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 60.2,
+          "era1_up_pct": 60.21,
           "era1_mean_pct": 0.42,
-          "era2_up_pct": 72.76,
-          "era2_mean_pct": 1.34,
+          "era2_up_pct": 72.82,
+          "era2_mean_pct": 1.35,
           "era_same_sign": true
         },
         {
@@ -2542,28 +2562,28 @@
           "bucket": "flat",
           "label": "平档(-10.8~8.5bp)",
           "horizon": 20,
-          "n_days": 2215,
-          "n_episodes_raw": 588,
+          "n_days": 2219,
+          "n_episodes_raw": 589,
           "n_independent": 74,
           "too_small_no_ci": false,
-          "up_pct": 63.48,
+          "up_pct": 63.54,
           "mean_pct": 0.6,
-          "median_pct": 1.01,
-          "p10_pct": -4.1,
-          "base_up_pct": 63.15,
+          "median_pct": 1.02,
+          "p10_pct": -4.09,
+          "base_up_pct": 63.22,
           "base_mean_pct": 0.61,
-          "base_median_pct": 1.18,
+          "base_median_pct": 1.2,
           "base_p10_pct": -4.87,
           "diff_mean": -0.01,
           "ci95_mean": [
-            -0.08,
+            -0.07,
             1.15
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 57.77,
+          "era1_up_pct": 57.68,
           "era1_mean_pct": 0.06,
-          "era2_up_pct": 67.49,
-          "era2_mean_pct": 0.97,
+          "era2_up_pct": 67.64,
+          "era2_mean_pct": 0.98,
           "era_same_sign": true
         },
         {
@@ -2572,27 +2592,27 @@
           "bucket": "rising",
           "label": "升档(20日变化>8.5bp)",
           "horizon": 20,
-          "n_days": 2209,
-          "n_episodes_raw": 279,
-          "n_independent": 93,
+          "n_days": 2213,
+          "n_episodes_raw": 280,
+          "n_independent": 95,
           "too_small_no_ci": false,
-          "up_pct": 61.02,
-          "mean_pct": 0.46,
-          "median_pct": 1.0,
+          "up_pct": 61.14,
+          "mean_pct": 0.47,
+          "median_pct": 1.01,
           "p10_pct": -4.82,
-          "base_up_pct": 63.15,
+          "base_up_pct": 63.22,
           "base_mean_pct": 0.61,
-          "base_median_pct": 1.18,
+          "base_median_pct": 1.2,
           "base_p10_pct": -4.87,
-          "diff_mean": -0.15,
+          "diff_mean": -0.14,
           "ci95_mean": [
-            -0.16,
-            1.05
+            -0.14,
+            1.02
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 56.63,
+          "era1_up_pct": 56.68,
           "era1_mean_pct": -0.05,
-          "era2_up_pct": 64.84,
+          "era2_up_pct": 64.98,
           "era2_mean_pct": 0.91,
           "era_same_sign": false
         },
@@ -2602,27 +2622,27 @@
           "bucket": "falling",
           "label": "降档(20日变化≤-10.8bp)",
           "horizon": 60,
-          "n_days": 2219,
-          "n_episodes_raw": 321,
+          "n_days": 2224,
+          "n_episodes_raw": 322,
           "n_independent": 12,
           "too_small_no_ci": false,
-          "up_pct": 68.86,
-          "mean_pct": 1.91,
+          "up_pct": 68.88,
+          "mean_pct": 1.92,
           "median_pct": 3.18,
-          "p10_pct": -9.43,
-          "base_up_pct": 67.47,
+          "p10_pct": -9.42,
+          "base_up_pct": 67.53,
           "base_mean_pct": 1.81,
           "base_median_pct": 2.98,
-          "base_p10_pct": -7.97,
-          "diff_mean": 0.1,
+          "base_p10_pct": -7.96,
+          "diff_mean": 0.11,
           "ci95_mean": [
             0.54,
             3.99
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 59.89,
+          "era1_up_pct": 59.91,
           "era1_mean_pct": 0.48,
-          "era2_up_pct": 81.76,
+          "era2_up_pct": 81.8,
           "era2_mean_pct": 3.98,
           "era_same_sign": true
         },
@@ -2632,25 +2652,25 @@
           "bucket": "flat",
           "label": "平档(-10.8~8.5bp)",
           "horizon": 60,
-          "n_days": 2196,
+          "n_days": 2197,
           "n_episodes_raw": 584,
           "n_independent": 2,
           "too_small_no_ci": true,
-          "up_pct": 68.4,
+          "up_pct": 68.37,
           "mean_pct": 1.9,
-          "median_pct": 2.92,
+          "median_pct": 2.91,
           "p10_pct": -6.35,
-          "base_up_pct": 67.47,
+          "base_up_pct": 67.53,
           "base_mean_pct": 1.81,
           "base_median_pct": 2.98,
-          "base_p10_pct": -7.97,
+          "base_p10_pct": -7.96,
           "diff_mean": 0.09,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 55.91,
-          "era1_mean_pct": 0.18,
-          "era2_up_pct": 77.3,
-          "era2_mean_pct": 3.13,
+          "era1_up_pct": 55.81,
+          "era1_mean_pct": 0.17,
+          "era2_up_pct": 77.28,
+          "era2_mean_pct": 3.12,
           "era_same_sign": true
         },
         {
@@ -2659,28 +2679,28 @@
           "bucket": "rising",
           "label": "升档(20日变化>8.5bp)",
           "horizon": 60,
-          "n_days": 2192,
-          "n_episodes_raw": 276,
+          "n_days": 2199,
+          "n_episodes_raw": 275,
           "n_independent": 12,
           "too_small_no_ci": false,
-          "up_pct": 64.96,
-          "mean_pct": 1.6,
-          "median_pct": 2.71,
-          "p10_pct": -8.22,
-          "base_up_pct": 67.47,
+          "up_pct": 65.17,
+          "mean_pct": 1.61,
+          "median_pct": 2.77,
+          "p10_pct": -8.21,
+          "base_up_pct": 67.53,
           "base_mean_pct": 1.81,
           "base_median_pct": 2.98,
-          "base_p10_pct": -7.97,
-          "diff_mean": -0.21,
+          "base_p10_pct": -7.96,
+          "diff_mean": -0.2,
           "ci95_mean": [
-            0.18,
-            2.73
+            0.19,
+            2.74
           ],
           "ci_vs_base": "overlaps_base",
-          "era1_up_pct": 55.46,
+          "era1_up_pct": 55.51,
           "era1_mean_pct": 0.73,
-          "era2_up_pct": 73.33,
-          "era2_mean_pct": 2.37,
+          "era2_up_pct": 73.59,
+          "era2_mean_pct": 2.39,
           "era_same_sign": true
         },
         {
@@ -2689,25 +2709,25 @@
           "bucket": "falling",
           "label": "降档(20日变化≤-10.8bp)",
           "horizon": 252,
-          "n_days": 2170,
-          "n_episodes_raw": 313,
+          "n_days": 2182,
+          "n_episodes_raw": 315,
           "n_independent": 1,
           "too_small_no_ci": true,
-          "up_pct": 71.89,
-          "mean_pct": 7.09,
-          "median_pct": 11.07,
-          "p10_pct": -19.72,
-          "base_up_pct": 75.24,
-          "base_mean_pct": 7.84,
-          "base_median_pct": 11.03,
-          "base_p10_pct": -16.88,
-          "diff_mean": -0.75,
+          "up_pct": 72.0,
+          "mean_pct": 7.14,
+          "median_pct": 11.12,
+          "p10_pct": -19.71,
+          "base_up_pct": 75.29,
+          "base_mean_pct": 7.86,
+          "base_median_pct": 11.05,
+          "base_p10_pct": -16.84,
+          "diff_mean": -0.72,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 62.64,
+          "era1_up_pct": 62.65,
           "era1_mean_pct": 2.42,
-          "era2_up_pct": 85.95,
-          "era2_mean_pct": 14.18,
+          "era2_up_pct": 86.09,
+          "era2_mean_pct": 14.24,
           "era_same_sign": true
         },
         {
@@ -2716,25 +2736,25 @@
           "bucket": "flat",
           "label": "平档(-10.8~8.5bp)",
           "horizon": 252,
-          "n_days": 2100,
-          "n_episodes_raw": 562,
+          "n_days": 2105,
+          "n_episodes_raw": 563,
           "n_independent": 1,
           "too_small_no_ci": true,
-          "up_pct": 79.62,
-          "mean_pct": 8.6,
-          "median_pct": 10.73,
-          "p10_pct": -14.94,
-          "base_up_pct": 75.24,
-          "base_mean_pct": 7.84,
-          "base_median_pct": 11.03,
-          "base_p10_pct": -16.88,
-          "diff_mean": 0.76,
+          "up_pct": 79.71,
+          "mean_pct": 8.64,
+          "median_pct": 10.75,
+          "p10_pct": -14.86,
+          "base_up_pct": 75.29,
+          "base_mean_pct": 7.86,
+          "base_median_pct": 11.05,
+          "base_p10_pct": -16.84,
+          "diff_mean": 0.78,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 70.79,
+          "era1_up_pct": 70.83,
           "era1_mean_pct": 3.3,
-          "era2_up_pct": 86.42,
-          "era2_mean_pct": 12.69,
+          "era2_up_pct": 86.5,
+          "era2_mean_pct": 12.72,
           "era_same_sign": true
         },
         {
@@ -2743,25 +2763,25 @@
           "bucket": "rising",
           "label": "升档(20日变化>8.5bp)",
           "horizon": 252,
-          "n_days": 2145,
-          "n_episodes_raw": 263,
+          "n_days": 2141,
+          "n_episodes_raw": 261,
           "n_independent": 1,
           "too_small_no_ci": true,
-          "up_pct": 75.01,
-          "mean_pct": 7.98,
+          "up_pct": 74.96,
+          "mean_pct": 7.97,
           "median_pct": 11.34,
-          "p10_pct": -14.71,
-          "base_up_pct": 75.24,
-          "base_mean_pct": 7.84,
-          "base_median_pct": 11.03,
-          "base_p10_pct": -16.88,
-          "diff_mean": 0.14,
+          "p10_pct": -14.82,
+          "base_up_pct": 75.29,
+          "base_mean_pct": 7.86,
+          "base_median_pct": 11.05,
+          "base_p10_pct": -16.84,
+          "diff_mean": 0.11,
           "ci95_mean": null,
           "ci_vs_base": null,
-          "era1_up_pct": 69.3,
+          "era1_up_pct": 69.27,
           "era1_mean_pct": 3.5,
-          "era2_up_pct": 80.25,
-          "era2_mean_pct": 12.08,
+          "era2_up_pct": 80.2,
+          "era2_mean_pct": 12.07,
           "era_same_sign": true
         }
       ],
@@ -2839,8 +2859,8 @@
           },
           {
             "start": "2013-07-15",
-            "end": "2013-07-23",
-            "days": 7
+            "end": "2013-07-24",
+            "days": 8
           },
           {
             "start": "2013-07-26",
@@ -2848,8 +2868,13 @@
             "days": 2
           },
           {
-            "start": "2013-08-09",
+            "start": "2013-08-08",
             "end": "2013-08-09",
+            "days": 2
+          },
+          {
+            "start": "2013-10-17",
+            "end": "2013-10-17",
             "days": 1
           },
           {
@@ -2888,9 +2913,9 @@
             "days": 47
           },
           {
-            "start": "2014-09-22",
+            "start": "2014-09-19",
             "end": "2016-12-15",
-            "days": 565
+            "days": 566
           },
           {
             "start": "2016-12-19",
@@ -2970,6 +2995,11 @@
             "days": 6
           },
           {
+            "start": "2003-12-19",
+            "end": "2003-12-19",
+            "days": 1
+          },
+          {
             "start": "2004-01-09",
             "end": "2004-01-23",
             "days": 10
@@ -2995,14 +3025,19 @@
             "days": 2
           },
           {
+            "start": "2004-09-14",
+            "end": "2004-09-14",
+            "days": 1
+          },
+          {
             "start": "2004-09-16",
             "end": "2004-09-30",
             "days": 11
           },
           {
-            "start": "2004-10-12",
+            "start": "2004-10-08",
             "end": "2004-11-04",
-            "days": 18
+            "days": 20
           },
           {
             "start": "2004-11-18",
@@ -3017,6 +3052,11 @@
           {
             "start": "2005-01-24",
             "end": "2005-01-24",
+            "days": 1
+          },
+          {
+            "start": "2005-01-31",
+            "end": "2005-01-31",
             "days": 1
           },
           {
@@ -3140,19 +3180,24 @@
             "days": 1
           },
           {
-            "start": "2013-07-24",
+            "start": "2013-07-25",
             "end": "2013-07-25",
-            "days": 2
+            "days": 1
           },
           {
             "start": "2013-07-30",
-            "end": "2013-08-08",
-            "days": 8
+            "end": "2013-08-07",
+            "days": 7
           },
           {
             "start": "2013-08-12",
+            "end": "2013-10-16",
+            "days": 47
+          },
+          {
+            "start": "2013-10-18",
             "end": "2013-10-21",
-            "days": 50
+            "days": 2
           },
           {
             "start": "2013-11-01",
@@ -3186,8 +3231,8 @@
           },
           {
             "start": "2014-09-12",
-            "end": "2014-09-19",
-            "days": 6
+            "end": "2014-09-18",
+            "days": 5
           },
           {
             "start": "2016-12-16",
@@ -3208,26 +3253,6 @@
             "start": "2018-01-18",
             "end": "2019-01-02",
             "days": 241
-          },
-          {
-            "start": "2019-01-04",
-            "end": "2019-03-19",
-            "days": 51
-          },
-          {
-            "start": "2019-04-16",
-            "end": "2019-04-17",
-            "days": 2
-          },
-          {
-            "start": "2019-04-22",
-            "end": "2019-04-22",
-            "days": 1
-          },
-          {
-            "start": "2022-04-06",
-            "end": "2022-10-19",
-            "days": 136
           }
         ],
         "high": [
@@ -3273,8 +3298,13 @@
           },
           {
             "start": "2003-10-03",
+            "end": "2003-12-18",
+            "days": 54
+          },
+          {
+            "start": "2003-12-22",
             "end": "2004-01-08",
-            "days": 67
+            "days": 12
           },
           {
             "start": "2004-01-26",
@@ -3298,13 +3328,18 @@
           },
           {
             "start": "2004-09-02",
+            "end": "2004-09-13",
+            "days": 7
+          },
+          {
+            "start": "2004-09-15",
             "end": "2004-09-15",
-            "days": 9
+            "days": 1
           },
           {
             "start": "2004-10-01",
-            "end": "2004-10-11",
-            "days": 7
+            "end": "2004-10-07",
+            "days": 5
           },
           {
             "start": "2004-11-05",
@@ -3323,8 +3358,13 @@
           },
           {
             "start": "2005-01-25",
+            "end": "2005-01-28",
+            "days": 4
+          },
+          {
+            "start": "2005-02-01",
             "end": "2005-02-03",
-            "days": 8
+            "days": 3
           },
           {
             "start": "2005-02-16",
@@ -3473,12 +3513,7 @@
           },
           {
             "start": "2025-11-14",
-            "end": "2025-11-17",
-            "days": 2
-          },
-          {
-            "start": "2025-11-19",
-            "end": "2025-11-19",
+            "end": "2025-11-14",
             "days": 1
           },
           {
@@ -3498,8 +3533,13 @@
           },
           {
             "start": "2026-03-05",
-            "end": "2026-08-05",
-            "days": 106
+            "end": "2026-03-05",
+            "days": 1
+          },
+          {
+            "start": "2026-03-09",
+            "end": "2026-08-24",
+            "days": 117
           }
         ]
       },
@@ -3534,6 +3574,11 @@
             "start": "2000-06-01",
             "end": "2000-07-05",
             "days": 24
+          },
+          {
+            "start": "2000-07-07",
+            "end": "2000-07-07",
+            "days": 1
           },
           {
             "start": "2000-07-21",
@@ -3799,11 +3844,6 @@
             "start": "2004-08-17",
             "end": "2004-09-02",
             "days": 13
-          },
-          {
-            "start": "2004-09-08",
-            "end": "2004-09-08",
-            "days": 1
           }
         ],
         "flat": [
@@ -3849,8 +3889,13 @@
           },
           {
             "start": "2000-07-06",
+            "end": "2000-07-06",
+            "days": 1
+          },
+          {
+            "start": "2000-07-10",
             "end": "2000-07-14",
-            "days": 7
+            "days": 5
           },
           {
             "start": "2000-07-20",
@@ -4101,11 +4146,6 @@
             "start": "2003-01-06",
             "end": "2003-01-08",
             "days": 3
-          },
-          {
-            "start": "2003-01-14",
-            "end": "2003-01-27",
-            "days": 9
           }
         ],
         "rising": [
@@ -4421,8 +4461,8 @@
         "horizon": 20,
         "monotonic": true,
         "means_pct": [
-          1.5,
-          0.89,
+          1.49,
+          0.9,
           -0.11
         ]
       },
@@ -4433,7 +4473,7 @@
         "monotonic": false,
         "means_pct": [
           0.77,
-          0.68,
+          0.69,
           0.75
         ]
       },
@@ -4443,9 +4483,9 @@
         "horizon": 60,
         "monotonic": true,
         "means_pct": [
-          4.1,
+          4.11,
           3.05,
-          -0.62
+          -0.64
         ]
       },
       {
@@ -4454,9 +4494,9 @@
         "horizon": 60,
         "monotonic": true,
         "means_pct": [
-          2.58,
+          2.57,
           2.2,
-          1.84
+          1.83
         ]
       },
       {
@@ -4466,8 +4506,8 @@
         "monotonic": true,
         "means_pct": [
           16.68,
-          15.79,
-          -1.98
+          15.78,
+          -1.84
         ]
       },
       {
@@ -4476,9 +4516,9 @@
         "horizon": 252,
         "monotonic": false,
         "means_pct": [
-          10.33,
-          11.3,
-          10.16
+          10.37,
+          11.36,
+          10.13
         ]
       },
       {
@@ -4488,8 +4528,8 @@
         "monotonic": true,
         "means_pct": [
           1.14,
-          0.45,
-          0.23
+          0.46,
+          0.24
         ]
       },
       {
@@ -4500,7 +4540,7 @@
         "means_pct": [
           0.8,
           0.6,
-          0.46
+          0.47
         ]
       },
       {
@@ -4510,8 +4550,8 @@
         "monotonic": true,
         "means_pct": [
           3.1,
-          1.6,
-          0.7
+          1.61,
+          0.71
         ]
       },
       {
@@ -4520,9 +4560,9 @@
         "horizon": 60,
         "monotonic": true,
         "means_pct": [
-          1.91,
+          1.92,
           1.9,
-          1.6
+          1.61
         ]
       },
       {
@@ -4531,9 +4571,9 @@
         "horizon": 252,
         "monotonic": true,
         "means_pct": [
-          12.29,
+          12.28,
           9.9,
-          0.8
+          0.91
         ]
       },
       {
@@ -4542,9 +4582,9 @@
         "horizon": 252,
         "monotonic": false,
         "means_pct": [
-          7.09,
-          8.6,
-          7.98
+          7.14,
+          8.64,
+          7.97
         ]
       }
     ],
@@ -4554,24 +4594,24 @@
         "variable": "level",
         "bucket": "high",
         "horizon": 20,
-        "era1_mean_pct": -0.8,
-        "era2_mean_pct": 1.88
+        "era1_mean_pct": -0.82,
+        "era2_mean_pct": 1.91
       },
       {
         "asset": "NASDAQ",
         "variable": "direction",
         "bucket": "flat",
         "horizon": 20,
-        "era1_mean_pct": -0.18,
-        "era2_mean_pct": 1.28
+        "era1_mean_pct": -0.19,
+        "era2_mean_pct": 1.3
       },
       {
         "asset": "NASDAQ",
         "variable": "level",
         "bucket": "high",
         "horizon": 60,
-        "era1_mean_pct": -2.76,
-        "era2_mean_pct": 6.04
+        "era1_mean_pct": -2.79,
+        "era2_mean_pct": 5.9
       },
       {
         "asset": "NASDAQ",
@@ -4586,16 +4626,16 @@
         "variable": "level",
         "bucket": "high",
         "horizon": 252,
-        "era1_mean_pct": -8.44,
-        "era2_mean_pct": 24.37
+        "era1_mean_pct": -8.5,
+        "era2_mean_pct": 24.35
       },
       {
         "asset": "SP500",
         "variable": "level",
         "bucket": "high",
         "horizon": 20,
-        "era1_mean_pct": -0.22,
-        "era2_mean_pct": 1.55
+        "era1_mean_pct": -0.23,
+        "era2_mean_pct": 1.59
       },
       {
         "asset": "SP500",
@@ -4610,16 +4650,16 @@
         "variable": "level",
         "bucket": "high",
         "horizon": 60,
-        "era1_mean_pct": -0.62,
-        "era2_mean_pct": 4.85
+        "era1_mean_pct": -0.64,
+        "era2_mean_pct": 4.81
       },
       {
         "asset": "SP500",
         "variable": "level",
         "bucket": "high",
         "horizon": 252,
-        "era1_mean_pct": -3.81,
-        "era2_mean_pct": 19.6
+        "era1_mean_pct": -3.84,
+        "era2_mean_pct": 19.63
       }
     ],
     "low_independent": [
