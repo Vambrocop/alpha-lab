@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-24 15:10 UTC",
+ "updated": "2026-08-24 16:03 UTC",
  "items": [
+  {
+   "time": "2026-08-24 15:34 UTC",
+   "title": "Prediction market traders doubtful Bessent’s bond interventions will push yields lower",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-24 15:30 UTC",
+   "title": "Ex-Google recruiter: This common mistake makes your resume 'invisible'—you have 'six seconds to prove you can do the work'",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-24 15:02 UTC",
    "title": "It’s time to bet big on Nvidia’s stock, says this analyst who thinks the market has it all wrong",
@@ -23,22 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 14:02 UTC",
-   "title": "Crypto extends gains after biggest 3-day rally since 2023",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 13:50 UTC",
-   "title": "Trump, Vance and Bessent try to calm the bond market with ‘alternative facts’",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
