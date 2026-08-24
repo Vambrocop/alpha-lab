@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T20:14:52.184440+00:00",
+  "generated": "2026-08-24T20:54:30.473751+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -60,7 +60,7 @@
       "ticker": "^VIX3M",
       "source": "live",
       "status": "ok",
-      "rows": 1,
+      "rows": 5033,
       "last_date": "2026-08-24",
       "age_days": 0,
       "stale_after_days": 6,
