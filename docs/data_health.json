@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T13:43:22.535241+00:00",
+  "generated": "2026-08-24T14:29:12.533513+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -61,8 +61,8 @@
       "source": "live",
       "status": "ok",
       "rows": 1,
-      "last_date": "2026-08-21",
-      "age_days": 3,
+      "last_date": "2026-08-24",
+      "age_days": 0,
       "stale_after_days": 6,
       "error": null
     },
@@ -307,9 +307,9 @@
       "ticker": "BAMLH0A0HYM2",
       "source": "live_api",
       "status": "ok",
-      "rows": 787,
-      "last_date": "2026-08-20",
-      "age_days": 4,
+      "rows": 785,
+      "last_date": "2026-08-21",
+      "age_days": 3,
       "stale_after_days": 10,
       "error": null
     },

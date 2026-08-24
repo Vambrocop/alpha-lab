@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-24 13:47 UTC",
+ "updated": "2026-08-24 14:29 UTC",
  "items": [
+  {
+   "time": "2026-08-24 14:21 UTC",
+   "title": "Yields decline on CNBC report Treasury could use General Account to fund buybacks",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-24 14:02 UTC",
+   "title": "Crypto extends gains after biggest 3-day rally since 2023",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-24 13:50 UTC",
+   "title": "Trump, Vance and Bessent try to calm the bond market with ‘alternative facts’",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-24 13:35 UTC",
    "title": "'They asked too much': Canadian dollar slides as Ottawa and Washington head for all-out trade war",
@@ -12,30 +36,6 @@
   {
    "time": "2026-08-24 13:31 UTC",
    "title": "Here are two trades to make ahead of a critical week for markets as Nvidia results and Jackson Hole loom",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 13:24 UTC",
-   "title": "U.S. Trade Rep Greer blames Canada for failed tariff talks: 'They wanted more'",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 13:17 UTC",
-   "title": "Bessent could tap near $1 trillion Treasury General Account to fund bond buybacks, sources said",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 13:02 UTC",
-   "title": "The Treasury’s bond-market intervention isn’t working. So what comes next?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
