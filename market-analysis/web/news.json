@@ -1,6 +1,30 @@
 {
- "updated": "2026-08-24 17:02 UTC",
+ "updated": "2026-08-24 17:54 UTC",
  "items": [
+  {
+   "time": "2026-08-24 17:19 UTC",
+   "title": "Yields decline on CNBC report Treasury could use General Account to fund buybacks",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-24 17:19 UTC",
+   "title": "Nvidia says Groq racks will be online this year following $20 billion purchase",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-24 17:02 UTC",
+   "title": "Dell’s stock is up 235% this year — and earnings could propel it even higher, analysts say",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-24 16:52 UTC",
    "title": "Bessent tapping Treasury’s rainy-day fund for buybacks isn’t a ‘bazooka’ to get markets to move his way",
@@ -12,30 +36,6 @@
   {
    "time": "2026-08-24 16:38 UTC",
    "title": "A massive trade just happened in gold. The options market is buzzing",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 16:09 UTC",
-   "title": "Cramer says this stock tied to the AI data center trade may be up next for a trim",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 16:07 UTC",
-   "title": "From Nvidia earnings to trade war tape bombs, a simple strategy could be this week's best bet",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-24 16:06 UTC",
-   "title": "Yields decline on CNBC report Treasury could use General Account to fund buybacks",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
