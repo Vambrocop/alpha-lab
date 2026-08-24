@@ -44,6 +44,9 @@ CHECKS = [
     ("insider",    WEB / "insider.json",     "generated", 21, "内部人买入 insider.json", "known-limited"),
     ("ipo",        WEB / "ipo_filings.json", "generated", 21, "IPO申报 ipo_filings.json", "known-limited"),
     ("ndx",        WEB / "ndx.json",         "generated", 14, "纳指100成分 ndx.json", "live"),  # 解析器坏=可修bug,该催
+    # 美债研究:纯本地算(只吃 combined_prices,不联网、不碰 SEC)→ CI 每次全量跑都该刷新 = live。
+    # 阈值 5 天:全量只在工作日盘前/盘后跑,跨周末最大自然间隔约 3 天,留 2 天给 CI 延迟。
+    ("treasury",   WEB / "treasury_stock_link.json", "generated", 5, "美债→美股 treasury_stock_link.json", "live"),
 ]
 
 # 同一超期项最多每 SNOOZE_DAYS 天提醒一次(此前是每天;而且 watchdog_state.json 被 CI 缓存回灌反复
