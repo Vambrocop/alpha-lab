@@ -64,6 +64,22 @@ def run(write=True):
                      "evidence": f"倒挂仅 {inv.get('n_episodes', '?')} 个独立事件段 · {rf.get('asset', 'SP500')}",
                      "verdict": rf.get("verdict", "—"), "link": "regimefwd.html"})
 
+    ts = _load("treasury_stock_link.json")
+    if ts:
+        nq = ((ts.get("assets") or {}).get("NASDAQ") or {})
+        cells = (nq.get("level") or []) + (nq.get("direction") or [])
+        sep = [c for c in cells if c.get("ci_vs_base") in ("above_base", "below_base")]
+        n_all = len((ts.get("assets", {}).get("NASDAQ", {}).get("level") or [])) \
+            + len((ts.get("assets", {}).get("NASDAQ", {}).get("direction") or []))
+        low1m = next((c for c in cells if c.get("bucket") == "low" and c.get("horizon") == 20), {})
+        rows.append({"name": "美债利率→美股前向", "family": "宏观",
+                     "scope": "10Y收益率水平档/20日涨跌方向 → 纳指·标普 未来1/3/12月 · 2000+",
+                     "evidence": f"纳指侧 {len(sep)}/{n_all} 格能与基率分开(低档1月 vs基率 "
+                                 f"{low1m.get('diff_mean', '?')}pp·CI {low1m.get('ci95_mean', '—')}) · "
+                                 f"{ts.get('diagnostics_summary', '')[:60]}",
+                     "verdict": "只有「低利率档·1月」分得开;方向档几乎无信号;长窗口其实是宏观年代(高档跨时代翻转)——非可交易edge",
+                     "link": "treasury.html"})
+
     ov = _load("overreaction.json")
     if ov and ov.get("status") == "ok":
         f = ov.get("full") or {}

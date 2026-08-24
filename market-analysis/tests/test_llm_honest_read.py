@@ -99,6 +99,37 @@ def test_require_fear_semantics():
     assert H.require_fear("历史上只出现过几次,样本很少,剔掉危机就不稳") is True
 
 
+def test_require_treasury_semantics():
+    assert H.require_treasury("利率低的时候买股票收益更好") is False        # 无限制caveat → 不合格
+    assert H.require_treasury("36格里只有低利率档1个月那格分得开,方向档几乎没有可靠信号") is True
+
+
+def test_facts_treasury_missing_returns_none():
+    assert H.facts_treasury({}) is None
+    assert H.facts_treasury({"assets": {"NASDAQ": {"level": [], "direction": []}}}) is None
+
+
+def test_facts_treasury_carries_real_numbers_and_limits():
+    """喂真字段 → 必须带真实数字 + 「唯一分得开」「方向没信号」的限制(防被读成利率低就该买)。"""
+    j = {"assets": {"NASDAQ": {
+        "level": [
+            {"bucket": "low", "horizon": 20, "mean_pct": 1.5, "base_mean_pct": 0.76,
+             "diff_mean": 0.74, "ci95_mean": [1.24, 1.98], "ci_vs_base": "above_base"},
+            {"bucket": "high", "horizon": 20, "mean_pct": -0.11, "base_mean_pct": 0.76,
+             "diff_mean": -0.87, "ci95_mean": [-1.74, 1.82], "ci_vs_base": "overlaps_base"},
+        ],
+        "direction": [
+            {"bucket": b, "horizon": 20, "mean_pct": 0.7, "base_mean_pct": 0.76,
+             "diff_mean": -0.06, "ci95_mean": [-0.1, 1.5], "ci_vs_base": "overlaps_base"}
+            for b in ("falling", "flat", "rising")
+        ]}}}
+    f = H.facts_treasury(j)
+    assert f and "1.5" in f and "[1.24, 1.98]" in f      # 真数字来自 JSON,不是编的
+    assert "唯一" in f                                    # 点明只有那一格分得开
+    assert "有 0 格" in f                                 # 方向档可分格数=0(真算出来的)
+    assert H.require_treasury(f) is True                  # 自家 facts 必须过自家正向门
+
+
 def test_facts_fear_missing_returns_none():
     assert H.facts_fear({}) is None
     assert H.facts_fear({"primary_cell": {"trigger": "T1", "index": "SP500", "horizon": 20}, "triggers": {}}) is None

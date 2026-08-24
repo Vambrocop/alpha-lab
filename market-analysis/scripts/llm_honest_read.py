@@ -156,6 +156,40 @@ def require_fear(text):
     return any(k in t for k in ("样本", "几段", "几次", "脆", "不稳", "一次危机", "单次危机", "2008", "2020", "少"))
 
 
+def facts_treasury(j):
+    """美债:只喂真算出的格子(低档1月是唯一过门那格 + 方向档几乎无信号 + 高档跨时代翻转)。"""
+    try:
+        nq = j["assets"]["NASDAQ"]
+        cells = {(c["bucket"], c["horizon"]): c for c in nq["level"]}
+        low20 = cells[("low", 20)]
+        high20 = cells[("high", 20)]
+        dirs20 = [c for c in nq["direction"] if c["horizon"] == 20]
+        n_dir_sep = sum(1 for c in dirs20 if c.get("ci_vs_base") in ("above_base", "below_base"))
+        return (
+            f"- 研究把「10年期美债收益率」按高低分成低/中/高三档,看每档之后纳指未来1/3/12个月怎么走,"
+            f"和「随便哪天买」的基率比。\n"
+            f"- 低利率档之后的下个月:平均 {low20['mean_pct']}%,比基率 {low20['base_mean_pct']}% 高"
+            f"{low20['diff_mean']} 个百分点,95%区间 {low20['ci95_mean']}——这是【唯一】一格能可靠和"
+            f"「随便哪天买」分开的。\n"
+            f"- 高利率档之后的下个月平均 {high20['mean_pct']}%(比基率低),但它分时代符号会翻转:"
+            f"高利率的日子几乎全来自 2000-08 和 2022-26 两段完全不同的历史,是「你处在哪个年代」而不是利率本身。\n"
+            f"- 「利率最近在升还是在降」这个维度:20日方向的三档里,能和基率分开的有 {n_dir_sep} 格——"
+            f"几乎没有可靠信号。\n"
+            f"- 拉长到3/12个月,互不重叠的独立样本塌到个位数,只能描述、给不出可靠区间。\n"
+            f"- 纯描述、相关不等于因果、不是买卖信号、会错。"
+        )
+    except Exception:
+        return None
+
+
+def require_treasury(text):
+    """美债读数【必须】点明「只有那一格分得开 / 方向没信号 / 是宏观年代」这类限制,
+    否则会被读成「利率低就该买股」——缺则重试、仍缺置空(宁可不显示)。"""
+    t = text or ""
+    return any(k in t for k in ("只有", "唯一", "仅", "分不开", "没有可靠", "几乎没", "年代",
+                                 "样本", "翻转", "不稳", "不能当", "并不"))
+
+
 STUDIES = [
     # (key, json, 名字, 提炼器, 该研究特别强调(进 prompt), 必点要点后置检查(缺则重试/置空))
     ("fear", "fear_extremes.json", "高/极端恐慌之后市场怎么走", facts_fear,
@@ -166,6 +200,10 @@ STUDIES = [
      "只有深跌(20/30%)才明显更高。绝不能只说「跌得越深越好」。", require_dip),
     ("vixvol", "vix_vol.json", "VIX 到底预测什么", facts_vixvol, "", None),
     ("feargreed", "fear_greed.json", "恐慌贪婪合成表 + 逆向检验", facts_feargreed, "", None),
+    ("treasury", "treasury_stock_link.json", "美债利率跟美股有没有关系", facts_treasury,
+     "必须明说:36 个格子里【只有】「低利率档·1个月」这一格能可靠地和「随便哪天买」分开;"
+     "「利率在升还是在降」这个维度几乎没有可靠信号;长窗口看到的差异其实是「处在哪个宏观年代」"
+     "(高利率档跨时代符号翻转)。绝不能读成「利率低就该买股/利率升就该卖」。", require_treasury),
 ]
 
 PROMPT_TMPL = """你是给股票新手讲人话的助手。下面是一个「诚实统计研究」真实算出的结论,请用 2-4 句大白话中文讲清它在说什么。

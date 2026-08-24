@@ -35,6 +35,8 @@
 <h1 data-i18n="title"></h1>
 <p class="sub" data-i18n="intro"></p>
 
+<div class="airead" id="aiRead" style="display:none"></div>
+
 <div class="note" id="topBanner"></div>
 
 <div class="hbtns" id="hbtns" role="group" aria-label="持有窗口 / horizon"></div>
@@ -152,6 +154,8 @@ vpBindLang(I18N,()=>{ LANG=vpLang(); if(window._j) render(window._j); else apply
   }catch(e){ $("topBanner").textContent=t("loadingErr"); }
 })();
 </script>
+<script src="vp_honestread.js"></script>
+<script>vpHonestRead("treasury","aiRead");</script>
 <script src="vp_related.js"></script>
 <script>vpRelated("treasury","relRow");</script>
 <script src="vp_gloss.js" data-autoscan></script>
