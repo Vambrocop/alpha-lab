@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-25T13:46:09Z",
+  "generated": "2026-08-25T21:59:14Z",
   "as_of": "2026-08-25",
   "price_start": "2000-01-03",
   "lookback": 252,
@@ -720,93 +720,93 @@
     "current": [
       {
         "ticker": "INTC",
-        "dd_from_52wk_high_pct": -36.5,
-        "dist_from_52wk_low_pct": 273.2
-      },
-      {
-        "ticker": "NFLX",
-        "dd_from_52wk_high_pct": -35.5,
-        "dist_from_52wk_low_pct": 20.5
+        "dd_from_52wk_high_pct": -37.9,
+        "dist_from_52wk_low_pct": 264.5
       },
       {
         "ticker": "SNDK",
-        "dd_from_52wk_high_pct": -34.9,
-        "dist_from_52wk_low_pct": 3147.8
+        "dd_from_52wk_high_pct": -36.6,
+        "dist_from_52wk_low_pct": 3065.4
       },
       {
-        "ticker": "HOOD",
-        "dd_from_52wk_high_pct": -30.1,
-        "dist_from_52wk_low_pct": 63.6
+        "ticker": "NFLX",
+        "dd_from_52wk_high_pct": -34.9,
+        "dist_from_52wk_low_pct": 21.6
       },
       {
         "ticker": "TSLA",
-        "dd_from_52wk_high_pct": -28.3,
-        "dist_from_52wk_low_pct": 17.8
+        "dd_from_52wk_high_pct": -28.5,
+        "dist_from_52wk_low_pct": 17.4
       },
       {
         "ticker": "META",
-        "dd_from_52wk_high_pct": -27.1,
-        "dist_from_52wk_low_pct": 8.0
+        "dd_from_52wk_high_pct": -26.7,
+        "dist_from_52wk_low_pct": 8.5
+      },
+      {
+        "ticker": "HOOD",
+        "dd_from_52wk_high_pct": -26.5,
+        "dist_from_52wk_low_pct": 72.0
       },
       {
         "ticker": "AVGO",
-        "dd_from_52wk_high_pct": -25.0,
-        "dist_from_52wk_low_pct": 23.5
+        "dd_from_52wk_high_pct": -25.8,
+        "dist_from_52wk_low_pct": 22.1
       },
       {
         "ticker": "MU",
-        "dd_from_52wk_high_pct": -23.2,
-        "dist_from_52wk_low_pct": 701.9
+        "dd_from_52wk_high_pct": -23.1,
+        "dist_from_52wk_low_pct": 702.7
       },
       {
         "ticker": "AMD",
-        "dd_from_52wk_high_pct": -18.6,
-        "dist_from_52wk_low_pct": 213.0
+        "dd_from_52wk_high_pct": -17.5,
+        "dist_from_52wk_low_pct": 217.0
       },
       {
         "ticker": "GOOGL",
-        "dd_from_52wk_high_pct": -13.2,
-        "dist_from_52wk_low_pct": 69.1
+        "dd_from_52wk_high_pct": -13.8,
+        "dist_from_52wk_low_pct": 68.0
       },
       {
         "ticker": "TSM",
-        "dd_from_52wk_high_pct": -12.4,
-        "dist_from_52wk_low_pct": 85.1
+        "dd_from_52wk_high_pct": -12.6,
+        "dist_from_52wk_low_pct": 84.8
       },
       {
         "ticker": "COST",
-        "dd_from_52wk_high_pct": -11.7,
-        "dist_from_52wk_low_pct": 14.0
+        "dd_from_52wk_high_pct": -12.1,
+        "dist_from_52wk_low_pct": 13.4
       },
       {
         "ticker": "NVDA",
-        "dd_from_52wk_high_pct": -9.8,
-        "dist_from_52wk_low_pct": 28.8
-      },
-      {
-        "ticker": "MSFT",
-        "dd_from_52wk_high_pct": -9.1,
-        "dist_from_52wk_low_pct": 38.7
+        "dd_from_52wk_high_pct": -9.5,
+        "dist_from_52wk_low_pct": 29.1
       },
       {
         "ticker": "AAPL",
-        "dd_from_52wk_high_pct": -8.6,
-        "dist_from_52wk_low_pct": 37.4
+        "dd_from_52wk_high_pct": -8.8,
+        "dist_from_52wk_low_pct": 37.2
+      },
+      {
+        "ticker": "MSFT",
+        "dd_from_52wk_high_pct": -8.5,
+        "dist_from_52wk_low_pct": 39.6
       },
       {
         "ticker": "AMZN",
-        "dd_from_52wk_high_pct": -7.6,
-        "dist_from_52wk_low_pct": 32.1
+        "dd_from_52wk_high_pct": -8.1,
+        "dist_from_52wk_low_pct": 31.3
       },
       {
         "ticker": "BRK-B",
-        "dd_from_52wk_high_pct": -5.1,
-        "dist_from_52wk_low_pct": 7.9
+        "dd_from_52wk_high_pct": -4.7,
+        "dist_from_52wk_low_pct": 8.4
       },
       {
         "ticker": "LLY",
-        "dd_from_52wk_high_pct": -2.4,
-        "dist_from_52wk_low_pct": 80.9
+        "dd_from_52wk_high_pct": -3.6,
+        "dist_from_52wk_low_pct": 78.5
       },
       {
         "ticker": "KO",

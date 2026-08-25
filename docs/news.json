@@ -1,32 +1,8 @@
 {
- "updated": "2026-08-25 20:52 UTC",
+ "updated": "2026-08-25 21:59 UTC",
  "items": [
   {
-   "time": "2026-08-25 20:38 UTC",
-   "title": "Dick's Sporting Goods stock falls 30% as retailer misses expectations, cites 'challenging' footwear market",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 20:27 UTC",
-   "title": "2 of our software stocks face major tests of whether their rallies are for real",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 20:07 UTC",
-   "title": "Options traders are betting on the quietest Nvidia earnings reaction in years. It could be an opportunity for AI bulls.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 20:05 UTC",
+   "time": "2026-08-25 21:54 UTC",
    "title": "Here's why markets are starting to care about the 2026 election 10 weeks out",
    "impact": "neutral",
    "note": "",
@@ -34,11 +10,35 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 19:52 UTC",
-   "title": "Kalshi traders see low likelihood of major crypto bill becoming law this year",
+   "time": "2026-08-25 21:47 UTC",
+   "title": "Waymo to launch driverless rides in Germany in 2027, entering third market outside U.S.",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 21:26 UTC",
+   "title": "OpenAI data center chief Chris Malone is out, the latest in a string of executive exits",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 21:05 UTC",
+   "title": "Is the K-shaped economy ending? Finance pros weigh in",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 21:01 UTC",
+   "title": "Why Meta’s stock could see a 50% rally, thanks to an overlooked AI wild card",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
