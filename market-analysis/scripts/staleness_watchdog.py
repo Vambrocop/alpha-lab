@@ -47,7 +47,18 @@ CHECKS = [
     # 美债研究:纯本地算(只吃 combined_prices,不联网、不碰 SEC)→ CI 每次全量跑都该刷新 = live。
     # 阈值 5 天:全量只在工作日盘前/盘后跑,跨周末最大自然间隔约 3 天,留 2 天给 CI 延迟。
     ("treasury",   WEB / "treasury_stock_link.json", "generated", 5, "美债→美股 treasury_stock_link.json", "live"),
+    # ── 2026-08-24 扫 CI 后补:workflow 里带 `|| echo ::warning::` 兜底的产物,此前【全无人盯】。
+    # ndx 就是这么烂 24 天的(CI 缺 lxml → 每跑必炸 → warning 被咽 → 数据发霉)。同款兜底的还有
+    # 这几个,今天虽都正常,但同一个陷阱等着——纳入监控,让下一次静默失败几天内就现形。
+    ("valpha150",  WEB / "valpha150.json",   "generated", 5,  "Valpha150大盘 valpha150.json", "live"),
+    ("wildpool",   WEB / "wildpool.json",    "generated", 5,  "野蛮池 wildpool.json", "live"),
+    ("earnings",   WEB / "earnings.json",    "generated", 5,  "财报日历 earnings.json", "live"),
+    # ticker_ondemand 内容由用户的 ticker_requests.txt 驱动(点单深算),但 CI 每次全量都会重算 →
+    # 仍该盯;阈值放宽到 14 天,避免"没人点单"时的误报吵闹。
+    ("ondemand",   WEB / "ticker_ondemand.json", "generated", 14, "点单深算 ticker_ondemand.json", "live"),
 ]
+# 已知未覆盖(刻意):fetch_cot / fetch_putcall 落的是 data/*.csv,没有内嵌时间戳字段;
+# 按文件 mtime 判龄在 git 干净检出里不可靠(mtime=检出时间),故不纳入,避免假阳性。
 
 # 同一超期项最多每 SNOOZE_DAYS 天提醒一次(此前是每天;而且 watchdog_state.json 被 CI 缓存回灌反复
 # 冲回旧日期 → 去重记忆丢失 → 一天轰炸多条。加长窗口 + refresh-data 把它纳入 re-assert 防回灌,双管齐下)。
