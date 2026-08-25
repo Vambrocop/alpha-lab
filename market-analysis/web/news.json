@@ -1,24 +1,16 @@
 {
- "updated": "2026-08-25 14:33 UTC",
+ "updated": "2026-08-25 15:31 UTC",
  "items": [
   {
-   "time": "2026-08-25 14:17 UTC",
-   "title": "Dick's Sporting Goods stock falls 20% as retailer misses expectations, cites 'challenging' footwear market",
+   "time": "2026-08-25 15:27 UTC",
+   "title": "We're trimming our position in an AI stock to protect our profits",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 13:59 UTC",
-   "title": "Stick with value stocks until everyone starts talking about them — they’re still under the radar, this Wall Street firm says",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 13:44 UTC",
+   "time": "2026-08-25 15:16 UTC",
    "title": "The 'debasement trade' returns after Bessent bond maneuver. Crypto and gold are back in style",
    "impact": "neutral",
    "note": "",
@@ -26,16 +18,24 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 13:00 UTC",
-   "title": "Apple announces new Mac Mini and Mac Studio models with AI upgrades",
-   "impact": "neutral",
+   "time": "2026-08-25 15:10 UTC",
+   "title": "Why Meta’s stock could see a 50% rally, thanks to an overlooked AI wild card",
+   "impact": "positive",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 12:59 UTC",
-   "title": "Jim Cramer's top 10 things to watch in the stock market Tuesday",
+   "time": "2026-08-25 15:04 UTC",
+   "title": "What Nvidia says on Wednesday to address concerns about its competitiveness could be key for the stock",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 14:47 UTC",
+   "title": "Dick's Sporting Goods stock falls 25% as retailer misses expectations, cites 'challenging' footwear market",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
