@@ -1,9 +1,17 @@
 {
- "updated": "2026-08-25 15:31 UTC",
+ "updated": "2026-08-25 16:09 UTC",
  "items": [
   {
-   "time": "2026-08-25 15:27 UTC",
-   "title": "We're trimming our position in an AI stock to protect our profits",
+   "time": "2026-08-25 16:04 UTC",
+   "title": "These growth stocks are still cheap, despite the S&P 500 being near a record high price-to-sales valuation",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 15:49 UTC",
+   "title": "Jim Cramer says this could be the key to sending Apple shares higher",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 14:47 UTC",
-   "title": "Dick's Sporting Goods stock falls 25% as retailer misses expectations, cites 'challenging' footwear market",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
