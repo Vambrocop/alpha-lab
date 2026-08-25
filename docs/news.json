@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-25 20:14 UTC",
+ "updated": "2026-08-25 20:52 UTC",
  "items": [
+  {
+   "time": "2026-08-25 20:38 UTC",
+   "title": "Dick's Sporting Goods stock falls 30% as retailer misses expectations, cites 'challenging' footwear market",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 20:27 UTC",
+   "title": "2 of our software stocks face major tests of whether their rallies are for real",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-25 20:07 UTC",
    "title": "Options traders are betting on the quietest Nvidia earnings reaction in years. It could be an opportunity for AI bulls.",
@@ -23,22 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 19:42 UTC",
-   "title": "Bond rout ending? Massive bets on bond rally dominate options market",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 19:35 UTC",
-   "title": "Has AI gotten any better at stock picking?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
