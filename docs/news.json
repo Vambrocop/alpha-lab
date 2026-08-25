@@ -1,17 +1,25 @@
 {
- "updated": "2026-08-25 13:46 UTC",
+ "updated": "2026-08-25 14:33 UTC",
  "items": [
   {
-   "time": "2026-08-25 13:44 UTC",
-   "title": "The 'debasement trade' returns after Bessent bond maneuver. Crypto and gold are back in style",
+   "time": "2026-08-25 14:17 UTC",
+   "title": "Dick's Sporting Goods stock falls 20% as retailer misses expectations, cites 'challenging' footwear market",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 13:35 UTC",
-   "title": "Dick's Sporting Goods stock falls 20% as retailer misses expectations, cites 'challenging' footwear market",
+   "time": "2026-08-25 13:59 UTC",
+   "title": "Stick with value stocks until everyone starts talking about them — they’re still under the radar, this Wall Street firm says",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 13:44 UTC",
+   "title": "The 'debasement trade' returns after Bessent bond maneuver. Crypto and gold are back in style",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 12:40 UTC",
-   "title": "Stick with value stocks until everyone starts talking about them — they’re still under the radar, this Wall Street firm says",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
