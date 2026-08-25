@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-25 19:51 UTC",
+ "updated": "2026-08-25 20:14 UTC",
  "items": [
+  {
+   "time": "2026-08-25 20:07 UTC",
+   "title": "Options traders are betting on the quietest Nvidia earnings reaction in years. It could be an opportunity for AI bulls.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 20:05 UTC",
+   "title": "Here's why markets are starting to care about the 2026 election 10 weeks out",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 19:52 UTC",
+   "title": "Kalshi traders see low likelihood of major crypto bill becoming law this year",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 19:42 UTC",
+   "title": "Bond rout ending? Massive bets on bond rally dominate options market",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-25 19:35 UTC",
    "title": "Has AI gotten any better at stock picking?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 19:24 UTC",
-   "title": "U.S.-Canada trade war threatens to worsen inflation for both economies. Neither can afford it.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 19:01 UTC",
-   "title": "OpenAI says its Broadcom custom chip is a winner. What does that mean for Nvidia?",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 18:53 UTC",
-   "title": "Waymo to launch driverless rides in Germany in 2027, entering third market outside U.S.",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 18:39 UTC",
-   "title": "Is the K-shaped economy ending? Finance pros weigh in",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
