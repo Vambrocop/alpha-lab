@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T22:02:31Z",
+  "generated": "2026-08-25T13:49:46Z",
   "source": "动量+低波动 选股 → 前向公开计分",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，观察池取头/尾各3）",
   "hold_td": 20,
@@ -18,11 +18,77 @@
       "hit_pct": 68.3,
       "mean_call_excess_pct": 5.59
     },
-    "n_pending": 126,
+    "n_pending": 132,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
   "recent": [
+    {
+      "symbol": "KO",
+      "view": "看好",
+      "pick_date": "2026-08-25",
+      "mom_pct": 15.0,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "LLY",
+      "view": "看好",
+      "pick_date": "2026-08-25",
+      "mom_pct": 20.3,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "AAPL",
+      "view": "看好",
+      "pick_date": "2026-08-25",
+      "mom_pct": 14.3,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "TSLA",
+      "view": "看淡",
+      "pick_date": "2026-08-25",
+      "mom_pct": -14.2,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "META",
+      "view": "看淡",
+      "pick_date": "2026-08-25",
+      "mom_pct": -11.2,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "TSM",
+      "view": "看淡",
+      "pick_date": "2026-08-25",
+      "mom_pct": 9.0,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
     {
       "symbol": "AAPL",
       "view": "看好",
@@ -396,72 +462,6 @@
       "excess_pct": null,
       "call_excess_pct": null,
       "hit": false
-    },
-    {
-      "symbol": "TSLA",
-      "view": "看淡",
-      "pick_date": "2026-08-17",
-      "mom_pct": -18.7,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "META",
-      "view": "看淡",
-      "pick_date": "2026-08-17",
-      "mom_pct": -10.9,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "TSM",
-      "view": "看淡",
-      "pick_date": "2026-08-17",
-      "mom_pct": 18.2,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "AAPL",
-      "view": "看好",
-      "pick_date": "2026-08-14",
-      "mom_pct": 17.1,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "AMZN",
-      "view": "看好",
-      "pick_date": "2026-08-14",
-      "mom_pct": 32.7,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "MSFT",
-      "view": "看好",
-      "pick_date": "2026-08-14",
-      "mom_pct": 24.5,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
     }
   ],
   "verdict": "已结算 128 条荐股：判断对(看好跑赢/看淡跑输 QQQ)的比例 64.8%。重叠窗口/幸存者偏差未除，别当 edge。",
@@ -485,11 +485,77 @@
         "hit_pct": 70.0,
         "mean_call_excess_pct": 5.56
       },
-      "n_pending": 121,
+      "n_pending": 127,
       "n_dropped": 0,
       "dropped_pct": 0.0
     },
     "recent": [
+      {
+        "symbol": "AAPL",
+        "view": "看好",
+        "pick_date": "2026-08-25",
+        "mom_pct": 36.1,
+        "settled": false,
+        "dropped": false,
+        "excess_pct": null,
+        "call_excess_pct": null,
+        "hit": false
+      },
+      {
+        "symbol": "KO",
+        "view": "看好",
+        "pick_date": "2026-08-25",
+        "mom_pct": 16.9,
+        "settled": false,
+        "dropped": false,
+        "excess_pct": null,
+        "call_excess_pct": null,
+        "hit": false
+      },
+      {
+        "symbol": "BRK-B",
+        "view": "看好",
+        "pick_date": "2026-08-25",
+        "mom_pct": 3.8,
+        "settled": false,
+        "dropped": false,
+        "excess_pct": null,
+        "call_excess_pct": null,
+        "hit": false
+      },
+      {
+        "symbol": "TSLA",
+        "view": "看淡",
+        "pick_date": "2026-08-25",
+        "mom_pct": -31.1,
+        "settled": false,
+        "dropped": false,
+        "excess_pct": null,
+        "call_excess_pct": null,
+        "hit": false
+      },
+      {
+        "symbol": "HOOD",
+        "view": "看淡",
+        "pick_date": "2026-08-25",
+        "mom_pct": -10.6,
+        "settled": false,
+        "dropped": false,
+        "excess_pct": null,
+        "call_excess_pct": null,
+        "hit": false
+      },
+      {
+        "symbol": "MSFT",
+        "view": "看淡",
+        "pick_date": "2026-08-25",
+        "mom_pct": -16.1,
+        "settled": false,
+        "dropped": false,
+        "excess_pct": null,
+        "call_excess_pct": null,
+        "hit": false
+      },
       {
         "symbol": "AAPL",
         "view": "看好",
@@ -858,72 +924,6 @@
         "view": "看淡",
         "pick_date": "2026-08-17",
         "mom_pct": -16.5,
-        "settled": false,
-        "dropped": false,
-        "excess_pct": null,
-        "call_excess_pct": null,
-        "hit": false
-      },
-      {
-        "symbol": "TSLA",
-        "view": "看淡",
-        "pick_date": "2026-08-17",
-        "mom_pct": -13.3,
-        "settled": false,
-        "dropped": false,
-        "excess_pct": null,
-        "call_excess_pct": null,
-        "hit": false
-      },
-      {
-        "symbol": "MSFT",
-        "view": "看淡",
-        "pick_date": "2026-08-17",
-        "mom_pct": -13.9,
-        "settled": false,
-        "dropped": false,
-        "excess_pct": null,
-        "call_excess_pct": null,
-        "hit": false
-      },
-      {
-        "symbol": "AAPL",
-        "view": "看好",
-        "pick_date": "2026-08-14",
-        "mom_pct": 27.9,
-        "settled": false,
-        "dropped": false,
-        "excess_pct": null,
-        "call_excess_pct": null,
-        "hit": false
-      },
-      {
-        "symbol": "KO",
-        "view": "看好",
-        "pick_date": "2026-08-14",
-        "mom_pct": 20.8,
-        "settled": false,
-        "dropped": false,
-        "excess_pct": null,
-        "call_excess_pct": null,
-        "hit": false
-      },
-      {
-        "symbol": "LLY",
-        "view": "看好",
-        "pick_date": "2026-08-14",
-        "mom_pct": 8.9,
-        "settled": false,
-        "dropped": false,
-        "excess_pct": null,
-        "call_excess_pct": null,
-        "hit": false
-      },
-      {
-        "symbol": "HOOD",
-        "view": "看淡",
-        "pick_date": "2026-08-14",
-        "mom_pct": -11.8,
         "settled": false,
         "dropped": false,
         "excess_pct": null,
