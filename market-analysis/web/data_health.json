@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-25T16:08:33.361936+00:00",
+  "generated": "2026-08-25T17:02:00.785488+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -216,9 +216,9 @@
       "ticker": "M2SL",
       "source": "live_api",
       "status": "ok",
-      "rows": 318,
-      "last_date": "2026-06-01",
-      "age_days": 85,
+      "rows": 319,
+      "last_date": "2026-07-01",
+      "age_days": 55,
       "stale_after_days": 120,
       "error": null
     },

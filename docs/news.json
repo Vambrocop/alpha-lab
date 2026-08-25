@@ -1,16 +1,24 @@
 {
- "updated": "2026-08-25 16:09 UTC",
+ "updated": "2026-08-25 17:02 UTC",
  "items": [
   {
-   "time": "2026-08-25 16:04 UTC",
-   "title": "These growth stocks are still cheap, despite the S&P 500 being near a record high price-to-sales valuation",
+   "time": "2026-08-25 16:46 UTC",
+   "title": "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace",
    "impact": "positive",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 15:49 UTC",
+   "time": "2026-08-25 16:45 UTC",
+   "title": "Gold hovers near three-month high on dollar weakness, Treasury bond buyback plans",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 16:41 UTC",
    "title": "Jim Cramer says this could be the key to sending Apple shares higher",
    "impact": "neutral",
    "note": "",
@@ -18,27 +26,19 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 15:16 UTC",
-   "title": "The 'debasement trade' returns after Bessent bond maneuver. Crypto and gold are back in style",
+   "time": "2026-08-25 16:31 UTC",
+   "title": "Are older Americans spoiling the economy for everyone else?",
    "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 15:10 UTC",
-   "title": "Why Meta’s stock could see a 50% rally, thanks to an overlooked AI wild card",
-   "impact": "positive",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 15:04 UTC",
-   "title": "What Nvidia says on Wednesday to address concerns about its competitiveness could be key for the stock",
+   "time": "2026-08-25 16:27 UTC",
+   "title": "Stanley Druckenmiller leads doubters who think Bessent's bond ploys will fail",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Markets",
    "kind": "auto"
   }
  ]
