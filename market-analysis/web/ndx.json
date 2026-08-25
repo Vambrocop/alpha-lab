@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-31",
-  "n": 103,
+  "generated": "2026-08-25",
+  "n": 102,
   "added": [
     "ALAB",
     "CRWV",
@@ -13,6 +13,7 @@
   "removed": [
     "CHTR",
     "CTSH",
+    "EA",
     "INSM",
     "VRSK",
     "ZS"
@@ -32,7 +33,6 @@
     "CTAS",
     "DASH",
     "DXCM",
-    "EA",
     "EXC",
     "FANG",
     "FAST",

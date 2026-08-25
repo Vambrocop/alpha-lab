@@ -7,3 +7,7 @@ scipy>=1.10,<2
 requests>=2.31,<3
 pytest>=8,<9
 scikit-learn>=1.3,<1.9   # walk_forward 模型对决 + factor_pruning 用逻辑回归/AUC；阶段性收紧，避免未来 sklearn/numpy 组合漂移打穿 CI
+lxml>=5.0,<7             # pandas.read_html 的解析后端（build_ndx 抓维基纳指100成分表要它）。
+                         # 2026-08-24 教训：CI 没装它 → build_ndx 每次 ImportError → `|| warning` 咽下去
+                         # → ndx.json 悄悄烂 24 天（本地有 lxml 所以一跑就成，最难发现的那类）。
+                         # 由 test_pipeline_deps.py 守门：缺了直接测试红，而不是数据慢慢发霉。
