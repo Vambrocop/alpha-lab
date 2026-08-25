@@ -152,6 +152,31 @@ def event_study(sp, event_dates, window_days=30, label="事件"):
 
     t_stat, p_value = stats.ttest_1samp(arr, base_mean)
 
+    # ── 置换检验(2026-08-24 新增·比 t 检验更适合本场景)────────────────────────────
+    # 为什么加:事件收益厚尾 + 事件数常只有个位数,ttest_1samp 假设 iid 正态,这种条件下
+    # 容易【高估】显著性;而我们把 p<0.10 当 "significant" 公开发布。置换检验不假设任何
+    # 分布:直接问「随便挑 n 个日子,能不能碰巧碰出这么极端的均值」。
+    # 做法:把历史上【每一个】等长窗口的累计收益做成池子(向量化 rolling),从中随机抽 n 个
+    # 求均值,重复 B 次得到零分布 → 观测均值落在多极端的位置即 p。
+    # 用 (1+命中数)/(B+1) 的偏保守写法:永远不会报出 p=0(有限次模拟不该声称"绝无可能")。
+    # 等价于 rolling(...).prod()-1,但用 log 累加实现(本版 pandas 的 Rolling 无 .prod;
+    # 且 log 累加数值更稳)。窗口内若有 <=-100% 的日收益 log1p 会得 -inf → dropna 一并剔除。
+    with np.errstate(divide="ignore", invalid="ignore"):
+        _logs = np.log1p(daily_ret)
+    win_pool = np.expm1(_logs.rolling(window_days).sum()).replace([np.inf, -np.inf], np.nan)
+    win_pool = win_pool.dropna().to_numpy(dtype=float)
+    p_perm = None
+    n_perm = 0
+    if len(win_pool) >= window_days:
+        n_perm = 5000
+        rng_p = np.random.default_rng(20260824)          # 固定种子:已发布 p 值可复现(repo 铁律)
+        draws = rng_p.choice(win_pool, size=(n_perm, len(arr)), replace=True)
+        null_means = draws.mean(axis=1)
+        center = float(null_means.mean())                # 零分布中心(=随机挑 n 天的期望均值)
+        obs_dev = abs(float(arr.mean()) - center)
+        hits = int(np.sum(np.abs(null_means - center) >= obs_dev))   # 双侧
+        p_perm = (1 + hits) / (n_perm + 1)
+
     avg_wr   = float(wr_arr.mean())
     lr = avg_wr / base_wr if base_wr > 0 else 1.0
 
@@ -166,7 +191,14 @@ def event_study(sp, event_dates, window_days=30, label="事件"):
         "lr":              round(lr, 4),
         "t_stat":          round(float(t_stat), 3),
         "p_value":         round(float(p_value), 4),
-        "significant":     bool(p_value < 0.10),
+        "p_permutation":   (None if p_perm is None else round(float(p_perm), 4)),
+        "n_permutations":  n_perm,
+        # significant 收紧为「两个检验都过」:t 检验(参数)+ 置换检验(无分布假设)。
+        # 只靠 t 检验会在厚尾/小样本下高估显著性——这是本项目最该避免的那类错。
+        # 口径变严不变松,且两个 p 都照登,谁想复核都看得见。
+        "significant":     bool(p_value < 0.10 and (p_perm is not None and p_perm < 0.10)),
+        "significant_ttest_only": bool(p_value < 0.10),
+        "significance_basis": "t 检验 p<0.10 且 置换检验 p<0.10(两者都需通过;置换=5000次随机抽同数量等长窗口的零分布,不假设正态)",
         "base_avg_pct":    round(base_mean * 100, 2),
         "returns":         [round(x * 100, 2) for x in arr.tolist()],
     }

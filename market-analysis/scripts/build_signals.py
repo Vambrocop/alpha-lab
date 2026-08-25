@@ -630,6 +630,10 @@ def load_event_study():
                 "base_win_rate": v["base_win_rate"],
                 "lr":          v["lr"],
                 "p_value":     v["p_value"],
+                # 置换检验(2026-08-24):厚尾+小样本下 t 检验会高估显著性,故 significant 已收紧为
+                # 「t 检验与置换检验都过」。两个 p 都透传,前端/复核者能看见依据、而非只看到一个收紧后的旗标。
+                "p_permutation": v.get("p_permutation"),
+                "significant_ttest_only": v.get("significant_ttest_only"),
                 "significant": v["significant"],
                 "base_avg":    v["base_avg_pct"],
             }
