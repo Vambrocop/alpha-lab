@@ -29,6 +29,34 @@ WEB_DIR  = Path(__file__).parent.parent / "web"
 HORIZONS = [1, 5, 10, 20, 30]   # 前向天数
 
 
+def block_bootstrap_p(x, base_rate, block, n_iter=5000, seed=20260824):
+    """移动块自助 p 值 —— 尊重「前向窗口重叠」造成的自相关(2026-08-24 新增)。
+
+    为什么必须有:up_{h}d / ret_{h}d 是**逐日**算的 h 日前向结果,相邻两天的窗口重叠 (h-1)/h,
+    高度自相关。`ttest_1samp` 把每天当独立观测 → 有效样本约 n/h、标准误被低估约 √h 倍 →
+    **p 值被低估一到两个数量级**。实测(NASDAQ 校准桶):naive p=0.0001 → 块自助 0.052;
+    0.0003 → 0.089;<51% 桶 0.033 → 0.448(显著性直接翻掉)。
+    这与 dip_hold_study / fear_greed 的去重叠段级自助是同一套诚实标准,此处补齐。
+
+    块长取 = 前向窗口长度 h(一个块内的重叠结构被整体搬走,块之间近似独立)。
+    p 用 (1+命中)/(B+1) 的保守写法,永不报 0;固定种子保证已发布 p 可复现。
+    """
+    x = np.asarray(x, dtype=float)
+    n = len(x)
+    block = max(1, min(int(block), n))
+    if n < 2:
+        return None
+    rng = np.random.default_rng(seed)
+    n_blocks = int(np.ceil(n / block))
+    starts = rng.integers(0, n - block + 1, size=(n_iter, n_blocks))
+    idx = (starts[:, :, None] + np.arange(block)[None, None, :]).reshape(n_iter, -1)[:, :n]
+    means = x[idx].mean(axis=1)
+    center = float(means.mean())
+    obs_dev = abs(float(x.mean()) - float(base_rate))
+    hits = int(np.sum(np.abs(means - center) >= obs_dev))
+    return (1 + hits) / (n_iter + 1)
+
+
 def run_backtest(daily, long_csv, label):
     """用「信号对应指数自身」的长历史验证（纳指信号→纳指收益，标普→标普）"""
     print(f"=== 贝叶斯信号回测验证（{label}）===\n")
@@ -95,7 +123,7 @@ def run_backtest(daily, long_csv, label):
         # 另注意：先验/LR由全历史估计，本回测属样本内验证；
         # 真实样本外表现以 walk_forward 结果为准。
         "index": label,
-        "method_note": "样本内验证；重叠窗口t检验p值偏乐观，样本外表现见walk_forward",
+        "method_note": "样本内验证；样本外表现见 walk_forward。**重叠窗口已按块自助修正**(2026-08-24):up_{h}d 逐日采样、相邻样本共享 h-1 天,t 检验把每天当独立观测会低估 p 一到两个数量级(实测校准桶 0.0001→0.052、0.0003→0.089、0.033→0.448)。故 significant 收紧为「t 检验与块自助(块长=前向窗口)都过」,两个 p 值均照登、可自行复核。",
         "degraded": bool(df.empty),   # True＝本轮 0 条可回测记录，以下字段为降级空结构
     }
 
@@ -136,6 +164,7 @@ def run_backtest(daily, long_csv, label):
             avg_ret  = float(r.mean())
             med_ret  = float(np.median(r))
             t_stat, p_val = stats.ttest_1samp(s, base_wr)
+            p_blk = block_bootstrap_p(s, base_wr, block=h)      # 块长=该窗口长度(尊重重叠)
             diff_wr  = round(wr - float(base_wr * 100), 1)
 
             row["horizons"][f"{h}d"] = {
@@ -145,7 +174,10 @@ def run_backtest(daily, long_csv, label):
                 "diff_vs_baseline": diff_wr,
                 "t_stat":     round(float(t_stat), 3),
                 "p_value":    round(float(p_val), 4),
-                "significant":bool(p_val < 0.10),
+                "p_block_bootstrap": (None if p_blk is None else round(float(p_blk), 4)),
+                # 收紧:t 检验 + 块自助都过才算显著(前者忽略重叠自相关会低估 p 一到两个数量级)
+                "significant":bool(p_val < 0.10 and p_blk is not None and p_blk < 0.10),
+                "significant_ttest_only": bool(p_val < 0.10),
             }
             sig_str = "[*]" if p_val < 0.10 else "   "
             print(f"    {h:>2}日: 胜率={wr:.1f}%({diff_wr:+.1f}pp)  "
@@ -171,7 +203,9 @@ def run_backtest(daily, long_csv, label):
                        .split("-")[0].replace("%","")) / 100
         wr   = float(s.mean() * 100)
         avg  = float(r.mean())
-        t_stat, p_val = stats.ttest_1samp(s.values, df["up_20d"].mean())
+        _base20 = df["up_20d"].mean()
+        t_stat, p_val = stats.ttest_1samp(s.values, _base20)
+        p_blk = block_bootstrap_p(s.values, _base20, block=20)
         cal_rows.append({
             "bucket":        lbl,
             "prob_mid":      round(mid, 3),
@@ -180,7 +214,9 @@ def run_backtest(daily, long_csv, label):
             "avg_ret_20d":   round(avg, 2),
             "t_stat":        round(float(t_stat), 3),
             "p_value":       round(float(p_val), 4),
-            "significant":   bool(p_val < 0.10),
+            "p_block_bootstrap": (None if p_blk is None else round(float(p_blk), 4)),
+            "significant":   bool(p_val < 0.10 and p_blk is not None and p_blk < 0.10),
+            "significant_ttest_only": bool(p_val < 0.10),
         })
         sig_str = "[*]" if p_val < 0.10 else "   "
         print(f"  {lbl:>9}: 实际胜率={wr:.1f}%  均值={avg:+.2f}%  n={len(sub)} {sig_str}")
@@ -195,7 +231,9 @@ def run_backtest(daily, long_csv, label):
     wr4  = float(tier4_up.mean() * 100)
     wra  = float(all_up.mean() * 100)
     n4   = len(tier4_up)
+    # 注:ttest_ind 在此本就不当(tier4 是 all 的**子集**,两样本不独立);块自助对基率检验更合适。
     t_stat, p_val = stats.ttest_ind(tier4_up.values, all_up.values)
+    p_blk = block_bootstrap_p(tier4_up.values, float(all_up.mean()), block=20)
 
     print(f"  仅Tier≥4买入：胜率={wr4:.1f}%  n={n4}天  "
           f"vs 全时间买入={wra:.1f}%  p={p_val:.4f}")
@@ -206,7 +244,9 @@ def run_backtest(daily, long_csv, label):
         "diff":               round(wr4 - wra, 1),
         "n_days":             n4,
         "p_value":            round(float(p_val), 4),
-        "significant":        bool(p_val < 0.10),
+        "p_block_bootstrap":  (None if p_blk is None else round(float(p_blk), 4)),
+        "significant":        bool(p_val < 0.10 and p_blk is not None and p_blk < 0.10),
+        "significant_ttest_only": bool(p_val < 0.10),
         "avg_return_20d":     round(float(df[df["tier"]>=4]["ret_20d"].mean()), 2),
         "baseline_avg_ret":   round(float(df["ret_20d"].mean()), 2),
     }

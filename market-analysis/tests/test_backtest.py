@@ -74,20 +74,31 @@ def test_by_tier_win_rate_matches_planted_distribution(planted):
 
 
 # ── ② calibration 分桶结构 + significant 布尔与 p_value 一致 ────────────────
+def _assert_significance_contract(cell):
+    """新契约:significant = (t 检验 p<0.10) AND (块自助 p<0.10);口径只会更严不会更松。"""
+    pt = cell["p_value"] < 0.10
+    pb = cell.get("p_block_bootstrap")
+    assert cell["significant_ttest_only"] == pt          # 旧口径仍照登,可复核
+    assert cell["significant"] == (pt and pb is not None and pb < 0.10)
+    assert not (cell["significant"] and not cell["significant_ttest_only"])   # 只严不松
+
+
 def test_significant_matches_p_value_threshold_everywhere(planted):
-    """P0-1"高度显著"文案的后端锚：significant 必须严格等价于 p_value < 0.10，
-    覆盖 by_tier 全部 5 档 x 5 horizon、calibration_20d 全部分桶、tier4_strategy。"""
+    """显著性契约的后端锚。2026-08-24 收紧:significant 不再等价于 p_value<0.10,而是
+    **t 检验与块自助都过**(前向窗口逐日重叠 → t 检验把每天当独立观测,会低估 p 一到两个
+    数量级;实测 SP500 有 3 条"显著"因此被撤销)。这里锚新契约,并另锚 significant_ttest_only
+    仍等价于旧口径(两个 p 都照登,可复核)。覆盖 by_tier 5x5、calibration_20d、tier4_strategy。"""
     res = bt.run_backtest(planted, "TEST_long.csv", "TEST")
     checked = 0
     for row in res["by_tier"]:
         for h in row["horizons"].values():
-            assert h["significant"] == (h["p_value"] < 0.10)
+            _assert_significance_contract(h)
             checked += 1
     for row in res["calibration_20d"]:
-        assert row["significant"] == (row["p_value"] < 0.10)
+        _assert_significance_contract(row)
         checked += 1
     t4 = res["tier4_strategy"]
-    assert t4["significant"] == (t4["p_value"] < 0.10)
+    _assert_significance_contract(t4)
     checked += 1
     assert checked == 5 * 5 + len(res["calibration_20d"]) + 1   # 防止未来误删断言导致漏检
     # 见证(Fable 审)：至少一个 cell 的 p 落在 (0.05,0.10) 判别带——否则 significant 阈值
@@ -106,7 +117,8 @@ def test_calibration_bucket_structure(planted):
         assert row["bucket"] in known_labels
         assert row["n"] >= 20                                   # 门槛：n<20 的分桶不进列表
         assert set(row) == {"bucket", "prob_mid", "n", "actual_wr_20d",
-                             "avg_ret_20d", "t_stat", "p_value", "significant"}
+                             "avg_ret_20d", "t_stat", "p_value", "significant",
+                             "p_block_bootstrap", "significant_ttest_only"}
 
 
 # ── ③ tier4_strategy 字段齐全 + diff ≈ win_rate − baseline ─────────────────
@@ -114,7 +126,7 @@ def test_tier4_strategy_fields_and_diff_consistency(planted):
     res = bt.run_backtest(planted, "TEST_long.csv", "TEST")
     t4 = res["tier4_strategy"]
     expected_keys = {"win_rate_20d", "baseline_win_rate", "diff", "n_days",
-                      "p_value", "significant", "avg_return_20d", "baseline_avg_ret"}
+                      "p_value", "significant", "avg_return_20d", "baseline_avg_ret", "p_block_bootstrap", "significant_ttest_only"}
     assert set(t4) == expected_keys
     assert t4["n_days"] == 40                                   # tier4(20) + tier5(20)
     # diff 用未取整原值算；win_rate_20d/baseline_win_rate 各自独立取整——两者相减
