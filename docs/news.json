@@ -1,16 +1,16 @@
 {
- "updated": "2026-08-25 18:20 UTC",
+ "updated": "2026-08-25 19:06 UTC",
  "items": [
   {
-   "time": "2026-08-25 17:32 UTC",
-   "title": "This driverless-truck company could be a ‘long-term winner’ in a market Tesla plans to enter soon",
+   "time": "2026-08-25 19:01 UTC",
+   "title": "OpenAI says its Broadcom custom chip is a winner. What does that mean for Nvidia?",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 17:30 UTC",
+   "time": "2026-08-25 18:53 UTC",
    "title": "Waymo to launch driverless rides in Germany in 2027, entering third market outside U.S.",
    "impact": "neutral",
    "note": "",
@@ -18,27 +18,27 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 17:21 UTC",
-   "title": "Apple’s next chapter: 3 pressing challenges facing Tim Cook’s successor as CEO",
+   "time": "2026-08-25 18:39 UTC",
+   "title": "Is the K-shaped economy ending? Finance pros weigh in",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 17:15 UTC",
-   "title": "Stanley Druckenmiller leads doubters who think Bessent's bond ploys will fail",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 16:46 UTC",
-   "title": "Bitcoin price extends gains, briefly tops $81,000 as crypto rally gathers pace",
+   "time": "2026-08-25 18:29 UTC",
+   "title": "Why AMD can beat rivals Intel and Nvidia in the market for data-center CPUs",
    "impact": "positive",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-25 17:32 UTC",
+   "title": "This driverless-truck company could be a ‘long-term winner’ in a market Tesla plans to enter soon",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
