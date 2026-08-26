@@ -148,33 +148,70 @@ def run(write=True):
     # 对照：BTC 动量条件差 vs 纳指自身动量条件差 → BTC 是否真给增量信息
     nq_gap = ctrl["pos_minus_neg_uprate_pp"]
     incr = (round(pos_gap - nq_gap, 1) if pos_gap is not None and nq_gap is not None else None)
+    # 数据层双语(2026-08-25):分支只判一次、中英从同一模板渲染,杜绝两套 if 各自漂移。
     if incr is None:
-        control_note = "纳指自身动量对照数据不足"
+        ctrl_key = "nodata"
     elif incr >= 3:
-        control_note = f"已对照纳指自身20日动量(同口径差 {nq_gap}pp)：BTC 多给约 {incr}pp 增量、不只是大盘动量代理"
+        ctrl_key = "incremental"
     elif incr <= -1:
-        control_note = f"已对照纳指自身20日动量(差 {nq_gap}pp)：纳指自身动量差更大、BTC 反没多给——信号大概率只是大盘动量代理"
+        ctrl_key = "proxy"
     else:
-        control_note = f"已对照纳指自身20日动量(差 {nq_gap}pp)：BTC 仅多给 {incr}pp(≈持平)——多半与大盘动量重叠、增量有限"
+        ctrl_key = "overlap"
+    _CTRL = {
+        "nodata": ("纳指自身动量对照数据不足",
+                   "Not enough data to control for NASDAQ's own momentum"),
+        "incremental": (f"已对照纳指自身20日动量(同口径差 {nq_gap}pp)：BTC 多给约 {incr}pp 增量、不只是大盘动量代理",
+                        f"Controlled for NASDAQ's own 20-day momentum (same-basis gap {nq_gap}pp): BTC adds about "
+                        f"{incr}pp on top — not merely a proxy for broad-market momentum"),
+        "proxy": (f"已对照纳指自身20日动量(差 {nq_gap}pp)：纳指自身动量差更大、BTC 反没多给——信号大概率只是大盘动量代理",
+                  f"Controlled for NASDAQ's own 20-day momentum (gap {nq_gap}pp): NASDAQ's own momentum gap is larger and "
+                  f"BTC adds nothing — the signal is most likely just a proxy for broad-market momentum"),
+        "overlap": (f"已对照纳指自身20日动量(差 {nq_gap}pp)：BTC 仅多给 {incr}pp(≈持平)——多半与大盘动量重叠、增量有限",
+                    f"Controlled for NASDAQ's own 20-day momentum (gap {nq_gap}pp): BTC adds only {incr}pp (≈flat) — "
+                    f"it largely overlaps with broad-market momentum; incremental value is limited"),
+    }
+    control_note, control_note_en = _CTRL[ctrl_key]
     edge_robust = bool(holds) and n_hold == len(holds)
     n_strong = sum(1 for r in regimes if (r.get("cond_pos_minus_neg_uprate_pp") or 0) >= 5.0)
     seg = f"方向同号 {n_hold}/{len(holds)} 段(其中 {n_strong} 段优势≥5pp；早段约3pp接近噪声、强度随期递增)"
+    seg_en = (f"same sign in {n_hold}/{len(holds)} regime segments ({n_strong} with an edge ≥5pp; the earliest segment "
+              f"is ~3pp and close to noise, strength increases over time)")
     risk = (f"Sharpe {sp['sharpe']} vs {bp['sharpe']}、回撤 {sp['max_dd_pct']}% vs {bp['max_dd_pct']}%(浅 {dd_better}pp)"
             f"——但属单一历史路径、无置信区间，可能不重复")
+    risk_en = (f"Sharpe {sp['sharpe']} vs {bp['sharpe']}, drawdown {sp['max_dd_pct']}% vs {bp['max_dd_pct']}% "
+               f"({dd_better}pp shallower) — but this is a single historical path with no confidence interval; "
+               f"it may not repeat")
     # 诚实裁决：分清「方向可预测」「绝对收益可交易」「风险调整划算」三件事；弱证据要标弱（审 P1）
     if edge_robust and excess > 0:
-        verdict = f"稳健可用：{seg}，overlay 年化超额 +{excess}pp"
+        v_key = "robust"
     elif edge_robust and (sharpe_better > 0 or dd_better > 0):
-        verdict = (f"信号真·风险取舍：{seg}；裸 overlay 让出 {abs(excess)}pp 年化，换 {risk}。"
-                   f"要风险调整收益的可参考，要最大绝对收益的死拿更好")
+        v_key = "tradeoff"
     elif edge_robust:
-        verdict = (f"信号真但难交易：{seg}，但裸 overlay 年化({excess}pp)/Sharpe/回撤都没占便宜"
-                   f"——连弱势期纳指仍约6成上涨，裸 exit 不划算")
+        v_key = "hard"
     elif holds and n_hold >= max(1, len(holds) - 1):
-        verdict = f"多数同号：{seg}"
+        v_key = "mostly"
     else:
-        verdict = f"体制依赖：仅 {n_hold}/{len(holds)} 段同号，别当稳定信号"
-    verdict = f"{verdict}。{control_note}"
+        v_key = "regime"
+    _V = {
+        "robust": (f"稳健可用：{seg}，overlay 年化超额 +{excess}pp",
+                   f"Robust and usable: {seg_en}; overlay excess CAGR +{excess}pp"),
+        "tradeoff": (f"信号真·风险取舍：{seg}；裸 overlay 让出 {abs(excess)}pp 年化，换 {risk}。"
+                     f"要风险调整收益的可参考，要最大绝对收益的死拿更好",
+                     f"Signal is real, but it is a risk trade-off: {seg_en}; the naive overlay gives up "
+                     f"{abs(excess)}pp of annualised return in exchange for {risk_en}. Worth a look if you optimise "
+                     f"risk-adjusted return; if you want maximum absolute return, just hold"),
+        "hard": (f"信号真但难交易：{seg}，但裸 overlay 年化({excess}pp)/Sharpe/回撤都没占便宜"
+                 f"——连弱势期纳指仍约6成上涨，裸 exit 不划算",
+                 f"Signal is real but hard to trade: {seg_en}, yet the naive overlay wins on none of annualised "
+                 f"return ({excess}pp), Sharpe or drawdown — even in weak regimes NASDAQ still rises ~60% of the "
+                 f"time, so simply exiting does not pay"),
+        "mostly": (f"多数同号：{seg}", f"Mostly the same sign: {seg_en}"),
+        "regime": (f"体制依赖：仅 {n_hold}/{len(holds)} 段同号，别当稳定信号",
+                   f"Regime-dependent: only {n_hold}/{len(holds)} segments share the same sign — "
+                   f"do not treat it as a stable signal"),
+    }
+    verdict = f"{_V[v_key][0]}。{control_note}"
+    verdict_en = f"{_V[v_key][1]}. {control_note_en}"
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "date_range": [str(px.index[0].date()), str(px.index[-1].date())], "n_days": int(len(px)),
@@ -186,7 +223,7 @@ def run(write=True):
                      "time_in_market_pct": round(float(pos.mean()) * 100, 1),
                      "strategy": sp, "buyhold": bp, "excess_cagr_pp": excess,
                      "dd_shallower_pp": dd_better, "sharpe_diff": sharpe_better},
-        "regimes": regimes, "verdict": verdict,
+        "regimes": regimes, "verdict": verdict, "verdict_en": verdict_en,
         "caveat": ("出格区·把红线此前剥掉的方向亮出来诚实检验。非荐股、非保证、会错、过去≠未来；"
                    "BTC 与纳指同属高风险资产，相关≠因果；" + control_note +
                    "；Sharpe/回撤改善属单一历史路径、无置信区间；FRAGILE(符号一致性0.8)→ 看体制段。每跑 append 计分。"),
