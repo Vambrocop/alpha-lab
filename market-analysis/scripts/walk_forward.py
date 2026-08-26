@@ -349,12 +349,21 @@ def evaluate_on_test(test_df, probs):
         sub = actual[mask]
         wr  = float(sub.mean() * 100)
         t_stat, p_val = stats.ttest_1samp(sub, actual.mean())
+        # 2026-08-25:分档显著性此前只用 t 检验,但 fwd_up_20d 是逐日采样的 20 日前向、
+        # 相邻样本共享 19 天 → t 检验乐观约一个数量级(本文件 P2-4 早已在 Tier≥4 汇总处指出并用块自助,
+        # 分档这里是漏网)。复用同一个 block_bootstrap_diff(它对任意 mask 通用,不限 Tier≥4),
+        # significant 收紧为「t 检验与块自助都过」;两个 p 都照登,可复核。
+        bb_t = block_bootstrap_diff(mask.values if hasattr(mask, "values") else np.asarray(mask), actual)
+        p_boot = (bb_t or {}).get("p_boot")
         result["tiers"][tier] = {
             "n":        int(mask.sum()),
             "win_rate": round(wr, 1),
             "diff":     round(wr - base_wr, 1),
             "p_value":  round(float(p_val), 4),
-            "significant": bool(p_val < 0.10),
+            "p_boot":   p_boot,
+            "boot_ci95": (bb_t or {}).get("ci95"),
+            "significant": bool(p_val < 0.10 and p_boot is not None and p_boot < 0.10),
+            "significant_ttest_only": bool(p_val < 0.10),
         }
 
     # Tier≥4 汇总
@@ -362,12 +371,17 @@ def evaluate_on_test(test_df, probs):
     if mask4.sum() >= 10:
         sub4 = actual[mask4]
         t_stat4, p_val4 = stats.ttest_1samp(sub4, actual.mean())
+        bb4 = block_bootstrap_diff(mask4.values if hasattr(mask4, "values") else np.asarray(mask4), actual)
+        p_boot4 = (bb4 or {}).get("p_boot")
         result["tier4_plus"] = {
             "n":        int(mask4.sum()),
             "win_rate": round(float(sub4.mean() * 100), 1),
             "diff":     round(float(sub4.mean() * 100) - base_wr, 1),
             "p_value":  round(float(p_val4), 4),
-            "significant": bool(p_val4 < 0.10),
+            "p_boot":   p_boot4,
+            "boot_ci95": (bb4 or {}).get("ci95"),
+            "significant": bool(p_val4 < 0.10 and p_boot4 is not None and p_boot4 < 0.10),
+            "significant_ttest_only": bool(p_val4 < 0.10),
         }
     return result
 

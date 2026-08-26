@@ -60,3 +60,23 @@ def test_degenerate_inputs_return_none():
     """样本 <2 → None(调用方据此不判显著,而不是崩)。"""
     assert block_bootstrap_p(np.array([1.0]), 0.5, block=20) is None
     assert block_bootstrap_p(np.array([]), 0.5, block=20) is None
+
+
+# ── walk_forward 分档显著性也收紧为「t 检验 + 块自助」(2026-08-25) ─────────────
+def test_walk_forward_tier_significance_uses_block_bootstrap():
+    """walk_forward 是项目宣称的"真样本外权威",其分档显著性此前只用 t 检验
+    (fwd_up_20d 逐日采样、相邻共享 19 天 → 乐观约一个数量级;本文件 P2-4 早在
+    Tier>=4 汇总处用了块自助,分档是漏网)。这里守:不同 mask 必须给出不同的块自助 p
+    ——防"看似接上、实则每格算的是同一个东西"(上线时 fold0 两档 p 恰好相同,
+    经此法核实为真巧合而非 bug)。"""
+    import numpy as np
+    from walk_forward import block_bootstrap_diff
+    rng = np.random.default_rng(0)
+    y = (rng.random(500) < 0.62).astype(float)
+    m1 = np.zeros(500, bool); m1[:150] = True; rng.shuffle(m1)
+    m2 = np.zeros(500, bool); m2[:300] = True; rng.shuffle(m2)
+    a = block_bootstrap_diff(m1, y, seed=42)
+    b = block_bootstrap_diff(m2, y, seed=42)
+    assert a is not None and b is not None
+    assert a["ci95"] != b["ci95"], "不同 mask 却得到同一 CI = mask 没真正传进去"
+    assert 0.0 <= a["p_boot"] <= 1.0 and 0.0 <= b["p_boot"] <= 1.0
