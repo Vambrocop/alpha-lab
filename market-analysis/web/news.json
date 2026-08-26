@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-26 18:09 UTC",
+ "updated": "2026-08-26 20:17 UTC",
  "items": [
   {
-   "time": "2026-08-26 17:40 UTC",
-   "title": "Apple sets iPhone launch event for Sept. 9, first under new CEO John Ternus",
+   "time": "2026-08-26 20:16 UTC",
+   "title": "Salesforce, Anthropic expand partnership as Benioff responds to ‘SaaSpocalypse’ concerns",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 17:32 UTC",
-   "title": "The biggest risk to retirement plans may no longer be a stock market crash or inflation",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-26 17:31 UTC",
-   "title": "The U.S. economy is better than it looks — but it might be due for a slowdown",
+   "time": "2026-08-26 20:16 UTC",
+   "title": "Salesforce’s stock surges as AI momentums fuel revenue growth",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 17:12 UTC",
-   "title": "Meta dodges ‘Big Tobacco’ nightmare with $18 billion settlement in child-safety lawsuit",
-   "impact": "neutral",
+   "time": "2026-08-26 20:13 UTC",
+   "title": "Salesforce stock jumps 11% on AI growth and Anthropic investment gain",
+   "impact": "positive",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 17:02 UTC",
-   "title": "Economists want Warsh to share more on his view of the economy at Jackson Hole, says CNBC survey",
+   "time": "2026-08-26 19:15 UTC",
+   "title": "OpenAI’s Jalapeño AI chip brings new 'threat' to Nvidia margins as custom silicon gains ground",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 19:06 UTC",
+   "title": "Are older Americans spoiling the economy for everyone else?",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
