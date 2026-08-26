@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-26 20:17 UTC",
+ "updated": "2026-08-26 23:48 UTC",
  "items": [
   {
-   "time": "2026-08-26 20:16 UTC",
-   "title": "Salesforce, Anthropic expand partnership as Benioff responds to ‘SaaSpocalypse’ concerns",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-26 20:16 UTC",
-   "title": "Salesforce’s stock surges as AI momentums fuel revenue growth",
-   "impact": "neutral",
+   "time": "2026-08-26 22:50 UTC",
+   "title": "Salesforce’s stock gets an Anthropic boost — and more highlights from earnings",
+   "impact": "positive",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 20:13 UTC",
-   "title": "Salesforce stock jumps 11% on AI growth and Anthropic investment gain",
+   "time": "2026-08-26 22:39 UTC",
+   "title": "Salesforce stock jumps 12% on AI growth and Anthropic investment gain",
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 19:15 UTC",
-   "title": "OpenAI’s Jalapeño AI chip brings new 'threat' to Nvidia margins as custom silicon gains ground",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-26 19:06 UTC",
-   "title": "Are older Americans spoiling the economy for everyone else?",
+   "time": "2026-08-26 21:58 UTC",
+   "title": "Meta dodges ‘Big Tobacco’ nightmare with $18 billion settlement in child-safety lawsuit",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 21:56 UTC",
+   "title": "CrowdStrike’s stock soars after AI fuels the cybersecurity company’s ‘best quarter in history’",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 21:17 UTC",
+   "title": "Meta settles social media addiction case with California, other states for $16.7 billion",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
