@@ -1,8 +1,16 @@
 {
- "updated": "2026-08-26 13:51 UTC",
+ "updated": "2026-08-26 14:32 UTC",
  "items": [
   {
-   "time": "2026-08-26 13:41 UTC",
+   "time": "2026-08-26 14:29 UTC",
+   "title": "Customers are fleeing TurboTax over price, and Intuit’s stock is sliding",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 14:17 UTC",
    "title": "Meta settles social media addiction case with California, other states for $16.7 billion",
    "impact": "neutral",
    "note": "",
@@ -10,35 +18,27 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 13:40 UTC",
-   "title": "Meta’s stock rises as the company settles case in social-media addiction trial",
+   "time": "2026-08-26 14:13 UTC",
+   "title": "10-year Treasury yield is little changed after PCE inflation report is mostly as expected",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 14:06 UTC",
+   "title": "12 stocks for ‘bottom-fishing’ investors looking for cheap growth opportunities",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 13:35 UTC",
-   "title": "Fed’s preferred inflation gauge shows core prices rose 3.3% annually in July",
+   "time": "2026-08-26 14:00 UTC",
+   "title": "Your portfolio can recover from a bear market, but can it survive you living to 110?",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-26 13:35 UTC",
-   "title": "Dollar and bond markets 'on edge' ahead of Jackson Hole as Bessent's market intervention piles pressure on Warsh",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-26 13:27 UTC",
-   "title": "OpenAI’s Jalapeño AI chip brings new 'threat' to Nvidia margins as custom silicon gains ground",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
