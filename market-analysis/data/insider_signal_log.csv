@@ -34,7 +34,7 @@ filed_date,ticker,insider,title,txn_date,shares,value,entry_date,entry_px,exit_d
 2026-06-26,HNRG,Hudson Daniel Timothy,isDirector,2026-06-24,3000.0,51120.0,2026-06-29,16.93,2026-07-29,13.83,-18.311,-0.834,-17.477,False,True,False
 2026-07-31,MLPT,"Catalyst4, Inc.",isTenPercentOwner,2026-07-30,1000000.0,13000000.0,,,,,,,,,False,False
 2026-07-31,COE,Huang Jack Jiajia,Chief Executive Officer,2026-07-27,451320.0,7658900.4,,,,,,,,,False,False
-2026-07-31,COE,Huang Jack Jiajia,Chief Executive Officer,2026-07-24,185880.0,3022408.8,,,,,,,,,False,False
+2026-07-31,COE,Huang Jack Jiajia,Chief Executive Officer,2026-07-24,185880.0,3022408.8,2026-07-27,17.2,2026-08-26,15.8,-8.14,3.671,-11.81,False,True,False
 2026-07-31,MLPT,"Catalyst4, Inc.",isTenPercentOwner,2026-07-28,141088.0,1515510.86,,,,,,,,,False,False
 2026-07-31,MLPT,"Catalyst4, Inc.",isTenPercentOwner,2026-07-28,65137.0,761392.91,,,,,,,,,False,False
 2026-07-31,ACI,MORRIS SUSAN,Chief Executive Officer,2026-07-28,20277.0,232273.04,,,,,,,,,False,False

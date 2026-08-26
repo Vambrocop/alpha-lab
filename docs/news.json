@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-25 21:59 UTC",
+ "updated": "2026-08-26 13:51 UTC",
  "items": [
   {
-   "time": "2026-08-25 21:54 UTC",
-   "title": "Here's why markets are starting to care about the 2026 election 10 weeks out",
+   "time": "2026-08-26 13:41 UTC",
+   "title": "Meta settles social media addiction case with California, other states for $16.7 billion",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-25 21:47 UTC",
-   "title": "Waymo to launch driverless rides in Germany in 2027, entering third market outside U.S.",
+   "time": "2026-08-26 13:40 UTC",
+   "title": "Meta’s stock rises as the company settles case in social-media addiction trial",
    "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 21:26 UTC",
-   "title": "OpenAI data center chief Chris Malone is out, the latest in a string of executive exits",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 21:05 UTC",
-   "title": "Is the K-shaped economy ending? Finance pros weigh in",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-25 21:01 UTC",
-   "title": "Why Meta’s stock could see a 50% rally, thanks to an overlooked AI wild card",
-   "impact": "positive",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 13:35 UTC",
+   "title": "Fed’s preferred inflation gauge shows core prices rose 3.3% annually in July",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Markets",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 13:35 UTC",
+   "title": "Dollar and bond markets 'on edge' ahead of Jackson Hole as Bessent's market intervention piles pressure on Warsh",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-26 13:27 UTC",
+   "title": "OpenAI’s Jalapeño AI chip brings new 'threat' to Nvidia margins as custom silicon gains ground",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]

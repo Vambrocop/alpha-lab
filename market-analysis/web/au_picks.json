@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T12:32:55Z",
+  "generated": "2026-08-26T13:53:18Z",
   "source": "澳股(ASX100大中盘池) 动量+低波动 选股 → 前向公开计分(独立账本)",
   "source_en": "AU stocks (ASX100 mid/large-cap pool) · momentum + low-volatility selection -> forward public scoring (independent ledger)",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
@@ -7,29 +7,29 @@
   "hold_td": 20,
   "benchmark": "^AXJO",
   "track_record": {
-    "n_settled": 30,
-    "n_hit": 0,
-    "call_hit_pct": 0.0,
+    "n_settled": 36,
+    "n_hit": 1,
+    "call_hit_pct": 2.8,
     "bullish": {
-      "n": 15,
-      "hit_pct": 0.0,
-      "mean_call_excess_pct": -7.035
+      "n": 18,
+      "hit_pct": 5.6,
+      "mean_call_excess_pct": -6.746
     },
     "bearish": {
-      "n": 15,
+      "n": 18,
       "hit_pct": 0.0,
-      "mean_call_excess_pct": -25.524
+      "mean_call_excess_pct": -24.93
     },
-    "n_pending": 132,
+    "n_pending": 126,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
   "recent": [
     {
-      "symbol": "WOW.AX",
+      "symbol": "MQG.AX",
       "view": "看好",
       "pick_date": "2026-08-26",
-      "mom_pct": 27.0,
+      "mom_pct": 22.7,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -37,10 +37,10 @@
       "hit": false
     },
     {
-      "symbol": "MPL.AX",
+      "symbol": "APA.AX",
       "view": "看好",
       "pick_date": "2026-08-26",
-      "mom_pct": 15.9,
+      "mom_pct": 22.7,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -48,10 +48,10 @@
       "hit": false
     },
     {
-      "symbol": "QUB.AX",
+      "symbol": "CPU.AX",
       "view": "看好",
       "pick_date": "2026-08-26",
-      "mom_pct": 12.6,
+      "mom_pct": 31.3,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -62,7 +62,7 @@
       "symbol": "TPW.AX",
       "view": "看淡",
       "pick_date": "2026-08-26",
-      "mom_pct": -49.9,
+      "mom_pct": -40.1,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -73,7 +73,7 @@
       "symbol": "WTC.AX",
       "view": "看淡",
       "pick_date": "2026-08-26",
-      "mom_pct": -19.7,
+      "mom_pct": -16.4,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -84,7 +84,7 @@
       "symbol": "NST.AX",
       "view": "看淡",
       "pick_date": "2026-08-26",
-      "mom_pct": -18.6,
+      "mom_pct": -18.0,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -466,7 +466,7 @@
       "hit": false
     }
   ],
-  "verdict": "已结算 30 条荐股：判断对(看好跑赢/看淡跑输 ^AXJO)的比例 0.0%。重叠窗口/幸存者偏差/股息口径顺风未除，别当 edge。",
-  "verdict_en": "30 settled picks: the share judged right (bullish beats / bearish lags ^AXJO) is 0.0%. Overlapping windows, survivorship bias and the dividend-convention tailwind are not removed — do not read it as an edge.",
+  "verdict": "已结算 36 条荐股：判断对(看好跑赢/看淡跑输 ^AXJO)的比例 2.8%。重叠窗口/幸存者偏差/股息口径顺风未除，别当 edge。",
+  "verdict_en": "36 settled picks: the share judged right (bullish beats / bearish lags ^AXJO) is 2.8%. Overlapping windows, survivorship bias and the dividend-convention tailwind are not removed — do not read it as an edge.",
   "caveat": "出格区·澳股荐股前向公开计分,与美股 pick_ledger 完全独立的账本(基准不同不可比)。挑票规则=动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）,进 append-only 账本:出榜次日入场、持有 20 交易日、相对 ^AXJO 结算。看好命中=跑赢^AXJO、看淡命中=跑输^AXJO。**前向计分**:刚上线样本极小(约1月后首批),别当结论。**股息口径不对称**:个股=含息复权总回报,^AXJO=除息价格指数,存在≈股息率(AU~4%/年≈0.3%/20交易日)的持续性口径顺风,对「看好」系统性有利——这不是edge。franking(红利抵免)不含(无可靠免费源,宁缺勿猜)。池=ASX100大中盘(③扩池~108只·流动性档位见体检,不再全高档),ASX本地日=交易日。FMG在池,1988-2002壳公司数据(2003起才是真Fortescue连续史),本账本窗口只回看近期不跨越该段;长窗口回测(au_pick_backtest.py)另有截断逻辑。池(ASX100大中盘)≈^AXJO主要成分,超额天然被压(「打赢你自己」),AU集中度比美股更极端。幸存者偏差0.0%因退市/无价被丢;重叠窗口只看描述;相关≠因果;非投资建议、不可交易(成本/滑点/税)、会错、过去≠未来。每跑 append 认账。"
 }

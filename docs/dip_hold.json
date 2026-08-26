@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-25T21:59:14Z",
-  "as_of": "2026-08-25",
+  "generated": "2026-08-26T13:50:42Z",
+  "as_of": "2026-08-26",
   "price_start": "2000-01-03",
   "lookback": 252,
   "recovery_floor": -0.03,
@@ -16,13 +16,13 @@
       "up_pct": 67.54,
       "mean_pct": 1.81,
       "median_pct": 2.98,
-      "n": 6641
+      "n": 6642
     },
     "h252": {
       "up_pct": 75.3,
-      "mean_pct": 7.86,
-      "median_pct": 11.05,
-      "n": 6449
+      "mean_pct": 7.87,
+      "median_pct": 11.06,
+      "n": 6450
     }
   },
   "drawdown_curve": [
@@ -63,8 +63,8 @@
       "mean_pct": 6.85,
       "median_pct": 12.12,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86,
-      "diff_mean": -1.01,
+      "base_mean_pct": 7.87,
+      "diff_mean": -1.02,
       "ci95_mean": null,
       "ci_beats_base": null,
       "too_small_no_ci": true,
@@ -112,8 +112,8 @@
       "mean_pct": 6.01,
       "median_pct": 12.49,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86,
-      "diff_mean": -1.85,
+      "base_mean_pct": 7.87,
+      "diff_mean": -1.86,
       "ci95_mean": null,
       "ci_beats_base": null,
       "too_small_no_ci": true,
@@ -161,8 +161,8 @@
       "mean_pct": 8.26,
       "median_pct": 13.13,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86,
-      "diff_mean": 0.4,
+      "base_mean_pct": 7.87,
+      "diff_mean": 0.39,
       "ci95_mean": null,
       "ci_beats_base": null,
       "too_small_no_ci": true,
@@ -207,8 +207,8 @@
       "mean_pct": 15.0,
       "median_pct": 17.41,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86,
-      "diff_mean": 7.14,
+      "base_mean_pct": 7.87,
+      "diff_mean": 7.13,
       "ci95_mean": null,
       "ci_beats_base": null,
       "too_small_no_ci": true,
@@ -253,8 +253,8 @@
       "mean_pct": 27.94,
       "median_pct": 27.04,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86,
-      "diff_mean": 20.08,
+      "base_mean_pct": 7.87,
+      "diff_mean": 20.07,
       "ci95_mean": null,
       "ci_beats_base": null,
       "too_small_no_ci": true,
@@ -273,7 +273,7 @@
       "up_pct": 55.34,
       "mean_pct": 4.35,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86
+      "base_mean_pct": 7.87
     },
     {
       "within_pct": 5,
@@ -281,7 +281,7 @@
       "up_pct": 50.33,
       "mean_pct": 0.45,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86
+      "base_mean_pct": 7.87
     },
     {
       "within_pct": 10,
@@ -289,7 +289,7 @@
       "up_pct": 59.93,
       "mean_pct": 2.35,
       "base_up_pct": 75.3,
-      "base_mean_pct": 7.86
+      "base_mean_pct": 7.87
     }
   ],
   "episodes": {
@@ -715,23 +715,23 @@
     ]
   },
   "single_stocks": {
-    "as_of": "2026-08-25",
+    "as_of": "2026-08-26",
     "survivorship_note": "单股数据仅 20 只活到今天的赢家(AAPL/NVDA/TSLA…):在它们身上回测「跌了买」会因幸存者偏差严重高估——跌 20% 后归零/退市的股(雷曼、Enron、SVB、一堆 SPAC)根本不在数据里。故本表只给「当前距自己 52 周高/低多远」的事实快照,绝不回测、绝不当买入信号。单个公司大跌常是「便宜有便宜的原因」(价值陷阱),指数跌了会随整个美国市场恢复,单股不会都恢复。",
     "current": [
       {
         "ticker": "INTC",
-        "dd_from_52wk_high_pct": -37.9,
-        "dist_from_52wk_low_pct": 264.5
+        "dd_from_52wk_high_pct": -38.1,
+        "dist_from_52wk_low_pct": 263.4
       },
       {
         "ticker": "SNDK",
-        "dd_from_52wk_high_pct": -36.6,
-        "dist_from_52wk_low_pct": 3065.4
+        "dd_from_52wk_high_pct": -36.7,
+        "dist_from_52wk_low_pct": 3019.2
       },
       {
         "ticker": "NFLX",
-        "dd_from_52wk_high_pct": -34.9,
-        "dist_from_52wk_low_pct": 21.6
+        "dd_from_52wk_high_pct": -35.3,
+        "dist_from_52wk_low_pct": 20.9
       },
       {
         "ticker": "TSLA",
@@ -739,79 +739,79 @@
         "dist_from_52wk_low_pct": 17.4
       },
       {
-        "ticker": "META",
-        "dd_from_52wk_high_pct": -26.7,
-        "dist_from_52wk_low_pct": 8.5
+        "ticker": "HOOD",
+        "dd_from_52wk_high_pct": -28.0,
+        "dist_from_52wk_low_pct": 68.6
       },
       {
-        "ticker": "HOOD",
-        "dd_from_52wk_high_pct": -26.5,
-        "dist_from_52wk_low_pct": 72.0
+        "ticker": "META",
+        "dd_from_52wk_high_pct": -27.3,
+        "dist_from_52wk_low_pct": 7.6
       },
       {
         "ticker": "AVGO",
         "dd_from_52wk_high_pct": -25.8,
-        "dist_from_52wk_low_pct": 22.1
+        "dist_from_52wk_low_pct": 21.8
       },
       {
         "ticker": "MU",
-        "dd_from_52wk_high_pct": -23.1,
-        "dist_from_52wk_low_pct": 702.7
+        "dd_from_52wk_high_pct": -22.9,
+        "dist_from_52wk_low_pct": 704.0
       },
       {
         "ticker": "AMD",
-        "dd_from_52wk_high_pct": -17.5,
-        "dist_from_52wk_low_pct": 217.0
+        "dd_from_52wk_high_pct": -16.1,
+        "dist_from_52wk_low_pct": 222.5
       },
       {
         "ticker": "GOOGL",
-        "dd_from_52wk_high_pct": -13.8,
-        "dist_from_52wk_low_pct": 68.0
+        "dd_from_52wk_high_pct": -14.5,
+        "dist_from_52wk_low_pct": 66.5
       },
       {
         "ticker": "TSM",
-        "dd_from_52wk_high_pct": -12.6,
-        "dist_from_52wk_low_pct": 84.8
+        "dd_from_52wk_high_pct": -12.5,
+        "dist_from_52wk_low_pct": 85.0
       },
       {
         "ticker": "COST",
         "dd_from_52wk_high_pct": -12.1,
-        "dist_from_52wk_low_pct": 13.4
+        "dist_from_52wk_low_pct": 13.5
       },
       {
         "ticker": "NVDA",
         "dd_from_52wk_high_pct": -9.5,
-        "dist_from_52wk_low_pct": 29.1
+        "dist_from_52wk_low_pct": 29.2
       },
       {
         "ticker": "AAPL",
-        "dd_from_52wk_high_pct": -8.8,
-        "dist_from_52wk_low_pct": 37.2
-      },
-      {
-        "ticker": "MSFT",
-        "dd_from_52wk_high_pct": -8.5,
-        "dist_from_52wk_low_pct": 39.6
+        "dd_from_52wk_high_pct": -8.3,
+        "dist_from_52wk_low_pct": 37.9
       },
       {
         "ticker": "AMZN",
-        "dd_from_52wk_high_pct": -8.1,
-        "dist_from_52wk_low_pct": 31.3
+        "dd_from_52wk_high_pct": -8.2,
+        "dist_from_52wk_low_pct": 31.1
       },
       {
-        "ticker": "BRK-B",
-        "dd_from_52wk_high_pct": -4.7,
-        "dist_from_52wk_low_pct": 8.4
+        "ticker": "MSFT",
+        "dd_from_52wk_high_pct": -8.1,
+        "dist_from_52wk_low_pct": 40.4
       },
       {
         "ticker": "LLY",
-        "dd_from_52wk_high_pct": -3.6,
-        "dist_from_52wk_low_pct": 78.5
+        "dd_from_52wk_high_pct": -7.0,
+        "dist_from_52wk_low_pct": 67.6
+      },
+      {
+        "ticker": "BRK-B",
+        "dd_from_52wk_high_pct": -4.6,
+        "dist_from_52wk_low_pct": 8.5
       },
       {
         "ticker": "KO",
-        "dd_from_52wk_high_pct": -0.4,
-        "dist_from_52wk_low_pct": 42.4
+        "dd_from_52wk_high_pct": -1.5,
+        "dist_from_52wk_low_pct": 40.8
       }
     ]
   },
