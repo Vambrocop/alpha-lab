@@ -56,7 +56,7 @@
 </style>
 </head>
 <body>
-<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:#8b949e;text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页">↩ 返回</a>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:#8b949e;text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页"><span data-i18n="backLink">↩ 返回</span></a>
 <a href="index.html" style="color:#8b949e;text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
 <button id="lang" aria-label="切换语言 / switch language"></button>
 <h1 data-i18n="title"></h1>
@@ -120,6 +120,7 @@ const I18N={
   secIntro:{zh:"每个行业的平均动量与广度——看澳洲哪些板块整体强/弱、轮到谁。纯描述聚合,非荐股;点列头排序。",
             en:"Average momentum and breadth per sector — which AU sectors are broadly strong/weak. Descriptive aggregate, not advice; click a header to sort."},
   boardH:{zh:"个股涨跌榜",en:"Stock board"},
+  backLink:{zh:"↩ 返回",en:"↩ Back"},
   scN:{zh:"只数",en:"#"},scBreadth:{zh:"广度·1年涨占比",en:"Breadth·1yr up%"},
   live:{zh:"实时 ✓",en:"Live ✓"},err:{zh:"拉不到 au_market.json——确认已部署。",en:"Can't load au_market.json — check deployment."},asof:{zh:"数据日",en:"as of"},
   excl:{zh:"已剔除",en:"Excluded"},
@@ -327,7 +328,9 @@ function renderPicks(){
   const tr=PICKS.track_record||{};
   const bull=tr.bullish||{},bear=tr.bearish||{};
   const n=tr.n_settled||0;
-  $("pkVerdict").innerHTML="🧭 "+esc(PICKS.verdict||"");
+  // 数据层双语(2026-08-26):au_pick_ledger 已出 *_en;EN 优先、缺失回落中文。
+  const PF=(o,k)=>(LANG==="en"&&o&&o[k+"_en"])?o[k+"_en"]:(o?o[k]:"");
+  $("pkVerdict").innerHTML="🧭 "+esc(PF(PICKS,"verdict"));
   const callHit=num(tr.call_hit_pct)?tr.call_hit_pct+"%":"—";
   const bullHit=num(bull.hit_pct)?bull.hit_pct+"%":"—";
   const bearHit=num(bear.hit_pct)?bear.hit_pct+"%":"—";
@@ -369,7 +372,7 @@ function renderPicks(){
   const gen=esc((PICKS.generated||"").slice(0,10));
   const hold=num(PICKS.hold_td)?PICKS.hold_td:20,bm=esc(PICKS.benchmark||"^AXJO");
   $("pkSrc").textContent=LANG==="en"
-    ?`Source: ${esc(PICKS.source||"AU picks → forward public scoring")} · generated ${gen} · hold ${hold} trading days vs ${bm}`
+    ?`Source: ${esc(PF(PICKS,"source")||"AU picks → forward public scoring")} · generated ${gen} · hold ${hold} trading days vs ${bm}`
     :`数据：${esc(PICKS.source||"澳股荐股 → 前向公开计分")} · 生成 ${gen} · 持有 ${hold} 交易日 vs ${bm}`;
 }
 
@@ -409,7 +412,7 @@ function renderBacktest(){
     let declItems=decls.map(([lk,fk])=>{const v=pick(meta,fk);return v?`<li><b>${t(lk)}：</b>${esc(v)}</li>`:"";}).filter(Boolean).join("");
     if(!declItems&&Array.isArray(meta.notes)) declItems=meta.notes.map(n=>`<li>${esc(n)}</li>`).join("");
     h+=`<div class="bt-card"><b>${t("btMeta")}</b>`
-      +`<div class="bt-meta">${t("btRule")}: <b>${esc(pick(meta,"rule")||PICKS&&PICKS.pick_rule||"—")}</b>`
+      +`<div class="bt-meta">${t("btRule")}: <b>${esc((LANG==="en"&&(pick(meta,"rule_en")||(PICKS&&PICKS.pick_rule_en)))||pick(meta,"rule")||(PICKS&&PICKS.pick_rule)||"—")}</b>`
       +` · ${t("btHold")}: ${esc(pick(meta,"hold_td","hold")??"20")} · ${t("btBench")}: ${esc(pick(meta,"bench","benchmark")||"^AXJO")}`
       +(pick(meta,"period_start")?` · ${t("btPeriod")}: ${esc(pick(meta,"period_start"))} ~ ${esc(pick(meta,"period_end"))}`:"")
       +(pick(meta,"fmg_cutoff_date")?` · ${t("btFmg")}: ${esc(pick(meta,"fmg_cutoff_date"))}`:"")+`</div>`;

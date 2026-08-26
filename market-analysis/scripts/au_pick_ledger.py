@@ -58,6 +58,9 @@ UNIVERSE = RAW_AU / "au_stocks_prices.csv"   # ASX100 大中盘宽表（date×ti
 # 与美股同一规则、同一代码（_select_picks 零克隆 import）——AU 池 = ASX100 大中盘（③ 扩池 ~108 只）
 PICK_RULE = ("动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）"
              "——与美股 pick_ledger 同一规则、同一代码（零克隆）")
+PICK_RULE_EN = ("Momentum + low-volatility equal-weight ranking (126-day momentum + 63-day low volatility; "
+                "top/bottom 3 from the ASX100 mid/large-cap pool) — same rule and same code as the US "
+                "pick_ledger (zero cloning)")
 
 HEADER = ["pick_date", "symbol", "view", "mom_pct", "entry_date", "entry_px",
           "exit_date", "exit_px", "ret_pct", "bench_pct", "excess_pct",
@@ -134,17 +137,33 @@ def _scorecard(rows):
     }
 
 
-def _verdict(sc):
+def _verdict(sc, lang="zh"):
+    """数据层双语(2026-08-26):**分支只判一次**,中英从同一模板渲染——写两套 if 必然各自漂移
+    (btc_nasdaq 那次的教训)。lang="en" 出英文版,au.html 在 EN 模式优先取 verdict_en。"""
     n = sc["n_settled"]
     if n == 0:
-        return "刚上线·0 结算——约 1 个月后才有第一批 AU 荐股战绩，攒数据中。"
-    ch = sc["call_hit_pct"]
-    head = f"已结算 {n} 条荐股：判断对(看好跑赢/看淡跑输 ^AXJO)的比例 {ch}%"
-    if n < 30:
-        return head + f"（n={n} 太小，纯描述、不是结论）。"
-    if 45 <= ch <= 55:
-        return head + "——≈掷硬币，追因子没看出对 ^AXJO 的 edge（诚实）。"
-    return head + "。重叠窗口/幸存者偏差/股息口径顺风未除，别当 edge。"
+        key = "empty"
+    elif n < 30:
+        key = "small"
+    elif 45 <= sc["call_hit_pct"] <= 55:
+        key = "coinflip"
+    else:
+        key = "caveat"
+    ch = sc.get("call_hit_pct")
+    head_zh = f"已结算 {n} 条荐股：判断对(看好跑赢/看淡跑输 ^AXJO)的比例 {ch}%"
+    head_en = (f"{n} settled picks: the share judged right (bullish beats / bearish lags ^AXJO) is {ch}%")
+    V = {
+        "empty": ("刚上线·0 结算——约 1 个月后才有第一批 AU 荐股战绩，攒数据中。",
+                  "Just launched, 0 settled — the first AU pick results arrive in about a month; still accumulating."),
+        "small": (head_zh + f"（n={n} 太小，纯描述、不是结论）。",
+                  head_en + f" (n={n} is too small — descriptive only, not a conclusion)."),
+        "coinflip": (head_zh + "——≈掷硬币，追因子没看出对 ^AXJO 的 edge（诚实）。",
+                     head_en + " — about a coin flip; the momentum factor shows no edge over ^AXJO (honest)."),
+        "caveat": (head_zh + "。重叠窗口/幸存者偏差/股息口径顺风未除，别当 edge。",
+                   head_en + ". Overlapping windows, survivorship bias and the dividend-convention tailwind are "
+                             "not removed — do not read it as an edge."),
+    }
+    return V[key][1] if lang == "en" else V[key][0]
 
 
 def run(write=True, prices=None):
@@ -174,7 +193,9 @@ def run(write=True, prices=None):
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source": "澳股(ASX100大中盘池) 动量+低波动 选股 → 前向公开计分(独立账本)",
-        "pick_rule": PICK_RULE,
+        "source_en": "AU stocks (ASX100 mid/large-cap pool) · momentum + low-volatility selection "
+                     "-> forward public scoring (independent ledger)",
+        "pick_rule": PICK_RULE, "pick_rule_en": PICK_RULE_EN,
         "hold_td": HOLD_TD, "benchmark": BENCH,
         "track_record": sc,
         "recent": sorted(
@@ -184,7 +205,7 @@ def run(write=True, prices=None):
               "call_excess_pct": _num(r.get("call_excess_pct")), "hit": fl.is_true(r.get("hit"))}
              for r in rows],
             key=lambda x: (x["pick_date"] or ""), reverse=True)[:40],
-        "verdict": _verdict(sc),
+        "verdict": _verdict(sc), "verdict_en": _verdict(sc, lang="en"),
         "caveat": ("出格区·澳股荐股前向公开计分,与美股 pick_ledger 完全独立的账本(基准不同不可比)。"
                    "挑票规则=%s,进 append-only 账本:出榜次日入场、持有 %d 交易日、相对 %s 结算。"
                    "看好命中=跑赢%s、看淡命中=跑输%s。**前向计分**:刚上线样本极小(约1月后首批),别当结论。"
