@@ -52,15 +52,18 @@ const t=k=>(I18N[k]&&I18N[k][LANG])||k;
 function applyStatic(){document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));$("lang").textContent=LANG==="zh"?"EN":"中";document.documentElement.lang=LANG==="zh"?"zh-CN":"en";}
 function render(d){
   applyStatic();
-  $("note").textContent="🧭 "+(d.note||"");
+  // 数据层双语(2026-08-25):evidence_ledger 已为每行/note 生成 *_en;EN 模式优先取,
+  // 缺失则回落中文(诚实:宁可显示中文,也不显示空白或机翻)。
+  const F=(r,k)=>(LANG==="en"&&r[k+"_en"])?r[k+"_en"]:r[k];
+  $("note").textContent="🧭 "+((LANG==="en"&&d.note_en)?d.note_en:(d.note||""));
   $("list").innerHTML=(d.rows||[]).map(r=>
     `<a class="card" href="${esc(r.link||'#')}">`
-    +`<div><span class="nm">${esc(r.name)}</span><span class="fam">${esc(r.family)}</span></div>`
-    +`<div class="sc">📍 ${esc(r.scope)}</div>`
-    +`<div class="ev">📊 ${esc(r.evidence)}</div>`
-    +`<div class="vd">🧭 ${esc(r.verdict)}</div>`
+    +`<div><span class="nm">${esc(F(r,"name"))}</span><span class="fam">${esc(F(r,"family"))}</span></div>`
+    +`<div class="sc">📍 ${esc(F(r,"scope"))}</div>`
+    +`<div class="ev">📊 ${esc(F(r,"evidence"))}</div>`
+    +`<div class="vd">🧭 ${esc(F(r,"verdict"))}</div>`
     +`<div class="go">${t("go")}</div></a>`).join("");
-  $("src").textContent=`${t("asof")} ${esc((d.generated||"").slice(0,10))} · ${d.n} 族`;
+  $("src").textContent=`${t("asof")} ${esc((d.generated||"").slice(0,10))} · ${d.n} ${LANG==="en"?"families":"族"}`;
 }
 $("lang").onclick=()=>{LANG=LANG==="zh"?"en":"zh";try{localStorage.setItem("valpha_lang",LANG)}catch(e){};if(window._d)render(window._d);};
 (async()=>{applyStatic();

@@ -78,6 +78,7 @@ def run(write=True):
         "asset": ASSET, "date_range": [str(idx[0].date()), str(idx[-1].date())],
         "horizons_td": HORIZONS, "horizon_labels": ["1月", "3月", "6月", "12月"],
         "base": base, "regimes": regimes, "verdict": verdict,
+        "verdict_en": _verdict(inv, base, lang="en"),
         "caveat": "出格区·把「当前体制」补成「体制→未来收益分布」。描述性、非预测、非建议。"
                   "稀有体制(倒挂)日高度自相关 → 看 n_episodes(独立事件段)而非 n_days：段数少(就几段)的分布不可靠、"
                   "别当规律；相关≠因果(体制与收益可能同被第三因素驱动)；重叠窗口只看分布不算显著性。每跑 append 计分。",
@@ -93,13 +94,20 @@ def run(write=True):
     return out
 
 
-def _verdict(inv, base):
+def _verdict(inv, base, lang="zh"):
+    """lang="en" 出英文版(数据层双语·2026-08-25):evidence_ledger 等下游透传本裁决,
+    此前它们在 EN 模式只能回落中文。英文与中文由**同一份数字**拼出,不会漂移。"""
     if not inv:
-        return "样本不足"
+        return "样本不足" if lang == "zh" else "Insufficient sample"
     d12 = inv["dist"].get("252") or {}
     b12 = base.get("252") or {}
     if d12.get("median") is None:
-        return "倒挂段样本不足，无定论"
+        return "倒挂段样本不足，无定论" if lang == "zh" else "Too few inversion episodes — inconclusive"
+    if lang == "en":
+        return (f"After a curve inversion, S&P 500 over the next 12 months: median {d12['median']}%, "
+                f"up-rate {d12['up']}% (vs base-rate median {b12.get('median')}%) — but only "
+                f"{inv['n_episodes']} independent inversion episodes, so the distribution is unreliable; "
+                f"do not treat it as a rule")
     return (f"曲线倒挂后 SP500 未来12月：中位 {d12['median']}%、上涨率 {d12['up']}%（vs 基率中位 {b12.get('median')}%）"
             f"——但仅 {inv['n_episodes']} 个独立倒挂段，分布不可靠，别当规律")
 
