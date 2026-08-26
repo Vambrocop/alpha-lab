@@ -27,16 +27,20 @@ function renderBenchmark() {
     const n = Number(v);
     return esc((n > 0 ? "+" : "") + n);
   };
+  // 数据层双语(2026-08-25):benchmark.py 已为每行出 *_en。EN 优先取,缺失回落中文。
+  // 注意 color 仍用**中文 verdict** 当 VC 的键——后端枚举值没变(改值会打断这张颜色表)。
+  const EN = (typeof vpLang === "function") && vpLang() === "en";
+  const F = (r, k) => (EN && r[k + "_en"]) ? r[k + "_en"] : r[k];
   const rows = bm.rows.map(r => {
     const color = VC[r.verdict] || "#8b949e";
-    return `<tr style="border-top:1px solid var(--border-faint);" title="${esc(r.note)}">
-      <td style="padding:.3rem .5rem;">${esc(r.name)}</td>
-      <td style="padding:.3rem .5rem;color:var(--muted);">${esc(r.metric)}</td>
+    return `<tr style="border-top:1px solid var(--border-faint);" title="${esc(F(r,"note"))}">
+      <td style="padding:.3rem .5rem;">${esc(F(r,"name"))}</td>
+      <td style="padding:.3rem .5rem;color:var(--muted);">${esc(F(r,"metric"))}</td>
       <td style="padding:.3rem .5rem;text-align:right;">${fmt(r.model_value)}</td>
-      <td style="padding:.3rem .5rem;text-align:right;color:var(--muted);">${esc(r.baseline_label)} ${fmt(r.baseline_value)}</td>
+      <td style="padding:.3rem .5rem;text-align:right;color:var(--muted);">${esc(F(r,"baseline_label"))} ${fmt(r.baseline_value)}</td>
       <td style="padding:.3rem .5rem;text-align:right;">${fmtDelta(r.delta)}</td>
-      <td style="padding:.3rem .5rem;text-align:center;"><span style="color:${color};font-weight:600;">${esc(r.verdict)}</span></td>
-      <td style="padding:.3rem .5rem;color:var(--muted);font-size:0.72rem;">${esc(r.basis)}</td>
+      <td style="padding:.3rem .5rem;text-align:center;"><span style="color:${color};font-weight:600;">${esc(F(r,"verdict"))}</span></td>
+      <td style="padding:.3rem .5rem;color:var(--muted);font-size:0.72rem;">${esc(F(r,"basis"))}</td>
     </tr>`;
   }).join("");
   const s = bm.summary || {};
@@ -61,10 +65,12 @@ function renderBenchmark() {
       <span>⏳ ${vpL("数据不足","Insufficient data")} ${Number(s.insufficient ?? 0)}</span>
     </div>
     ${bm.drift ? `<div style="margin-top:.5rem;font-size:0.75rem;color:${(bm.drift.degraded_count||0)>0?"#e74c3c":"var(--muted)"};">
-      📡 ${vpL("漂移监控：","Drift monitor: ")}${esc(bm.drift.status)}${(bm.drift.changes||[]).length?"（"+bm.drift.changes.map(c=>esc(c.name)+":"+esc(c.from)+"→"+esc(c.to)).join("；")+"）":""}</div>` : ""}
+      📡 ${vpL("漂移监控：","Drift monitor: ")}${(EN && bm.drift.status_en)
+            ? esc(bm.drift.status_en)   /* 后端 status_en 已内含逐条变化明细,不再另拼 */
+            : esc(bm.drift.status)+((bm.drift.changes||[]).length?"（"+bm.drift.changes.map(c=>esc(c.name)+":"+esc(c.from)+"→"+esc(c.to)).join("；")+"）":"")}</div>` : ""}
     <div class="insight" style="margin-top:.85rem;">
-      <strong>${esc(bm.headline)}</strong><br>
-      <span style="color:var(--muted);font-size:0.75rem;">${vpL("原则：","Principle: ")}${esc(bm.principle)}</span>
+      <strong>${esc(EN && bm.headline_en ? bm.headline_en : bm.headline)}</strong><br>
+      <span style="color:var(--muted);font-size:0.75rem;">${vpL("原则：","Principle: ")}${esc(EN && bm.principle_en ? bm.principle_en : bm.principle)}</span>
     </div>`;
 }
 

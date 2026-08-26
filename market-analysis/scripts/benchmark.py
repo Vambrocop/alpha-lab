@@ -302,6 +302,94 @@ def build(today=None):
 VERDICT_RANK = {V_BEATS: 4, V_TIE: 3, V_INSUF: 2, V_LOSE: 1, V_MISS: 0}
 
 
+
+# ── 数据层双语(2026-08-25)：EN 字段单点附加，不逐行改 6 个 rows.append ────────────
+# 为什么另出 *_en 而不改原值:verdict 的中文值同时被 app-5.js 当颜色映射的**键**用,
+# 改值会打断前端。行级 EN 按 name 索引(name 是稳定标识),缺失回落中文——诚实取舍:
+# 宁可显示中文,也不显示空白或机翻。
+VERDICT_EN = {V_BEATS: "beats", V_TIE: "ties", V_LOSE: "falls short",
+              V_INSUF: "insufficient data", V_MISS: "data missing"}
+
+METRIC_EN = {"胜率−基率(pp)": "win rate - base rate (pp)",
+             "收益%": "return %",
+             "1日命中%": "1-day hit %",
+             "健康分": "health score"}
+
+ROW_EN = {
+    "方向预测(拼接样本外)": {
+        "name_en": "Direction prediction (pooled out-of-sample)",
+        "baseline_label_en": "random · no discrimination",
+        "note_en": "AUC below 0.5 means the raw directional signal is worse than random - an honest post-mortem"},
+    "Tier≥4 信号": {
+        "name_en": "Tier >=4 signal",
+        "baseline_label_en": "base rate",
+        "note_en": "The block-bootstrap 95% CI straddles zero - no out-of-sample edge found"},
+    "波动率模型": {
+        "name_en": "Volatility model",
+        "baseline_label_en": "VIX alone",
+        "note_en": "The right target (volatility is forecastable), but the gain over just using VIX is marginal"},
+    "模拟盘·信号策略": {
+        "name_en": "Paper trading · signal strategy",
+        "baseline_label_en": "buy and hold",
+        "note_en": "Forward sample is now sufficient; judged on realised return difference"},
+    "实盘预测·方向": {
+        "name_en": "Live prediction · direction",
+        "baseline_label_en": "coin flip",
+        "note_en": "Forward sample is now sufficient; judged on hit-rate difference"},
+    "代码健康分": {
+        "name_en": "Code health score",
+        "baseline_label_en": "first baseline",
+        "note_en": "Engineering items are compared only against their own starting point: tie or improve, never 'lose'"},
+}
+
+_BASIS_FRAG = [("样本外", "out-of-sample"), ("前向实盘", "forward live"),
+               ("块自助", "block bootstrap"), ("已评分", "scored"),
+               ("多regime拼接", "pooled across regimes"),
+               ("工程", "engineering"), ("自", "since ")]
+
+
+def _basis_en(basis):
+    """basis 是带数字的动态串(如 样本外·块自助(p=0.042))——按片段翻,数字原样保留、不会漂移。"""
+    if not basis:
+        return basis
+    out = str(basis)
+    for zh, en in _BASIS_FRAG:
+        out = out.replace(zh, en)
+    return out
+
+
+def attach_en(card):
+    """给已构造好的 rows / 顶层文案附加 *_en(单点,将来加行不易遗漏)。"""
+    for r in card.get("rows", []):
+        meta = ROW_EN.get(r.get("name"), {})
+        r["name_en"] = meta.get("name_en", r.get("name"))
+        r["baseline_label_en"] = meta.get("baseline_label_en", r.get("baseline_label"))
+        r["basis_en"] = _basis_en(r.get("basis"))
+        r["note_en"] = meta.get("note_en", r.get("note"))
+        r["verdict_en"] = VERDICT_EN.get(r.get("verdict"), r.get("verdict"))
+        r["metric_en"] = METRIC_EN.get(r.get("metric"), r.get("metric"))
+    card["principle_en"] = ("Hard baselines · out-of-sample / forward · when the forward sample is too "
+                            "small, we declare neither a win nor a loss")
+    su = card.get("summary") or {}
+    card["headline_en"] = (f"So far {su.get('beats', 0)} models robustly beat an honest baseline; "
+                           f"{su.get('insufficient', 0)} forward-looking items are still accumulating. "
+                           f"This is the honest state of things, and the bar any 'optimisation' must clear first.")
+    d = card.get("drift") or {}
+    if d:
+        if not d.get("changes"):
+            d["status_en"] = "No drift versus " + str(d.get("since"))
+        else:
+            # 逐条把「模型名:旧裁决→新裁决」翻成英文(复用同一份 ROW_EN/VERDICT_EN,不另写一套)
+            det = []
+            for c in d.get("changes", []):
+                nm = str(c.get("name", ""))
+                nm_en = (ROW_EN.get(nm) or {}).get("name_en", nm)
+                det.append(f"{nm_en}: {VERDICT_EN.get(c.get('from'), c.get('from'))} -> "
+                           f"{VERDICT_EN.get(c.get('to'), c.get('to'))}")
+            d["status_en"] = (f"{len(det)} item(s) changed versus {d.get('since')} (" + "; ".join(det) + ")")
+    return card
+
+
 def detect_drift(card):
     """对比上一条历史快照，标出哪些项较上次退化/改进。数据攒够后这就是'结论是否仍成立'的哨兵。"""
     hist = _load(HISTORY_PATH)
@@ -389,6 +477,7 @@ def print_table(card):
 def main():
     card = build()
     card["drift"] = detect_drift(card)   # 先比对（用 append 之前的历史），再写盘
+    attach_en(card)                      # 数据层双语:单点附加 *_en(须在 drift 之后,才能带上 status_en)
     out = PROC_DIR / "benchmark.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
