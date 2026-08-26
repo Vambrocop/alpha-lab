@@ -115,7 +115,8 @@ steps = [
     ("IPO挂牌后事实档(出格·非计分)", "ipo_aftermath.py"),  # A5:对ipo_alert_log里stage∈(listed,priced)带ticker的major公司,yfinance抓其日线记D1/D5/D20相对首日收盘+vsQQQ同窗超额→data/ipo_aftermath_log.csv(append-only·每ticker取最后一行为准)+web/ipo_aftermath.json(含Ritter长期跑输文献caveat);事实档非计分非荐股;须在ipo_alerts后(读其账本);单票无数据fail-soft跳过;不入light
 
     ("内部人买入→前向计分(出格)", "insider_signal.py"),  # 跟内部人买的诚实前向公开计分:append notable买入+到期vs SPY自动结算;须在 fetch_insider 后;读yfinance(结算出错不阻断);不入light
-    ("荐股→前向计分vsQQQ(出格)", "pick_ledger.py"),  # outlook看好/看淡进append-only账本+满20交易日vs QQQ自动结算(看好命中=跑赢/看淡命中=跑输);须在outlook后;读yfinance(结算出错不阻断);不入light
+    ("荐股→前向计分vsQQQ(出格)", "pick_ledger.py"),
+    ("自选组合前向跟踪(私人·非公开计分)", "my_portfolio_track.py"),  # 用户自选持仓的前向跟踪:读 data/my_portfolio.txt(每行 代码 [股数]),次日首个交易日入场、入场价 append-only 永不重写(防事后挑起点)、删掉即记离场;美股对QQQ/澳股(.AX)对^AXJO 同期比;public=false 不进公开计分;顶层fail-soft;不入light  # outlook看好/看淡进append-only账本+满20交易日vs QQQ自动结算(看好命中=跑赢/看淡命中=跑输);须在outlook后;读yfinance(结算出错不阻断);不入light
     ("公开计分/校准卡(吸收)", "scorecard.py"),   # 4站调研吸收:汇 prediction_log/composite/tipjar + walk_forward OOS校准成公开战绩卡(按置信分桶看实际命中=护城河);须在 track_predictions/composite_read/walk_forward 后
     ("证据库总览(吸收)", "evidence_ledger.py"),   # 把已测规律族汇成单一诚实总览(每族 scope+证据+裁决+详情链接·没证据不进库);须在 autodiscovery/placebo/btc/regime 后
     ("门4样本外→知识库晋升降级(自生长P-C)", "knowledge_base.py"),  # OOS门4(oos_gate)只认注册锚后数据:survive∧confirmed→晋升/在库∧翻盘→降级;append-only单调写kb_ledger;须在autodiscovery+candidate_registry后;不入light;Opus双审GO(B1/S1已修);今日全pending=0晋升(边跑边攒约1月出首批)
