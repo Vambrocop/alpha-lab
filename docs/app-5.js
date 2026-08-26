@@ -860,7 +860,7 @@ function renderEventImpact() {
     const days = Math.round((d - new Date(today + "T00:00:00")) / 86400000);
     return `<div style="display:flex;justify-content:space-between;gap:.5rem;padding:.25rem .5rem;border-top:1px solid var(--border-faint);">
       <span>${esc(e.date)} <span style="color:var(--muted);font-size:0.72rem;">${days<=0?vpL("今天","today"):vpL(`约${days}天后`, `in ~${days}d`)}</span></span>
-      <span style="color:var(--text);font-size:0.78rem;">${esc(e.label)}</span></div>`;
+      <span style="color:var(--text);font-size:0.78rem;">${esc(vpD(e,"label"))}</span></div>`;
   }).join("") || `<div style="color:var(--muted);font-size:0.78rem;padding:.3rem .5rem;">${vpL("近期无已排程宏观事件","No scheduled macro events in the near term")}</div>`;
 
   // ② 历史事件类型反应——诚实呈现：小样本、样本内，去掉绿红方向色与裸 p 值

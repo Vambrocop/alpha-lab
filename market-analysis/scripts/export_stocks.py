@@ -20,6 +20,15 @@ LABELS = {
     "LLY": "礼来", "BRK-B": "伯克希尔", "SNDK": "闪迪", "MU": "美光",
     "AMD": "超微", "INTC": "英特尔", "NFLX": "网飞", "HOOD": "罗宾汉",
 }
+# 数据层双语(2026-08-26):同键英文表。多数美股本就以英文名为通称,直接用公司英文名;
+# 前端 EN 模式取 label_en,缺失回落中文(vpD 的统一约定)。
+LABELS_EN = {
+    "AAPL": "Apple", "MSFT": "Microsoft", "GOOGL": "Alphabet", "AMZN": "Amazon",
+    "NVDA": "NVIDIA", "META": "Meta", "TSLA": "Tesla",
+    "AVGO": "Broadcom", "TSM": "TSMC", "COST": "Costco",
+    "LLY": "Eli Lilly", "BRK-B": "Berkshire", "SNDK": "SanDisk", "MU": "Micron",
+    "AMD": "AMD", "INTC": "Intel", "NFLX": "Netflix", "HOOD": "Robinhood",
+}
 MAG7 = ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA"]
 
 YEARS_OF_SERIES = 3   # 走势图年数（周线）
@@ -206,6 +215,7 @@ def main():
             continue
         out["stocks"][sym] = {
             "label":  LABELS.get(sym, sym),
+            "label_en": LABELS_EN.get(sym, sym),
             "is_mag7": sym in MAG7,
             "stats":  stats,
             "radar":  _radar(stats),

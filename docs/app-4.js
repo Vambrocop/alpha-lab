@@ -932,7 +932,7 @@ function renderStocksTable() {
     const caret = `<span class="stx-caret" aria-hidden="true">${expanded ? "▾" : "▸"}</span>`;
     const rowHtml = `<tr data-stock-symbol="${sym}" tabindex="0" aria-expanded="${expanded}"
         style="cursor:pointer;border-bottom:1px solid var(--border-faint);">
-      <td style="padding:.35rem .5rem;font-weight:600;">${caret}${sym}${tag}<br><span style="font-size:0.68rem;color:var(--muted);margin-left:1.1em;">${s.label}</span></td>
+      <td style="padding:.35rem .5rem;font-weight:600;">${caret}${sym}${tag}<br><span style="font-size:0.68rem;color:var(--muted);margin-left:1.1em;">${vpD(s,"label")}</span></td>
       <td style="padding:.35rem .5rem;text-align:right;">$${st.last}</td>
       <td style="padding:.35rem .5rem;text-align:right;">${fmt(st.chg_1d)}</td>
       <td style="padding:.35rem .5rem;text-align:right;">${fmt(st.chg_20d)}</td>
@@ -985,7 +985,7 @@ function renderStockScorecard(sym) {
       <div style="font-size:0.68rem;color:var(--muted);line-height:1.4;">${note}</div>
     </div>`;
   el.innerHTML = `
-    <div style="font-size:0.82rem;font-weight:700;margin-bottom:.5rem;">${vpL(`📊 ${sym} ${s.label} · 个股分析卡`, `📊 ${sym} ${s.label} · Stock scorecard`)}
+    <div style="font-size:0.82rem;font-weight:700;margin-bottom:.5rem;">${vpL(`📊 ${sym} ${s.label} · 个股分析卡`, `📊 ${sym} ${vpD(s,"label")} · Stock scorecard`)}
       <span style="font-size:0.66rem;color:var(--muted);font-weight:400;">${vpL(`截至 ${st.date}`, `As of ${st.date}`)}</span></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;">
       ${cell(vpL("趋势（距200日线）","Trend (vs. 200-day line)"), band(0, trend[0], trend[1]), trend[2])}
@@ -1014,7 +1014,7 @@ function renderStockChart(sym) {
   renderStockScorecard(sym);
   const s = STOCKS.stocks[sym];
   const traces = [{
-    x: s.series.dates, y: s.series.values, name: `${sym} ${s.label}`,
+    x: s.series.dates, y: s.series.values, name: `${sym} ${vpD(s,"label")}`,
     type: "scatter", mode: "lines", line: { color: "#9b59b6", width: 2.5 },
   }];
   for (const [idx, col] of [["NASDAQ", "#3498db"], ["SP500", "#95a5a6"]]) {
@@ -1025,7 +1025,7 @@ function renderStockChart(sym) {
     });
   }
   Plotly.newPlot("chart-stock", traces, {...DARK, hovermode: "x unified",
-    title: { text: vpL(`${sym}（${s.label}）vs 指数 · 归一化=100`, `${sym} (${s.label}) vs. indices · normalized=100`), font: { size: 13 } }},
+    title: { text: vpL(`${sym}（${s.label}）vs 指数 · 归一化=100`, `${sym} (${vpD(s,"label")}) vs. indices · normalized=100`), font: { size: 13 } }},
     {displayModeBar: false, responsive: true});
   // D3：外部零依赖切换条替代旧的 Plotly 原生 rangeselector（见判断点①）；每次换股都会
   // Plotly.newPlot 到同一个 div，vpRangeBar 在兄弟节点上"保活"，这里调用即原地刷新。
@@ -1131,7 +1131,7 @@ function renderGamePanel() {
   const eq = g.cash + mv, ret = (eq / 10000 - 1) * 100;
   const rc = ret >= 0 ? "#2ecc71" : "#e74c3c";
   const opts = Object.keys(STOCKS.stocks).map(s =>
-    `<option value="${s}">${s} ${STOCKS.stocks[s].label} $${px[s]}</option>`).join("");
+    `<option value="${s}">${s} ${vpD(STOCKS.stocks[s],"label")} $${px[s]}</option>`).join("");
   const recent = (g.trades || []).slice(-6).reverse().map(t => {
     const sideDisp = t.side === "买" ? vpL("买","Buy") : t.side === "卖" ? vpL("卖","Sell") : t.side;
     return `<div style="color:var(--muted);font-size:0.7rem;">${t.t} ${sideDisp} ${t.sym} $${t.amt.toFixed(0)} @${t.px}</div>`;

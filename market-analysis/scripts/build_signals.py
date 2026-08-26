@@ -7,6 +7,7 @@ build_signals.py
 import pandas as pd
 import numpy as np
 import json
+import re
 from pathlib import Path
 from datetime import date, timedelta
 from zoneinfo import ZoneInfo
@@ -56,6 +57,22 @@ MACRO_EVENTS = {
     "2026-09-04": "非农就业(8月)", "2026-10-02": "非农就业(9月)",
     "2026-11-06": "非农就业(10月)", "2026-12-04": "非农就业(11月)",
 }
+
+
+def _macro_en(zh):
+    """数据层双语(2026-08-26):宏观事件名按**规则**翻,不手抄 26 条(加新日期时自动跟上)。"""
+    m = re.match(r"^(CPI发布|FOMC决议|非农就业)(?:\((含SEP|(\d+)月)\))?$", str(zh))
+    if not m:
+        return str(zh)
+    base = {"CPI发布": "CPI release", "FOMC决议": "FOMC decision", "非农就业": "Nonfarm payrolls"}[m.group(1)]
+    if m.group(2) == "含SEP":
+        return base + " (with SEP)"
+    if m.group(3):
+        return f"{base} (for month {m.group(3)})"
+    return base
+
+
+MACRO_EVENTS_EN = {k: _macro_en(v) for k, v in MACRO_EVENTS.items()}
 
 # ── 月度先验概率（1928-2026 真实统计，后面会从 long_history.json 覆盖）
 MONTHLY_PRIOR = {
@@ -543,25 +560,45 @@ def find_next_opportunities(signals, n_days=45, priors=None):
         prob = bayesian_update(prior, cal_lrs)
 
         # 主因子说明（用于前端tooltip）
-        reasons = []
+        # 数据层双语(2026-08-26):中英在**同一处同一条件**下同时 append,分支只判一次
+        # ——绝不另写一套 if(否则条件一改必然中英漂移)。
+        reasons, reasons_en = [], []
+        _DOW_EN = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         dow_lr = DOW_LR.get(ts.weekday(), 1.0)
-        if dow_lr > 1.02: reasons.append(f"{DOW_CN[ts.weekday()]}效应")
+        if dow_lr > 1.02:
+            reasons.append(f"{DOW_CN[ts.weekday()]}效应")
+            reasons_en.append(f"{_DOW_EN[ts.weekday()]} effect")
         wom_lr = _WOM_LR.get(_week_of_month(ts), 1.0)
-        if wom_lr > 1.05: reasons.append(f"月内第{_week_of_month(ts)}周最强")
-        if wom_lr < 0.97: reasons.append(f"月内第{_week_of_month(ts)}周偏弱")
+        if wom_lr > 1.05:
+            reasons.append(f"月内第{_week_of_month(ts)}周最强")
+            reasons_en.append(f"week {_week_of_month(ts)} of the month is strongest")
+        if wom_lr < 0.97:
+            reasons.append(f"月内第{_week_of_month(ts)}周偏弱")
+            reasons_en.append(f"week {_week_of_month(ts)} of the month is weaker")
         hol_lr = _holiday_lr(ts)
-        if hol_lr > 1.10: reasons.append("假日效应")
+        if hol_lr > 1.10:
+            reasons.append("假日效应")
+            reasons_en.append("holiday effect")
         cal_lr = _calendar_anomaly_lr(ts)
-        if cal_lr > 1.10: reasons.append("税季/季初建仓")
-        if cal_lr < 0.95: reasons.append("税损收割期")
+        if cal_lr > 1.10:
+            reasons.append("税季/季初建仓")
+            reasons_en.append("tax season / start-of-quarter inflows")
+        if cal_lr < 0.95:
+            reasons.append("税损收割期")
+            reasons_en.append("tax-loss harvesting window")
         month_prior = priors[month]
-        if month_prior >= 0.62: reasons.append(f"{month}月胜率高")
-        if month_prior <= 0.50: reasons.append(f"{month}月胜率低")
+        if month_prior >= 0.62:
+            reasons.append(f"{month}月胜率高")
+            reasons_en.append(f"month {month} has a high historical win rate")
+        if month_prior <= 0.50:
+            reasons.append(f"{month}月胜率低")
+            reasons_en.append(f"month {month} has a low historical win rate")
 
         # 宏观事件警示（CPI/FOMC：当日波动放大，方向无稳定偏向）
         macro = MACRO_EVENTS.get(d.strftime("%Y-%m-%d"))
         if macro:
             reasons.append(f"⚠ {macro}·波动放大")
+            reasons_en.append(f"WARNING {MACRO_EVENTS_EN.get(d.strftime('%Y-%m-%d'), macro)} - volatility amplified")
 
         forecast.append({
             "date":      d.strftime("%Y-%m-%d"),
@@ -577,6 +614,7 @@ def find_next_opportunities(signals, n_days=45, priors=None):
             "cal_lr":    round(cal_lr, 4),
             "macro":     macro,
             "reasons":   reasons,
+            "reasons_en": reasons_en,
         })
 
         d += timedelta(days=1)
@@ -609,6 +647,18 @@ def load_event_study():
         studies = es.get("event_studies", {})
         # 只保留前端需要的字段，去掉 returns 列表（太大）
         out = {}
+        # 数据层双语(2026-08-26):同键英文表,前端 EN 模式取 label_en(vpD 统一约定)
+        labels_en = {
+            "fed_hike_first":      "First rate hike",
+            "fed_cut_first":       "First rate cut",
+            "trade_war_escalation": "Trade-war escalation",
+            "trade_war_relief":    "Trade-war relief",
+            "geopolitical_shock":  "Geopolitical shock",
+            "pandemic_lockdown":   "Pandemic lockdown",
+            "vix_spike_extreme":   "Extreme VIX spike",
+            "banking_crisis":      "Banking crisis",
+            "ai_breakthrough":     "AI breakthrough",
+        }
         labels = {
             "fed_hike_first":      "首次加息",
             "fed_cut_first":       "首次降息",
@@ -623,6 +673,7 @@ def load_event_study():
         for k, v in studies.items():
             out[k] = {
                 "label":       labels.get(k, k),
+                "label_en":    labels_en.get(k, labels.get(k, k)),
                 "n":           v["n"],
                 "avg_return":  v["avg_return_pct"],
                 "median_return": v["median_return_pct"],
@@ -793,7 +844,7 @@ if __name__ == "__main__":
     # 宏观事件日历（未来90天内的 CPI/FOMC，以美东日期为准）
     _today = us_today()
     result["macro_calendar"] = [
-        {"date": d, "label": lbl}
+        {"date": d, "label": lbl, "label_en": MACRO_EVENTS_EN.get(d, lbl)}
         for d, lbl in sorted(MACRO_EVENTS.items())
         if _today <= date.fromisoformat(d) <= _today + timedelta(days=190)
     ]

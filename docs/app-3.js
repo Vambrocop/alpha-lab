@@ -438,7 +438,10 @@ function _fcTooltipText(d) {
   if (d.macro) line1 += ` · ${isEN ? _fcMacroEN(d.macro) : d.macro}`;
   let line2 = "";
   if (d.reasons && d.reasons.length) {
-    const joined = d.reasons.map(r => isEN ? _fcReasonEN(r) : r).join(isEN ? ", " : "、");
+    // 优先用后端 reasons_en(单一来源、随条件同步);无则退回前端正则翻译 _fcReasonEN(旧兜底)
+    const joined = (isEN && d.reasons_en && d.reasons_en.length)
+      ? d.reasons_en.join(", ")
+      : d.reasons.map(r => isEN ? _fcReasonEN(r) : r).join(isEN ? ", " : "、");
     line2 = joined.length > 60 ? joined.slice(0, 60) + "…" : joined;
   }
   return { line1, line2 };

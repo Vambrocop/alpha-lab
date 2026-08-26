@@ -329,7 +329,7 @@ function renderForecastChart() {
      <span style="color:#e74c3c">Red</span> = historically weaker window &nbsp;
      <span style="color:#3498db">Blue</span> = ordinary day<br>
      Highest-probability day: <strong style="color:#27ae60">${topDate.date} (${dowLabel(topDate.dow_cn)})</strong>
-     — ${topDate.prob*100 > 0 ? (topDate.prob*100).toFixed(1) : "—"}%, reason: ${topDate.reasons.join(", ") || "Overlapping calendar factors"}<br>
+     — ${topDate.prob*100 > 0 ? (topDate.prob*100).toFixed(1) : "—"}%, reason: ${(topDate.reasons_en && topDate.reasons_en.length ? topDate.reasons_en : (topDate.reasons||[])).join(", ") || "Overlapping calendar factors"}<br>
      <span style="color:var(--muted);font-size:0.78rem">
        Technical signals are frozen at their latest value: ${maState}; RSI=${tech.nasdaq_rsi}; BTC momentum=${tech.btc_mom20?.toFixed(3) || "—"}.
        Calendar factors (day-of-week / month / holiday / tax season) can be predicted precisely; technical signals are uncertain in the near term.
