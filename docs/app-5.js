@@ -588,9 +588,9 @@ function loadTipjar() {
       const c = r.hit == null ? "var(--muted)" : (r.hit ? "var(--green,#2ecc71)" : "#e74c3c");
       return `<span style="color:${c};" title="${vpL(`${esc(r.as_of)} 赌${esc(r.call)}→实${esc(r.actual || '?')}`, `${esc(r.as_of)} bet ${esc(r.call)} → actual ${esc(r.actual || '?')}`)}">${mk}</span>`;
     }).join(" ");
-    const cav = esc(d.caveat || "").replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+    const cav = esc(vpD(d,"caveat") || "").replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
     el.innerHTML =
-      `<div style="font-size:.76rem;color:var(--muted);margin:.1rem 0;">${vpL("规则：","Rule: ")}${esc(d.rule)}</div>`
+      `<div style="font-size:.76rem;color:var(--muted);margin:.1rem 0;">${vpL("规则：","Rule: ")}${esc(vpD(d,"rule"))}</div>`
       + (lt ? `<div style="margin:.35rem 0;">${vpL(`最新一注（${esc(lt.as_of)} 收盘后）：纳指次日`, `Latest bet (after ${esc(lt.as_of)} close): Nasdaq next day`)} <b style="font-size:1.05rem;">${lt.call === 'UP' ? vpL('📈 赌涨','📈 Bet up') : vpL('📉 赌跌','📉 Bet down')}</b></div>` : "")
       + `<div style="margin:.4rem 0;font-size:.95rem;">${vpL("滚动战绩","Rolling record")} <b>${Number(d.hits)}/${Number(d.n_scored)} = ${Number(d.hit_rate)}%</b> <span style="color:var(--muted);font-size:.72rem;">${vpL(`≈50% 掷硬币才是常态 · 近20注 ${Number(d.hit_rate_last20)}% 只是噪声`, `≈50% coin-flip is the normal baseline · last 20 bets ${Number(d.hit_rate_last20)}% is just noise`)}</span></div>`
       + (rec ? `<div style="margin:.3rem 0;font-size:.8rem;">${vpL("近 12 注：","Last 12 bets: ")}${rec}</div>` : "")
@@ -612,7 +612,7 @@ function loadDigest() {
       + `<div style="font-weight:600;font-size:.82rem;margin:.3rem 0 .1rem;">${vpL("① 今天什么变了","① What changed today")}</div><ul style="margin:0;padding-left:1.1rem;">${li(d.tier1_facts)}</ul>`
       + ((d.tier2_watch || []).length ? `<div style="font-weight:600;font-size:.82rem;margin:.45rem 0 .1rem;">${vpL("② 值得看一眼","② Worth a glance")} <span style="font-weight:400;color:var(--muted);font-size:.66rem;">${vpL("描述·非预测","descriptive · not a prediction")}</span></div><ul style="margin:0;padding-left:1.1rem;">${li(d.tier2_watch)}</ul>` : "")
       + ((d.tier3_explore || []).length ? `<div style="font-weight:600;font-size:.82rem;margin:.45rem 0 .1rem;color:var(--muted);">${vpL("③ 探索","③ Exploratory")} <span style="font-weight:400;font-size:.66rem;">${vpL("很可能是噪声·不可交易","likely noise · not tradable")}</span></div><ul style="margin:0;padding-left:1.1rem;color:var(--muted);">${li(d.tier3_explore)}</ul>` : "")
-      + (d.caveat ? `<div style="font-size:.66rem;color:var(--muted);margin-top:.4rem;border-top:1px solid var(--border-faint);padding-top:.3rem;">${esc(d.caveat)}</div>` : "");
+      + (d.caveat ? `<div style="font-size:.66rem;color:var(--muted);margin-top:.4rem;border-top:1px solid var(--border-faint);padding-top:.3rem;">${esc(vpD(d,"caveat"))}</div>` : "");
   }).catch(() => {});
 }
 
@@ -804,7 +804,7 @@ function renderVolModel() {
      <td style="padding:.2rem .5rem;text-align:right;color:${i.importance>0?"#2ecc71":"var(--muted)"}">${i.importance>0?"+":""}${Number(i.importance)}</td></tr>`).join("");
   el.innerHTML = `
     <div style="color:var(--muted);font-size:0.78rem;line-height:1.6;margin-bottom:.6rem;">
-      ${vpL("靶子：","Target: ")}${esc(v.target||"")}。${vpL("模型：","Model: ")}${esc(v.model||"")}。<br>${esc(v.method||"")}
+      ${vpL("靶子：","Target: ")}${esc(vpD(v,"target")||"")}。${vpL("模型：","Model: ")}${esc(vpD(v,"model")||"")}。<br>${esc(vpD(v,"method")||"")}
     </div>
     ${vd ? `
     <div style="font-size:0.82rem;font-weight:700;margin:.2rem 0 .3rem;">${vpL('① 波动率会"升还是降"？（一个被审查纠正的诚实教训）','① Will volatility "rise or fall"? (an honest lesson caught and corrected by review)')}</div>
@@ -822,7 +822,7 @@ function renderVolModel() {
       The only interpretable thing is the model vs. the same self-referential baseline's difference ${vd.model_vs_naive ? `= <b>${vd.model_vs_naive.diff>0?"+":""}${vd.model_vs_naive.diff}</b> (CI ${JSON.stringify(vd.model_vs_naive.ci95)}, p=${vd.model_vs_naive.p_boot}, <b>not significant</b>)` : ""}.
       <b>Honest conclusion: even for volatility rising/falling, a mechanically fair comparison found no robust exploitable signal.</b>`
       )}
-      <span style="color:var(--muted)">${esc(vd.note||"")}</span>
+      <span style="color:var(--muted)">${esc(vpD(vd,"note")||"")}</span>
     </div>` : ""}
 
     <div style="font-size:0.82rem;font-weight:700;margin:.2rem 0 .3rem;">${vpL('② 对照：预测波动率"绝对水平"（VIX 必然赢=同义反复）','② Comparison: predicting volatility\'s "absolute level" (VIX necessarily wins = tautology)')}</div>
@@ -842,7 +842,7 @@ function renderVolModel() {
       Predicting the <b>"level"</b> of volatility → VIX necessarily wins (tautology); predicting <b>"rises/falls"</b> in volatility → VIX loses its edge and the real signal lives in <b>mean-reversion</b>,
       where the model can only squeeze out a little more, and not robustly. Takeaway: <b>pick the right target + the market has already priced in the easy part</b> — a fancier model struggles to add much value.`
       )}
-      <span style="color:var(--muted)">${esc(v.note||"")}</span>
+      <span style="color:var(--muted)">${esc(vpD(v,"note")||"")}</span>
     </div>`;
 }
 
@@ -1009,7 +1009,7 @@ function renderMarketStructure() {
     const load = c.loadings.slice(0, 5).map(l => {
       const val = ld(l.loading);
       const col = val > 0 ? "#2ecc71" : val < 0 ? "#e74c3c" : "var(--muted)";
-      return `<span style="color:${col};margin-right:.5rem;">${esc(l.label)} ${val>0?"+":""}${val}</span>`;
+      return `<span style="color:${col};margin-right:.5rem;">${esc(vpD(l,"label"))} ${val>0?"+":""}${val}</span>`;
     }).join("");
     return `<div style="margin:.3rem 0;">
       <div style="font-size:0.78rem;"><b>PC${c.pc}</b> ${vpL(`解释 <b>${Number(c.explained_pct)}%</b> 共同变动`, `explains <b>${Number(c.explained_pct)}%</b> of co-movement`)}</div>
@@ -1023,7 +1023,7 @@ function renderMarketStructure() {
     const big = Math.abs(r.shift) >= 0.4;
     const sc = r.shift > 0 ? "#2ecc71" : "#e74c3c";
     return `<tr style="border-top:1px solid var(--border-faint);${big?"background:rgba(241,196,15,.06);":""}">
-      <td style="padding:.22rem .5rem;">${esc(r.pair)}</td>
+      <td style="padding:.22rem .5rem;">${esc(vpD(r,"pair"))}</td>
       <td style="padding:.22rem .5rem;text-align:right;">${r.recent_60d>0?"+":""}${Number(r.recent_60d)}</td>
       <td style="padding:.22rem .5rem;text-align:right;color:var(--muted);">${r.full_history>0?"+":""}${Number(r.full_history)}<span style="font-size:0.62rem;">·${r.full_years}y</span></td>
       <td style="padding:.22rem .5rem;text-align:right;color:${sc};font-weight:${big?700:400};">${r.shift>0?"+":""}${Number(r.shift)}${big?" ⚠":""}</td>
@@ -1040,10 +1040,10 @@ function renderMarketStructure() {
     </div>`;
 
   el.innerHTML = `
-    <div style="color:var(--muted);font-size:0.78rem;line-height:1.6;margin-bottom:.6rem;">${esc(ms.window||"")}</div>
+    <div style="color:var(--muted);font-size:0.78rem;line-height:1.6;margin-bottom:.6rem;">${esc(vpD(ms,"window")||"")}</div>
     <div style="font-size:0.8rem;font-weight:600;margin-bottom:.3rem;">${vpL("① 主成分分析（PCA）：市场的共同因子","① Principal component analysis (PCA): the market's common factors")}</div>
     ${pcs}
-    <div style="font-size:0.72rem;color:var(--muted);margin:.3rem 0 .8rem;">${esc(ms.pca?.pc1_note||"")}</div>
+    <div style="font-size:0.72rem;color:var(--muted);margin:.3rem 0 .8rem;">${esc(vpD(ms.pca||{},"pc1_note")||"")}</div>
 
     <div style="font-size:0.8rem;font-weight:600;margin-bottom:.3rem;">${vpL("② 相关性体制：近60日 vs 各对完整历史","② Correlation regime: last 60 days vs. each pair's full history")}
       <span style="font-size:0.66rem;color:var(--muted);font-weight:400;">${vpL(`⚠ 60日为小样本，标准误≈±${se}，单格变化≥0.4(高亮)才超出噪声带`, `⚠ 60 days is a small sample, standard error ≈ ±${se} — only a cell change ≥0.4 (highlighted) exceeds the noise band`)}</span></div>
@@ -1077,7 +1077,7 @@ function renderMarketStructure() {
       for example Nasdaq–gold turning positive, Nasdaq–rates/USD turning negative, <i>may</i> hint the market is shifting toward "rates/liquidity-driven" (stocks and gold rallying together when rate-cut expectations arrive) —
       but the 60-day sample is noisy; this is a hypothesis, not a conclusion.`
       )}
-      <span style="color:var(--muted)">${esc(ms.note||"")}</span>
+      <span style="color:var(--muted)">${esc(vpD(ms,"note")||"")}</span>
     </div>`;
 }
 

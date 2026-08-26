@@ -28,6 +28,10 @@ PCA_ASSETS = ["NASDAQ", "SP500", "SOX", "BTC", "GOLD", "OIL", "DXY", "VIX", "TNX
 LABELS = {"NASDAQ": "纳指", "SP500": "标普", "SOX": "费城半导体", "BTC": "比特币",
           "GOLD": "黄金", "OIL": "原油", "DXY": "美元", "VIX": "VIX", "TNX": "10Y利率",
           "HY_SPREAD": "高收益利差"}
+# 数据层双语(2026-08-26):同一份键,英文标签单独一表(label/pair/assets 三处共用,不各写各的)
+LABELS_EN = {"NASDAQ": "NASDAQ", "SP500": "S&P 500", "SOX": "PHLX Semis", "BTC": "Bitcoin",
+             "GOLD": "Gold", "OIL": "Oil", "DXY": "US Dollar", "VIX": "VIX", "TNX": "10Y yield",
+             "HY_SPREAD": "HY spread"}
 # 相关性对：各自用各对自身可得的完整历史（不做全局 dropna）
 PAIRS = [("NASDAQ", "BTC"), ("NASDAQ", "VIX"), ("NASDAQ", "DXY"),
          ("NASDAQ", "TNX"), ("NASDAQ", "GOLD"), ("SP500", "HY_SPREAD")]
@@ -66,6 +70,7 @@ def run():
     for i in range(min(3, len(evr))):
         load = sorted(
             [{"asset": pca_assets[j], "label": LABELS.get(pca_assets[j], pca_assets[j]),
+              "label_en": LABELS_EN.get(pca_assets[j], pca_assets[j]),
               "loading": round(float(comps_[i][j]), 2)}
              for j in range(len(pca_assets))],
             key=lambda x: -abs(x["loading"]))
@@ -85,6 +90,7 @@ def run():
         full_years = round((pair.index[-1] - pair.index[0]).days / 365.25, 1)
         corr_rows.append({
             "pair": f"{LABELS.get(a,a)}–{LABELS.get(b,b)}",
+        "pair_en": f"{LABELS_EN.get(a,a)}-{LABELS_EN.get(b,b)}",
             "recent_60d": round(recent, 2), "full_history": round(full, 2),
             "full_years": full_years, "shift": round(recent - full, 2),
         })
@@ -92,16 +98,29 @@ def run():
     out = {
         "generated": pd.Timestamp.now().strftime("%Y-%m-%d"),
         "window": f"PCA：近{pca_years}年日变动（收益/差分）标准化；相关性：每对各自完整历史 vs 近60日",
+        "window_en": (f"PCA: daily changes (returns/differences) over the last {pca_years} years, standardised; "
+                      f"correlations: each pair's full history vs the last 60 days"),
         "corr_se": CORR_SE,
         "assets": [LABELS.get(a, a) for a in pca_assets],
+        "assets_en": [LABELS_EN.get(a, a) for a in pca_assets],
         "pca": {"n_assets": len(pca_assets), "pca_years": pca_years, "components": comps,
                 "sign_anchor": "已锚定符号：股票多头为正（PC 符号本不唯一，锚定后可安全解读）",
-                "pc1_note": "PC1 = risk-on/off 共同因子：股票/半导体/BTC 正、VIX 负（已按此约定锚定）"},
+                "sign_anchor_en": ("Sign is anchored so that being long equities is positive (a PC's sign is not "
+                                   "unique; once anchored it can be read safely)"),
+                "pc1_note": "PC1 = risk-on/off 共同因子：股票/半导体/BTC 正、VIX 负（已按此约定锚定）",
+                "pc1_note_en": ("PC1 = the risk-on/off common factor: equities / semis / BTC positive, VIX negative "
+                                "(anchored to this convention)")},
         "correlation_regime": corr_rows,
         "note": (f"解释层，不预测涨跌。注意：近60日相关性是小样本，标准误≈±{CORR_SE}，"
                  "单看一格 0.3 量级的变化可能只是噪声——只把它当'值得留意'，别当确证的结构突变。"
                  "PCA 告诉你谁和谁一起动；相关性体制提示结构可能在变。"
                  "用途是理解'波动生态'（危机时相关性趋同、分散失效），不是择时。"),
+        "note_en": (f"An interpretive layer; it does not predict direction. Note: a 60-day correlation is a small "
+                    f"sample with a standard error of about +/-{CORR_SE}, so a single cell moving by ~0.3 may be "
+                    "noise — treat it as 'worth watching', not as a confirmed structural break. PCA tells you what "
+                    "moves together; the correlation regime hints that structure may be shifting. Its use is to "
+                    "understand the volatility ecosystem (correlations converge in a crisis and diversification "
+                    "fails), not to time the market."),
     }
     print(f"市场结构 PCA（{len(pca_assets)}资产，{pca_years}年）：")
     for c in comps:

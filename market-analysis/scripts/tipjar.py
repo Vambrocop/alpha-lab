@@ -37,6 +37,11 @@ HASH_FIELDS = DATA_COLS
 CAVEAT = ("🎲 试胆区：一个【朴素玩具】预测器，公开记分给你看准不准。这是娱乐/试胆，"
           "**不是任何买卖建议**；按本站自己的研究，日方向预测 ≈ 掷硬币（命中率贴着 50% 才是常态）。"
           "**看战绩别看单条**——这页的意义就是让你亲眼看预测有多不靠谱。")
+CAVEAT_EN = ("TIP-JAR: a deliberately naive toy predictor, scored in public so you can see how (in)accurate it is. "
+             "This is entertainment, **not trading advice**; by this site's own research, daily direction "
+             "prediction is about a coin flip (a hit rate hugging 50% is the norm). "
+             "**Look at the track record, not any single call** — the point of this page is to let you see for "
+             "yourself how unreliable predictions are.")
 
 
 def _nasdaq():
@@ -95,6 +100,7 @@ def scorecard(log):
     latest = pend.iloc[-1] if len(pend) else (log.iloc[-1] if len(log) else None)
     return {
         "rule": "naive_momentum（今天涨→赌明天涨，朴素玩具）",
+        "rule_en": "naive_momentum (up today -> bet up tomorrow; a deliberately naive toy)",
         "n_scored": n, "hits": hits,
         "hit_rate": round(hits / n * 100, 1) if n else None,
         "hit_rate_last20": round(float(last20["hit"].astype(float).mean()) * 100, 1) if len(last20) else None,
@@ -102,7 +108,7 @@ def scorecard(log):
                     "call": str(latest["call"])} if latest is not None else None),
         "recent": [{"as_of": str(r["as_of"]), "call": str(r["call"]), "actual": (None if pd.isna(r["actual"]) else str(r["actual"])),
                     "hit": (None if pd.isna(r["hit"]) else int(r["hit"]))} for r in scored.tail(12).to_dict("records")],
-        "caveat": CAVEAT,
+        "caveat": CAVEAT, "caveat_en": CAVEAT_EN,
     }
 
 

@@ -108,6 +108,14 @@
   }
 
   /* ── 暴露到全局 ──────────────────────────────────────────────────── */
+  // 数据层双语取值器(2026-08-26):Python 产的 JSON 里同一字段带 *_en 变体时,EN 模式优先取,
+  // 缺失回落中文(诚实:宁可显示中文,也不显示空白或机翻)。给 app-*.js / 各页统一用,免得每处重写。
+  function vpD(obj, key) {
+    if (!obj) return "";
+    return (vpLang() === "en" && obj[key + "_en"]) ? obj[key + "_en"] : obj[key];
+  }
+
+  win.vpD           = vpD;
   win.vpEsc         = vpEsc;
   win.vpLang        = vpLang;
   win.vpSetLang     = vpSetLang;

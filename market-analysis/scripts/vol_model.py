@@ -179,6 +179,7 @@ def vol_direction_experiment(f, all_dates):
         print(f"  模型-基线 = {bb['diff']:+.3f}  CI95={bb['ci95']}  p_boot={bb['p_boot']}（唯一可解释量）")
     return {
         "target": "未来20日已实现波动 vs 当前（升=1/降=0）",
+        "target_en": "Next-20-day realised volatility vs today (rise = 1 / fall = 0)",
         "n_pooled": int(len(y)), "pos_pct": round(float(y.mean()) * 100, 1),
         "pooled_auc_model": round(auc_m, 4),
         "pooled_auc_naive_meanrev": round(auc_n, 4),
@@ -186,6 +187,16 @@ def vol_direction_experiment(f, all_dates):
         "mechanical_null_auc": mech_null,
         "model_vs_naive": bb,
         "features": feats,
+        "note_en": ("WARNING - key correction (Opus review): rv20 appears on both sides of the label "
+                    f"(fwd_rv20 > rv20) and also as a feature/score, creating mechanical self-reference — after "
+                    f"shuffling the future, the baseline AUC is still about {mech_null} (a mechanical floor), which "
+                    "means absolute AUCs like 0.72/0.75 are largely an artifact and not tradeable. The only "
+                    "interpretable quantity is model minus an equally self-referential baseline, "
+                    f"= {bb['diff'] if bb else '-'} (CI straddles 0, p={bb['p_boot'] if bb else '-'}, not significant). "
+                    "Honest conclusion: even for the direction of volatility, a mechanically fair comparison finds no "
+                    "robust exploitable signal — most of the mean reversion is a self-reference artifact. Also note: "
+                    "this is the Nth re-pick of a target on the same data; the p-value is not corrected for multiple "
+                    "comparisons and is exploratory."),
         "note": ("⚠ 关键修正（Opus 审查）：rv20 同时出现在标签两侧（fwd_rv20>rv20）又当特征/分数，"
                  f"造成机械自指——把未来打乱后基线 AUC 仍≈{mech_null}（机械地板），说明 0.72/0.75 这种绝对 AUC "
                  "大半是假象、不可交易。唯一可解释的是模型 vs 同样自指的基线之差，"
@@ -284,8 +295,13 @@ def run():
     out = {
         "generated": pd.Timestamp.now().strftime("%Y-%m-%d"),
         "target": "未来20日已实现波动率 高/低（阈值=训练集中位数）",
+        "target_en": "Next-20-day realised volatility, high vs low (threshold = training-set median)",
         "model": "HistGradientBoosting（sklearn，12特征）",
+        "model_en": "HistGradientBoosting (sklearn, 12 features)",
         "method": "purged+embargo(20d) 扩窗CV + 2024-2026 终审保留集（dev/holdout 边界也 embargo）；阈值与前向波动率均无前视",
+        "method_en": ("Purged + embargo (20d) expanding-window CV, plus a 2024-2026 final holdout "
+                      "(the dev/holdout boundary is also embargoed); neither the threshold nor the forward "
+                      "volatility uses look-ahead information"),
         "n_features": len(feats), "features": feats,
         "headline_auc": round(holdout_auc, 4) if holdout_auc is not None else None,   # 头条用 holdout（较均衡）
         "holdout_auc": round(holdout_auc, 4) if holdout_auc is not None else None,
@@ -304,6 +320,14 @@ def run():
                  "结论不是'ML 厉害'，而是'选对靶子 + 市场已把容易的部分定价'。"
                  "另注：CV 各折正类占比 2.5%~66% 不均，早折 AUC 被抬高，故头条用较均衡的 holdout；"
                  f"holdout 标签 20 日重叠、独立区块仅约 {n_blocks} 个且单一 regime，AUC 点估计区间宽，需多 regime 复核。"),
+        "note_en": ("The key honest point: volatility really is far more forecastable than direction, but the model "
+                    f"beats the 'just look at today's VIX' baseline by only about {gain} — almost all of the "
+                    "predictability comes from VIX already pricing future volatility; a 12-feature gradient-boosted "
+                    "tree adds little. The lesson is not 'ML is powerful' but 'pick the right target, and the market "
+                    "has already priced the easy part'. Also note: the positive-class share across CV folds ranges "
+                    "2.5%-66%, which inflates AUC on early folds, so the headline uses the more balanced holdout; "
+                    f"holdout labels overlap by 20 days with only about {n_blocks} independent blocks in a single "
+                    "regime, so the AUC point estimate has a wide interval and needs multi-regime replication."),
     }
     path = PROC_DIR / "vol_model.json"
     with open(path, "w", encoding="utf-8") as fp:
