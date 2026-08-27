@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-27 22:47 UTC",
+ "updated": "2026-08-27 23:16 UTC",
  "items": [
   {
-   "time": "2026-08-27 22:20 UTC",
-   "title": "Jim Cramer says Nvidia and Salesforce earnings upended two bear narratives",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-27 22:13 UTC",
-   "title": "Marvell boosts its forecasts, but the stock slides as Wall Street wonders if there’s more to the story",
+   "time": "2026-08-27 23:05 UTC",
+   "title": "Is Nvidia heading for $1 trillion in annual revenue? One analyst now thinks that’s possible.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-27 22:12 UTC",
-   "title": "The options market is signaling further gains for the S&P 500, but one indicator is flashing a warning",
-   "impact": "negative",
+   "time": "2026-08-27 23:00 UTC",
+   "title": "My mother, 91, has dementia. Every bank says I need her signature to unlock her $100,000 stock certificate. What can I do?",
+   "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-27 21:22 UTC",
-   "title": "UAE ‘spy sheikh’ backs 49% stake in Trump family’s crypto bank venture, WSJ reports",
+   "time": "2026-08-27 22:58 UTC",
+   "title": "Fed Chairman Kevin Warsh delivers his key Jackson Hole speech Friday. Here's what to expect",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-27 21:17 UTC",
-   "title": "What Warsh will say and how the market will react, according to prediction markets",
+   "time": "2026-08-27 22:53 UTC",
+   "title": "CrowdStrike’s stock jumps after record-breaking earnings. Wall Street is lapping it up.",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-27 22:51 UTC",
+   "title": "Salesforce’s stock rockets 20% and gives the software sector a major lift",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
