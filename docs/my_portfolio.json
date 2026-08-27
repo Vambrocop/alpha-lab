@@ -1,31 +1,17 @@
 {
-  "generated": "2026-08-26T23:47:33Z",
+  "generated": "2026-08-27T01:05:07Z",
   "public": false,
-  "n_open": 1,
+  "n_open": 0,
   "n_pending": 0,
   "n_exited": 0,
   "portfolio": {
-    "cost": 112.0,
-    "value": 178.0,
-    "ret_pct": 58.93,
-    "bench_ret_pct": 31.13,
-    "excess_pct": 27.8
+    "cost": 0,
+    "value": 0,
+    "ret_pct": null,
+    "bench_ret_pct": null,
+    "excess_pct": null
   },
-  "holdings": [
-    {
-      "symbol": "AAA",
-      "shares": 1.0,
-      "status": "open",
-      "entry_date": "2026-01-09",
-      "entry_px": 112.0,
-      "last_px": 178.0,
-      "ret_pct": 58.93,
-      "bench": "QQQ",
-      "bench_ret_pct": 31.13,
-      "excess_pct": 27.8,
-      "exit_date": null
-    }
-  ],
+  "holdings": [],
   "closed": [],
   "honesty": [
     "这是**你自己选的**模拟组合的前向跟踪,不是模型信号、不是荐股、不是任何买卖建议。",

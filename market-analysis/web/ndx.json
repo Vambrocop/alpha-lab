@@ -1,23 +1,8 @@
 {
-  "generated": "2026-08-25",
+  "generated": "2026-08-27",
   "n": 102,
-  "added": [
-    "ALAB",
-    "CRWV",
-    "HONA",
-    "NBIS",
-    "RKLB",
-    "SPCX",
-    "TER"
-  ],
-  "removed": [
-    "CHTR",
-    "CTSH",
-    "EA",
-    "INSM",
-    "VRSK",
-    "ZS"
-  ],
+  "added": [],
+  "removed": [],
   "not_in_valpha150": [
     "AEP",
     "ALAB",

@@ -1,16 +1,8 @@
 {
- "updated": "2026-08-26 23:48 UTC",
+ "updated": "2026-08-27 01:02 UTC",
  "items": [
   {
-   "time": "2026-08-26 22:50 UTC",
-   "title": "Salesforce’s stock gets an Anthropic boost — and more highlights from earnings",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-26 22:39 UTC",
+   "time": "2026-08-27 01:01 UTC",
    "title": "Salesforce stock jumps 12% on AI growth and Anthropic investment gain",
    "impact": "positive",
    "note": "",
@@ -18,15 +10,7 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 21:58 UTC",
-   "title": "Meta dodges ‘Big Tobacco’ nightmare with $18 billion settlement in child-safety lawsuit",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-26 21:56 UTC",
+   "time": "2026-08-27 00:43 UTC",
    "title": "CrowdStrike’s stock soars after AI fuels the cybersecurity company’s ‘best quarter in history’",
    "impact": "neutral",
    "note": "",
@@ -34,11 +18,27 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-26 21:17 UTC",
-   "title": "Meta settles social media addiction case with California, other states for $16.7 billion",
+   "time": "2026-08-27 00:21 UTC",
+   "title": "Inside India newsletter: U.S., Russia vie for a bigger slice of the world’s third-largest energy market",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-27 00:15 UTC",
+   "title": "Fed Gov Lisa Cook’s lawyer fires back at Trump's renewed threat to oust her",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-27 00:14 UTC",
+   "title": "Fed’s Lisa Cook denies committing mortgage fraud, says Trump has no grounds to remove her from office",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]

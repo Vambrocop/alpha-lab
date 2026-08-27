@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T13:53:33Z",
+  "generated": "2026-08-27T01:04:57Z",
   "as_of": "2026-08-07",
   "title_zh": "澳股荐股·同一规则零调参历史轨迹披露（非策略验证·含幸存者偏差·系统性偏乐观）",
   "title_en": "AU picks — same-rule zero-tuning historical trace disclosure (NOT strategy validation; survivorship-biased, systematically optimistic)",
@@ -18,18 +18,18 @@
     "n_settled": 2586,
     "n_dropped": 0,
     "dropped_pct": 0.0,
-    "hit_pct_total": 51.8,
-    "mean_call_excess_pct": -0.351,
-    "median_call_excess_pct": 0.368,
+    "hit_pct_total": 51.6,
+    "mean_call_excess_pct": -0.339,
+    "median_call_excess_pct": 0.335,
     "bullish": {
       "n": 1293,
-      "hit_pct": 51.8,
-      "mean_call_excess_pct": 0.714
+      "hit_pct": 51.4,
+      "mean_call_excess_pct": 0.669
     },
     "bearish": {
       "n": 1293,
       "hit_pct": 51.8,
-      "mean_call_excess_pct": -1.415
+      "mean_call_excess_pct": -1.347
     }
   },
   "by_year": [
@@ -143,144 +143,144 @@
       "n": 72,
       "hit_pct": 52.8,
       "mean_call_excess_pct": 0.82,
-      "n_selectable": 77
+      "n_selectable": 76
     },
     {
       "year": 2008,
       "n": 78,
       "hit_pct": 51.3,
-      "mean_call_excess_pct": -0.995,
-      "n_selectable": 82
+      "mean_call_excess_pct": -1.031,
+      "n_selectable": 81
     },
     {
       "year": 2009,
       "n": 78,
-      "hit_pct": 53.8,
-      "mean_call_excess_pct": -1.923,
-      "n_selectable": 83
+      "hit_pct": 52.6,
+      "mean_call_excess_pct": -2.149,
+      "n_selectable": 82
     },
     {
       "year": 2010,
       "n": 72,
       "hit_pct": 47.2,
-      "mean_call_excess_pct": -3.566,
-      "n_selectable": 84
+      "mean_call_excess_pct": -3.547,
+      "n_selectable": 83
     },
     {
       "year": 2011,
       "n": 78,
       "hit_pct": 64.1,
-      "mean_call_excess_pct": 1.076,
-      "n_selectable": 86
+      "mean_call_excess_pct": 1.077,
+      "n_selectable": 85
     },
     {
       "year": 2012,
       "n": 72,
-      "hit_pct": 59.7,
-      "mean_call_excess_pct": 1.279,
+      "hit_pct": 61.1,
+      "mean_call_excess_pct": 1.499,
       "n_selectable": 88
     },
     {
       "year": 2013,
       "n": 78,
-      "hit_pct": 51.3,
-      "mean_call_excess_pct": -1.215,
-      "n_selectable": 91
+      "hit_pct": 50.0,
+      "mean_call_excess_pct": -1.332,
+      "n_selectable": 90
     },
     {
       "year": 2014,
       "n": 78,
-      "hit_pct": 59.0,
-      "mean_call_excess_pct": 3.01,
-      "n_selectable": 93
+      "hit_pct": 57.7,
+      "mean_call_excess_pct": 3.854,
+      "n_selectable": 92
     },
     {
       "year": 2015,
       "n": 72,
       "hit_pct": 54.2,
-      "mean_call_excess_pct": -2.847,
-      "n_selectable": 95
+      "mean_call_excess_pct": -2.911,
+      "n_selectable": 94
     },
     {
       "year": 2016,
       "n": 78,
-      "hit_pct": 44.9,
-      "mean_call_excess_pct": -3.133,
-      "n_selectable": 99
+      "hit_pct": 43.6,
+      "mean_call_excess_pct": -3.147,
+      "n_selectable": 98
     },
     {
       "year": 2017,
       "n": 78,
-      "hit_pct": 41.0,
-      "mean_call_excess_pct": -1.529,
-      "n_selectable": 100
+      "hit_pct": 42.3,
+      "mean_call_excess_pct": -1.422,
+      "n_selectable": 99
     },
     {
       "year": 2018,
       "n": 72,
       "hit_pct": 45.8,
-      "mean_call_excess_pct": -0.212,
-      "n_selectable": 101
+      "mean_call_excess_pct": -0.091,
+      "n_selectable": 100
     },
     {
       "year": 2019,
       "n": 78,
-      "hit_pct": 52.6,
-      "mean_call_excess_pct": -1.1,
-      "n_selectable": 103
+      "hit_pct": 55.1,
+      "mean_call_excess_pct": -0.899,
+      "n_selectable": 102
     },
     {
       "year": 2020,
       "n": 78,
-      "hit_pct": 52.6,
-      "mean_call_excess_pct": -3.042,
-      "n_selectable": 103
+      "hit_pct": 51.3,
+      "mean_call_excess_pct": -3.094,
+      "n_selectable": 102
     },
     {
       "year": 2021,
       "n": 72,
-      "hit_pct": 52.8,
-      "mean_call_excess_pct": 0.326,
-      "n_selectable": 103
+      "hit_pct": 51.4,
+      "mean_call_excess_pct": 0.276,
+      "n_selectable": 102
     },
     {
       "year": 2022,
       "n": 78,
-      "hit_pct": 43.6,
-      "mean_call_excess_pct": -2.056,
-      "n_selectable": 105
+      "hit_pct": 42.3,
+      "mean_call_excess_pct": -2.199,
+      "n_selectable": 104
     },
     {
       "year": 2023,
       "n": 78,
       "hit_pct": 38.5,
-      "mean_call_excess_pct": -1.766,
-      "n_selectable": 105
+      "mean_call_excess_pct": -1.741,
+      "n_selectable": 104
     },
     {
       "year": 2024,
       "n": 72,
       "hit_pct": 50.0,
-      "mean_call_excess_pct": 1.455,
-      "n_selectable": 106
+      "mean_call_excess_pct": 1.411,
+      "n_selectable": 105
     },
     {
       "year": 2025,
       "n": 78,
-      "hit_pct": 56.4,
-      "mean_call_excess_pct": 0.551,
-      "n_selectable": 106
+      "hit_pct": 52.6,
+      "mean_call_excess_pct": 0.086,
+      "n_selectable": 105
     },
     {
       "year": 2026,
       "n": 42,
-      "hit_pct": 52.4,
-      "mean_call_excess_pct": 0.731,
-      "n_selectable": 106
+      "hit_pct": 54.8,
+      "mean_call_excess_pct": 0.86,
+      "n_selectable": 105
     }
   ],
   "meta": {
-    "generated": "2026-08-26T13:53:33Z",
+    "generated": "2026-08-27T01:04:57Z",
     "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
     "hold_td": 20,
     "benchmark": "^AXJO",
