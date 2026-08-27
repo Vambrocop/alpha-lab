@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T00:59:50Z",
+  "generated": "2026-08-27T22:44:14Z",
   "method": "跨检验族汇池多重比较：Benjamini-Yekutieli(任意相关稳健，头条) + Benjamini-Hochberg(PRDS，乐观对照) + Bonferroni(FWER)。",
   "caveat": "保守的**探索性**跨族 meta 校正，非统一模型。汇集各方法已发布的 p 值，回答'把试过的所有东西算进去后还剩几条'。部分主张是机械/同期关系(如恐慌↔标普同期负相关)，存活≠真发现，需看各自方法脚注；step-up 程序下，足够多的极小 p 会抬高同批其它主张的阈值，故个别中等 p 可能跨族存活而族内不存活，属正常。",
   "families_pooled": [

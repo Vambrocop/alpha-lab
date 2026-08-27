@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-27 01:02 UTC",
+ "updated": "2026-08-27 22:47 UTC",
  "items": [
   {
-   "time": "2026-08-27 01:01 UTC",
-   "title": "Salesforce stock jumps 12% on AI growth and Anthropic investment gain",
-   "impact": "positive",
+   "time": "2026-08-27 22:20 UTC",
+   "title": "Jim Cramer says Nvidia and Salesforce earnings upended two bear narratives",
+   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-27 00:43 UTC",
-   "title": "CrowdStrike’s stock soars after AI fuels the cybersecurity company’s ‘best quarter in history’",
+   "time": "2026-08-27 22:13 UTC",
+   "title": "Marvell boosts its forecasts, but the stock slides as Wall Street wonders if there’s more to the story",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-27 00:21 UTC",
-   "title": "Inside India newsletter: U.S., Russia vie for a bigger slice of the world’s third-largest energy market",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-27 00:15 UTC",
-   "title": "Fed Gov Lisa Cook’s lawyer fires back at Trump's renewed threat to oust her",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-27 00:14 UTC",
-   "title": "Fed’s Lisa Cook denies committing mortgage fraud, says Trump has no grounds to remove her from office",
-   "impact": "neutral",
+   "time": "2026-08-27 22:12 UTC",
+   "title": "The options market is signaling further gains for the S&P 500, but one indicator is flashing a warning",
+   "impact": "negative",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-27 21:22 UTC",
+   "title": "UAE ‘spy sheikh’ backs 49% stake in Trump family’s crypto bank venture, WSJ reports",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-27 21:17 UTC",
+   "title": "What Warsh will say and how the market will react, according to prediction markets",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]

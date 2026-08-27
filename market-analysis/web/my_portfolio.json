@@ -1,19 +1,12 @@
 {
-  "generated": "2026-08-27T05:30:21Z",
+  "generated": "2026-08-27T22:50:07Z",
   "public": false,
   "currency": "AUD",
   "fx_note": "美股按各自入场日/当日 AUD/USD 折成澳元;汇率波动会真实改变澳元收益,已计入。",
   "n_portfolios": 0,
-  "n_pending": 1,
+  "n_pending": 0,
   "portfolios": [],
-  "pending": [
-    {
-      "portfolio": "盘A",
-      "symbol": "AAA",
-      "aud_invested": 10000.0,
-      "status": "pending"
-    }
-  ],
+  "pending": [],
   "honesty": [
     "这是**你自己定的**模拟盘对决,不是荐股、不是预测、不是买卖建议。",
     "入场不可回填:每笔按「写进清单的**次日**首个交易日」真实收盘价成交,股数与入场价一旦记入账本永不重写——防止事后挑一个好看的起点。",

@@ -1,18 +1,18 @@
 {
-  "generated": "2026-08-27T01:05:07Z",
+  "generated": "2026-08-27T22:50:08Z",
   "n": 7,
   "rows": [
     {
       "name": "系统自动发现(FDR引擎)",
       "family": "系统",
       "scope": "日历/超跌反弹/因子 · 42 预声明候选 · 跨族 BY-FDR",
-      "evidence": "真存活 7 · 已淡 7 · 死 128 · 无定论 6",
+      "evidence": "真存活 6 · 已淡 6 · 死 130 · 无定论 6",
       "verdict": "多数是噪声(诚实):预声明全进分母、禁挑好看的",
       "link": "self_growing.html",
       "name_en": "Automated discovery (FDR engine)",
       "family_en": "System",
       "scope_en": "Calendar / oversold-bounce / factors · 42 pre-registered candidates · cross-family BY-FDR",
-      "evidence_en": "survived 7 · faded 7 · dead 128 · inconclusive 6",
+      "evidence_en": "survived 6 · faded 6 · dead 130 · inconclusive 6",
       "verdict_en": "Most are noise (honest): every pre-registered candidate counts in the denominator; no cherry-picking"
     },
     {
@@ -33,13 +33,13 @@
       "family": "动量",
       "scope": "BTC 20日动量 ±5% · 前向20日",
       "evidence": "条件上涨率差 14.0pp · 4 体制段同号",
-      "verdict": "信号真·风险取舍：方向同号 4/4 段(其中 3 段优势≥5pp；早段约3pp接近噪声、强度随期递增)；裸 overlay 让出 2.88pp 年化，换 Sharpe 0.93 vs 0.83、回撤 -29.5% vs -36.4%(浅 6.9pp)——但属单一历史路径、无置信区间，可能不重复。要风险调整收益的可参考，要最大绝对收益的死拿更好。已对照纳指自身20日动量(同口径差 9.6pp)：BTC 多给约 4.4pp 增量、不只是大盘动量代理",
+      "verdict": "信号真·风险取舍：方向同号 4/4 段(其中 3 段优势≥5pp；早段约3pp接近噪声、强度随期递增)；裸 overlay 让出 2.88pp 年化，换 Sharpe 0.94 vs 0.83、回撤 -29.5% vs -36.4%(浅 6.9pp)——但属单一历史路径、无置信区间，可能不重复。要风险调整收益的可参考，要最大绝对收益的死拿更好。已对照纳指自身20日动量(同口径差 9.4pp)：BTC 多给约 4.6pp 增量、不只是大盘动量代理",
       "link": "btcread.html",
       "name_en": "BTC momentum -> NASDAQ direction",
       "family_en": "Momentum",
       "scope_en": "BTC 20-day momentum +/-5% · 20-day forward",
       "evidence_en": "conditional up-rate gap 14.0pp · same sign across 4 regimes",
-      "verdict_en": "Signal is real, but it is a risk trade-off: same sign in 4/4 regime segments (3 with an edge ≥5pp; the earliest segment is ~3pp and close to noise, strength increases over time); the naive overlay gives up 2.88pp of annualised return in exchange for Sharpe 0.93 vs 0.83, drawdown -29.5% vs -36.4% (6.9pp shallower) — but this is a single historical path with no confidence interval; it may not repeat. Worth a look if you optimise risk-adjusted return; if you want maximum absolute return, just hold. Controlled for NASDAQ's own 20-day momentum (same-basis gap 9.6pp): BTC adds about 4.4pp on top — not merely a proxy for broad-market momentum"
+      "verdict_en": "Signal is real, but it is a risk trade-off: same sign in 4/4 regime segments (3 with an edge ≥5pp; the earliest segment is ~3pp and close to noise, strength increases over time); the naive overlay gives up 2.88pp of annualised return in exchange for Sharpe 0.94 vs 0.83, drawdown -29.5% vs -36.4% (6.9pp shallower) — but this is a single historical path with no confidence interval; it may not repeat. Worth a look if you optimise risk-adjusted return; if you want maximum absolute return, just hold. Controlled for NASDAQ's own 20-day momentum (same-basis gap 9.4pp): BTC adds about 4.6pp on top — not merely a proxy for broad-market momentum"
     },
     {
       "name": "政治钱·参议院交易",
@@ -71,13 +71,13 @@
       "name": "美债利率→美股前向",
       "family": "宏观",
       "scope": "10Y收益率水平档/20日涨跌方向 → 纳指·标普 未来1/3/12月 · 2000+",
-      "evidence": "纳指侧 1/18 格能与基率分开(低档1月 vs基率 0.72pp·CI [1.24, 1.97]) · 3/12 组(资产×变量×窗口)桶间关系非单调;9 个桶分时代符号翻转;18 个桶独立段 < 8(只描述、不出CI)。",
+      "evidence": "纳指侧 1/18 格能与基率分开(低档1月 vs基率 0.72pp·CI [1.24, 1.98]) · 3/12 组(资产×变量×窗口)桶间关系非单调;9 个桶分时代符号翻转;18 个桶独立段 < 8(只描述、不出CI)。",
       "verdict": "只有「低利率档·1月」分得开;方向档几乎无信号;长窗口其实是宏观年代(高档跨时代翻转)——非可交易edge",
       "link": "treasury.html",
       "name_en": "Treasury yields -> US stock forward returns",
       "family_en": "Macro",
       "scope_en": "10Y yield level tercile / 20-day change -> NASDAQ & S&P next 1/3/12 months · 2000+",
-      "evidence_en": "1/18 NASDAQ cells separate from the base rate (low bucket 1-month: 0.72pp vs base, CI [1.24, 1.97])",
+      "evidence_en": "1/18 NASDAQ cells separate from the base rate (low bucket 1-month: 0.72pp vs base, CI [1.24, 1.98])",
       "verdict_en": "Only the low-yield 1-month cell separates; the direction dimension shows no reliable signal; longer windows really reflect which macro epoch you are in (high bucket flips sign across eras) — not a tradeable edge"
     },
     {
