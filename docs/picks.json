@@ -1,24 +1,24 @@
 {
-  "generated": "2026-08-28T05:40:47Z",
+  "generated": "2026-08-28T22:56:49Z",
   "source": "动量+低波动 选股 → 前向公开计分",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，观察池取头/尾各3）",
   "hold_td": 20,
   "benchmark": "QQQ",
   "track_record": {
-    "n_settled": 140,
-    "n_hit": 84,
-    "call_hit_pct": 60.0,
+    "n_settled": 146,
+    "n_hit": 85,
+    "call_hit_pct": 58.2,
     "bullish": {
-      "n": 71,
-      "hit_pct": 56.3,
-      "mean_call_excess_pct": -0.299
+      "n": 74,
+      "hit_pct": 54.1,
+      "mean_call_excess_pct": -0.391
     },
     "bearish": {
-      "n": 69,
-      "hit_pct": 63.8,
-      "mean_call_excess_pct": 4.453
+      "n": 72,
+      "hit_pct": 62.5,
+      "mean_call_excess_pct": 3.935
     },
-    "n_pending": 141,
+    "n_pending": 136,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
@@ -83,6 +83,17 @@
       "view": "看淡",
       "pick_date": "2026-08-28",
       "mom_pct": 14.0,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "NFLX",
+      "view": "看淡",
+      "pick_date": "2026-08-28",
+      "mom_pct": -15.1,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
@@ -451,20 +462,9 @@
       "excess_pct": null,
       "call_excess_pct": null,
       "hit": false
-    },
-    {
-      "symbol": "LLY",
-      "view": "看好",
-      "pick_date": "2026-08-20",
-      "mom_pct": 23.9,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
     }
   ],
-  "verdict": "已结算 140 条荐股：判断对(看好跑赢/看淡跑输 QQQ)的比例 60.0%。重叠窗口/幸存者偏差未除，别当 edge。",
+  "verdict": "已结算 146 条荐股：判断对(看好跑赢/看淡跑输 QQQ)的比例 58.2%。重叠窗口/幸存者偏差未除，别当 edge。",
   "caveat": "出格区·荐股前向公开计分。挑票规则=动量+低波动 等权排名（126日动量 + 63日低波动，观察池取头/尾各3）(透明·可换;2026-06-26 起,此前为裸6月动量),进 append-only 账本:出榜次日入场、持有 20 交易日、相对 QQQ 结算。看好命中=跑赢QQQ、看淡命中=跑输QQQ。**前向计分**:刚上线样本极小(约1月后首批),别当结论。规则更稳健(低波动异象+动量有文献支持)但未经我们回测,由公开计分裁决。幸存者偏差0.0%因退市/无价被丢;重叠窗口只看描述;相关≠因果;非投资建议、不可交易(成本/滑点/税)、会错、过去≠未来。每跑 append 认账。",
   "v2": {
     "pick_rule": "6-1 跳月动量+低波动 等权排名（动量取 t-147→t-21 收盘·126 交易日窗·跳过最近21日=文献标准构造规避短期反转；与 v1 唯一差异，其余全同；2026-07-21 起与 v1 并行计分）。v2 上线动机 = v1 首批(2026-06-26)翻车后的改版；规则选择虽有文献先验，采纳的时点与「选哪个改良」本身受该次亏损事件驱动——v2 战绩需较长横期，且只能算「看过一次亏损后的一个改良」，别当干净的事前 OOS 证据。两版规则仅最近 21 日口径不同——多数时期两版几乎同票，只在近期急涨急跌的票上分歧（那正是分歧要紧、也正是 v2 为何存在之处）。叠加 19 只池/头尾各3/重叠窗，并行计分早期分辨力极低，可能很久才能区分谁好——如实等，不催结论。",
@@ -472,20 +472,20 @@
     "benchmark": "QQQ",
     "launch_date": "2026-07-21",
     "track_record": {
-      "n_settled": 31,
+      "n_settled": 37,
       "n_hit": 12,
-      "call_hit_pct": 38.7,
+      "call_hit_pct": 32.4,
       "bullish": {
-        "n": 15,
-        "hit_pct": 26.7,
-        "mean_call_excess_pct": -1.956
+        "n": 18,
+        "hit_pct": 22.2,
+        "mean_call_excess_pct": -2.374
       },
       "bearish": {
-        "n": 16,
-        "hit_pct": 50.0,
-        "mean_call_excess_pct": 0.661
+        "n": 19,
+        "hit_pct": 42.1,
+        "mean_call_excess_pct": -1.065
       },
-      "n_pending": 133,
+      "n_pending": 128,
       "n_dropped": 0,
       "dropped_pct": 0.0
     },
@@ -550,6 +550,17 @@
         "view": "看淡",
         "pick_date": "2026-08-28",
         "mom_pct": -18.4,
+        "settled": false,
+        "dropped": false,
+        "excess_pct": null,
+        "call_excess_pct": null,
+        "hit": false
+      },
+      {
+        "symbol": "META",
+        "view": "看淡",
+        "pick_date": "2026-08-28",
+        "mom_pct": -19.3,
         "settled": false,
         "dropped": false,
         "excess_pct": null,
@@ -918,20 +929,9 @@
         "excess_pct": null,
         "call_excess_pct": null,
         "hit": false
-      },
-      {
-        "symbol": "TSLA",
-        "view": "看淡",
-        "pick_date": "2026-08-20",
-        "mom_pct": -10.8,
-        "settled": false,
-        "dropped": false,
-        "excess_pct": null,
-        "call_excess_pct": null,
-        "hit": false
       }
     ],
-    "verdict": "已结算 31 条荐股：判断对(看好跑赢/看淡跑输 QQQ)的比例 38.7%。重叠窗口/幸存者偏差未除，别当 edge。",
+    "verdict": "已结算 37 条荐股：判断对(看好跑赢/看淡跑输 QQQ)的比例 32.4%。重叠窗口/幸存者偏差未除，别当 edge。",
     "caveat": "出格区·荐股前向公开计分(v2·6-1跳月动量,与 v1 并行独立账本 data/pick_ledger_v2.csv,2026-07-21 起计分)。挑票规则=6-1 跳月动量+低波动 等权排名（动量取 t-147→t-21 收盘·126 交易日窗·跳过最近21日=文献标准构造规避短期反转；与 v1 唯一差异，其余全同；2026-07-21 起与 v1 并行计分）。v2 上线动机 = v1 首批(2026-06-26)翻车后的改版；规则选择虽有文献先验，采纳的时点与「选哪个改良」本身受该次亏损事件驱动——v2 战绩需较长横期，且只能算「看过一次亏损后的一个改良」，别当干净的事前 OOS 证据。两版规则仅最近 21 日口径不同——多数时期两版几乎同票，只在近期急涨急跌的票上分歧（那正是分歧要紧、也正是 v2 为何存在之处）。叠加 19 只池/头尾各3/重叠窗，并行计分早期分辨力极低，可能很久才能区分谁好——如实等，不催结论。 进 append-only 账本:出榜次日入场、持有 20 交易日、相对 QQQ 结算。看好命中=跑赢QQQ、看淡命中=跑输QQQ。**前向计分**:刚上线样本极小(约1月后首批),别当结论。幸存者偏差0.0%因退市/无价被丢;重叠窗口只看描述;相关≠因果;非投资建议、不可交易(成本/滑点/税)、会错、过去≠未来。每跑 append 认账。"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-28T05:40:41Z",
-  "as_of": "2026-08-28",
+  "generated": "2026-08-28T22:56:45Z",
+  "as_of": "2026-08-27",
   "price_start": "1992-11-23",
   "index_label": "ASX200 (^AXJO)",
   "lookback": 252,
@@ -13,30 +13,30 @@
   "any_robust": true,
   "base_rate": {
     "h60": {
-      "up_pct": 63.31,
+      "up_pct": 63.3,
       "mean_pct": 1.47,
       "median_pct": 1.99,
-      "n": 8476
+      "n": 8475
     },
     "h252": {
-      "up_pct": 72.94,
+      "up_pct": 72.93,
       "mean_pct": 5.97,
-      "median_pct": 6.82,
-      "n": 8284
+      "median_pct": 6.83,
+      "n": 8283
     }
   },
   "drawdown_curve": [
     {
       "dd_threshold_pct": 5,
       "horizon": 60,
-      "n_days": 3248,
+      "n_days": 3247,
       "n_episodes": 69,
       "n_episodes_with_fwd": 68,
       "n_independent": 31,
-      "up_pct": 67.18,
+      "up_pct": 67.17,
       "mean_pct": 2.27,
       "median_pct": 3.1,
-      "base_up_pct": 63.31,
+      "base_up_pct": 63.3,
       "base_mean_pct": 1.47,
       "diff_mean": 0.8,
       "ci95_mean": [
@@ -47,7 +47,7 @@
       "too_small_no_ci": false,
       "era1_up_pct": 62.25,
       "era1_mean_pct": 1.38,
-      "era2_up_pct": 76.17,
+      "era2_up_pct": 76.15,
       "era2_mean_pct": 3.9,
       "era_same_sign": true,
       "verdict": "crisis-driven-fragile"
@@ -62,7 +62,7 @@
       "up_pct": 77.11,
       "mean_pct": 7.66,
       "median_pct": 8.88,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97,
       "diff_mean": 1.69,
       "ci95_mean": null,
@@ -85,7 +85,7 @@
       "up_pct": 61.7,
       "mean_pct": 1.81,
       "median_pct": 2.44,
-      "base_up_pct": 63.31,
+      "base_up_pct": 63.3,
       "base_mean_pct": 1.47,
       "diff_mean": 0.34,
       "ci95_mean": [
@@ -111,7 +111,7 @@
       "up_pct": 83.95,
       "mean_pct": 9.29,
       "median_pct": 10.54,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97,
       "diff_mean": 3.32,
       "ci95_mean": [
@@ -137,7 +137,7 @@
       "up_pct": 68.5,
       "mean_pct": 2.41,
       "median_pct": 3.4,
-      "base_up_pct": 63.31,
+      "base_up_pct": 63.3,
       "base_mean_pct": 1.47,
       "diff_mean": 0.94,
       "ci95_mean": [
@@ -163,7 +163,7 @@
       "up_pct": 80.33,
       "mean_pct": 10.83,
       "median_pct": 15.74,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97,
       "diff_mean": 4.86,
       "ci95_mean": [
@@ -189,7 +189,7 @@
       "up_pct": 60.64,
       "mean_pct": 1.75,
       "median_pct": 5.62,
-      "base_up_pct": 63.31,
+      "base_up_pct": 63.3,
       "base_mean_pct": 1.47,
       "diff_mean": 0.28,
       "ci95_mean": null,
@@ -212,7 +212,7 @@
       "up_pct": 73.27,
       "mean_pct": 13.67,
       "median_pct": 20.59,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97,
       "diff_mean": 7.7,
       "ci95_mean": null,
@@ -235,7 +235,7 @@
       "up_pct": 60.34,
       "mean_pct": 2.87,
       "median_pct": 5.19,
-      "base_up_pct": 63.31,
+      "base_up_pct": 63.3,
       "base_mean_pct": 1.47,
       "diff_mean": 1.4,
       "ci95_mean": null,
@@ -258,7 +258,7 @@
       "up_pct": 97.77,
       "mean_pct": 28.52,
       "median_pct": 31.15,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97,
       "diff_mean": 22.55,
       "ci95_mean": null,
@@ -278,7 +278,7 @@
       "n_days": 321,
       "up_pct": 86.92,
       "mean_pct": 12.28,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97
     },
     {
@@ -286,7 +286,7 @@
       "n_days": 862,
       "up_pct": 83.29,
       "mean_pct": 9.41,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97
     },
     {
@@ -294,7 +294,7 @@
       "n_days": 2189,
       "up_pct": 72.77,
       "mean_pct": 6.2,
-      "base_up_pct": 72.94,
+      "base_up_pct": 72.93,
       "base_mean_pct": 5.97
     }
   ],
@@ -861,78 +861,78 @@
     "current": [
       {
         "ticker": "TPW.AX",
-        "dd_from_52wk_high_pct": -81.4,
-        "dist_from_52wk_low_pct": 14.0
+        "dd_from_52wk_high_pct": -81.1,
+        "dist_from_52wk_low_pct": 15.7
       },
       {
         "ticker": "WTC.AX",
-        "dd_from_52wk_high_pct": -58.7,
-        "dist_from_52wk_low_pct": 42.1
+        "dd_from_52wk_high_pct": -59.0,
+        "dist_from_52wk_low_pct": 41.2
       },
       {
         "ticker": "COH.AX",
-        "dd_from_52wk_high_pct": -54.0,
-        "dist_from_52wk_low_pct": 51.6
+        "dd_from_52wk_high_pct": -54.1,
+        "dist_from_52wk_low_pct": 51.2
       },
       {
         "ticker": "ARB.AX",
-        "dd_from_52wk_high_pct": -49.8,
-        "dist_from_52wk_low_pct": 15.2
+        "dd_from_52wk_high_pct": -49.4,
+        "dist_from_52wk_low_pct": 16.0
       },
       {
         "ticker": "SEK.AX",
-        "dd_from_52wk_high_pct": -48.6,
-        "dist_from_52wk_low_pct": 24.7
+        "dd_from_52wk_high_pct": -48.4,
+        "dist_from_52wk_low_pct": 25.1
       },
       {
         "ticker": "XRO.AX",
-        "dd_from_52wk_high_pct": -47.4,
-        "dist_from_52wk_low_pct": 40.0
+        "dd_from_52wk_high_pct": -47.8,
+        "dist_from_52wk_low_pct": 39.1
       },
       {
         "ticker": "PMV.AX",
-        "dd_from_52wk_high_pct": -45.8,
-        "dist_from_52wk_low_pct": 6.5
+        "dd_from_52wk_high_pct": -45.7,
+        "dist_from_52wk_low_pct": 6.6
       },
       {
         "ticker": "CIA.AX",
-        "dd_from_52wk_high_pct": -45.4,
-        "dist_from_52wk_low_pct": 8.6
+        "dd_from_52wk_high_pct": -45.6,
+        "dist_from_52wk_low_pct": 8.2
       },
       {
         "ticker": "PME.AX",
-        "dd_from_52wk_high_pct": -42.6,
-        "dist_from_52wk_low_pct": 70.0
+        "dd_from_52wk_high_pct": -43.1,
+        "dist_from_52wk_low_pct": 68.3
       },
       {
         "ticker": "JBH.AX",
-        "dd_from_52wk_high_pct": -40.9,
-        "dist_from_52wk_low_pct": 2.1
+        "dd_from_52wk_high_pct": -41.2,
+        "dist_from_52wk_low_pct": 1.6
       },
       {
         "ticker": "HVN.AX",
-        "dd_from_52wk_high_pct": -40.0,
-        "dist_from_52wk_low_pct": 1.7
+        "dd_from_52wk_high_pct": -39.9,
+        "dist_from_52wk_low_pct": 1.8
       },
       {
         "ticker": "LOV.AX",
-        "dd_from_52wk_high_pct": -35.8,
-        "dist_from_52wk_low_pct": 29.3
+        "dd_from_52wk_high_pct": -35.4,
+        "dist_from_52wk_low_pct": 30.0
       },
       {
         "ticker": "HUB.AX",
-        "dd_from_52wk_high_pct": -35.5,
-        "dist_from_52wk_low_pct": 9.0
+        "dd_from_52wk_high_pct": -35.2,
+        "dist_from_52wk_low_pct": 9.5
       },
       {
         "ticker": "NWL.AX",
-        "dd_from_52wk_high_pct": -34.5,
-        "dist_from_52wk_low_pct": 7.7
+        "dd_from_52wk_high_pct": -34.4,
+        "dist_from_52wk_low_pct": 7.8
       },
       {
         "ticker": "ORA.AX",
-        "dd_from_52wk_high_pct": -34.1,
-        "dist_from_52wk_low_pct": 20.6
+        "dd_from_52wk_high_pct": -34.2,
+        "dist_from_52wk_low_pct": 20.4
       },
       {
         "ticker": "BPT.AX",
@@ -941,43 +941,48 @@
       },
       {
         "ticker": "SGP.AX",
-        "dd_from_52wk_high_pct": -32.9,
-        "dist_from_52wk_low_pct": 19.5
+        "dd_from_52wk_high_pct": -32.4,
+        "dist_from_52wk_low_pct": 20.4
       },
       {
         "ticker": "TPG.AX",
-        "dd_from_52wk_high_pct": -32.1,
-        "dist_from_52wk_low_pct": 7.6
+        "dd_from_52wk_high_pct": -31.5,
+        "dist_from_52wk_low_pct": 8.5
       },
       {
         "ticker": "YAL.AX",
-        "dd_from_52wk_high_pct": -30.0,
-        "dist_from_52wk_low_pct": 29.2
+        "dd_from_52wk_high_pct": -30.1,
+        "dist_from_52wk_low_pct": 29.0
       },
       {
         "ticker": "TWE.AX",
-        "dd_from_52wk_high_pct": -29.2,
-        "dist_from_52wk_low_pct": 64.8
+        "dd_from_52wk_high_pct": -29.4,
+        "dist_from_52wk_low_pct": 64.4
       },
       {
         "ticker": "CAR.AX",
-        "dd_from_52wk_high_pct": -28.4,
-        "dist_from_52wk_low_pct": 25.0
-      },
-      {
-        "ticker": "CKF.AX",
-        "dd_from_52wk_high_pct": -28.0,
-        "dist_from_52wk_low_pct": 5.8
+        "dd_from_52wk_high_pct": -28.3,
+        "dist_from_52wk_low_pct": 25.1
       },
       {
         "ticker": "A2M.AX",
-        "dd_from_52wk_high_pct": -27.4,
-        "dist_from_52wk_low_pct": 38.2
+        "dd_from_52wk_high_pct": -27.7,
+        "dist_from_52wk_low_pct": 37.7
+      },
+      {
+        "ticker": "CKF.AX",
+        "dd_from_52wk_high_pct": -27.6,
+        "dist_from_52wk_low_pct": 6.4
       },
       {
         "ticker": "GQG.AX",
-        "dd_from_52wk_high_pct": -26.6,
-        "dist_from_52wk_low_pct": 2.5
+        "dd_from_52wk_high_pct": -26.9,
+        "dist_from_52wk_low_pct": 2.0
+      },
+      {
+        "ticker": "FLT.AX",
+        "dd_from_52wk_high_pct": -26.4,
+        "dist_from_52wk_low_pct": 24.5
       },
       {
         "ticker": "LYC.AX",
@@ -985,9 +990,9 @@
         "dist_from_52wk_low_pct": 33.4
       },
       {
-        "ticker": "FLT.AX",
-        "dd_from_52wk_high_pct": -26.3,
-        "dist_from_52wk_low_pct": 24.7
+        "ticker": "REA.AX",
+        "dd_from_52wk_high_pct": -26.0,
+        "dist_from_52wk_low_pct": 35.4
       },
       {
         "ticker": "MTS.AX",
@@ -995,24 +1000,19 @@
         "dist_from_52wk_low_pct": 14.5
       },
       {
-        "ticker": "REA.AX",
-        "dd_from_52wk_high_pct": -25.9,
-        "dist_from_52wk_low_pct": 35.4
-      },
-      {
         "ticker": "SUL.AX",
-        "dd_from_52wk_high_pct": -25.7,
-        "dist_from_52wk_low_pct": 21.0
+        "dd_from_52wk_high_pct": -25.3,
+        "dist_from_52wk_low_pct": 21.7
       },
       {
         "ticker": "ILU.AX",
-        "dd_from_52wk_high_pct": -24.1,
-        "dist_from_52wk_low_pct": 42.6
+        "dd_from_52wk_high_pct": -23.7,
+        "dist_from_52wk_low_pct": 43.4
       },
       {
         "ticker": "BXB.AX",
-        "dd_from_52wk_high_pct": -23.8,
-        "dist_from_52wk_low_pct": 20.1
+        "dd_from_52wk_high_pct": -23.6,
+        "dist_from_52wk_low_pct": 20.4
       },
       {
         "ticker": "RMD.AX",
@@ -1021,13 +1021,8 @@
       },
       {
         "ticker": "NXT.AX",
-        "dd_from_52wk_high_pct": -23.0,
-        "dist_from_52wk_low_pct": 23.1
-      },
-      {
-        "ticker": "MGR.AX",
         "dd_from_52wk_high_pct": -22.9,
-        "dist_from_52wk_low_pct": 13.5
+        "dist_from_52wk_low_pct": 23.2
       },
       {
         "ticker": "DOW.AX",
@@ -1036,128 +1031,133 @@
       },
       {
         "ticker": "CHC.AX",
-        "dd_from_52wk_high_pct": -22.4,
-        "dist_from_52wk_low_pct": 7.6
+        "dd_from_52wk_high_pct": -22.8,
+        "dist_from_52wk_low_pct": 7.0
       },
       {
-        "ticker": "NST.AX",
-        "dd_from_52wk_high_pct": -21.7,
-        "dist_from_52wk_low_pct": 43.1
-      },
-      {
-        "ticker": "FMG.AX",
-        "dd_from_52wk_high_pct": -21.3,
-        "dist_from_52wk_low_pct": 3.0
-      },
-      {
-        "ticker": "EDV.AX",
-        "dd_from_52wk_high_pct": -21.3,
-        "dist_from_52wk_low_pct": 8.8
+        "ticker": "MGR.AX",
+        "dd_from_52wk_high_pct": -22.6,
+        "dist_from_52wk_low_pct": 13.9
       },
       {
         "ticker": "MFG.AX",
-        "dd_from_52wk_high_pct": -21.1,
-        "dist_from_52wk_low_pct": 18.0
+        "dd_from_52wk_high_pct": -21.6,
+        "dist_from_52wk_low_pct": 17.2
       },
       {
-        "ticker": "PLS.AX",
-        "dd_from_52wk_high_pct": -21.1,
-        "dist_from_52wk_low_pct": 170.1
+        "ticker": "FMG.AX",
+        "dd_from_52wk_high_pct": -21.4,
+        "dist_from_52wk_low_pct": 3.0
+      },
+      {
+        "ticker": "NST.AX",
+        "dd_from_52wk_high_pct": -21.3,
+        "dist_from_52wk_low_pct": 44.0
       },
       {
         "ticker": "CSL.AX",
-        "dd_from_52wk_high_pct": -21.1,
-        "dist_from_52wk_low_pct": 86.3
+        "dd_from_52wk_high_pct": -20.9,
+        "dist_from_52wk_low_pct": 86.8
+      },
+      {
+        "ticker": "EDV.AX",
+        "dd_from_52wk_high_pct": -20.8,
+        "dist_from_52wk_low_pct": 9.5
+      },
+      {
+        "ticker": "PLS.AX",
+        "dd_from_52wk_high_pct": -20.5,
+        "dist_from_52wk_low_pct": 172.1
       },
       {
         "ticker": "DXS.AX",
-        "dd_from_52wk_high_pct": -20.7,
-        "dist_from_52wk_low_pct": 11.9
-      },
-      {
-        "ticker": "NEC.AX",
-        "dd_from_52wk_high_pct": -20.0,
-        "dist_from_52wk_low_pct": 13.8
+        "dd_from_52wk_high_pct": -20.4,
+        "dist_from_52wk_low_pct": 12.3
       },
       {
         "ticker": "NAB.AX",
-        "dd_from_52wk_high_pct": -19.8,
-        "dist_from_52wk_low_pct": 8.0
+        "dd_from_52wk_high_pct": -20.3,
+        "dist_from_52wk_low_pct": 7.3
+      },
+      {
+        "ticker": "NEC.AX",
+        "dd_from_52wk_high_pct": -19.7,
+        "dist_from_52wk_low_pct": 14.1
       },
       {
         "ticker": "WBC.AX",
-        "dd_from_52wk_high_pct": -19.3,
-        "dist_from_52wk_low_pct": 0.9
+        "dd_from_52wk_high_pct": -19.5,
+        "dist_from_52wk_low_pct": 0.7
       },
       {
         "ticker": "GMG.AX",
-        "dd_from_52wk_high_pct": -18.4,
-        "dist_from_52wk_low_pct": 12.0
+        "dd_from_52wk_high_pct": -18.3,
+        "dist_from_52wk_low_pct": 12.1
       },
       {
         "ticker": "BEN.AX",
-        "dd_from_52wk_high_pct": -17.5,
-        "dist_from_52wk_low_pct": 8.2
+        "dd_from_52wk_high_pct": -17.8,
+        "dist_from_52wk_low_pct": 7.8
       },
       {
         "ticker": "TNE.AX",
-        "dd_from_52wk_high_pct": -15.7,
-        "dist_from_52wk_low_pct": 64.5
+        "dd_from_52wk_high_pct": -16.6,
+        "dist_from_52wk_low_pct": 62.8
       },
       {
         "ticker": "DMP.AX",
-        "dd_from_52wk_high_pct": -15.6,
-        "dist_from_52wk_low_pct": 55.1
+        "dd_from_52wk_high_pct": -16.4,
+        "dist_from_52wk_low_pct": 53.6
       },
       {
         "ticker": "ORI.AX",
-        "dd_from_52wk_high_pct": -15.5,
-        "dist_from_52wk_low_pct": 18.9
+        "dd_from_52wk_high_pct": -15.7,
+        "dist_from_52wk_low_pct": 18.6
       },
       {
         "ticker": "QAN.AX",
-        "dd_from_52wk_high_pct": -15.4,
-        "dist_from_52wk_low_pct": 17.3
-      },
-      {
-        "ticker": "IGO.AX",
         "dd_from_52wk_high_pct": -15.3,
-        "dist_from_52wk_low_pct": 106.3
-      },
-      {
-        "ticker": "AGL.AX",
-        "dd_from_52wk_high_pct": -15.2,
-        "dist_from_52wk_low_pct": 10.0
-      },
-      {
-        "ticker": "GPT.AX",
-        "dd_from_52wk_high_pct": -15.2,
-        "dist_from_52wk_low_pct": 7.2
-      },
-      {
-        "ticker": "TLS.AX",
-        "dd_from_52wk_high_pct": -15.1,
-        "dist_from_52wk_low_pct": 1.8
-      },
-      {
-        "ticker": "WES.AX",
-        "dd_from_52wk_high_pct": -15.0,
-        "dist_from_52wk_low_pct": 11.0
+        "dist_from_52wk_low_pct": 17.5
       },
       {
         "ticker": "WHC.AX",
-        "dd_from_52wk_high_pct": -14.9,
-        "dist_from_52wk_low_pct": 38.0
+        "dd_from_52wk_high_pct": -15.2,
+        "dist_from_52wk_low_pct": 37.4
+      },
+      {
+        "ticker": "AGL.AX",
+        "dd_from_52wk_high_pct": -15.0,
+        "dist_from_52wk_low_pct": 10.3
+      },
+      {
+        "ticker": "TLS.AX",
+        "dd_from_52wk_high_pct": -15.0,
+        "dist_from_52wk_low_pct": 1.9
       },
       {
         "ticker": "SHL.AX",
-        "dd_from_52wk_high_pct": -14.8,
-        "dist_from_52wk_low_pct": 9.1
+        "dd_from_52wk_high_pct": -14.9,
+        "dist_from_52wk_low_pct": 9.0
+      },
+      {
+        "ticker": "GPT.AX",
+        "dd_from_52wk_high_pct": -14.7,
+        "dist_from_52wk_low_pct": 7.7
       },
       {
         "ticker": "SIG.AX",
-        "dd_from_52wk_high_pct": -14.4,
-        "dist_from_52wk_low_pct": 3.3
+        "dd_from_52wk_high_pct": -14.6,
+        "dist_from_52wk_low_pct": 3.1
+      },
+      {
+        "ticker": "IGO.AX",
+        "dd_from_52wk_high_pct": -14.5,
+        "dist_from_52wk_low_pct": 108.3
+      },
+      {
+        "ticker": "WES.AX",
+        "dd_from_52wk_high_pct": -14.2,
+        "dist_from_52wk_low_pct": 12.0
       },
       {
         "ticker": "QBE.AX",
@@ -1166,93 +1166,98 @@
       },
       {
         "ticker": "PNI.AX",
-        "dd_from_52wk_high_pct": -13.5,
-        "dist_from_52wk_low_pct": 36.9
+        "dd_from_52wk_high_pct": -13.2,
+        "dist_from_52wk_low_pct": 37.3
       },
       {
         "ticker": "CBA.AX",
-        "dd_from_52wk_high_pct": -13.0,
-        "dist_from_52wk_low_pct": 9.9
-      },
-      {
-        "ticker": "MIN.AX",
         "dd_from_52wk_high_pct": -12.9,
-        "dist_from_52wk_low_pct": 81.2
+        "dist_from_52wk_low_pct": 10.1
       },
       {
         "ticker": "ALL.AX",
-        "dd_from_52wk_high_pct": -12.7,
-        "dist_from_52wk_low_pct": 37.0
-      },
-      {
-        "ticker": "BSL.AX",
-        "dd_from_52wk_high_pct": -12.6,
-        "dist_from_52wk_low_pct": 60.3
+        "dd_from_52wk_high_pct": -12.9,
+        "dist_from_52wk_low_pct": 36.7
       },
       {
         "ticker": "SCG.AX",
-        "dd_from_52wk_high_pct": -12.5,
-        "dist_from_52wk_low_pct": 8.9
+        "dd_from_52wk_high_pct": -12.8,
+        "dist_from_52wk_low_pct": 8.6
+      },
+      {
+        "ticker": "BSL.AX",
+        "dd_from_52wk_high_pct": -12.4,
+        "dist_from_52wk_low_pct": 60.7
       },
       {
         "ticker": "NHF.AX",
+        "dd_from_52wk_high_pct": -12.0,
+        "dist_from_52wk_low_pct": 16.0
+      },
+      {
+        "ticker": "MIN.AX",
         "dd_from_52wk_high_pct": -11.9,
-        "dist_from_52wk_low_pct": 16.1
+        "dist_from_52wk_low_pct": 83.2
       },
       {
         "ticker": "CWY.AX",
-        "dd_from_52wk_high_pct": -11.2,
-        "dist_from_52wk_low_pct": 19.7
+        "dd_from_52wk_high_pct": -11.7,
+        "dist_from_52wk_low_pct": 19.0
       },
       {
         "ticker": "CGF.AX",
-        "dd_from_52wk_high_pct": -10.6,
-        "dist_from_52wk_low_pct": 30.3
+        "dd_from_52wk_high_pct": -11.1,
+        "dist_from_52wk_low_pct": 29.5
       },
       {
         "ticker": "MND.AX",
-        "dd_from_52wk_high_pct": -10.4,
-        "dist_from_52wk_low_pct": 44.0
+        "dd_from_52wk_high_pct": -10.6,
+        "dist_from_52wk_low_pct": 43.6
       },
       {
         "ticker": "ASX.AX",
-        "dd_from_52wk_high_pct": -10.0,
-        "dist_from_52wk_low_pct": 24.8
+        "dd_from_52wk_high_pct": -10.3,
+        "dist_from_52wk_low_pct": 24.4
       },
       {
         "ticker": "EVN.AX",
+        "dd_from_52wk_high_pct": -10.3,
+        "dist_from_52wk_low_pct": 77.5
+      },
+      {
+        "ticker": "TLX.AX",
         "dd_from_52wk_high_pct": -10.0,
-        "dist_from_52wk_low_pct": 78.1
+        "dist_from_52wk_low_pct": 81.3
       },
       {
         "ticker": "WDS.AX",
         "dd_from_52wk_high_pct": -9.9,
-        "dist_from_52wk_low_pct": 50.0
-      },
-      {
-        "ticker": "MPL.AX",
-        "dd_from_52wk_high_pct": -9.8,
-        "dist_from_52wk_low_pct": 16.2
+        "dist_from_52wk_low_pct": 50.1
       },
       {
         "ticker": "ALX.AX",
-        "dd_from_52wk_high_pct": -9.8,
-        "dist_from_52wk_low_pct": 9.0
-      },
-      {
-        "ticker": "TLX.AX",
-        "dd_from_52wk_high_pct": -9.3,
-        "dist_from_52wk_low_pct": 82.7
+        "dd_from_52wk_high_pct": -9.6,
+        "dist_from_52wk_low_pct": 9.2
       },
       {
         "ticker": "SUN.AX",
-        "dd_from_52wk_high_pct": -9.2,
-        "dist_from_52wk_low_pct": 36.6
+        "dd_from_52wk_high_pct": -9.5,
+        "dist_from_52wk_low_pct": 36.1
+      },
+      {
+        "ticker": "MPL.AX",
+        "dd_from_52wk_high_pct": -9.5,
+        "dist_from_52wk_low_pct": 16.6
       },
       {
         "ticker": "BOQ.AX",
-        "dd_from_52wk_high_pct": -8.5,
-        "dist_from_52wk_low_pct": 9.5
+        "dd_from_52wk_high_pct": -8.7,
+        "dist_from_52wk_low_pct": 9.3
+      },
+      {
+        "ticker": "ORG.AX",
+        "dd_from_52wk_high_pct": -8.4,
+        "dist_from_52wk_low_pct": 15.4
       },
       {
         "ticker": "TCL.AX",
@@ -1260,29 +1265,24 @@
         "dist_from_52wk_low_pct": 7.1
       },
       {
-        "ticker": "ORG.AX",
-        "dd_from_52wk_high_pct": -8.3,
-        "dist_from_52wk_low_pct": 15.6
-      },
-      {
         "ticker": "ANZ.AX",
-        "dd_from_52wk_high_pct": -8.0,
-        "dist_from_52wk_low_pct": 17.6
-      },
-      {
-        "ticker": "IAG.AX",
-        "dd_from_52wk_high_pct": -7.9,
-        "dist_from_52wk_low_pct": 24.8
+        "dd_from_52wk_high_pct": -8.1,
+        "dist_from_52wk_low_pct": 17.5
       },
       {
         "ticker": "CPU.AX",
+        "dd_from_52wk_high_pct": -7.8,
+        "dist_from_52wk_low_pct": 44.2
+      },
+      {
+        "ticker": "IAG.AX",
         "dd_from_52wk_high_pct": -7.6,
-        "dist_from_52wk_low_pct": 44.6
+        "dist_from_52wk_low_pct": 25.1
       },
       {
         "ticker": "BRG.AX",
-        "dd_from_52wk_high_pct": -7.3,
-        "dist_from_52wk_low_pct": 24.0
+        "dd_from_52wk_high_pct": -7.1,
+        "dist_from_52wk_low_pct": 24.2
       },
       {
         "ticker": "RIO.AX",
@@ -1290,14 +1290,14 @@
         "dist_from_52wk_low_pct": 63.1
       },
       {
-        "ticker": "REH.AX",
-        "dd_from_52wk_high_pct": -6.9,
-        "dist_from_52wk_low_pct": 62.1
-      },
-      {
         "ticker": "AMC.AX",
         "dd_from_52wk_high_pct": -6.8,
         "dist_from_52wk_low_pct": 27.9
+      },
+      {
+        "ticker": "NWS.AX",
+        "dd_from_52wk_high_pct": -6.7,
+        "dist_from_52wk_low_pct": 34.6
       },
       {
         "ticker": "VCX.AX",
@@ -1305,84 +1305,84 @@
         "dist_from_52wk_low_pct": 12.4
       },
       {
-        "ticker": "NWS.AX",
-        "dd_from_52wk_high_pct": -6.4,
+        "ticker": "REH.AX",
+        "dd_from_52wk_high_pct": -6.5,
+        "dist_from_52wk_low_pct": 63.0
+      },
+      {
+        "ticker": "MQG.AX",
+        "dd_from_52wk_high_pct": -5.8,
         "dist_from_52wk_low_pct": 34.9
       },
       {
         "ticker": "JHX.AX",
-        "dd_from_52wk_high_pct": -5.7,
-        "dist_from_52wk_low_pct": 62.6
-      },
-      {
-        "ticker": "MQG.AX",
         "dd_from_52wk_high_pct": -5.5,
-        "dist_from_52wk_low_pct": 35.4
+        "dist_from_52wk_low_pct": 62.9
       },
       {
         "ticker": "PPT.AX",
-        "dd_from_52wk_high_pct": -5.3,
+        "dd_from_52wk_high_pct": -5.4,
         "dist_from_52wk_low_pct": 28.0
       },
       {
         "ticker": "SFR.AX",
-        "dd_from_52wk_high_pct": -3.2,
-        "dist_from_52wk_low_pct": 91.4
-      },
-      {
-        "ticker": "WOW.AX",
-        "dd_from_52wk_high_pct": -3.2,
-        "dist_from_52wk_low_pct": 53.8
-      },
-      {
-        "ticker": "COL.AX",
-        "dd_from_52wk_high_pct": -2.9,
-        "dist_from_52wk_low_pct": 17.5
+        "dd_from_52wk_high_pct": -3.4,
+        "dist_from_52wk_low_pct": 91.2
       },
       {
         "ticker": "NEM.AX",
-        "dd_from_52wk_high_pct": -2.5,
-        "dist_from_52wk_low_pct": 60.9
+        "dd_from_52wk_high_pct": -2.7,
+        "dist_from_52wk_low_pct": 60.5
       },
       {
-        "ticker": "AMP.AX",
-        "dd_from_52wk_high_pct": -2.3,
-        "dist_from_52wk_low_pct": 104.7
+        "ticker": "WOW.AX",
+        "dd_from_52wk_high_pct": -2.5,
+        "dist_from_52wk_low_pct": 54.9
+      },
+      {
+        "ticker": "COL.AX",
+        "dd_from_52wk_high_pct": -2.5,
+        "dist_from_52wk_low_pct": 18.1
       },
       {
         "ticker": "FPH.AX",
-        "dd_from_52wk_high_pct": -2.1,
-        "dist_from_52wk_low_pct": 37.9
-      },
-      {
-        "ticker": "ANN.AX",
-        "dd_from_52wk_high_pct": -1.9,
-        "dist_from_52wk_low_pct": 62.0
+        "dd_from_52wk_high_pct": -2.2,
+        "dist_from_52wk_low_pct": 37.8
       },
       {
         "ticker": "STO.AX",
-        "dd_from_52wk_high_pct": -1.8,
-        "dist_from_52wk_low_pct": 43.1
+        "dd_from_52wk_high_pct": -2.0,
+        "dist_from_52wk_low_pct": 42.9
+      },
+      {
+        "ticker": "AMP.AX",
+        "dd_from_52wk_high_pct": -1.7,
+        "dist_from_52wk_low_pct": 106.0
+      },
+      {
+        "ticker": "ANN.AX",
+        "dd_from_52wk_high_pct": -0.9,
+        "dist_from_52wk_low_pct": 63.6
       },
       {
         "ticker": "BHP.AX",
-        "dd_from_52wk_high_pct": -0.8,
-        "dist_from_52wk_low_pct": 72.6
+        "dd_from_52wk_high_pct": -0.5,
+        "dist_from_52wk_low_pct": 73.0
       },
       {
         "ticker": "APA.AX",
-        "dd_from_52wk_high_pct": -0.5,
-        "dist_from_52wk_low_pct": 30.3
+        "dd_from_52wk_high_pct": -0.3,
+        "dist_from_52wk_low_pct": 30.5
       },
       {
         "ticker": "S32.AX",
         "dd_from_52wk_high_pct": 0.0,
-        "dist_from_52wk_low_pct": 112.0
+        "dist_from_52wk_low_pct": 112.4
       },
       {
         "ticker": "RHC.AX",
         "dd_from_52wk_high_pct": 0.0,
-        "dist_from_52wk_low_pct": 67.6
+        "dist_from_52wk_low_pct": 70.0
       }
     ]
   },

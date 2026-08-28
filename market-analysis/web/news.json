@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-28 05:37 UTC",
+ "updated": "2026-08-28 22:54 UTC",
  "items": [
   {
-   "time": "2026-08-28 05:02 UTC",
-   "title": "Six months into the Iran war: Markets become accustomed to stalemate with no end in sight",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-28 03:29 UTC",
-   "title": "OpenAI rolls out ads on select ChatGPT plans in India to boost monetization, support wider access",
+   "time": "2026-08-28 21:57 UTC",
+   "title": "U.S. appeals court rules against prediction markets, sets up likely fight at Supreme Court",
    "impact": "positive",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-28 03:16 UTC",
-   "title": "Judge says Trump administration’s blacklist of Anthropic was illegal",
+   "time": "2026-08-28 21:34 UTC",
+   "title": "Microsoft’s stock seals its longest winning streak of the year as AI software fears fade",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-28 02:50 UTC",
-   "title": "Judge blocks Pentagon blacklist of Anthropic as supply chain risk",
-   "impact": "negative",
+   "time": "2026-08-28 21:08 UTC",
+   "title": "Meta's $17 billion settlement mandates new safeguards for kids—many are promising, says safety expert",
+   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-28 02:17 UTC",
-   "title": "DeepSeek looks for fresh capital as founder’s quant empire navigates China’s choppy IPO market",
+   "time": "2026-08-28 20:58 UTC",
+   "title": "Nvidia’s revenue forecast is so huge that Wall Street wonders if SpaceX is the reason",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-28 20:10 UTC",
+   "title": "Kevin Warsh gets what every Fed chair hopes for: a bond market that trusts his word",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
