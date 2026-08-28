@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-27 23:16 UTC",
+ "updated": "2026-08-28 05:37 UTC",
  "items": [
   {
-   "time": "2026-08-27 23:05 UTC",
-   "title": "Is Nvidia heading for $1 trillion in annual revenue? One analyst now thinks that’s possible.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-27 23:00 UTC",
-   "title": "My mother, 91, has dementia. Every bank says I need her signature to unlock her $100,000 stock certificate. What can I do?",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-27 22:58 UTC",
-   "title": "Fed Chairman Kevin Warsh delivers his key Jackson Hole speech Friday. Here's what to expect",
+   "time": "2026-08-28 05:02 UTC",
+   "title": "Six months into the Iran war: Markets become accustomed to stalemate with no end in sight",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-27 22:53 UTC",
-   "title": "CrowdStrike’s stock jumps after record-breaking earnings. Wall Street is lapping it up.",
+   "time": "2026-08-28 03:29 UTC",
+   "title": "OpenAI rolls out ads on select ChatGPT plans in India to boost monetization, support wider access",
    "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-28 03:16 UTC",
+   "title": "Judge says Trump administration’s blacklist of Anthropic was illegal",
+   "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-27 22:51 UTC",
-   "title": "Salesforce’s stock rockets 20% and gives the software sector a major lift",
+   "time": "2026-08-28 02:50 UTC",
+   "title": "Judge blocks Pentagon blacklist of Anthropic as supply chain risk",
+   "impact": "negative",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-28 02:17 UTC",
+   "title": "DeepSeek looks for fresh capital as founder’s quant empire navigates China’s choppy IPO market",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]

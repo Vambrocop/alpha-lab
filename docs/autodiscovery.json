@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-27T22:46:35Z",
+  "generated": "2026-08-28T05:37:06Z",
   "method": "自动发现 Phase 1b：预注册有限候选(日历/反弹/因子)各路由到真统计算 p，经 quality_gate 双栏 BY-FDR(族内+跨族)+三态裁决。全部候选进分母、禁预筛、固定种子。",
   "caveat": "存活≠未来重演≠可交易；现代已淡=全段过FDR但现代测不到(疑被套利)；检验力不足=样本太小不下结论。因子族 FDR 为**无向双侧**(只问'有无可测边际'、不含方向判断，与 factor_pruning 的方向门控透镜口径不同)。门4样本外待接入。探索性，非预测、非荐股。",
   "q": 0.1,
   "n_declared": 148,
-  "days_tracked": 45,
+  "days_tracked": 46,
   "summary": {
     "m_total": 148,
     "n_survive_cross": 12,
@@ -12,8 +12,8 @@
     "n_survive_family": 17,
     "n_survive": 6,
     "n_faded": 6,
-    "n_dead": 130,
-    "n_inconclusive": 6
+    "n_dead": 131,
+    "n_inconclusive": 5
   },
   "context_states": {
     "asof": "2026-08-27",
@@ -11879,6 +11879,55 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
+      "candidate_id": "fac_7578b1d58f",
+      "family": "factor",
+      "key": "vix_backwardation",
+      "p": 0.862,
+      "recent_p": 0.611,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.555,
+          "up_pct": 65,
+          "base_pct": 62,
+          "diff_pp": 2.7,
+          "n": 556
+        },
+        {
+          "label": "2000后",
+          "p": 0.555,
+          "up_pct": 65,
+          "base_pct": 62,
+          "diff_pp": 2.7,
+          "n": 556
+        },
+        {
+          "label": "2021后",
+          "p": 0.346,
+          "up_pct": 73,
+          "base_pct": 62,
+          "diff_pp": 11.1,
+          "n": 67
+        },
+        {
+          "label": "近1年",
+          "p": 0.454,
+          "up_pct": 73,
+          "base_pct": 62,
+          "diff_pp": 11.0,
+          "n": 15
+        }
+      ],
+      "effect": "因子为真时20日上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
       "candidate_id": "cal_116d0565a8",
       "family": "calendar",
       "key": "quarter_end_nasdaq",
@@ -12935,47 +12984,6 @@
       "modern_status": "现代无边际",
       "verdict": "dead",
       "reason": "未过跨族 BY-FDR"
-    },
-    {
-      "candidate_id": "fac_7578b1d58f",
-      "family": "factor",
-      "key": "vix_backwardation",
-      "p": 1.0,
-      "recent_p": null,
-      "recent_powered": false,
-      "windows": [
-        {
-          "label": "完整",
-          "p": null,
-          "up_pct": null,
-          "n": 0
-        },
-        {
-          "label": "2000后",
-          "p": null,
-          "up_pct": null,
-          "n": 0
-        },
-        {
-          "label": "2021后",
-          "p": null,
-          "up_pct": null,
-          "n": 0
-        },
-        {
-          "label": "近1年",
-          "p": null,
-          "up_pct": null,
-          "n": 0
-        }
-      ],
-      "effect": "因子为真时20日上涨率 vs 基率",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代检验力不足",
-      "verdict": "inconclusive",
-      "reason": "现代段检验力不足"
     }
   ]
 }
