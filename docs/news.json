@@ -1,6 +1,14 @@
 {
- "updated": "2026-08-28 22:54 UTC",
+ "updated": "2026-08-28 23:15 UTC",
  "items": [
+  {
+   "time": "2026-08-28 23:00 UTC",
+   "title": "My mother, 91, has dementia. Every bank says I need her signature to unlock her $100,000 stock certificate. What can I do?",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-28 21:57 UTC",
    "title": "U.S. appeals court rules against prediction markets, sets up likely fight at Supreme Court",
@@ -28,14 +36,6 @@
   {
    "time": "2026-08-28 20:58 UTC",
    "title": "Nvidia’s revenue forecast is so huge that Wall Street wonders if SpaceX is the reason",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-28 20:10 UTC",
-   "title": "Kevin Warsh gets what every Fed chair hopes for: a bond market that trusts his word",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
