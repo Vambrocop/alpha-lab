@@ -32,6 +32,12 @@ def px():
 
 @pytest.fixture
 def log(tmp_path, monkeypatch):
+    """临时账本 + **拦住产物落盘**。
+
+    2026-08-27 教训:此前只 monkeypatch 了 M.LOG,write_json 仍往真的 web/my_portfolio.json
+    写——跑一次 pytest 就把线上的四盘数据覆盖成合成的「盘A/AAA」。测试绝不许污染生产产物。"""
+    import util_io
+    monkeypatch.setattr(util_io, "write_json", lambda *a, **k: [])
     p = tmp_path / "ledger.csv"
     monkeypatch.setattr(M, "LOG", p)
     return p

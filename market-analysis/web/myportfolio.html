@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.alternative.me https://vambrocop.github.io; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>🏁 四盘对决 · 各 A$10,000 同日起跑</title>
+<link rel="stylesheet" href="vp.css">
+<style>
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:14px;max-width:1040px;margin:0 auto}
+  h1{font-size:1.25rem;margin:.2em 0;display:inline-block}
+  .sub{color:var(--mut);font-size:.8rem;margin:0 0 8px;line-height:1.6}
+  .note{background:rgba(210,153,34,.1);border:1px solid var(--amb);border-radius:8px;padding:10px 12px;font-size:.84rem;margin:10px 0;color:#e8c96a;line-height:1.6}
+  .rank{display:flex;flex-direction:column;gap:9px;margin:14px 0}
+  .bk{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:11px 13px}
+  .bk.lead{border-color:var(--acc);background:rgba(163,113,247,.08)}
+  .bk-hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .bk-nm{font-weight:700;font-size:.98rem}
+  .bk-ret{font-size:1.25rem;font-weight:800;font-variant-numeric:tabular-nums}
+  .bk-val{color:var(--mut);font-size:.78rem;margin-top:3px}
+  .bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:7px}
+  .bar>i{display:block;height:100%;border-radius:3px}
+  .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+  table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;min-width:520px}
+  th,td{padding:4px 7px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+  th:nth-child(1),td:nth-child(1){text-align:left}
+  th{color:var(--mut);font-weight:600;font-size:.76rem}
+  .pos{color:var(--grn)}.neg{color:var(--red)}
+  .pend{background:rgba(88,166,255,.08);border:1px solid var(--blu);border-radius:8px;padding:9px 12px;font-size:.82rem;color:#b7d4ff;margin:10px 0;line-height:1.6}
+  .honesty-list{font-size:.8rem;line-height:1.8;color:var(--mut);margin:6px 0 0;padding-left:1.1em}
+  #src{color:var(--mut);font-size:.78rem;margin-top:10px}
+  .foot{color:var(--mut);font-size:.76rem;margin-top:14px;border-top:1px solid var(--border);padding-top:10px;line-height:1.6}
+  @media(max-width:640px){body{padding:11px}h1{font-size:1.1rem}table{font-size:.76rem;min-width:470px}th,td{padding:4px 5px}.bk-ret{font-size:1.1rem}}
+</style>
+</head>
+<body>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页"><span data-i18n="backLink">↩ 返回</span></a>
+<a href="index.html" style="color:var(--mut);text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
+<button id="lang" aria-label="切换语言 / switch language"></button>
+<h1 data-i18n="title"></h1>
+<p class="sub" data-i18n="intro"></p>
+
+<div class="note" data-i18n="banner"></div>
+
+<div id="pendBox"></div>
+<div class="rank" id="rank"></div>
+
+<details class="vp-more" style="margin-top:14px">
+  <summary data-i18n="moreHonesty"></summary>
+  <ul class="honesty-list" id="honestyList"></ul>
+</details>
+
+<div id="src"></div>
+<div class="foot" data-i18n="foot"></div>
+
+<script src="vp_i18n.js"></script>
+<script>
+const LIVE="my_portfolio.json";
+const I18N={
+  title:{zh:"🏁 四盘对决 · 各 A$10,000 同日起跑",en:"🏁 Four books, A$10,000 each, same start"},
+  intro:{zh:"四个模拟盘同日起跑、同样本金,看「自己选股」到底比「干脆买指数」好还是差。<b>澳元记账</b>——美股按当日 AUD/USD 折算,汇率影响算在里面。非荐股、非预测,只是如实记录。",
+         en:"Four paper books, same start date and same capital, to see whether picking your own stocks beats simply buying the index. <b>Accounted in AUD</b> — US holdings are converted at the daily AUD/USD rate, so currency moves are included. Not advice, not a forecast — just an honest record."},
+  banner:{zh:"⚠️ <b>短期领先说明不了任何事。</b>样本极小、时间极短,三个月内谁在前面都可能只是运气。这个对决的意义是<b>一年后</b>看差距,不是每天看排名。另:不含手续费/买卖价差/税/<b>股息</b>——含息会让两个指数盘更占优,所以这里对指数其实偏不利。",
+          en:"⚠️ <b>A short-term lead means nothing.</b> The sample is tiny and the horizon short; whoever is ahead within a few months may simply be lucky. The point is the gap <b>a year from now</b>, not the daily ranking. Also excluded: fees, spreads, tax and <b>dividends</b> — including dividends would favour the two index books, so this setup is if anything biased against them."},
+  pending:{zh:"⏳ <b>还没开跑</b>:%N% 笔已登记,按规矩要等<b>写入清单的次日</b>首个交易日收盘价才成交(防抢跑,入场价不可回填)。明天此处就会出现真实起跑价。",
+           en:"⏳ <b>Not started yet</b>: %N% positions registered. By the rules, entry uses the closing price of the <b>first trading day after</b> they were added (no front-running; entry prices can never be backfilled). Real entry prices will appear here tomorrow."},
+  cSym:{zh:"代码",en:"Ticker"},cShares:{zh:"股数",en:"Shares"},cIn:{zh:"投入A$",en:"Invested A$"},
+  cEntry:{zh:"入场日",en:"Entry"},cEpx:{zh:"入场价",en:"Entry px"},cFx:{zh:"入场汇率",en:"FX"},
+  cVal:{zh:"现值A$",en:"Value A$"},cRet:{zh:"收益%",en:"Return%"},
+  lead:{zh:"领先",en:"leading"},
+  moreHonesty:{zh:"展开看完整诚实说明",en:"Expand: full honesty notes"},
+  asof:{zh:"更新于",en:"updated"},cur:{zh:"记账币种",en:"currency"},
+  loadingErr:{zh:"拉不到 my_portfolio.json——确认已部署。",en:"Can't load my_portfolio.json — check deployment."},
+  backLink:{zh:"↩ 返回",en:"↩ Back"},
+  foot:{zh:"私人前向跟踪,未进公开计分(public=false)。入场价与股数一旦记入账本永不重写。会错,过去 ≠ 未来,非投资建议。",
+        en:"A private forward-tracking record, not part of public scoring (public=false). Entry prices and share counts are never rewritten once booked. Can be wrong; the past != the future; not investment advice."}
+};
+const $=id=>document.getElementById(id);
+const esc=vpEsc;
+let LANG=vpLang();
+const t=k=>vpT(I18N,k,LANG);
+const applyStatic=()=>vpApplyStatic(I18N);
+const num=v=>(typeof v==="number"&&isFinite(v));
+const pct=v=>num(v)?`<span class="${v>=0?'pos':'neg'}">${(v>=0?'+':'')+v.toFixed(2)}%</span>`:'<span style="color:var(--mut)">—</span>';
+const money=v=>num(v)?v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}):"—";
+
+function bookCard(b,isLead,maxAbs){
+  const w=(num(b.ret_pct)&&maxAbs>0)?Math.min(100,Math.abs(b.ret_pct)/maxAbs*100):0;
+  const col=(num(b.ret_pct)&&b.ret_pct>=0)?"var(--grn)":"var(--red)";
+  let rows=(b.positions||[]).map(p=>`<tr>
+    <td>${esc(p.symbol)}</td><td>${num(p.shares)?p.shares.toFixed(4):"—"}</td>
+    <td>${money(p.aud_invested)}</td><td>${esc(p.entry_date||"—")}</td>
+    <td>${num(p.entry_px)?p.entry_px:"—"}</td><td>${num(p.fx_entry)?p.fx_entry:"—"}</td>
+    <td>${money(p.value_aud)}</td><td>${pct(p.ret_pct)}</td></tr>`).join("");
+  return `<div class="bk${isLead?" lead":""}">
+    <div class="bk-hd">
+      <div><span class="bk-nm">${esc(b.portfolio)}</span>${isLead?` <span style="color:var(--acc);font-size:.72rem">▲ ${esc(t("lead"))}</span>`:""}
+        <div class="bk-val">A$${money(b.value_aud)} / A$${money(b.invested_aud)}</div></div>
+      <div class="bk-ret" style="color:${col}">${num(b.ret_pct)?((b.ret_pct>=0?"+":"")+b.ret_pct.toFixed(2)+"%"):"—"}</div>
+    </div>
+    <div class="bar"><i style="width:${w}%;background:${col}"></i></div>
+    <div class="tw"><table><thead><tr>
+      <th>${t("cSym")}</th><th>${t("cShares")}</th><th>${t("cIn")}</th><th>${t("cEntry")}</th>
+      <th>${t("cEpx")}</th><th>${t("cFx")}</th><th>${t("cVal")}</th><th>${t("cRet")}</th>
+    </tr></thead><tbody>${rows}</tbody></table></div>
+  </div>`;
+}
+
+function render(j){
+  applyStatic();
+  const books=j.portfolios||[];
+  const n=j.n_pending||0;
+  $("pendBox").innerHTML = n>0 ? `<div class="pend">${t("pending").replace("%N%",n)}</div>` : "";
+  const maxAbs=books.reduce((m,b)=>Math.max(m,num(b.ret_pct)?Math.abs(b.ret_pct):0),0);
+  $("rank").innerHTML=books.map((b,i)=>bookCard(b,i===0&&books.length>1,maxAbs)).join("");
+  $("honestyList").innerHTML=(j.honesty||[]).map(x=>`<li>${esc(x)}</li>`).join("");
+  $("src").textContent=`${t("cur")} ${esc(j.currency||"AUD")} · ${t("asof")} ${esc((j.generated||"").slice(0,10))}`;
+}
+
+vpBindLang(I18N,()=>{ LANG=vpLang(); if(window._j) render(window._j); else applyStatic(); });
+
+(async()=>{
+  applyStatic();
+  try{
+    const r=await fetch(LIVE,{cache:"no-store"});
+    if(!r.ok) throw 0;
+    window._j=await r.json();
+    render(window._j);
+  }catch(e){ $("pendBox").innerHTML=`<div class="pend">${t("loadingErr")}</div>`; }
+})();
+</script>
+<script src="vp_gloss.js" data-autoscan></script>
+</body>
+</html>

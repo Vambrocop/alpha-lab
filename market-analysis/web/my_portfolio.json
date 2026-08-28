@@ -1,12 +1,83 @@
 {
-  "generated": "2026-08-28T05:40:47Z",
+  "generated": "2026-08-28T07:54:19Z",
   "public": false,
   "currency": "AUD",
   "fx_note": "美股按各自入场日/当日 AUD/USD 折成澳元;汇率波动会真实改变澳元收益,已计入。",
-  "n_portfolios": 0,
-  "n_pending": 0,
-  "portfolios": [],
-  "pending": [],
+  "n_portfolios": 1,
+  "n_pending": 8,
+  "portfolios": [
+    {
+      "portfolio": "澳股指数",
+      "invested_aud": 10000.0,
+      "value_aud": 10000.0,
+      "positions": [
+        {
+          "symbol": "VAS.AX",
+          "shares": 88.300221,
+          "aud_invested": 10000.0,
+          "value_aud": 10000.0,
+          "ret_pct": 0.0,
+          "entry_date": "2026-08-28",
+          "entry_px": 113.25,
+          "fx_entry": 1.0,
+          "status": "open",
+          "exit_date": null
+        }
+      ],
+      "closed": [],
+      "ret_pct": 0.0
+    }
+  ],
+  "pending": [
+    {
+      "portfolio": "美股指数",
+      "symbol": "QQQ",
+      "aud_invested": 10000.0,
+      "status": "pending"
+    },
+    {
+      "portfolio": "规则荐股",
+      "symbol": "KO",
+      "aud_invested": 3330.0,
+      "status": "pending"
+    },
+    {
+      "portfolio": "规则荐股",
+      "symbol": "LLY",
+      "aud_invested": 3330.0,
+      "status": "pending"
+    },
+    {
+      "portfolio": "规则荐股",
+      "symbol": "AAPL",
+      "aud_invested": 3340.0,
+      "status": "pending"
+    },
+    {
+      "portfolio": "我的选股",
+      "symbol": "AAPL",
+      "aud_invested": 2500.0,
+      "status": "pending"
+    },
+    {
+      "portfolio": "我的选股",
+      "symbol": "INTC",
+      "aud_invested": 2500.0,
+      "status": "pending"
+    },
+    {
+      "portfolio": "我的选股",
+      "symbol": "GOOGL",
+      "aud_invested": 2500.0,
+      "status": "pending"
+    },
+    {
+      "portfolio": "我的选股",
+      "symbol": "PFE",
+      "aud_invested": 2500.0,
+      "status": "pending"
+    }
+  ],
   "honesty": [
     "这是**你自己定的**模拟盘对决,不是荐股、不是预测、不是买卖建议。",
     "入场不可回填:每笔按「写进清单的**次日**首个交易日」真实收盘价成交,股数与入场价一旦记入账本永不重写——防止事后挑一个好看的起点。",

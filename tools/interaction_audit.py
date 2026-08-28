@@ -21,7 +21,7 @@ HARD_KW = ("溢出", "按钮", "加载失败", "pageerror", "循环动画未清"
 PAGES = ["dashboard.html", "index.html", "valpha150.html", "sectors.html", "radar.html",
          "advisor.html", "wild.html", "ipo.html", "methodology.html", "self_growing.html",
          "discoveries.html", "fxreturn.html", "prediction.html", "heatmap.html", "au.html",
-         "picks.html", "fear.html", "dip.html", "vixvol.html", "feargreed.html", "treasury.html"]  # picks:SPEC_PICKS_V2·③;fear:SPEC_FEAR_EXTREMES·③;dip:SPEC_DIP_HOLD·③;vixvol:VIX波动预报复现图;feargreed:SPEC_FEAR_GREED·③
+         "picks.html", "fear.html", "dip.html", "vixvol.html", "feargreed.html", "treasury.html", "myportfolio.html"]  # picks:SPEC_PICKS_V2·③;fear:SPEC_FEAR_EXTREMES·③;dip:SPEC_DIP_HOLD·③;vixvol:VIX波动预报复现图;feargreed:SPEC_FEAR_GREED·③
 DASH_VIEWS = ["today", "outlook", "plan", "longterm", "research", "lab", "registry", "quant", "mine"]
 
 
