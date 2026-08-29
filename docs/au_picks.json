@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-28T22:56:28Z",
+  "generated": "2026-08-29T03:22:27Z",
   "source": "澳股(ASX100大中盘池) 动量+低波动 选股 → 前向公开计分(独立账本)",
   "source_en": "AU stocks (ASX100 mid/large-cap pool) · momentum + low-volatility selection -> forward public scoring (independent ledger)",
   "pick_rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
@@ -20,11 +20,77 @@
       "hit_pct": 0.0,
       "mean_call_excess_pct": -23.828
     },
-    "n_pending": 126,
+    "n_pending": 132,
     "n_dropped": 0,
     "dropped_pct": 0.0
   },
   "recent": [
+    {
+      "symbol": "MQG.AX",
+      "view": "看好",
+      "pick_date": "2026-08-29",
+      "mom_pct": 28.2,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "CPU.AX",
+      "view": "看好",
+      "pick_date": "2026-08-29",
+      "mom_pct": 29.2,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "APA.AX",
+      "view": "看好",
+      "pick_date": "2026-08-29",
+      "mom_pct": 18.3,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "TPW.AX",
+      "view": "看淡",
+      "pick_date": "2026-08-29",
+      "mom_pct": -39.8,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "NST.AX",
+      "view": "看淡",
+      "pick_date": "2026-08-29",
+      "mom_pct": -21.3,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
+    {
+      "symbol": "A2M.AX",
+      "view": "看淡",
+      "pick_date": "2026-08-29",
+      "mom_pct": -26.7,
+      "settled": false,
+      "dropped": false,
+      "excess_pct": null,
+      "call_excess_pct": null,
+      "hit": false
+    },
     {
       "symbol": "MQG.AX",
       "view": "看好",
@@ -393,72 +459,6 @@
       "view": "看淡",
       "pick_date": "2026-08-21",
       "mom_pct": -45.4,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "NST.AX",
-      "view": "看淡",
-      "pick_date": "2026-08-21",
-      "mom_pct": -17.5,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "A2M.AX",
-      "view": "看淡",
-      "pick_date": "2026-08-21",
-      "mom_pct": -23.9,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "WOW.AX",
-      "view": "看好",
-      "pick_date": "2026-08-20",
-      "mom_pct": 26.4,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "MQG.AX",
-      "view": "看好",
-      "pick_date": "2026-08-20",
-      "mom_pct": 17.0,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "ALL.AX",
-      "view": "看好",
-      "pick_date": "2026-08-20",
-      "mom_pct": 30.0,
-      "settled": false,
-      "dropped": false,
-      "excess_pct": null,
-      "call_excess_pct": null,
-      "hit": false
-    },
-    {
-      "symbol": "WTC.AX",
-      "view": "看淡",
-      "pick_date": "2026-08-20",
-      "mom_pct": -8.1,
       "settled": false,
       "dropped": false,
       "excess_pct": null,
