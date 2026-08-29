@@ -1,24 +1,8 @@
 {
- "updated": "2026-08-29 03:20 UTC",
+ "updated": "2026-08-29 16:54 UTC",
  "items": [
   {
-   "time": "2026-08-29 02:23 UTC",
-   "title": "U.S. appeals court rules against prediction markets, sets up likely fight at Supreme Court",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-29 02:11 UTC",
-   "title": "Meta's $17 billion settlement mandates new safeguards for kids—many are promising, says safety expert",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-28 23:00 UTC",
+   "time": "2026-08-29 16:00 UTC",
    "title": "My mother, 91, has dementia. Every bank says I need her signature to unlock her $100,000 stock certificate. What can I do?",
    "impact": "neutral",
    "note": "",
@@ -26,16 +10,32 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-28 21:34 UTC",
-   "title": "Microsoft’s stock seals its longest winning streak of the year as AI software fears fade",
+   "time": "2026-08-29 12:30 UTC",
+   "title": "Tim Cook wasn’t a ‘product guy’ — so he re-engineered Apple instead",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-28 20:58 UTC",
-   "title": "Nvidia’s revenue forecast is so huge that Wall Street wonders if SpaceX is the reason",
+   "time": "2026-08-29 12:22 UTC",
+   "title": "K, C or E? Why economists can’t agree on the shape of today’s economy",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Markets",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-29 12:08 UTC",
+   "title": "Iran trade falls as Supreme Leader Khamenei urges less reliance on the U.S. dollar",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-29 11:30 UTC",
+   "title": "Corporate earnings have been growing at a blistering pace. Here’s why that’s not likely to last.",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
