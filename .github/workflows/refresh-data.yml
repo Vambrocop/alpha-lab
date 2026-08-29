@@ -57,6 +57,9 @@ jobs:
         # 实证隐患(06-30)：restore-keys 命中旧缓存时，会把陈旧版账本整个灌回 market-analysis/data、
         # 盖掉之后才提交的行。git 已提交(HEAD)的版本才是真相——缓存回灌后立刻用它压一遍，
         # 管道再往上 append 新行(sync/alert/pick 幂等去重，不丢数据)。
+        # 2026-08-27：自选组合两个文件也被这个坑吃掉过——my_portfolio.txt 是**输入**清单
+        # (不是账本):缓存回灌把用户填的四盘配置抹回旧版、再被 git add -A 提交,
+        # 下一轮就会把 9 笔持仓全判成「离场」。故输入清单也必须 re-assert(本步不限于账本)。
         # 2026-07-28：此前只护 candidate_registry + overreaction 两个 → 其余 17 个 append-only 账本
         # 在缓存陈旧时被 git add -A 提交成缩水版(真 bug，被防缩水门暴露)。改为覆盖全部 SPECS 账本 +
         # manifest；清单漂移由 test_reassert_covers_ledgers.py 守。逐个 checkout(kb_ledger 未晋升时不存在→|| true)。
@@ -67,6 +70,7 @@ jobs:
             llm_weekly_log.csv llm_monthly_log.csv ipo_alert_log.csv downturn_brief_log.csv \
             ipo_aftermath_log.csv llm_prediction_log.csv pick_ledger.csv pick_ledger_v2.csv \
             au_pick_ledger.csv insider_signal_log.csv processed/overreaction_signal_log.csv \
+            my_portfolio_ledger.csv my_portfolio.txt \
             ledger_hashchain.csv watchdog_state.json; do
             git checkout -- "market-analysis/data/$led" 2>/dev/null || true
           done
