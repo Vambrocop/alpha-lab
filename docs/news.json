@@ -1,6 +1,22 @@
 {
- "updated": "2026-08-29 16:54 UTC",
+ "updated": "2026-08-29 22:52 UTC",
  "items": [
+  {
+   "time": "2026-08-29 20:22 UTC",
+   "title": "K, C or E? Why economists can’t agree on the shape of today’s economy",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Markets",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-29 19:06 UTC",
+   "title": "OpenAI to end model access to Cursor after acquisition by Elon Musk's SpaceX",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-08-29 16:00 UTC",
    "title": "My mother, 91, has dementia. Every bank says I need her signature to unlock her $100,000 stock certificate. What can I do?",
@@ -18,27 +34,11 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-29 12:22 UTC",
-   "title": "K, C or E? Why economists can’t agree on the shape of today’s economy",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
    "time": "2026-08-29 12:08 UTC",
    "title": "Iran trade falls as Supreme Leader Khamenei urges less reliance on the U.S. dollar",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-29 11:30 UTC",
-   "title": "Corporate earnings have been growing at a blistering pace. Here’s why that’s not likely to last.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
