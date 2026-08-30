@@ -1,8 +1,16 @@
 {
- "updated": "2026-08-30 17:01 UTC",
+ "updated": "2026-08-30 22:57 UTC",
  "items": [
   {
-   "time": "2026-08-30 16:55 UTC",
+   "time": "2026-08-30 22:45 UTC",
+   "title": "U.S. stock futures flat as chances of rate hike rise after Warsh’s Jackson Hole comments",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-30 19:40 UTC",
    "title": "Trump criticizes NBC over election comment as Treasury denies some NYT, WSJ and Bloomberg reporters G20 credentials",
    "impact": "neutral",
    "note": "",
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-30 13:00 UTC",
-   "title": "What new tariff walls in U.S.-Canada trade war mean for the economy's critical metals",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
