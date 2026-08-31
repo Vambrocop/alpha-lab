@@ -42,3 +42,23 @@ def test_build_ndx_declares_lxml_in_core_requirements():
     from pathlib import Path
     req = (Path(__file__).parent.parent / "requirements-core.txt").read_text(encoding="utf-8")
     assert "lxml" in req, "requirements-core.txt 缺 lxml → CI 里 build_ndx 会 ImportError 后静默烂掉"
+
+
+# ── 数据层双语:标签规则翻译器的覆盖率守门(2026-08-27) ──────────────────────
+def test_label_en_translates_known_factor_labels():
+    """label_en 是规则式(非映射表),好处是新因子自动跟上;代价是片段表可能漏。
+    这里钉住一批**线上真实出现过**的标签必须全译,防止将来改片段表时悄悄退化。"""
+    from label_en import label_en, is_fully_translated
+    must = ["BTC在MA200上方", "NASDAQ RSI超买>75", "BTC近20日涨>5%", "NASDAQ低波动<15%",
+            "星期效应", "月份效应(月度胜率)", "九月效应", "隔夜动量为正(20d)",
+            "美元走弱", "油价→标普", "地缘冲击", "银行危机"]
+    bad = [m for m in must if not is_fully_translated(m)]
+    assert not bad, f"这些线上标签没被 label_en 全译(片段表需补): {bad}"
+    assert label_en("BTC在MA200上方") == "BTC above MA200"
+
+
+def test_label_en_is_safe_on_odd_input():
+    """非字符串/空/纯英文 → 原样返回,不炸(调用方可无脑套用)。"""
+    from label_en import label_en
+    assert label_en(None) is None and label_en("") == ""
+    assert label_en("QQQ vs SPY") == "QQQ vs SPY"

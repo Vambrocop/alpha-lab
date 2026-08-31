@@ -24,6 +24,14 @@ PROC_DIR = SCRIPTS.parent / "data" / "processed"
 DOCS_DIR = SCRIPTS.parent.parent / "docs"
 
 
+# 数据层双语(2026-08-27):族名/标签的英文由共享规则翻译器生成——上游一加新因子
+# 就自动跟上,不用手抄映射表(同 build_signals._macro_en 的思路)。
+from label_en import label_en  # noqa: E402
+
+FAMILY_EN = {"日历效应": "Calendar effects", "事件因果": "Event causality",
+             "路径/Granger": "Path / Granger", "因子AUC": "Factor AUC"}
+
+
 def _load(path):
     try:
         with open(path, encoding="utf-8") as f:
@@ -95,6 +103,7 @@ def run_all(write=True):
         f["n_survive_by_10"] += int(c["survive_by_10"])
 
     survivors = [c["label"] for c in claims if c["survive_by_10"]]
+    survivors_en = [label_en(c["label"]) for c in claims if c["survive_by_10"]]
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "method": "跨检验族汇池多重比较：Benjamini-Yekutieli(任意相关稳健，头条) + "
@@ -112,7 +121,9 @@ def run_all(write=True):
         "n_survive_bh_10": len(rej_bh10),
         "n_survive_bonferroni_05": int(sum(c["survive_bonferroni_05"] for c in claims)),
         "by_family": list(fams.values()),
-        "claims": claims,
+        "claims": [dict(c, label_en=label_en(c.get("label")),
+                        family_en=FAMILY_EN.get(c.get("family"), c.get("family")))
+                   for c in claims],
         "verdict": f"全站 {m} 项显著性主张，跨族 BY(任意相关稳健, q=0.10)仅 {len(rej_by10)} 项经得起"
                    f"（BH 乐观留 {len(rej_bh10)}）。存活：{('、'.join(survivors)) or '无'}。",
     }

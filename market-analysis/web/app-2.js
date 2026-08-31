@@ -785,7 +785,7 @@ async function loadFdrCrossfamily() {
     const ok = c.survive_by_10;
     return `<tr style="border-top:1px solid var(--border-faint);${ok ? "" : "opacity:.55"}">
       <td style="padding:.25rem .4rem"><span style="color:${FC[c.family] || "var(--muted)"};font-size:0.7rem">${famLabel(c.family)}</span></td>
-      <td style="padding:.25rem .4rem">${c.label || "—"}</td>
+      <td style="padding:.25rem .4rem">${vpD(c,"label") || "—"}</td>
       <td style="padding:.25rem .4rem;text-align:right;font-variant-numeric:tabular-nums">${c.p.toFixed(4)}</td>
       <td style="padding:.25rem .4rem;text-align:center;color:${ok ? "#2ecc71" : "var(--muted)"};font-weight:600">${ok ? "✓" : "✗"}</td></tr>`;
   }).join("");

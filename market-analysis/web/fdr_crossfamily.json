@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-29T03:17:15Z",
+  "generated": "2026-08-31T06:47:44Z",
   "method": "跨检验族汇池多重比较：Benjamini-Yekutieli(任意相关稳健，头条) + Benjamini-Hochberg(PRDS，乐观对照) + Bonferroni(FWER)。",
   "caveat": "保守的**探索性**跨族 meta 校正，非统一模型。汇集各方法已发布的 p 值，回答'把试过的所有东西算进去后还剩几条'。部分主张是机械/同期关系(如恐慌↔标普同期负相关)，存活≠真发现，需看各自方法脚注；step-up 程序下，足够多的极小 p 会抬高同批其它主张的阈值，故个别中等 p 可能跨族存活而族内不存活，属正常。",
   "families_pooled": [
@@ -8,9 +8,9 @@
     "路径/Granger",
     "因子AUC"
   ],
-  "m_total": 27,
-  "by_c_m": 3.891,
-  "bonferroni_alpha": 0.00185,
+  "m_total": 28,
+  "by_c_m": 3.927,
+  "bonferroni_alpha": 0.00179,
   "n_survive_by_10": 5,
   "n_survive_by_05": 4,
   "n_survive_bh_10": 6,
@@ -33,7 +33,7 @@
     },
     {
       "family": "因子AUC",
-      "n": 14,
+      "n": 15,
       "n_survive_by_10": 1
     }
   ],
@@ -45,7 +45,9 @@
       "survive_by_10": true,
       "survive_by_05": true,
       "survive_bh_10": true,
-      "survive_bonferroni_05": true
+      "survive_bonferroni_05": true,
+      "label_en": "fear→S&P 500",
+      "family_en": "Path / Granger"
     },
     {
       "family": "事件因果",
@@ -54,7 +56,9 @@
       "survive_by_10": true,
       "survive_by_05": true,
       "survive_bh_10": true,
-      "survive_bonferroni_05": true
+      "survive_bonferroni_05": true,
+      "label_en": "SVB collapse → regional banks(KRE)",
+      "family_en": "Event causality"
     },
     {
       "family": "日历效应",
@@ -63,7 +67,9 @@
       "survive_by_10": true,
       "survive_by_05": true,
       "survive_bh_10": true,
-      "survive_bonferroni_05": true
+      "survive_bonferroni_05": true,
+      "label_en": "day-of-week effect",
+      "family_en": "Calendar effects"
     },
     {
       "family": "日历效应",
@@ -72,7 +78,9 @@
       "survive_by_10": true,
       "survive_by_05": true,
       "survive_bh_10": true,
-      "survive_bonferroni_05": true
+      "survive_bonferroni_05": true,
+      "label_en": "Christmas rally",
+      "family_en": "Calendar effects"
     },
     {
       "family": "因子AUC",
@@ -81,7 +89,9 @@
       "survive_by_10": true,
       "survive_by_05": false,
       "survive_bh_10": true,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "BTC 20-day gain >5%",
+      "family_en": "Factor AUC"
     },
     {
       "family": "路径/Granger",
@@ -90,7 +100,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": true,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "Oil price→S&P 500",
+      "family_en": "Path / Granger"
     },
     {
       "family": "日历效应",
@@ -99,7 +111,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "month-of-year effect(monthly win rate)",
+      "family_en": "Calendar effects"
     },
     {
       "family": "因子AUC",
@@ -108,7 +122,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "BTC 20-day drop <-5%",
+      "family_en": "Factor AUC"
     },
     {
       "family": "日历效应",
@@ -117,7 +133,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "holiday effect(pre-holiday)",
+      "family_en": "Calendar effects"
     },
     {
       "family": "路径/Granger",
@@ -126,7 +144,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "M2→S&P 500",
+      "family_en": "Path / Granger"
     },
     {
       "family": "日历效应",
@@ -135,7 +155,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "year-digit",
+      "family_en": "Calendar effects"
     },
     {
       "family": "日历效应",
@@ -144,7 +166,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "presidential presidential-term year",
+      "family_en": "Calendar effects"
     },
     {
       "family": "因子AUC",
@@ -153,7 +177,20 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "BTC above MA200",
+      "family_en": "Factor AUC"
+    },
+    {
+      "family": "因子AUC",
+      "label": "VIX期限结构倒挂(恐慌)",
+      "p": 0.353,
+      "survive_by_10": false,
+      "survive_by_05": false,
+      "survive_bh_10": false,
+      "survive_bonferroni_05": false,
+      "label_en": "VIX term structureinversion(fear)",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -162,7 +199,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "NASDAQ above MA200",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -171,7 +210,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "NASDAQ 20-day gain >5%",
+      "family_en": "Factor AUC"
     },
     {
       "family": "路径/Granger",
@@ -180,7 +221,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "rate hike→US Dollar",
+      "family_en": "Path / Granger"
     },
     {
       "family": "因子AUC",
@@ -189,7 +232,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "NASDAQ 20-day drop <-5%",
+      "family_en": "Factor AUC"
     },
     {
       "family": "路径/Granger",
@@ -198,7 +243,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "rate hike→S&P 500（直接）",
+      "family_en": "Path / Granger"
     },
     {
       "family": "路径/Granger",
@@ -207,7 +254,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "US Dollar→Oil price",
+      "family_en": "Path / Granger"
     },
     {
       "family": "因子AUC",
@@ -216,7 +265,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "US Dollar走弱",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -225,7 +276,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "NASDAQ RSI overbought >75",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -234,7 +287,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "NASDAQ high volatility >25%",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -243,7 +298,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "US Dollar走强",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -252,7 +309,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "隔夜 momentum为负(20d)",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -261,7 +320,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "隔夜 momentum为正(20d)",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -270,7 +331,9 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "NASDAQ RSI oversold <35",
+      "family_en": "Factor AUC"
     },
     {
       "family": "因子AUC",
@@ -279,8 +342,10 @@
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
-      "survive_bonferroni_05": false
+      "survive_bonferroni_05": false,
+      "label_en": "NASDAQ low volatility <15%",
+      "family_en": "Factor AUC"
     }
   ],
-  "verdict": "全站 27 项显著性主张，跨族 BY(任意相关稳健, q=0.10)仅 5 项经得起（BH 乐观留 6）。存活：恐慌→标普、SVB 倒闭 → 地区银行(KRE)、星期效应、圣诞行情、BTC近20日涨>5%。"
+  "verdict": "全站 28 项显著性主张，跨族 BY(任意相关稳健, q=0.10)仅 5 项经得起（BH 乐观留 6）。存活：恐慌→标普、SVB 倒闭 → 地区银行(KRE)、星期效应、圣诞行情、BTC近20日涨>5%。"
 }
