@@ -56,6 +56,22 @@ CHECKS = [
     # ticker_ondemand 内容由用户的 ticker_requests.txt 驱动(点单深算),但 CI 每次全量都会重算 →
     # 仍该盯;阈值放宽到 14 天,避免"没人点单"时的误报吵闹。
     ("ondemand",   WEB / "ticker_ondemand.json", "generated", 14, "点单深算 ticker_ondemand.json", "live"),
+    # ── 2026-08-31 补:澳股独立区 + 自选组合。此前【全无人盯】,而这一整片恰恰是最容易静默烂掉的:
+    # run_all 里这几步全带顶层 fail-soft(异常只打印、SystemExit(0) 不阻断主流水线)——和 ndx 当年
+    # 被 `|| echo ::warning::` 咽掉 24 天是同一个陷阱,只是换了个咽法。取数(fetch_data_au)一断,
+    # 下游四个产物会一起停更;分别列出是为了区分"上游取数挂了"和"某个下游脚本自己炸了"。
+    # 阈值 5 天:澳股区只在全量运行(工作日盘前/盘后)跑,跨周末最大自然间隔约 3 天,留 2 天给 CI 延迟。
+    ("au_market",  WEB / "au_market.json",   "generated", 5,  "澳股大盘 au_market.json", "live"),
+    ("au_checkup", WEB / "au_checkup.json",  "generated", 5,  "澳股体检 au_checkup.json", "live"),
+    ("au_radar",   WEB / "au_radar.json",    "generated", 5,  "澳股雷达 au_radar.json", "live"),
+    ("au_dip",     WEB / "au_dip_hold.json", "generated", 5,  "澳股跌了买 au_dip_hold.json", "live"),
+    ("au_backtest", WEB / "au_backtest.json", "generated", 5, "澳股荐股轨迹 au_backtest.json", "live"),
+    # 自选组合:四个模拟盘的收益要"定期更新"才有意义,停更=页面上的收益悄悄定格在旧价。
+    ("myportfolio", WEB / "my_portfolio.json", "generated", 5, "自选组合 my_portfolio.json", "live"),
+    ("event_causal", WEB / "event_causal.json", "generated", 5, "事件因果 event_causal.json", "live"),
+    # 盘中报价由 quick-quotes 工作流每 30 分钟单独刷;quick_quotes.py 也是顶层 fail-soft →
+    # 抓取源一变它就静默停更,而这是全站最时敏的一份。阈值 3 天(跨周末够,再久就是真停了)。
+    ("quotes",     WEB / "quotes.json",      "generated", 3,  "盘中报价 quotes.json", "live"),
 ]
 # 已知未覆盖(刻意):fetch_cot / fetch_putcall 落的是 data/*.csv,没有内嵌时间戳字段;
 # 按文件 mtime 判龄在 git 干净检出里不可靠(mtime=检出时间),故不纳入,避免假阳性。

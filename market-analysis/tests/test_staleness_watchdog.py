@@ -95,3 +95,46 @@ def test_send_failure_does_not_record_dedup(fake_web, monkeypatch):
     wd.run(NOW, state_path=fake_web["state"])
     assert not fake_web["state"].exists() or "llm_daily" not in json.loads(
         fake_web["state"].read_text(encoding="utf-8"))
+
+
+# ── 覆盖率守门:顶层 fail-soft 的产物必须有人盯(2026-08-31) ────────────────────
+def test_every_failsoft_product_is_watched():
+    """**自动**发现"会静默停更"的产物,逼它们进 CHECKS——而不是靠我下次记得手加。
+
+    起因:ndx 烂了 24 天,因为 workflow 用 `|| echo ::warning::` 咽掉失败。08-24 那次是手工
+    扫了一遍 workflow 补监控;但同一个陷阱还有**另一个入口**——脚本自己在顶层 `except → sys.exit(0)`。
+    run_all 本身是 fail-hard(任一步非零就 sys.exit(1) 让 CI 红),所以只有这类自吞异常的脚本
+    才会"绿着跑完但产物没更新"。本测试把这条规则自动化:
+
+      脚本里出现 sys.exit(0)/SystemExit(0)  ∧  它 write_json 了某个产物  ⇒  该产物必须被 watchdog 盯
+
+    新写一个 fail-soft 脚本时这条会自动变红,提醒作者"要么盯它,要么在 EXEMPT 里写明为什么不盯"。
+    hermetic:只读脚本源码文本,不跑脚本、不联网、不读 data/。
+    """
+    import re
+    from pathlib import Path
+    scripts = Path(__file__).parent.parent / "scripts"
+    failsoft = re.compile(r"sys\.exit\(0\)|SystemExit\(0\)")
+    writes = re.compile(r'write_json\(\s*["\']([\w./-]+\.json)["\']')
+
+    watched = {p.name for _k, p, *_ in wd.CHECKS}
+    EXEMPT = {
+        # ipo_enrich 只是给 fetch_ipo 的同一份产物加料;ipo_filings.json 已被 ("ipo", …) 盯着。
+        "ipo_filings.json",
+    }
+
+    missing = {}
+    for f in sorted(scripts.glob("*.py")):
+        src = f.read_text(encoding="utf-8")
+        if not failsoft.search(src):
+            continue
+        for out in sorted(set(writes.findall(src))):
+            name = Path(out).name
+            if name not in watched and name not in EXEMPT:
+                missing.setdefault(name, []).append(f.name)
+
+    assert not missing, (
+        "这些产物由顶层 fail-soft 脚本生成(失败也不会让 CI 红)却无人监控,会像 ndx 那样悄悄发霉:\n  "
+        + "\n  ".join(f"{k}  ←  {', '.join(v)}" for k, v in missing.items())
+        + "\n修法:加进 staleness_watchdog.CHECKS;确有理由不盯就写进本测试的 EXEMPT 并注明原因。"
+    )
