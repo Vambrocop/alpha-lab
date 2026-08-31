@@ -1,65 +1,79 @@
-"""backtest 块自助守门(2026-08-24 新增)。
+"""backtest 块自助守门(2026-08-24 建，2026-08-27 随口径修正一并重写)。
 
-为什么加:backtest 的 up_{h}d 是**逐日**算的 h 日前向结果,相邻两天窗口共享 h-1 天。
+为什么要有:backtest 的 up_{h}d 是**逐日**算的 h 日前向结果,相邻两天窗口共享 h-1 天。
 此前 ttest_1samp 把每天当独立观测 → 有效样本约 n/h、p 被低估一到两个数量级。
-上线当天实测(SP500):校准桶 p_t=0.0006→块自助 0.181、p_t=0.0079→0.341;
-Tier>=4 策略 p_t=0.0033→0.209——三条"显著"被撤销。
 
-守四件事:① 无效应时不误报(校准)② 真有效应时能检出(检定力)③ 块长越大 p 越保守
-(证明它真的在惩罚自相关,而不是摆设)④ 固定种子可复现。
-hermetic:纯合成数组,不读 data/、不联网。
+**2026-08-27 口径修正(用户质疑「是不是矫枉过正」→ 实测证实)**:初版在「某档的观测子集」
+自身数组上取连续块,但该档的日子在日历上是散落的,那些元素本就近乎独立却被当整块搬走 →
+过度保守 1.8–2.8 倍,误判掉本该显著的格。改为块取在**日历序列**上、mask 随之重采样
+(与 walk_forward.block_bootstrap_diff 同语义)。签名随之变为 (mask, y_all)。
+
+守四件事:① 无效应不误报 ② 真有效应能检出 ③ **比朴素 t 检验更保守**(证明它真在惩罚
+自相关,而不是走过场)④ 确定性与退化输入。hermetic:纯合成数组,不读 data/、不联网。
 """
 import numpy as np
-import pytest
+from scipy import stats
 
 from backtest import block_bootstrap_p
 
 
-def _ar1_binary(n=3000, base=0.62, block=20, seed=3):
-    """构造有重叠自相关结构的 0/1 序列:每 block 天共享同一次抽样(模拟前向窗口重叠)。"""
+def _series_with_overlap(n=3000, base=0.62, block=20, seed=3):
+    """构造有重叠自相关结构的 0/1 日序列:每 block 天共享同一次抽样(模拟前向窗口重叠)。"""
     rng = np.random.default_rng(seed)
-    n_blk = int(np.ceil(n / block))
-    draws = (rng.random(n_blk) < base).astype(float)
+    draws = (rng.random(int(np.ceil(n / block))) < base).astype(float)
     return np.repeat(draws, block)[:n]
 
 
 def test_no_effect_not_flagged():
-    """序列均值≈基率 → p 应该大,不该误报显著。"""
-    x = _ar1_binary(base=0.62)
-    p = block_bootstrap_p(x, base_rate=float(x.mean()), block=20)
-    assert p is not None and p > 0.10, f"无偏离时 p={p} 过小 = 误报"
+    """随机挑的一半日子(与整体无差别)→ p 应该大,不该误报显著。"""
+    y = _series_with_overlap()
+    rng = np.random.default_rng(7)
+    mask = rng.random(len(y)) < 0.5
+    p = block_bootstrap_p(mask, y, block=20)
+    assert p is not None and p > 0.10, f"无差别时 p={p} 过小 = 误报"
 
 
 def test_real_effect_detected():
-    """构造明显偏离基率的序列 → p 必须小,证明检验有检定力(不是永远说不显著)。"""
-    x = np.concatenate([np.ones(1500), np.zeros(500)])   # 均值 0.75
-    p = block_bootstrap_p(x, base_rate=0.50, block=20)
-    assert p < 0.05, f"强偏离下 p={p} 仍大 = 没有检定力"
+    """某个 mask 圈住的日子明显好于整体 → p 必须小(证明有检定力,不是永远说不显著)。"""
+    y = np.concatenate([np.ones(1200), np.zeros(1800)])   # 前 1200 天全涨
+    mask = np.zeros(3000, bool); mask[:1200] = True
+    p = block_bootstrap_p(mask, y, block=20)
+    assert p < 0.05, f"强效应下 p={p} 仍大 = 没有检定力"
 
 
-def test_larger_block_is_more_conservative():
-    """核心性质:块越长(自相关越被尊重),p 越大(越保守)。
-    若写反/写坏,这条会红——它证明检验真的在惩罚重叠,而不是走过场。"""
-    x = _ar1_binary(base=0.70, block=20, seed=11)
-    base = 0.62
-    p_small = block_bootstrap_p(x, base, block=1)     # 当每天独立(相当于朴素做法)
-    p_large = block_bootstrap_p(x, base, block=20)    # 尊重 20 日重叠
-    assert p_large >= p_small, f"块长 20 的 p({p_large}) 不该小于块长 1 的 p({p_small})"
+def test_catches_what_naive_ttest_would_overstate():
+    """核心性质:在**朴素 t 检验判显著**的情形下,块自助必须给出明显更大的 p。
+
+    这正是它存在的理由——重叠窗口下 t 检验把每天当独立观测,会把"整块行情碰巧被圈中"
+    误读成强证据。构造:y 每 20 天一个整块(模拟 20 日前向窗口重叠),mask 按**整块**
+    选取 → 有效样本只有块数、远小于天数。朴素 t 检验会因 n 大而给出很小的 p;块自助
+    尊重块结构后应该显著更保守。若哪天实现写反/退回逐日口径,这条会红。
+    """
+    rng = np.random.default_rng(11)
+    n_blocks, block = 150, 20
+    vals = (rng.random(n_blocks) < 0.62).astype(float)
+    y = np.repeat(vals, block)                       # 每块内部完全相同 = 极端重叠
+    chosen = rng.random(n_blocks) < 0.4
+    mask = np.repeat(chosen, block)
+    _, p_t = stats.ttest_1samp(y[mask], y.mean())
+    p_blk = block_bootstrap_p(mask, y, block=block)
+    assert p_t < 0.10, f"构造失败:朴素 p={p_t} 本应显著(换种子)"
+    assert p_blk > p_t * 3, f"块自助 p({p_blk}) 未显著大于朴素 p({p_t}) = 没在惩罚自相关"
 
 
-def test_deterministic_and_never_zero():
-    """固定种子 → 已发布 p 可复现;(1+hits)/(B+1) → 永不为 0(有限模拟不该声称绝无可能)。"""
-    x = _ar1_binary(base=0.80, seed=5)
-    a = block_bootstrap_p(x, 0.50, block=20)
-    b = block_bootstrap_p(x, 0.50, block=20)
-    assert a == b
-    assert a > 0.0
+def test_deterministic():
+    """固定种子 → 已发布 p 可复现(repo 铁律:公开统计结论不许每跑一个样)。"""
+    y = _series_with_overlap(base=0.80, seed=5)
+    mask = np.zeros(len(y), bool); mask[: len(y) // 3] = True
+    assert block_bootstrap_p(mask, y, block=20) == block_bootstrap_p(mask, y, block=20)
 
 
 def test_degenerate_inputs_return_none():
-    """样本 <2 → None(调用方据此不判显著,而不是崩)。"""
-    assert block_bootstrap_p(np.array([1.0]), 0.5, block=20) is None
-    assert block_bootstrap_p(np.array([]), 0.5, block=20) is None
+    """mask 太小/空序列 → None(调用方据此不判显著,而不是崩)。"""
+    y = _series_with_overlap()
+    tiny = np.zeros(len(y), bool); tiny[:3] = True
+    assert block_bootstrap_p(tiny, y, block=20) is None        # mask < 10
+    assert block_bootstrap_p(np.array([], bool), np.array([]), block=20) is None
 
 
 # ── walk_forward 分档显著性也收紧为「t 检验 + 块自助」(2026-08-25) ─────────────

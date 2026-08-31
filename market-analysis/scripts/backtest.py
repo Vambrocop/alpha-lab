@@ -29,32 +29,48 @@ WEB_DIR  = Path(__file__).parent.parent / "web"
 HORIZONS = [1, 5, 10, 20, 30]   # 前向天数
 
 
-def block_bootstrap_p(x, base_rate, block, n_iter=5000, seed=20260824):
-    """移动块自助 p 值 —— 尊重「前向窗口重叠」造成的自相关(2026-08-24 新增)。
+def block_bootstrap_p(mask, y_all, block=20, n_iter=5000, seed=20260824):
+    """循环块自助 p 值 —— 块在**日历序列**上连续,mask 随之一起被重采样。
 
-    为什么必须有:up_{h}d / ret_{h}d 是**逐日**算的 h 日前向结果,相邻两天的窗口重叠 (h-1)/h,
-    高度自相关。`ttest_1samp` 把每天当独立观测 → 有效样本约 n/h、标准误被低估约 √h 倍 →
-    **p 值被低估一到两个数量级**。实测(NASDAQ 校准桶):naive p=0.0001 → 块自助 0.052;
-    0.0003 → 0.089;<51% 桶 0.033 → 0.448(显著性直接翻掉)。
-    这与 dip_hold_study / fear_greed 的去重叠段级自助是同一套诚实标准,此处补齐。
+    为什么必须有:up_{h}d / ret_{h}d 是**逐日**算的 h 日前向结果,相邻两天的窗口重叠
+    (h-1)/h,高度自相关。`ttest_1samp` 把每天当独立观测 → 有效样本约 n/h、标准误低估约
+    √h 倍 → **p 值被低估一到两个数量级**。
 
-    块长取 = 前向窗口长度 h(一个块内的重叠结构被整体搬走,块之间近似独立)。
-    p 用 (1+命中)/(B+1) 的保守写法,永不报 0;固定种子保证已发布 p 可复现。
+    **2026-08-27 重要修正(用户质疑「是不是矫枉过正」→ 实测证实确实过头了)**:
+    初版是在「某一档的观测**子集**」自身数组上取连续块。但某档的日子在日历上是**散落**的
+    ——"20 个连续元素" ≠ "20 个连续日历日",可能横跨数月;那些元素本就近乎独立,却被当成
+    一个整体搬走 → 破坏了比实际更多的结构 → p 偏大。实测同一批数据两种口径:
+      <51%   散落 0.071 vs 日历 0.038      57-60%  散落 0.313 vs 日历 0.170
+      60-63% 散落 0.131 vs 日历 0.057(**结论翻转**:正确口径下本该显著)
+      Tier>=4 散落 0.332 vs 日历 0.117
+    散落口径系统性保守 1.8–2.8 倍。自相关存在于**日历时间**里,故块必须在日历上连续。
+    改为与 walk_forward.block_bootstrap_diff 同一语义(那边一直是对的)。
+
+    p = 自助分布中「差值穿越 0」的双侧份额(CI 反演),(1+命中)/(B+1) 的保守写法在
+    此处不再需要——用与 walk_forward 一致的份额法,便于两处结论可比。
+    固定种子保证已发布 p 可复现。mask 为空/过小 → None(调用方据此不判显著)。
     """
-    x = np.asarray(x, dtype=float)
-    n = len(x)
-    block = max(1, min(int(block), n))
-    if n < 2:
+    mask = np.asarray(mask, dtype=bool)
+    y_all = np.asarray(y_all, dtype=float)
+    n = len(y_all)
+    if n == 0 or mask.sum() < 10:
         return None
+    block = max(1, min(int(block), n))
     rng = np.random.default_rng(seed)
     n_blocks = int(np.ceil(n / block))
-    starts = rng.integers(0, n - block + 1, size=(n_iter, n_blocks))
-    idx = (starts[:, :, None] + np.arange(block)[None, None, :]).reshape(n_iter, -1)[:, :n]
-    means = x[idx].mean(axis=1)
-    center = float(means.mean())
-    obs_dev = abs(float(x.mean()) - float(base_rate))
-    hits = int(np.sum(np.abs(means - center) >= obs_dev))
-    return (1 + hits) / (n_iter + 1)
+    diffs = []
+    for _ in range(n_iter):
+        starts = rng.integers(0, n, n_blocks)
+        idx = ((starts[:, None] + np.arange(block)) % n).ravel()[:n]
+        ys, ss = y_all[idx], mask[idx]
+        if ss.sum() == 0:
+            continue
+        diffs.append(ys[ss].mean() - ys.mean())
+    if not diffs:
+        return None
+    diffs = np.array(diffs)
+    p = 2 * min(float((diffs <= 0).mean()), float((diffs >= 0).mean()))
+    return min(p, 1.0)
 
 
 def run_backtest(daily, long_csv, label):
@@ -123,8 +139,7 @@ def run_backtest(daily, long_csv, label):
         # 另注意：先验/LR由全历史估计，本回测属样本内验证；
         # 真实样本外表现以 walk_forward 结果为准。
         "index": label,
-        "method_note": "样本内验证；样本外表现见 walk_forward。**重叠窗口已按块自助修正**(2026-08-24):up_{h}d 逐日采样、相邻样本共享 h-1 天,t 检验把每天当独立观测会低估 p 一到两个数量级(实测校准桶 0.0001→0.052、0.0003→0.089、0.033→0.448)。故 significant 收紧为「t 检验与块自助(块长=前向窗口)都过」,两个 p 值均照登、可自行复核。",
-        "degraded": bool(df.empty),   # True＝本轮 0 条可回测记录，以下字段为降级空结构
+        "method_note": "样本内验证；样本外表现见 walk_forward。**重叠窗口已按块自助修正**(2026-08-24 引入，2026-08-27 修正口径)：up_{h}d 逐日采样、相邻样本共享 h-1 天，t 检验把每天当独立观测会低估 p 一到两个数量级。块自助的块取在**日历序列**上(mask 随之重采样)——初版曾在散落子集上取块，系统性过度保守 1.8–2.8 倍、误判掉本该显著的格(如 SP500 Tier≥4：散落 0.209 vs 日历 0.017)，已更正。significant = 「t 检验与块自助都过」，两个 p 值均照登、可自行复核。", "degraded": bool(df.empty),   # True＝本轮 0 条可回测记录，以下字段为降级空结构
     }
 
     # ── 1. 全样本基准 ──────────────────────────────────────────────
@@ -164,7 +179,9 @@ def run_backtest(daily, long_csv, label):
             avg_ret  = float(r.mean())
             med_ret  = float(np.median(r))
             t_stat, p_val = stats.ttest_1samp(s, base_wr)
-            p_blk = block_bootstrap_p(s, base_wr, block=h)      # 块长=该窗口长度(尊重重叠)
+            # 传 mask + **完整日序列**(块在日历上连续;2026-08-27 修正,见函数注释)
+            p_blk = block_bootstrap_p((df["tier"] == tier).to_numpy(),
+                                      df[col_up].to_numpy(float), block=h)
             diff_wr  = round(wr - float(base_wr * 100), 1)
 
             row["horizons"][f"{h}d"] = {
@@ -205,7 +222,8 @@ def run_backtest(daily, long_csv, label):
         avg  = float(r.mean())
         _base20 = df["up_20d"].mean()
         t_stat, p_val = stats.ttest_1samp(s.values, _base20)
-        p_blk = block_bootstrap_p(s.values, _base20, block=20)
+        p_blk = block_bootstrap_p((df["bucket"] == lbl).to_numpy(),
+                                  df["up_20d"].to_numpy(float), block=20)
         cal_rows.append({
             "bucket":        lbl,
             "prob_mid":      round(mid, 3),
@@ -233,7 +251,8 @@ def run_backtest(daily, long_csv, label):
     n4   = len(tier4_up)
     # 注:ttest_ind 在此本就不当(tier4 是 all 的**子集**,两样本不独立);块自助对基率检验更合适。
     t_stat, p_val = stats.ttest_ind(tier4_up.values, all_up.values)
-    p_blk = block_bootstrap_p(tier4_up.values, float(all_up.mean()), block=20)
+    p_blk = block_bootstrap_p((df["tier"] >= 4).to_numpy(),
+                              df["up_20d"].to_numpy(float), block=20)
 
     print(f"  仅Tier≥4买入：胜率={wr4:.1f}%  n={n4}天  "
           f"vs 全时间买入={wra:.1f}%  p={p_val:.4f}")
