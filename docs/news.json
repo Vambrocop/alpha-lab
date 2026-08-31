@@ -1,8 +1,8 @@
 {
- "updated": "2026-08-31 19:44 UTC",
+ "updated": "2026-08-31 23:28 UTC",
  "items": [
   {
-   "time": "2026-08-31 19:42 UTC",
+   "time": "2026-08-31 22:24 UTC",
    "title": "Amazon’s stock slips as the FTC alleges billions of dollars in hidden ad fees",
    "impact": "neutral",
    "note": "",
@@ -10,35 +10,35 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-31 19:40 UTC",
-   "title": "Jerome Powell still has one vote on whether rates go up — the same as Kevin Warsh",
-   "impact": "positive",
+   "time": "2026-08-31 21:36 UTC",
+   "title": "Microsoft Outlook and OpenAI's ChatGPT Work are experiencing user outages",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-31 21:36 UTC",
+   "title": "The S&P 500 usually falls in September. Why this year should be different.",
+   "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-31 19:39 UTC",
-   "title": "FTC sues Amazon, accusing the e-commerce giant of misleading advertisers",
+   "time": "2026-08-31 21:33 UTC",
+   "title": "Vanguard’s S&P 500 index fund changed how we invest — but there may be a smarter way to get into the market",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-08-31 19:38 UTC",
-   "title": "Markets see Warsh endorsing a rate hike in September. Not everyone is convinced",
+   "time": "2026-08-31 21:16 UTC",
+   "title": "23 best-performing stocks of August, as the software industry continues its recovery",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-31 19:31 UTC",
-   "title": "Microsoft Outlook and OpenAI's ChatGPT Work are experiencing user outages",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
