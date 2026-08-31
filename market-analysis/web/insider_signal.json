@@ -1,19 +1,19 @@
 {
-  "generated": "2026-08-29T03:22:46Z",
+  "generated": "2026-08-31T19:27:33Z",
   "source": "SEC EDGAR Form 4 (开市买入 P) → 前向公开计分",
   "hold_days": 30,
   "filing_lag_days": 3,
   "min_value": 50000.0,
   "benchmark": "SPY",
   "track_record": {
-    "n_settled": 30,
-    "n_hit": 15,
-    "beat_spy_pct": 50.0,
-    "mean_excess_pct": -2.542,
-    "median_excess_pct": -0.401,
-    "n_pending": 29,
-    "n_dropped": 0,
-    "dropped_pct": 0.0
+    "n_settled": 33,
+    "n_hit": 17,
+    "beat_spy_pct": 51.5,
+    "mean_excess_pct": -2.475,
+    "median_excess_pct": 0.335,
+    "n_pending": 23,
+    "n_dropped": 2,
+    "dropped_pct": 5.7
   },
   "recent": [
     {
@@ -276,7 +276,7 @@
       "txn_date": "2026-07-28",
       "value": 1515510.86,
       "settled": false,
-      "dropped": false,
+      "dropped": true,
       "excess_pct": null,
       "hit": false
     },
@@ -287,7 +287,7 @@
       "txn_date": "2026-07-28",
       "value": 761392.91,
       "settled": false,
-      "dropped": false,
+      "dropped": true,
       "excess_pct": null,
       "hit": false
     },
@@ -297,10 +297,10 @@
       "title": "Chief Executive Officer",
       "txn_date": "2026-07-28",
       "value": 232273.04,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 5.216,
+      "hit": true
     },
     {
       "ticker": "ACI",
@@ -308,10 +308,10 @@
       "title": "Chief Executive Officer",
       "txn_date": "2026-07-28",
       "value": 217664.76,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 5.216,
+      "hit": true
     },
     {
       "ticker": "NMM",
@@ -319,10 +319,10 @@
       "title": "See Remarks",
       "txn_date": "2026-07-28",
       "value": 84245.8,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
-      "hit": false
+      "excess_pct": 5.019,
+      "hit": true
     },
     {
       "ticker": "COE",
@@ -330,9 +330,9 @@
       "title": "Chief Executive Officer",
       "txn_date": "2026-07-27",
       "value": 7658900.4,
-      "settled": false,
+      "settled": true,
       "dropped": false,
-      "excess_pct": null,
+      "excess_pct": -15.663,
       "hit": false
     },
     {
@@ -457,6 +457,6 @@
       "hit": true
     }
   ],
-  "verdict": "已结算 30 笔：跟买后 ~1 月相对 SPY 平均 -2.54%、跑赢 50.0%。多重比较/幸存者偏差未除，别当 edge。",
-  "caveat": "出格区·聪明钱前向计分。跟内部人开市买入(P·≥$50k)、披露后 +3 日可跟单、持有 30 日 vs SPY。**前向计分**：刚上线样本极小（约 1 月后才有首批结算），别当结论。幸存者偏差：0.0% 因退市/无价被丢→高估 edge；只扫近期 daily-index 前若干份=样本非全量；同一标的同一入场日多名内部人(集群买入)战绩只计一次,防单一事件主导；重叠窗口只看描述性均值/胜率不充显著性；相关≠因果；非荐股、非跟单、不可交易、会错、过去≠未来。每跑 append 公开计分。"
+  "verdict": "已结算 33 笔：跟买后 ~1 月相对 SPY 平均 -2.48%、跑赢 51.5%。多重比较/幸存者偏差未除，别当 edge。",
+  "caveat": "出格区·聪明钱前向计分。跟内部人开市买入(P·≥$50k)、披露后 +3 日可跟单、持有 30 日 vs SPY。**前向计分**：刚上线样本极小（约 1 月后才有首批结算），别当结论。幸存者偏差：5.7% 因退市/无价被丢→高估 edge；只扫近期 daily-index 前若干份=样本非全量；同一标的同一入场日多名内部人(集群买入)战绩只计一次,防单一事件主导；重叠窗口只看描述性均值/胜率不充显著性；相关≠因果；非荐股、非跟单、不可交易、会错、过去≠未来。每跑 append 公开计分。"
 }

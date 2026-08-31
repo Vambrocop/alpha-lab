@@ -1,1 +1,10 @@
 portfolio,symbol,aud_invested,shares,first_seen,entry_date,entry_px,fx_entry,bench,bench_entry_px,exit_date,exit_px,status
+美股指数,QQQ,10000.0,,2026-08-31,,,,QQQ,,,,pending
+澳股指数,VAS.AX,10000.0,,2026-08-31,,,,^AXJO,,,,pending
+规则荐股,KO,3330.0,,2026-08-31,,,,QQQ,,,,pending
+规则荐股,LLY,3330.0,,2026-08-31,,,,QQQ,,,,pending
+规则荐股,AAPL,3340.0,,2026-08-31,,,,QQQ,,,,pending
+我的选股,AAPL,2500.0,,2026-08-31,,,,QQQ,,,,pending
+我的选股,INTC,2500.0,,2026-08-31,,,,QQQ,,,,pending
+我的选股,GOOGL,2500.0,,2026-08-31,,,,QQQ,,,,pending
+我的选股,PFE,2500.0,,2026-08-31,,,,QQQ,,,,pending

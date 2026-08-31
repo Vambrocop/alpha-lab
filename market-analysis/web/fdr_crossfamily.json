@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T06:47:44Z",
+  "generated": "2026-08-31T19:21:43Z",
   "method": "跨检验族汇池多重比较：Benjamini-Yekutieli(任意相关稳健，头条) + Benjamini-Hochberg(PRDS，乐观对照) + Bonferroni(FWER)。",
   "caveat": "保守的**探索性**跨族 meta 校正，非统一模型。汇集各方法已发布的 p 值，回答'把试过的所有东西算进去后还剩几条'。部分主张是机械/同期关系(如恐慌↔标普同期负相关)，存活≠真发现，需看各自方法脚注；step-up 程序下，足够多的极小 p 会抬高同批其它主张的阈值，故个别中等 p 可能跨族存活而族内不存活，属正常。",
   "families_pooled": [
@@ -129,7 +129,7 @@
     {
       "family": "日历效应",
       "label": "假日效应(节前)",
-      "p": 0.0819,
+      "p": 0.0939,
       "survive_by_10": false,
       "survive_by_05": false,
       "survive_bh_10": false,
@@ -244,7 +244,7 @@
       "survive_by_05": false,
       "survive_bh_10": false,
       "survive_bonferroni_05": false,
-      "label_en": "rate hike→S&P 500（直接）",
+      "label_en": "rate hike→S&P 500（direct）",
       "family_en": "Path / Granger"
     },
     {
@@ -266,7 +266,7 @@
       "survive_by_05": false,
       "survive_bh_10": false,
       "survive_bonferroni_05": false,
-      "label_en": "US Dollar走弱",
+      "label_en": "US Dollar weakens",
       "family_en": "Factor AUC"
     },
     {
@@ -299,7 +299,7 @@
       "survive_by_05": false,
       "survive_bh_10": false,
       "survive_bonferroni_05": false,
-      "label_en": "US Dollar走强",
+      "label_en": "US Dollar strengthens",
       "family_en": "Factor AUC"
     },
     {
@@ -310,7 +310,7 @@
       "survive_by_05": false,
       "survive_bh_10": false,
       "survive_bonferroni_05": false,
-      "label_en": "隔夜 momentum为负(20d)",
+      "label_en": "overnight momentum negative(20d)",
       "family_en": "Factor AUC"
     },
     {
@@ -321,7 +321,7 @@
       "survive_by_05": false,
       "survive_bh_10": false,
       "survive_bonferroni_05": false,
-      "label_en": "隔夜 momentum为正(20d)",
+      "label_en": "overnight momentum positive(20d)",
       "family_en": "Factor AUC"
     },
     {

@@ -179,3 +179,9 @@ pick_date,symbol,view,mom_pct,entry_date,entry_px,exit_date,exit_px,ret_pct,benc
 2026-08-29,TPW.AX,看淡,-39.8,,,,,,,,,,False,False
 2026-08-29,NST.AX,看淡,-21.3,,,,,,,,,,False,False
 2026-08-29,A2M.AX,看淡,-26.7,,,,,,,,,,False,False
+2026-08-31,MQG.AX,看好,28.2,,,,,,,,,,False,False
+2026-08-31,CPU.AX,看好,29.2,,,,,,,,,,False,False
+2026-08-31,APA.AX,看好,18.3,,,,,,,,,,False,False
+2026-08-31,TPW.AX,看淡,-39.8,,,,,,,,,,False,False
+2026-08-31,NST.AX,看淡,-21.3,,,,,,,,,,False,False
+2026-08-31,A2M.AX,看淡,-26.7,,,,,,,,,,False,False

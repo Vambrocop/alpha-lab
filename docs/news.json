@@ -1,44 +1,44 @@
 {
- "updated": "2026-08-30 22:57 UTC",
+ "updated": "2026-08-31 19:25 UTC",
  "items": [
   {
-   "time": "2026-08-30 22:45 UTC",
-   "title": "U.S. stock futures flat as chances of rate hike rise after Warsh’s Jackson Hole comments",
-   "impact": "positive",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-30 19:40 UTC",
-   "title": "Trump criticizes NBC over election comment as Treasury denies some NYT, WSJ and Bloomberg reporters G20 credentials",
+   "time": "2026-08-31 19:24 UTC",
+   "title": "FTC sues Amazon, accusing the e-commerce giant of misleading advertisers",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-30 15:48 UTC",
-   "title": "He beat Big Tobacco. Will the same playbook work against Meta and social media?",
-   "impact": "positive",
+   "time": "2026-08-31 19:09 UTC",
+   "title": "Risk-reward outlook for stocks is getting worse as historically tough month kicks off, says Citadel",
+   "impact": "negative",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-30 14:54 UTC",
-   "title": "Here are the 3 big things we're watching in the stock market in the week ahead",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-30 14:30 UTC",
+   "time": "2026-08-31 19:01 UTC",
    "title": "My mother, 91, has dementia. Every bank says I need her signature to unlock her $100,000 stock certificate. What can I do?",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-31 18:53 UTC",
+   "title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-31 18:41 UTC",
+   "title": "Bessent pushes back on Druckenmiller critique of bond intervention",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
