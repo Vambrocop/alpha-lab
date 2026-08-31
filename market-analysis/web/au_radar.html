@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.alternative.me https://vambrocop.github.io; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>🇦🇺 澳股雷达 · AU stock radar</title>
+<link rel="stylesheet" href="vp.css">
+<style>
+  :root{--bg:#0d1117;--panel:#161b22;--border:#30363d;--fg:#e6edf3;--mut:#9da7b3;--acc:#a371f7}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;padding:16px;max-width:1040px;margin:0 auto}
+  h1{font-size:1.3rem;margin:.2em 0;display:inline-block}
+  #lang{float:right;background:#161b22;border:1px solid var(--border);color:var(--fg);border-radius:6px;padding:4px 10px;cursor:pointer;font-size:.82rem}
+  .note{background:rgba(163,113,247,.1);border:1px solid var(--acc);border-radius:8px;padding:9px 12px;font-size:.84rem;margin:10px 0;color:#d2c2f5}
+  .bar{margin:10px 0;font-size:.85rem;color:var(--mut)}
+  .bar button{background:transparent;border:1px solid var(--border);color:var(--fg);border-radius:6px;padding:4px 10px;margin:2px;cursor:pointer;font-size:.82rem}
+  .bar button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(186px,1fr));gap:10px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:8px;text-align:center}
+  .card h3{margin:2px 0;font-size:.98rem}
+  .card .sub{font-size:.74rem;color:var(--mut)}
+  .card .tag{font-size:.66rem;padding:1px 5px;border-radius:4px}
+  .hot{background:rgba(248,81,73,.18);color:#ff9b94}
+  .calm{background:rgba(63,185,80,.16);color:#7ee787}
+  .mut{color:var(--mut);font-size:.8rem;margin-top:14px;border-top:1px solid var(--border);padding-top:8px}
+  @media(max-width:560px){body{padding:11px}h1{font-size:1.15rem}.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+</style>
+</head>
+<body>
+<a href="#" onclick="if(history.length>1){history.back()}else{location.href='index.html'};return false" style="color:#8b949e;text-decoration:none;font-size:.82rem;margin-right:10px" title="返回上一页">↩ 返回</a>
+<a href="index.html" style="color:#8b949e;text-decoration:none;font-size:.82rem;margin-right:12px">← Valpha Lab</a>
+<button id="lang" aria-label="切换语言 / switch language"></button>
+<h1 data-i18n="title"></h1>
+<div class="vp-takeaway" data-i18n="takeaway"></div>
+<details class="vp-more"><summary data-i18n="more_dims"></summary>
+  <div data-i18n="note" style="color:var(--mut);line-height:1.6;margin-top:4px"></div>
+</details>
+<div class="bar"><span data-i18n="sortby"></span>
+  <button data-k="" class="on" data-i18n="d_def"></button>
+  <button data-k="动量" data-i18n="d_mom"></button>
+  <button data-k="稳健" data-i18n="d_sta"></button>
+  <button data-k="性价比" data-i18n="d_val"></button>
+  <button data-k="反弹空间" data-i18n="d_reb"></button>
+  <button data-k="_avg" data-i18n="d_avg"></button>
+  <span id="src" style="margin-left:10px"></span>
+</div>
+<div class="grid" id="grid"></div>
+<div class="mut" data-i18n="foot"></div>
+
+<script>
+const LIVE="au_radar.json";
+const DIMS=["动量","趋势","稳健","性价比","独立性","反弹空间"];
+const DIM_EN={"动量":"Mom","趋势":"Trend","稳健":"Stab","性价比":"Value","独立性":"Indep","反弹空间":"Rebound"};
+const I18N={
+  title:{zh:"🇦🇺📡 Valpha 雷达图 · 原型",en:"🇦🇺📡 Valpha Radar · prototype"},
+  note:{zh:"<b>描述性体检，非预测、非买卖信号。</b>6 维各 0–100：<b>动量</b>(近1年涨)、<b>趋势</b>(均线排列)、<b>稳健</b>(低波动=高分)、<b>性价比</b>(风险调整收益)、<b>独立性</b>(与ASX200低相关=高分)、<b>反弹空间</b>(越靠一年低位越高)。一眼看「性格」，而非「该不该买」。",
+        en:"<b>A descriptive checkup — not a forecast or a buy signal.</b> 6 axes, each 0–100: <b>Mom</b>(1Y gain), <b>Trend</b>(MA stack), <b>Stab</b>(low vol=high), <b>Value</b>(risk-adj return), <b>Indep</b>(low corr to Nasdaq=high), <b>Rebound</b>(near 1Y low=high). See the 'character', not 'should I buy'."},
+  takeaway:{zh:"🇦🇺📡 给每只股票画张「性格雷达」——一眼看它偏 <b>强势 / 稳健 / 低位反弹</b> 哪一型。描述性体检，<b>非预测、非买卖建议</b>。",
+            en:"🇦🇺📡 A 'character radar' for each stock — see at a glance whether it leans <b>strong / steady / deeply-dipped</b>. A descriptive checkup, <b>not a forecast or buy signal</b>."},
+  more_dims:{zh:"6 个维度分别是什么意思？（点开）",en:"What do the 6 axes mean? (expand)"},
+  sortby:{zh:"排序：",en:"Sort: "},d_def:{zh:"默认",en:"Default"},d_mom:{zh:"动量",en:"Momentum"},d_sta:{zh:"稳健",en:"Stability"},d_val:{zh:"性价比",en:"Value"},d_reb:{zh:"反弹空间",en:"Rebound"},d_avg:{zh:"综合",en:"Overall"},
+  c_avg:{zh:"综合",en:"Overall"},
+  foot:{zh:"🔥追涨风险=动量≥80且稳健≤30；🏰稳健=稳健≥80。数据：实时 stocks.json，过去≠未来。",
+        en:"🔥chase-risk = Mom≥80 & Stab≤30; 🏰steady = Stab≥80. Data: live stocks.json — past ≠ future."},
+  live:{zh:"实时 ✓",en:"Live ✓"},err:{zh:"拉不到实时数据——确认 Pages 已部署。",en:"Can't load live data — check Pages deployment."}
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let LANG="zh"; try{LANG=localStorage.getItem("valpha_lang")||"zh";}catch(e){}
+const t=k=>(I18N[k]&&I18N[k][LANG])||k;
+const avg=r=>Math.round(DIMS.reduce((s,d)=>s+(r[d]||0),0)/DIMS.length);
+// 两层呈现·上层：把 6 维数值翻成一句大白话「性格」(描述性·非买卖建议)。取最突出的一条。
+function persona(r){
+  const m=r["动量"]||0,s=r["稳健"]||0,v=r["性价比"]||0,reb=r["反弹空间"]||0,ind=r["独立性"]||0,tr=r["趋势"]||0,en=LANG==="en";
+  if(m>=80&&s<=30) return en?"🔥 strong but choppy":"🔥 强势但颠簸";
+  if(s>=80)        return en?"🏰 steady · low-vol":"🏰 稳健 · 波动小";
+  if(reb>=80)      return en?"📉 deeply dipped (risky)":"📉 跌得深·低位(高风险)";
+  if(m>=70&&tr>=70)return en?"📈 uptrend + momentum":"📈 上行 + 有动量";
+  if(v>=70)        return en?"⚖️ good risk-adj":"⚖️ 风险调整后划算";
+  if(ind>=70)      return en?"🧭 independent":"🧭 走自己的节奏";
+  return en?"· balanced":"· 性格均衡";
+}
+function pc(lb,v){if(v==null)return '';const c=v>=0?'#3fb950':'#f85149';return `<span style="color:${c}">${lb}${v>=0?'+':''}${v}%</span>`;}
+let STOCKS={},sortKey="";
+
+function radarSVG(radar,size){
+  const cx=size/2,cy=size/2,R=size*0.34,ang=i=>-Math.PI/2+i*Math.PI/3;let g="";
+  [0.25,0.5,0.75,1].forEach(f=>{const ring=DIMS.map((_,i)=>`${(cx+R*f*Math.cos(ang(i))).toFixed(1)},${(cy+R*f*Math.sin(ang(i))).toFixed(1)}`).join(" ");g+=`<polygon points="${ring}" fill="none" stroke="#30363d" stroke-width="0.5"/>`;});
+  DIMS.forEach((d,i)=>{g+=`<line x1="${cx}" y1="${cy}" x2="${(cx+R*Math.cos(ang(i))).toFixed(1)}" y2="${(cy+R*Math.sin(ang(i))).toFixed(1)}" stroke="#30363d" stroke-width="0.5"/>`;});
+  const pts=DIMS.map((d,i)=>{const r=(radar[d]||0)/100*R;return `${(cx+r*Math.cos(ang(i))).toFixed(1)},${(cy+r*Math.sin(ang(i))).toFixed(1)}`;}).join(" ");
+  g+=`<polygon points="${pts}" fill="rgba(163,113,247,.32)" stroke="#a371f7" stroke-width="1.4"/>`;
+  DIMS.forEach((d,i)=>{const lx=cx+(R+14)*Math.cos(ang(i)),ly=cy+(R+14)*Math.sin(ang(i)),lbl=LANG==="en"?DIM_EN[d]:d;
+    g+=`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-size="8" fill="#8b949e" text-anchor="middle" dominant-baseline="middle">${lbl}</text>`;});
+  return `<svg viewBox="0 0 ${size} ${size}" width="100%" style="max-width:172px">${g}</svg>`;
+}
+function render(){
+  let items=Object.entries(STOCKS);
+  if(sortKey)items.sort((a,b)=>sortKey==="_avg"?avg(b[1].radar||{})-avg(a[1].radar||{}):(b[1].radar[sortKey]||0)-(a[1].radar[sortKey]||0));
+  $("grid").innerHTML=items.map(([s,d])=>{
+    const r=d.radar||{},hot=(r["动量"]||0)>=80&&(r["稳健"]||50)<=30,calm=(r["稳健"]||0)>=80,
+      nm=LANG==="en"?s:`${esc(d.label)} <span class="sub">${s}</span>`,
+      vl=LANG==="en"?"vol":"波动",yl=LANG==="en"?"1Y":"1年";
+    return `<div class="card"><h3>${nm}</h3><div style="font-size:.84rem;font-weight:700;color:#a371f7;margin:-2px 0 1px">${t("c_avg")} ${avg(r)}</div>
+      <div style="font-size:.72rem;color:#cbb6f0;margin:0 0 3px;min-height:1.05em">${persona(r)}</div>${radarSVG(r,170)}
+      <div class="sub" style="margin-top:2px">${d.price!=null?'$'+d.price.toFixed(2):''} · ${pc(LANG==="en"?"1D":"日",d.d1)} ${pc(LANG==="en"?"1W":"周",d.w1)} ${pc(LANG==="en"?"1M":"月",d.m1)}</div>
+      <div class="sub">${yl} ${d.chg1y>=0?'+':''}${(d.chg1y??0).toFixed(0)}% · ${vl} ${(d.vol??0).toFixed(0)}%</div>
+      <div>${hot?'<span class="tag hot">🔥</span>':''}${calm?'<span class="tag calm">🏰</span>':''}</div></div>`;
+  }).join("");
+}
+function applyStatic(){document.querySelectorAll("[data-i18n]").forEach(el=>el.innerHTML=t(el.dataset.i18n));$("lang").textContent=LANG==="zh"?"EN":"中";document.documentElement.lang=LANG==="zh"?"zh-CN":"en";}
+$("lang").onclick=()=>{LANG=LANG==="zh"?"en":"zh";try{localStorage.setItem("valpha_lang",LANG)}catch(e){};applyStatic();render();$("src").textContent=Object.keys(STOCKS).length?`${t("live")}（${Object.keys(STOCKS).length}）`:"";};
+document.querySelectorAll(".bar button[data-k]").forEach(b=>b.onclick=()=>{sortKey=b.dataset.k;document.querySelectorAll(".bar button[data-k]").forEach(x=>x.classList.toggle("on",x===b));render();});
+async function load(){
+  applyStatic();
+  try{
+    const r=await fetch(LIVE,{cache:"no-store"});if(!r.ok)throw 0;
+    const j=await r.json();
+    /* au_radar.json 的字段是扁平的(不套 stats),与美股 stocks.json 略异——在此适配 */
+    for(const[s,o]of Object.entries(j.stocks||{})){STOCKS[s]={label:o.label||s,chg1y:o.chg1y,vol:o.vol,price:o.price,d1:o.d1,w1:o.w1,m1:o.m1,radar:o.radar||{}};}
+    const n=Object.keys(STOCKS).length;
+    if(!n){
+      const msg=LANG==="en"?"No data yet — check back soon":"暂无数据，稍后再试";
+      $("grid").innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--mut)">${msg}</div>`;
+    }else{$("src").textContent=`${t("live")}（${n}）`;render();}
+  }catch(e){
+    $("src").textContent=t("err");
+    const msg=LANG==="en"?"Failed to load — refresh later":"加载失败，请稍后刷新";
+    $("grid").innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--mut)">${msg}</div>`;
+  }
+}
+load();
+</script>
+<script src="vp_gloss.js" data-autoscan></script>
+</body>
+</html>
