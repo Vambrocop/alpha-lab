@@ -1,8 +1,24 @@
 {
- "updated": "2026-08-31 19:25 UTC",
+ "updated": "2026-08-31 19:44 UTC",
  "items": [
   {
-   "time": "2026-08-31 19:24 UTC",
+   "time": "2026-08-31 19:42 UTC",
+   "title": "Amazon’s stock slips as the FTC alleges billions of dollars in hidden ad fees",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-31 19:40 UTC",
+   "title": "Jerome Powell still has one vote on whether rates go up — the same as Kevin Warsh",
+   "impact": "positive",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-08-31 19:39 UTC",
    "title": "FTC sues Amazon, accusing the e-commerce giant of misleading advertisers",
    "impact": "neutral",
    "note": "",
@@ -10,32 +26,16 @@
    "kind": "auto"
   },
   {
-   "time": "2026-08-31 19:09 UTC",
-   "title": "Risk-reward outlook for stocks is getting worse as historically tough month kicks off, says Citadel",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-31 19:01 UTC",
-   "title": "My mother, 91, has dementia. Every bank says I need her signature to unlock her $100,000 stock certificate. What can I do?",
+   "time": "2026-08-31 19:38 UTC",
+   "title": "Markets see Warsh endorsing a rate hike in September. Not everyone is convinced",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-08-31 18:53 UTC",
-   "title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
-   "impact": "positive",
-   "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-08-31 18:41 UTC",
-   "title": "Bessent pushes back on Druckenmiller critique of bond intervention",
+   "time": "2026-08-31 19:31 UTC",
+   "title": "Microsoft Outlook and OpenAI's ChatGPT Work are experiencing user outages",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
