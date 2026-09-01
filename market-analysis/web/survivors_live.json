@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T00:00:35Z",
+  "generated": "2026-09-01T00:47:17Z",
   "as_of": "2026-09-01",
   "n_survivors": 6,
   "n_active": 3,
@@ -9,7 +9,7 @@
       "key": "BTC_mom20_pos",
       "name": "BTC 20 日动量为正（风险偏好代理）",
       "active": true,
-      "state": "BTC 近 20 日动量 +22.9%（高于 +5% 阈值）",
+      "state": "BTC 近 20 日动量 +23.8%（高于 +5% 阈值）",
       "up_pct": 75,
       "base_pct": 62,
       "window": "2000后",

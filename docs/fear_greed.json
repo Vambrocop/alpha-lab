@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T00:00:20Z",
+  "generated": "2026-09-01T00:47:07Z",
   "as_of": "2026-08-31",
   "composite_start": "2000-09-28",
   "components_used": [
@@ -49,7 +49,7 @@
         "label_en": "Risk appetite",
         "definition_zh": "SP500 20 日收益 − 黄金 20 日收益(仅 GOLD 可得日)",
         "definition_en": "SP500 20-day return minus gold's 20-day return (only on days GOLD data exists)",
-        "raw_value": -0.1032,
+        "raw_value": -0.1058,
         "subscore": 0.0,
         "available": true
       }
