@@ -1,26 +1,26 @@
 {
-  "generated": "2026-09-01T00:44:58Z",
+  "generated": "2026-09-01T17:12:31Z",
   "method": "S&P 月度收益周期图 vs AR(1) 红噪声 surrogate；最强谱峰 vs surrogate 最强峰的全局检验(max-statistic，控多重比较)。",
   "caveat": "检验'过去是否真有超红噪声的周期成分'，**不预测周期会延续**。逐频率'超95%线'仅描述性(未控多重比较)；结论以全局 max-statistic 为准。基于 S&P500 月度收益。",
   "source": "S&P 500 (^GSPC) 月度收益",
   "data_start": "1928-01-31",
-  "data_end": "2026-08-31",
+  "data_end": "2026-09-30",
   "n_surrogate": 1000,
   "seed": 20260613,
   "result": {
     "status": "ok",
-    "n_months": 1184,
-    "years": 98.7,
+    "n_months": 1185,
+    "years": 98.8,
     "ar1_rho": 0.078,
-    "top_period_years": 3.52,
-    "p_global": 0.7443,
+    "top_period_years": 0.5,
+    "p_global": 0.5015,
     "significant": false,
     "exceed_pointwise_periods_years": [
-      3.52,
+      0.5,
+      3.53,
+      0.38,
       0.35,
-      0.32,
-      0.65,
-      0.38
+      0.32
     ],
     "named_cycles": [
       {
@@ -41,7 +41,7 @@
         ],
         "testable": true,
         "n_bins": 6,
-        "exceeds_red_noise_95": true
+        "exceeds_red_noise_95": false
       },
       {
         "cycle": "库兹涅茨 Kuznets（基建）",
@@ -64,6 +64,6 @@
         "note": "超出可检验范围（数据约98年，谱分辨率不足以分辨该尺度）"
       }
     ],
-    "verdict": "✗ 无显著周期：最强峰(≈3.5年)未超红噪声 (全局 p=0.744)"
+    "verdict": "✗ 无显著周期：最强峰(≈0.5年)未超红噪声 (全局 p=0.501)"
   }
 }
