@@ -362,7 +362,7 @@ function renderSignalMeterTail(prob, rec, opts) {
   `);
 
   // model_status_note：muted 小字，仅当字段存在时（动态插入 #signal-percentile 之后）
-  const statusNote = SIGNALS?.model_status_note;
+  const statusNote = SIGNALS ? vpD(SIGNALS, "model_status_note") : null;
   if (!renderSignalMeterTail._statusEl) {
     const el = document.createElement("div");
     el.id = "signal-model-status";

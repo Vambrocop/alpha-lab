@@ -470,16 +470,16 @@ async function loadPlacebo() {
                 `<span style="color:var(--muted);font-size:0.78rem">· Modern p=${t.recent_p.toFixed(2)}${t.recent_significant ? " (still holds)" : (recAdq ? "" : " (insufficient modern sample)")}</span>`));
     return `<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;
                  padding:.5rem .2rem .5rem .6rem;border-bottom:1px solid var(--border);border-left:3px solid ${s.c};">
-      <strong style="min-width:8.5rem">${t.panel}</strong>
+      <strong style="min-width:8.5rem">${vpD(t,"panel")}</strong>
       <span style="color:${s.c};font-weight:700">${s.t}</span>
       <span style="color:var(--muted);font-size:0.78rem">p=${t.p_value.toFixed(3)} · q=${t.q_value.toFixed(3)} ${fdr}</span>
       ${modern}
-      <span style="color:var(--muted);font-size:0.73rem;flex-basis:100%">${t.claim}——${t.detail}（${t.scope}）</span>
+      <span style="color:var(--muted);font-size:0.73rem;flex-basis:100%">${vpL(`${t.claim}——${t.detail}（${t.scope}）`, `${vpD(t,"claim")} — ${vpD(t,"detail")} (${vpD(t,"scope")})`)}</span>
     </div>`;
   }).join("");
   const cnt = k => PLACEBO.tests.filter(t => t.status === k).length;
-  const fdrSurv = PLACEBO.tests.filter(t => t.fdr_significant_05).map(t => t.panel);
-  const fadedSurv = PLACEBO.tests.filter(t => t.fdr_significant_05 && t.recent_p != null && !t.recent_significant && (t.recent_min_group_n == null || t.recent_min_group_n >= 30)).map(t => t.panel);
+  const fdrSurv = PLACEBO.tests.filter(t => t.fdr_significant_05).map(t => vpD(t,"panel"));
+  const fadedSurv = PLACEBO.tests.filter(t => t.fdr_significant_05 && t.recent_p != null && !t.recent_significant && (t.recent_min_group_n == null || t.recent_min_group_n >= 30)).map(t => vpD(t,"panel"));
   el.innerHTML = vpL(`
     <div style="font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:.6rem;">
       把每个"日历规律"的日期标签随机打乱 ${PLACEBO.n_perm} 次生成零分布，真实效应须超 95 分位才算"真"；
@@ -762,8 +762,9 @@ async function loadFdrCrossfamily() {
     return;
   }
   const d = FDRCF;
-  // FC/FAMILY_EN 按后端 fdr_crossfamily.py 硬编码的中文 family 值做键——数据本身只吐中文，
-  // 键必须保持原样才能命中颜色查找；FAMILY_EN 只管显示文案，不改查找逻辑。
+  // FC/FAMILY_EN 按后端 fdr_crossfamily.py 硬编码的中文 family 值做键——键必须保持原样才能命中
+  // 颜色查找；FAMILY_EN 只管显示文案，不改查找逻辑。(后端 claims 现在也带 family_en，但 by_family
+  // 那条汇总线没有，故显示仍统一走 famLabel 这一条路径——两条路径会漂移。)
   const FAMILY_EN = { "日历效应":"Calendar effects", "事件因果":"Event causality", "路径/Granger":"Path/Granger", "因子AUC":"Factor AUC" };
   const famLabel = f => vpL(f, FAMILY_EN[f] || f);
   const head = `<div style="border-left:3px solid var(--yellow);padding:.4rem .7rem;margin-bottom:.6rem;">
@@ -797,7 +798,7 @@ async function loadFdrCrossfamily() {
       <tr class="u-cap"><td style="padding:.2rem .4rem">${vpL("族","Family")}</td><td style="padding:.2rem .4rem">${vpL("主张","Claim")}</td><td style="padding:.2rem .4rem;text-align:right">p</td><td style="padding:.2rem .4rem;text-align:center">BY</td></tr>
       ${rows}
     </table></div>
-    <div style="font-size:0.72rem;color:var(--muted);margin-top:.5rem;line-height:1.55">${d.caveat}</div>`;
+    <div style="font-size:0.72rem;color:var(--muted);margin-top:.5rem;line-height:1.55">${vpD(d,"caveat")}</div>`;
 }
 
 // 同源拉取 JSON（带 cache-buster），失败/非 200 返 null —— 登记簿/坟场/探索区共用
@@ -920,8 +921,8 @@ async function loadCpcv() {
         <div style="height:100%;width:${pct}%;background:${c};"></div></div>
       <div style="color:var(--muted);font-size:0.72rem">${vpL(`${res.n_combos} 个 CSCV 组合 · ${res.n_factors} 因子 · 0%=完全稳健 / 50%≈抛硬币(过拟合) / &gt;50%=系统性失效`, `${res.n_combos} CSCV combinations · ${res.n_factors} factors · 0%=fully robust / 50%≈coin flip (overfit) / &gt;50%=systematic failure`)}</div>
     </div>
-    <div style="font-size:0.82rem;line-height:1.55;margin-bottom:.4rem">${res.verdict}</div>
-    <div style="font-size:0.72rem;color:var(--muted);line-height:1.55">${CPCV.caveat || ""}</div>`;
+    <div style="font-size:0.82rem;line-height:1.55;margin-bottom:.4rem">${vpD(res,"verdict")}</div>
+    <div style="font-size:0.72rem;color:var(--muted);line-height:1.55">${vpD(CPCV,"caveat") || ""}</div>`;
 }
 
 // ── 📉 校准漂移（#3 逐折校准随时间）：同源消费 SIGNALS.calibration_drift ──
@@ -1227,8 +1228,8 @@ async function loadExploratory() {
     else if (c.exceeds_red_noise_95 && cy?.result?.significant === false) items.push([vpL("周期·逐点超但全局不显著","Cycle · pointwise-exceeds but not globally significant"), c.cycle, vpL("逐频率超红噪声 95% 线，但控多重比较的全局检验后不显著","Exceeds the red-noise 95% line frequency-by-frequency, but not significant after the multiple-comparison-controlled global test"), vpL("全局 max-stat","Global max-stat")]);
   }
   if (pl?.tests) for (const t of pl.tests) {
-    if (t.status === "real" && !t.fdr_significant_05) items.push([vpL("日历·裸显著但没过FDR","Calendar · naively significant but fails FDR"), t.panel, vpL(`单看 p=${t.p_value} 显著，多重比较校正后站不住`, `Significant alone at p=${t.p_value}, but doesn't survive multiple-comparison correction`), "FDR"]);
-    else if (t.status === "inconclusive") items.push([vpL("日历·无定论(检验力不足)","Calendar · inconclusive (insufficient power)"), t.panel, vpL(`p=${t.p_value}，每组样本太少、无权下结论`, `p=${t.p_value}, each group's sample is too small to conclude anything`), vpL("样本量","Sample size")]);
+    if (t.status === "real" && !t.fdr_significant_05) items.push([vpL("日历·裸显著但没过FDR","Calendar · naively significant but fails FDR"), vpD(t,"panel"), vpL(`单看 p=${t.p_value} 显著，多重比较校正后站不住`, `Significant alone at p=${t.p_value}, but doesn't survive multiple-comparison correction`), "FDR"]);
+    else if (t.status === "inconclusive") items.push([vpL("日历·无定论(检验力不足)","Calendar · inconclusive (insufficient power)"), vpD(t,"panel"), vpL(`p=${t.p_value}，每组样本太少、无权下结论`, `p=${t.p_value}, each group's sample is too small to conclude anything`), vpL("样本量","Sample size")]);
   }
   if (sc?.summary) items.push([vpL("个股层面","Single-stock level"), vpL("个股日历规律","Single-stock calendar patterns"), vpL("13 票多为无定论(详见个股体检);疑似数据窥探/已消失的见 🪦 坟场","Most of the 13 tickers are inconclusive (see the single-stock check-up); suspected data-snooping/faded ones are in the 🪦 graveyard"), vpL("分半 / 近期","Split-half / recency")]);
 
@@ -1261,16 +1262,16 @@ async function loadGraveyard() {
   dead.push([vpL("模型/假设被否","Model/hypothesis rejected"), vpL("指数纳入效应 RDD","Index-inclusion effect (RDD)"), vpL("断点回归需 Russell 浮动市值排名(专有不可得)，拒用劣质代理硬凑 → 诚实不做","Regression discontinuity needs the Russell float-market-cap ranking (proprietary, unavailable) — refused to force a low-quality proxy → honestly not attempted")]);
   dead.push([vpL("模型/假设被否","Model/hypothesis rejected"), vpL("Fed model(盈利收益率 vs 债券收益率)","Fed model (earnings yield vs. bond yield)"), vpL("流行但学术已证伪(Asness 2003):它相关的是通胀、非真实价值;不预测股市回报","Popular but academically debunked (Asness 2003): it correlates with inflation, not real value; it doesn't predict stock returns")]);
   if (pl?.tests) for (const t of pl.tests) if (t.status === "rejected")
-    dead.push([vpL("曾认为有效·现已测不到","Once thought real · now undetectable"), t.panel, vpL(`充分样本下不显著(p=${t.p_value})——很可能已被套利`, `Not significant even with a full sample (p=${t.p_value}) — very likely already arbitraged away`)]);
+    dead.push([vpL("曾认为有效·现已测不到","Once thought real · now undetectable"), vpD(t,"panel"), vpL(`充分样本下不显著(p=${t.p_value})——很可能已被套利`, `Not significant even with a full sample (p=${t.p_value}) — very likely already arbitraged away`)]);
   if (pl?.tests) for (const t of pl.tests) if (t.fdr_significant_05 && t.recent_p != null && !t.recent_significant && (t.recent_min_group_n == null || t.recent_min_group_n >= 30))
-    dead.push([vpL("曾有效·现已消失(指数级)","Once real · now faded (index-level)"), t.panel, vpL(`全样本 FDR 显著(q=${t.q_value})但 2000 后 p=${t.recent_p.toFixed(2)} 已测不到——全样本显著多半是 2000 前遗物，很可能被套利`, `Full-sample FDR-significant (q=${t.q_value}) but undetectable post-2000 (p=${t.recent_p.toFixed(2)}) — the full-sample significance is mostly a pre-2000 relic, very likely arbitraged away`)]);
+    dead.push([vpL("曾有效·现已消失(指数级)","Once real · now faded (index-level)"), vpD(t,"panel"), vpL(`全样本 FDR 显著(q=${t.q_value})但 2000 后 p=${t.recent_p.toFixed(2)} 已测不到——全样本显著多半是 2000 前遗物，很可能被套利`, `Full-sample FDR-significant (q=${t.q_value}) but undetectable post-2000 (p=${t.recent_p.toFixed(2)}) — the full-sample significance is mostly a pre-2000 relic, very likely arbitraged away`)]);
   if (sc?.tickers) for (const k of Object.keys(sc.tickers)) {
     const p = sc.tickers[k].patterns, nm = tickerName(k, sc.tickers[k].name || "");
     if (p && p.overall === "faded") dead.push([vpL("曾有效·现已消失(个股)","Once real · now faded (single-stock)"), vpL(`${k} ${nm} 日历规律`, `${k} ${nm} calendar pattern`), vpL("全史显著但近年消失——经典被套利(详见个股体检)","Significant over the full history but faded in recent years — a textbook arbitraged-away case (see the single-stock check-up)")]);
     else if (p && p.overall === "data_snoop") dead.push([vpL("伪规律(数据窥探)","Fake pattern (data snooping)"), vpL(`${k} ${nm} 日历规律`, `${k} ${nm} calendar pattern`), vpL("in-sample 显著但分半不稳 = 数据窥探","Significant in-sample but unstable across split-half = data snooping")]);
   }
   if (pl?.tests) for (const t of pl.tests) if (t.status === "real" && !t.fdr_significant_05)
-    dead.push([vpL("被多重比较(FDR)刷掉","Killed by multiple-comparison (FDR) correction"), t.panel, vpL(`裸 p 显著(${t.p_value})但 FDR 校正后掉出(q≥0.05)`, `Naively significant (p=${t.p_value}) but drops out after FDR correction (q≥0.05)`)]);
+    dead.push([vpL("被多重比较(FDR)刷掉","Killed by multiple-comparison (FDR) correction"), vpD(t,"panel"), vpL(`裸 p 显著(${t.p_value})但 FDR 校正后掉出(q≥0.05)`, `Naively significant (p=${t.p_value}) but drops out after FDR correction (q≥0.05)`)]);
   if (fx && fx.m_total != null) dead.push([vpL("被多重比较(FDR)刷掉","Killed by multiple-comparison (FDR) correction"), vpL("跨检验族总账","Cross-family ledger"), vpL(`全站 ${fx.m_total} 项显著性主张 → 跨族 BY 后仅 ${fx.n_survive_by_10} 项扛住(${fx.m_total - fx.n_survive_by_10} 项是噪声)`, `${fx.m_total} significance claims site-wide → only ${fx.n_survive_by_10} survive cross-family BY (${fx.m_total - fx.n_survive_by_10} are noise)`)]);
   if (cy?.result && cy.result.significant === false) dead.push([vpL("民间说法被否","Folk claim rejected"), vpL("市场周期(基钦/朱格拉等)","Market cycles (Kitchin/Juglar etc.)"), vpL("未检出超过红噪声的显著周期","No cycle exceeding red noise was detected")]);
 

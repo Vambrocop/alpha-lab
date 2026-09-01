@@ -12,6 +12,8 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
+from label_en import label_en          # 共享规则翻译器(资产/因子中文名 → 英文)
+
 RAW_DIR  = Path(__file__).parent.parent / "data" / "raw"
 PROC_DIR = Path(__file__).parent.parent / "data" / "processed"
 
@@ -23,6 +25,20 @@ HONESTY = [
     "名义收益，未扣通胀；扣通胀后长期年化约低 2-3 个百分点",
     "重叠滚动窗口（日频起点）自相关——这些是描述性分布，不是统计置信区间",
     "上涨概率随持有期上升是历史上最稳健的规律之一，但它的机制（经济长期增长+通胀）成立的前提是世界大致正常运转",
+]
+# 数据层双语(2026-09-01)：这四条是**诚实披露**，英文模式下漏译等于英文读者少看到风险提示，
+# 比表格里的数字更不能漏。定稿散文（不走 label_en 规则翻译器——那个只管组合生成的短标签）。
+HONESTY_EN = [
+    "A historical distribution is not a guarantee about the future: these are empirical base rates from "
+    "26-98 years of US markets, and they carry survivorship bias (the US happens to be one of the best "
+    "performing markets of the last century).",
+    "Nominal returns, not inflation-adjusted; after inflation the long-run annualised figures are roughly "
+    "2-3 percentage points lower.",
+    "Overlapping rolling windows (a new start date every trading day) are autocorrelated — these are "
+    "descriptive distributions, not statistical confidence intervals.",
+    "'Probability of being up rises with holding period' is one of the most robust regularities in the "
+    "historical record, but the mechanism behind it (long-run economic growth + inflation) assumes the "
+    "world keeps running roughly normally.",
 ]
 
 
@@ -68,12 +84,13 @@ def horizon_table(s, horizons=HORIZONS):
 def run():
     series = _load_series()
     out = {"generated": pd.Timestamp.now().strftime("%Y-%m-%d"),
-           "honesty": HONESTY, "indices": {}}
+           "honesty": HONESTY, "honesty_en": HONESTY_EN, "indices": {}}
     print("=== 持有期基率统计 ===")
     for key, (label, s) in series.items():
         tbl = horizon_table(s)
         out["indices"][key] = {
             "label": label,
+            "label_en": label_en(label),      # 指数中文名 → 英文(共享规则翻译器,新增指数自动跟上)
             "start": s.index[0].strftime("%Y-%m-%d"),
             "end":   s.index[-1].strftime("%Y-%m-%d"),
             "years": round((s.index[-1] - s.index[0]).days / 365.25, 1),

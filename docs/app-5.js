@@ -381,7 +381,7 @@ function renderHorizonView() {
     }).join("");
     return `<div style="margin-bottom:1rem;">
       <div style="font-size:0.85rem;font-weight:700;margin-bottom:.3rem;">
-        ${idx.label} <span style="color:var(--muted);font-weight:400;font-size:0.72rem;">${idx.start.slice(0,4)}–${idx.end.slice(0,4)} · ${vpL(`${idx.years}年`, `${idx.years}y`)}</span></div>
+        ${vpD(idx,"label")} <span style="color:var(--muted);font-weight:400;font-size:0.72rem;">${idx.start.slice(0,4)}–${idx.end.slice(0,4)} · ${vpL(`${idx.years}年`, `${idx.years}y`)}</span></div>
       <table style="width:100%;border-collapse:collapse;font-size:0.78rem;">
         <thead><tr style="color:var(--muted);">
           <th style="text-align:left;padding:.25rem .5rem;">${vpL("持有期","Holding period")}</th>
@@ -395,7 +395,7 @@ function renderHorizonView() {
   document.getElementById("horizon-tables").innerHTML = tables;
 
   document.getElementById("horizon-honesty").innerHTML =
-    `<strong>${vpL("读这张表的正确姿势：","How to read this table correctly:")}</strong>${(hs.honesty || []).map(h => `<br>· ${h}`).join("")}`;
+    `<strong>${vpL("读这张表的正确姿势：","How to read this table correctly:")}</strong>${((vpLang() === "en" && hs.honesty_en) || hs.honesty || []).map(h => `<br>· ${h}`).join("")}`;
 
   renderHorizonStocks();
 }

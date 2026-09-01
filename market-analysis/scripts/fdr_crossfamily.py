@@ -112,6 +112,18 @@ def run_all(write=True):
                   "回答'把试过的所有东西算进去后还剩几条'。部分主张是机械/同期关系(如恐慌↔标普同期负相关)，"
                   "存活≠真发现，需看各自方法脚注；step-up 程序下，足够多的极小 p 会抬高同批其它主张的阈值，"
                   "故个别中等 p 可能跨族存活而族内不存活，属正常。",
+        # method/caveat 是固定散文(不像 label 那样由上游组合生成)→ 直接给定稿英文,不走规则翻译器。
+        "method_en": "Cross-family pooled multiple comparison: Benjamini-Yekutieli (robust to arbitrary "
+                     "dependence — the headline) + Benjamini-Hochberg (PRDS, optimistic reference) + "
+                     "Bonferroni (FWER).",
+        "caveat_en": "A conservative **exploratory** cross-family meta-correction, not a unified model. "
+                     "It pools the p-values each method already published to answer: 'once everything we "
+                     "tried is counted, how many claims are left?' Some claims are mechanical or "
+                     "contemporaneous relationships (e.g. fear <-> S&P moving together on the same day), "
+                     "so surviving != a real discovery — always read each method's own footnotes. Under a "
+                     "step-up procedure, enough very small p-values raise the threshold for the other "
+                     "claims in the same batch, so a middling p can survive across families while failing "
+                     "within its own family. That is expected, not a bug.",
         "families_pooled": sources,
         "m_total": m,
         "by_c_m": round(c_m, 3),

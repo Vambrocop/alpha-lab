@@ -13,7 +13,12 @@ import re
 # 片段替换表:**长的放前面**(避免 "月份效应" 被 "月份" 先吃掉)
 _FRAGMENTS = [
     # 资产/指数
-    ("标普500", "S&P 500"), ("标普", "S&P 500"), ("纳指100", "NASDAQ 100"), ("纳指", "NASDAQ"),
+    # 口径前缀(placebo scope 用):放在资产名之前,长片段优先
+    ("日频", "Daily"), ("月频", "Monthly"), ("年频", "Annual"),
+    ("年份尾数", "Year-ending digit"), ("总统任期年", "Presidential term year"),
+    ("假日效应(节前)", "Holiday effect (pre-holiday)"),
+    ("标普500", "S&P 500"), ("标普", "S&P 500"), ("纳指100", "NASDAQ 100"),
+    ("纳斯达克综合", "NASDAQ Composite"), ("纳斯达克", "NASDAQ"), ("纳指", "NASDAQ"),
     ("费城半导体", "PHLX Semis"), ("比特币", "Bitcoin"), ("黄金", "Gold"), ("原油", "Oil"),
     ("美元指数", "US Dollar Index"), ("美元", "US Dollar"), ("高收益利差", "HY spread"),
     ("信用利差", "credit spread"), ("收益率曲线", "yield curve"),

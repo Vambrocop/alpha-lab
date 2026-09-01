@@ -892,6 +892,12 @@ if __name__ == "__main__":
         result["base_rate_20d"] = 0.62
     result["horizon_note"] = "概率含义：未来20个交易日收盘高于今日的概率"
     result["model_status_note"] = "实验性信号：walk-forward 块自助验证未发现样本外优势"
+    # 数据层双语(2026-09-01)：这两条是挂在信号仪表下方的**口径/状态**说明，
+    # 英文模式下漏译=英文读者看不到"这是实验性信号"这层限定，属诚实披露缺口。
+    result["horizon_note_en"] = ("What the probability means: the chance that the close 20 "
+                                 "trading days from now is higher than today's.")
+    result["model_status_note_en"] = ("Experimental signal: walk-forward block-bootstrap "
+                                      "validation found no out-of-sample edge.")
 
     # 研究面板产物（不进信号链路）：因子尸检 + 波动率原型 + 市场结构
     for _key, _fn in [("factor_audit", "factor_pruning.json"), ("vol_model", "vol_model.json"),

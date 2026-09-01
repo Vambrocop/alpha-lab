@@ -95,13 +95,32 @@ def run_all():
         print("⚠ 无足够有效组合,跳过")
         return None
     p, ml = res["pbo"], res["median_logit"]
-    tag = ("高(严重):挑'最佳'因子样本外≥半数低于中位,≈随机或更差" if p >= 0.5
-           else "中等:样本外泛化只略好于抛硬币、远非稳健" if p >= 0.35
-           else "偏低:因子选择有一定样本外泛化(仍需 BY/DSR 佐证)")
-    mlnote = ("(中位 logit>0:典型最佳因子 OOS 仍在中位之上,故非严重过拟合)" if ml > 0
-              else "(中位 logit<0:典型最佳因子 OOS 低于中位)")
+    # 数据层双语(2026-09-01)：**先定档、再按同一张表渲染中英**——不写两套 if/elif。
+    # 两套分支迟早会漂移(改了中文档位忘了改英文 → 英文读者看到的裁决与中文不一致,这在诚实
+    # 计分的项目里是硬伤)。档位只判一次,zh/en 从同一行取。
+    band = "high" if p >= 0.5 else "mid" if p >= 0.35 else "low"
+    TAG = {
+        "high": ("高(严重):挑'最佳'因子样本外≥半数低于中位,≈随机或更差",
+                 "High (severe): the 'best' factor lands below the median out-of-sample at least half "
+                 "the time — no better than chance, or worse"),
+        "mid":  ("中等:样本外泛化只略好于抛硬币、远非稳健",
+                 "Moderate: out-of-sample generalisation is only slightly better than a coin flip, "
+                 "nowhere near robust"),
+        "low":  ("偏低:因子选择有一定样本外泛化(仍需 BY/DSR 佐证)",
+                 "Lowish: factor selection does generalise somewhat out-of-sample (still needs BY/DSR "
+                 "corroboration)"),
+    }
+    ML = (("(中位 logit>0:典型最佳因子 OOS 仍在中位之上,故非严重过拟合)",
+           "(median logit > 0: the typical best factor still sits above the median out-of-sample, so "
+           "this is not severe overfitting)")
+          if ml > 0 else
+          ("(中位 logit<0:典型最佳因子 OOS 低于中位)",
+           "(median logit < 0: the typical best factor falls below the median out-of-sample)"))
     res["n_factors"] = len(factors)
-    res["verdict"] = f"PBO={p*100:.0f}% —— {tag}。中位 logit={ml}{mlnote}。结合 BY/DSR:仍无稳健可外推的因子 alpha。"
+    res["verdict"] = (f"PBO={p*100:.0f}% —— {TAG[band][0]}。中位 logit={ml}{ML[0]}。"
+                      "结合 BY/DSR:仍无稳健可外推的因子 alpha。")
+    res["verdict_en"] = (f"PBO={p*100:.0f}% — {TAG[band][1]}. Median logit={ml} {ML[1]}. "
+                         "Taken together with BY/DSR: still no robust, extrapolatable factor alpha.")
 
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -109,6 +128,16 @@ def run_all():
                   "训练选最佳因子,看其测试相对排名;PBO=IS-best 在 OOS 低于中位的占比。purge 切片边界防泄漏。",
         "caveat": "PBO 度量的是**因子选择的过拟合概率**(数据挖掘风险),不是方向预测。"
                   "edge=片内胜率差(小样本噪声大);S=10/purge=20日为口径选择。高 PBO 是诚实信号:别相信'挑出来最好'的因子。",
+        "method_en": "CSCV (Bailey-Borwein-Lopez de Prado-Zhu 2017): cut the timeline into S slices, "
+                     "enumerate all C(S, S/2) half-train/half-test combinations; pick the best factor on "
+                     "the training half, then look at its relative rank on the test half. PBO = the share "
+                     "of combinations where the in-sample best falls below the out-of-sample median. "
+                     "Slice boundaries are purged to prevent leakage.",
+        "caveat_en": "PBO measures the **probability that factor selection is overfitted** (data-mining "
+                     "risk); it is not a directional forecast. 'edge' is the within-slice hit-rate "
+                     "difference (noisy on small samples); S=10 / purge=20 days are methodology choices. "
+                     "A high PBO is an honest warning signal: do not trust whichever factor 'came out "
+                     "best'.",
         "source": f"walk_forward 特征 df({len(factors)} 个二值因子)", "s_slices": S_SLICES,
         "horizon": HORIZON, "result": res,
     }

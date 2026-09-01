@@ -148,6 +148,43 @@ def holiday_pre_mask(ret_index):
 
 # BH/BY 已统一到 stats_util(审计 S5:消除三处重写的漂移风险);函数仍在本模块命名空间可用(向后兼容)
 from stats_util import benjamini_hochberg, benjamini_yekutieli
+from label_en import label_en          # 共享规则翻译器(面板名/口径 → 英文)
+
+# 主张句是定稿散文(不是组合生成的短标签)→ 查表，不走规则翻译器
+CLAIM_EN = {
+    "某些交易日平均收益更高": "Some weekdays have higher average returns",
+    "某些月份系统性更强/更弱": "Some months are systematically stronger / weaker",
+    "尾数为 X 的年份历史最强": "Years ending in a particular digit have been the strongest",
+    "任期第 3 年(选前)最强": "Year 3 of the presidential term (pre-election) is the strongest",
+    "节前最后一个交易日平均看涨": "The last trading day before a holiday is bullish on average",
+    "Dec26–Jan3 区间平均看涨": "The Dec 26 - Jan 3 window is bullish on average",
+}
+_WD_EN = {"周一": "Mon", "周二": "Tue", "周三": "Wed", "周四": "Thu", "周五": "Fri"}
+_MON_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def _detail_en(d):
+    """detail 是结构化生成的几种形状 → 按正则重建英文(数字原样搬运，绝不重算)。
+    没命中的形状原样返回中文——宁可露出中文，也不编一句读起来像翻好了的假英文。"""
+    import re
+    if not isinstance(d, str) or not d:
+        return d
+    m = re.fullmatch(r"(周[一二三四五])最高 / (周[一二三四五])最低", d)
+    if m:
+        return f"{_WD_EN[m.group(1)]} highest / {_WD_EN[m.group(2)]} lowest"
+    m = re.fullmatch(r"(\d+)月最高 / (\d+)月最低", d)
+    if m:
+        return f"{_MON_EN[int(m.group(1)) - 1]} highest / {_MON_EN[int(m.group(2)) - 1]} lowest"
+    m = re.fullmatch(r"每组仅约 (\d+) 年", d)
+    if m:
+        return f"only ~{m.group(1)} years per group"
+    m = re.fullmatch(r"节前交易日 n=(\d+)", d)
+    if m:
+        return f"pre-holiday trading days n={m.group(1)}"
+    m = re.fullmatch(r"区间交易日 n=(\d+)", d)
+    if m:
+        return f"trading days in window n={m.group(1)}"
+    return d
 
 
 # ══════════════════════════════════════════════════════════════════
@@ -241,6 +278,16 @@ def run_all():
         key="santa_claus", panel="圣诞行情", scope="日频 S&P500 1928+",
         claim="Dec26–Jan3 区间平均看涨", stat="区间均值 - 其余均值(单边)",
         min_group_n=int(santa.sum()), detail=f"区间交易日 n={int(santa.sum())}")
+
+    # ── 数据层双语(2026-09-01)：一次性后处理，不去改 6 个 add() 调用点 ──────────
+    # panel/scope 走共享规则翻译器(label_en)，claim 是定稿散文查表，detail 是**结构化**的
+    # 几种形状(哪组最高/最低、每组样本、n=…)→ 按正则重建，数字不重新算、只换措辞。
+    # 任一条没命中就原样留中文(宁可露出中文，也不编一句英文假装翻好了)。
+    for t in tests:
+        t["panel_en"] = label_en(t["panel"])
+        t["scope_en"] = label_en(t["scope"])
+        t["claim_en"] = CLAIM_EN.get(t["claim"], t["claim"])
+        t["detail_en"] = _detail_en(t.get("detail", ""))
 
     # ── 多重检验校正：一共测了 m 个日历效应，用 Benjamini-Hochberg 控假发现率 ──
     # 封顶诚实性——逐个看 p 随测试数膨胀假阳性；FDR 校正后再看谁真站得住。
