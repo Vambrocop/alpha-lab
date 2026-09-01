@@ -1,24 +1,32 @@
 {
- "updated": "2026-09-01 20:02 UTC",
+ "updated": "2026-09-01 22:41 UTC",
  "items": [
   {
-   "time": "2026-09-01 19:48 UTC",
-   "title": "Looking for evidence that Meta's AI investments are paying off? Here are 2 ways",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-01 19:46 UTC",
-   "title": "Global oil prices surge above $94  a barrel and settle at a 6-week high after the U.S. strikes Iran in Hormuz, and Trump threatens more action if Tehran retaliates",
-   "impact": "positive",
+   "time": "2026-09-01 21:56 UTC",
+   "title": "Dow drops below a key chart level, warning of more trouble ahead",
+   "impact": "negative",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-01 19:03 UTC",
+   "time": "2026-09-01 21:52 UTC",
+   "title": "Dell’s AI servers drive a stellar earnings performance, and a raised outlook",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-01 21:43 UTC",
+   "title": "Palo Alto Networks’ stock falls despite strong AI cybersecurity demand",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-01 20:40 UTC",
    "title": "10-year yield hits highest since January 2025 as higher oil prices stoke inflation worries",
    "impact": "neutral",
    "note": "",
@@ -26,17 +34,9 @@
    "kind": "auto"
   },
   {
-   "time": "2026-09-01 18:57 UTC",
-   "title": "Prediction market traders think job creation rebounded in August",
+   "time": "2026-09-01 20:36 UTC",
+   "title": "This could be the 10-year Treasury’s tipping point into the danger zone",
    "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-01 18:54 UTC",
-   "title": "Broadcom earnings need to answer these questions for the stock to rally again",
-   "impact": "positive",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
