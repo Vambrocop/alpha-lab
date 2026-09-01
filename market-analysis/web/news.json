@@ -1,6 +1,14 @@
 {
- "updated": "2026-09-01 17:16 UTC",
+ "updated": "2026-09-01 17:29 UTC",
  "items": [
+  {
+   "time": "2026-09-01 17:20 UTC",
+   "title": "Bessent touts bond market as 10-year Treasury yield spikes",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-09-01 17:12 UTC",
    "title": "Global oil prices surge above $94  a barrel after the U.S. strikes Iranian targets",
@@ -28,14 +36,6 @@
   {
    "time": "2026-09-01 16:40 UTC",
    "title": "Softbank's SB Energy files for IPO, says it's 'substantially dependent' on OpenAI",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-01 16:27 UTC",
-   "title": "Apple enters John Ternus era as AI challenges and memory crunch intensify",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
