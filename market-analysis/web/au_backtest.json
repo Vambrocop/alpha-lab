@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T19:27:26Z",
+  "generated": "2026-09-01T00:03:04Z",
   "as_of": "2026-08-07",
   "title_zh": "澳股荐股·同一规则零调参历史轨迹披露（非策略验证·含幸存者偏差·系统性偏乐观）",
   "title_en": "AU picks — same-rule zero-tuning historical trace disclosure (NOT strategy validation; survivorship-biased, systematically optimistic)",
@@ -280,7 +280,7 @@
     }
   ],
   "meta": {
-    "generated": "2026-08-31T19:27:26Z",
+    "generated": "2026-09-01T00:03:04Z",
     "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
     "hold_td": 20,
     "benchmark": "^AXJO",

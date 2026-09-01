@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T19:24:54Z",
+  "generated": "2026-09-01T00:00:24Z",
   "date_range": [
     "2000-01-03",
     "2026-08-31"
@@ -138,7 +138,7 @@
           "diff_mean": -0.87,
           "ci95_mean": [
             -1.74,
-            1.71
+            1.72
           ],
           "ci_vs_base": "overlaps_base",
           "era1_up_pct": 51.87,
@@ -2613,7 +2613,7 @@
           "too_small_no_ci": false,
           "up_pct": 61.23,
           "mean_pct": 0.47,
-          "median_pct": 1.03,
+          "median_pct": 1.04,
           "p10_pct": -4.82,
           "base_up_pct": 63.25,
           "base_mean_pct": 0.62,
