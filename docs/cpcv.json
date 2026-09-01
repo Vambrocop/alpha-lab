@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T17:15:42Z",
+  "generated": "2026-09-01T23:33:31Z",
   "method": "CSCV(Bailey-Borwein-LdP-Zhu 2017):时间轴切 S 段,遍历 C(S,S/2) 半训半测组合;训练选最佳因子,看其测试相对排名;PBO=IS-best 在 OOS 低于中位的占比。purge 切片边界防泄漏。",
   "caveat": "PBO 度量的是**因子选择的过拟合概率**(数据挖掘风险),不是方向预测。edge=片内胜率差(小样本噪声大);S=10/purge=20日为口径选择。高 PBO 是诚实信号:别相信'挑出来最好'的因子。",
   "method_en": "CSCV (Bailey-Borwein-Lopez de Prado-Zhu 2017): cut the timeline into S slices, enumerate all C(S, S/2) half-train/half-test combinations; pick the best factor on the training half, then look at its relative rank on the test half. PBO = the share of combinations where the in-sample best falls below the out-of-sample median. Slice boundaries are purged to prevent leakage.",
@@ -8,11 +8,11 @@
   "s_slices": 10,
   "horizon": 20,
   "result": {
-    "pbo": 0.4325,
+    "pbo": 0.4246,
     "n_combos": 252,
     "median_logit": 0.251,
     "n_factors": 15,
-    "verdict": "PBO=43% —— 中等:样本外泛化只略好于抛硬币、远非稳健。中位 logit=0.251(中位 logit>0:典型最佳因子 OOS 仍在中位之上,故非严重过拟合)。结合 BY/DSR:仍无稳健可外推的因子 alpha。",
-    "verdict_en": "PBO=43% — Moderate: out-of-sample generalisation is only slightly better than a coin flip, nowhere near robust. Median logit=0.251 (median logit > 0: the typical best factor still sits above the median out-of-sample, so this is not severe overfitting). Taken together with BY/DSR: still no robust, extrapolatable factor alpha."
+    "verdict": "PBO=42% —— 中等:样本外泛化只略好于抛硬币、远非稳健。中位 logit=0.251(中位 logit>0:典型最佳因子 OOS 仍在中位之上,故非严重过拟合)。结合 BY/DSR:仍无稳健可外推的因子 alpha。",
+    "verdict_en": "PBO=42% — Moderate: out-of-sample generalisation is only slightly better than a coin flip, nowhere near robust. Median logit=0.251 (median logit > 0: the typical best factor still sits above the median out-of-sample, so this is not severe overfitting). Taken together with BY/DSR: still no robust, extrapolatable factor alpha."
   }
 }

@@ -1,18 +1,18 @@
 {
-  "generated": "2026-09-01T17:19:34Z",
+  "generated": "2026-09-01T23:37:22Z",
   "n": 7,
   "rows": [
     {
       "name": "系统自动发现(FDR引擎)",
       "family": "系统",
       "scope": "日历/超跌反弹/因子 · 42 预声明候选 · 跨族 BY-FDR",
-      "evidence": "真存活 4 · 已淡 7 · 死 132 · 无定论 5",
+      "evidence": "真存活 5 · 已淡 8 · 死 130 · 无定论 5",
       "verdict": "多数是噪声(诚实):预声明全进分母、禁挑好看的",
       "link": "self_growing.html",
       "name_en": "Automated discovery (FDR engine)",
       "family_en": "System",
       "scope_en": "Calendar / oversold-bounce / factors · 42 pre-registered candidates · cross-family BY-FDR",
-      "evidence_en": "survived 4 · faded 7 · dead 132 · inconclusive 5",
+      "evidence_en": "survived 5 · faded 8 · dead 130 · inconclusive 5",
       "verdict_en": "Most are noise (honest): every pre-registered candidate counts in the denominator; no cherry-picking"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T17:16:21Z",
+  "generated": "2026-09-01T23:34:08Z",
   "as_of": "2026-09-01",
   "composite_start": "2000-09-28",
   "components_used": [
@@ -10,8 +10,8 @@
   ],
   "min_stretches_ci": 8,
   "current": {
-    "composite": 57.1,
-    "band": "greed",
+    "composite": 55.0,
+    "band": "neutral",
     "components": [
       {
         "name": "momentum",
@@ -19,8 +19,8 @@
         "label_en": "Momentum",
         "definition_zh": "SP500 相对 125 日均线偏离(+10%→100,−10%→0)",
         "definition_en": "SP500 vs its 125-day moving average (+10% -> 100, -10% -> 0)",
-        "raw_value": 0.0477,
-        "subscore": 73.86,
+        "raw_value": 0.0474,
+        "subscore": 73.69,
         "available": true
       },
       {
@@ -29,8 +29,8 @@
         "label_en": "Volatility (inverted)",
         "definition_zh": "VIX 在过去 252 日中的分位(越低越贪婪)",
         "definition_en": "VIX's percentile over the trailing 252 days (lower VIX = greedier)",
-        "raw_value": 0.2421,
-        "subscore": 75.79,
+        "raw_value": 0.3254,
+        "subscore": 67.46,
         "available": true
       },
       {
@@ -39,8 +39,8 @@
         "label_en": "Term structure",
         "definition_zh": "VIX3M − VIX(contango 正=贪婪;仅 VIX3M 可得日,2006-07 起)",
         "definition_en": "VIX3M minus VIX (positive/contango = greedy; only on days VIX3M exists, from 2006-07)",
-        "raw_value": 2.24,
-        "subscore": 72.4,
+        "raw_value": 1.99,
+        "subscore": 69.9,
         "available": true
       },
       {
@@ -49,8 +49,8 @@
         "label_en": "Risk appetite",
         "definition_zh": "SP500 20 日收益 − 黄金 20 日收益(仅 GOLD 可得日)",
         "definition_en": "SP500 20-day return minus gold's 20-day return (only on days GOLD data exists)",
-        "raw_value": -0.0873,
-        "subscore": 6.36,
+        "raw_value": -0.0823,
+        "subscore": 8.87,
         "available": true
       }
     ]
