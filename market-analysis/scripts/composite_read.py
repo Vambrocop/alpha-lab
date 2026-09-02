@@ -82,35 +82,60 @@ def synthesize(F):
     if not sw:
         return {"stance": "数据不足", "score": None}
     s = round(sum(f["push"] * f["weight"] for f in F) / sw, 3)
-    stance = ("强防御" if s < -0.4 else "偏防御" if s < -0.13 else
-              "中性" if s <= 0.13 else "偏积极" if s <= 0.4 else "强积极")
-    return {"stance": stance, "score": s}
+    zh, en = _STANCE[_band(s)]
+    return {"stance": zh, "stance_en": en, "score": s}
 
 
-def _tilt(s):
+# ── 数据层双语(2026-09-01)：**先按分数定档、再从同一张表取中英两列**。
+# stance / action / tilt 三者的阈值本来就要求严格对齐(边界不能打架),
+# 若中英各写一套 if/elif,以后调阈值必然只改一边 → 英文读者看到的结论与中文不一致。
+# 定档函数只有这一个,三张表共用同一个 band,从根上堵死漂移。
+def _band(s):
+    """分数 → 档位键。None(数据不足)单独一档。"""
     if s is None:
-        return "数据不足，无倾向"
+        return "na"
+    if s < -0.4:
+        return "strong_def"
     if s < -0.13:
-        return "若要配置 → 倾向防御 / 降波动 / 留现金缓冲"
-    if s > 0.13:
-        return "环境相对友好 → 可正常配置，但仍分散、控单仓"
-    return "中性 → 无明显倾斜，按你的计划定投/分散即可"
+        return "def"
+    if s <= 0.13:
+        return "neutral"
+    if s <= 0.4:
+        return "pos"
+    return "strong_pos"
 
 
-def _action(s):
-    """干脆的行动结论(买/持/避)+程度；阈值与 synthesize 的 stance 严格对齐，边界不打架。
-    synthesize: s<-0.4 强防御 / s<-0.13 偏防御 / s<=0.13 中性 / s<=0.4 偏积极 / else 强积极。"""
-    if s is None:
-        return "数据不足"
-    if s > 0.4:
-        return "买 · 可积极配置"      # 强积极
-    if s > 0.13:
-        return "偏多 · 可逢低加"      # 偏积极
-    if s >= -0.13:
-        return "持 · 观望为主"        # 中性（含 ±0.13 边界，与 synthesize 一致）
-    if s >= -0.4:
-        return "减 · 控波动 / 留缓冲"  # 偏防御
-    return "避 · 重避险 / 留现金"      # 强防御
+_STANCE = {"na": ("数据不足", "Insufficient data"),
+           "strong_def": ("强防御", "Strongly defensive"), "def": ("偏防御", "Defensive-leaning"),
+           "neutral": ("中性", "Neutral"), "pos": ("偏积极", "Positive-leaning"),
+           "strong_pos": ("强积极", "Strongly positive")}
+_ACTION = {"na": ("数据不足", "Insufficient data"),
+           "strong_def": ("避 · 重避险 / 留现金", "Avoid · risk-off, hold cash"),
+           "def": ("减 · 控波动 / 留缓冲", "Trim · control volatility, keep a buffer"),
+           "neutral": ("持 · 观望为主", "Hold · mostly wait and see"),
+           "pos": ("偏多 · 可逢低加", "Bullish-leaning · can add on dips"),
+           "strong_pos": ("买 · 可积极配置", "Buy · can allocate actively")}
+_TILT = {"na": ("数据不足，无倾向", "Insufficient data, no tilt"),
+         "strong_def": ("若要配置 → 倾向防御 / 降波动 / 留现金缓冲",
+                        "If allocating -> lean defensive, cut volatility, keep a cash buffer"),
+         "def": ("若要配置 → 倾向防御 / 降波动 / 留现金缓冲",
+                 "If allocating -> lean defensive, cut volatility, keep a cash buffer"),
+         "neutral": ("中性 → 无明显倾斜，按你的计划定投/分散即可",
+                     "Neutral -> no clear tilt; stick to your own plan, keep averaging in and diversified"),
+         "pos": ("环境相对友好 → 可正常配置，但仍分散、控单仓",
+                 "A relatively friendly environment -> allocate normally, but stay diversified and cap single positions"),
+         "strong_pos": ("环境相对友好 → 可正常配置，但仍分散、控单仓",
+                        "A relatively friendly environment -> allocate normally, but stay diversified and cap single positions")}
+_CONF = {"高": "High", "中": "Medium", "低": "Low"}
+
+
+def _tilt(s, en=False):
+    return _TILT[_band(s)][1 if en else 0]
+
+
+def _action(s, en=False):
+    """干脆的行动结论(买/持/避)+程度；阈值与 stance 共用 _band,边界永远不打架。"""
+    return _ACTION[_band(s)][1 if en else 0]
 
 
 def _conf(s, n):
@@ -157,14 +182,24 @@ def run_all(write=True):
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "asof": today,
-        "stance": syn["stance"], "score": syn["score"],
-        "action": _action(syn["score"]), "confidence_level": _conf(syn["score"], len(F)),
+        "stance": syn["stance"], "stance_en": syn.get("stance_en"), "score": syn["score"],
+        "action": _action(syn["score"]), "action_en": _action(syn["score"], en=True),
+        "confidence_level": _conf(syn["score"], len(F)),
+        "confidence_level_en": _CONF.get(_conf(syn["score"], len(F)), _conf(syn["score"], len(F))),
         "factors": F,
         "confidence": "低-中（条件加权读数）",
-        "usable_tilt": _tilt(syn["score"]),
+        "confidence_en": "Low-to-medium (a conditionally weighted reading)",
+        "usable_tilt": _tilt(syn["score"]), "usable_tilt_en": _tilt(syn["score"], en=True),
         "caveat": "🚩出格区 · 把诚实证据按**写死透明权重**加权出的当下**行动倾向（买/持/避）**。"
                   "**敢给方向，但每条 append composite_log 公开计分、可追责**；方向信号 walk-forward 无样本外优势（权重已压最低）。"
                   "非保证、会错、过去≠未来——给你有据的判断，自己拍。",
+        "caveat_en": "🚩 Out-on-a-limb zone · the current **action tilt (buy / hold / avoid)**, obtained "
+                     "by weighting honest evidence with **hard-coded, transparent weights**. "
+                     "**We are willing to give a direction, but every call is appended to composite_log "
+                     "and scored in public, so it can be held against us**; the directional signal has "
+                     "no out-of-sample edge in walk-forward (its weight is already the lowest). "
+                     "Not a guarantee, it can be wrong, the past != the future — we give you a "
+                     "reasoned judgement; the call is yours.",
     }
     if write:
         from util_io import write_json

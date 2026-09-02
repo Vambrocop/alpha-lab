@@ -507,12 +507,13 @@ function renderEventRefToday() {
   const el = document.getElementById("event-ref-today");
   if (!el || !SIGNALS) return;
   const es = SIGNALS.event_study || {};
-  // v.label 是后端(event_study.py)生成的中文事件类型名，超出本文件(JS)翻译范围——
-  // EN 模式下事件类型列仍显示中文(已知缺口，见交付说明)。
+  // 事件类型名的英文由后端(build_signals 的 labels_en)给,这里 vpD 取用即可。
+  // 2026-09-01 前这里写着"超出本文件翻译范围、已知缺口"——其实后端早就有 label_en,
+  // 只是这条渲染路径没读。改掉时顺手把这条过时注释也删了,免得下次又照着它当"已知缺口"。
   const rows = Object.entries(es).map(([k, v]) => {
     const smallN = (v.n || 0) < 15;
     return `<tr style="border-top:1px solid var(--border-faint)">
-      <td style="padding:.25rem .4rem">${v.label || k}</td>
+      <td style="padding:.25rem .4rem">${vpD(v, "label") || k}</td>
       <td style="padding:.25rem .4rem;text-align:center;color:${smallN ? "#e67e22" : "var(--muted)"}">n=${v.n}${smallN ? " ⚠" : ""}</td>
       <td style="padding:.25rem .4rem;text-align:right">${v.avg_return > 0 ? "+" : ""}${v.avg_return}%</td>
       <td style="padding:.25rem .4rem;text-align:right;color:var(--muted)">${v.win_rate}% <span style="font-size:0.66rem">${vpL(`(基准${v.base_win_rate}%)`, `(baseline ${v.base_win_rate}%)`)}</span></td>
@@ -821,7 +822,7 @@ function renderSellPanel() {
 
   const tierColor = score >= 55 ? "#e74c3c" : score >= 40 ? "#f1c40f" : "#2ecc71";
   document.getElementById("sell-tier-txt").style.color = tierColor;
-  document.getElementById("sell-tier-txt").textContent = s.tier || "—";
+  document.getElementById("sell-tier-txt").textContent = vpD(s, "tier") || "—";
 
   const rsi = s.rsi > 100 ? "—" : (s.rsi || 0).toFixed(1);
   const rsiColor = s.rsi > 75 ? "#e74c3c" : s.rsi > 60 ? "#f1c40f" : "#2ecc71";

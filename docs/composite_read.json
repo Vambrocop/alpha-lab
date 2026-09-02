@@ -1,10 +1,13 @@
 {
-  "generated": "2026-09-02T04:26:06Z",
+  "generated": "2026-09-02T07:24:56Z",
   "asof": "2026-09-02",
   "stance": "偏积极",
+  "stance_en": "Positive-leaning",
   "score": 0.22,
   "action": "偏多 · 可逢低加",
+  "action_en": "Bullish-leaning · can add on dips",
   "confidence_level": "中",
+  "confidence_level_en": "Medium",
   "factors": [
     {
       "name": "波动率 VIX",
@@ -44,8 +47,11 @@
     }
   ],
   "confidence": "低-中（条件加权读数）",
+  "confidence_en": "Low-to-medium (a conditionally weighted reading)",
   "usable_tilt": "环境相对友好 → 可正常配置，但仍分散、控单仓",
+  "usable_tilt_en": "A relatively friendly environment -> allocate normally, but stay diversified and cap single positions",
   "caveat": "🚩出格区 · 把诚实证据按**写死透明权重**加权出的当下**行动倾向（买/持/避）**。**敢给方向，但每条 append composite_log 公开计分、可追责**；方向信号 walk-forward 无样本外优势（权重已压最低）。非保证、会错、过去≠未来——给你有据的判断，自己拍。",
+  "caveat_en": "🚩 Out-on-a-limb zone · the current **action tilt (buy / hold / avoid)**, obtained by weighting honest evidence with **hard-coded, transparent weights**. **We are willing to give a direction, but every call is appended to composite_log and scored in public, so it can be held against us**; the directional signal has no out-of-sample edge in walk-forward (its weight is already the lowest). Not a guarantee, it can be wrong, the past != the future — we give you a reasoned judgement; the call is yours.",
   "history": [
     {
       "d": "2026-07-22",

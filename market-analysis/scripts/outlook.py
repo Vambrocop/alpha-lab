@@ -57,10 +57,15 @@ def main():
     prob, tier = sig.get("latest_prob"), sig.get("latest_tier")
     index_call = None
     if prob is not None:
-        index_call = {"target": "纳指", "horizon": "短期",
-                      "call": "看涨" if float(prob) >= 0.5 else "看跌",
+        _bull = float(prob) >= 0.5          # 方向只判一次,中英同源
+        index_call = {"target": "纳指", "target_en": "NASDAQ",
+                      "horizon": "短期", "horizon_en": "short-term",
+                      "call": "看涨" if _bull else "看跌",
+                      "call_en": "bullish" if _bull else "bearish",
                       "prob": round(float(prob), 3), "tier": tier,
-                      "basis": f"贝叶斯信号 prob={round(float(prob), 3)}、tier={tier}（模型直读，非保证）"}
+                      "basis": f"贝叶斯信号 prob={round(float(prob), 3)}、tier={tier}（模型直读，非保证）",
+                      "basis_en": f"Bayesian signal prob={round(float(prob), 3)}, tier={tier} "
+                                  "(read straight off the model; not a guarantee)"}
     top, bot = _momentum()
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

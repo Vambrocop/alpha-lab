@@ -473,6 +473,7 @@ def build_timing_summary():
             "date":       last["date"],
             "score":      float(last["sell_score"]),
             "tier":       last["sell_tier"],
+            "tier_en":    last.get("sell_tier_en", last["sell_tier"]),
             "rsi":        float(last["rsi"]) if not pd.isna(last["rsi"]) else None,
             "mom20":      float(last["mom20"]),
             "ma_cross":   int(last["ma_cross"]),

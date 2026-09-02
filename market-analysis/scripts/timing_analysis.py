@@ -181,18 +181,26 @@ def compute_sell_signals(prices, ret):
 
     sell_score = sell_score.clip(0, 100)
 
-    # 卖出等级
+    # 卖出等级 —— 档位只判一次,中英从同一张表取两列(两套 if 迟早漂移)
+    TIERS = {"strong_sell": ("强烈卖出", "Strong sell"), "trim": ("考虑减仓", "Consider trimming"),
+             "risk": ("注意风险", "Mind the risk"), "watch": ("持有观察", "Hold and watch"),
+             "safe": ("安全持有", "Safe to hold")}
+
+    def _tier_key(s):
+        return ("strong_sell" if s >= 70 else "trim" if s >= 55 else
+                "risk" if s >= 40 else "watch" if s >= 25 else "safe")
+
     def sell_tier(s):
-        if s >= 70: return "强烈卖出"
-        if s >= 55: return "考虑减仓"
-        if s >= 40: return "注意风险"
-        if s >= 25: return "持有观察"
-        return "安全持有"
+        return TIERS[_tier_key(s)][0]
+
+    def sell_tier_en(s):
+        return TIERS[_tier_key(s)][1]
 
     out = pd.DataFrame({
         "date":       prices.index,
         "sell_score": sell_score.round(1),
         "sell_tier":  sell_score.map(sell_tier),
+        "sell_tier_en": sell_score.map(sell_tier_en),
         "rsi":        rsi.round(1),
         "mom20":      (mom20 * 100).round(2),
         "mom60":      (mom60 * 100).round(2),

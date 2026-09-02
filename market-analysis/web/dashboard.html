@@ -1210,15 +1210,19 @@
     var _d=CR.asof||CR.date||"",_le=document.querySelector(".vp-hero-lbl");
     if(_le&&_d)_le.textContent=(_lang==="en"?"🎯 Today's takeaway · as of ":"🎯 今日结论 · 数据截至 ")+_d+(_lang==="en"?" · publicly scored":" · 公开计分");
     _score=CR.score; gauge(_score);
-    g("vp-act").innerHTML='<span style="color:'+col(_score)+'">'+escc(CR.action||CR.stance)+'</span>';
-    var sub=escc(CR.stance)+(CR.confidence_level?(_lang==="en"?" · confidence ":" · 把握")+escc(CR.confidence_level):"");
+    // 英文模式取后端的 action_en/stance_en(composite_read 里档位判一次、中英同表);缺就回落中文
+    var _act=(_lang==="en"?(CR.action_en||CR.stance_en):null)||CR.action||CR.stance;
+    g("vp-act").innerHTML='<span style="color:'+col(_score)+'">'+escc(_act)+'</span>';
+    var _stance=(_lang==="en"&&CR.stance_en)||CR.stance;
+    var _cl=(_lang==="en"&&CR.confidence_level_en)||CR.confidence_level;
+    var sub=escc(_stance)+(_cl?(_lang==="en"?" · confidence ":" · 把握")+escc(_cl):"");
     if(OUT&&OUT.index_call&&OUT.index_call.prob!=null){var ic=OUT.index_call,pct=Math.round(ic.prob*100),
       dir=_lang==="en"?(ic.prob<0.5?"down":"up"):(ic.prob<0.5?"偏跌":"偏涨"),
       note=_lang==="en"
         ?(Math.abs(pct-50)<=4?"≈ a coin flip, no verified edge, don't take it seriously":"short-term direction is hard for anyone to call, reference only")
         :(Math.abs(pct-50)<=4?"≈扔硬币，无验证优势，别当真":"短期方向谁都难测，仅参考");
       var _paren=_lang==="en"?(" ("+note+")"):("（"+note+"）");
-      sub+=' · <span style="color:#9da7b3">'+(_lang==="en"?"Nasdaq "+escc(ic.horizon||"short-term")+" ≈ "+pct+"% "+dir:"纳指"+escc(ic.horizon||"短期")+"约 "+pct+"% "+dir)+_paren+'</span>';}
+      sub+=' · <span style="color:#9da7b3">'+(_lang==="en"?"Nasdaq "+escc(ic.horizon_en||"short-term")+" ≈ "+pct+"% "+dir:"纳指"+escc(ic.horizon||"短期")+"约 "+pct+"% "+dir)+_paren+'</span>';}
     g("vp-sub").innerHTML=sub;
     var _rg=LLM&&LLM.generated,_ra=_rg?Math.floor((Date.now()-Date.parse(_rg))/86400000):null;
     var _rw=(_ra!=null&&_ra>4)?('<div style="font-size:.72rem;margin-top:.35rem"><b style="color:#f0883e">'+(_lang==="en"?"⚠ daily read "+_ra+"d ago (should update each trading day · possibly stuck)":"⚠ 日读 "+_ra+"天前(应每交易日更新·疑似卡住)")+'</b></div>'):"";
@@ -1255,7 +1259,7 @@
       var wTag=wSt?(_lang==="en"?" ⚠"+wAgo+"d ago":" ⚠"+wAgo+"天前·疑似卡住"):"";
       g("vp-weekly-t").textContent=(_lang==="en"?"📅 Weekly review":"📅 本周回顾")+(wl?" · "+wl:"")+wTag;
       g("vp-weekly-x").textContent=snip(W.text,90);g("vp-weekly").style.display="";}
-    if(M&&M.text){any=true;var ml=M.month_label||M.month||"";
+    if(M&&M.text){any=true;var ml=(_lang==="en"&&M.month_label_en)||M.month_label||M.month||"";
       var mPri=M.month&&M.month<_curM();
       g("vp-monthly-t").textContent=(_lang==="en"?(mPri?"🗓️ Last month":"🗓️ Monthly review"):(mPri?"🗓️ 上月回顾":"🗓️ 本月回顾"))+(ml?" · "+ml:"");
       g("vp-monthly-x").textContent=snip(M.text,90);g("vp-monthly").style.display="";}

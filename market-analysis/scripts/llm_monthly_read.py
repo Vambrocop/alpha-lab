@@ -55,6 +55,11 @@ def _month_label(d):
     return f"{d.year}年{d.month}月"
 
 
+def _month_label_en(d):
+    """英文月份名(月读标题用);中文那份是喂给 LLM 的提示词,不动。"""
+    return d.strftime("%B %Y")
+
+
 _DEGREES = ((0.4, "（偏积极·较强）"), (0.13, "（偏积极·偏弱）"),
             (-0.13, "（中性）"), (-0.4, "（偏防御·偏弱）"))
 
@@ -153,7 +158,8 @@ def run(write=True, force=False):
         return None
     out = {
         "generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "month": _month_key(today), "month_label": _month_label(today), "n_days": n_days,
+        "month": _month_key(today), "month_label": _month_label(today),
+        "month_label_en": _month_label_en(today), "n_days": n_days,
         "model": _active_model(), "text": text, "stances": stances,
         "caveat": ("LLM 据本月真实因子走势生成的大白话回顾；喂真数据防瞎编，但仍可能误读。"
                    "非预测、非荐股、会错，过去≠未来。每月 append 到 llm_monthly_log 公开计分。"),

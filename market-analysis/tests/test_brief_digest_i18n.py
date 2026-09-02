@@ -96,3 +96,36 @@ def test_regime_component_names_all_have_english():
     assert not missing, f"这些体制分项缺英文名(补进 market_regime._NAME_EN): {missing}"
     bad = [n for n, v in mr._NAME_EN.items() if CJK.search(v)]
     assert not bad, f"这些 _NAME_EN 的值里还有中文: {bad}"
+
+
+# ── 结论层：档位表中英同源（2026-09-01 尾扫补） ──────────────────────
+@pytest.mark.parametrize("mod,table", [
+    ("composite_read", "_STANCE"), ("composite_read", "_ACTION"), ("composite_read", "_TILT"),
+])
+def test_composite_band_tables_are_bilingual_pairs(mod, table):
+    """立场/行动/倾斜三张表必须同键同档 —— 它们共用一个 _band(),
+    阈值只写一处,所以中英不可能只改一边。"""
+    import importlib
+    m = importlib.import_module(mod)
+    t = getattr(m, table)
+    for key, pair in t.items():
+        assert isinstance(pair, tuple) and len(pair) == 2, f"{table}[{key}] 不是(中,英)二元组"
+        assert pair[0] and pair[1], f"{table}[{key}] 有空值"
+        assert not CJK.search(pair[1]), f"{table}[{key}] 的英文列里还有中文: {pair[1]!r}"
+
+
+def test_composite_tables_share_the_same_bands():
+    """三张表的档位键必须完全一致 —— 少一档就会在某个分数区间取到 KeyError/回落中文。"""
+    import composite_read as cr
+    keys = {frozenset(cr._STANCE), frozenset(cr._ACTION), frozenset(cr._TILT)}
+    assert len(keys) == 1, f"_STANCE/_ACTION/_TILT 的档位键不一致: {[sorted(k) for k in keys]}"
+
+
+@pytest.mark.parametrize("score,expect", [
+    (-0.9, "strong_def"), (-0.2, "def"), (0.0, "neutral"), (0.2, "pos"), (0.9, "strong_pos"),
+    (None, "na"),
+])
+def test_composite_band_boundaries(score, expect):
+    """定档函数的边界钉死 —— 以后调阈值必须同时改这条测试,不能悄悄挪。"""
+    import composite_read as cr
+    assert cr._band(score) == expect

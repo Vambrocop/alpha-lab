@@ -409,7 +409,7 @@ function renderHorizonStocks() {
     const c = v => v == null ? "—"
       : `<span style="color:${v >= 0 ? "#2ecc71" : "#e74c3c"}">${v > 0 ? "+" : ""}${v}%</span>`;
     return `<tr style="border-top:1px solid var(--border-faint);">
-      <td style="padding:.3rem .5rem;font-weight:600;">${sym}<span style="color:var(--muted);font-weight:400;font-size:0.68rem;"> ${s.label}</span></td>
+      <td style="padding:.3rem .5rem;font-weight:600;">${sym}<span style="color:var(--muted);font-weight:400;font-size:0.68rem;"> ${vpD(s, "label")}</span></td>
       <td style="padding:.3rem .5rem;text-align:right;">${c(st.ytd)}</td>
       <td style="padding:.3rem .5rem;text-align:right;">${c(st.chg_1y)}</td>
       <td style="padding:.3rem .5rem;text-align:right;">${c(st.from_high_52w)}</td>
