@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T17:05:52Z",
+  "generated": "2026-09-02T23:37:41Z",
   "caveat": "这是澳股的**风险画像**，描述它历史上是什么样——**不预测涨跌、不荐股、不给买卖点**。β=对 ASX200(^AXJO) 的敏感度（风险特征非收益承诺）；流动性档位=60日中位日成交额的机械分档（低档票点差/滑点风险高）。**不含 franking（红利抵免）**——无可靠免费数据源，宁缺勿猜；税务影响请咨询专业人士。数据不足的票如实标注。ASX 本地日=交易日。",
   "benchmark": "ASX200 (^AXJO)",
   "min_days": 250,
@@ -114,7 +114,7 @@
             "horizon": 1,
             "n": 447,
             "median_pct": 0.07,
-            "p10_pct": -2.3,
+            "p10_pct": -2.29,
             "p90_pct": 2.79,
             "worst_pct": -7.87,
             "best_pct": 13.26,
@@ -266,7 +266,7 @@
             "p90_pct": 5.5,
             "worst_pct": -19.96,
             "best_pct": 27.5,
-            "pct_negative": 41.4
+            "pct_negative": 41.2
           },
           {
             "horizon": 20,
@@ -276,7 +276,7 @@
             "p90_pct": 9.84,
             "worst_pct": -39.82,
             "best_pct": 47.22,
-            "pct_negative": 38.7
+            "pct_negative": 38.9
           }
         ]
       },
@@ -404,7 +404,7 @@
             "p90_pct": 5.53,
             "worst_pct": -19.43,
             "best_pct": 14.66,
-            "pct_negative": 39.8
+            "pct_negative": 40.8
           },
           {
             "horizon": 20,
@@ -414,7 +414,7 @@
             "p90_pct": 9.73,
             "worst_pct": -37.01,
             "best_pct": 31.16,
-            "pct_negative": 34.8
+            "pct_negative": 34.6
           }
         ]
       },
@@ -552,7 +552,7 @@
             "p90_pct": 10.37,
             "worst_pct": -37.7,
             "best_pct": 40.78,
-            "pct_negative": 36.0
+            "pct_negative": 36.4
           }
         ]
       },
@@ -680,7 +680,7 @@
             "p90_pct": 7.75,
             "worst_pct": -37.99,
             "best_pct": 50.67,
-            "pct_negative": 43.0
+            "pct_negative": 42.7
           },
           {
             "horizon": 20,
@@ -690,7 +690,7 @@
             "p90_pct": 17.01,
             "worst_pct": -50.57,
             "best_pct": 70.63,
-            "pct_negative": 41.1
+            "pct_negative": 41.4
           }
         ]
       },
@@ -828,7 +828,7 @@
             "p90_pct": 13.02,
             "worst_pct": -43.9,
             "best_pct": 95.99,
-            "pct_negative": 37.7
+            "pct_negative": 37.9
           }
         ]
       },
@@ -956,7 +956,7 @@
             "p90_pct": 6.56,
             "worst_pct": -22.35,
             "best_pct": 25.27,
-            "pct_negative": 38.3
+            "pct_negative": 38.5
           },
           {
             "horizon": 20,
@@ -966,7 +966,7 @@
             "p90_pct": 11.7,
             "worst_pct": -27.34,
             "best_pct": 38.59,
-            "pct_negative": 36.0
+            "pct_negative": 35.8
           }
         ]
       },
@@ -1104,7 +1104,7 @@
             "p90_pct": 12.18,
             "worst_pct": -22.79,
             "best_pct": 31.42,
-            "pct_negative": 45.6
+            "pct_negative": 45.3
           }
         ]
       },
@@ -1232,7 +1232,7 @@
             "p90_pct": 6.1,
             "worst_pct": -12.5,
             "best_pct": 20.98,
-            "pct_negative": 39.2
+            "pct_negative": 38.6
           },
           {
             "horizon": 20,
@@ -1242,7 +1242,7 @@
             "p90_pct": 10.23,
             "worst_pct": -14.67,
             "best_pct": 19.08,
-            "pct_negative": 40.2
+            "pct_negative": 40.5
           }
         ]
       },
@@ -1370,7 +1370,7 @@
             "p90_pct": 4.4,
             "worst_pct": -7.92,
             "best_pct": 16.9,
-            "pct_negative": 39.6
+            "pct_negative": 38.9
           },
           {
             "horizon": 20,
@@ -1380,7 +1380,7 @@
             "p90_pct": 8.4,
             "worst_pct": -17.65,
             "best_pct": 19.01,
-            "pct_negative": 48.3
+            "pct_negative": 49.7
           }
         ]
       },
@@ -1508,7 +1508,7 @@
             "p90_pct": 5.67,
             "worst_pct": -12.0,
             "best_pct": 31.56,
-            "pct_negative": 48.1
+            "pct_negative": 47.3
           },
           {
             "horizon": 20,
@@ -1518,7 +1518,7 @@
             "p90_pct": 10.71,
             "worst_pct": -17.33,
             "best_pct": 39.39,
-            "pct_negative": 41.4
+            "pct_negative": 40.9
           }
         ]
       },
@@ -1564,7 +1564,7 @@
           {
             "level": 0.999,
             "var_pct": 16.58,
-            "es_pct": 26.31
+            "es_pct": 26.3
           }
         ]
       },
@@ -1635,18 +1635,18 @@
             "p10_pct": -5.39,
             "p90_pct": 4.43,
             "worst_pct": -26.67,
-            "best_pct": 19.37,
+            "best_pct": 19.38,
             "pct_negative": 47.0
           },
           {
             "horizon": 5,
             "n": 353,
-            "median_pct": 0.0,
+            "median_pct": -0.0,
             "p10_pct": -10.34,
             "p90_pct": 10.96,
             "worst_pct": -50.97,
             "best_pct": 46.71,
-            "pct_negative": 49.3
+            "pct_negative": 50.4
           },
           {
             "horizon": 20,
@@ -1656,7 +1656,7 @@
             "p90_pct": 20.63,
             "worst_pct": -60.49,
             "best_pct": 102.15,
-            "pct_negative": 43.2
+            "pct_negative": 43.5
           }
         ]
       },
@@ -1840,7 +1840,7 @@
           {
             "level": 0.999,
             "var_pct": 15.09,
-            "es_pct": 18.96
+            "es_pct": 18.97
           }
         ]
       },
@@ -1907,7 +1907,7 @@
           {
             "horizon": 1,
             "n": 280,
-            "median_pct": 0.28,
+            "median_pct": 0.3,
             "p10_pct": -3.46,
             "p90_pct": 5.27,
             "worst_pct": -11.35,
@@ -1917,12 +1917,12 @@
           {
             "horizon": 5,
             "n": 278,
-            "median_pct": 0.75,
-            "p10_pct": -8.77,
+            "median_pct": 0.86,
+            "p10_pct": -8.61,
             "p90_pct": 10.53,
             "worst_pct": -24.58,
             "best_pct": 37.3,
-            "pct_negative": 44.6
+            "pct_negative": 44.2
           },
           {
             "horizon": 20,
@@ -2070,7 +2070,7 @@
             "p90_pct": 19.71,
             "worst_pct": -23.31,
             "best_pct": 27.42,
-            "pct_negative": 37.7
+            "pct_negative": 39.3
           }
         ]
       },
@@ -2198,7 +2198,7 @@
             "p90_pct": 11.11,
             "worst_pct": -26.09,
             "best_pct": 36.36,
-            "pct_negative": 39.4
+            "pct_negative": 37.3
           },
           {
             "horizon": 20,
@@ -2208,7 +2208,7 @@
             "p90_pct": 25.68,
             "worst_pct": -50.94,
             "best_pct": 86.67,
-            "pct_negative": 48.5
+            "pct_negative": 49.0
           }
         ]
       },
@@ -2474,7 +2474,7 @@
             "p90_pct": 15.54,
             "worst_pct": -26.67,
             "best_pct": 73.33,
-            "pct_negative": 42.8
+            "pct_negative": 44.0
           },
           {
             "horizon": 20,
@@ -2484,7 +2484,7 @@
             "p90_pct": 24.9,
             "worst_pct": -42.35,
             "best_pct": 173.68,
-            "pct_negative": 52.5
+            "pct_negative": 51.2
           }
         ]
       },
@@ -2612,7 +2612,7 @@
             "p90_pct": 6.06,
             "worst_pct": -15.88,
             "best_pct": 31.67,
-            "pct_negative": 43.8
+            "pct_negative": 44.3
           },
           {
             "horizon": 20,
@@ -2622,7 +2622,7 @@
             "p90_pct": 14.62,
             "worst_pct": -41.16,
             "best_pct": 39.76,
-            "pct_negative": 41.0
+            "pct_negative": 41.5
           }
         ]
       },
@@ -2750,7 +2750,7 @@
             "p90_pct": 5.28,
             "worst_pct": -17.25,
             "best_pct": 30.0,
-            "pct_negative": 43.6
+            "pct_negative": 44.1
           },
           {
             "horizon": 20,
@@ -2760,7 +2760,7 @@
             "p90_pct": 10.81,
             "worst_pct": -29.44,
             "best_pct": 44.16,
-            "pct_negative": 43.3
+            "pct_negative": 43.5
           }
         ]
       },
@@ -2888,7 +2888,7 @@
             "p90_pct": 7.04,
             "worst_pct": -32.77,
             "best_pct": 28.05,
-            "pct_negative": 50.1
+            "pct_negative": 51.3
           },
           {
             "horizon": 20,
@@ -2898,7 +2898,7 @@
             "p90_pct": 11.89,
             "worst_pct": -41.98,
             "best_pct": 58.63,
-            "pct_negative": 49.2
+            "pct_negative": 49.7
           }
         ]
       },
@@ -3168,7 +3168,7 @@
             "p90_pct": 6.65,
             "worst_pct": -36.25,
             "best_pct": 23.08,
-            "pct_negative": 41.8
+            "pct_negative": 42.0
           },
           {
             "horizon": 20,
@@ -3178,7 +3178,7 @@
             "p90_pct": 13.49,
             "worst_pct": -58.88,
             "best_pct": 36.73,
-            "pct_negative": 36.4
+            "pct_negative": 36.8
           }
         ]
       },
@@ -3211,20 +3211,20 @@
       "name": "Fortescue(铁矿)",
       "evt": {
         "status": "ok",
-        "xi": 0.479,
+        "xi": 0.478,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.6,
         "n_exceed": 488,
         "var_es": [
           {
             "level": 0.99,
-            "var_pct": 12.17,
+            "var_pct": 12.16,
             "es_pct": 24.52
           },
           {
             "level": 0.999,
-            "var_pct": 39.23,
-            "es_pct": 76.42
+            "var_pct": 39.22,
+            "es_pct": 76.4
           }
         ]
       },
@@ -3306,7 +3306,7 @@
             "p90_pct": 16.88,
             "worst_pct": -44.69,
             "best_pct": 130.79,
-            "pct_negative": 36.9
+            "pct_negative": 36.1
           },
           {
             "horizon": 20,
@@ -3316,7 +3316,7 @@
             "p90_pct": 34.25,
             "worst_pct": -59.13,
             "best_pct": 157.89,
-            "pct_negative": 39.8
+            "pct_negative": 39.5
           }
         ]
       },
@@ -3448,7 +3448,7 @@
             "p90_pct": 5.22,
             "worst_pct": -23.08,
             "best_pct": 16.62,
-            "pct_negative": 38.2
+            "pct_negative": 38.4
           },
           {
             "horizon": 20,
@@ -3596,7 +3596,7 @@
             "p90_pct": 13.88,
             "worst_pct": -31.34,
             "best_pct": 38.51,
-            "pct_negative": 39.7
+            "pct_negative": 39.5
           }
         ]
       },
@@ -3734,7 +3734,7 @@
             "p90_pct": 33.63,
             "worst_pct": -50.0,
             "best_pct": 105.88,
-            "pct_negative": 43.8
+            "pct_negative": 44.1
           }
         ]
       },
@@ -4000,7 +4000,7 @@
             "p90_pct": 11.98,
             "worst_pct": -43.12,
             "best_pct": 38.97,
-            "pct_negative": 43.3
+            "pct_negative": 42.9
           },
           {
             "horizon": 20,
@@ -4138,7 +4138,7 @@
             "p90_pct": 20.0,
             "worst_pct": -31.03,
             "best_pct": 81.25,
-            "pct_negative": 38.8
+            "pct_negative": 38.3
           },
           {
             "horizon": 20,
@@ -4148,7 +4148,7 @@
             "p90_pct": 42.91,
             "worst_pct": -51.52,
             "best_pct": 130.44,
-            "pct_negative": 44.2
+            "pct_negative": 43.8
           }
         ]
       },
@@ -4194,7 +4194,7 @@
           {
             "level": 0.999,
             "var_pct": 12.89,
-            "es_pct": 15.85
+            "es_pct": 15.84
           }
         ]
       },
@@ -4276,7 +4276,7 @@
             "p90_pct": 11.92,
             "worst_pct": -28.7,
             "best_pct": 38.03,
-            "pct_negative": 44.6
+            "pct_negative": 43.6
           },
           {
             "horizon": 20,
@@ -4286,7 +4286,7 @@
             "p90_pct": 24.48,
             "worst_pct": -55.94,
             "best_pct": 73.54,
-            "pct_negative": 43.1
+            "pct_negative": 42.5
           }
         ]
       },
@@ -4552,7 +4552,7 @@
             "p90_pct": 12.94,
             "worst_pct": -36.92,
             "best_pct": 62.16,
-            "pct_negative": 45.9
+            "pct_negative": 46.3
           },
           {
             "horizon": 20,
@@ -4562,7 +4562,7 @@
             "p90_pct": 27.53,
             "worst_pct": -63.12,
             "best_pct": 105.33,
-            "pct_negative": 46.3
+            "pct_negative": 45.9
           }
         ]
       },
@@ -4690,7 +4690,7 @@
             "p90_pct": 16.08,
             "worst_pct": -41.67,
             "best_pct": 150.0,
-            "pct_negative": 38.9
+            "pct_negative": 38.3
           },
           {
             "horizon": 20,
@@ -4700,7 +4700,7 @@
             "p90_pct": 37.64,
             "worst_pct": -67.0,
             "best_pct": 233.33,
-            "pct_negative": 48.3
+            "pct_negative": 49.4
           }
         ]
       },
@@ -4746,7 +4746,7 @@
           {
             "level": 0.999,
             "var_pct": 13.14,
-            "es_pct": 18.92
+            "es_pct": 18.93
           }
         ]
       },
@@ -4828,7 +4828,7 @@
             "p90_pct": 8.27,
             "worst_pct": -22.14,
             "best_pct": 27.17,
-            "pct_negative": 42.7
+            "pct_negative": 43.1
           },
           {
             "horizon": 20,
@@ -4966,7 +4966,7 @@
             "p90_pct": 17.11,
             "worst_pct": -36.92,
             "best_pct": 86.84,
-            "pct_negative": 40.0
+            "pct_negative": 39.3
           },
           {
             "horizon": 20,
@@ -4976,7 +4976,7 @@
             "p90_pct": 33.75,
             "worst_pct": -46.15,
             "best_pct": 90.0,
-            "pct_negative": 46.9
+            "pct_negative": 46.6
           }
         ]
       },
@@ -5104,7 +5104,7 @@
             "p90_pct": 20.0,
             "worst_pct": -52.38,
             "best_pct": 52.6,
-            "pct_negative": 40.4
+            "pct_negative": 41.1
           },
           {
             "horizon": 20,
@@ -5114,7 +5114,7 @@
             "p90_pct": 45.61,
             "worst_pct": -48.78,
             "best_pct": 208.0,
-            "pct_negative": 42.1
+            "pct_negative": 42.8
           }
         ]
       },
@@ -5242,7 +5242,7 @@
             "p90_pct": 9.49,
             "worst_pct": -27.34,
             "best_pct": 32.16,
-            "pct_negative": 51.1
+            "pct_negative": 50.8
           },
           {
             "horizon": 20,
@@ -5380,7 +5380,7 @@
             "p90_pct": 6.03,
             "worst_pct": -18.54,
             "best_pct": 19.5,
-            "pct_negative": 40.0
+            "pct_negative": 40.2
           },
           {
             "horizon": 20,
@@ -5390,7 +5390,7 @@
             "p90_pct": 12.45,
             "worst_pct": -32.93,
             "best_pct": 31.37,
-            "pct_negative": 40.9
+            "pct_negative": 40.7
           }
         ]
       },
@@ -5521,20 +5521,20 @@
       "name": "Champion Iron(铁矿)",
       "evt": {
         "status": "ok",
-        "xi": 0.239,
+        "xi": 0.233,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
-        "extremal_index": 0.649,
-        "n_exceed": 242,
+        "extremal_index": 0.643,
+        "n_exceed": 241,
         "var_es": [
           {
             "level": 0.99,
-            "var_pct": 14.27,
-            "es_pct": 22.2
+            "var_pct": 14.3,
+            "es_pct": 22.15
           },
           {
             "level": 0.999,
-            "var_pct": 32.78,
-            "es_pct": 46.53
+            "var_pct": 32.65,
+            "es_pct": 46.07
           }
         ]
       },
@@ -5600,33 +5600,33 @@
         "distribution": [
           {
             "horizon": 1,
-            "n": 252,
+            "n": 251,
             "median_pct": 0.0,
-            "p10_pct": -3.54,
-            "p90_pct": 9.94,
+            "p10_pct": -3.57,
+            "p90_pct": 10.0,
             "worst_pct": -25.71,
             "best_pct": 30.0,
-            "pct_negative": 19.8
+            "pct_negative": 19.9
           },
           {
             "horizon": 5,
-            "n": 252,
+            "n": 251,
             "median_pct": 0.0,
-            "p10_pct": -10.44,
-            "p90_pct": 19.15,
+            "p10_pct": -10.45,
+            "p90_pct": 19.19,
             "worst_pct": -33.33,
             "best_pct": 52.0,
-            "pct_negative": 35.7
+            "pct_negative": 35.9
           },
           {
             "horizon": 20,
-            "n": 252,
+            "n": 251,
             "median_pct": 0.0,
-            "p10_pct": -22.47,
-            "p90_pct": 29.37,
+            "p10_pct": -22.5,
+            "p90_pct": 28.95,
             "worst_pct": -50.0,
             "best_pct": 113.33,
-            "pct_negative": 45.2
+            "pct_negative": 45.8
           }
         ]
       },
@@ -5754,7 +5754,7 @@
             "p90_pct": 7.44,
             "worst_pct": -25.0,
             "best_pct": 23.47,
-            "pct_negative": 42.2
+            "pct_negative": 42.0
           },
           {
             "horizon": 20,
@@ -5892,7 +5892,7 @@
             "p90_pct": 4.85,
             "worst_pct": -9.26,
             "best_pct": 14.02,
-            "pct_negative": 46.6
+            "pct_negative": 45.3
           },
           {
             "horizon": 20,
@@ -5902,7 +5902,7 @@
             "p90_pct": 11.19,
             "worst_pct": -27.23,
             "best_pct": 31.28,
-            "pct_negative": 40.0
+            "pct_negative": 39.4
           }
         ]
       },
@@ -6030,7 +6030,7 @@
             "p90_pct": 6.01,
             "worst_pct": -16.55,
             "best_pct": 32.1,
-            "pct_negative": 43.6
+            "pct_negative": 43.3
           },
           {
             "horizon": 20,
@@ -6168,7 +6168,7 @@
             "p90_pct": 6.96,
             "worst_pct": -20.43,
             "best_pct": 24.26,
-            "pct_negative": 46.9
+            "pct_negative": 47.2
           },
           {
             "horizon": 20,
@@ -6178,7 +6178,7 @@
             "p90_pct": 12.23,
             "worst_pct": -37.4,
             "best_pct": 27.52,
-            "pct_negative": 35.5
+            "pct_negative": 35.8
           }
         ]
       },
@@ -6224,7 +6224,7 @@
           {
             "level": 0.999,
             "var_pct": 15.53,
-            "es_pct": 39.56
+            "es_pct": 39.55
           }
         ]
       },
@@ -6444,7 +6444,7 @@
             "p90_pct": 11.15,
             "worst_pct": -25.0,
             "best_pct": 42.86,
-            "pct_negative": 39.4
+            "pct_negative": 38.2
           },
           {
             "horizon": 20,
@@ -6454,7 +6454,7 @@
             "p90_pct": 21.35,
             "worst_pct": -33.59,
             "best_pct": 100.0,
-            "pct_negative": 38.9
+            "pct_negative": 38.6
           }
         ]
       },
@@ -6582,7 +6582,7 @@
             "p90_pct": 7.17,
             "worst_pct": -29.53,
             "best_pct": 23.74,
-            "pct_negative": 44.0
+            "pct_negative": 43.7
           },
           {
             "horizon": 20,
@@ -6592,7 +6592,7 @@
             "p90_pct": 14.66,
             "worst_pct": -33.59,
             "best_pct": 72.81,
-            "pct_negative": 42.9
+            "pct_negative": 42.4
           }
         ]
       },
@@ -6720,7 +6720,7 @@
             "p90_pct": 6.14,
             "worst_pct": -14.29,
             "best_pct": 16.48,
-            "pct_negative": 41.3
+            "pct_negative": 40.6
           },
           {
             "horizon": 20,
@@ -6730,7 +6730,7 @@
             "p90_pct": 11.67,
             "worst_pct": -31.44,
             "best_pct": 27.55,
-            "pct_negative": 43.8
+            "pct_negative": 43.5
           }
         ]
       },
@@ -6770,7 +6770,7 @@
         "var_es": [
           {
             "level": 0.99,
-            "var_pct": 4.63,
+            "var_pct": 4.62,
             "es_pct": 6.63
           },
           {
@@ -6858,7 +6858,7 @@
             "p90_pct": 5.98,
             "worst_pct": -12.37,
             "best_pct": 22.47,
-            "pct_negative": 42.3
+            "pct_negative": 42.5
           },
           {
             "horizon": 20,
@@ -6868,7 +6868,7 @@
             "p90_pct": 13.07,
             "worst_pct": -22.6,
             "best_pct": 41.45,
-            "pct_negative": 36.6
+            "pct_negative": 36.3
           }
         ]
       },
@@ -7134,7 +7134,7 @@
             "p90_pct": 8.27,
             "worst_pct": -69.73,
             "best_pct": 45.45,
-            "pct_negative": 43.1
+            "pct_negative": 41.9
           },
           {
             "horizon": 20,
@@ -7144,7 +7144,7 @@
             "p90_pct": 21.07,
             "worst_pct": -78.46,
             "best_pct": 45.45,
-            "pct_negative": 37.8
+            "pct_negative": 38.1
           }
         ]
       },
@@ -7272,7 +7272,7 @@
             "p90_pct": 6.16,
             "worst_pct": -19.22,
             "best_pct": 25.85,
-            "pct_negative": 42.2
+            "pct_negative": 42.6
           },
           {
             "horizon": 20,
@@ -7282,7 +7282,7 @@
             "p90_pct": 10.18,
             "worst_pct": -25.63,
             "best_pct": 33.82,
-            "pct_negative": 41.9
+            "pct_negative": 41.5
           }
         ]
       },
@@ -7410,7 +7410,7 @@
             "p90_pct": 5.25,
             "worst_pct": -23.47,
             "best_pct": 24.32,
-            "pct_negative": 40.5
+            "pct_negative": 40.3
           },
           {
             "horizon": 20,
@@ -7420,7 +7420,7 @@
             "p90_pct": 10.87,
             "worst_pct": -30.34,
             "best_pct": 25.46,
-            "pct_negative": 34.8
+            "pct_negative": 35.0
           }
         ]
       },
@@ -7453,7 +7453,7 @@
       "name": "Woolworths(超市)",
       "evt": {
         "status": "ok",
-        "xi": 0.331,
+        "xi": 0.332,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
         "extremal_index": 0.608,
         "n_exceed": 423,
@@ -7548,7 +7548,7 @@
             "p90_pct": 4.62,
             "worst_pct": -12.31,
             "best_pct": 15.27,
-            "pct_negative": 40.2
+            "pct_negative": 39.7
           },
           {
             "horizon": 20,
@@ -7558,7 +7558,7 @@
             "p90_pct": 7.98,
             "worst_pct": -13.45,
             "best_pct": 18.06,
-            "pct_negative": 40.0
+            "pct_negative": 39.8
           }
         ]
       },
@@ -7735,7 +7735,7 @@
         "status": "ok",
         "xi": 0.407,
         "tail": "厚尾(ξ>0,极端损失比指数更重)",
-        "extremal_index": 0.656,
+        "extremal_index": 0.659,
         "n_exceed": 384,
         "var_es": [
           {
@@ -7818,12 +7818,12 @@
             "p90_pct": 2.95,
             "worst_pct": -15.97,
             "best_pct": 19.11,
-            "pct_negative": 43.8
+            "pct_negative": 43.5
           },
           {
             "horizon": 5,
             "n": 384,
-            "median_pct": 0.81,
+            "median_pct": 0.79,
             "p10_pct": -6.08,
             "p90_pct": 7.55,
             "worst_pct": -56.87,
@@ -7833,12 +7833,12 @@
           {
             "horizon": 20,
             "n": 384,
-            "median_pct": 1.22,
+            "median_pct": 1.24,
             "p10_pct": -10.81,
             "p90_pct": 17.23,
             "worst_pct": -57.55,
             "best_pct": 60.67,
-            "pct_negative": 44.8
+            "pct_negative": 44.3
           }
         ]
       },
@@ -7884,7 +7884,7 @@
           {
             "level": 0.999,
             "var_pct": 9.13,
-            "es_pct": 14.83
+            "es_pct": 14.82
           }
         ]
       },
@@ -7966,7 +7966,7 @@
             "p90_pct": 3.89,
             "worst_pct": -8.45,
             "best_pct": 5.96,
-            "pct_negative": 39.4
+            "pct_negative": 37.9
           },
           {
             "horizon": 20,
@@ -7976,7 +7976,7 @@
             "p90_pct": 6.95,
             "worst_pct": -13.5,
             "best_pct": 15.38,
-            "pct_negative": 47.5
+            "pct_negative": 45.9
           }
         ]
       },
@@ -8104,7 +8104,7 @@
             "p90_pct": 9.02,
             "worst_pct": -22.28,
             "best_pct": 24.88,
-            "pct_negative": 44.8
+            "pct_negative": 44.5
           },
           {
             "horizon": 20,
@@ -8242,7 +8242,7 @@
             "p90_pct": 6.95,
             "worst_pct": -20.44,
             "best_pct": 26.67,
-            "pct_negative": 44.2
+            "pct_negative": 44.4
           },
           {
             "horizon": 20,
@@ -8252,7 +8252,7 @@
             "p90_pct": 12.44,
             "worst_pct": -45.93,
             "best_pct": 43.5,
-            "pct_negative": 38.8
+            "pct_negative": 39.2
           }
         ]
       },
@@ -8380,7 +8380,7 @@
             "p90_pct": 7.33,
             "worst_pct": -25.78,
             "best_pct": 17.34,
-            "pct_negative": 47.4
+            "pct_negative": 47.9
           },
           {
             "horizon": 20,
@@ -8436,7 +8436,7 @@
           {
             "level": 0.999,
             "var_pct": 17.32,
-            "es_pct": 28.17
+            "es_pct": 28.18
           }
         ]
       },
@@ -8656,7 +8656,7 @@
             "p90_pct": 7.22,
             "worst_pct": -16.45,
             "best_pct": 19.82,
-            "pct_negative": 41.9
+            "pct_negative": 42.6
           },
           {
             "horizon": 20,
@@ -8666,7 +8666,7 @@
             "p90_pct": 12.62,
             "worst_pct": -28.87,
             "best_pct": 31.6,
-            "pct_negative": 43.5
+            "pct_negative": 42.4
           }
         ]
       },
@@ -8794,7 +8794,7 @@
             "p90_pct": 6.96,
             "worst_pct": -28.03,
             "best_pct": 38.3,
-            "pct_negative": 40.6
+            "pct_negative": 41.1
           },
           {
             "horizon": 20,
@@ -8804,7 +8804,7 @@
             "p90_pct": 13.41,
             "worst_pct": -31.48,
             "best_pct": 55.41,
-            "pct_negative": 41.4
+            "pct_negative": 41.9
           }
         ]
       },
@@ -8932,7 +8932,7 @@
             "p90_pct": 13.43,
             "worst_pct": -65.25,
             "best_pct": 102.04,
-            "pct_negative": 42.6
+            "pct_negative": 43.2
           },
           {
             "horizon": 20,
@@ -8942,7 +8942,7 @@
             "p90_pct": 22.13,
             "worst_pct": -50.58,
             "best_pct": 152.24,
-            "pct_negative": 39.7
+            "pct_negative": 39.0
           }
         ]
       },
@@ -9070,7 +9070,7 @@
             "p90_pct": 6.46,
             "worst_pct": -29.58,
             "best_pct": 24.92,
-            "pct_negative": 33.5
+            "pct_negative": 33.3
           },
           {
             "horizon": 20,
@@ -9080,7 +9080,7 @@
             "p90_pct": 12.82,
             "worst_pct": -54.27,
             "best_pct": 44.13,
-            "pct_negative": 35.9
+            "pct_negative": 36.5
           }
         ]
       },
@@ -9197,7 +9197,7 @@
             "p10_pct": -3.04,
             "p90_pct": 3.2,
             "worst_pct": -35.14,
-            "best_pct": 16.87,
+            "best_pct": 16.88,
             "pct_negative": 39.7
           },
           {
@@ -9208,7 +9208,7 @@
             "p90_pct": 7.08,
             "worst_pct": -44.92,
             "best_pct": 31.33,
-            "pct_negative": 52.1
+            "pct_negative": 51.1
           },
           {
             "horizon": 20,
@@ -9346,7 +9346,7 @@
             "p90_pct": 9.04,
             "worst_pct": -25.67,
             "best_pct": 52.78,
-            "pct_negative": 41.6
+            "pct_negative": 39.9
           },
           {
             "horizon": 20,
@@ -9484,7 +9484,7 @@
             "p90_pct": 7.97,
             "worst_pct": -49.46,
             "best_pct": 43.91,
-            "pct_negative": 48.2
+            "pct_negative": 48.0
           },
           {
             "horizon": 20,
@@ -9494,7 +9494,7 @@
             "p90_pct": 17.52,
             "worst_pct": -73.59,
             "best_pct": 80.17,
-            "pct_negative": 43.7
+            "pct_negative": 43.5
           }
         ]
       },
@@ -9765,7 +9765,7 @@
           {
             "horizon": 20,
             "n": 490,
-            "median_pct": 1.12,
+            "median_pct": 1.14,
             "p10_pct": -8.52,
             "p90_pct": 12.33,
             "worst_pct": -31.75,
@@ -9898,7 +9898,7 @@
             "p90_pct": 7.14,
             "worst_pct": -40.0,
             "best_pct": 26.92,
-            "pct_negative": 37.7
+            "pct_negative": 38.7
           },
           {
             "horizon": 20,
@@ -10036,7 +10036,7 @@
             "p90_pct": 5.26,
             "worst_pct": -26.54,
             "best_pct": 27.09,
-            "pct_negative": 43.0
+            "pct_negative": 43.3
           },
           {
             "horizon": 20,
@@ -10092,7 +10092,7 @@
           {
             "level": 0.999,
             "var_pct": 10.71,
-            "es_pct": 17.82
+            "es_pct": 17.81
           }
         ]
       },
@@ -10174,7 +10174,7 @@
             "p90_pct": 5.3,
             "worst_pct": -28.43,
             "best_pct": 20.14,
-            "pct_negative": 40.3
+            "pct_negative": 40.5
           },
           {
             "horizon": 20,
@@ -10184,7 +10184,7 @@
             "p90_pct": 11.7,
             "worst_pct": -33.23,
             "best_pct": 25.89,
-            "pct_negative": 43.8
+            "pct_negative": 43.4
           }
         ]
       },
@@ -10312,7 +10312,7 @@
             "p90_pct": 5.52,
             "worst_pct": -14.52,
             "best_pct": 21.45,
-            "pct_negative": 33.5
+            "pct_negative": 33.8
           },
           {
             "horizon": 20,
@@ -10322,7 +10322,7 @@
             "p90_pct": 9.65,
             "worst_pct": -16.56,
             "best_pct": 35.17,
-            "pct_negative": 35.0
+            "pct_negative": 34.7
           }
         ]
       },
@@ -10450,7 +10450,7 @@
             "p90_pct": 7.78,
             "worst_pct": -41.21,
             "best_pct": 51.87,
-            "pct_negative": 44.6
+            "pct_negative": 44.8
           },
           {
             "horizon": 20,
@@ -10460,7 +10460,7 @@
             "p90_pct": 16.01,
             "worst_pct": -59.97,
             "best_pct": 67.76,
-            "pct_negative": 42.7
+            "pct_negative": 42.9
           }
         ]
       },
@@ -10588,7 +10588,7 @@
             "p90_pct": 6.03,
             "worst_pct": -31.78,
             "best_pct": 39.19,
-            "pct_negative": 43.3
+            "pct_negative": 43.8
           },
           {
             "horizon": 20,
@@ -10598,7 +10598,7 @@
             "p90_pct": 16.64,
             "worst_pct": -34.64,
             "best_pct": 43.24,
-            "pct_negative": 31.4
+            "pct_negative": 31.0
           }
         ]
       },
@@ -10736,7 +10736,7 @@
             "p90_pct": 9.2,
             "worst_pct": -28.63,
             "best_pct": 25.64,
-            "pct_negative": 38.5
+            "pct_negative": 38.1
           }
         ]
       },
@@ -10864,7 +10864,7 @@
             "p90_pct": 6.44,
             "worst_pct": -20.62,
             "best_pct": 20.69,
-            "pct_negative": 47.2
+            "pct_negative": 47.0
           },
           {
             "horizon": 20,
@@ -10920,7 +10920,7 @@
           {
             "level": 0.999,
             "var_pct": 18.91,
-            "es_pct": 37.36
+            "es_pct": 37.35
           }
         ]
       },
@@ -11002,7 +11002,7 @@
             "p90_pct": 6.74,
             "worst_pct": -24.27,
             "best_pct": 45.83,
-            "pct_negative": 42.9
+            "pct_negative": 43.1
           },
           {
             "horizon": 20,
@@ -11012,7 +11012,7 @@
             "p90_pct": 17.37,
             "worst_pct": -56.25,
             "best_pct": 45.91,
-            "pct_negative": 41.0
+            "pct_negative": 40.3
           }
         ]
       },
@@ -11127,7 +11127,7 @@
             "n": 270,
             "median_pct": 0.0,
             "p10_pct": -4.14,
-            "p90_pct": 3.78,
+            "p90_pct": 3.77,
             "worst_pct": -17.24,
             "best_pct": 13.21,
             "pct_negative": 47.4
@@ -11135,22 +11135,22 @@
           {
             "horizon": 5,
             "n": 270,
-            "median_pct": 0.0,
+            "median_pct": -0.0,
             "p10_pct": -9.29,
             "p90_pct": 7.19,
             "worst_pct": -36.0,
             "best_pct": 53.64,
-            "pct_negative": 49.6
+            "pct_negative": 50.7
           },
           {
             "horizon": 20,
             "n": 270,
-            "median_pct": -0.0,
+            "median_pct": 0.0,
             "p10_pct": -18.77,
             "p90_pct": 15.71,
             "worst_pct": -50.77,
             "best_pct": 99.46,
-            "pct_negative": 50.0
+            "pct_negative": 49.6
           }
         ]
       },
@@ -11292,7 +11292,7 @@
             "p90_pct": 6.22,
             "worst_pct": -25.61,
             "best_pct": 24.31,
-            "pct_negative": 40.6
+            "pct_negative": 40.8
           },
           {
             "horizon": 20,
@@ -11430,7 +11430,7 @@
             "p90_pct": 7.76,
             "worst_pct": -35.9,
             "best_pct": 37.82,
-            "pct_negative": 39.4
+            "pct_negative": 39.6
           },
           {
             "horizon": 20,
@@ -11440,7 +11440,7 @@
             "p90_pct": 17.01,
             "worst_pct": -61.5,
             "best_pct": 52.26,
-            "pct_negative": 37.6
+            "pct_negative": 37.2
           }
         ]
       },
@@ -11568,7 +11568,7 @@
             "p90_pct": 6.69,
             "worst_pct": -28.17,
             "best_pct": 21.6,
-            "pct_negative": 44.4
+            "pct_negative": 44.7
           },
           {
             "horizon": 20,
@@ -11578,7 +11578,7 @@
             "p90_pct": 14.46,
             "worst_pct": -48.43,
             "best_pct": 42.05,
-            "pct_negative": 43.0
+            "pct_negative": 43.9
           }
         ]
       },
@@ -11706,7 +11706,7 @@
             "p90_pct": 5.13,
             "worst_pct": -16.51,
             "best_pct": 17.83,
-            "pct_negative": 47.9
+            "pct_negative": 47.6
           },
           {
             "horizon": 20,
@@ -11716,7 +11716,7 @@
             "p90_pct": 10.4,
             "worst_pct": -20.84,
             "best_pct": 21.86,
-            "pct_negative": 48.8
+            "pct_negative": 48.5
           }
         ]
       },
@@ -11844,7 +11844,7 @@
             "p90_pct": 13.06,
             "worst_pct": -27.83,
             "best_pct": 62.07,
-            "pct_negative": 33.9
+            "pct_negative": 34.9
           },
           {
             "horizon": 20,
@@ -11854,7 +11854,7 @@
             "p90_pct": 25.27,
             "worst_pct": -40.46,
             "best_pct": 99.87,
-            "pct_negative": 42.6
+            "pct_negative": 42.2
           }
         ]
       },
@@ -11992,7 +11992,7 @@
             "p90_pct": 26.67,
             "worst_pct": -68.07,
             "best_pct": 141.94,
-            "pct_negative": 47.2
+            "pct_negative": 46.9
           }
         ]
       },
@@ -12120,7 +12120,7 @@
             "p90_pct": 6.64,
             "worst_pct": -48.64,
             "best_pct": 31.07,
-            "pct_negative": 40.0
+            "pct_negative": 40.2
           },
           {
             "horizon": 20,
@@ -12130,7 +12130,7 @@
             "p90_pct": 10.68,
             "worst_pct": -61.06,
             "best_pct": 66.52,
-            "pct_negative": 40.6
+            "pct_negative": 41.2
           }
         ]
       },
@@ -12258,7 +12258,7 @@
             "p90_pct": 7.56,
             "worst_pct": -39.39,
             "best_pct": 97.83,
-            "pct_negative": 39.4
+            "pct_negative": 39.8
           },
           {
             "horizon": 20,
@@ -12268,7 +12268,7 @@
             "p90_pct": 12.0,
             "worst_pct": -54.77,
             "best_pct": 123.91,
-            "pct_negative": 38.0
+            "pct_negative": 38.2
           }
         ]
       },
@@ -12313,8 +12313,8 @@
           },
           {
             "level": 0.999,
-            "var_pct": 19.14,
-            "es_pct": 42.35
+            "var_pct": 19.13,
+            "es_pct": 42.34
           }
         ]
       },
@@ -12396,7 +12396,7 @@
             "p90_pct": 7.28,
             "worst_pct": -50.75,
             "best_pct": 49.19,
-            "pct_negative": 44.9
+            "pct_negative": 44.0
           },
           {
             "horizon": 20,
@@ -12406,7 +12406,7 @@
             "p90_pct": 13.87,
             "worst_pct": -63.52,
             "best_pct": 61.65,
-            "pct_negative": 42.6
+            "pct_negative": 42.1
           }
         ]
       },
@@ -12452,7 +12452,7 @@
           {
             "level": 0.999,
             "var_pct": 12.2,
-            "es_pct": 19.84
+            "es_pct": 19.85
           }
         ]
       },
@@ -12534,7 +12534,7 @@
             "p90_pct": 8.1,
             "worst_pct": -32.68,
             "best_pct": 34.69,
-            "pct_negative": 41.4
+            "pct_negative": 41.7
           },
           {
             "horizon": 20,
@@ -12544,7 +12544,7 @@
             "p90_pct": 11.46,
             "worst_pct": -46.5,
             "best_pct": 44.07,
-            "pct_negative": 35.4
+            "pct_negative": 35.7
           }
         ]
       },
@@ -12682,7 +12682,7 @@
             "p90_pct": 13.83,
             "worst_pct": -56.36,
             "best_pct": 48.47,
-            "pct_negative": 38.4
+            "pct_negative": 37.9
           }
         ]
       },
@@ -12797,7 +12797,7 @@
             "n": 187,
             "median_pct": 0.0,
             "p10_pct": -2.73,
-            "p90_pct": 2.35,
+            "p90_pct": 2.46,
             "worst_pct": -20.0,
             "best_pct": 9.13,
             "pct_negative": 44.4
@@ -12805,17 +12805,17 @@
           {
             "horizon": 5,
             "n": 187,
-            "median_pct": 0.81,
+            "median_pct": 1.0,
             "p10_pct": -4.38,
             "p90_pct": 6.17,
             "worst_pct": -41.41,
             "best_pct": 29.36,
-            "pct_negative": 37.4
+            "pct_negative": 38.0
           },
           {
             "horizon": 20,
             "n": 186,
-            "median_pct": 2.18,
+            "median_pct": 2.23,
             "p10_pct": -7.77,
             "p90_pct": 13.83,
             "worst_pct": -55.32,
@@ -12948,7 +12948,7 @@
             "p90_pct": 9.03,
             "worst_pct": -37.76,
             "best_pct": 31.13,
-            "pct_negative": 48.5
+            "pct_negative": 47.8
           },
           {
             "horizon": 20,
@@ -12958,7 +12958,7 @@
             "p90_pct": 23.29,
             "worst_pct": -53.6,
             "best_pct": 96.97,
-            "pct_negative": 46.8
+            "pct_negative": 46.4
           }
         ]
       },
@@ -13086,7 +13086,7 @@
             "p90_pct": 4.48,
             "worst_pct": -10.63,
             "best_pct": 16.66,
-            "pct_negative": 43.3
+            "pct_negative": 43.9
           },
           {
             "horizon": 20,
@@ -13096,7 +13096,7 @@
             "p90_pct": 8.4,
             "worst_pct": -13.24,
             "best_pct": 23.64,
-            "pct_negative": 42.9
+            "pct_negative": 42.3
           }
         ]
       },
@@ -13224,7 +13224,7 @@
             "p90_pct": 15.0,
             "worst_pct": -33.33,
             "best_pct": 70.0,
-            "pct_negative": 37.6
+            "pct_negative": 37.9
           },
           {
             "horizon": 20,
@@ -13234,7 +13234,7 @@
             "p90_pct": 23.08,
             "worst_pct": -60.0,
             "best_pct": 78.0,
-            "pct_negative": 45.9
+            "pct_negative": 45.6
           }
         ]
       },
@@ -13924,7 +13924,7 @@
             "p90_pct": 15.62,
             "worst_pct": -39.51,
             "best_pct": 42.48,
-            "pct_negative": 46.3
+            "pct_negative": 46.7
           }
         ]
       },
@@ -14052,7 +14052,7 @@
             "p90_pct": 8.0,
             "worst_pct": -24.24,
             "best_pct": 30.48,
-            "pct_negative": 32.6
+            "pct_negative": 32.8
           },
           {
             "horizon": 20,
@@ -14062,7 +14062,7 @@
             "p90_pct": 15.28,
             "worst_pct": -30.0,
             "best_pct": 31.09,
-            "pct_negative": 40.2
+            "pct_negative": 39.6
           }
         ]
       },
@@ -14107,7 +14107,7 @@
           },
           {
             "level": 0.999,
-            "var_pct": 14.39,
+            "var_pct": 14.38,
             "es_pct": 23.77
           }
         ]
@@ -14190,7 +14190,7 @@
             "p90_pct": 8.22,
             "worst_pct": -28.69,
             "best_pct": 25.0,
-            "pct_negative": 49.7
+            "pct_negative": 49.1
           },
           {
             "horizon": 20,
@@ -14200,7 +14200,7 @@
             "p90_pct": 17.49,
             "worst_pct": -48.35,
             "best_pct": 48.35,
-            "pct_negative": 37.9
+            "pct_negative": 38.5
           }
         ]
       },
@@ -14328,7 +14328,7 @@
             "p90_pct": 7.65,
             "worst_pct": -21.31,
             "best_pct": 23.56,
-            "pct_negative": 44.5
+            "pct_negative": 44.2
           },
           {
             "horizon": 20,
@@ -14379,7 +14379,7 @@
           {
             "level": 0.99,
             "var_pct": 8.07,
-            "es_pct": 11.75
+            "es_pct": 11.74
           },
           {
             "level": 0.999,
@@ -14466,7 +14466,7 @@
             "p90_pct": 14.13,
             "worst_pct": -18.18,
             "best_pct": 47.37,
-            "pct_negative": 46.0
+            "pct_negative": 46.3
           },
           {
             "horizon": 20,
@@ -14476,7 +14476,7 @@
             "p90_pct": 26.92,
             "worst_pct": -32.43,
             "best_pct": 137.5,
-            "pct_negative": 48.1
+            "pct_negative": 47.5
           }
         ]
       },
@@ -14493,7 +14493,7 @@
       },
       "liquidity": {
         "status": "ok",
-        "median_daily_aud_m": 8.5,
+        "median_daily_aud_m": 8.8,
         "tier": "mid",
         "window_days": 60
       }

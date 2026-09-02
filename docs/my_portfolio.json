@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T17:06:17Z",
+  "generated": "2026-09-02T23:38:07Z",
   "public": false,
   "currency": "AUD",
   "fx_note": "美股按各自入场日/当日 AUD/USD 折成澳元;汇率波动会真实改变澳元收益,已计入。",
@@ -9,14 +9,14 @@
     {
       "portfolio": "我的选股",
       "invested_aud": 10000.0,
-      "value_aud": 10087.83,
+      "value_aud": 10096.73,
       "positions": [
         {
           "symbol": "INTC",
           "shares": 20.173905,
           "aud_invested": 2500.0,
-          "value_aud": 2539.45,
-          "ret_pct": 1.58,
+          "value_aud": 2541.81,
+          "ret_pct": 1.67,
           "entry_date": "2026-09-01",
           "entry_px": "88.63",
           "fx_entry": "0.715205",
@@ -27,8 +27,8 @@
           "symbol": "PFE",
           "shares": 62.491722,
           "aud_invested": 2500.0,
-          "value_aud": 2526.07,
-          "ret_pct": 1.04,
+          "value_aud": 2537.41,
+          "ret_pct": 1.5,
           "entry_date": "2026-09-01",
           "entry_px": "28.612",
           "fx_entry": "0.715205",
@@ -39,8 +39,8 @@
           "symbol": "GOOGL",
           "shares": 5.332577,
           "aud_invested": 2500.0,
-          "value_aud": 2519.03,
-          "ret_pct": 0.76,
+          "value_aud": 2515.31,
+          "ret_pct": 0.61,
           "entry_date": "2026-09-01",
           "entry_px": "335.3",
           "fx_entry": "0.715205",
@@ -51,8 +51,8 @@
           "symbol": "AAPL",
           "shares": 5.503272,
           "aud_invested": 2500.0,
-          "value_aud": 2503.27,
-          "ret_pct": 0.13,
+          "value_aud": 2502.19,
+          "ret_pct": 0.09,
           "entry_date": "2026-09-01",
           "entry_px": "324.9",
           "fx_entry": "0.715205",
@@ -61,40 +61,40 @@
         }
       ],
       "closed": [],
-      "ret_pct": 0.88
+      "ret_pct": 0.97
     },
     {
-      "portfolio": "澳股指数",
+      "portfolio": "美股指数",
       "invested_aud": 10000.0,
-      "value_aud": 10028.41,
+      "value_aud": 10024.17,
       "positions": [
         {
-          "symbol": "VAS.AX",
-          "shares": 88.77841,
+          "symbol": "QQQ",
+          "shares": 10.101483,
           "aud_invested": 10000.0,
-          "value_aud": 10028.41,
-          "ret_pct": 0.28,
+          "value_aud": 10024.17,
+          "ret_pct": 0.24,
           "entry_date": "2026-09-01",
-          "entry_px": "112.64",
-          "fx_entry": "1.0",
+          "entry_px": "708.02",
+          "fx_entry": "0.715205",
           "status": "open",
           "exit_date": null
         }
       ],
       "closed": [],
-      "ret_pct": 0.28
+      "ret_pct": 0.24
     },
     {
       "portfolio": "规则荐股",
       "invested_aud": 10000.0,
-      "value_aud": 10007.5,
+      "value_aud": 9997.86,
       "positions": [
         {
           "symbol": "KO",
           "shares": 27.029003,
           "aud_invested": 3330.0,
-          "value_aud": 3342.2,
-          "ret_pct": 0.37,
+          "value_aud": 3337.07,
+          "ret_pct": 0.21,
           "entry_date": "2026-09-01",
           "entry_px": "88.114",
           "fx_entry": "0.715205",
@@ -105,8 +105,8 @@
           "symbol": "AAPL",
           "shares": 7.352372,
           "aud_invested": 3340.0,
-          "value_aud": 3344.37,
-          "ret_pct": 0.13,
+          "value_aud": 3342.93,
+          "ret_pct": 0.09,
           "entry_date": "2026-09-01",
           "entry_px": "324.9",
           "fx_entry": "0.715205",
@@ -117,8 +117,8 @@
           "symbol": "LLY",
           "shares": 2.044084,
           "aud_invested": 3330.0,
-          "value_aud": 3320.93,
-          "ret_pct": -0.27,
+          "value_aud": 3317.85,
+          "ret_pct": -0.36,
           "entry_date": "2026-09-01",
           "entry_px": "1165.135",
           "fx_entry": "0.715205",
@@ -127,28 +127,28 @@
         }
       ],
       "closed": [],
-      "ret_pct": 0.08
+      "ret_pct": -0.02
     },
     {
-      "portfolio": "美股指数",
+      "portfolio": "澳股指数",
       "invested_aud": 10000.0,
-      "value_aud": 9984.42,
+      "value_aud": 9927.2,
       "positions": [
         {
-          "symbol": "QQQ",
-          "shares": 10.101483,
+          "symbol": "VAS.AX",
+          "shares": 88.77841,
           "aud_invested": 10000.0,
-          "value_aud": 9984.42,
-          "ret_pct": -0.16,
+          "value_aud": 9927.2,
+          "ret_pct": -0.73,
           "entry_date": "2026-09-01",
-          "entry_px": "708.02",
-          "fx_entry": "0.715205",
+          "entry_px": "112.64",
+          "fx_entry": "1.0",
           "status": "open",
           "exit_date": null
         }
       ],
       "closed": [],
-      "ret_pct": -0.16
+      "ret_pct": -0.73
     }
   ],
   "pending": [],

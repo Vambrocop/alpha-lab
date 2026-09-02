@@ -1,44 +1,44 @@
 {
- "updated": "2026-09-02 22:04 UTC",
+ "updated": "2026-09-02 23:35 UTC",
  "items": [
   {
-   "time": "2026-09-02 21:59 UTC",
-   "title": "Broadcom's stock drops 5% as weak guidance overshadows earnings beat",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 21:38 UTC",
-   "title": "Nvidia’s stock is climbing as investors get more confidence in an expanding base of AI customers",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 21:15 UTC",
-   "title": "New Jersey asks the Supreme Court to take on prediction markets",
+   "time": "2026-09-02 23:09 UTC",
+   "title": "Jim Cramer says investors aren't ditching tech — they just want cheaper stocks",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-09-02 21:12 UTC",
-   "title": "Palantir’s stock is slumping. Why bond yields and Google may be to blame.",
+   "time": "2026-09-02 22:49 UTC",
+   "title": "How Equinix has found a niche in the multitrillion-dollar AI data center boom",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 22:37 UTC",
+   "title": "Microsoft to start disclosing Azure quarterly revenue as company consolidates business units",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 22:28 UTC",
+   "title": "Broadcom’s stock falls despite upbeat earnings, extending a frustrating stretch for investors",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-02 21:11 UTC",
-   "title": "How Oracle’s ‘extremely controversial’ stock could more than double from here",
+   "time": "2026-09-02 22:21 UTC",
+   "title": "Broadcom delivers strong earnings view as CEO touts growth with AI labs",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
