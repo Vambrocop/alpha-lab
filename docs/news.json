@@ -1,6 +1,14 @@
 {
- "updated": "2026-09-02 17:03 UTC",
+ "updated": "2026-09-02 17:28 UTC",
  "items": [
+  {
+   "time": "2026-09-02 17:21 UTC",
+   "title": "New York Fed's Williams says yield surge due to strong economic prospects",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-09-02 16:19 UTC",
    "title": "We're starting positions in 2 more defensive stocks to balance our AI exposure",
@@ -10,9 +18,9 @@
    "kind": "auto"
   },
   {
-   "time": "2026-09-02 15:56 UTC",
-   "title": "New York Fed's Williams says yield surge due to strong economic prospects",
-   "impact": "positive",
+   "time": "2026-09-02 15:42 UTC",
+   "title": "10-year U.S. Treasury yield hits highest level since November 2023",
+   "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
@@ -31,14 +39,6 @@
    "impact": "positive",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 14:30 UTC",
-   "title": "Private payrolls rose by 38,000 in August, less than expected, ADP reports",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Markets",
    "kind": "auto"
   }
  ]
