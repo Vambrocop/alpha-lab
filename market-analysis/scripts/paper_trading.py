@@ -13,6 +13,7 @@ paper_trading.py — 多策略模拟盘（四个"基金经理"同台竞技）
 import sys
 import pandas as pd
 import json
+import re
 from pathlib import Path
 from util_time import is_final_trading_day
 from ledger_hash import HASH_COLS, seal_hash_chain
@@ -31,12 +32,54 @@ START_DATE    = "2026-06-10"
 START_CAPITAL = 10000.0
 
 STRATS = {
-    "buyhold":  {"label": "🐢 长持",   "desc": "全仓纳指，永不卖出（对照组）"},
-    "trend":    {"label": "📈 趋势",   "desc": "纳指>MA200持有，跌破清仓；低频，适合6-12月持有"},
-    "signal":   {"label": "🎯 信号",   "desc": "贝叶斯信号 tier≥4全仓 / ≤2清仓 / 3不动"},
-    "momentum": {"label": "🚀 动量",   "desc": "观察池6月动量前3等权，每月调仓"},
-    "overnight": {"label": "🌙 隔夜",  "desc": "每日收盘买QQQ次日开盘卖（已扣每日2bp成本）——验证隔夜异象能否活过交易成本"},
+    "buyhold":  {"label": "🐢 长持",   "desc": "全仓纳指，永不卖出（对照组）",
+                 "label_en": "🐢 Buy & hold",
+                 "desc_en": "Fully invested in the NASDAQ, never sells (control group)"},
+    "trend":    {"label": "📈 趋势",   "desc": "纳指>MA200持有，跌破清仓；低频，适合6-12月持有",
+                 "label_en": "📈 Trend",
+                 "desc_en": "Hold while the NASDAQ is above its MA200, go to cash when it breaks below; "
+                            "low turnover, suited to a 6-12 month horizon"},
+    "signal":   {"label": "🎯 信号",   "desc": "贝叶斯信号 tier≥4全仓 / ≤2清仓 / 3不动",
+                 "label_en": "🎯 Signal",
+                 "desc_en": "Bayesian signal: fully invested at tier>=4 / all cash at tier<=2 / "
+                            "unchanged at tier 3"},
+    "momentum": {"label": "🚀 动量",   "desc": "观察池6月动量前3等权，每月调仓",
+                 "label_en": "🚀 Momentum",
+                 "desc_en": "Equal-weighted top 3 by 6-month momentum from the watchlist, "
+                            "rebalanced monthly"},
+    "overnight": {"label": "🌙 隔夜",  "desc": "每日收盘买QQQ次日开盘卖（已扣每日2bp成本）——验证隔夜异象能否活过交易成本",
+                  "label_en": "🌙 Overnight",
+                  "desc_en": "Buy QQQ at each close, sell at the next open (2bp of daily cost already "
+                             "deducted) — tests whether the overnight anomaly survives trading costs"},
 }
+
+
+# ── 数据层双语(2026-09-01):账本里的 note 是**已写入的历史行,绝不回改**(append-only 铁律)。
+# 所以英文在**读取时**重建,不碰 paper_ledger.csv 一个字节。note 是模板生成的固定几种形状,
+# 按正则还原、数字原样搬运;认不出的形状原样退回中文(宁可露中文,也不编假英文)。
+_NOTE_PATTERNS = [
+    (r"^全仓纳指@(\d+)$",              lambda m: f"All-in NASDAQ @{m.group(1)}"),
+    (r"^站上MA200，买入@(\d+)$",       lambda m: f"Crossed above MA200, bought @{m.group(1)}"),
+    (r"^跌破MA200，清仓@(\d+)$",       lambda m: f"Broke below MA200, went to cash @{m.group(1)}"),
+    (r"^tier(\d+)，买入@(\d+)$",      lambda m: f"tier{m.group(1)}, bought @{m.group(2)}"),
+    (r"^tier(\d+)，清仓@(\d+)$",      lambda m: f"tier{m.group(1)}, went to cash @{m.group(2)}"),
+    (r"^调仓→(.+)$",                   lambda m: f"Rebalanced -> {m.group(1)}"),
+    # 符号可选:实际值走 f"{...:+.2f}" 必带 +/-,但别让规则依赖格式化细节(格式一改就静默漏译)
+    (r"^隔夜([+-]?[\d.]+)%-成本$",     lambda m: f"Overnight {m.group(1)}% minus costs"),
+]
+
+
+def note_en(note):
+    """账本 note 的读时英文重建。认不出 → 原样返回中文。"""
+    if not isinstance(note, str) or not note:
+        return note
+    for pat, fn in _NOTE_PATTERNS:
+        m = re.match(pat, note.strip())
+        if m:
+            return fn(m)
+    return note
+
+
 OVERNIGHT_COST = 0.0002   # 每日双边交易成本 2bp（点差+滑点，零佣金时代的乐观估计）
 COLS = ["date", "strategy", "action", "holdings", "cash", "equity", "note", "logged_at"] + HASH_COLS
 HASH_FIELDS = ["date", "strategy", "action", "holdings", "cash", "equity", "note", "logged_at"]
@@ -198,20 +241,29 @@ def main():
         holdings = json.loads(last["holdings"])
         pos_desc = "每日隔夜持有QQQ" if strat == "overnight" else \
                    ("现金" if not holdings else "+".join(holdings))
+        pos_desc_en = ("Holds QQQ overnight, every day" if strat == "overnight" else
+                       ("Cash" if not holdings else "+".join(holdings)))
         trades = sub[~sub["action"].isin(["HOLD", "ROLL"])]
         out["strategies"][strat] = {
             "label": meta["label"], "desc": meta["desc"],
+            "label_en": meta["label_en"], "desc_en": meta["desc_en"],
             "equity": float(last["equity"]),
             "ret_pct": round((float(last["equity"]) / START_CAPITAL - 1) * 100, 2),
-            "position": pos_desc,
+            "position": pos_desc, "position_en": pos_desc_en,
             "n_trades": int(len(trades)),
             "last_action": f"{trades.iloc[-1]['date']} {trades.iloc[-1]['note']}" if len(trades) else "—",
+            # 英文在**读时**重建(note_en),账本历史行一个字节都不动
+            "last_action_en": (f"{trades.iloc[-1]['date']} {note_en(trades.iloc[-1]['note'])}"
+                               if len(trades) else "—"),
             "curve": {"dates": sub["date"].tolist(),
                       "equity": [float(x) for x in sub["equity"]]},
             "as_of": str(last["date"]),
         }
     out["note"] = ("五个策略同日起跑、收盘价机械成交、账本不可篡改。"
                    "这是前向实验：时间会告诉我们哪个基金经理称职。")
+    out["note_en"] = ("All five strategies started on the same day, trade mechanically at the close, "
+                      "and write to a tamper-evident ledger. This is a forward experiment: time will "
+                      "tell us which of these fund managers is any good.")
     with open(WEB_DIR / "paper.json", "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     rank = sorted(out["strategies"].items(), key=lambda kv: -kv[1]["ret_pct"])

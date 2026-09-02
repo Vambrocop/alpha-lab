@@ -613,6 +613,9 @@ def find_next_opportunities(signals, n_days=45, priors=None):
             "hol_lr":    round(hol_lr, 4),
             "cal_lr":    round(cal_lr, 4),
             "macro":     macro,
+            # 英文事件名(daily_brief 的"未来一周"要用;MACRO_EVENTS_EN 是单一真相源)
+            "macro_en":  MACRO_EVENTS_EN.get(d.strftime("%Y-%m-%d"), macro) if macro else None,
+            "dow_en":    ts.strftime("%a"),
             "reasons":   reasons,
             "reasons_en": reasons_en,
         })

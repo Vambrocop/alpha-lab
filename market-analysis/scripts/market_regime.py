@@ -64,6 +64,42 @@ def compute_herding(win=60):
             "history_start": str(avg.index[0].date()), "n_stocks": len(cols)}
 
 
+# ── 数据层双语(2026-09-01)：档位**只判一次**,中英从同一张表取两列 ──────────────
+# 不写两套 if/elif:那样改了中文档位忘改英文,英文读者看到的体制标签就与中文不一致
+# (同 cpcv.py 的做法)。表里第 0 列中文、第 1 列英文。
+_VIX_BANDS = {"extreme": ("极端高", "Extremely high"), "high": ("偏高", "Elevated"),
+              "low": ("偏低", "Low"), "mid": ("中性", "Neutral")}
+_CURVE_BANDS = {"inv": ("倒挂", "Inverted"), "flat": ("正斜率偏平", "Positive but flat"),
+                "normal": ("正常(正斜率)", "Normal (positively sloped)")}
+_CREDIT_BANDS = {"extreme": ("极端高(信用紧张)", "Extremely wide (credit stress)"),
+                 "high": ("偏高", "Elevated"), "low": ("偏低(信用宽松)", "Narrow (easy credit)"),
+                 "mid": ("中性", "Neutral")}
+_TERM_BANDS = {"back": ("倒挂(近月恐慌>远月)", "Backwardated (front-month fear > back-month)"),
+               "normal": ("正常(远月更高)", "Normal (back month higher)")}
+_HERD_BANDS = {"extreme": ("极端抱团(分散失效)", "Extreme herding (diversification fails)"),
+               "high": ("偏高(趋同)", "Elevated (converging)"),
+               "low": ("偏低(各走各的)", "Low (names moving independently)"),
+               "mid": ("中性", "Neutral")}
+_NAME_EN = {
+    "波动率 VIX": "Volatility (VIX)",
+    "收益率曲线 10Y-2Y": "Yield curve 10Y-2Y",
+    "信用利差 Baa-10Y": "Credit spread Baa-10Y",
+    "VIX 期限结构 (VIX3M-VIX)": "VIX term structure (VIX3M-VIX)",
+    "个股共动(羊群)": "Single-stock co-movement (herding)",
+}
+_NOTE_EN = {
+    "波动率 VIX": "Equity volatility / fear level (where today sits in its own history).",
+    "收益率曲线 10Y-2Y": "Term spread (monthly GS10/GS2, so the date can lag); inversions have "
+                        "historically been associated with recessions (a descriptive association, "
+                        "not a directional forecast).",
+    "信用利差 Baa-10Y": "Moody's Baa corporate yield minus the 10Y Treasury (a proxy for credit "
+                       "stress); a high percentile means tight credit (descriptive, not a forecast).",
+    "VIX 期限结构 (VIX3M-VIX)": "Backwardation means front-month fear exceeds back-month, which "
+                                "usually corresponds to acute market stress (describes the current "
+                                "state, not a forecast).",
+}
+
+
 def compute_regime(df):
     """从 combined_prices.csv 算各风险指标的现值/历史分位/体制标签 + 综合描述。"""
     comps = []
@@ -71,48 +107,65 @@ def compute_regime(df):
     if vix is None or len(vix) < 500:
         return {"status": "insufficient"}
     v = float(vix.iloc[-1]); vp = _pct(vix, v)
-    vix_label = "极端高" if vp >= 95 else "偏高" if vp >= 75 else "偏低" if vp <= 25 else "中性"
-    comps.append({"name": "波动率 VIX", "value": round(v, 1), "percentile": vp, "label": vix_label,
+    _k = "extreme" if vp >= 95 else "high" if vp >= 75 else "low" if vp <= 25 else "mid"
+    vix_label, vix_label_en = _VIX_BANDS[_k]
+    comps.append({"name": "波动率 VIX", "name_en": _NAME_EN["波动率 VIX"],
+                  "value": round(v, 1), "percentile": vp,
+                  "label": vix_label, "label_en": vix_label_en,
                   "asof": str(vix.index[-1].date()), "history_start": str(vix.index[0].date()),
-                  "note": "股市波动/恐慌水平(现值在历史的分位)"})
+                  "note": "股市波动/恐慌水平(现值在历史的分位)",
+                  "note_en": _NOTE_EN["波动率 VIX"]})
 
     y10, y2 = _col(df, "YIELD_10Y"), _col(df, "YIELD_2Y")
     if y10 is not None and y2 is not None:
         curve = float(y10.iloc[-1] - y2.iloc[-1])
-        c_label = "倒挂" if curve < 0 else "正斜率偏平" if curve < 0.5 else "正常(正斜率)"
-        comps.append({"name": "收益率曲线 10Y-2Y", "value": round(curve, 2), "label": c_label,
+        c_label, c_label_en = _CURVE_BANDS["inv" if curve < 0 else "flat" if curve < 0.5 else "normal"]
+        comps.append({"name": "收益率曲线 10Y-2Y", "name_en": _NAME_EN["收益率曲线 10Y-2Y"],
+                      "value": round(curve, 2), "label": c_label, "label_en": c_label_en,
                       "inverted": bool(curve < 0),
                       "asof": str(min(y10.index[-1], y2.index[-1]).date()),     # GS10/GS2 月频,会滞后
                       "history_start": str(max(y10.index[0], y2.index[0]).date()),
-                      "note": "期限利差(月频GS10/GS2,日期可能滞后);倒挂在历史上与衰退相关(描述性关联，非方向预测)"})
+                      "note": "期限利差(月频GS10/GS2,日期可能滞后);倒挂在历史上与衰退相关(描述性关联，非方向预测)",
+                      "note_en": _NOTE_EN["收益率曲线 10Y-2Y"]})
 
     credit = _col(df, "CREDIT_SPREAD")
     if credit is not None and len(credit) >= 500:
         cs = float(credit.iloc[-1]); csp = _pct(credit, cs)
-        cs_label = ("极端高(信用紧张)" if csp >= 95 else "偏高" if csp >= 75
-                    else "偏低(信用宽松)" if csp <= 25 else "中性")
-        comps.append({"name": "信用利差 Baa-10Y", "value": round(cs, 2), "percentile": csp, "label": cs_label,
+        _k = "extreme" if csp >= 95 else "high" if csp >= 75 else "low" if csp <= 25 else "mid"
+        cs_label, cs_label_en = _CREDIT_BANDS[_k]
+        comps.append({"name": "信用利差 Baa-10Y", "name_en": _NAME_EN["信用利差 Baa-10Y"],
+                      "value": round(cs, 2), "percentile": csp,
+                      "label": cs_label, "label_en": cs_label_en,
                       "asof": str(credit.index[-1].date()), "history_start": str(credit.index[0].date()),
-                      "note": "穆迪 Baa 公司债 减 10Y 国债(信用压力代理);高分位=信用紧张(描述性,非预测)"})
+                      "note": "穆迪 Baa 公司债 减 10Y 国债(信用压力代理);高分位=信用紧张(描述性,非预测)",
+                      "note_en": _NOTE_EN["信用利差 Baa-10Y"]})
 
     vix3m = _col(df, "VIX3M")
     if vix3m is not None and len(vix3m) > 200:
         term = float(vix3m.iloc[-1] - v)
-        t_label = "倒挂(近月恐慌>远月)" if term < 0 else "正常(远月更高)"
-        comps.append({"name": "VIX 期限结构 (VIX3M-VIX)", "value": round(term, 2), "label": t_label,
+        t_label, t_label_en = _TERM_BANDS["back" if term < 0 else "normal"]
+        comps.append({"name": "VIX 期限结构 (VIX3M-VIX)", "name_en": _NAME_EN["VIX 期限结构 (VIX3M-VIX)"],
+                      "value": round(term, 2), "label": t_label, "label_en": t_label_en,
                       "backwardation": bool(term < 0),
                       "asof": str(min(vix3m.index[-1], vix.index[-1]).date()),
                       "history_start": str(max(vix3m.index[0], vix.index[0]).date()),
-                      "note": "倒挂=近月恐慌高于远月，通常对应急性市场压力(描述当前状态，非预测)"})
+                      "note": "倒挂=近月恐慌高于远月，通常对应急性市场压力(描述当前状态，非预测)",
+                      "note_en": _NOTE_EN["VIX 期限结构 (VIX3M-VIX)"]})
 
     herd = compute_herding()
     if herd:
         hp = herd["percentile"]
-        h_label = ("极端抱团(分散失效)" if hp >= 95 else "偏高(趋同)" if hp >= 75
-                   else "偏低(各走各的)" if hp <= 25 else "中性")
-        comps.append({"name": "个股共动(羊群)", "value": herd["value"], "percentile": hp, "label": h_label,
+        _k = "extreme" if hp >= 95 else "high" if hp >= 75 else "low" if hp <= 25 else "mid"
+        h_label, h_label_en = _HERD_BANDS[_k]
+        comps.append({"name": "个股共动(羊群)", "name_en": _NAME_EN["个股共动(羊群)"],
+                      "value": herd["value"], "percentile": hp,
+                      "label": h_label, "label_en": h_label_en,
                       "history_start": herd["history_start"],
-                      "note": f"{herd['n_stocks']} 只大盘股近 60 日平均两两相关;高=危机式趋同(分散失效)、低=各走各的(描述性,非预测)"})
+                      "note": f"{herd['n_stocks']} 只大盘股近 60 日平均两两相关;高=危机式趋同(分散失效)、低=各走各的(描述性,非预测)",
+                      "note_en": f"Average pairwise correlation of {herd['n_stocks']} large-cap names "
+                                 "over the last 60 days; high = crisis-style convergence "
+                                 "(diversification stops working), low = names moving independently "
+                                 "(descriptive, not a forecast)."})
 
     # 综合(纯描述,不给方向/操作)
     bits = [f"波动率{vix_label}"]

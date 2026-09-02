@@ -607,11 +607,13 @@ function loadDigest() {
     const panel = document.getElementById("daily-digest-panel");
     if (panel) panel.style.display = "";
     const li = arr => (arr || []).map(x => `<li style="margin:.2rem 0;line-height:1.5;">${esc(x).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")}</li>`).join("");
+    // 三层列表各自取 *_en(英文模式且有英文时);缺英文回落中文,不会因漏译而空列表
+    const pick = k => ((vpLang() === "en" && d[k + "_en"]?.length) ? d[k + "_en"] : (d[k] || []));
     el.innerHTML =
       `<div style="font-size:.72rem;color:var(--muted);margin-bottom:.2rem;">${esc(d.date || "")}</div>`
-      + `<div style="font-weight:600;font-size:.82rem;margin:.3rem 0 .1rem;">${vpL("① 今天什么变了","① What changed today")}</div><ul style="margin:0;padding-left:1.1rem;">${li(d.tier1_facts)}</ul>`
-      + ((d.tier2_watch || []).length ? `<div style="font-weight:600;font-size:.82rem;margin:.45rem 0 .1rem;">${vpL("② 值得看一眼","② Worth a glance")} <span style="font-weight:400;color:var(--muted);font-size:.66rem;">${vpL("描述·非预测","descriptive · not a prediction")}</span></div><ul style="margin:0;padding-left:1.1rem;">${li(d.tier2_watch)}</ul>` : "")
-      + ((d.tier3_explore || []).length ? `<div style="font-weight:600;font-size:.82rem;margin:.45rem 0 .1rem;color:var(--muted);">${vpL("③ 探索","③ Exploratory")} <span style="font-weight:400;font-size:.66rem;">${vpL("很可能是噪声·不可交易","likely noise · not tradable")}</span></div><ul style="margin:0;padding-left:1.1rem;color:var(--muted);">${li(d.tier3_explore)}</ul>` : "")
+      + `<div style="font-weight:600;font-size:.82rem;margin:.3rem 0 .1rem;">${vpL("① 今天什么变了","① What changed today")}</div><ul style="margin:0;padding-left:1.1rem;">${li(pick("tier1_facts"))}</ul>`
+      + (pick("tier2_watch").length ? `<div style="font-weight:600;font-size:.82rem;margin:.45rem 0 .1rem;">${vpL("② 值得看一眼","② Worth a glance")} <span style="font-weight:400;color:var(--muted);font-size:.66rem;">${vpL("描述·非预测","descriptive · not a prediction")}</span></div><ul style="margin:0;padding-left:1.1rem;">${li(pick("tier2_watch"))}</ul>` : "")
+      + (pick("tier3_explore").length ? `<div style="font-weight:600;font-size:.82rem;margin:.45rem 0 .1rem;color:var(--muted);">${vpL("③ 探索","③ Exploratory")} <span style="font-weight:400;font-size:.66rem;">${vpL("很可能是噪声·不可交易","likely noise · not tradable")}</span></div><ul style="margin:0;padding-left:1.1rem;color:var(--muted);">${li(pick("tier3_explore"))}</ul>` : "")
       + (d.caveat ? `<div style="font-size:.66rem;color:var(--muted);margin-top:.4rem;border-top:1px solid var(--border-faint);padding-top:.3rem;">${esc(vpD(d,"caveat"))}</div>` : "");
   }).catch(() => {});
 }
@@ -868,7 +870,7 @@ function renderEventImpact() {
   const rows = Object.entries(es).map(([k, v]) => {
     const ar = v.avg_return, smallN = (v.n || 0) < 15;
     return `<tr style="border-top:1px solid var(--border-faint);">
-      <td style="padding:.25rem .5rem;">${esc(v.label || k)}</td>
+      <td style="padding:.25rem .5rem;">${esc(vpD(v,"label") || k)}</td>
       <td style="padding:.25rem .5rem;text-align:center;color:${smallN?"#e67e22":"var(--muted)"};" title="${vpL('样本量','Sample size')}">n=${esc(v.n)}${smallN?" ⚠":""}</td>
       <td style="padding:.25rem .5rem;text-align:right;color:var(--text);">${ar>0?"+":""}${esc(ar)}%</td>
       <td style="padding:.25rem .5rem;text-align:right;color:var(--muted);">${esc(v.win_rate)}% <span style="font-size:0.66rem;">(${vpL("基准","baseline")}${esc(v.base_win_rate)}%)</span></td>

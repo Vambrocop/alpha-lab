@@ -46,13 +46,13 @@ _FRAGMENTS = [
     ("地缘冲击", "geopolitical shock"), ("银行危机", "banking crisis"),
     ("突破", " breakthrough"), ("飙升", " spike"), ("首次", "first "),
     # 体制/事件
-    ("倒挂", "inversion"), ("体制", "regime"), ("恐慌", "fear"), ("贪婪", "greed"),
+    ("倒挂", "inversion"), ("体制", "regime"), ("恐慌", " fear"), ("贪婪", " greed"),
     ("次日", "next day"), ("前向", "forward"), ("基率", "base rate"),
     # 实测第二批漏网
     ("油价", "Oil price"), ("年份尾数", "year-digit"), ("尾数", "digit"),
     ("总统任期年", "presidential-term year"), ("总统", "presidential "),
     ("期限结构", " term structure"), ("波动率", "volatility"), ("利率", "rates"),
-    ("大盘", "broad market"), ("个股", "single stock"), ("指数", "index"),
+    ("大盘", "broad market"), ("个股", "single stock"), ("指数", " index"),
     ("上涨", " up"), ("下跌", " down"), ("买入", " buy"), ("卖出", " sell"),
     # 实测第三批漏网
     ("隔夜", "overnight"), ("走弱", " weakens"), ("走强", " strengthens"),

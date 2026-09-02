@@ -1074,19 +1074,22 @@ async function loadBriefPanel() {
     // 🚦 关键指标红绿灯（直接看的状态层）
     const LC = { green: "#2ecc71", yellow: "#f1c40f", red: "#e74c3c" };
     const lights = (b.lights || []).map(l =>
-      `<div title="${esc(l.note)}" style="flex:1;min-width:96px;text-align:center;padding:.35rem .2rem;
+      `<div title="${esc(vpD(l,"note"))}" style="flex:1;min-width:96px;text-align:center;padding:.35rem .2rem;
            border:1px solid ${LC[l.status]}55;border-radius:7px;background:${LC[l.status]}11;cursor:help;">
-        <div style="font-size:0.62rem;color:var(--muted);">${esc(l.name)}</div>
-        <div style="font-size:0.78rem;font-weight:700;color:${LC[l.status]};">●&nbsp;${esc(l.value)}</div>
+        <div style="font-size:0.62rem;color:var(--muted);">${esc(vpD(l,"name"))}</div>
+        <div style="font-size:0.78rem;font-weight:700;color:${LC[l.status]};">●&nbsp;${esc(vpD(l,"value"))}</div>
       </div>`).join("");
     const lightsHtml = lights
       ? `<div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.55rem;">${lights}</div>` : "";
-    el.innerHTML = lightsHtml + (b.lines || []).map(l => {
-      const m = l.match(/^【(.+?)】(.*)$/);
+    // 英文行用 [Label] 而非【标签】,两种前缀都认;缺英文回落中文,不会空白
+    const briefLines = (vpLang() === "en" && b.lines_en?.length) ? b.lines_en : (b.lines || []);
+    el.innerHTML = lightsHtml + briefLines.map(l => {
+      const m = l.match(/^【(.+?)】(.*)$/) || l.match(/^\[(.+?)\]\s*(.*)$/);
       if (!m) return `<div>${esc(l)}</div>`;
       const warn = m[2].includes("⚠");
+      const brk = l.startsWith("【") ? ["【", "】"] : ["[", "]"];
       return `<div style="padding:.18rem 0;">
-        <span style="color:var(--muted);font-size:0.72rem;">【${esc(m[1])}】</span>
+        <span style="color:var(--muted);font-size:0.72rem;">${brk[0]}${esc(m[1])}${brk[1]}</span>
         <span style="${warn ? "color:#e67e22;" : ""}">${esc(m[2])}</span></div>`;
     }).join("");
   } catch(e) {
@@ -1214,17 +1217,17 @@ async function loadPaperPanel() {
     return `<div style="display:flex;justify-content:space-between;align-items:center;gap:.5rem;
         padding:.45rem .55rem;border:1px solid var(--border);border-radius:8px;margin-bottom:.4rem;">
       <div>
-        <div style="font-weight:700;">${medal}${s.label}
+        <div style="font-weight:700;">${medal}${vpD(s,"label")}
           <span style="color:${rc};font-weight:800;margin-left:.4rem;">${s.ret_pct>0?"+":""}${s.ret_pct}%</span>
           <span style="color:var(--muted);font-size:0.72rem;margin-left:.3rem;">$${Math.round(s.equity).toLocaleString()}</span>
         </div>
-        <div style="color:var(--muted);font-size:0.68rem;margin-top:.1rem;">${s.desc}</div>
-        <div style="font-size:0.7rem;margin-top:.1rem;">${vpL("仓位：","Position: ")}<b>${s.position}</b>
-          <span style="color:var(--muted)">· ${vpL(`${s.n_trades}次交易`, `${s.n_trades} trades`)} · ${s.last_action}</span></div>
+        <div style="color:var(--muted);font-size:0.68rem;margin-top:.1rem;">${vpD(s,"desc")}</div>
+        <div style="font-size:0.7rem;margin-top:.1rem;">${vpL("仓位：","Position: ")}<b>${vpD(s,"position")}</b>
+          <span style="color:var(--muted)">· ${vpL(`${s.n_trades}次交易`, `${s.n_trades} trades`)} · ${vpD(s,"last_action")}</span></div>
       </div>
     </div>`;
   }).join("") + `<div style="color:var(--muted);font-size:0.68rem;margin-top:.2rem;">
-    ${vpL(`每个 $${p.start_capital.toLocaleString()} · 自 ${p.start_date} 同日起跑 · ${p.note}`, `$${p.start_capital.toLocaleString()} each · all started on ${p.start_date} · ${p.note}`)}</div>`;
+    ${vpL(`每个 $${p.start_capital.toLocaleString()} · 自 ${p.start_date} 同日起跑 · ${p.note}`, `$${p.start_capital.toLocaleString()} each · all started on ${p.start_date} · ${vpD(p,"note")}`)}</div>`;
 
   // 净值曲线（数据来自各策略 curve，积累几个交易日后才有形状）
   const eqEl = document.getElementById("chart-equity");
@@ -1235,7 +1238,7 @@ async function loadPaperPanel() {
     const eqDates = strats.map(s => s.curve?.dates || []).sort((a, b) => b.length - a.length)[0] || [];
     Plotly.newPlot("chart-equity", strats.map(s => ({
       x: s.curve.dates, y: s.curve.equity, type: "scatter", mode: "lines",
-      name: s.label,
+      name: vpD(s,"label"),
     })), {...DARK, yaxis:{...DARK.yaxis, title: vpL("净值 $","Equity $")}, hovermode:"x unified",
       legend:{orientation:"h", y:1.1}}, {responsive:true});
     if (typeof vpRangeBar === "function") vpRangeBar("chart-equity", { dates: eqDates });
@@ -1259,14 +1262,16 @@ async function loadReportPanel() {
     return;
   }
   el.innerHTML = (rep.sections || []).map(s => {
-    const cols = s.table?.length ? Object.keys(s.table[0]) : [];
+    // 英文模式优先用 table_en(表头与单元格都是英文);缺就回落中文表——不会因为漏译而空表
+    const tbl = (vpLang() === "en" && s.table_en?.length) ? s.table_en : (s.table || []);
+    const cols = tbl.length ? Object.keys(tbl[0]) : [];
     const head = cols.map(c => `<th style="text-align:left;padding:.3rem .6rem;color:var(--muted);font-size:0.72rem;">${esc(c)}</th>`).join("");
-    const rows = (s.table || []).map(r =>
+    const rows = tbl.map(r =>
       `<tr>${cols.map(c => `<td style="padding:.3rem .6rem;border-top:1px solid var(--border-faint);">${esc(r[c])}</td>`).join("")}</tr>`).join("");
     return `<div style="margin-bottom:1.1rem;">
-      <div style="font-weight:700;margin-bottom:.35rem;">${esc(s.title)}</div>
+      <div style="font-weight:700;margin-bottom:.35rem;">${esc(vpD(s,"title"))}</div>
       <table style="border-collapse:collapse;min-width:50%;">${head ? `<tr>${head}</tr>` : ""}${rows}</table>
-      ${s.note ? `<div style="color:var(--muted);font-size:0.72rem;margin-top:.3rem;line-height:1.5;">${esc(s.note)}</div>` : ""}
+      ${s.note ? `<div style="color:var(--muted);font-size:0.72rem;margin-top:.3rem;line-height:1.5;">${esc(vpD(s,"note"))}</div>` : ""}
     </div>`;
   }).join("") + `<div style="color:var(--muted);font-size:0.68rem;">${vpL(`生成于 ${esc(rep.generated)} · 模型 v${esc(rep.model_version)}`, `Generated ${esc(rep.generated)} · model v${esc(rep.model_version)}`)}</div>`;
 }
