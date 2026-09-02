@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-02T07:50:01Z",
-  "as_of": "2026-09-02",
+  "generated": "2026-09-02T17:06:07Z",
+  "as_of": "2026-09-01",
   "price_start": "1992-11-23",
   "index_label": "ASX200 (^AXJO)",
   "lookback": 252,
@@ -13,30 +13,30 @@
   "any_robust": true,
   "base_rate": {
     "h60": {
-      "up_pct": 63.32,
+      "up_pct": 63.31,
       "mean_pct": 1.47,
       "median_pct": 1.99,
-      "n": 8478
+      "n": 8477
     },
     "h252": {
       "up_pct": 72.94,
       "mean_pct": 5.97,
       "median_pct": 6.82,
-      "n": 8286
+      "n": 8285
     }
   },
   "drawdown_curve": [
     {
       "dd_threshold_pct": 5,
       "horizon": 60,
-      "n_days": 3250,
+      "n_days": 3249,
       "n_episodes": 69,
       "n_episodes_with_fwd": 68,
       "n_independent": 31,
-      "up_pct": 67.2,
+      "up_pct": 67.19,
       "mean_pct": 2.27,
       "median_pct": 3.1,
-      "base_up_pct": 63.32,
+      "base_up_pct": 63.31,
       "base_mean_pct": 1.47,
       "diff_mean": 0.8,
       "ci95_mean": [
@@ -47,7 +47,7 @@
       "too_small_no_ci": false,
       "era1_up_pct": 62.25,
       "era1_mean_pct": 1.38,
-      "era2_up_pct": 76.22,
+      "era2_up_pct": 76.19,
       "era2_mean_pct": 3.9,
       "era_same_sign": true,
       "verdict": "crisis-driven-fragile"
@@ -85,7 +85,7 @@
       "up_pct": 61.7,
       "mean_pct": 1.81,
       "median_pct": 2.44,
-      "base_up_pct": 63.32,
+      "base_up_pct": 63.31,
       "base_mean_pct": 1.47,
       "diff_mean": 0.34,
       "ci95_mean": [
@@ -137,7 +137,7 @@
       "up_pct": 68.5,
       "mean_pct": 2.41,
       "median_pct": 3.4,
-      "base_up_pct": 63.32,
+      "base_up_pct": 63.31,
       "base_mean_pct": 1.47,
       "diff_mean": 0.94,
       "ci95_mean": [
@@ -189,7 +189,7 @@
       "up_pct": 60.64,
       "mean_pct": 1.75,
       "median_pct": 5.62,
-      "base_up_pct": 63.32,
+      "base_up_pct": 63.31,
       "base_mean_pct": 1.47,
       "diff_mean": 0.28,
       "ci95_mean": null,
@@ -235,7 +235,7 @@
       "up_pct": 60.34,
       "mean_pct": 2.87,
       "median_pct": 5.19,
-      "base_up_pct": 63.32,
+      "base_up_pct": 63.31,
       "base_mean_pct": 1.47,
       "diff_mean": 1.4,
       "ci95_mean": null,

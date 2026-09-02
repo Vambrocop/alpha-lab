@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-02T07:47:25Z",
-  "as_of": "2026-09-01",
+  "generated": "2026-09-02T17:03:33Z",
+  "as_of": "2026-09-02",
   "composite_start": "2000-09-28",
   "components_used": [
     "momentum",
@@ -10,7 +10,7 @@
   ],
   "min_stretches_ci": 8,
   "current": {
-    "composite": 58.2,
+    "composite": 65.1,
     "band": "greed",
     "components": [
       {
@@ -19,8 +19,8 @@
         "label_en": "Momentum",
         "definition_zh": "SP500 相对 125 日均线偏离(+10%→100,−10%→0)",
         "definition_en": "SP500 vs its 125-day moving average (+10% -> 100, -10% -> 0)",
-        "raw_value": 0.0483,
-        "subscore": 74.17,
+        "raw_value": 0.0521,
+        "subscore": 76.07,
         "available": true
       },
       {
@@ -29,8 +29,8 @@
         "label_en": "Volatility (inverted)",
         "definition_zh": "VIX 在过去 252 日中的分位(越低越贪婪)",
         "definition_en": "VIX's percentile over the trailing 252 days (lower VIX = greedier)",
-        "raw_value": 0.3254,
-        "subscore": 67.46,
+        "raw_value": 0.1587,
+        "subscore": 84.13,
         "available": true
       },
       {
@@ -39,8 +39,8 @@
         "label_en": "Term structure",
         "definition_zh": "VIX3M − VIX(contango 正=贪婪;仅 VIX3M 可得日,2006-07 起)",
         "definition_en": "VIX3M minus VIX (positive/contango = greedy; only on days VIX3M exists, from 2006-07)",
-        "raw_value": 2.0,
-        "subscore": 70.0,
+        "raw_value": 2.46,
+        "subscore": 74.6,
         "available": true
       },
       {
@@ -49,8 +49,8 @@
         "label_en": "Risk appetite",
         "definition_zh": "SP500 20 日收益 − 黄金 20 日收益(仅 GOLD 可得日)",
         "definition_en": "SP500 20-day return minus gold's 20-day return (only on days GOLD data exists)",
-        "raw_value": -0.0576,
-        "subscore": 21.2,
+        "raw_value": -0.0485,
+        "subscore": 25.77,
         "available": true
       }
     ]
@@ -65,7 +65,7 @@
         "n_independent": 38,
         "up_pct": 58.81,
         "mean_pct": 0.77,
-        "base_up_pct": 63.79,
+        "base_up_pct": 63.78,
         "base_mean_pct": 0.64,
         "diff_mean": 0.13,
         "ci95_mean": [
@@ -103,7 +103,7 @@
         "n_independent": 69,
         "up_pct": 63.35,
         "mean_pct": 0.89,
-        "base_up_pct": 63.79,
+        "base_up_pct": 63.78,
         "base_mean_pct": 0.64,
         "diff_mean": 0.25,
         "ci95_mean": [
@@ -141,7 +141,7 @@
         "n_independent": 93,
         "up_pct": 62.38,
         "mean_pct": 0.29,
-        "base_up_pct": 63.79,
+        "base_up_pct": 63.78,
         "base_mean_pct": 0.64,
         "diff_mean": -0.35,
         "ci95_mean": [
@@ -179,7 +179,7 @@
         "n_independent": 38,
         "up_pct": 63.82,
         "mean_pct": 0.55,
-        "base_up_pct": 63.79,
+        "base_up_pct": 63.78,
         "base_mean_pct": 0.64,
         "diff_mean": -0.09,
         "ci95_mean": [
@@ -193,10 +193,10 @@
       {
         "band": "greed",
         "horizon": 60,
-        "n_days": 2546,
+        "n_days": 2547,
         "n_stretches": 273,
         "n_independent": 10,
-        "up_pct": 67.95,
+        "up_pct": 67.96,
         "mean_pct": 1.72,
         "base_up_pct": 68.09,
         "base_mean_pct": 1.89,
@@ -212,12 +212,12 @@
       {
         "band": "extreme_greed",
         "horizon": 20,
-        "n_days": 1304,
+        "n_days": 1305,
         "n_stretches": 71,
         "n_independent": 55,
-        "up_pct": 67.56,
+        "up_pct": 67.51,
         "mean_pct": 0.78,
-        "base_up_pct": 63.79,
+        "base_up_pct": 63.78,
         "base_mean_pct": 0.64,
         "diff_mean": 0.14,
         "ci95_mean": [
