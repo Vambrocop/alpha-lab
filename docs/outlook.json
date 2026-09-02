@@ -1,12 +1,16 @@
 {
-  "generated": "2026-09-02T04:26:06Z",
+  "generated": "2026-09-02T07:47:37Z",
   "index_call": {
     "target": "纳指",
+    "target_en": "NASDAQ",
     "horizon": "短期",
+    "horizon_en": "short-term",
     "call": "看涨",
+    "call_en": "bullish",
     "prob": 0.585,
     "tier": 3,
-    "basis": "贝叶斯信号 prob=0.585、tier=3（模型直读，非保证）"
+    "basis": "贝叶斯信号 prob=0.585、tier=3（模型直读，非保证）",
+    "basis_en": "Bayesian signal prob=0.585, tier=3 (read straight off the model; not a guarantee)"
   },
   "bullish": [
     {

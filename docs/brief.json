@@ -1,18 +1,18 @@
 {
- "generated": "2026-09-02 04:26",
+ "generated": "2026-09-02 07:47",
  "model_version": "2.1",
  "lines": [
-  "【市场 09-01】纳指 ▼1.03%，标普 ▼0.71%，VIX ▲9.52%，BTC ▼1.51%",
+  "【市场 09-01】纳指 ▼1.03%，标普 ▼0.71%，VIX ▲0.31%，BTC ▲0.24%",
   "【信号】纳指（原始打分59%）、标普（原始打分51%）｜模型无样本外区分度：未来20日上涨概率≈基率 62% · 实验性信号",
-  "【风险】VIX期限结构正常（16.3 < 18.3），无恐慌；纳指20日年化波动 12%",
+  "【风险】VIX期限结构正常（16.3 < 18.3），无恐慌；纳指20日年化波动 16%",
   "【未来一周】09-03(周四)59%，09-04(周五)62%⚠非农就业(8月)，09-08(周二)58%，09-09(周三)59%，09-10(周四)59%",
   "【提示】09-04（周五）为本周最佳入场窗口（62%），建议尾盘买入",
   "【事件】09-04 非农就业(8月)；09-11 CPI发布(8月) —— 当日波动放大，避免重仓操作"
  ],
  "lines_en": [
-  "[Market 09-01] NASDAQ ▼1.03%, S&P 500 ▼0.71%, VIX ▲9.52%, BTC ▼1.51%",
+  "[Market 09-01] NASDAQ ▼1.03%, S&P 500 ▼0.71%, VIX ▲0.31%, BTC ▲0.24%",
   "[Signal] NASDAQ (raw score 59%), S&P 500 (raw score 51%) | the model shows no out-of-sample discrimination: the 20-day probability of a gain is ~the base rate of 62% · experimental signal",
-  "[Risk] VIX term structure normal (16.3 < 18.3), no panic; NASDAQ 20-day annualised volatility 12%",
+  "[Risk] VIX term structure normal (16.3 < 18.3), no panic; NASDAQ 20-day annualised volatility 16%",
   "[Week ahead] 09-03(Thu)59%, 09-04(Fri)62%⚠Nonfarm payrolls (for month 8), 09-08(Tue)58%, 09-09(Wed)59%, 09-10(Thu)59%",
   "[Note] 09-04 (Fri) is this week's best entry window (62%); buying near the close is suggested",
   "[Events] 09-04 Nonfarm payrolls (for month 8); 09-11 CPI release (for month 8) — volatility is amplified on the day; avoid large positions"
@@ -22,8 +22,8 @@
    "name": "趋势(MA200)",
    "name_en": "Trend (MA200)",
    "status": "green",
-   "value": "上方 7.2%",
-   "value_en": "above 7.2%",
+   "value": "上方 7.3%",
+   "value_en": "above 7.3%",
    "note": "牛熊分界线，下方时一切看空信号加倍认真",
    "note_en": "The bull/bear dividing line; below it, take every bearish signal twice as seriously."
   },
