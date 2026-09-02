@@ -1,44 +1,44 @@
 {
- "updated": "2026-09-02 19:56 UTC",
+ "updated": "2026-09-02 22:04 UTC",
  "items": [
   {
-   "time": "2026-09-02 19:45 UTC",
-   "title": "SpaceX’s big AI advantage is why this analyst thinks the stock could double",
+   "time": "2026-09-02 21:59 UTC",
+   "title": "Broadcom's stock drops 5% as weak guidance overshadows earnings beat",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 21:38 UTC",
+   "title": "Nvidia’s stock is climbing as investors get more confidence in an expanding base of AI customers",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-02 19:31 UTC",
-   "title": "Why Palantir’s stock is suffering its worst slump since February",
-   "impact": "negative",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 19:22 UTC",
-   "title": "Rising yields aren’t scaring off investors. Why money is still pouring into bond funds.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 19:15 UTC",
-   "title": "Here’s another way rising bond yields could take a bite out of Americans’ wallets",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 19:11 UTC",
-   "title": "Traders are piling into this international stock market that just pulled ahead of the Nasdaq",
+   "time": "2026-09-02 21:15 UTC",
+   "title": "New Jersey asks the Supreme Court to take on prediction markets",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 21:12 UTC",
+   "title": "Palantir’s stock is slumping. Why bond yields and Google may be to blame.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 21:11 UTC",
+   "title": "How Oracle’s ‘extremely controversial’ stock could more than double from here",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
