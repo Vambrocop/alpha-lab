@@ -1,9 +1,10 @@
 {
- "generated": "2026-09-01 23:34",
+ "generated": "2026-09-02 04:26",
  "model_version": "2.1",
  "sections": [
   {
    "title": "实盘成绩单（append-only日志，按模型版本）",
+   "title_en": "Live scorecard (append-only log, by model version)",
    "table": [
     {
      "版本": "v2.0",
@@ -18,10 +19,26 @@
      "5日命中": "48.1%"
     }
    ],
-   "note": "自 2026-06-08 起共 118 条。命中=方向判断正确（prob>50% 且实际上涨，或反之）。样本少时波动大，4周后才有统计意义。"
+   "table_en": [
+    {
+     "Version": "v2.0",
+     "Logged": 2,
+     "1d hit": "0.0%",
+     "5d hit": "100.0%"
+    },
+    {
+     "Version": "v2.1",
+     "Logged": 116,
+     "1d hit": "43.0%",
+     "5d hit": "48.1%"
+    }
+   ],
+   "note": "自 2026-06-08 起共 118 条。命中=方向判断正确（prob>50% 且实际上涨，或反之）。样本少时波动大，4周后才有统计意义。",
+   "note_en": "118 entries since 2026-06-08. A 'hit' means the direction call was right (prob>50% and the market rose, or the reverse). Small samples swing a lot; this only becomes statistically meaningful after about 4 weeks."
   },
   {
    "title": "Walk-Forward 样本外验证（纳指）",
+   "title_en": "Walk-forward out-of-sample validation (NASDAQ)",
    "table": [
     {
      "折数": 6,
@@ -30,10 +47,20 @@
      "验证窗口": "20日"
     }
    ],
-   "note": "负值=高档位信号在没见过的数据上没有跑赢基准。这是模型最诚实的成绩，也是为什么显示概率要经过校准、决策要参考校准后概率。"
+   "table_en": [
+    {
+     "Folds": 6,
+     "Tier>=4 OOS edge": "-1.53pp",
+     "Significant folds": "0/6",
+     "Validation window": "20d"
+    }
+   ],
+   "note": "负值=高档位信号在没见过的数据上没有跑赢基准。这是模型最诚实的成绩，也是为什么显示概率要经过校准、决策要参考校准后概率。",
+   "note_en": "A negative number means the high-tier signal did not beat the benchmark on data it had never seen. This is the model's most honest scoreline, and it is exactly why the displayed probability goes through calibration and why decisions should use the calibrated probability."
   },
   {
    "title": "概率校准映射（原始概率 → 历史实际20日胜率）",
+   "title_en": "Probability calibration map (raw probability -> actual historical 20-day win rate)",
    "table": [
     {
      "模型概率": "54%",
@@ -64,22 +91,64 @@
      "实际胜率": "66.9%"
     }
    ],
-   "note": "模型原始概率系统性偏低（55%档实际约60-64%），因为基准日上涨概率本身就≈63%。"
+   "table_en": [
+    {
+     "Model probability": "54%",
+     "Actual win rate": "66.6%"
+    },
+    {
+     "Model probability": "58%",
+     "Actual win rate": "66.6%"
+    },
+    {
+     "Model probability": "60%",
+     "Actual win rate": "66.6%"
+    },
+    {
+     "Model probability": "62%",
+     "Actual win rate": "66.6%"
+    },
+    {
+     "Model probability": "63%",
+     "Actual win rate": "66.6%"
+    },
+    {
+     "Model probability": "65%",
+     "Actual win rate": "66.6%"
+    },
+    {
+     "Model probability": "67%",
+     "Actual win rate": "66.9%"
+    }
+   ],
+   "note": "模型原始概率系统性偏低（55%档实际约60-64%），因为基准日上涨概率本身就≈63%。",
+   "note_en": "The model's raw probabilities are systematically too low (the 55% bucket actually runs about 60-64%), because the base rate of an up day is itself around 63%."
   },
   {
    "title": "当前市场状态（历史分位）",
+   "title_en": "Current market state (historical percentile)",
    "table": [
     {
-     "20日波动率": "16%（高于41%的历史日）",
+     "20日波动率": "12%（高于24%的历史日）",
      "距52周高点": "-3.7%",
-     "RSI14": "43",
+     "RSI14": "40",
      "VIX期限结构": "正常"
     }
    ],
-   "note": "波动率分位>80%时历史上未来20日胜率下降；倒挂期反而常接近底部（胜率64.8%）。"
+   "table_en": [
+    {
+     "20d volatility": "12% (above 24% of historical days)",
+     "From 52w high": "-3.7%",
+     "RSI14": "40",
+     "VIX term structure": "Normal"
+    }
+   ],
+   "note": "波动率分位>80%时历史上未来20日胜率下降；倒挂期反而常接近底部（胜率64.8%）。",
+   "note_en": "Historically, when the volatility percentile is above 80% the next-20-day win rate falls; periods of inversion, by contrast, have often been close to a bottom (64.8% win rate)."
   },
   {
    "title": "模拟盘五策略竞技（自 2026-06-10 各 $10,000）",
+   "title_en": "Five-strategy paper competition (since 2026-06-10, $10,000 each)",
    "table": [
     {
      "策略": "🌙 隔夜",
@@ -117,7 +186,45 @@
      "交易": 3
     }
    ],
-   "note": "五个策略同日起跑、收盘价机械成交、账本不可篡改。这是前向实验：时间会告诉我们哪个基金经理称职。"
+   "table_en": [
+    {
+     "Strategy": "🌙 Overnight",
+     "Equity": "$10,490",
+     "Return": "+4.90%",
+     "Position": "Holds QQQ overnight, every day",
+     "Trades": 0
+    },
+    {
+     "Strategy": "🐢 Buy & hold",
+     "Equity": "$10,370",
+     "Return": "+3.70%",
+     "Position": "NASDAQ",
+     "Trades": 1
+    },
+    {
+     "Strategy": "📈 Trend",
+     "Equity": "$10,370",
+     "Return": "+3.70%",
+     "Position": "NASDAQ",
+     "Trades": 1
+    },
+    {
+     "Strategy": "🎯 Signal",
+     "Equity": "$9,895",
+     "Return": "-1.05%",
+     "Position": "NASDAQ",
+     "Trades": 1
+    },
+    {
+     "Strategy": "🚀 Momentum",
+     "Equity": "$8,206",
+     "Return": "-17.94%",
+     "Position": "SNDK+AMD+MU",
+     "Trades": 3
+    }
+   ],
+   "note": "五个策略同日起跑、收盘价机械成交、账本不可篡改。这是前向实验：时间会告诉我们哪个基金经理称职。",
+   "note_en": "All five strategies started on the same day, trade mechanically at the close, and write to a tamper-evident ledger. This is a forward experiment: time will tell us which of these fund managers is any good."
   }
  ]
 }

@@ -1,32 +1,11 @@
 {
-  "generated": "2026-09-01T23:37:22Z",
+  "generated": "2026-09-02T04:28:17Z",
   "public": false,
   "currency": "AUD",
   "fx_note": "美股按各自入场日/当日 AUD/USD 折成澳元;汇率波动会真实改变澳元收益,已计入。",
   "n_portfolios": 4,
   "n_pending": 0,
   "portfolios": [
-    {
-      "portfolio": "澳股指数",
-      "invested_aud": 10000.0,
-      "value_aud": 10028.41,
-      "positions": [
-        {
-          "symbol": "VAS.AX",
-          "shares": 88.77841,
-          "aud_invested": 10000.0,
-          "value_aud": 10028.41,
-          "ret_pct": 0.28,
-          "entry_date": "2026-09-01",
-          "entry_px": "112.64",
-          "fx_entry": "1.0",
-          "status": "open",
-          "exit_date": null
-        }
-      ],
-      "closed": [],
-      "ret_pct": 0.28
-    },
     {
       "portfolio": "我的选股",
       "invested_aud": 10000.0,
@@ -149,6 +128,27 @@
       ],
       "closed": [],
       "ret_pct": -0.46
+    },
+    {
+      "portfolio": "澳股指数",
+      "invested_aud": 10000.0,
+      "value_aud": 9916.55,
+      "positions": [
+        {
+          "symbol": "VAS.AX",
+          "shares": 88.77841,
+          "aud_invested": 10000.0,
+          "value_aud": 9916.55,
+          "ret_pct": -0.83,
+          "entry_date": "2026-09-01",
+          "entry_px": "112.64",
+          "fx_entry": "1.0",
+          "status": "open",
+          "exit_date": null
+        }
+      ],
+      "closed": [],
+      "ret_pct": -0.83
     }
   ],
   "pending": [],

@@ -1,16 +1,16 @@
 {
- "updated": "2026-09-01 23:34 UTC",
+ "updated": "2026-09-02 04:26 UTC",
  "items": [
   {
-   "time": "2026-09-01 21:56 UTC",
-   "title": "Dow drops below a key chart level, warning of more trouble ahead",
+   "time": "2026-09-02 02:24 UTC",
+   "title": "Japanese green tea giant Ito En surges 8%, defying a broad market sell-off",
    "impact": "negative",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-09-01 21:52 UTC",
+   "time": "2026-09-02 00:19 UTC",
    "title": "Dell’s AI servers drive a stellar earnings performance, and a raised outlook",
    "impact": "neutral",
    "note": "",
@@ -18,7 +18,7 @@
    "kind": "auto"
   },
   {
-   "time": "2026-09-01 21:43 UTC",
+   "time": "2026-09-02 00:18 UTC",
    "title": "Palo Alto Networks’ stock falls despite strong AI cybersecurity demand",
    "impact": "neutral",
    "note": "",
@@ -26,19 +26,19 @@
    "kind": "auto"
   },
   {
-   "time": "2026-09-01 20:40 UTC",
-   "title": "10-year yield hits highest since January 2025 as higher oil prices stoke inflation worries",
+   "time": "2026-09-02 00:11 UTC",
+   "title": "Hugging Face's new duck robot is selling fast. A Chinese chip powers it",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-09-01 20:36 UTC",
-   "title": "This could be the 10-year Treasury’s tipping point into the danger zone",
+   "time": "2026-09-01 23:52 UTC",
+   "title": "China dissented from G20 statement opposing 'cheap exports' flooding market, Bessent says",
    "impact": "neutral",
    "note": "",
-   "source": "MarketWatch",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]

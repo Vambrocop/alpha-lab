@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T23:29:25.449220+00:00",
+  "generated": "2026-09-02T04:21:52.978169+00:00",
   "sources": {
     "asset:NASDAQ": {
       "name": "NASDAQ",
@@ -8,9 +8,9 @@
       "ticker": "^IXIC",
       "source": "live",
       "status": "ok",
-      "rows": 6705,
+      "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -21,9 +21,9 @@
       "ticker": "^NDX",
       "source": "live",
       "status": "ok",
-      "rows": 6705,
+      "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -36,7 +36,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -47,9 +47,9 @@
       "ticker": "^VIX",
       "source": "live",
       "status": "ok",
-      "rows": 6706,
+      "rows": 6707,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -58,11 +58,11 @@
       "kind": "asset",
       "provider": "Yahoo Finance",
       "ticker": "^VIX3M",
-      "source": "live",
+      "source": "live_intraday",
       "status": "ok",
       "rows": 5033,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -73,8 +73,8 @@
       "ticker": "DX-Y.NYB",
       "source": "live",
       "status": "ok",
-      "rows": 6734,
-      "last_date": "2026-09-01",
+      "rows": 6736,
+      "last_date": "2026-09-02",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -87,7 +87,7 @@
       "source": "live",
       "status": "ok",
       "rows": 4368,
-      "last_date": "2026-09-01",
+      "last_date": "2026-09-02",
       "age_days": 0,
       "stale_after_days": 2,
       "error": null
@@ -100,7 +100,7 @@
       "source": "live",
       "status": "ok",
       "rows": 3219,
-      "last_date": "2026-09-01",
+      "last_date": "2026-09-02",
       "age_days": 0,
       "stale_after_days": 2,
       "error": null
@@ -112,8 +112,8 @@
       "ticker": "CL=F",
       "source": "live",
       "status": "ok",
-      "rows": 6534,
-      "last_date": "2026-09-01",
+      "rows": 6535,
+      "last_date": "2026-09-02",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -125,8 +125,8 @@
       "ticker": "GC=F",
       "source": "live",
       "status": "ok",
-      "rows": 6525,
-      "last_date": "2026-09-01",
+      "rows": 6526,
+      "last_date": "2026-09-02",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -138,9 +138,9 @@
       "ticker": "^TNX",
       "source": "live",
       "status": "ok",
-      "rows": 6699,
+      "rows": 6700,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -151,9 +151,9 @@
       "ticker": "VNQ",
       "source": "live",
       "status": "ok",
-      "rows": 5515,
+      "rows": 5516,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -164,8 +164,8 @@
       "ticker": "AUDUSD=X",
       "source": "live",
       "status": "ok",
-      "rows": 5279,
-      "last_date": "2026-09-01",
+      "rows": 5280,
+      "last_date": "2026-09-02",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -177,8 +177,8 @@
       "ticker": "CNY=X",
       "source": "live",
       "status": "ok",
-      "rows": 6305,
-      "last_date": "2026-09-01",
+      "rows": 6306,
+      "last_date": "2026-09-02",
       "age_days": 0,
       "stale_after_days": 6,
       "error": null
@@ -192,7 +192,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -203,9 +203,9 @@
       "ticker": "^SOX",
       "source": "live",
       "status": "ok",
-      "rows": 6705,
+      "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -218,7 +218,7 @@
       "status": "ok",
       "rows": 319,
       "last_date": "2026-07-01",
-      "age_days": 62,
+      "age_days": 63,
       "stale_after_days": 120,
       "error": null
     },
@@ -231,7 +231,7 @@
       "status": "ok",
       "rows": 320,
       "last_date": "2026-08-01",
-      "age_days": 31,
+      "age_days": 32,
       "stale_after_days": 120,
       "error": null
     },
@@ -244,7 +244,7 @@
       "status": "ok",
       "rows": 318,
       "last_date": "2026-07-01",
-      "age_days": 62,
+      "age_days": 63,
       "stale_after_days": 120,
       "error": null
     },
@@ -257,7 +257,7 @@
       "status": "ok",
       "rows": 318,
       "last_date": "2026-07-01",
-      "age_days": 62,
+      "age_days": 63,
       "stale_after_days": 120,
       "error": null
     },
@@ -270,7 +270,7 @@
       "status": "ok",
       "rows": 320,
       "last_date": "2026-08-01",
-      "age_days": 31,
+      "age_days": 32,
       "stale_after_days": 120,
       "error": null
     },
@@ -283,7 +283,7 @@
       "status": "ok",
       "rows": 320,
       "last_date": "2026-08-01",
-      "age_days": 31,
+      "age_days": 32,
       "stale_after_days": 120,
       "error": null
     },
@@ -296,7 +296,7 @@
       "status": "ok",
       "rows": 6670,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 10,
       "error": null
     },
@@ -309,7 +309,7 @@
       "status": "ok",
       "rows": 785,
       "last_date": "2026-08-31",
-      "age_days": 1,
+      "age_days": 2,
       "stale_after_days": 10,
       "error": null
     },
@@ -322,7 +322,7 @@
       "status": "ok",
       "rows": 6663,
       "last_date": "2026-08-31",
-      "age_days": 1,
+      "age_days": 2,
       "stale_after_days": 10,
       "error": null
     },
@@ -335,7 +335,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -348,7 +348,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -361,7 +361,7 @@
       "status": "ok",
       "rows": 5544,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -374,7 +374,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -387,7 +387,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -400,7 +400,7 @@
       "status": "ok",
       "rows": 3592,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -413,7 +413,7 @@
       "status": "ok",
       "rows": 4069,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -426,7 +426,7 @@
       "status": "ok",
       "rows": 4294,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -439,7 +439,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -450,9 +450,9 @@
       "ticker": "COST",
       "source": "live",
       "status": "ok",
-      "rows": 6705,
+      "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -463,9 +463,9 @@
       "ticker": "LLY",
       "source": "live",
       "status": "ok",
-      "rows": 6705,
+      "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -476,9 +476,9 @@
       "ticker": "BRK-B",
       "source": "live",
       "status": "ok",
-      "rows": 6705,
+      "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -489,9 +489,9 @@
       "ticker": "KO",
       "source": "live",
       "status": "ok",
-      "rows": 6705,
+      "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -504,7 +504,7 @@
       "status": "ok",
       "rows": 56,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -517,7 +517,7 @@
       "status": "ok",
       "rows": 389,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -530,7 +530,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -543,7 +543,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -556,7 +556,7 @@
       "status": "ok",
       "rows": 6706,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -569,7 +569,7 @@
       "status": "ok",
       "rows": 6108,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     },
@@ -582,7 +582,7 @@
       "status": "ok",
       "rows": 1279,
       "last_date": "2026-09-01",
-      "age_days": 0,
+      "age_days": 1,
       "stale_after_days": 6,
       "error": null
     }
