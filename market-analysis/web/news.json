@@ -1,44 +1,44 @@
 {
- "updated": "2026-09-02 17:28 UTC",
+ "updated": "2026-09-02 19:56 UTC",
  "items": [
   {
-   "time": "2026-09-02 17:21 UTC",
-   "title": "New York Fed's Williams says yield surge due to strong economic prospects",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 16:19 UTC",
-   "title": "We're starting positions in 2 more defensive stocks to balance our AI exposure",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 15:42 UTC",
-   "title": "10-year U.S. Treasury yield hits highest level since November 2023",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-02 15:38 UTC",
-   "title": "Fed’s Williams ‘is opening options’ to interest-rate hikes. Why that could be ‘a bad trade.’",
+   "time": "2026-09-02 19:45 UTC",
+   "title": "SpaceX’s big AI advantage is why this analyst thinks the stock could double",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-02 15:16 UTC",
-   "title": "Chevron stock on track for record high as oil giant outlines $7 billion plan to expand in Venezuela",
-   "impact": "positive",
+   "time": "2026-09-02 19:31 UTC",
+   "title": "Why Palantir’s stock is suffering its worst slump since February",
+   "impact": "negative",
    "note": "",
    "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 19:22 UTC",
+   "title": "Rising yields aren’t scaring off investors. Why money is still pouring into bond funds.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 19:15 UTC",
+   "title": "Here’s another way rising bond yields could take a bite out of Americans’ wallets",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-02 19:11 UTC",
+   "title": "Traders are piling into this international stock market that just pulled ahead of the Nasdaq",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
