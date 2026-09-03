@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-03 16:51",
+ "generated": "2026-09-03 17:21",
  "model_version": "2.1",
  "sections": [
   {
@@ -129,17 +129,17 @@
    "title_en": "Current market state (historical percentile)",
    "table": [
     {
-     "20日波动率": "13%（高于29%的历史日）",
-     "距52周高点": "-1.9%",
-     "RSI14": "46",
+     "20日波动率": "13%（高于27%的历史日）",
+     "距52周高点": "-2.0%",
+     "RSI14": "47",
      "VIX期限结构": "正常"
     }
    ],
    "table_en": [
     {
-     "20d volatility": "13% (above 29% of historical days)",
-     "From 52w high": "-1.9%",
-     "RSI14": "46",
+     "20d volatility": "13% (above 27% of historical days)",
+     "From 52w high": "-2.0%",
+     "RSI14": "47",
      "VIX term structure": "Normal"
     }
    ],
