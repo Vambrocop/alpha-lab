@@ -1,18 +1,18 @@
 {
- "generated": "2026-09-03 19:59",
+ "generated": "2026-09-03 22:04",
  "model_version": "2.1",
  "lines": [
-  "【市场 09-03】纳指 ▲1.38%，标普 ▲1.04%，VIX ▼5.46%，BTC ▲5.79%",
+  "【市场 09-03】纳指 ▲1.40%，标普 ▲1.06%，VIX ▼5.79%，BTC ▲5.47%",
   "【信号】纳指（原始打分60%）、标普（原始打分53%）｜模型无样本外区分度：未来20日上涨概率≈基率 62% · 实验性信号",
-  "【风险】VIX期限结构正常（14.4 < 17.4），无恐慌；纳指20日年化波动 13%",
+  "【风险】VIX期限结构正常（14.3 < 17.4），无恐慌；纳指20日年化波动 13%",
   "【未来一周】09-04(周五)64%⚠非农就业(8月)，09-08(周二)60%，09-09(周三)61%，09-10(周四)60%，09-11(周五)59%⚠CPI发布(8月)",
   "【提示】09-04（周五）为本周最佳入场窗口（64%），建议尾盘买入",
   "【事件】09-04 非农就业(8月)；09-11 CPI发布(8月) —— 当日波动放大，避免重仓操作"
  ],
  "lines_en": [
-  "[Market 09-03] NASDAQ ▲1.38%, S&P 500 ▲1.04%, VIX ▼5.46%, BTC ▲5.79%",
+  "[Market 09-03] NASDAQ ▲1.40%, S&P 500 ▲1.06%, VIX ▼5.79%, BTC ▲5.47%",
   "[Signal] NASDAQ (raw score 60%), S&P 500 (raw score 53%) | the model shows no out-of-sample discrimination: the 20-day probability of a gain is ~the base rate of 62% · experimental signal",
-  "[Risk] VIX term structure normal (14.4 < 17.4), no panic; NASDAQ 20-day annualised volatility 13%",
+  "[Risk] VIX term structure normal (14.3 < 17.4), no panic; NASDAQ 20-day annualised volatility 13%",
   "[Week ahead] 09-04(Fri)64%⚠Nonfarm payrolls (for month 8), 09-08(Tue)60%, 09-09(Wed)61%, 09-10(Thu)60%, 09-11(Fri)59%⚠CPI release (for month 8)",
   "[Note] 09-04 (Fri) is this week's best entry window (64%); buying near the close is suggested",
   "[Events] 09-04 Nonfarm payrolls (for month 8); 09-11 CPI release (for month 8) — volatility is amplified on the day; avoid large positions"
@@ -31,7 +31,7 @@
    "name": "VIX期限结构",
    "name_en": "VIX term structure",
    "status": "green",
-   "value": "14.4/17.4",
+   "value": "14.3/17.4",
    "note": "倒挂=恐慌（历史上倒挂后20日胜率64.8%，常近底部）",
    "note_en": "Inversion = fear (historically the 20-day win rate after an inversion has been 64.8%, often close to a bottom)."
   },
@@ -39,7 +39,7 @@
    "name": "VIX水平",
    "name_en": "VIX level",
    "status": "green",
-   "value": "14.4",
+   "value": "14.3",
    "note": "<20平静 / 20-30警惕 / >30恐慌",
    "note_en": "<20 calm / 20-30 wary / >30 panic"
   },
@@ -47,7 +47,7 @@
    "name": "收益率曲线(10Y-2Y)",
    "name_en": "Yield curve (10Y-2Y)",
    "status": "green",
-   "value": "+0.40%",
+   "value": "+0.43%",
    "note": "倒挂(<0)是历史上最可靠的衰退预警，领先6-18个月",
    "note_en": "An inversion (<0) is historically the most reliable recession warning, leading by 6-18 months."
   },
@@ -55,8 +55,8 @@
    "name": "信用利差(HY)",
    "name_en": "Credit spread (HY)",
    "status": "green",
-   "value": "2.66%（20日-0.01）",
-   "value_en": "2.66% (20d -0.01)",
+   "value": "2.66%（20日-0.05）",
+   "value_en": "2.66% (20d -0.05)",
    "note": "信用市场比股市先闻到危险；快速走阔=避险",
    "note_en": "The credit market smells danger before equities do; a rapid widening means risk-off."
   }

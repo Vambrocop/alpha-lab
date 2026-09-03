@@ -1,44 +1,44 @@
 {
- "updated": "2026-09-03 19:59 UTC",
+ "updated": "2026-09-03 22:04 UTC",
  "items": [
   {
-   "time": "2026-09-03 19:55 UTC",
-   "title": "An old stock-market adage applies this month — how you should play it in 2026",
+   "time": "2026-09-03 21:52 UTC",
+   "title": "OpenAI begins rolling out Astra model after warning of its advanced cyber capabilities",
+   "impact": "negative",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-03 21:49 UTC",
+   "title": "Oura files for IPO amid Americans’ obsession with tracking their sleep, steps and heart rates",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-03 19:50 UTC",
-   "title": "Here's why Jim Cramer is putting Costco stock in the penalty box",
+   "time": "2026-09-03 21:34 UTC",
+   "title": "Here’s what Nvidia’s $13 billion Hugging Face deal means for the world of AI",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-03 19:38 UTC",
-   "title": "The big August jobs report is due out Friday. Here's what to expect for what has been a jobless summer",
+   "time": "2026-09-03 21:12 UTC",
+   "title": "Nvidia takes back control of the AI trade as Big Tech nears record highs",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Markets",
+   "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-03 19:25 UTC",
-   "title": "Options volume erupts in retail trading favorites as Robinhood, Tesla surge",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-03 19:18 UTC",
-   "title": "Vance says Fed should lower interest rates: 'Would be nice to have some help'",
+   "time": "2026-09-03 21:06 UTC",
+   "title": "These stocks in the red-hot healthcare sector have gotten too crowded to own",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]

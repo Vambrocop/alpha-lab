@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-03 19:59",
+ "generated": "2026-09-03 22:04",
  "model_version": "2.1",
  "sections": [
   {
@@ -14,9 +14,9 @@
     },
     {
      "版本": "v2.1",
-     "已记录": 118,
-     "1日命中": "44.0%",
-     "5日命中": "48.1%"
+     "已记录": 120,
+     "1日命中": "44.9%",
+     "5日命中": "49.1%"
     }
    ],
    "table_en": [
@@ -28,13 +28,13 @@
     },
     {
      "Version": "v2.1",
-     "Logged": 118,
-     "1d hit": "44.0%",
-     "5d hit": "48.1%"
+     "Logged": 120,
+     "1d hit": "44.9%",
+     "5d hit": "49.1%"
     }
    ],
-   "note": "自 2026-06-08 起共 120 条。命中=方向判断正确（prob>50% 且实际上涨，或反之）。样本少时波动大，4周后才有统计意义。",
-   "note_en": "120 entries since 2026-06-08. A 'hit' means the direction call was right (prob>50% and the market rose, or the reverse). Small samples swing a lot; this only becomes statistically meaningful after about 4 weeks."
+   "note": "自 2026-06-08 起共 122 条。命中=方向判断正确（prob>50% 且实际上涨，或反之）。样本少时波动大，4周后才有统计意义。",
+   "note_en": "122 entries since 2026-06-08. A 'hit' means the direction call was right (prob>50% and the market rose, or the reverse). Small samples swing a lot; this only becomes statistically meaningful after about 4 weeks."
   },
   {
    "title": "Walk-Forward 样本外验证（纳指）",
@@ -151,74 +151,74 @@
    "title_en": "Five-strategy paper competition (since 2026-06-10, $10,000 each)",
    "table": [
     {
-     "策略": "🌙 隔夜",
-     "净值": "$10,481",
-     "收益": "+4.81%",
-     "仓位": "每日隔夜持有QQQ",
-     "交易": 0
-    },
-    {
      "策略": "🐢 长持",
-     "净值": "$10,416",
-     "收益": "+4.16%",
+     "净值": "$10,562",
+     "收益": "+5.62%",
      "仓位": "NASDAQ",
      "交易": 1
     },
     {
      "策略": "📈 趋势",
-     "净值": "$10,416",
-     "收益": "+4.16%",
+     "净值": "$10,562",
+     "收益": "+5.62%",
      "仓位": "NASDAQ",
      "交易": 1
     },
     {
+     "策略": "🌙 隔夜",
+     "净值": "$10,502",
+     "收益": "+5.02%",
+     "仓位": "每日隔夜持有QQQ",
+     "交易": 0
+    },
+    {
      "策略": "🎯 信号",
-     "净值": "$9,940",
-     "收益": "-0.60%",
+     "净值": "$10,079",
+     "收益": "+0.79%",
      "仓位": "NASDAQ",
      "交易": 1
     },
     {
      "策略": "🚀 动量",
-     "净值": "$8,294",
-     "收益": "-17.06%",
+     "净值": "$8,299",
+     "收益": "-17.01%",
      "仓位": "SNDK+AMD+MU",
      "交易": 3
     }
    ],
    "table_en": [
     {
-     "Strategy": "🌙 Overnight",
-     "Equity": "$10,481",
-     "Return": "+4.81%",
-     "Position": "Holds QQQ overnight, every day",
-     "Trades": 0
-    },
-    {
      "Strategy": "🐢 Buy & hold",
-     "Equity": "$10,416",
-     "Return": "+4.16%",
+     "Equity": "$10,562",
+     "Return": "+5.62%",
      "Position": "NASDAQ",
      "Trades": 1
     },
     {
      "Strategy": "📈 Trend",
-     "Equity": "$10,416",
-     "Return": "+4.16%",
+     "Equity": "$10,562",
+     "Return": "+5.62%",
      "Position": "NASDAQ",
      "Trades": 1
     },
     {
+     "Strategy": "🌙 Overnight",
+     "Equity": "$10,502",
+     "Return": "+5.02%",
+     "Position": "Holds QQQ overnight, every day",
+     "Trades": 0
+    },
+    {
      "Strategy": "🎯 Signal",
-     "Equity": "$9,940",
-     "Return": "-0.60%",
+     "Equity": "$10,079",
+     "Return": "+0.79%",
      "Position": "NASDAQ",
      "Trades": 1
     },
     {
      "Strategy": "🚀 Momentum",
-     "Equity": "$8,294",
-     "Return": "-17.06%",
+     "Equity": "$8,299",
+     "Return": "-17.01%",
      "Position": "SNDK+AMD+MU",
      "Trades": 3
     }
