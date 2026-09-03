@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T16:54:09Z",
+  "generated": "2026-09-03T23:34:27Z",
   "public": false,
   "currency": "AUD",
   "fx_note": "美股按各自入场日/当日 AUD/USD 折成澳元;汇率波动会真实改变澳元收益,已计入。",
@@ -9,14 +9,14 @@
     {
       "portfolio": "我的选股",
       "invested_aud": 10000.0,
-      "value_aud": 10077.8,
+      "value_aud": 10165.64,
       "positions": [
         {
           "symbol": "INTC",
           "shares": 20.173905,
           "aud_invested": 2500.0,
-          "value_aud": 2544.74,
-          "ret_pct": 1.79,
+          "value_aud": 2581.58,
+          "ret_pct": 3.26,
           "entry_date": "2026-09-01",
           "entry_px": "88.63",
           "fx_entry": "0.715205",
@@ -27,8 +27,8 @@
           "symbol": "GOOGL",
           "shares": 5.332577,
           "aud_invested": 2500.0,
-          "value_aud": 2527.34,
-          "ret_pct": 1.09,
+          "value_aud": 2549.42,
+          "ret_pct": 1.98,
           "entry_date": "2026-09-01",
           "entry_px": "335.3",
           "fx_entry": "0.715205",
@@ -39,8 +39,8 @@
           "symbol": "AAPL",
           "shares": 5.503272,
           "aud_invested": 2500.0,
-          "value_aud": 2514.33,
-          "ret_pct": 0.57,
+          "value_aud": 2521.4,
+          "ret_pct": 0.86,
           "entry_date": "2026-09-01",
           "entry_px": "324.9",
           "fx_entry": "0.715205",
@@ -51,8 +51,8 @@
           "symbol": "PFE",
           "shares": 62.491722,
           "aud_invested": 2500.0,
-          "value_aud": 2491.39,
-          "ret_pct": -0.34,
+          "value_aud": 2513.24,
+          "ret_pct": 0.53,
           "entry_date": "2026-09-01",
           "entry_px": "28.612",
           "fx_entry": "0.715205",
@@ -61,19 +61,19 @@
         }
       ],
       "closed": [],
-      "ret_pct": 0.78
+      "ret_pct": 1.66
     },
     {
       "portfolio": "美股指数",
       "invested_aud": 10000.0,
-      "value_aud": 10052.51,
+      "value_aud": 10119.95,
       "positions": [
         {
           "symbol": "QQQ",
           "shares": 10.101483,
           "aud_invested": 10000.0,
-          "value_aud": 10052.51,
-          "ret_pct": 0.53,
+          "value_aud": 10119.95,
+          "ret_pct": 1.2,
           "entry_date": "2026-09-01",
           "entry_px": "708.02",
           "fx_entry": "0.715205",
@@ -82,19 +82,19 @@
         }
       ],
       "closed": [],
-      "ret_pct": 0.53
+      "ret_pct": 1.2
     },
     {
       "portfolio": "规则荐股",
       "invested_aud": 10000.0,
-      "value_aud": 9983.79,
+      "value_aud": 10028.32,
       "positions": [
         {
           "symbol": "AAPL",
           "shares": 7.352372,
           "aud_invested": 3340.0,
-          "value_aud": 3359.15,
-          "ret_pct": 0.57,
+          "value_aud": 3368.59,
+          "ret_pct": 0.86,
           "entry_date": "2026-09-01",
           "entry_px": "324.9",
           "fx_entry": "0.715205",
@@ -105,8 +105,8 @@
           "symbol": "KO",
           "shares": 27.029003,
           "aud_invested": 3330.0,
-          "value_aud": 3341.95,
-          "ret_pct": 0.36,
+          "value_aud": 3350.89,
+          "ret_pct": 0.63,
           "entry_date": "2026-09-01",
           "entry_px": "88.114",
           "fx_entry": "0.715205",
@@ -117,8 +117,8 @@
           "symbol": "LLY",
           "shares": 2.044084,
           "aud_invested": 3330.0,
-          "value_aud": 3282.69,
-          "ret_pct": -1.42,
+          "value_aud": 3308.84,
+          "ret_pct": -0.64,
           "entry_date": "2026-09-01",
           "entry_px": "1165.135",
           "fx_entry": "0.715205",
@@ -127,19 +127,19 @@
         }
       ],
       "closed": [],
-      "ret_pct": -0.16
+      "ret_pct": 0.28
     },
     {
       "portfolio": "澳股指数",
       "invested_aud": 10000.0,
-      "value_aud": 9927.2,
+      "value_aud": 10010.65,
       "positions": [
         {
           "symbol": "VAS.AX",
           "shares": 88.77841,
           "aud_invested": 10000.0,
-          "value_aud": 9927.2,
-          "ret_pct": -0.73,
+          "value_aud": 10010.65,
+          "ret_pct": 0.11,
           "entry_date": "2026-09-01",
           "entry_px": "112.64",
           "fx_entry": "1.0",
@@ -148,7 +148,7 @@
         }
       ],
       "closed": [],
-      "ret_pct": -0.73
+      "ret_pct": 0.11
     }
   ],
   "pending": [],

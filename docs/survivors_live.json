@@ -1,15 +1,15 @@
 {
-  "generated": "2026-09-03T16:51:39Z",
+  "generated": "2026-09-03T23:31:55Z",
   "as_of": "2026-09-03",
-  "n_survivors": 4,
-  "n_active": 2,
+  "n_survivors": 6,
+  "n_active": 3,
   "survivors": [
     {
       "family": "factor",
       "key": "BTC_mom20_pos",
       "name": "BTC 20 日动量为正（风险偏好代理）",
       "active": true,
-      "state": "BTC 近 20 日动量 +28.4%（高于 +5% 阈值）",
+      "state": "BTC 近 20 日动量 +28.9%（高于 +5% 阈值）",
       "up_pct": 75,
       "base_pct": 62,
       "window": "2000后",
@@ -31,7 +31,23 @@
       "window": "2000后",
       "dnote": "微弱偏正",
       "edge_plain": "标普金叉成立时 66% vs 全样本基率 63%（标普未来 20 日上涨率·2000后·微弱偏正）",
-      "recent_p": 0.018,
+      "recent_p": 0.019,
+      "modern": "现代仍有效",
+      "unstable": false,
+      "stability_note": ""
+    },
+    {
+      "family": "calendar",
+      "key": "september_sp500",
+      "name": "标普九月效应（九月历史最弱月）",
+      "active": true,
+      "state": "当前 9 月（正是 9 月·应期）",
+      "up_pct": 54,
+      "base_pct": 51,
+      "window": "2000后",
+      "dnote": "微弱偏正",
+      "edge_plain": "非九月 54% vs 九月 51%（当日上涨率·2000后·微弱偏正）",
+      "recent_p": 0.031968,
       "modern": "现代仍有效",
       "unstable": false,
       "stability_note": ""
@@ -53,6 +69,22 @@
       "stability_note": ""
     },
     {
+      "family": "calendar",
+      "key": "world_cup_year_nasdaq",
+      "name": "纳指世界杯年夏季效应（分心先验）",
+      "active": false,
+      "state": "当前 9 月（非夏季·休眠）",
+      "up_pct": 57,
+      "base_pct": 51,
+      "window": "2000后",
+      "dnote": "明显偏正",
+      "edge_plain": "非世界杯年的夏季 57% vs 世界杯年夏季 51%（当日上涨率·2000后·明显偏正）",
+      "recent_p": 0.098901,
+      "modern": "现代仍有效",
+      "unstable": true,
+      "stability_note": "⚠ 现代显著性临界（recent_p≈0.10·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
+    },
+    {
       "family": "rebound",
       "key": "p5_h1_nasdaq",
       "name": "纳指大跌后的次日走向",
@@ -63,10 +95,10 @@
       "window": "2000后",
       "dnote": "微弱偏负",
       "edge_plain": "纳指跌进历史最低 5% 的大跌日 51% vs 全样本基率 54%（次日上涨率·2000后·微弱偏负）",
-      "recent_p": 0.061,
+      "recent_p": 0.089,
       "modern": "现代仍有效",
-      "unstable": false,
-      "stability_note": ""
+      "unstable": true,
+      "stability_note": "⚠ 现代显著性临界（recent_p≈0.09·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
     }
   ],
   "caveat": "存活规律 = 在预声明候选池里扛过多重检验(BY-FDR)且现代子样本仍显著的历史规律。仅描述性、非预测非荐股；「应期」=今天该条件成立、「休眠」=今天不成立(休眠的别当当前信号)、「未接入」=当前态未监测(仅历史)；前向 OOS(门4)仍在累积、未确认；扛过检验≠下次一定灵；过去≠未来。"

@@ -1,6 +1,14 @@
 {
- "updated": "2026-09-03 22:04 UTC",
+ "updated": "2026-09-03 23:31 UTC",
  "items": [
+  {
+   "time": "2026-09-03 22:23 UTC",
+   "title": "Adobe just announced its next CEO. Here’s why its stock is dropping.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
   {
    "time": "2026-09-03 21:52 UTC",
    "title": "OpenAI begins rolling out Astra model after warning of its advanced cyber capabilities",
@@ -28,14 +36,6 @@
   {
    "time": "2026-09-03 21:12 UTC",
    "title": "Nvidia takes back control of the AI trade as Big Tech nears record highs",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-03 21:06 UTC",
-   "title": "These stocks in the red-hot healthcare sector have gotten too crowded to own",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
