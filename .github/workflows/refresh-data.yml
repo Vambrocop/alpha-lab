@@ -47,33 +47,36 @@ jobs:
       # light 运行复用上次全量运行的 data/（学习LR/回测/长历史），
       # 否则 build_signals 退化到手设 LR，小时级信号会漂移
       - name: Restore data cache from last run
+        # 2026-09-03 根治(§2 #1):**只缓存可再生的派生数据**,不再缓存整个 market-analysis/data。
+        # 原来 path 是整个目录 → 31 个 git 跟踪的 append-only 账本也被缓存 → restore-keys 命中
+        # 旧缓存时把陈旧账本整个回灌,再被 `git add -A` 提交成缩水版(07-24 连红四天、
+        # 08-29 抹掉用户自选组合配置,都是这个根因)。账本的真相在 git,缓存它只有坏处没有好处。
+        # 收窄后 raw/ 全部、processed/ 绝大部分仍被缓存(light 模式复用长历史/回测结果所必需),
+        # processed/ 里仅剩的 4 个跟踪文件由下一步无条件从 git 复位。
         uses: actions/cache@v4
         with:
-          path: market-analysis/data
+          path: |
+            market-analysis/data/raw
+            market-analysis/data/processed
           key: market-data-${{ github.run_id }}
           restore-keys: market-data-
 
-      - name: Re-assert append-only ledgers from git (cache can't override them)
-        # 实证隐患(06-30)：restore-keys 命中旧缓存时，会把陈旧版账本整个灌回 market-analysis/data、
-        # 盖掉之后才提交的行。git 已提交(HEAD)的版本才是真相——缓存回灌后立刻用它压一遍，
-        # 管道再往上 append 新行(sync/alert/pick 幂等去重，不丢数据)。
-        # 2026-08-27：自选组合两个文件也被这个坑吃掉过——my_portfolio.txt 是**输入**清单
-        # (不是账本):缓存回灌把用户填的四盘配置抹回旧版、再被 git add -A 提交,
-        # 下一轮就会把 9 笔持仓全判成「离场」。故输入清单也必须 re-assert(本步不限于账本)。
-        # 2026-07-28：此前只护 candidate_registry + overreaction 两个 → 其余 17 个 append-only 账本
-        # 在缓存陈旧时被 git add -A 提交成缩水版(真 bug，被防缩水门暴露)。改为覆盖全部 SPECS 账本 +
-        # manifest；清单漂移由 test_reassert_covers_ledgers.py 守。逐个 checkout(kb_ledger 未晋升时不存在→|| true)。
+      - name: Re-assert tracked data files from git (cache can't override them)
+        # 2026-09-03 改为**无清单**写法(§2 #1 收尾)。
+        #
+        # 原来这里手工列了 23 个账本文件名,逐个 `git checkout --`。问题不在它不管用,
+        # 而在**清单会漂移**:加了新账本忘了加进清单 → 那本账继续裸奔(08-29 用户的
+        # my_portfolio.txt 就是这么被抹掉的,当时清单里没有它)。为此还得再养一个
+        # 守门测试去盯清单——用测试去补一份本不该由人维护的清单。
+        #
+        # 现在直接对整个目录复位:`git checkout -- <dir>` 只作用于**被跟踪**的文件,
+        # 未跟踪的派生缓存(raw/、processed/ 里的中间产物)一律不碰。所以它天然覆盖
+        # 全部现有账本 + 将来新加的任何账本,清单不存在,也就无从漂移。
+        #
+        # 顺序:必须在 cache 回灌之后、流水线之前。流水线随后照常往账本 append。
         run: |
-          for led in \
-            autodiscovery_log.csv candidate_registry.csv kb_ledger.csv composite_log.csv \
-            regime_forward_log.csv senate_signal_log.csv btc_backtest_log.csv llm_read_log.csv \
-            llm_weekly_log.csv llm_monthly_log.csv ipo_alert_log.csv downturn_brief_log.csv \
-            ipo_aftermath_log.csv llm_prediction_log.csv pick_ledger.csv pick_ledger_v2.csv \
-            au_pick_ledger.csv insider_signal_log.csv processed/overreaction_signal_log.csv \
-            my_portfolio_ledger.csv my_portfolio.txt \
-            ledger_hashchain.csv watchdog_state.json; do
-            git checkout -- "market-analysis/data/$led" 2>/dev/null || true
-          done
+          git checkout -- market-analysis/data/ .benchmark-history.json
+          echo "已从 git HEAD 复位 $(git ls-files market-analysis/data/ | wc -l) 个被跟踪的数据文件"
 
       - name: Run pipeline (intraday 30-min = light, pre-open/post-close = full)
         env:
@@ -160,11 +163,14 @@ jobs:
           fi
 
       - name: Commit & push if data changed
+        # 2026-09-03(§2 #2/#3/#4):发布逻辑搬进 tools/ci_publish.py。
+        #   · 为什么搬:原来这段 commit/push 写在 YAML 里、**本地跑不了**,07-24~27 主流水线
+        #     连红四天就是改一次推一次等一轮 CI。现在 test_ci_publish.py 用真 git 裸仓
+        #     跑通"无改动/正常推/推冲突→rebase 重试/门告警"四条路径,先在本地红。
+        #   · `git add -A` → 显式暂存 web/docs/data + 根部 .benchmark-history.json:
+        #     误入工作树的东西(陈旧回灌、scratch、误改源码)再也进不了自动提交。
+        #     覆盖率由测试对着真实 CI 提交历史核,漏声明会当场变红。
+        #   · --guard 把防缩水门重新挂上,但**只警告不阻断**——07-28 它以阻断 push 的方式
+        #     失败,把全站停更四天,代价远大于它防的稀有丢行。
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --quiet || git commit -m "chore: auto-refresh market data [skip ci]"
-          # 远端可能有本地推送的新提交：rebase 后再推，失败重试一次
-          git pull --rebase --autostash origin main || true
-          git push || (git pull --rebase --autostash origin main && git push)
+          python tools/ci_publish.py             --message "chore: auto-refresh market data [skip ci]"             --guard tools/ci_ledger_guard.py             --empty-note "数据无变化,跳过提交"

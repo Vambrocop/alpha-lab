@@ -1,4 +1,7 @@
-#!/usr/bin/env python3
+# 刻意不写 `#!/usr/bin/env python3` shebang:Windows 的 py 启动器会遵循它、
+# 转交给 `python3`,而本机 python3 指向 Microsoft Store 占位程序 → **静默退出 49,
+# stdout/stderr 全空**。本地 `py tools/xxx.py` 会毫无征兆地"什么都没发生"。
+# CI 用 `python xxx.py` 调用,shebang 本就无用;去掉它换来本地可跑。
 """ci_ledger_guard.py — CI append-only 防缩水门(SPEC_LEDGER_GUARD)。
 
 push 前跑:工作树的每个 append-only 账本必须是 origin/main 对应账本的 **append-only 超集**

@@ -44,15 +44,7 @@ jobs:
         run: python market-analysis/scripts/llm_weekly_read.py
 
       - name: Commit & push if changed
+        # 同 refresh-data:发布逻辑走 tools/ci_publish.py(显式暂存 + 可本地测 + 门只警告)。
+        # 没配 LLM key 时周报无产出 → 脚本安静跳过并返回 0,这是**正常路径**不是失败。
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "weekly review unchanged (likely no LLM key) — skip commit"
-            exit 0
-          fi
-          git commit -m "data: LLM 本周回顾 [skip ci]"
-          # 远端可能有竞争提交：rebase 后再推，失败重试一次
-          git pull --rebase --autostash origin main || true
-          git push || (git pull --rebase --autostash origin main && git push)
+          python tools/ci_publish.py             --message "data: LLM 本周回顾 [skip ci]"             --guard tools/ci_ledger_guard.py             --empty-note "周报无变化(多半是没配 LLM key),跳过提交"
