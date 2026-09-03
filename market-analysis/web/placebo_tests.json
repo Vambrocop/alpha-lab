@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T23:27:52Z",
+  "generated": "2026-09-03T23:47:31Z",
   "method": "标签置换检验(permutation)；三态：真实/未显现/无定论(检验力不足)；并做 Benjamini-Hochberg 多重检验校正(q_value)——测了多个效应需控假发现率",
   "n_perm": 1000,
   "seed": 20260613,

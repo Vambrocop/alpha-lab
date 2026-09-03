@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T23:31:42Z",
+  "generated": "2026-09-03T23:51:33Z",
   "as_of": "2026-09-03",
   "composite_start": "2000-09-28",
   "components_used": [
@@ -10,7 +10,7 @@
   ],
   "min_stretches_ci": 8,
   "current": {
-    "composite": 69.6,
+    "composite": 69.5,
     "band": "greed",
     "components": [
       {
@@ -49,8 +49,8 @@
         "label_en": "Risk appetite",
         "definition_zh": "SP500 20 日收益 − 黄金 20 日收益(仅 GOLD 可得日)",
         "definition_en": "SP500 20-day return minus gold's 20-day return (only on days GOLD data exists)",
-        "raw_value": -0.0605,
-        "subscore": 19.77,
+        "raw_value": -0.0617,
+        "subscore": 19.17,
         "available": true
       }
     ]

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T23:28:01Z",
+  "generated": "2026-09-03T23:47:39Z",
   "method": "S&P 月度收益周期图 vs AR(1) 红噪声 surrogate；最强谱峰 vs surrogate 最强峰的全局检验(max-statistic，控多重比较)。",
   "caveat": "检验'过去是否真有超红噪声的周期成分'，**不预测周期会延续**。逐频率'超95%线'仅描述性(未控多重比较)；结论以全局 max-statistic 为准。基于 S&P500 月度收益。",
   "source": "S&P 500 (^GSPC) 月度收益",

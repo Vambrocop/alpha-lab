@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T23:31:03Z",
+  "generated": "2026-09-03T23:50:51Z",
   "method": "自动发现 Phase 1b：预注册有限候选(日历/反弹/因子)各路由到真统计算 p，经 quality_gate 双栏 BY-FDR(族内+跨族)+三态裁决。全部候选进分母、禁预筛、固定种子。",
   "caveat": "存活≠未来重演≠可交易；现代已淡=全段过FDR但现代测不到(疑被套利)；检验力不足=样本太小不下结论。因子族 FDR 为**无向双侧**(只问'有无可测边际'、不含方向判断，与 factor_pruning 的方向门控透镜口径不同)。门4样本外待接入。探索性，非预测、非荐股。",
   "q": 0.1,
@@ -4336,13 +4336,13 @@
       "candidate_id": "opt_706c7e01ed",
       "family": "options_sentiment",
       "key": "equity_pc_lo_h20",
-      "p": 0.14,
-      "recent_p": 0.14,
+      "p": 0.144,
+      "recent_p": 0.144,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.14,
+          "p": 0.144,
           "up_pct": 50,
           "base_pct": 66,
           "diff_pp": -15.8,
@@ -4350,7 +4350,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.14,
+          "p": 0.144,
           "up_pct": 50,
           "base_pct": 66,
           "diff_pp": -15.8,
@@ -7433,6 +7433,76 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
+      "candidate_id": "opt_d6053cc7a0",
+      "family": "options_sentiment",
+      "key": "total_pc_lo_h20",
+      "p": 0.308,
+      "recent_p": 0.308,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.308,
+          "up_pct": 58,
+          "base_pct": 66,
+          "diff_pp": -7.5,
+          "n": 48
+        },
+        {
+          "label": "2000后",
+          "p": 0.308,
+          "up_pct": 58,
+          "base_pct": 66,
+          "diff_pp": -7.5,
+          "n": 48
+        },
+        {
+          "label": "2021后",
+          "p": 0.824,
+          "up_pct": 64,
+          "base_pct": 67,
+          "diff_pp": -2.9,
+          "n": 11
+        },
+        {
+          "label": "近1年",
+          "p": null,
+          "up_pct": null,
+          "n": 7
+        }
+      ],
+      "decades": [
+        {
+          "decade": "2000s",
+          "up_pct": 43,
+          "base_pct": 53,
+          "diff_pp": -10.3,
+          "n": 7
+        },
+        {
+          "decade": "2010s",
+          "up_pct": 59,
+          "base_pct": 67,
+          "diff_pp": -7.9,
+          "n": 27
+        },
+        {
+          "decade": "2020s",
+          "up_pct": 64,
+          "base_pct": 68,
+          "diff_pp": -3.6,
+          "n": 14
+        }
+      ],
+      "effect": "期权情绪极端状态下未来持有期上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
       "candidate_id": "cal_2e5f17d421",
       "family": "calendar",
       "key": "month_nasdaq",
@@ -7512,76 +7582,6 @@
         }
       ],
       "effect": "因子为真时20日上涨率 vs 基率",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
-      "candidate_id": "opt_d6053cc7a0",
-      "family": "options_sentiment",
-      "key": "total_pc_lo_h20",
-      "p": 0.313,
-      "recent_p": 0.313,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.313,
-          "up_pct": 58,
-          "base_pct": 66,
-          "diff_pp": -7.5,
-          "n": 48
-        },
-        {
-          "label": "2000后",
-          "p": 0.313,
-          "up_pct": 58,
-          "base_pct": 66,
-          "diff_pp": -7.5,
-          "n": 48
-        },
-        {
-          "label": "2021后",
-          "p": 0.815,
-          "up_pct": 64,
-          "base_pct": 67,
-          "diff_pp": -3.0,
-          "n": 11
-        },
-        {
-          "label": "近1年",
-          "p": null,
-          "up_pct": null,
-          "n": 7
-        }
-      ],
-      "decades": [
-        {
-          "decade": "2000s",
-          "up_pct": 43,
-          "base_pct": 53,
-          "diff_pp": -10.3,
-          "n": 7
-        },
-        {
-          "decade": "2010s",
-          "up_pct": 59,
-          "base_pct": 67,
-          "diff_pp": -7.9,
-          "n": 27
-        },
-        {
-          "decade": "2020s",
-          "up_pct": 64,
-          "base_pct": 68,
-          "diff_pp": -3.6,
-          "n": 14
-        }
-      ],
-      "effect": "期权情绪极端状态下未来持有期上涨率 vs 基率",
       "survive_cross": false,
       "survive_cross_bh": false,
       "survive_family": false,
@@ -8387,7 +8387,7 @@
         },
         {
           "label": "2021后",
-          "p": 0.939,
+          "p": 0.934,
           "up_pct": 65,
           "base_pct": 67,
           "diff_pp": -1.5,
@@ -9576,78 +9576,6 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
-      "candidate_id": "opt_f09bd225c9",
-      "family": "options_sentiment",
-      "key": "equity_pc_hi_h10",
-      "p": 0.579,
-      "recent_p": 0.579,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.579,
-          "up_pct": 60,
-          "base_pct": 62,
-          "diff_pp": -2.2,
-          "n": 210
-        },
-        {
-          "label": "2000后",
-          "p": 0.579,
-          "up_pct": 60,
-          "base_pct": 62,
-          "diff_pp": -2.2,
-          "n": 210
-        },
-        {
-          "label": "2021后",
-          "p": 0.622,
-          "up_pct": 58,
-          "base_pct": 62,
-          "diff_pp": -3.7,
-          "n": 79
-        },
-        {
-          "label": "近1年",
-          "p": 0.54,
-          "up_pct": 67,
-          "base_pct": 59,
-          "diff_pp": 7.5,
-          "n": 12
-        }
-      ],
-      "decades": [
-        {
-          "decade": "2000s",
-          "up_pct": 57,
-          "base_pct": 51,
-          "diff_pp": 6.0,
-          "n": 21
-        },
-        {
-          "decade": "2010s",
-          "up_pct": 64,
-          "base_pct": 64,
-          "diff_pp": 0.1,
-          "n": 100
-        },
-        {
-          "decade": "2020s",
-          "up_pct": 56,
-          "base_pct": 63,
-          "diff_pp": -7.2,
-          "n": 89
-        }
-      ],
-      "effect": "期权情绪极端状态下未来持有期上涨率 vs 基率",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
       "candidate_id": "cal_398f5c0e31",
       "family": "calendar",
       "key": "opex_week_nasdaq",
@@ -9767,6 +9695,78 @@
         }
       ],
       "effect": "该月上涨率 vs 基率(两侧·机器枚举)",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
+      "candidate_id": "opt_f09bd225c9",
+      "family": "options_sentiment",
+      "key": "equity_pc_hi_h10",
+      "p": 0.589,
+      "recent_p": 0.589,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.589,
+          "up_pct": 60,
+          "base_pct": 62,
+          "diff_pp": -2.2,
+          "n": 210
+        },
+        {
+          "label": "2000后",
+          "p": 0.589,
+          "up_pct": 60,
+          "base_pct": 62,
+          "diff_pp": -2.2,
+          "n": 210
+        },
+        {
+          "label": "2021后",
+          "p": 0.625,
+          "up_pct": 58,
+          "base_pct": 62,
+          "diff_pp": -3.6,
+          "n": 79
+        },
+        {
+          "label": "近1年",
+          "p": 0.551,
+          "up_pct": 67,
+          "base_pct": 59,
+          "diff_pp": 7.5,
+          "n": 12
+        }
+      ],
+      "decades": [
+        {
+          "decade": "2000s",
+          "up_pct": 57,
+          "base_pct": 51,
+          "diff_pp": 6.0,
+          "n": 21
+        },
+        {
+          "decade": "2010s",
+          "up_pct": 64,
+          "base_pct": 64,
+          "diff_pp": 0.1,
+          "n": 100
+        },
+        {
+          "decade": "2020s",
+          "up_pct": 56,
+          "base_pct": 63,
+          "diff_pp": -7.1,
+          "n": 89
+        }
+      ],
+      "effect": "期权情绪极端状态下未来持有期上涨率 vs 基率",
       "survive_cross": false,
       "survive_cross_bh": false,
       "survive_family": false,
@@ -10623,13 +10623,13 @@
       "candidate_id": "opt_c8998dbbe6",
       "family": "options_sentiment",
       "key": "equity_pc_lo_h10",
-      "p": 0.707,
-      "recent_p": 0.707,
+      "p": 0.717,
+      "recent_p": 0.717,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.707,
+          "p": 0.717,
           "up_pct": 65,
           "base_pct": 62,
           "diff_pp": 2.5,
@@ -10637,7 +10637,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.707,
+          "p": 0.717,
           "up_pct": 65,
           "base_pct": 62,
           "diff_pp": 2.5,
@@ -10668,7 +10668,7 @@
           "decade": "2020s",
           "up_pct": 40,
           "base_pct": 63,
-          "diff_pp": -23.4,
+          "diff_pp": -23.3,
           "n": 5
         }
       ],
@@ -10684,13 +10684,13 @@
       "candidate_id": "opt_13e0620c3f",
       "family": "options_sentiment",
       "key": "total_pc_lo_h10",
-      "p": 0.714,
-      "recent_p": 0.714,
+      "p": 0.731,
+      "recent_p": 0.731,
       "recent_powered": true,
       "windows": [
         {
           "label": "完整",
-          "p": 0.714,
+          "p": 0.731,
           "up_pct": 65,
           "base_pct": 62,
           "diff_pp": 2.4,
@@ -10698,7 +10698,7 @@
         },
         {
           "label": "2000后",
-          "p": 0.714,
+          "p": 0.731,
           "up_pct": 65,
           "base_pct": 62,
           "diff_pp": 2.4,
@@ -10706,10 +10706,10 @@
         },
         {
           "label": "2021后",
-          "p": 0.94,
+          "p": 0.951,
           "up_pct": 64,
           "base_pct": 62,
-          "diff_pp": 1.7,
+          "diff_pp": 1.8,
           "n": 11
         },
         {
@@ -11883,10 +11883,10 @@
         },
         {
           "label": "2021后",
-          "p": 0.521,
+          "p": 0.529,
           "up_pct": 57,
           "base_pct": 62,
-          "diff_pp": -4.8,
+          "diff_pp": -4.7,
           "n": 63
         },
         {
@@ -12699,6 +12699,78 @@
       "reason": "未过跨族 BY-FDR"
     },
     {
+      "candidate_id": "opt_6b7c040f34",
+      "family": "options_sentiment",
+      "key": "equity_pc_hi_h20",
+      "p": 0.974,
+      "recent_p": 0.974,
+      "recent_powered": true,
+      "windows": [
+        {
+          "label": "完整",
+          "p": 0.974,
+          "up_pct": 66,
+          "base_pct": 66,
+          "diff_pp": -0.1,
+          "n": 210
+        },
+        {
+          "label": "2000后",
+          "p": 0.974,
+          "up_pct": 66,
+          "base_pct": 66,
+          "diff_pp": -0.1,
+          "n": 210
+        },
+        {
+          "label": "2021后",
+          "p": 0.706,
+          "up_pct": 63,
+          "base_pct": 67,
+          "diff_pp": -3.3,
+          "n": 79
+        },
+        {
+          "label": "近1年",
+          "p": 0.32,
+          "up_pct": 83,
+          "base_pct": 71,
+          "diff_pp": 12.7,
+          "n": 12
+        }
+      ],
+      "decades": [
+        {
+          "decade": "2000s",
+          "up_pct": 52,
+          "base_pct": 53,
+          "diff_pp": -0.7,
+          "n": 21
+        },
+        {
+          "decade": "2010s",
+          "up_pct": 71,
+          "base_pct": 67,
+          "diff_pp": 3.8,
+          "n": 100
+        },
+        {
+          "decade": "2020s",
+          "up_pct": 63,
+          "base_pct": 68,
+          "diff_pp": -5.0,
+          "n": 89
+        }
+      ],
+      "effect": "期权情绪极端状态下未来持有期上涨率 vs 基率",
+      "survive_cross": false,
+      "survive_cross_bh": false,
+      "survive_family": false,
+      "modern_status": "现代无边际",
+      "verdict": "dead",
+      "reason": "未过跨族 BY-FDR"
+    },
+    {
       "candidate_id": "str_b847620031",
       "family": "streak_down",
       "key": "down4_h5_sp500",
@@ -12906,78 +12978,6 @@
         }
       ],
       "effect": "该月上涨率 vs 基率(两侧·机器枚举)",
-      "survive_cross": false,
-      "survive_cross_bh": false,
-      "survive_family": false,
-      "modern_status": "现代无边际",
-      "verdict": "dead",
-      "reason": "未过跨族 BY-FDR"
-    },
-    {
-      "candidate_id": "opt_6b7c040f34",
-      "family": "options_sentiment",
-      "key": "equity_pc_hi_h20",
-      "p": 0.995,
-      "recent_p": 0.995,
-      "recent_powered": true,
-      "windows": [
-        {
-          "label": "完整",
-          "p": 0.995,
-          "up_pct": 66,
-          "base_pct": 66,
-          "diff_pp": -0.1,
-          "n": 210
-        },
-        {
-          "label": "2000后",
-          "p": 0.995,
-          "up_pct": 66,
-          "base_pct": 66,
-          "diff_pp": -0.1,
-          "n": 210
-        },
-        {
-          "label": "2021后",
-          "p": 0.679,
-          "up_pct": 63,
-          "base_pct": 67,
-          "diff_pp": -3.3,
-          "n": 79
-        },
-        {
-          "label": "近1年",
-          "p": 0.34,
-          "up_pct": 83,
-          "base_pct": 71,
-          "diff_pp": 12.3,
-          "n": 12
-        }
-      ],
-      "decades": [
-        {
-          "decade": "2000s",
-          "up_pct": 52,
-          "base_pct": 53,
-          "diff_pp": -0.7,
-          "n": 21
-        },
-        {
-          "decade": "2010s",
-          "up_pct": 71,
-          "base_pct": 67,
-          "diff_pp": 3.8,
-          "n": 100
-        },
-        {
-          "decade": "2020s",
-          "up_pct": 63,
-          "base_pct": 68,
-          "diff_pp": -5.0,
-          "n": 89
-        }
-      ],
-      "effect": "期权情绪极端状态下未来持有期上涨率 vs 基率",
       "survive_cross": false,
       "survive_cross_bh": false,
       "survive_family": false,

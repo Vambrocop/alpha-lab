@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T23:31:39Z",
+  "generated": "2026-09-03T23:51:29Z",
   "caveat": "这是个股的**风险画像**，描述它历史上是什么样——**不预测涨跌、不荐股、不给买卖点**。年化波动=历史日收益波动；最深回撤=历史峰到谷最大跌幅（可能极深，提示风险非机会）；β=对纳指的敏感度（>1 比大盘更颠，<1 更稳），是风险特征不是收益承诺。数据不足的票如实标注。",
   "benchmark": "NASDAQ",
   "min_days": 250,
@@ -37,7 +37,7 @@
           {
             "level": 0.999,
             "var_pct": 12.24,
-            "es_pct": 16.62
+            "es_pct": 16.63
           }
         ]
       },
@@ -222,9 +222,9 @@
         "status": "ok",
         "horizon": 20,
         "level": 0.9,
-        "lower_pct": -11.78,
+        "lower_pct": -11.79,
         "upper_pct": 14.46,
-        "width_pct": 26.24,
+        "width_pct": 26.25,
         "empirical_coverage": 0.941,
         "n_test": 101,
         "n_windows": 335
@@ -250,7 +250,7 @@
             "p10_pct": -6.12,
             "p90_pct": 7.41,
             "worst_pct": -21.73,
-            "best_pct": 23.33,
+            "best_pct": 23.32,
             "pct_negative": 41.1
           },
           {
@@ -261,7 +261,7 @@
             "p90_pct": 14.06,
             "worst_pct": -33.33,
             "best_pct": 44.88,
-            "pct_negative": 45.7
+            "pct_negative": 45.4
           }
         ]
       },
@@ -647,7 +647,7 @@
             "p90_pct": 16.63,
             "worst_pct": -33.53,
             "best_pct": 73.11,
-            "pct_negative": 45.2
+            "pct_negative": 44.9
           },
           {
             "horizon": 20,
@@ -657,7 +657,7 @@
             "p90_pct": 33.18,
             "worst_pct": -50.64,
             "best_pct": 118.88,
-            "pct_negative": 43.5
+            "pct_negative": 43.8
           }
         ]
       },
@@ -768,7 +768,7 @@
             "p10_pct": -3.74,
             "p90_pct": 3.08,
             "worst_pct": -24.56,
-            "best_pct": 10.23,
+            "best_pct": 10.24,
             "pct_negative": 48.3
           },
           {
@@ -1175,7 +1175,7 @@
             "p90_pct": 10.78,
             "worst_pct": -26.18,
             "best_pct": 28.31,
-            "pct_negative": 45.8
+            "pct_negative": 45.5
           },
           {
             "horizon": 20,
@@ -1439,7 +1439,7 @@
             "p90_pct": 7.32,
             "worst_pct": -24.09,
             "best_pct": 20.66,
-            "pct_negative": 41.4
+            "pct_negative": 41.1
           },
           {
             "horizon": 20,
@@ -1877,7 +1877,7 @@
             "p90_pct": 28.29,
             "worst_pct": -56.89,
             "best_pct": 83.43,
-            "pct_negative": 42.5
+            "pct_negative": 42.2
           }
         ]
       },

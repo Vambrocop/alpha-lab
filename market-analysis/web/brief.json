@@ -1,8 +1,8 @@
 {
- "generated": "2026-09-03 23:31",
+ "generated": "2026-09-03 23:51",
  "model_version": "2.1",
  "lines": [
-  "【市场 09-03】纳指 ▲1.40%，标普 ▲1.06%，VIX ▼5.79%，BTC ▲5.05%",
+  "【市场 09-03】纳指 ▲1.40%，标普 ▲1.06%，VIX ▼5.79%，BTC ▲5.08%",
   "【信号】纳指（原始打分60%）、标普（原始打分53%）｜模型无样本外区分度：未来20日上涨概率≈基率 62% · 实验性信号",
   "【风险】VIX期限结构正常（14.3 < 17.4），无恐慌；纳指20日年化波动 13%",
   "【未来一周】09-04(周五)64%⚠非农就业(8月)，09-08(周二)60%，09-09(周三)61%，09-10(周四)60%，09-11(周五)59%⚠CPI发布(8月)",
@@ -10,7 +10,7 @@
   "【事件】09-04 非农就业(8月)；09-11 CPI发布(8月) —— 当日波动放大，避免重仓操作"
  ],
  "lines_en": [
-  "[Market 09-03] NASDAQ ▲1.40%, S&P 500 ▲1.06%, VIX ▼5.79%, BTC ▲5.05%",
+  "[Market 09-03] NASDAQ ▲1.40%, S&P 500 ▲1.06%, VIX ▼5.79%, BTC ▲5.08%",
   "[Signal] NASDAQ (raw score 60%), S&P 500 (raw score 53%) | the model shows no out-of-sample discrimination: the 20-day probability of a gain is ~the base rate of 62% · experimental signal",
   "[Risk] VIX term structure normal (14.3 < 17.4), no panic; NASDAQ 20-day annualised volatility 13%",
   "[Week ahead] 09-04(Fri)64%⚠Nonfarm payrolls (for month 8), 09-08(Tue)60%, 09-09(Wed)61%, 09-10(Thu)60%, 09-11(Fri)59%⚠CPI release (for month 8)",
