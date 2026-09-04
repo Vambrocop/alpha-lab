@@ -113,9 +113,19 @@ function render(d){
     h+=`<tr><td>${c.prob_mean_pct}%</td><td><b>${c.real_wr_pct}%</b></td><td style="text-align:left"><span class="bar" style="width:${w}px"></span></td><td style="color:var(--mut)">${c.n}</td></tr>`;});
   $("cal").innerHTML=h||"";
   let l=`<tr><th>${t("cSrc")}</th><th>${t("cHit")}</th><th>${t("cScored")}</th></tr>`;
-  Object.entries(d.sources||{}).forEach(([k,v])=>{l+=`<tr><td>${esc(k)}</td><td><b>${v.hit_pct==null?'—':v.hit_pct+'%'}</b></td><td style="color:var(--mut)">${v.n_scored}/${v.n_pending}</td></tr>`;});
+  // 2026-09-03:样本太少的源**不加粗、加 ⚠**。此前 "LLM前瞻方向" 以 n=1 发布 "0%",
+  // 加粗当头条、n=1 却是灰色小字 —— 一次抛硬币被读成"AI 全错"的战绩。
+  // 不隐藏数字(隐藏也不诚实),但不许让它长得像结论。
+  const MIN_N = 20;
+  Object.entries(d.sources||{}).forEach(([k,v])=>{
+    const small = (v.n_scored||0) > 0 && (v.n_scored||0) < MIN_N;
+    const val = v.hit_pct==null ? '—' : v.hit_pct+'%';
+    const cell = small ? `<span style="color:var(--mut)">${val} ⚠</span>` : `<b>${val}</b>`;
+    l+=`<tr><td>${esc(k)}</td><td>${cell}</td><td style="color:var(--mut)">${v.n_scored}/${v.n_pending}</td></tr>`;
+  });
   $("live").innerHTML=l;
-  $("note").textContent="⚠️ "+(d.honest_note||"");
+  $("note").textContent="⚠️ "+(d.honest_note||"")
+    +" 带 ⚠ 的源已结算样本不足 20,百分比是噪声不是战绩(故不加粗)。";
   $("src").textContent=`${t("asof")} ${d.horizon_days}d · ${esc((d.generated||"").slice(0,10))}`;
 }
 // ③ 出格区 —— each card scored on its OWN metric; never aggregated.

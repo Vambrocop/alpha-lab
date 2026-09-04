@@ -122,6 +122,48 @@ def _conf_stats(rows, conf):
     return {"n": len(s), "hit_pct": round(sum(1 for r in s if fl.is_true(r.get("hit"))) / len(s) * 100, 1)}
 
 
+def _baseline(settled):
+    """**最该问的那个问题**:这个 LLM 有没有赢过"什么都不想"?(2026-09-03 修)
+
+    此前拿"三桶随机基线约 1/3"当参照——那是错的。三个结果桶根本不等概(实测
+    中性 ~62% / 偏多 ~20% / 偏空 ~18%),所以真正的门槛是**多数类基线**:
+    每天闭着眼睛说出现最多的那一桶,能对多少。59% 相对 33% 像有本事,
+    相对 62% 则是**不如什么都不想**。基线写死会随数据漂,故从已结算样本现算。
+
+    返回 {class, pct, n} + LLM 是否显著优于它的单边二项检验 p 值。
+    """
+    if not settled:
+        return None
+    from collections import Counter
+    from math import comb
+    oc = Counter(str(r.get("bucket") or "") for r in settled)
+    oc.pop("", None)
+    if not oc:
+        return None
+    cls, cnt = oc.most_common(1)[0]
+    n = len(settled)
+    p0 = cnt / n
+    k = sum(1 for r in settled if fl.is_true(r.get("hit")))
+    # 单边精确二项检验 H0:命中率 = 多数类基线。n 只有几十,精确算不用上 scipy。
+    pval = sum(comb(n, i) * p0 ** i * (1 - p0) ** (n - i) for i in range(k, n + 1))
+    return {"class": cls, "pct": round(p0 * 100, 1), "n": n,
+            "p_value_vs_llm": round(min(pval, 1.0), 3)}
+
+
+def _directional_bets(rows):
+    """真·方向下注(偏多/偏空)计数。
+
+    "中性"不是赌注 —— scorecard.py 2026-08 已为此修过一次 bug。这里透传出来,
+    是因为它决定了这张计分牌**能不能**谈方向能力:若几乎全是中性,那这页衡量的
+    其实是"SPY 五天有没有走出 ±1%",不是 AI 的方向判断力。
+    """
+    d = [r for r in rows if r.get("direction") in ("偏多", "偏空")
+         and not fl.is_true(r.get("dropped"))]
+    st = [r for r in d if fl.is_true(r.get("settled"))]
+    return {"n_total": len(d), "n_settled": len(st),
+            "n_hit": sum(1 for r in st if fl.is_true(r.get("hit")))}
+
+
 def _scorecard(rows):
     settled = [r for r in rows if fl.is_true(r.get("settled"))]
     n = len(settled)
@@ -131,6 +173,8 @@ def _scorecard(rows):
         "n_settled": n, "n_hit": n_hit,
         "hit_pct": round(n_hit / n * 100, 1) if n else None,
         "by_confidence": {c: _conf_stats(rows, c) for c in CONFIDENCES},
+        "baseline": _baseline(settled),
+        "directional": _directional_bets(rows),
         "n_pending": n_pending, "n_dropped": n_dropped,
     }
 
@@ -140,11 +184,25 @@ def _verdict(sc):
     if n == 0:
         return "刚上线·0 结算——约 1–2 周后才有第一批 AI 前瞻战绩，攒数据中。"
     h = sc["hit_pct"]
+    b = sc.get("baseline")
+    d = sc.get("directional") or {}
     head = f"已结算 {n} 条 AI 前瞻：命中(预测方向==实际 5 日方向)率 {h}%"
+
+    # 先把最该说的说了:跟"什么都不想"比谁强。不给这个对照,59% 会被读成本事。
+    if b:
+        gap = round(h - b["pct"], 1)
+        cmp_ = (f"作为对照，**每天闭眼说「{b['class']}」**(样本里最常出现的结果)能拿 {b['pct']}%"
+                f"——AI {'高' if gap > 0 else '低'} {abs(gap)}pp"
+                f"（单边二项检验 p={b['p_value_vs_llm']}）")
+        head += f"。{cmp_}"
+
+    # 这页到底在量什么:方向下注太少的话,量的其实是"SPY 五天动没动"
+    if d.get("n_settled", 0) < 20:
+        head += (f"。**注意口径**:{n} 条里真正押方向(偏多/偏空)的只有 {d.get('n_total', 0)} 条、"
+                 f"已结算 {d.get('n_settled', 0)} 条,其余都是「中性」——所以这个命中率主要衡量的是"
+                 "「SPY 五天有没有走出 ±1%」,**还不足以谈 AI 的方向判断力**")
     if n < 30:
         return head + f"（n={n} 太小，纯描述、不是结论）。"
-    if 28 <= h <= 42:
-        return head + "——三桶随机基线约 1/3，目前 ≈ 掷硬币，没看出 AI 有 edge（诚实）。"
     return head + "。样本仍小、重叠窗口未除，别当 edge。"
 
 
@@ -196,9 +254,12 @@ def run(write=True, prices=None, _gen=None):
         "verdict": _verdict(sc),
         "caveat": ("出格区·AI 前瞻预测前向公开计分。LLM 据真实算出的因子对 SPY 未来 %d 交易日出方向"
                    "(偏多/偏空/中性,±%.0f%% 定义中性桶);预测次日入场、绝对方向、append-only 账本。"
-                   "**喂真因子防瞎编,但仍是猜**:LLM 前瞻很可能 ≈ 掷硬币(三桶随机基线 1/3),公开计分就是"
-                   "诚实裁决它到底准不准、以及『高信心是否真更准』。注:若 AI 常选中性,三桶 1/3 随机基线偏松,"
-                   "还应另比『总选中性』的命中率才公平。刚上线样本极小(约 1–2 周首批),别当结论。"
+                   "**喂真因子防瞎编,但仍是猜**。计分的门槛不是「比瞎猜强」而是「比**什么都不想**强」:"
+                   "三个桶不等概(中性占多数),所以对照的是**每天闭眼说多数类**能拿多少——"
+                   "这条基线由已结算样本现算、随数据更新,不写死。(2026-09-03 修:此前拿"
+                   "『三桶随机基线 1/3』作参照,那个门槛偏松、会把不如常数策略的结果显示成有本事。"
+                   "当时的注里其实已经写出该比『总选中性』,只是没实现,现已补上。)"
+                   "刚上线样本极小(约 1–2 周首批),别当结论。"
                    "非投资建议、不可交易、会错、过去≠未来。每跑 append 认账,绝不改历史行。"
                    % (HOLD_TD, BAND * 100)),
     }

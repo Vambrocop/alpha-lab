@@ -75,15 +75,42 @@ function render(d){
   } else { $("latest").innerHTML=`<div class="meta">暂无预测（引擎刚上线，攒数据中）。</div>`; }
   // 计分牌
   const tr=d.track_record||{}, bc=tr.by_confidence||{};
+  // 2026-09-03 修:此前把"三桶随机基线 33%"当参照,那是错的——三个结果桶不等概
+  // (中性 ~62%/偏多 ~20%/偏空 ~18%)。真正的门槛是**多数类基线**:每天闭眼说最常见的那桶。
+  // 用 33% 作参照会让 59% 看着像本事;用真基线看,它其实**不如什么都不想**。基线由后端现算。
+  const bl=tr.baseline||null;
+  // 小样本桶必须标出来,不能把 n=7 的点估计当战绩摆着(高信心那格常年 n=0)
+  const cn=b=>{const x=bc[b]||{}; return x.n?`${b}信心命中 (n=${x.n})`:`${b}信心命中 (无样本)`;};
+  const small=b=>((bc[b]||{}).n||0)>0&&((bc[b]||{}).n||0)<20;
   $("strip").innerHTML=[
-    cell(pct(tr.hit_pct),"总命中率","#3fb950"),
+    // 颜色不能撒谎:总命中率低于基线时**不许显示成绿色**。
+    // 绿=好是这套配色的既定语义,给一个"不如常数策略"的数字上绿色,等于用颜色
+    // 暗示了与文字相反的结论 —— 在诚实计分的项目里这比措辞含糊更隐蔽。
+    cell(pct(tr.hit_pct),"AI 总命中率",
+         (bl && tr.hit_pct!=null) ? (tr.hit_pct>bl.pct?"#3fb950":"#f85149") : "#8b949e"),
+    bl?cell(pct(bl.pct),`闭眼说「${esc(bl.class)}」也有`,"#f0883e"):"",
     cell(tr.n_settled||0,"已结算","var(--fg)"),
     cell(tr.n_pending||0,"计分中","#58a6ff"),
-    cell(pct((bc["高"]||{}).hit_pct),"高信心命中","#3fb950"),
-    cell(pct((bc["中"]||{}).hit_pct),"中信心命中","#58a6ff"),
-    cell(pct((bc["低"]||{}).hit_pct),"低信心命中","#8b949e")
+    cell(pct((bc["高"]||{}).hit_pct),cn("高"),"#8b949e"),
+    cell(pct((bc["中"]||{}).hit_pct)+(small("中")?" ⚠":""),cn("中"),"#8b949e"),
+    cell(pct((bc["低"]||{}).hit_pct)+(small("低")?" ⚠":""),cn("低"),"#8b949e")
   ].join("");
-  $("confnote").innerHTML=`<b>看点：</b>「高信心」是不是真比「低信心」准？三桶随机基线约 33%——${esc(d.verdict||"")}`;
+  const dr=tr.directional||{};
+  let note=`<b>先看这个：</b>AI 的命中率要跟「什么都不想」比才有意义。`;
+  if(bl){
+    const gap=Math.round((tr.hit_pct-bl.pct)*10)/10;
+    note+=`每天闭眼说「${esc(bl.class)}」(样本里最常出现的结果)能拿 <b>${esc(bl.pct)}%</b>，`
+        +`AI 是 <b>${esc(tr.hit_pct)}%</b> —— <b style="color:${gap>0?"#3fb950":"#f85149"}">`
+        +`${gap>0?"高":"低"} ${Math.abs(gap)}pp</b>（单边二项检验 p=${esc(bl.p_value_vs_llm)}，`
+        +`离显著差得远）。`;
+  }
+  if((dr.n_settled||0)<20){
+    note+=`<br><b>口径提醒：</b>已结算里真正押方向(偏多/偏空)的只有 <b>${esc(dr.n_total||0)}</b> 条`
+        +`（已结算 ${esc(dr.n_settled||0)} 条），其余都是「中性」——所以这个命中率主要在量`
+        +`「SPY 五天有没有走出 ±1%」，<b>还不足以谈 AI 的方向判断力</b>。`;
+  }
+  note+=`<br><span class="meta">带 ⚠ 的桶样本太少（n&lt;20），点估计是噪声不是战绩。</span>`;
+  $("confnote").innerHTML=note;
   // 近期表
   const rs=(d.recent||[]).filter(r=>r.direction);
   $("recent").innerHTML = rs.length ? `<table><thead><tr><th>预测日</th><th>方向</th><th>信心</th><th>结果</th></tr></thead><tbody>`
