@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-03T23:51:45Z",
-  "asof": "2026-09-03",
+  "generated": "2026-09-04T16:45:56Z",
+  "asof": "2026-09-04",
   "stance": "偏积极",
   "stance_en": "Positive-leaning",
-  "score": 0.3,
+  "score": 0.315,
   "action": "偏多 · 可逢低加",
   "action_en": "Bullish-leaning · can add on dips",
   "confidence_level": "中",
@@ -11,9 +11,9 @@
   "factors": [
     {
       "name": "波动率 VIX",
-      "push": 0.47,
+      "push": 0.504,
       "weight": 0.2,
-      "reason": "VIX 14.3（26 分位·中性）；高波动=风险高=偏防御"
+      "reason": "VIX 14.0（25 分位·偏低）；高波动=风险高=偏防御"
     },
     {
       "name": "收益率曲线",
@@ -29,7 +29,7 @@
     },
     {
       "name": "个股共动(羊群)",
-      "push": 0.37760000000000005,
+      "push": 0.3768,
       "weight": 0.1,
       "reason": "相关性 0.11（3 分位·偏低(各走各的)）；低共动=分散有效偏健康"
     },
@@ -41,9 +41,9 @@
     },
     {
       "name": "纳指方向信号",
-      "push": 0.1966000000000001,
+      "push": 0.2871999999999999,
       "weight": 0.05,
-      "reason": "tier 3 / prob 0.60（⚠️ walk-forward 无样本外 edge，权重压最低、仅参考）"
+      "reason": "tier 4 / prob 0.64（⚠️ walk-forward 无样本外 edge，权重压最低、仅参考）"
     }
   ],
   "confidence": "低-中（条件加权读数）",
@@ -53,10 +53,6 @@
   "caveat": "🚩出格区 · 把诚实证据按**写死透明权重**加权出的当下**行动倾向（买/持/避）**。**敢给方向，但每条 append composite_log 公开计分、可追责**；方向信号 walk-forward 无样本外优势（权重已压最低）。非保证、会错、过去≠未来——给你有据的判断，自己拍。",
   "caveat_en": "🚩 Out-on-a-limb zone · the current **action tilt (buy / hold / avoid)**, obtained by weighting honest evidence with **hard-coded, transparent weights**. **We are willing to give a direction, but every call is appended to composite_log and scored in public, so it can be held against us**; the directional signal has no out-of-sample edge in walk-forward (its weight is already the lowest). Not a guarantee, it can be wrong, the past != the future — we give you a reasoned judgement; the call is yours.",
   "history": [
-    {
-      "d": "2026-07-23",
-      "s": 0.158
-    },
     {
       "d": "2026-07-28",
       "s": 0.175
@@ -172,6 +168,10 @@
     {
       "d": "2026-09-03",
       "s": 0.29
+    },
+    {
+      "d": "2026-09-04",
+      "s": 0.315
     }
   ]
 }

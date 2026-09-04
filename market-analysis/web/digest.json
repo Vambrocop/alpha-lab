@@ -1,22 +1,24 @@
 {
-  "generated": "2026-09-03T23:51:43Z",
-  "date": "2026-09-03",
+  "generated": "2026-09-04T16:45:55Z",
+  "date": "2026-09-04",
   "tier1_facts": [
     "数据源 45/45 live",
-    "纳指信号 tier 3 · prob 0.5983",
+    "纳指信号 tier 4（3 → 4） · prob 0.6436",
     "模拟盘领先：🐢 长持 5.62%（前向竞技，无法事后美化）"
   ],
   "tier1_facts_en": [
     "Data sources 45/45 live",
-    "NASDAQ signal tier 3 · prob 0.5983",
+    "NASDAQ signal tier 4 (3 -> 4) · prob 0.6436",
     "Paper-portfolio leader: 🐢 Buy & hold 5.62% (a forward competition — it cannot be prettied up after the fact)"
   ],
   "tier2_watch": [
+    "**波动率 VIX** 中性 → 偏低。股市波动/恐慌水平(现值在历史的分位)（描述，非预测）",
     "**信用利差 Baa-10Y** 当前 偏低(信用宽松)。穆迪 Baa 公司债 减 10Y 国债(信用压力代理);高分位=信用紧张(描述性,非预测)",
     "**个股共动(羊群)** 当前 偏低(各走各的)。8 只大盘股近 60 日平均两两相关;高=危机式趋同(分散失效)、低=各走各的(描述性,非预测)",
     "短期反转（过度反应）统计可见、但经济不可用——历史上极端下跌日次日有反弹倾向，这是【描述】不是抄底信号，且扣成本后未必站得住。"
   ],
   "tier2_watch_en": [
+    "**Volatility (VIX)** Neutral -> Low. Equity volatility / fear level (where today sits in its own history). (descriptive, not a forecast)",
     "**Credit spread Baa-10Y** currently Narrow (easy credit). Moody's Baa corporate yield minus the 10Y Treasury (a proxy for credit stress); a high percentile means tight credit (descriptive, not a forecast).",
     "**Single-stock co-movement (herding)** currently Low (names moving independently). Average pairwise correlation of 8 large-cap names over the last 60 days; high = crisis-style convergence (diversification stops working), low = names moving independently (descriptive, not a forecast).",
     "Short-term reversal (overreaction) is statistically visible but not economically usable: historically, the day after an extreme decline has tended to bounce. This is a [description], not a buy-the-dip signal, and it may not survive once costs are deducted."
@@ -29,16 +31,16 @@
   ],
   "caveat": "本摘要只描述【当前状态 + 历史风险分布】，🔴 绝不预测方向、不荐股。规律均来自已验证项；未验证猜测仅在③探索层、强标注。",
   "caveat_en": "This digest only describes [the current state + the historical distribution of risk]. 🔴 It never forecasts direction and never recommends a stock. Every regularity cited comes from a validated item; unvalidated guesses live only in layer ③ (exploration) and are labelled as such.",
-  "_tier": 3,
+  "_tier": 4,
   "_regime_labels": {
-    "波动率 VIX": "中性",
+    "波动率 VIX": "偏低",
     "收益率曲线 10Y-2Y": "正斜率偏平",
     "信用利差 Baa-10Y": "偏低(信用宽松)",
     "VIX 期限结构 (VIX3M-VIX)": "正常(远月更高)",
     "个股共动(羊群)": "偏低(各走各的)"
   },
   "_regime_labels_en": {
-    "波动率 VIX": "Neutral",
+    "波动率 VIX": "Low",
     "收益率曲线 10Y-2Y": "Positive but flat",
     "信用利差 Baa-10Y": "Narrow (easy credit)",
     "VIX 期限结构 (VIX3M-VIX)": "Normal (back month higher)",
