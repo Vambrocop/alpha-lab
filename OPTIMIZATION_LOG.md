@@ -98,11 +98,25 @@
 
 ## §2 未做 / 待续(什么没做都记)
 
-**🗓️ 2026-07-28 CI 韧性 backlog(防缩水门事故根因·§4c;验证绿后按序做)：**
-- [ ] **#1 别把 git 跟踪的账本放进 actions/cache(根治)**：账本真相在 git;缓存它才有"陈旧回灌"风险。cache 路径只留可再生的 raw/派生缓存、排除 `data/*.csv` 账本 → 整个"re-assert from git"步骤连同这类 bug 消失。9d007ea(re-assert 全账本)是补丁,这才是根治。
-- [ ] **#2 `git add -A`→显式暂存**：refresh-data/weekly-review 的 `git add -A` 会把误入的陈旧回灌一起提交;只暂存该跑真正产出的文件(web/docs json + 本次 append 的账本)→ 陈旧文件永进不了提交。
-- [ ] **#3 publish 逻辑抽成可本地测的 `tools/ci_publish.py`**：本周两次搞挂 prod 的都是 inline-yaml 的 commit/push 逻辑、本地跑不了。抽出来 + 单测 = 防下次事故的元修复。
-- [ ] **#4 防缩水门 warn-only 重挂**：#1/#2 落地后,以警告(不阻断)试用期重挂做纵深防御,绝不再因门停摆。
+**✅ 2026-07-28 CI 韧性 backlog —— 四条全部完成(2026-09-03·c97b35d·真实 CI 验证过)：**
+- [x] **#1 别把 git 跟踪的账本放进 actions/cache(根治)**：缓存 path 从整个 `market-analysis/data`
+  收窄到 `raw/`+`processed/` → **31 个被跟踪账本从此不进缓存**;re-assert 从"手工列 23 个文件名"
+  改成 `git checkout -- market-analysis/data/` 整目录复位(只作用于被跟踪文件)。
+  **关键判断:问题不是清单漏了谁,是"由人维护一份必须完整的清单"本身不可靠**——
+  my_portfolio.txt 被抹正因为它是"输入清单"不是"账本"、不在 SPECS 里。现在清单这东西没了。
+  真实 CI 日志实证:`已从 git HEAD 复位 35 个被跟踪的数据文件`。
+- [x] **#2 `git add -A`→显式暂存**：全仓 workflow 的 `git add -A` 清零(守门测试盯着不许回潮)。
+  只暂存 web/docs/data + 根部 `.benchmark-history.json`。CI 实证:112 文件全在声明路径内、零越界。
+- [x] **#3 publish 抽成 `tools/ci_publish.py`**：用**真 git 裸仓**测四条路径(无改动/正常推/
+  推冲突→rebase 重试/门告警仍发布),不用 mock。**这条是元修复,当场就还本**:
+  覆盖率守门抓到 `.benchmark-history.json` 漏声明(否则公开战绩账本会静默冻结);
+  还查出 `#!/usr/bin/env python3` shebang 让 Windows `py` 转交 Store 占位程序 → **静默退出 49**
+  (本地 `py tools/x.py` 看着"什么都没发生",正好毁掉"搬出 YAML 求本地可跑"的目的)。
+- [x] **#4 防缩水门 warn-only 重挂**：门自 07-28 摘下后闲置五周,现挂回但**只警告**。
+  `run_guard` 全路径不向上抛异常(门缺失/崩溃/超时/输出编码离谱一律降级为警告)——
+  若转述门输出这一步能崩掉发布器,门就又变回阻断器了。
+  CI 实证:`[门] append-only 检查通过: 19 个账本均 ⊇ origin/main`,且跑在 `pull --rebase` 之后。
+  **代价如实记:门从此不阻止任何东西,真出现并发丢行只留一条 warning,需要有人去看。**
 
 **🗓️ 2026-06-30 本会话落地(已 push,免得"先查后动"重做)：** 自生长门4 OOS 引擎 + 知识库晋升降级(P-A/P-C·Opus双审GO) · P-D 前端"自生长看得见" · P-B 防闪烁 · 预FOMC漂移研究 → **升进 candidate_space 命门**(双审GO·N_DECLARED 74→76·补2026会议日程) · **opex_week/季末两侧先验**(双审GO·N→80·均 dead) · FX→AUD 真实收益工具(子代理) · **LLM 全活**:日读激活+月报新建(节流)+ **AI 预测**(append-only 公开计分账本+prediction.html+按信心分桶·Opus审GO)·走 `GEMINI_API_KEY` · senate 定性完结历史研究(源停更·见 §4c)。
 
