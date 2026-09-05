@@ -1,44 +1,44 @@
 {
- "updated": "2026-09-05 15:41 UTC",
+ "updated": "2026-09-05 22:24 UTC",
  "items": [
   {
-   "time": "2026-09-05 13:35 UTC",
-   "title": "Vanguard’s S&P 500 index fund changed how we invest — but there may be a smarter way to get a piece of the market",
+   "time": "2026-09-05 19:12 UTC",
+   "title": "Trump turns up the heat on Warsh as Fed rate hike looms",
+   "impact": "positive",
+   "note": "",
+   "source": "CNBC Markets",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-05 18:26 UTC",
+   "title": "Why the jobs report will actually be good for bonds",
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
    "kind": "auto"
   },
   {
-   "time": "2026-09-04 20:29 UTC",
-   "title": "Mike Khouw: Cybercabs are a game changer—here's how I'm trading Tesla",
+   "time": "2026-09-05 18:09 UTC",
+   "title": "7% mortgage rates are already here, some buyers and mortgage experts say",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-05 16:45 UTC",
+   "title": "We got more defensive last week as Wall Street raised the bar for AI stocks",
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
    "kind": "auto"
   },
   {
-   "time": "2026-09-04 20:06 UTC",
-   "title": "Tesla's stock drops 6% as Cybercab update 'underwhelms' Wall Street",
+   "time": "2026-09-05 16:34 UTC",
+   "title": "Jobs and Iran add to Trump’s midterm headaches. Why that’s good for bonds and bad for energy stocks.",
    "impact": "neutral",
    "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-04 19:48 UTC",
-   "title": "Trump doubles down on threat to halt trade with top partners unless Fed cuts rates",
-   "impact": "negative",
-   "note": "",
-   "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-04 18:51 UTC",
-   "title": "What strong jobs data means for rates — plus, an out-of-favor trade shines this week",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
+   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
