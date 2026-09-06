@@ -1,6 +1,22 @@
 {
- "updated": "2026-09-06 12:49 UTC",
+ "updated": "2026-09-06 13:01 UTC",
  "items": [
+  {
+   "time": "2026-09-06 13:00 UTC",
+   "title": "Is the U.S. losing its safe-haven status? Why global central banks are pulling gold out of New York.",
+   "impact": "neutral",
+   "note": "",
+   "source": "MarketWatch",
+   "kind": "auto"
+  },
+  {
+   "time": "2026-09-06 12:48 UTC",
+   "title": "Sugar is outperforming the stock market this year. Here's what's driving it, and where it can go from here",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-09-06 12:00 UTC",
    "title": "AI data centers are transforming rural land markets — and fueling a backlash",
@@ -23,22 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-05 18:09 UTC",
-   "title": "7% mortgage rates are already here, some buyers and mortgage experts say",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-05 16:45 UTC",
-   "title": "We got more defensive last week as Wall Street raised the bar for AI stocks",
-   "impact": "neutral",
-   "note": "",
-   "source": "CNBC Top News",
    "kind": "auto"
   }
  ]
