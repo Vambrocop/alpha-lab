@@ -235,6 +235,14 @@ def build():
     except Exception as e:
         print(f"[survivors_live] 读 autodiscovery.json 失败，跳过: {e}")
         return None
+    # 裁决横跳记录(flicker.py 已产,这里只消费不重算——单一真相源)
+    try:
+        fl_rows = json.loads((WEB / "flicker.json").read_text(encoding="utf-8")).get("candidates", [])
+        flick = {c.get("key"): c for c in fl_rows}
+    except Exception as e:
+        print(f"[survivors_live] 读 flicker.json 失败(不阻断,横跳标注将缺失): {e}")
+        flick = {}
+
     survivors = [c for c in ad.get("candidates", []) if c.get("verdict") == "survive"]
     rows = []
     for c in survivors:
@@ -248,17 +256,37 @@ def build():
         else:                                        # 未来新存活规律：不落下、不谎报应期、不猜方向组名
             active, state, name = None, "当前态未接入监测（仅历史·今日不判应期）", f"{fam}/{key}"
         rp = c.get("recent_p")
-        # 边界易闪标注(Opus 审 2026-07-01)：recent_p 贴近 q=0.10 存活线 → 现代显著性临界、下次刷新可能退出，别过度当真
-        unstable = isinstance(rp, (int, float)) and 0.08 < rp <= 0.10
+        # ── 不稳定的**两种**来源,缺一不可 ─────────────────────────────
+        # (a) 现代显著性临界(Opus 审 2026-07-01):recent_p 贴近 q=0.10 存活线,下次刷新可能退出。
+        near_line = isinstance(rp, (int, float)) and 0.08 < rp <= 0.10
+        # (b) **跨族 FDR 边界横跳**(2026-09-04 补):裁决在 survive/dead 之间来回翻。
+        #     实证:golden_cross_sp500 一周内 survive→dead(08-31~09-02)→survive(09-03),
+        #     p 只在 0.001↔0.002 之间动,却因为卡在 BY-FDR 边界上而反复改判。
+        #     此前 unstable 只看 (a),于是它在观察台上显示为**干净稳定的存活者**——
+        #     一条 stable_days=1、翻转 2 次的规律,长得跟从没动摇过一样。这是诚实缺口。
+        fc = flick.get(key) or {}
+        flips = fc.get("flips")
+        stable_days = fc.get("stable_days")
+        flicker = bool(fc.get("boundary_flicker"))
+        unstable = bool(near_line or flicker)
+
+        notes = []
+        if near_line:
+            notes.append(f"⚠ 现代显著性临界（recent_p≈{rp:.2f}·近 q=0.10 存活线，下次刷新可能退出，别过度当真）")
+        if flicker:
+            bits = "".join([f"近期翻转 {flips} 次" if flips else "",
+                            f"·当前裁决仅稳定 {stable_days} 天" if stable_days is not None else ""])
+            notes.append(f"⚠ 裁决在跨族 FDR 存活线上**来回横跳**（{bits}）——"
+                         "今天算存活不代表明天还在，别当成稳定结论")
         rows.append({
             "family": fam, "key": key, "name": name,
             "active": active, "state": state,
             "up_pct": up, "base_pct": base, "window": wlabel, "dnote": dnote,
             "edge_plain": _edge_plain(desc, up, base, wlabel, dnote),
             "recent_p": rp, "modern": c.get("modern_status"),
-            "unstable": bool(unstable),
-            "stability_note": (f"⚠ 现代显著性临界（recent_p≈{rp:.2f}·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
-                               if unstable else ""),
+            "unstable": unstable,
+            "flips": flips, "stable_days": stable_days, "boundary_flicker": flicker,
+            "stability_note": "；".join(notes),
         })
 
     def _sortkey(x):                                 # 应期在前→休眠→未接入；同类按历史 |edge| 大的在前

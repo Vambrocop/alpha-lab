@@ -110,7 +110,24 @@
 <div class="mut" data-i18n="foot"></div>
 
 <script>
-var JSON_URL='https://vambrocop.github.io/valpha-lab/composite_read.json';
+// 2026-09-06:三处 fetch 原本**只走**写死的 github.io 绝对 URL,没有同源相对路径这一步。
+// 后果有二:① 境内访客(CLAUDE.md 明列的受众)要绕道 github.io,同源自托管的原则形同虚设;
+// ② 本地/预览环境永远显示线上数据 —— 我改完观察台后在本地怎么刷都看不到自己的改动,
+//    差点以为改失败了。其它页(prediction.html/au.html)早就是"先相对后绝对"的 fail-soft 写法,
+//    这里补齐,口径统一。
+var GH_BASE='https://vambrocop.github.io/valpha-lab/';
+function fetchJson(name){                       // 先同源,拉不到再回落线上;都失败返回 null
+  return fetch(name,{cache:'no-store'})
+    .then(function(r){return r.ok?r.json():null;})
+    .catch(function(){return null;})
+    .then(function(j){
+      if(j)return j;
+      return fetch(GH_BASE+name,{cache:'no-store'})
+        .then(function(r){return r.ok?r.json():null;})
+        .catch(function(){return null;});
+    });
+}
+var JSON_URL='composite_read.json';
 
 var $=function(id){return document.getElementById(id);};
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
@@ -252,8 +269,7 @@ function render(data){
 }
 
 function loadLLM(){
-  fetch('https://vambrocop.github.io/valpha-lab/llm_read.json',{cache:'no-store'})
-    .then(function(r){return r.ok?r.json():null;})
+  fetchJson('llm_read.json')
     .then(function(j){
       if(!j||!j.text)return;
       var el=$('llmRead');
@@ -265,8 +281,7 @@ function loadLLM(){
     }).catch(function(){});
 }
 function loadSurvivors(){
-  fetch('https://vambrocop.github.io/valpha-lab/survivors_live.json',{cache:'no-store'})
-    .then(function(r){return r.ok?r.json():null;})
+  fetchJson('survivors_live.json')
     .then(function(j){
       if(!j||!j.survivors||!j.survivors.length)return;
       var el=$('survivorsLive');
@@ -301,10 +316,8 @@ function load(){
   loadLLM();
   loadSurvivors();
   try{
-    fetch(JSON_URL,{cache:'no-store'}).then(function(r){
-      if(!r.ok)throw new Error('HTTP '+r.status);
-      return r.json();
-    }).then(function(data){
+    fetchJson(JSON_URL).then(function(data){
+      if(!data)throw new Error('composite_read.json 同源与线上均取不到');
       window._compositeData=data;
       render(data);
     }).catch(function(){

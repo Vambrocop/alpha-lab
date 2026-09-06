@@ -94,6 +94,7 @@ steps = [
     ("试胆区(玩具预测+计分)", "tipjar.py"),       # 故意下方向判断但公开残酷计分(≈掷硬币),娱乐非建议;须在 fetch_data 后
     ("观点/预测(授权出格区)", "outlook.py"),      # 用户授权:直接给纳指方向+个股看好看淡,带免责;读 signals+动量,须在 build_signals 后
     ("综合读数(出格·加权倾向)", "composite_read.py"),  # 把体制/信用/羊群/季节性/信号按写死透明权重合成当下倾向,每日 append composite_log 计分(自升级地基);须在 market_regime+seasonality+build_signals 后
+    ("防闪烁稳定度(自生长P-B)", "flicker.py"),   # 读autodiscovery_log前向史:抓在FDR边界来回横跳的脆弱候选+诚实标注"裁决稳定≠独立确认(自相关)";纯描述不引新统计;须在autodiscovery后;不入light  # 2026-09-06 前移:survivors_live 要读 flicker.json 给存活者标'裁决横跳',放它后面等于读上一轮的陈旧数据
     ("存活规律观察台(自生长·喂日读)", "survivors_live.py"),  # 读autodiscovery存活候选(verdict==survive)+本地算"今天是否应期"(金叉/BTC动量/回撤/9月)→survivors_live.json;历史edge复用不重算(单一真相源);喂 llm_daily_read + 前端观察台;须在autodiscovery后、日读前;不入light(autodiscovery全量才刷);缺数据静默退0
     ("LLM大白话日读(出格)", "llm_daily_read.py"),   # 把 composite_read 真因子喂 Gemini→一段人话解读;须在 composite_read 后;无 GEMINI_API_KEY 则静默跳过;喂真数据防瞎编、带计分
     # 周读【不】进 run_all:由专门的 weekly-review.yml(周六 cron·收盘后·覆盖完整 Mon-Fri)生成——
@@ -121,7 +122,6 @@ steps = [
     ("公开计分/校准卡(吸收)", "scorecard.py"),   # 4站调研吸收:汇 prediction_log/composite/tipjar + walk_forward OOS校准成公开战绩卡(按置信分桶看实际命中=护城河);须在 track_predictions/composite_read/walk_forward 后
     ("证据库总览(吸收)", "evidence_ledger.py"),   # 把已测规律族汇成单一诚实总览(每族 scope+证据+裁决+详情链接·没证据不进库);须在 autodiscovery/placebo/btc/regime 后
     ("门4样本外→知识库晋升降级(自生长P-C)", "knowledge_base.py"),  # OOS门4(oos_gate)只认注册锚后数据:survive∧confirmed→晋升/在库∧翻盘→降级;append-only单调写kb_ledger;须在autodiscovery+candidate_registry后;不入light;Opus双审GO(B1/S1已修);今日全pending=0晋升(边跑边攒约1月出首批)
-    ("防闪烁稳定度(自生长P-B)", "flicker.py"),   # 读autodiscovery_log前向史:抓在FDR边界来回横跳的脆弱候选+诚实标注"裁决稳定≠独立确认(自相关)";纯描述不引新统计;须在autodiscovery后;不入light
     ("账本sidecar哈希链封存", "ledger_sidecar.py"),  # P2-9:14个append-only公开计分账本的链哈希存独立manifest(账本本体零写入);身份字段verify-before-seal被改则拒封;须在全部账本写手后、verify前;入light(无变化=no-op,顺带小时级抓外改)
     ("发布前自检",         "verify_output.py"),   # 失败则终止，不发布坏数据
 ]

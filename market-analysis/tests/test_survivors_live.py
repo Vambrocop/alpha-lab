@@ -365,3 +365,88 @@ def test_build_caveat_has_honest_frame(tmp_path, monkeypatch):
 def test_build_missing_autodiscovery_returns_none(tmp_path, monkeypatch):
     monkeypatch.setattr(sl, "WEB", tmp_path)           # 空目录,无 autodiscovery.json
     assert sl.build() is None
+
+
+# ════════════════════════════════════════════════════════════════════════════
+# 4. 裁决横跳标注（2026-09-06 补）
+#    观察台此前只按 recent_p 贴近 q=0.10 判"不稳",不看**跨族 FDR 边界横跳**。
+#    实证:golden_cross_sp500 一周内 survive→dead(08-31~09-02)→survive(09-03),
+#    p 只在 0.001↔0.002 之间动,却因卡在 BY-FDR 边界上反复改判——而它在观察台上
+#    显示为干净稳定的存活者。6 条存活者里有 4 条这样(世界杯年翻转 18 次)。
+# ════════════════════════════════════════════════════════════════════════════
+def _flicker(web, rows):
+    (web / "flicker.json").write_text(
+        json.dumps({"candidates": rows}, ensure_ascii=False), encoding="utf-8")
+
+
+def _one_survivor_web(tmp_path, monkeypatch, recent_p=0.01):
+    web = tmp_path / "web"; raw = tmp_path / "raw"
+    web.mkdir(); raw.mkdir()
+    monkeypatch.setattr(sl, "WEB", web)
+    monkeypatch.setattr(sl, "RAW", raw)
+    _price(raw / "SP500_long.csv", list(np.linspace(100, 300, 400)))
+    _autodisc(web, [{"family": "regime", "key": "golden_cross_sp500", "verdict": "survive",
+                     "recent_p": recent_p, "modern_status": "现代仍有效",
+                     "windows": [{"label": "2000后", "up_pct": 66, "base_pct": 63}]}])
+    return web
+
+
+def test_boundary_flicker_marks_unstable_even_when_recent_p_is_comfortable(tmp_path, monkeypatch):
+    """核心:recent_p 离存活线很远(0.01)、但裁决在横跳 → 仍必须标不稳。
+
+    这正是金叉的形状:现代显著性看着很稳,可跨族 FDR 边界一动它就改判。
+    只看 recent_p 会把它显示成"干净的存活者"。
+    """
+    web = _one_survivor_web(tmp_path, monkeypatch, recent_p=0.01)
+    _flicker(web, [{"key": "golden_cross_sp500", "boundary_flicker": True,
+                    "flips": 2, "stable_days": 1}])
+    row = sl.build()["survivors"][0]
+    assert row["unstable"] is True, "横跳未被标成不稳"
+    assert "横跳" in row["stability_note"]
+    assert "2 次" in row["stability_note"] and "1 天" in row["stability_note"], \
+        "翻转次数/稳定天数必须如实写进提示,不能只说'不稳'"
+    assert row["flips"] == 2 and row["stable_days"] == 1 and row["boundary_flicker"] is True
+
+
+def test_stable_survivor_gets_no_warning(tmp_path, monkeypatch):
+    """真稳的(0 翻转、稳 42 天)不许被误标 —— 警告滥发等于没有警告。"""
+    web = _one_survivor_web(tmp_path, monkeypatch, recent_p=0.01)
+    _flicker(web, [{"key": "golden_cross_sp500", "boundary_flicker": False,
+                    "flips": 0, "stable_days": 42}])
+    row = sl.build()["survivors"][0]
+    assert row["unstable"] is False and row["stability_note"] == ""
+
+
+def test_both_instability_reasons_are_reported_together(tmp_path, monkeypatch):
+    """两种不稳可以同时成立,提示不能只出一条(世界杯年就是两条都占)。"""
+    web = _one_survivor_web(tmp_path, monkeypatch, recent_p=0.095)
+    _flicker(web, [{"key": "golden_cross_sp500", "boundary_flicker": True,
+                    "flips": 18, "stable_days": 1}])
+    note = sl.build()["survivors"][0]["stability_note"]
+    assert "现代显著性临界" in note and "横跳" in note, f"两条理由应并列,实得: {note}"
+
+
+def test_missing_flicker_json_degrades_gracefully(tmp_path, monkeypatch):
+    """flicker.json 缺失(首次运行/上游失败)→ 不崩、不谎报稳定,只是没有横跳标注。"""
+    web = _one_survivor_web(tmp_path, monkeypatch, recent_p=0.01)   # 不写 flicker.json
+    out = sl.build()
+    assert out is not None and out["survivors"], "缺 flicker.json 不该让整个观察台挂掉"
+    row = out["survivors"][0]
+    assert row["boundary_flicker"] is False and row["flips"] is None
+
+
+def test_flicker_runs_before_survivors_live_in_pipeline():
+    """顺序守门:flicker.py 必须排在 survivors_live.py **之前**。
+
+    survivors_live 要读 flicker.json 才能给存活者标"裁决横跳"。若 flicker 排在后面,
+    读到的是**上一轮**的陈旧数据 —— 今天刚发生的改判要等到明天才会显示为不稳,
+    而"今天算存活明天就不算"恰恰是这条警告要防的事。2026-09-06 前移并加此守门。
+    """
+    from pathlib import Path
+    import re
+    src = (Path(__file__).resolve().parents[1] / "scripts" / "run_all.py").read_text(encoding="utf-8")
+    fi = src.find('"flicker.py"')
+    si = src.find('"survivors_live.py"')
+    assert fi > 0 and si > 0, "run_all.py 里找不到这两步,写法变了先修这里"
+    assert fi < si, (
+        "flicker.py 跑在 survivors_live.py 之后了 → 观察台会读到上一轮的陈旧横跳数据")
