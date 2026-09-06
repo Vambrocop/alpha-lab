@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-06 15:51 UTC",
+ "updated": "2026-09-06 22:30 UTC",
  "items": [
   {
    "time": "2026-09-06 13:19 UTC",
@@ -23,22 +23,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-05 19:12 UTC",
-   "title": "Trump turns up the heat on Warsh as Fed rate hike looms",
-   "impact": "positive",
-   "note": "",
-   "source": "CNBC Markets",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-05 18:26 UTC",
-   "title": "Why the jobs report will actually be good for bonds",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
