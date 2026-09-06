@@ -132,20 +132,46 @@ def test_missing_paths_are_skipped_not_fatal(repo):
 
 
 def test_default_paths_match_real_commit_history():
-    """守门:DEFAULT_PATHS 必须覆盖流水线真实提交过的顶层路径。
+    """守门:DEFAULT_PATHS 必须覆盖流水线**改用显式暂存之后**真实提交过的每个文件。
 
-    加了新产出目录却忘了加进 DEFAULT_PATHS → 它永远不会被提交,而且**静默**
-    (站上数据悄悄停更,和 ndx 烂 24 天是同一类事故)。这里对着真实 git 历史核。
-    仓库里没有相应历史时(浅克隆/新检出)自动跳过,不误红。
+    ⚠️ 2026-09-06 修:这条测试上一版把 CI 干红了两天(09-04 三次刷新全挂),而且**本地是绿的**
+    —— 项目吃过亏的那类"本地绿 CI 红"。两个错叠在一起:
+
+      ① **口径错**:它扫"最近 40 次 bot 提交"。但改用显式暂存**之前**,refresh-data 用的是
+         `git add -A`,会把 .gitattributes / workflow / 一个 .bat / .claude 里的 skill 文件
+         统统扫进自动提交。那些文件出现在历史里,恰恰是**当年那个 bug 的产物**,
+         不是"必须继续提交的清单"。我却拿它当后者,于是断言必然失败。
+      ② **按构造会飘**:40 条是个滑动窗口。切换点之后的 bot 提交越攒越多,旧的脏提交
+         慢慢滚出窗口 —— 同一份代码今天红明天绿。本地之所以绿,只是因为我这边
+         多攒了几条干净提交,把脏的挤出去了。
+
+    ③ **真正的引爆点是浅克隆**:CI 用 `actions/checkout@v4` 默认 `--depth=1`,只有一个提交、
+       **没有父提交**。于是 `git show --name-only` 把它当根提交,列出**整个仓库的 556 个文件**。
+       那份"被误扫的文件清单"根本不是 bot 提交的内容,是整个仓库。
+       而它只在 HEAD 恰好是 **bot 提交**时才触发 —— 我手动触发验证时 HEAD 都是自己的提交,
+       `--author=github-actions` 匹配不到 → 跳过 → **假绿**。定时跑的 HEAD 常是 bot 提交 → 真红。
+       教训:**"我手动跑了一次 CI 是绿的"不等于验证过**,得考虑 HEAD 是什么形状。
+
+    改法:锚定**切换点**(引入 tools/ci_publish.py 的那次提交),只看它之后的 bot 提交。
+    从那一刻起,bot 碰过的每个文件按定义都该在 DEFAULT_PATHS 里,否则就是漏声明。
+
+    **诚实说明适用范围**:CI 是浅克隆,找不到切换点 → 这条在 CI 里**恒跳过**,
+    它实际是一条**开发机上的**守门(本地有全史)。`.benchmark-history.json` 那次就是本地跑出来的。
+    不把它伪装成 CI 防线。
     """
-    # 按**作者**筛,不按 --grep:grep 会连提交正文一起匹配,把人类写的、正文里提到
-    # "auto-refresh market data" 的修复提交也算进来(实测 53b0c0d 就这样误报过一次)。
-    # CI 自动提交的作者恒为 github-actions[bot],这才是准确信号。
-    p = subprocess.run(["git", "log", "--format=%H", "-40", "--author=github-actions"],
+    cutover = subprocess.run(
+        ["git", "log", "--diff-filter=A", "--format=%H", "--", "tools/ci_publish.py"],
+        cwd=str(ROOT), capture_output=True, text=True, encoding="utf-8").stdout.split()
+    if not cutover:
+        pytest.skip("找不到引入 ci_publish.py 的提交(浅克隆),跳过")
+    rng = f"{cutover[-1]}..HEAD"        # 最后一个 = 最早引入它的那次
+
+    p = subprocess.run(["git", "log", "--format=%H", "--author=github-actions", rng],
                        cwd=str(ROOT), capture_output=True, text=True, encoding="utf-8")
     shas = [s for s in p.stdout.split() if s]
     if not shas:
-        pytest.skip("本检出没有 CI bot 提交历史(浅克隆),跳过")
+        pytest.skip("切换点之后还没有 CI bot 提交,无从核对")
+
     touched = set()
     for sha in shas:
         q = subprocess.run(["git", "show", "--name-only", "--format=", sha],
@@ -153,14 +179,15 @@ def test_default_paths_match_real_commit_history():
         for line in q.stdout.splitlines():
             if line.strip():
                 touched.add(line.strip())
+
     def _covered(f):
         # 声明项既可以是目录(前缀匹配),也可以是单个文件(精确匹配)
         return any(f == d or f.startswith(d + "/") for d in ci_publish.DEFAULT_PATHS)
 
     uncovered = sorted({f for f in touched if not _covered(f)})
     assert not uncovered, (
-        "这些文件流水线真的提交过,但不在 DEFAULT_PATHS 覆盖范围内 → 换成显式暂存后"
-        f"它们会**静默停更**: {uncovered[:10]}")
+        "改用显式暂存之后,bot 仍提交了这些不在 DEFAULT_PATHS 里的文件 —— "
+        f"要么补进声明,要么查清它们为什么被暂存: {uncovered[:10]}")
 
 
 def test_missing_guard_script_warns_but_publishes(repo, capsys):
