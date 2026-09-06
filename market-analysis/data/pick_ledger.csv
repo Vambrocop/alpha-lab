@@ -321,3 +321,9 @@ pick_date,symbol,view,mom_pct,entry_date,entry_px,exit_date,exit_px,ret_pct,benc
 2026-09-04,TSLA,看淡,-11.3,,,,,,,,,,False,False
 2026-09-04,META,看淡,-4.9,,,,,,,,,,False,False
 2026-09-04,NFLX,看淡,-19.9,,,,,,,,,,False,False
+2026-09-06,AAPL,看好,24.5,,,,,,,,,,False,False
+2026-09-06,NVDA,看好,29.7,,,,,,,,,,False,False
+2026-09-06,KO,看好,15.8,,,,,,,,,,False,False
+2026-09-06,TSLA,看淡,-10.8,,,,,,,,,,False,False
+2026-09-06,META,看淡,-4.2,,,,,,,,,,False,False
+2026-09-06,NFLX,看淡,-21.0,,,,,,,,,,False,False

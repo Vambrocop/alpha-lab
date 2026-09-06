@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T16:45:56Z",
+  "generated": "2026-09-06T12:32:49Z",
   "index_call": {
     "target": "纳指",
     "target_en": "NASDAQ",
@@ -16,34 +16,34 @@
     {
       "symbol": "SNDK",
       "view": "看好",
-      "mom_pct": 225.0,
-      "reason": "6 个月动量 +225.0%（观察池领先）"
+      "mom_pct": 230.0,
+      "reason": "6 个月动量 +230.0%（观察池领先）"
     },
     {
       "symbol": "MU",
       "view": "看好",
-      "mom_pct": 171.4,
-      "reason": "6 个月动量 +171.4%（观察池领先）"
+      "mom_pct": 174.7,
+      "reason": "6 个月动量 +174.7%（观察池领先）"
     },
     {
       "symbol": "AMD",
       "view": "看好",
-      "mom_pct": 146.6,
-      "reason": "6 个月动量 +146.6%（观察池领先）"
+      "mom_pct": 148.2,
+      "reason": "6 个月动量 +148.2%（观察池领先）"
     }
   ],
   "bearish": [
     {
       "symbol": "NFLX",
       "view": "看淡",
-      "mom_pct": -19.9,
-      "reason": "6 个月动量 -19.9%（观察池垫底）"
+      "mom_pct": -21.0,
+      "reason": "6 个月动量 -21.0%（观察池垫底）"
     },
     {
       "symbol": "TSLA",
       "view": "看淡",
-      "mom_pct": -11.3,
-      "reason": "6 个月动量 -11.3%（观察池垫底）"
+      "mom_pct": -10.8,
+      "reason": "6 个月动量 -10.8%（观察池垫底）"
     },
     {
       "symbol": "COST",

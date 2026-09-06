@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-04T16:48:46Z",
-  "as_of": "2026-09-03",
+  "generated": "2026-09-06T12:35:17Z",
+  "as_of": "2026-09-04",
   "price_start": "1992-11-23",
   "index_label": "ASX200 (^AXJO)",
   "lookback": 252,
@@ -15,14 +15,14 @@
     "h60": {
       "up_pct": 63.33,
       "mean_pct": 1.47,
-      "median_pct": 1.99,
-      "n": 8480
+      "median_pct": 2.0,
+      "n": 8481
     },
     "h252": {
       "up_pct": 72.95,
       "mean_pct": 5.97,
-      "median_pct": 6.82,
-      "n": 8288
+      "median_pct": 6.81,
+      "n": 8289
     }
   },
   "drawdown_curve": [

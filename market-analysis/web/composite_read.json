@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-04T16:45:56Z",
-  "asof": "2026-09-04",
+  "generated": "2026-09-06T12:32:49Z",
+  "asof": "2026-09-06",
   "stance": "偏积极",
   "stance_en": "Positive-leaning",
-  "score": 0.315,
+  "score": 0.299,
   "action": "偏多 · 可逢低加",
   "action_en": "Bullish-leaning · can add on dips",
   "confidence_level": "中",
@@ -11,9 +11,9 @@
   "factors": [
     {
       "name": "波动率 VIX",
-      "push": 0.504,
+      "push": 0.44,
       "weight": 0.2,
-      "reason": "VIX 14.0（25 分位·偏低）；高波动=风险高=偏防御"
+      "reason": "VIX 14.5（28 分位·中性）；高波动=风险高=偏防御"
     },
     {
       "name": "收益率曲线",
@@ -23,9 +23,9 @@
     },
     {
       "name": "信用利差",
-      "push": 0.5436,
+      "push": 0.5496,
       "weight": 0.15,
-      "reason": "Baa-10Y 1.58（5 分位·偏低(信用宽松)）；利差低=信用宽松偏积极，但极低或属晚周期"
+      "reason": "Baa-10Y 1.57（4 分位·偏低(信用宽松)）；利差低=信用宽松偏积极，但极低或属晚周期"
     },
     {
       "name": "个股共动(羊群)",
@@ -53,10 +53,6 @@
   "caveat": "🚩出格区 · 把诚实证据按**写死透明权重**加权出的当下**行动倾向（买/持/避）**。**敢给方向，但每条 append composite_log 公开计分、可追责**；方向信号 walk-forward 无样本外优势（权重已压最低）。非保证、会错、过去≠未来——给你有据的判断，自己拍。",
   "caveat_en": "🚩 Out-on-a-limb zone · the current **action tilt (buy / hold / avoid)**, obtained by weighting honest evidence with **hard-coded, transparent weights**. **We are willing to give a direction, but every call is appended to composite_log and scored in public, so it can be held against us**; the directional signal has no out-of-sample edge in walk-forward (its weight is already the lowest). Not a guarantee, it can be wrong, the past != the future — we give you a reasoned judgement; the call is yours.",
   "history": [
-    {
-      "d": "2026-07-28",
-      "s": 0.175
-    },
     {
       "d": "2026-07-29",
       "s": 0.135
@@ -172,6 +168,10 @@
     {
       "d": "2026-09-04",
       "s": 0.315
+    },
+    {
+      "d": "2026-09-06",
+      "s": 0.299
     }
   ]
 }

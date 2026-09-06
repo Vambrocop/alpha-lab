@@ -1,29 +1,29 @@
 {
- "generated": "2026-09-04 16:45",
+ "generated": "2026-09-06 12:32",
  "model_version": "2.1",
  "lines": [
-  "【市场 09-04】纳指 ▼0.27%，标普 ▼0.31%，VIX ▼1.96%，BTC ▼1.86%",
+  "【市场 09-04】纳指 ▼0.29%，标普 ▼0.38%，VIX ▲1.47%，BTC ▲0.21%",
   "【信号】纳指（原始打分64%）、标普（原始打分57%）｜模型无样本外区分度：未来20日上涨概率≈基率 62% · 实验性信号",
-  "【风险】VIX期限结构正常（14.0 < 17.2），无恐慌；纳指20日年化波动 12%",
+  "【风险】VIX期限结构正常（14.5 < 17.6），无恐慌；纳指20日年化波动 12%",
   "【未来一周】09-08(周二)60%，09-09(周三)61%，09-10(周四)60%，09-11(周五)59%⚠CPI发布(8月)，09-14(周一)57%",
   "【提示】09-09（周三）为本周最佳入场窗口（61%），建议尾盘买入",
-  "【事件】09-04 非农就业(8月)；09-11 CPI发布(8月) —— 当日波动放大，避免重仓操作"
+  "【事件】09-11 CPI发布(8月)；09-16 FOMC决议(含SEP) —— 当日波动放大，避免重仓操作"
  ],
  "lines_en": [
-  "[Market 09-04] NASDAQ ▼0.27%, S&P 500 ▼0.31%, VIX ▼1.96%, BTC ▼1.86%",
+  "[Market 09-04] NASDAQ ▼0.29%, S&P 500 ▼0.38%, VIX ▲1.47%, BTC ▲0.21%",
   "[Signal] NASDAQ (raw score 64%), S&P 500 (raw score 57%) | the model shows no out-of-sample discrimination: the 20-day probability of a gain is ~the base rate of 62% · experimental signal",
-  "[Risk] VIX term structure normal (14.0 < 17.2), no panic; NASDAQ 20-day annualised volatility 12%",
+  "[Risk] VIX term structure normal (14.5 < 17.6), no panic; NASDAQ 20-day annualised volatility 12%",
   "[Week ahead] 09-08(Tue)60%, 09-09(Wed)61%, 09-10(Thu)60%, 09-11(Fri)59%⚠CPI release (for month 8), 09-14(Mon)57%",
   "[Note] 09-09 (Wed) is this week's best entry window (61%); buying near the close is suggested",
-  "[Events] 09-04 Nonfarm payrolls (for month 8); 09-11 CPI release (for month 8) — volatility is amplified on the day; avoid large positions"
+  "[Events] 09-11 CPI release (for month 8); 09-16 FOMC decision (with SEP) — volatility is amplified on the day; avoid large positions"
  ],
  "lights": [
   {
    "name": "趋势(MA200)",
    "name_en": "Trend (MA200)",
    "status": "green",
-   "value": "上方 8.7%",
-   "value_en": "above 8.7%",
+   "value": "上方 8.6%",
+   "value_en": "above 8.6%",
    "note": "牛熊分界线，下方时一切看空信号加倍认真",
    "note_en": "The bull/bear dividing line; below it, take every bearish signal twice as seriously."
   },
@@ -31,7 +31,7 @@
    "name": "VIX期限结构",
    "name_en": "VIX term structure",
    "status": "green",
-   "value": "14.0/17.2",
+   "value": "14.5/17.6",
    "note": "倒挂=恐慌（历史上倒挂后20日胜率64.8%，常近底部）",
    "note_en": "Inversion = fear (historically the 20-day win rate after an inversion has been 64.8%, often close to a bottom)."
   },
@@ -39,7 +39,7 @@
    "name": "VIX水平",
    "name_en": "VIX level",
    "status": "green",
-   "value": "14.0",
+   "value": "14.5",
    "note": "<20平静 / 20-30警惕 / >30恐慌",
    "note_en": "<20 calm / 20-30 wary / >30 panic"
   },
@@ -47,7 +47,7 @@
    "name": "收益率曲线(10Y-2Y)",
    "name_en": "Yield curve (10Y-2Y)",
    "status": "green",
-   "value": "+0.43%",
+   "value": "+0.41%",
    "note": "倒挂(<0)是历史上最可靠的衰退预警，领先6-18个月",
    "note_en": "An inversion (<0) is historically the most reliable recession warning, leading by 6-18 months."
   },

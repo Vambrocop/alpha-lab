@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-04T16:48:46Z",
-  "as_of": "2026-08-07",
+  "generated": "2026-09-06T12:35:16Z",
+  "as_of": "2026-09-04",
   "title_zh": "澳股荐股·同一规则零调参历史轨迹披露（非策略验证·含幸存者偏差·系统性偏乐观）",
   "title_en": "AU picks — same-rule zero-tuning historical trace disclosure (NOT strategy validation; survivorship-biased, systematically optimistic)",
   "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
@@ -10,26 +10,26 @@
     "first_decision": "1992-11-23",
     "last_decision": "2026-08-06",
     "first_entry": "1992-11-24",
-    "last_exit": "2026-08-07"
+    "last_exit": "2026-09-04"
   },
   "overall": {
     "n_decision_days": 432,
-    "n_calls": 2586,
-    "n_settled": 2586,
+    "n_calls": 2592,
+    "n_settled": 2592,
     "n_dropped": 0,
     "dropped_pct": 0.0,
     "hit_pct_total": 51.6,
-    "mean_call_excess_pct": -0.339,
+    "mean_call_excess_pct": -0.345,
     "median_call_excess_pct": 0.335,
     "bullish": {
-      "n": 1293,
+      "n": 1296,
       "hit_pct": 51.4,
-      "mean_call_excess_pct": 0.669
+      "mean_call_excess_pct": 0.664
     },
     "bearish": {
-      "n": 1293,
-      "hit_pct": 51.8,
-      "mean_call_excess_pct": -1.347
+      "n": 1296,
+      "hit_pct": 51.9,
+      "mean_call_excess_pct": -1.354
     }
   },
   "by_year": [
@@ -273,14 +273,14 @@
     },
     {
       "year": 2026,
-      "n": 42,
-      "hit_pct": 54.8,
-      "mean_call_excess_pct": 0.86,
+      "n": 48,
+      "hit_pct": 54.2,
+      "mean_call_excess_pct": 0.398,
       "n_selectable": 105
     }
   ],
   "meta": {
-    "generated": "2026-09-04T16:48:46Z",
+    "generated": "2026-09-06T12:35:16Z",
     "rule": "动量+低波动 等权排名（126日动量 + 63日低波动，ASX100 大中盘池取头/尾各3）——与美股 pick_ledger 同一规则、同一代码（零克隆）",
     "hold_td": 20,
     "benchmark": "^AXJO",

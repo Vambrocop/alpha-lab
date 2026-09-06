@@ -1,6 +1,6 @@
 {
-  "generated": "2026-09-04T16:45:57Z",
-  "as_of": "2026-09-04",
+  "generated": "2026-09-06T12:32:50Z",
+  "as_of": "2026-09-06",
   "n_survivors": 7,
   "n_active": 4,
   "survivors": [
@@ -9,7 +9,7 @@
       "key": "BTC_mom20_pos",
       "name": "BTC 20 日动量为正（风险偏好代理）",
       "active": true,
-      "state": "BTC 近 20 日动量 +26.5%（高于 +5% 阈值）",
+      "state": "BTC 近 20 日动量 +24.0%（高于 +5% 阈值）",
       "up_pct": 75,
       "base_pct": 62,
       "window": "2000后",
@@ -18,6 +18,9 @@
       "recent_p": 0.0,
       "modern": "现代仍有效",
       "unstable": false,
+      "flips": 0,
+      "stable_days": 53,
+      "boundary_flicker": false,
       "stability_note": ""
     },
     {
@@ -33,8 +36,11 @@
       "edge_plain": "非九月 54% vs 九月 51%（当日上涨率·2000后·微弱偏正）",
       "recent_p": 0.038961,
       "modern": "现代仍有效",
-      "unstable": false,
-      "stability_note": ""
+      "unstable": true,
+      "flips": 10,
+      "stable_days": 2,
+      "boundary_flicker": true,
+      "stability_note": "⚠ 裁决在跨族 FDR 存活线上**来回横跳**（近期翻转 10 次·当前裁决仅稳定 2 天）——今天算存活不代表明天还在，别当成稳定结论"
     },
     {
       "family": "calendar",
@@ -49,8 +55,11 @@
       "edge_plain": "九月 51% vs 其余月份 54%（当日上涨率·2000后·微弱偏负）",
       "recent_p": 0.065934,
       "modern": "现代仍有效",
-      "unstable": false,
-      "stability_note": ""
+      "unstable": true,
+      "flips": 18,
+      "stable_days": 2,
+      "boundary_flicker": true,
+      "stability_note": "⚠ 裁决在跨族 FDR 存活线上**来回横跳**（近期翻转 18 次·当前裁决仅稳定 2 天）——今天算存活不代表明天还在，别当成稳定结论"
     },
     {
       "family": "regime",
@@ -65,8 +74,11 @@
       "edge_plain": "标普金叉成立时 66% vs 全样本基率 63%（标普未来 20 日上涨率·2000后·微弱偏正）",
       "recent_p": 0.018,
       "modern": "现代仍有效",
-      "unstable": false,
-      "stability_note": ""
+      "unstable": true,
+      "flips": 2,
+      "stable_days": 3,
+      "boundary_flicker": true,
+      "stability_note": "⚠ 裁决在跨族 FDR 存活线上**来回横跳**（近期翻转 2 次·当前裁决仅稳定 3 天）——今天算存活不代表明天还在，别当成稳定结论"
     },
     {
       "family": "positioning",
@@ -82,6 +94,9 @@
       "recent_p": 0.0,
       "modern": "现代仍有效",
       "unstable": false,
+      "flips": 0,
+      "stable_days": 44,
+      "boundary_flicker": false,
       "stability_note": ""
     },
     {
@@ -98,7 +113,10 @@
       "recent_p": 0.098901,
       "modern": "现代仍有效",
       "unstable": true,
-      "stability_note": "⚠ 现代显著性临界（recent_p≈0.10·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
+      "flips": 19,
+      "stable_days": 2,
+      "boundary_flicker": true,
+      "stability_note": "⚠ 现代显著性临界（recent_p≈0.10·近 q=0.10 存活线，下次刷新可能退出，别过度当真）；⚠ 裁决在跨族 FDR 存活线上**来回横跳**（近期翻转 19 次·当前裁决仅稳定 2 天）——今天算存活不代表明天还在，别当成稳定结论"
     },
     {
       "family": "rebound",
@@ -114,7 +132,10 @@
       "recent_p": 0.082,
       "modern": "现代仍有效",
       "unstable": true,
-      "stability_note": "⚠ 现代显著性临界（recent_p≈0.08·近 q=0.10 存活线，下次刷新可能退出，别过度当真）"
+      "flips": 7,
+      "stable_days": 3,
+      "boundary_flicker": true,
+      "stability_note": "⚠ 现代显著性临界（recent_p≈0.08·近 q=0.10 存活线，下次刷新可能退出，别过度当真）；⚠ 裁决在跨族 FDR 存活线上**来回横跳**（近期翻转 7 次·当前裁决仅稳定 3 天）——今天算存活不代表明天还在，别当成稳定结论"
     }
   ],
   "caveat": "存活规律 = 在预声明候选池里扛过多重检验(BY-FDR)且现代子样本仍显著的历史规律。仅描述性、非预测非荐股；「应期」=今天该条件成立、「休眠」=今天不成立(休眠的别当当前信号)、「未接入」=当前态未监测(仅历史)；前向 OOS(门4)仍在累积、未确认；扛过检验≠下次一定灵；过去≠未来。"

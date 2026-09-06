@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T16:48:58Z",
+  "generated": "2026-09-06T12:35:26Z",
   "horizon_days": 20,
   "model_calibration": {
     "curve": [
@@ -45,13 +45,13 @@
   },
   "sources": {
     "纳指方向信号(live)": {
-      "n_scored": 41,
+      "n_scored": 42,
       "n_pending": 20,
-      "hit_pct": 58.5
+      "hit_pct": 57.1
     },
     "综合读数倾向(live)": {
       "n_scored": 32,
-      "n_pending": 21,
+      "n_pending": 22,
       "hit_pct": 62.5
     },
     "试胆玩具(≈掷硬币基准)": {

@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-04 16:45",
+ "generated": "2026-09-06 12:32",
  "model_version": "2.1",
  "sections": [
   {
@@ -14,9 +14,9 @@
     },
     {
      "版本": "v2.1",
-     "已记录": 120,
-     "1日命中": "44.9%",
-     "5日命中": "49.1%"
+     "已记录": 122,
+     "1日命中": "44.2%",
+     "5日命中": "50.0%"
     }
    ],
    "table_en": [
@@ -28,13 +28,13 @@
     },
     {
      "Version": "v2.1",
-     "Logged": 120,
-     "1d hit": "44.9%",
-     "5d hit": "49.1%"
+     "Logged": 122,
+     "1d hit": "44.2%",
+     "5d hit": "50.0%"
     }
    ],
-   "note": "自 2026-06-08 起共 122 条。命中=方向判断正确（prob>50% 且实际上涨，或反之）。样本少时波动大，4周后才有统计意义。",
-   "note_en": "122 entries since 2026-06-08. A 'hit' means the direction call was right (prob>50% and the market rose, or the reverse). Small samples swing a lot; this only becomes statistically meaningful after about 4 weeks."
+   "note": "自 2026-06-08 起共 124 条。命中=方向判断正确（prob>50% 且实际上涨，或反之）。样本少时波动大，4周后才有统计意义。",
+   "note_en": "124 entries since 2026-06-08. A 'hit' means the direction call was right (prob>50% and the market rose, or the reverse). Small samples swing a lot; this only becomes statistically meaningful after about 4 weeks."
   },
   {
    "title": "Walk-Forward 样本外验证（纳指）",
@@ -130,7 +130,7 @@
    "table": [
     {
      "20日波动率": "12%（高于24%的历史日）",
-     "距52周高点": "-2.1%",
+     "距52周高点": "-2.2%",
      "RSI14": "48",
      "VIX期限结构": "正常"
     }
@@ -138,7 +138,7 @@
    "table_en": [
     {
      "20d volatility": "12% (above 24% of historical days)",
-     "From 52w high": "-2.1%",
+     "From 52w high": "-2.2%",
      "RSI14": "48",
      "VIX term structure": "Normal"
     }
@@ -152,36 +152,36 @@
    "table": [
     {
      "策略": "🐢 长持",
-     "净值": "$10,562",
-     "收益": "+5.62%",
+     "净值": "$10,531",
+     "收益": "+5.31%",
      "仓位": "NASDAQ",
      "交易": 1
     },
     {
      "策略": "📈 趋势",
-     "净值": "$10,562",
-     "收益": "+5.62%",
+     "净值": "$10,531",
+     "收益": "+5.31%",
      "仓位": "NASDAQ",
      "交易": 1
     },
     {
      "策略": "🌙 隔夜",
-     "净值": "$10,502",
-     "收益": "+5.02%",
+     "净值": "$10,525",
+     "收益": "+5.25%",
      "仓位": "每日隔夜持有QQQ",
      "交易": 0
     },
     {
      "策略": "🎯 信号",
-     "净值": "$10,079",
-     "收益": "+0.79%",
+     "净值": "$10,050",
+     "收益": "+0.50%",
      "仓位": "NASDAQ",
      "交易": 1
     },
     {
      "策略": "🚀 动量",
-     "净值": "$8,299",
-     "收益": "-17.01%",
+     "净值": "$8,947",
+     "收益": "-10.53%",
      "仓位": "SNDK+AMD+MU",
      "交易": 3
     }
@@ -189,36 +189,36 @@
    "table_en": [
     {
      "Strategy": "🐢 Buy & hold",
-     "Equity": "$10,562",
-     "Return": "+5.62%",
+     "Equity": "$10,531",
+     "Return": "+5.31%",
      "Position": "NASDAQ",
      "Trades": 1
     },
     {
      "Strategy": "📈 Trend",
-     "Equity": "$10,562",
-     "Return": "+5.62%",
+     "Equity": "$10,531",
+     "Return": "+5.31%",
      "Position": "NASDAQ",
      "Trades": 1
     },
     {
      "Strategy": "🌙 Overnight",
-     "Equity": "$10,502",
-     "Return": "+5.02%",
+     "Equity": "$10,525",
+     "Return": "+5.25%",
      "Position": "Holds QQQ overnight, every day",
      "Trades": 0
     },
     {
      "Strategy": "🎯 Signal",
-     "Equity": "$10,079",
-     "Return": "+0.79%",
+     "Equity": "$10,050",
+     "Return": "+0.50%",
      "Position": "NASDAQ",
      "Trades": 1
     },
     {
      "Strategy": "🚀 Momentum",
-     "Equity": "$8,299",
-     "Return": "-17.01%",
+     "Equity": "$8,947",
+     "Return": "-10.53%",
      "Position": "SNDK+AMD+MU",
      "Trades": 3
     }

@@ -1,6 +1,14 @@
 {
- "updated": "2026-09-05 22:24 UTC",
+ "updated": "2026-09-06 12:32 UTC",
  "items": [
+  {
+   "time": "2026-09-06 12:00 UTC",
+   "title": "AI data centers are transforming rural land markets — and fueling a backlash",
+   "impact": "neutral",
+   "note": "",
+   "source": "CNBC Top News",
+   "kind": "auto"
+  },
   {
    "time": "2026-09-05 19:12 UTC",
    "title": "Trump turns up the heat on Warsh as Fed rate hike looms",
@@ -31,14 +39,6 @@
    "impact": "neutral",
    "note": "",
    "source": "CNBC Top News",
-   "kind": "auto"
-  },
-  {
-   "time": "2026-09-05 16:34 UTC",
-   "title": "Jobs and Iran add to Trump’s midterm headaches. Why that’s good for bonds and bad for energy stocks.",
-   "impact": "neutral",
-   "note": "",
-   "source": "MarketWatch",
    "kind": "auto"
   }
  ]
